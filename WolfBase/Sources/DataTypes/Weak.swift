@@ -1,0 +1,12 @@
+//
+//  Weak.swift
+//  WolfBase
+//
+//  Created by Wolf McNally on 5/28/17.
+//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//
+
+public struct Weak<T> where T: AnyObject {
+  public typealias Element = T
+  public weak var element: Element?
+}

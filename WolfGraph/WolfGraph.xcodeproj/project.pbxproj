@@ -1,0 +1,517 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0381CD3E1F073045001510EA /* GraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381CD3D1F073045001510EA /* GraphTests.swift */; };
+		038FA0031F071784001B37C4 /* WolfGraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038F9FF91F071784001B37C4 /* WolfGraph.framework */; };
+		038FA00A1F071784001B37C4 /* WolfGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 038F9FFC1F071784001B37C4 /* WolfGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		038FA0221F07187D001B37C4 /* AdapterGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0161F0717E3001B37C4 /* AdapterGraph.swift */; };
+		038FA0231F07187D001B37C4 /* BreadthFirstSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0211F0717E4001B37C4 /* BreadthFirstSearch.swift */; };
+		038FA0241F07187D001B37C4 /* DepthFirstSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA01E1F0717E4001B37C4 /* DepthFirstSearch.swift */; };
+		038FA0251F07187D001B37C4 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA01F1F0717E4001B37C4 /* Edge.swift */; };
+		038FA0261F07187D001B37C4 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0151F0717E3001B37C4 /* Graph.swift */; };
+		038FA0271F07187D001B37C4 /* GraphError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA01D1F0717E3001B37C4 /* GraphError.swift */; };
+		038FA0281F07187D001B37C4 /* GraphProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0191F0717E3001B37C4 /* GraphProtocol.swift */; };
+		038FA0291F07187D001B37C4 /* GraphVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA01B1F0717E3001B37C4 /* GraphVisitor.swift */; };
+		038FA02A1F07187D001B37C4 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA01A1F0717E3001B37C4 /* Node.swift */; };
+		038FA02B1F07187D001B37C4 /* ReversedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0171F0717E3001B37C4 /* ReversedGraph.swift */; };
+		038FA02C1F07187D001B37C4 /* StrongComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0201F0717E4001B37C4 /* StrongComponents.swift */; };
+		038FA02D1F07187D001B37C4 /* TopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0181F0717E3001B37C4 /* TopologicalSort.swift */; };
+		038FA02E1F07187D001B37C4 /* TransitiveClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA01C1F0717E3001B37C4 /* TransitiveClosure.swift */; };
+		038FA0311F0718E8001B37C4 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038FA0301F0718E8001B37C4 /* WolfBase.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		038FA0041F071784001B37C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038F9FF01F071784001B37C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 038F9FF81F071784001B37C4;
+			remoteInfo = WolfGraph;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0381CD3D1F073045001510EA /* GraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTests.swift; sourceTree = "<group>"; };
+		038F9FF91F071784001B37C4 /* WolfGraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfGraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		038F9FFC1F071784001B37C4 /* WolfGraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolfGraph.h; sourceTree = "<group>"; };
+		038F9FFD1F071784001B37C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		038FA0021F071784001B37C4 /* WolfGraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolfGraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		038FA0091F071784001B37C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		038FA0151F0717E3001B37C4 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		038FA0161F0717E3001B37C4 /* AdapterGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterGraph.swift; sourceTree = "<group>"; };
+		038FA0171F0717E3001B37C4 /* ReversedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversedGraph.swift; sourceTree = "<group>"; };
+		038FA0181F0717E3001B37C4 /* TopologicalSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopologicalSort.swift; sourceTree = "<group>"; };
+		038FA0191F0717E3001B37C4 /* GraphProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphProtocol.swift; sourceTree = "<group>"; };
+		038FA01A1F0717E3001B37C4 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		038FA01B1F0717E3001B37C4 /* GraphVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphVisitor.swift; sourceTree = "<group>"; };
+		038FA01C1F0717E3001B37C4 /* TransitiveClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitiveClosure.swift; sourceTree = "<group>"; };
+		038FA01D1F0717E3001B37C4 /* GraphError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphError.swift; sourceTree = "<group>"; };
+		038FA01E1F0717E4001B37C4 /* DepthFirstSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthFirstSearch.swift; sourceTree = "<group>"; };
+		038FA01F1F0717E4001B37C4 /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
+		038FA0201F0717E4001B37C4 /* StrongComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongComponents.swift; sourceTree = "<group>"; };
+		038FA0211F0717E4001B37C4 /* BreadthFirstSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreadthFirstSearch.swift; sourceTree = "<group>"; };
+		038FA0301F0718E8001B37C4 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = "../../../../Library/Developer/Xcode/DerivedData/WolfCore-bpoxckhybkonuocczhwkukselcch/Build/Products/Debug-iphonesimulator/WolfBase.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		038F9FF51F071784001B37C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				038FA0311F0718E8001B37C4 /* WolfBase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		038F9FFF1F071784001B37C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				038FA0031F071784001B37C4 /* WolfGraph.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0381CD3F1F07305F001510EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				038FA0091F071784001B37C4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		038F9FEF1F071784001B37C4 = {
+			isa = PBXGroup;
+			children = (
+				038F9FFB1F071784001B37C4 /* WolfGraph */,
+				038FA0061F071784001B37C4 /* WolfGraphTests */,
+				038F9FFA1F071784001B37C4 /* Products */,
+				038FA02F1F0718E5001B37C4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		038F9FFA1F071784001B37C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				038F9FF91F071784001B37C4 /* WolfGraph.framework */,
+				038FA0021F071784001B37C4 /* WolfGraphTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		038F9FFB1F071784001B37C4 /* WolfGraph */ = {
+			isa = PBXGroup;
+			children = (
+				038FA0141F0717BD001B37C4 /* Sources */,
+				038FA0131F0717A7001B37C4 /* Supporting Files */,
+			);
+			path = WolfGraph;
+			sourceTree = "<group>";
+		};
+		038FA0061F071784001B37C4 /* WolfGraphTests */ = {
+			isa = PBXGroup;
+			children = (
+				0381CD3D1F073045001510EA /* GraphTests.swift */,
+				0381CD3F1F07305F001510EA /* Supporting Files */,
+			);
+			path = WolfGraphTests;
+			sourceTree = "<group>";
+		};
+		038FA0131F0717A7001B37C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				038F9FFC1F071784001B37C4 /* WolfGraph.h */,
+				038F9FFD1F071784001B37C4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		038FA0141F0717BD001B37C4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				038FA0161F0717E3001B37C4 /* AdapterGraph.swift */,
+				038FA0211F0717E4001B37C4 /* BreadthFirstSearch.swift */,
+				038FA01E1F0717E4001B37C4 /* DepthFirstSearch.swift */,
+				038FA01F1F0717E4001B37C4 /* Edge.swift */,
+				038FA0151F0717E3001B37C4 /* Graph.swift */,
+				038FA01D1F0717E3001B37C4 /* GraphError.swift */,
+				038FA0191F0717E3001B37C4 /* GraphProtocol.swift */,
+				038FA01B1F0717E3001B37C4 /* GraphVisitor.swift */,
+				038FA01A1F0717E3001B37C4 /* Node.swift */,
+				038FA0171F0717E3001B37C4 /* ReversedGraph.swift */,
+				038FA0201F0717E4001B37C4 /* StrongComponents.swift */,
+				038FA0181F0717E3001B37C4 /* TopologicalSort.swift */,
+				038FA01C1F0717E3001B37C4 /* TransitiveClosure.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		038FA02F1F0718E5001B37C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				038FA0301F0718E8001B37C4 /* WolfBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		038F9FF61F071784001B37C4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				038FA00A1F071784001B37C4 /* WolfGraph.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		038F9FF81F071784001B37C4 /* WolfGraph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 038FA00D1F071784001B37C4 /* Build configuration list for PBXNativeTarget "WolfGraph" */;
+			buildPhases = (
+				038F9FF41F071784001B37C4 /* Sources */,
+				038F9FF51F071784001B37C4 /* Frameworks */,
+				038F9FF61F071784001B37C4 /* Headers */,
+				038F9FF71F071784001B37C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WolfGraph;
+			productName = WolfGraph;
+			productReference = 038F9FF91F071784001B37C4 /* WolfGraph.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		038FA0011F071784001B37C4 /* WolfGraphTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 038FA0101F071784001B37C4 /* Build configuration list for PBXNativeTarget "WolfGraphTests" */;
+			buildPhases = (
+				038F9FFE1F071784001B37C4 /* Sources */,
+				038F9FFF1F071784001B37C4 /* Frameworks */,
+				038FA0001F071784001B37C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				038FA0051F071784001B37C4 /* PBXTargetDependency */,
+			);
+			name = WolfGraphTests;
+			productName = WolfGraphTests;
+			productReference = 038FA0021F071784001B37C4 /* WolfGraphTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		038F9FF01F071784001B37C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = WolfMcNally.com;
+				TargetAttributes = {
+					038F9FF81F071784001B37C4 = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					038FA0011F071784001B37C4 = {
+						CreatedOnToolsVersion = 9.0;
+					};
+				};
+			};
+			buildConfigurationList = 038F9FF31F071784001B37C4 /* Build configuration list for PBXProject "WolfGraph" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 038F9FEF1F071784001B37C4;
+			productRefGroup = 038F9FFA1F071784001B37C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				038F9FF81F071784001B37C4 /* WolfGraph */,
+				038FA0011F071784001B37C4 /* WolfGraphTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		038F9FF71F071784001B37C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		038FA0001F071784001B37C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		038F9FF41F071784001B37C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				038FA0241F07187D001B37C4 /* DepthFirstSearch.swift in Sources */,
+				038FA02C1F07187D001B37C4 /* StrongComponents.swift in Sources */,
+				038FA0221F07187D001B37C4 /* AdapterGraph.swift in Sources */,
+				038FA0251F07187D001B37C4 /* Edge.swift in Sources */,
+				038FA02A1F07187D001B37C4 /* Node.swift in Sources */,
+				038FA02D1F07187D001B37C4 /* TopologicalSort.swift in Sources */,
+				038FA0271F07187D001B37C4 /* GraphError.swift in Sources */,
+				038FA0231F07187D001B37C4 /* BreadthFirstSearch.swift in Sources */,
+				038FA02E1F07187D001B37C4 /* TransitiveClosure.swift in Sources */,
+				038FA0261F07187D001B37C4 /* Graph.swift in Sources */,
+				038FA0281F07187D001B37C4 /* GraphProtocol.swift in Sources */,
+				038FA02B1F07187D001B37C4 /* ReversedGraph.swift in Sources */,
+				038FA0291F07187D001B37C4 /* GraphVisitor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		038F9FFE1F071784001B37C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0381CD3E1F073045001510EA /* GraphTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		038FA0051F071784001B37C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 038F9FF81F071784001B37C4 /* WolfGraph */;
+			targetProxy = 038FA0041F071784001B37C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		038FA00B1F071784001B37C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		038FA00C1F071784001B37C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		038FA00E1F071784001B37C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = P776N9776G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WolfGraph/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wolfmcnally.WolfGraph;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		038FA00F1F071784001B37C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = P776N9776G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WolfGraph/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wolfmcnally.WolfGraph;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		038FA0111F071784001B37C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = P776N9776G;
+				INFOPLIST_FILE = WolfGraphTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wolfmcnally.WolfGraphTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		038FA0121F071784001B37C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = P776N9776G;
+				INFOPLIST_FILE = WolfGraphTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wolfmcnally.WolfGraphTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		038F9FF31F071784001B37C4 /* Build configuration list for PBXProject "WolfGraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				038FA00B1F071784001B37C4 /* Debug */,
+				038FA00C1F071784001B37C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		038FA00D1F071784001B37C4 /* Build configuration list for PBXNativeTarget "WolfGraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				038FA00E1F071784001B37C4 /* Debug */,
+				038FA00F1F071784001B37C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		038FA0101F071784001B37C4 /* Build configuration list for PBXNativeTarget "WolfGraphTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				038FA0111F071784001B37C4 /* Debug */,
+				038FA0121F071784001B37C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 038F9FF01F071784001B37C4 /* Project object */;
+}

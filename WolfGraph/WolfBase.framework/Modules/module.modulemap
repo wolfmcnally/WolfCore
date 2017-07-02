@@ -1,0 +1,4 @@
+framework module WolfBase {
+    header "WolfBase-Swift.h"
+    requires objc
+}
