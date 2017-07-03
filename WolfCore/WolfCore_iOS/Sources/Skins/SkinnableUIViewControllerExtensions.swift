@@ -9,14 +9,8 @@
 import UIKit
 import WolfBase
 
-var skinIndentLevel = 0
-
 extension LogGroup {
   public static let skinC = LogGroup("skinC")
-}
-
-struct SkinnableAssociatedKeys {
-  static var privateSkin = "WolfCore_privateSkin"
 }
 
 extension UIViewController {

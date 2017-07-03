@@ -20,10 +20,8 @@ extension Skin {
 }
 
 extension ConcreteSkin {
-  //    public init(variant: SkinVariant) {
-  //        self.init()
-  //
-  //        self.variant = variant
-  //    }
+  public mutating func applyDefaults() {
+    addIdentifier("light")
+  }
 }
 

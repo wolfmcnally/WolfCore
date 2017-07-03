@@ -73,18 +73,25 @@ extension OSView {
     }
   }
 
-  private func _syncBackgroundColor() {
-    var effectiveDebugBackgroundColor: OSColor {
-      let n = Color(self.normalBackgroundColor!)
-      let d = Color(self.debugBackgroundColor!)
+  private var _effectiveDebugBackgroundColor: OSColor {
+    let n = Color(self.normalBackgroundColor!)
+    let d = Color(self.debugBackgroundColor!)
 
-      let n2 = blend(from: .white, to: n, at: n.alpha).withAlpha(1)
-      let d2 = d.withAlpha(1)
-      let c = blend(from: n2, to: d2, at: 0.5)
-      let c2 = c.withAlpha(0.5)
-      return c2.osColor
-    }
-    backgroundColor = isDebug ? effectiveDebugBackgroundColor : normalBackgroundColor
+    let n2 = blend(from: .white, to: n, at: n.alpha).withAlpha(1)
+    let d2 = d.withAlpha(1)
+    let c = blend(from: n2, to: d2, at: 0.5)
+    let c2 = c.withAlpha(0.5)
+    return c2.osColor
+  }
+
+  public var effectiveBackgroundColor: OSColor? {
+    return isDebug ? _effectiveDebugBackgroundColor : normalBackgroundColor
+  }
+
+  private func _syncBackgroundColor() {
+    #if !os(macOS)
+      backgroundColor = effectiveBackgroundColor
+    #endif
   }
 }
 

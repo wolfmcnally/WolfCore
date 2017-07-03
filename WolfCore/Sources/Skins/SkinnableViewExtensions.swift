@@ -6,14 +6,25 @@
 //  Copyright © 2017 WolfMcNally.com. All rights reserved.
 //
 
-import UIKit
+#if os(macOS)
+  import Cocoa
+#else
+  import UIKit
+#endif
+
 import WolfBase
 
 extension LogGroup {
   public static let skinV = LogGroup("skinV")
 }
 
-extension UIView {
+struct SkinnableAssociatedKeys {
+  static var privateSkin = "WolfCore_privateSkin"
+}
+
+var skinIndentLevel = 0
+
+extension OSView {
   fileprivate var privateSkin: Skin? {
     get {
       return getAssociatedValue(for: &SkinnableAssociatedKeys.privateSkin)
@@ -25,7 +36,7 @@ extension UIView {
   }
 }
 
-extension UIView {
+extension OSView {
   public var skin: Skin! {
     get {
       if let s = privateSkin {
@@ -43,18 +54,20 @@ extension UIView {
   }
 }
 
-extension UIView {
+extension OSView {
   public func _reviseSkin(_ skin: Skin) -> Skin? {
     return nil
   }
   
   public func _applySkin(_ skin: Skin) {
-    normalBackgroundColor ©= skin.viewBackgroundColor
-    tintColor ©= skin.tintColor
+    #if !os(macOS)
+      normalBackgroundColor ©= skin.viewBackgroundColor
+      tintColor ©= skin.tintColor
+    #endif
   }
 }
 
-extension UIView {
+extension OSView {
   func set(skin: Skin!) {
     skinIndentLevel += 1
     defer { skinIndentLevel -= 1 }
@@ -63,10 +76,10 @@ extension UIView {
     
     privateSkin = skin
     let s = (skin ?? self.skin)!
-    UIView.propagate(skin: s, to: self)
+    OSView.propagate(skin: s, to: self)
   }
   
-  fileprivate static func propagate(skin: Skin, to view: UIView) {
+  fileprivate static func propagate(skin: Skin, to view: OSView) {
     skinIndentLevel += 1
     defer { skinIndentLevel -= 1 }
     
@@ -102,6 +115,6 @@ extension UIView {
   public func propagateSkin(why: String) {
     let skin = self.skin!
     logTrace("💟 [\(why)] \(skin.identifierPath) ⏩ \(self††)", group: .skinV)
-    UIView.propagate(skin: skin, to: self)
+    OSView.propagate(skin: skin, to: self)
   }
 }
