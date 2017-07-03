@@ -24,6 +24,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0317E2711F0A302A000FD0C1 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0317E26F1F0A2FFE000FD0C1 /* WolfBase.framework */; };
+		0317E2721F0A3033000FD0C1 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0317E2701F0A300B000FD0C1 /* WolfBase.framework */; };
+		0317E2741F0A3053000FD0C1 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0317E2731F0A3053000FD0C1 /* WolfBase.framework */; };
+		0317E2761F0A305F000FD0C1 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0317E2751F0A305F000FD0C1 /* WolfBase.framework */; };
 		031DEE721EFEEC49001DCF3F /* OrientationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE711EFEEC49001DCF3F /* OrientationUtils.swift */; };
 		031DEE781EFEEECC001DCF3F /* DeviceOrientationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE771EFEEECC001DCF3F /* DeviceOrientationAction.swift */; };
 		031DEE7A1EFEEF24001DCF3F /* DeviceAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE791EFEEF24001DCF3F /* DeviceAccess.swift */; };
@@ -31,10 +35,6 @@
 		0359000C1EFE498700546B30 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359000A1EFE498700546B30 /* Framework.swift */; };
 		0359000D1EFE498700546B30 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359000A1EFE498700546B30 /* Framework.swift */; };
 		0359000E1EFE498700546B30 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359000A1EFE498700546B30 /* Framework.swift */; };
-		035900181EFE4C5200546B30 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035900171EFE4C5200546B30 /* WolfBase.framework */; };
-		0359001D1EFE4C9300546B30 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0359001C1EFE4C9300546B30 /* WolfBase.framework */; };
-		0359001F1EFE4C9F00546B30 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0359001E1EFE4C9F00546B30 /* WolfBase.framework */; };
-		035900231EFE4CBF00546B30 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035900221EFE4CBF00546B30 /* WolfBase.framework */; };
 		0359FF941EFE38CB00546B30 /* WolfCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0359FF8A1EFE38CB00546B30 /* WolfCore.framework */; };
 		0359FF991EFE38CB00546B30 /* WolfCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359FF981EFE38CB00546B30 /* WolfCoreTests.swift */; };
 		0359FF9B1EFE38CB00546B30 /* WolfCore_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0359FF8D1EFE38CB00546B30 /* WolfCore_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -497,6 +497,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0317E26F1F0A2FFE000FD0C1 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = "../WolfBase/build/Debug-iphoneos/WolfBase.framework"; sourceTree = "<group>"; };
+		0317E2701F0A300B000FD0C1 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = ../WolfBase/build/Debug/WolfBase.framework; sourceTree = "<group>"; };
+		0317E2731F0A3053000FD0C1 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = "../WolfBase/build/Debug-appletvos/WolfBase.framework"; sourceTree = "<group>"; };
+		0317E2751F0A305F000FD0C1 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = "../WolfBase/build/Debug-watchos/WolfBase.framework"; sourceTree = "<group>"; };
 		031DEE711EFEEC49001DCF3F /* OrientationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUtils.swift; sourceTree = "<group>"; };
 		031DEE771EFEEECC001DCF3F /* DeviceOrientationAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceOrientationAction.swift; sourceTree = "<group>"; };
 		031DEE791EFEEF24001DCF3F /* DeviceAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceAccess.swift; sourceTree = "<group>"; };
@@ -504,15 +508,7 @@
 		031DEEDA1EFEF875001DCF3F /* WolfCore_watchOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfCore_watchOS-Bridging-Header.h"; path = "../WolfCore_watchOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		031DEEDB1EFEF88F001DCF3F /* WolfCore_tvOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfCore_tvOS-Bridging-Header.h"; path = "../WolfCore_tvOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		031DEEDC1EFEF8A2001DCF3F /* WolfCore_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfCore_iOS-Bridging-Header.h"; path = "../WolfCore_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		031DEEF31EFEFB0F001DCF3F /* WolfCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfCommon.framework; path = "../Debug-watchos/WolfCommon.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359000A1EFE498700546B30 /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
-		035900171EFE4C5200546B30 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = "../Debug-iphonesimulator/WolfBase.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		035900191EFE4C5900546B30 /* WolfCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfCommon.framework; path = "../Debug-iphonesimulator/WolfCommon.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0359001C1EFE4C9300546B30 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = "../Debug-watchsimulator/WolfBase.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0359001E1EFE4C9F00546B30 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = "../Debug-appletvsimulator/WolfBase.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		035900201EFE4CB300546B30 /* WolfCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfCommon.framework; path = "../Debug-appletvsimulator/WolfCommon.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		035900221EFE4CBF00546B30 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = ../Debug/WolfBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		035900241EFE4CC800546B30 /* WolfCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfCommon.framework; path = ../Debug/WolfCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359FF8A1EFE38CB00546B30 /* WolfCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359FF8D1EFE38CB00546B30 /* WolfCore_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolfCore_iOS.h; sourceTree = "<group>"; };
 		0359FF8E1EFE38CB00546B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -709,7 +705,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				035900181EFE4C5200546B30 /* WolfBase.framework in Frameworks */,
+				0317E2711F0A302A000FD0C1 /* WolfBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,7 +721,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0359001D1EFE4C9300546B30 /* WolfBase.framework in Frameworks */,
+				0317E2761F0A305F000FD0C1 /* WolfBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,7 +729,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0359001F1EFE4C9F00546B30 /* WolfBase.framework in Frameworks */,
+				0317E2741F0A3053000FD0C1 /* WolfBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,7 +745,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				035900231EFE4CBF00546B30 /* WolfBase.framework in Frameworks */,
+				0317E2721F0A3033000FD0C1 /* WolfBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,8 +879,8 @@
 				035900091EFE497600546B30 /* Sources */,
 				0359FFA71EFE473C00546B30 /* Platforms */,
 				0359FFA81EFE474800546B30 /* Tests */,
-				0359FF8B1EFE38CB00546B30 /* Products */,
 				0359FFFA1EFE484A00546B30 /* Frameworks */,
+				0359FF8B1EFE38CB00546B30 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1007,14 +1003,10 @@
 		0359FFFA1EFE484A00546B30 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				035900241EFE4CC800546B30 /* WolfCommon.framework */,
-				031DEEF31EFEFB0F001DCF3F /* WolfCommon.framework */,
-				035900221EFE4CBF00546B30 /* WolfBase.framework */,
-				035900201EFE4CB300546B30 /* WolfCommon.framework */,
-				0359001C1EFE4C9300546B30 /* WolfBase.framework */,
-				0359001E1EFE4C9F00546B30 /* WolfBase.framework */,
-				035900191EFE4C5900546B30 /* WolfCommon.framework */,
-				035900171EFE4C5200546B30 /* WolfBase.framework */,
+				0317E2751F0A305F000FD0C1 /* WolfBase.framework */,
+				0317E2731F0A3053000FD0C1 /* WolfBase.framework */,
+				0317E2701F0A300B000FD0C1 /* WolfBase.framework */,
+				0317E26F1F0A2FFE000FD0C1 /* WolfBase.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2262,8 +2254,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2314,7 +2304,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2339,6 +2328,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wolfmcnally.WolfCore;
 				PRODUCT_NAME = WolfCore;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "WolfCore_iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2364,6 +2354,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wolfmcnally.WolfCore;
 				PRODUCT_NAME = WolfCore;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "WolfCore_iOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -2422,7 +2413,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Debug;
 		};
@@ -2448,7 +2439,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "WolfCore_watchOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Release;
 		};
@@ -2474,7 +2465,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Debug;
 		};
@@ -2499,7 +2490,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "WolfCore_tvOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Release;
 		};
@@ -2550,7 +2541,7 @@
 				INFOPLIST_FILE = WolfCore_macOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfCore-macOS";
 				PRODUCT_NAME = WolfCore;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2577,7 +2568,7 @@
 				INFOPLIST_FILE = WolfCore_macOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfCore-macOS";
 				PRODUCT_NAME = WolfCore;
 				PROVISIONING_PROFILE_SPECIFIER = "";

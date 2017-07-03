@@ -23,8 +23,8 @@ public class HTTPActions: NSObject, URLSessionDelegate, URLSessionDataDelegate, 
   
   public var didBecomeDownloadTask: ((HTTPActions, URLSession, URLSessionDataTask, URLSessionDownloadTask) -> Void)?
   
-  public var didBecomeStreamTask: ((HTTPActions, URLSession, URLSessionDataTask, URLSessionStreamTask) -> Void)?
-  
+//  public var didBecomeStreamTask: ((HTTPActions, URLSession, URLSessionDataTask, URLSessionStreamTask) -> Void)?
+
   public var didReceiveData: ((HTTPActions, URLSession, URLSessionDataTask, Data) -> Void)?
   
   public var willCacheResponse: ((HTTPActions, URLSession, URLSessionDataTask, _ proposedResponse: CachedURLResponse, _ completion: (CachedURLResponse?) -> Void) -> Void)?
@@ -50,10 +50,10 @@ public class HTTPActions: NSObject, URLSessionDelegate, URLSessionDataDelegate, 
     didBecomeDownloadTask?(self, session, dataTask, downloadTask)
   }
   
-  public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didBecome streamTask: URLSessionStreamTask) {
-    didBecomeStreamTask?(self, session, dataTask, streamTask)
-  }
-  
+//  public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didBecome streamTask: URLSessionStreamTask) {
+//    didBecomeStreamTask?(self, session, dataTask, streamTask)
+//  }
+
   public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
     self.response = response
     didReceiveResponse?(self, session, dataTask, response, completionHandler)

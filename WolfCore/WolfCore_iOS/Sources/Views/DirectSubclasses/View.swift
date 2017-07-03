@@ -83,42 +83,10 @@ open class View: OSView, Skinnable {
     syncSublabelScaling()
   }
   #endif
-}
 
-#if os(macOS)
-  extension View {
-    open override var isFlipped: Bool {
-      return true
-    }
-  }
-#endif
 
-#if os(iOS) || os(tvOS)
-  extension View {
 
-    func setupSublabelScaling() {
-      guard managesSublabelScaling else { return }
-
-      baseSize = bounds.size
-      for label in descendantViews() as [Label] {
-        label.resetBaseFont()
-      }
-      setNeedsLayout()
-    }
-
-    func syncSublabelScaling() {
-      guard managesSublabelScaling else { return }
-
-      let factor = bounds.height / baseSize.height
-      for label in descendantViews() as [Label] {
-        label.syncFontSize(toFactor: factor)
-      }
-    }
-  }
-#endif
-
-extension View {
-
+  //extension View {
   #if os(iOS) || os(tvOS)
   override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
     if isTransparentToTouches {
@@ -184,9 +152,11 @@ extension View {
     }
   }
   #endif
-}
+  //}
 
-extension View {
+
+
+  //extension View {
   open func osDidSetNeedsDisplay() {
   }
 
@@ -203,18 +173,52 @@ extension View {
 
   #if os(macOS)
   override open var needsDisplay: Bool {
-    didSet {
-      osDidSetNeedsDisplay()
-    }
+  didSet {
+  osDidSetNeedsDisplay()
+  }
   }
 
   public func osSetNeedsDisplay() {
-    needsDisplay = true
+  needsDisplay = true
   }
 
   open override func setNeedsDisplay(_ rect: CGRect) {
-    super.setNeedsDisplay(rect)
-      osDidSetNeedsDisplay()
-    }
+  super.setNeedsDisplay(rect)
+  osDidSetNeedsDisplay()
+  }
   #endif
+  //}
 }
+
+#if os(macOS)
+  extension View {
+    open override var isFlipped: Bool {
+      return true
+    }
+  }
+#endif
+
+#if os(iOS) || os(tvOS)
+  extension View {
+
+    func setupSublabelScaling() {
+      guard managesSublabelScaling else { return }
+
+      baseSize = bounds.size
+      for label in descendantViews() as [Label] {
+        label.resetBaseFont()
+      }
+      setNeedsLayout()
+    }
+
+    func syncSublabelScaling() {
+      guard managesSublabelScaling else { return }
+
+      let factor = bounds.height / baseSize.height
+      for label in descendantViews() as [Label] {
+        label.syncFontSize(toFactor: factor)
+      }
+    }
+  }
+#endif
+

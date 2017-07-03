@@ -1404,8 +1404,8 @@
 				03353BD11EFCB7D900332365 /* Playgrounds */,
 				037F7ABF1EFDEA51005D7ABB /* Platforms */,
 				037F7AC01EFDEC0B005D7ABB /* Tests */,
-				03D8FF831EFC8C570000AAD5 /* Products */,
 				0360B5311F0062C600A49A9B /* Frameworks */,
+				03D8FF831EFC8C570000AAD5 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2569,7 +2569,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_tvOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Debug;
 		};
@@ -2593,7 +2593,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_tvOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Release;
 		};
@@ -2643,7 +2643,7 @@
 				INFOPLIST_FILE = WolfBase_macOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-macOS";
 				PRODUCT_NAME = WolfBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2668,7 +2668,7 @@
 				INFOPLIST_FILE = WolfBase_macOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-macOS";
 				PRODUCT_NAME = WolfBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2732,7 +2732,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_watchOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Debug;
 		};
@@ -2757,7 +2757,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_watchOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Release;
 		};
@@ -2826,8 +2826,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_INCLUDE_PATHS = "${SRCROOT}/CommonCrypto";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2879,7 +2877,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
 				SWIFT_INCLUDE_PATHS = "${SRCROOT}/CommonCrypto";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -2904,6 +2901,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-iOS";
 				PRODUCT_NAME = WolfBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_iOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -2927,6 +2925,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-iOS";
 				PRODUCT_NAME = WolfBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_iOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
