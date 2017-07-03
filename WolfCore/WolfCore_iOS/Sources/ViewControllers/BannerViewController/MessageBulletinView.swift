@@ -68,7 +68,7 @@ public class MessageBulletinView<B: MessageBulletin>: BulletinView<B> {
   public override func applySkin(_ skin: Skin) {
     super.applySkin(skin)
 
-    contentView.backgroundColor ©= skin.bulletinBackgroundColor
+    contentView.skin.viewBackgroundColor = skin.bulletinBackgroundColor
     titleLabel.fontStyle = skin.bulletinTitleStyle
     messageLabel.fontStyle = skin.bulletinMessageStyle
   }

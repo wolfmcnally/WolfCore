@@ -19,7 +19,7 @@ class MainViewController: BannerViewController {
     bulletinViewRegistry.register(bulletinType: MyMessageBulletin.self) {
       let myMessageBulletin = $0 as! MyMessageBulletin
       let view = MessageBulletinView(model: myMessageBulletin)
-      view.skin.viewBackgroundColor = myMessageBulletin.backgroundColor
+      view.skin.bulletinBackgroundColor = myMessageBulletin.backgroundColor
       return view
     }
   }

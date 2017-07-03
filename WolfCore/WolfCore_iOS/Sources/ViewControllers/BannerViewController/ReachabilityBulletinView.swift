@@ -24,8 +24,8 @@ public class ReachabilityBulletinView: MessageBulletinView<ReachabilityBulletin>
     return skin
   }()
 
-  public override func setup() {
-    super.setup()
+  public override func syncToModel() {
+    super.syncToModel()
     if model.flags.contains(.reachable) {
       skin = Self.reachableSkin
     } else {
