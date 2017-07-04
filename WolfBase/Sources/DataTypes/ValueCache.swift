@@ -6,9 +6,10 @@
 //  Copyright © 2017 WolfMcNally.com. All rights reserved.
 //
 
-public final class ValueCache {
+public final class ValueCache<N: Hashable> {
   private typealias `Self` = ValueCache
-  private typealias Dict = [AnyHashable : Any]
+  public typealias NameType = N
+  private typealias Dict = [NameType : Any]
   private var d: Dict
   
   public init() {
@@ -23,15 +24,15 @@ public final class ValueCache {
     return Self.init(d: d)
   }
   
-  public func set<T>(_ key: AnyHashable, to value: T) {
+  public func set<T>(_ key: NameType, to value: T) {
     d[key] = value
   }
   
-  public func get<T>(_ key: AnyHashable) -> T? {
+  public func get<T>(_ key: NameType) -> T? {
     return d[key] as? T
   }
   
-  public func get<T>(_ key: AnyHashable, with update: () -> T) -> T {
+  public func get<T>(_ key: NameType, with update: () -> T) -> T {
     if let value = d[key] {
       return value as! T
     } else {
@@ -40,8 +41,16 @@ public final class ValueCache {
       return value
     }
   }
-  
-  public func remove(_ key: AnyHashable) {
+
+  public func get<T>(_ key: NameType, _ update: @autoclosure () -> T) -> T {
+    return get(key, with: update)
+  }
+
+  public func remove(_ key: NameType) {
     d[key] = nil
+  }
+
+  public func removeAll() {
+    d.removeAll()
   }
 }

@@ -9,7 +9,7 @@
 import WolfBase
 
 public struct InterpolatedSkin: Skin {
-  public var cache = ValueCache()
+  public var cache = ValueCache<SkinKey>()
   public let skin1: Skin
   public let skin2: Skin
   public let frac: Frac

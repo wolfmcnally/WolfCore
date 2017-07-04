@@ -9,7 +9,7 @@
 import WolfBase
 
 public struct ConcreteSkin: Skin {
-  public var cache = ValueCache()
+  public var cache = ValueCache<SkinKey>()
   
   public init() {
   }

@@ -13,7 +13,7 @@
 #endif
 
 #if os(macOS)
-  public func newImage(withSize size: CGSize, opaque: Bool = false, background: NSColor? = nil, scale: CGFloat = 0.0, flipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock? = nil) -> NSImage {
+  public func newImage(withSize size: CGSize, opaque: Bool = false, background: NSColor? = nil, scale: CGFloat = 0.0, flipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> NSImage {
     let image = NSImage.init(size: size)
 
     let rep = NSBitmapImageRep.init(bitmapDataPlanes: nil,
@@ -52,13 +52,13 @@
       }
     }
 
-    drawing?(context)
+    drawing(context)
 
     image.unlockFocus()
     return image
   }
 #else
-  public func newImage(withSize size: CGSize, opaque: Bool = false, background: UIColor? = nil, scale: CGFloat = 0.0, flipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock? = nil) -> UIImage {
+  public func newImage(withSize size: CGSize, opaque: Bool = false, background: UIColor? = nil, scale: CGFloat = 0.0, flipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> UIImage {
     guard size.width > 0 && size.height > 0 else {
       fatalError("Size may not be empty.")
     }
@@ -77,7 +77,7 @@
       }
     }
 
-    drawing?(context)
+    drawing(context)
 
     let image = UIGraphicsGetImageFromCurrentImageContext()!.withRenderingMode(renderingMode)
     UIGraphicsEndImageContext()

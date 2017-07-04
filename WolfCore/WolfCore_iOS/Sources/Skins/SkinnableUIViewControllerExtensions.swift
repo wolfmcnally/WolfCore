@@ -48,7 +48,7 @@ extension UIViewController {
   
   public func _applySkin(_ skin: Skin) {
     func newSwatch(with color: UIColor) -> UIImage {
-      return newImage(withSize: CGSize(width: 16, height: 16), background: color)
+      return newImage(withSize: CGSize(width: 16, height: 16), background: color, drawing: { context in })
     }
     
     func applyTo(viewController: UIViewController) {
