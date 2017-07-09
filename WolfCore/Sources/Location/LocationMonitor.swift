@@ -19,6 +19,8 @@ public class LocationMonitor {
   public private(set) var recentLocations = [CLLocation]()
   private var isStarted: Bool = false
 
+  public var onLocationUpdated: ((LocationMonitor) -> Void)?
+
   public var location: CLLocation? {
     return locationManager.location
   }
@@ -28,6 +30,22 @@ public class LocationMonitor {
     locationManager.desiredAccuracy = desiredAccuracy
     locationManager.distanceFilter = distanceFilter
   }
+
+  #if os(macOS)
+  public func start() {
+    guard !isStarted else { return }
+
+    isStarted = true
+
+    locationManager.didUpdateLocations = { [unowned self] locations in
+      self.recentLocations = locations
+      self.onLocationUpdated?(self)
+      //logTrace(locations)
+    }
+
+    locationManager.startUpdatingLocation()
+  }
+  #endif
 
   #if os(iOS)
   public func start(from viewController: UIViewController) {
@@ -53,6 +71,7 @@ public class LocationMonitor {
 
     locationManager.didUpdateLocations = { [unowned self] locations in
       self.recentLocations = locations
+      self.onLocationUpdated?(self)
       //logTrace(locations)
     }
 

@@ -27,13 +27,13 @@ extension OSColor {
     return osColor.cgColor |> CGColor.toColor
   }
   
-  public class func diagonalStripesPattern(color1: OSColor, color2: OSColor, flipped: Bool = false) -> OSColor {
+  public class func diagonalStripesPattern(color1: OSColor, color2: OSColor, isFlipped: Bool = false) -> OSColor {
     let bounds = CGRect(origin: CGPoint.zero, size: CGSize(width: 64, height: 64))
-    let image = newImage(withSize: bounds.size, opaque: true, scale: mainScreenScale, renderingMode: .alwaysOriginal) { context in
+    let image = newImage(withSize: bounds.size, isOpaque: true, scale: mainScreenScale, renderingMode: .alwaysOriginal) { context in
       context.setFillColor(color1.cgColor)
       context.fill(bounds)
       let path = OSBezierPath()
-      if flipped {
+      if isFlipped {
         path.addClosedPolygon(withPoints: [bounds.maxXmidY, bounds.maxXminY, bounds.midXminY])
         path.addClosedPolygon(withPoints: [bounds.maxXmaxY, bounds.minXminY, bounds.minXmidY, bounds.midXmaxY])
       } else {

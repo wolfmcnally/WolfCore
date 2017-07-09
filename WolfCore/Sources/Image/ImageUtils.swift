@@ -13,14 +13,14 @@
 #endif
 
 #if os(macOS)
-  public func newImage(withSize size: CGSize, opaque: Bool = false, background: NSColor? = nil, scale: CGFloat = 0.0, flipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> NSImage {
+  public func newImage(withSize size: CGSize, isOpaque: Bool = false, background: NSColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> NSImage {
     let image = NSImage.init(size: size)
 
     let rep = NSBitmapImageRep.init(bitmapDataPlanes: nil,
                                     pixelsWide: Int(size.width),
                                     pixelsHigh: Int(size.height),
                                     bitsPerSample: 8,
-                                    samplesPerPixel: opaque ? 3 : 4,
+                                    samplesPerPixel: isOpaque ? 3 : 4,
                                     hasAlpha: true,
                                     isPlanar: false,
                                     colorSpaceName: NSColorSpaceName.calibratedRGB,
@@ -31,16 +31,17 @@
     image.lockFocus()
 
     let bounds = CGRect(origin: .zero, size: size)
-    let context = NSGraphicsContext.current!.cgContext
+    let nsContext = NSGraphicsContext.current!
+    let context = nsContext.cgContext
 
-    if opaque {
+    if isOpaque {
       context.setFillColor(OSColor.black.cgColor)
       context.fill(bounds)
     } else {
       context.clear(bounds)
     }
 
-    if flipped {
+    if isFlipped {
       context.translateBy(x: 0.0, y: size.height)
       context.scaleBy(x: 1.0, y: -1.0)
     }
@@ -53,19 +54,20 @@
     }
 
     drawing(context)
+    nsContext.flushGraphics()
 
     image.unlockFocus()
     return image
   }
 #else
-  public func newImage(withSize size: CGSize, opaque: Bool = false, background: UIColor? = nil, scale: CGFloat = 0.0, flipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> UIImage {
+  public func newImage(withSize size: CGSize, isOpaque: Bool = false, background: UIColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> UIImage {
     guard size.width > 0 && size.height > 0 else {
       fatalError("Size may not be empty.")
     }
-    UIGraphicsBeginImageContextWithOptions(size, opaque, scale)
+    UIGraphicsBeginImageContextWithOptions(size, isOpaque, scale)
     let context = currentGraphicsContext
 
-    if flipped {
+    if isFlipped {
       context.translateBy(x: 0.0, y: size.height)
       context.scaleBy(x: 1.0, y: -1.0)
     }
