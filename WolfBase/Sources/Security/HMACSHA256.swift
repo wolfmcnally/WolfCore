@@ -38,10 +38,6 @@ public struct HMACSHA256 {
       }
     }
   }
-  
-  public init(_ dataKey: (Data, Data)) {
-    self.init(data: dataKey.0, key: dataKey.1)
-  }
 
   public static func test() {
     // $ openssl dgst -sha256 -hmac "secret"
@@ -66,6 +62,6 @@ extension HMACSHA256: CustomStringConvertible {
 
 extension String {
   public init(hmacsha256: HMACSHA256) {
-    self.init(hmacsha256.description)!
+    self.init(hmacsha256.description)
   }
 }

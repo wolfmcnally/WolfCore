@@ -74,7 +74,7 @@ public class PDF {
     let cropBox = page.getBoxRect(.cropBox)
     let scaling = CGVector(size: bounds.size) / CGVector(size: cropBox.size)
     let transform = CGAffineTransform(scaling: scaling)
-    return newImage(withSize: size, opaque: false, scale: scale, flipped: true, renderingMode: renderingMode) { context in
+    return newImage(withSize: size, isOpaque: false, scale: scale, isFlipped: true, renderingMode: renderingMode) { context in
       context.concatenate(transform)
       context.drawPDFPage(page)
     }

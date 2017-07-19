@@ -60,7 +60,7 @@ extension Skin {
     set { set(.tintColor, to: newValue) }
   }
   public var highlightedTintColor: Color {
-    get { return get(.tintColor, tintColor.withAlpha(0.5)) }
+    get { return get(.tintColor, tintColor.withAlphaComponent(0.5)) }
     set { set(.tintColor, to: newValue) }
   }
   public var textColor: Color {
@@ -163,7 +163,7 @@ extension Skin {
     set { set(.currentPageIndicatorTintColor, to: newValue) }
   }
   public var pageIndicatorTintColor: Color {
-    get { return get(.pageIndicatorTintColor, currentPageIndicatorTintColor.withAlpha(0.3)) }
+    get { return get(.pageIndicatorTintColor, currentPageIndicatorTintColor.withAlphaComponent(0.3)) }
     set { set(.pageIndicatorTintColor, to: newValue) }
   }
 }

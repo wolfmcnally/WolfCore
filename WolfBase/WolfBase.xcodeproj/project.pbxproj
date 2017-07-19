@@ -87,6 +87,10 @@
 		031DEEC61EFEF1FD001DCF3F /* Lorem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEEC51EFEF1F9001DCF3F /* Lorem.swift */; };
 		031DEEC71EFEF1FD001DCF3F /* Lorem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEEC51EFEF1F9001DCF3F /* Lorem.swift */; };
 		031DEEC81EFEF1FE001DCF3F /* Lorem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEEC51EFEF1F9001DCF3F /* Lorem.swift */; };
+		0327AED91F14458400ECB8BE /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0327AED81F14458400ECB8BE /* Time.swift */; };
+		0327AEDA1F14458400ECB8BE /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0327AED81F14458400ECB8BE /* Time.swift */; };
+		0327AEDB1F14458400ECB8BE /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0327AED81F14458400ECB8BE /* Time.swift */; };
+		0327AEDC1F14458400ECB8BE /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0327AED81F14458400ECB8BE /* Time.swift */; };
 		032C4D6F1EFCCA02004E03DD /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032C4D6E1EFCCA02004E03DD /* BinarySearch.swift */; };
 		032C4D711EFCCA58004E03DD /* RunningAverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032C4D701EFCCA58004E03DD /* RunningAverage.swift */; };
 		032C4D741EFCCB3D004E03DD /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032C4D731EFCCAE1004E03DD /* StringExtensions.swift */; };
@@ -755,6 +759,7 @@
 		031DEECF1EFEF6CC001DCF3F /* WolfBase_macOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfBase_macOS-Bridging-Header.h"; path = "../WolfBase_macOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		031DEED01EFEF71C001DCF3F /* WolfBase_tvOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfBase_tvOS-Bridging-Header.h"; path = "../WolfBase_tvOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		031DEED11EFEF768001DCF3F /* WolfBase_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfBase_iOS-Bridging-Header.h"; path = "../WolfBase_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		0327AED81F14458400ECB8BE /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		032C4D6E1EFCCA02004E03DD /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 		032C4D701EFCCA58004E03DD /* RunningAverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningAverage.swift; sourceTree = "<group>"; };
 		032C4D731EFCCAE1004E03DD /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -1089,6 +1094,7 @@
 				03EF4F611EFF22270002E947 /* ValueCache.swift */,
 				03EF4F621EFF22270002E947 /* Weak.swift */,
 				03EF4F5E1EFF22270002E947 /* WeakSet.swift */,
+				0327AED81F14458400ECB8BE /* Time.swift */,
 			);
 			path = DataTypes;
 			sourceTree = "<group>";
@@ -1880,6 +1886,7 @@
 				03EF4FCE1EFF52F70002E947 /* CreateRegularExpressionOperator.swift in Sources */,
 				03EF4FD91EFF54C50002E947 /* AttributedSubstring.swift in Sources */,
 				038FA03A1F071BD8001B37C4 /* Runes.swift in Sources */,
+				0327AEDA1F14458400ECB8BE /* Time.swift in Sources */,
 				03EF4ECF1EFF1D6A0002E947 /* AspectRatio.swift in Sources */,
 				031DEEA11EFEF0F1001DCF3F /* Serializer.swift in Sources */,
 				03EF4F9B1EFF27800002E947 /* NestingOperator.swift in Sources */,
@@ -2058,6 +2065,7 @@
 				03EF4FCF1EFF52F70002E947 /* CreateRegularExpressionOperator.swift in Sources */,
 				03EF4FDA1EFF54C50002E947 /* AttributedSubstring.swift in Sources */,
 				038FA03D1F071BD9001B37C4 /* Runes.swift in Sources */,
+				0327AEDB1F14458400ECB8BE /* Time.swift in Sources */,
 				03EF4ED71EFF1D6A0002E947 /* AspectRatio.swift in Sources */,
 				031DEEAC1EFEF0F1001DCF3F /* Serializer.swift in Sources */,
 				03EF4F9C1EFF27800002E947 /* NestingOperator.swift in Sources */,
@@ -2176,6 +2184,7 @@
 			files = (
 				037F7A871EFDE001005D7ABB /* Lerp.swift in Sources */,
 				038FA0AA1F072A3D001B37C4 /* OutputStreamUtils.swift in Sources */,
+				0327AEDC1F14458400ECB8BE /* Time.swift in Sources */,
 				03B2E3CA1F008353002856DD /* SQLite.swift in Sources */,
 				037F7A591EFDDFF8005D7ABB /* PipeOperator.swift in Sources */,
 				035B6FB31EFF0E6E001E293C /* EmailValidator.swift in Sources */,
@@ -2396,6 +2405,7 @@
 				03EF4ECE1EFF1D690002E947 /* Vector.swift in Sources */,
 				03EF4FCD1EFF52F70002E947 /* CreateRegularExpressionOperator.swift in Sources */,
 				038FA0371F071BD8001B37C4 /* Runes.swift in Sources */,
+				0327AED91F14458400ECB8BE /* Time.swift in Sources */,
 				03EF4FD81EFF54C50002E947 /* AttributedSubstring.swift in Sources */,
 				03EF4EC71EFF1D690002E947 /* AspectRatio.swift in Sources */,
 				031DEE961EFEF0F0001DCF3F /* Serializer.swift in Sources */,

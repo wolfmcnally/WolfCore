@@ -163,6 +163,7 @@ open class View: OSView, Skinnable {
   #if os(iOS) || os(tvOS)
   override open func setNeedsDisplay() {
     super.setNeedsDisplay()
+    guard !frame.isEmpty else { return }
     osDidSetNeedsDisplay()
   }
 
@@ -173,18 +174,20 @@ open class View: OSView, Skinnable {
 
   #if os(macOS)
   override open var needsDisplay: Bool {
-  didSet {
-  osDidSetNeedsDisplay()
-  }
+    didSet {
+      guard !frame.isEmpty else { return }
+      osDidSetNeedsDisplay()
+    }
   }
 
   public func osSetNeedsDisplay() {
-  needsDisplay = true
+    needsDisplay = true
   }
 
   open override func setNeedsDisplay(_ rect: CGRect) {
-  super.setNeedsDisplay(rect)
-  osDidSetNeedsDisplay()
+    super.setNeedsDisplay(rect)
+    guard !frame.isEmpty else { return }
+    osDidSetNeedsDisplay()
   }
   #endif
   //}

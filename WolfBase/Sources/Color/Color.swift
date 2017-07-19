@@ -210,7 +210,7 @@ public struct Color {
     return red * 0.2126 + green * 0.7152 + blue * 0.0722
   }
 
-  public func withAlpha(_ alpha: Frac) -> Color {
+  public func withAlphaComponent(_ alpha: Frac) -> Color {
     return Color(color: self, alpha: alpha)
   }
 

@@ -51,7 +51,7 @@ extension String {
   ///
   /// May be used as a monad transformer.
   public init(utf8: UTF8) {
-    self.init(utf8.string)!
+    self.init(utf8.string)
   }
 }
 

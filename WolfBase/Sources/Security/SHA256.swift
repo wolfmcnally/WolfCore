@@ -59,6 +59,6 @@ extension SHA256: CustomStringConvertible {
 
 extension String {
   public init(sha256: SHA256) {
-    self.init(sha256.description)!
+    self.init(sha256.description)
   }
 }

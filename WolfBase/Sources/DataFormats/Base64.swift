@@ -54,7 +54,7 @@ extension String {
   ///
   /// May be used as a monad transformer.
   public init(base64: Base64) {
-    self.init(base64.string)!
+    self.init(base64.string)
   }
 }
 

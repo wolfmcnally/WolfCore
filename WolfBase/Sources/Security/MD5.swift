@@ -59,6 +59,6 @@ extension MD5: CustomStringConvertible {
 
 extension String {
     public init(md5: MD5) {
-        self.init(md5.description)!
+        self.init(md5.description)
     }
 }

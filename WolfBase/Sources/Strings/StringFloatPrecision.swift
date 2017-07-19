@@ -13,7 +13,7 @@ extension String {
     formatter.usesGroupingSeparator = false
     formatter.minimumFractionDigits = 0
     formatter.maximumFractionDigits = precision
-    self.init(formatter.string(from: NSNumber(value: value))!)!
+    self.init(formatter.string(from: NSNumber(value: value))!)
   }
 
   public init(value: Float, precision: Int) {

@@ -21,7 +21,7 @@
                                     pixelsHigh: Int(size.height),
                                     bitsPerSample: 8,
                                     samplesPerPixel: isOpaque ? 3 : 4,
-                                    hasAlpha: true,
+                                    hasAlpha: !isOpaque,
                                     isPlanar: false,
                                     colorSpaceName: NSColorSpaceName.calibratedRGB,
                                     bytesPerRow: 0,
@@ -34,27 +34,25 @@
     let nsContext = NSGraphicsContext.current!
     let context = nsContext.cgContext
 
-    if isOpaque {
-      context.setFillColor(OSColor.black.cgColor)
-      context.fill(bounds)
-    } else {
-      context.clear(bounds)
+    drawInto(context) { context in
+      if isOpaque {
+        context.setFillColor(background?.cgColor ?? OSColor.black.cgColor)
+        context.fill(bounds)
+      } else {
+        context.clear(bounds)
+        if let background = background {
+          context.setFillColor(background.cgColor)
+          context.fill(bounds)
+        }
+      }
     }
 
-    if isFlipped {
+    if !isFlipped {
       context.translateBy(x: 0.0, y: size.height)
       context.scaleBy(x: 1.0, y: -1.0)
     }
 
-    if let background = background {
-      drawInto(context) { context in
-        context.setFillColor(background.cgColor)
-        context.fill(CGRect(origin: .zero, size: size))
-      }
-    }
-
     drawing(context)
-    nsContext.flushGraphics()
 
     image.unlockFocus()
     return image

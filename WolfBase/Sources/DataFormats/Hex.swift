@@ -25,17 +25,29 @@ public struct Hex {
   /// May be used as a monad transformer.
   public init(string: String) throws {
     let charactersCount = string.characters.count
-    guard charactersCount % 2 == 0 else {
-      throw Error.invalid
-    }
-    let bytesCount = charactersCount / 2
-    
-    var data = Data(count: bytesCount)
-    for (index, s) in string.split(by: 2).enumerated() {
-      guard let b = UInt8(s, radix: 16) else {
+
+    var data: Data
+
+    if charactersCount == 1 {
+      guard let b = UInt8(string, radix: 16) else {
         throw Error.invalid
       }
-      data[index] = b
+      data = Data(count: 1)
+      data[0] = b
+    } else {
+      guard charactersCount % 2 == 0 else {
+        throw Error.invalid
+      }
+
+      let bytesCount = charactersCount / 2
+
+      data = Data(count: bytesCount)
+      for (index, s) in string.split(by: 2).enumerated() {
+        guard let b = UInt8(s, radix: 16) else {
+          throw Error.invalid
+        }
+        data[index] = b
+      }
     }
     
     self.data = data
@@ -75,7 +87,7 @@ extension String {
   ///
   /// May be used as a monad transformer.
   public init(hex: Hex) {
-    self.init(hex.string)!
+    self.init(hex.string)
   }
 }
 

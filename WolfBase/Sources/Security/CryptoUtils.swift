@@ -236,7 +236,10 @@ public class CryptoKey: CustomStringConvertible {
       nextFieldIndex += 1
       if !fieldName.hasPrefix("-") {
         if data.count == 3 && fieldName == "e" {
-          dict[fieldName] = Int(data[0]) << 16 | Int(data[1]) << 8 | Int(data[2])
+          let a = Int(data[0]) << 16
+          let b = Int(data[1]) << 8
+          let c = Int(data[2])
+          dict[fieldName] = a | b | c
         } else {
           dict[fieldName] = data
         }

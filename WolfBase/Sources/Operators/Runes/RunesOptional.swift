@@ -57,9 +57,11 @@ public func <^> <T, U>(f: (T) throws -> U, a: T?) rethrows -> U? {
 
  - returns: A value of type `Optional<U>`
  */
+#if false
 public func <*> <T, U>(f: ((T) throws -> U)?, a: T?) rethrows -> U? {
   return try a.apply(f)
 }
+#endif
 
 /**
  flatMap a function over an optional value (left associative)
@@ -143,7 +145,7 @@ public extension Optional {
 
    - returns: A value of type `Optional<U>`
    */
-  func apply<U>(_ f: ((Wrapped) throws -> U)?) rethrows -> U? {
-    return try f.flatMap { try self.map($0) }
-  }
+//  func apply<U>(_ f: ((Wrapped) throws -> U)?) rethrows -> U? {
+//    return try f.flatMap { try self.map($0) }
+//  }
 }

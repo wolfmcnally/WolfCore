@@ -445,6 +445,11 @@
 		03B2E4431F00A209002856DD /* ResourceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E4401F00A209002856DD /* ResourceUtils.swift */; };
 		03B2E4451F00A23B002856DD /* ResourceUtils-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E4441F00A23B002856DD /* ResourceUtils-iOS.swift */; };
 		03B2E4461F00A23B002856DD /* ResourceUtils-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E4441F00A23B002856DD /* ResourceUtils-iOS.swift */; };
+		03E483511F1EB466006252B0 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E483501F1EB466006252B0 /* ImageView.swift */; };
+		03E483531F1ED544006252B0 /* DrawCrossedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E483521F1ED544006252B0 /* DrawCrossedBox.swift */; };
+		03E483541F1ED544006252B0 /* DrawCrossedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E483521F1ED544006252B0 /* DrawCrossedBox.swift */; };
+		03E483551F1ED544006252B0 /* DrawCrossedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E483521F1ED544006252B0 /* DrawCrossedBox.swift */; };
+		03E483561F1ED544006252B0 /* DrawCrossedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E483521F1ED544006252B0 /* DrawCrossedBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -702,6 +707,8 @@
 		03B2E4371F00A152002856DD /* OSNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSNib.swift; sourceTree = "<group>"; };
 		03B2E4401F00A209002856DD /* ResourceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceUtils.swift; sourceTree = "<group>"; };
 		03B2E4441F00A23B002856DD /* ResourceUtils-iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResourceUtils-iOS.swift"; sourceTree = "<group>"; };
+		03E483501F1EB466006252B0 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		03E483521F1ED544006252B0 /* DrawCrossedBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawCrossedBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1296,6 +1303,7 @@
 			isa = PBXGroup;
 			children = (
 				0360B4E81F005C7400A49A9B /* ViewExtensions-macOS.swift */,
+				03E483501F1EB466006252B0 /* ImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1323,6 +1331,7 @@
 			children = (
 				038FA04C1F071FE3001B37C4 /* InFlightTokenView.swift */,
 				038FA0511F07206D001B37C4 /* InFlightView.swift */,
+				03E483521F1ED544006252B0 /* DrawCrossedBox.swift */,
 			);
 			path = Developer;
 			sourceTree = "<group>";
@@ -1839,6 +1848,7 @@
 				03B2E4011F008F16002856DD /* ImageViewerDismissGestureRecognizer.swift in Sources */,
 				03B2E41F1F009660002856DD /* BarButtonItemAction.swift in Sources */,
 				0360B3DC1F004D7600A49A9B /* ApplicationNotificationActions.swift in Sources */,
+				03E483531F1ED544006252B0 /* DrawCrossedBox.swift in Sources */,
 				0360B4811F004F5600A49A9B /* RectExtensions.swift in Sources */,
 				0360B4DC1F0059D500A49A9B /* VerticalStackView.swift in Sources */,
 				0360B3DB1F004D7600A49A9B /* AppInfo.swift in Sources */,
@@ -1931,6 +1941,7 @@
 				0360B4A31F004F7E00A49A9B /* DebugIdentifier.swift in Sources */,
 				0360B4731F004F2A00A49A9B /* OSImageRenderingMode.swift in Sources */,
 				0360B4741F004F2A00A49A9B /* PDF.swift in Sources */,
+				03E483561F1ED544006252B0 /* DrawCrossedBox.swift in Sources */,
 				0360B4A21F004F7E00A49A9B /* Associated.swift in Sources */,
 				038F9FEE1F071230001B37C4 /* LocationMonitor.swift in Sources */,
 				0360B4251F004E2E00A49A9B /* FontFamilyName.swift in Sources */,
@@ -2063,6 +2074,7 @@
 				0360B46A1F004F2900A49A9B /* OSImageOrientation.swift in Sources */,
 				035DAA821EFFA093001040CE /* ResponderExtensions.swift in Sources */,
 				0360B4471F004ED500A49A9B /* InterpolatedSkin.swift in Sources */,
+				03E483551F1ED544006252B0 /* DrawCrossedBox.swift in Sources */,
 				035B6F8C1EFF0D76001E293C /* TableViewCell.swift in Sources */,
 				0360B4651F004F2900A49A9B /* CGUtils.swift in Sources */,
 				0360B3C11F004D1500A49A9B /* OSColor.swift in Sources */,
@@ -2088,6 +2100,7 @@
 				0360B4431F004ED400A49A9B /* SkinKey.swift in Sources */,
 				0360B4611F004F2900A49A9B /* OSImage.swift in Sources */,
 				0360B4891F004F5700A49A9B /* SizeExtensions.swift in Sources */,
+				03E483541F1ED544006252B0 /* DrawCrossedBox.swift in Sources */,
 				0360B4C51F00567E00A49A9B /* OSTouch.swift in Sources */,
 				0360B49E1F004F7D00A49A9B /* Associated.swift in Sources */,
 				0360B45D1F004F2900A49A9B /* CGUtils.swift in Sources */,
@@ -2114,6 +2127,7 @@
 				0381CD1F1F072E23001510EA /* StoreManager.swift in Sources */,
 				0360B49F1F004F7D00A49A9B /* DebugIdentifier.swift in Sources */,
 				0360B4E91F005C7400A49A9B /* ViewExtensions-macOS.swift in Sources */,
+				03E483511F1EB466006252B0 /* ImageView.swift in Sources */,
 				038F9FDF1F07011C001B37C4 /* Hideable.swift in Sources */,
 				0360B4401F004ED400A49A9B /* ConcreteSkin.swift in Sources */,
 				0360B4421F004ED400A49A9B /* Skin.swift in Sources */,

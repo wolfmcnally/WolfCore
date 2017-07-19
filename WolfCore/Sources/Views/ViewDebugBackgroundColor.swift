@@ -77,10 +77,10 @@ extension OSView {
     let n = Color(self.normalBackgroundColor!)
     let d = Color(self.debugBackgroundColor!)
 
-    let n2 = blend(from: .white, to: n, at: n.alpha).withAlpha(1)
-    let d2 = d.withAlpha(1)
+    let n2 = blend(from: .white, to: n, at: n.alpha).withAlphaComponent(1)
+    let d2 = d.withAlphaComponent(1)
     let c = blend(from: n2, to: d2, at: 0.5)
-    let c2 = c.withAlpha(0.5)
+    let c2 = c.withAlphaComponent(0.5)
     return c2.osColor
   }
 

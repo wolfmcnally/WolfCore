@@ -16,6 +16,21 @@ extension OSImage {
   }
 }
 
+extension OSImage {
+  public func newMask() -> CGImage {
+    let cgImage = self.cgImage!
+    return CGImage(
+      maskWidth: cgImage.width,
+      height: cgImage.height,
+      bitsPerComponent: cgImage.bitsPerComponent,
+      bitsPerPixel: cgImage.bitsPerPixel,
+      bytesPerRow: cgImage.bytesPerRow,
+      provider: cgImage.dataProvider!,
+      decode: nil,
+      shouldInterpolate: false)!
+  }
+}
+
 #if os(macOS)
   extension OSImage {
     public convenience init?(named name: String, in bundle: Bundle?) {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public func binarySearch<T: BinaryFloatingPoint>(interval: Interval<T>, start: T, compare: (T) -> ComparisonResult) -> T {
+@discardableResult public func binarySearch<T: BinaryFloatingPoint>(interval: Interval<T>, start: T, compare: (T) -> ComparisonResult) -> T {
   var current = start
   var interval = interval
   while true {

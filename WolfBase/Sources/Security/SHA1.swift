@@ -59,6 +59,6 @@ extension SHA1: CustomStringConvertible {
 
 extension String {
   public init(sha1: SHA1) {
-    self.init(sha1.description)!
+    self.init(sha1.description)
   }
 }

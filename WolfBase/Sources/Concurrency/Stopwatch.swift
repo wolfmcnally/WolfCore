@@ -29,4 +29,17 @@ public class Stopwatch {
     let stopTime = self.stopTime ?? Date()
     return stopTime.timeIntervalSince(startTime)
   }
+
+  public func after(_ timeInterval: TimeInterval, perform block: Block) {
+    if elapsedTime! > timeInterval {
+      block()
+    }
+  }
+
+  public func every(_ timeInterval: TimeInterval, perform block: Block) {
+    if elapsedTime! > timeInterval {
+      block()
+      start()
+    }
+  }
 }

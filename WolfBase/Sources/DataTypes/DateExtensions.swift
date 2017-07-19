@@ -111,11 +111,14 @@ extension Date {
 }
 
 extension Date {
-  public var julianDay: Int {
+  public var julianMoment: Double {
     let secondsPerDay =  86400.0  // 24 * 60 * 60
     let gregorian20010101 = 2451910.5 // Julian date of 00:00 UT on 1st Jan 2001 which is NSDate's reference date.
-    let julianDate = self.timeIntervalSinceReferenceDate / secondsPerDay + gregorian20010101
-    let julianDayNumber = Int(round(julianDate))
+    return self.timeIntervalSinceReferenceDate / secondsPerDay + gregorian20010101
+  }
+
+  public var julianDay: Int {
+    let julianDayNumber = Int(round(julianMoment))
     return julianDayNumber
   }
 }

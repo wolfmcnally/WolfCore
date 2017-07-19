@@ -10,7 +10,7 @@ import UIKit
 import WolfBase
 
 public class MessageBulletinView<B: MessageBulletin>: BulletinView<B> {
-  private lazy var contentView: View = .init() • { 🍒 in
+  private lazy var contentView: View = View() • { 🍒 in
     🍒.layer.cornerRadius = 4
     🍒.clipsToBounds = true
   }

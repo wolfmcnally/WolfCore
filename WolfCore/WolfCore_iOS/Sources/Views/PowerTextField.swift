@@ -512,7 +512,7 @@ public class PowerTextField: View, Editable {
     🍒.delegate = self
   }
 
-  private lazy var textView = TextView() • { 🍒 in
+  private lazy var textView: TextView = .init() • { 🍒 in
     🍒.contentInset = .zero
     🍒.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: -4)
     🍒.scrollsToTop = false

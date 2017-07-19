@@ -81,7 +81,7 @@ extension String {
   ///
   /// May be used as a monad transformer.
   public init(uniqueID: UniqueID) {
-    self.init(uniqueID.string)!
+    self.init(uniqueID.string)
   }
 }
 

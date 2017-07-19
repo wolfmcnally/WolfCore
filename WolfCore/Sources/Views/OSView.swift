@@ -10,6 +10,7 @@
   import Cocoa
   public typealias OSView = NSView
   public typealias OSStackView = NSStackView
+  public typealias OSImageView = NSImageView
   public typealias OSEdgeInsets = NSEdgeInsets
   public let OSEdgeInsetsZero = NSEdgeInsetsZero
   public let OSViewNoIntrinsicMetric = NSView.noIntrinsicMetric
@@ -17,6 +18,7 @@
   import UIKit
   public typealias OSView = UIView
   public typealias OSStackView = UIStackView
+  public typealias OSImageView = UIImageView
   public typealias OSEdgeInsets = UIEdgeInsets
   public let OSEdgeInsetsZero = UIEdgeInsets.zero
   public let OSViewNoIntrinsicMetric = UIViewNoIntrinsicMetric

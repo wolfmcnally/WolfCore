@@ -43,6 +43,14 @@ public class LocationMonitor {
       //logTrace(locations)
     }
 
+//    locationManager.didChangeAuthorizationStatus = { authorizationStatus in
+//      print("authorizationStatus: \(authorizationStatus)")
+//    }
+//
+//    locationManager.didFail = { error in
+//      print("didFail: \(error)")
+//    }
+
     locationManager.startUpdatingLocation()
   }
   #endif
