@@ -28,6 +28,7 @@ extension UIViewController {
 extension UIViewController {
   public var skin: Skin! {
     get {
+      guard skinsEnabled else { return nil }
       if let s = privateSkin {
         return s
       } else {
@@ -126,6 +127,7 @@ extension UIViewController {
 
   #if !os(tvOS)
     public func _preferredStatusBarStyle(for skin: Skin?) -> UIStatusBarStyle {
+      guard skinsEnabled else { return .default }
       let style = skin?.statusBarStyle ?? .default
       logTrace("style: \(style.rawValue)", obj: self, group: .statusBar)
       return style
@@ -173,6 +175,7 @@ extension UIViewController {
   }
   
   public func propagateSkin(why: String) {
+    guard skinsEnabled else { return }
     skinIndentLevel += 1
     defer { skinIndentLevel -= 1 }
     

@@ -8,6 +8,8 @@
 
 import WolfBase
 
+public var skinsEnabled = false
+
 public protocol Skin {
   var identifierPath: String { get }
   mutating func addIdentifier(_ id: String)

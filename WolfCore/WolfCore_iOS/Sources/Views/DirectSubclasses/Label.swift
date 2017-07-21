@@ -52,6 +52,7 @@ open class Label: OSLabel, Skinnable {
   
   open override var text: String? {
     didSet {
+      guard skinsEnabled else { return }
       syncToSkin(skin)
     }
   }
@@ -110,6 +111,7 @@ open class Label: OSLabel, Skinnable {
   }
   
   private func syncToSkin(_ skin: Skin) {
+    guard skinsEnabled else { return }
     let style = skin.labelStyle
     textColor ©= style.color
     font = style.font

@@ -112,7 +112,7 @@ open class View: OSView, Skinnable {
       isMultipleTouchEnabled = view.isMultipleTouchEnabled
     #endif
     alpha = view.alpha
-    backgroundColor = view.backgroundColor
+    normalBackgroundColor = view.backgroundColor
     tintColor = view.tintColor
     isOpaque = view.isOpaque
     isHidden = view.isHidden

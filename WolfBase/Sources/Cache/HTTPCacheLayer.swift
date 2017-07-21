@@ -7,6 +7,32 @@
 //
 
 import Foundation
+#if os(macOS)
+  import AppKit
+  public typealias OSImage = NSImage
+#elseif !os(Linux)
+  import UIKit
+  public typealias OSImage = UIImage
+#endif
+
+#if !os(Linux)
+// Support the Serializable protocol used for caching
+extension OSImage: Serializable {
+  public typealias ValueType = OSImage
+
+  public func serialize() -> Data {
+    return NSKeyedArchiver.archivedData(withRootObject: self)
+  }
+
+  public static func deserialize(from data: Data) throws -> OSImage {
+    if let image = NSKeyedUnarchiver.unarchiveObject(with: data) as? OSImage {
+      return image
+    } else {
+      throw ValidationError(message: "Invalid image data.", violation: "imageFormat")
+    }
+  }
+}
+#endif
 
 public class HTTPCacheLayer: CacheLayer {
   public init() {
@@ -42,24 +68,24 @@ public class HTTPCacheLayer: CacheLayer {
       }
       
       let data = promise.value!
-      return data
-      
-      //      if let contentType = contentType {
-      //        switch contentType {
-      //        case ContentType.jpg, ContentType.png, ContentType.gif:
-      //          if let serializedImageData = OSImage(data: data)?.serialize() {
-      //            return serializedImageData
-      //          } else {
-      //            throw CacheError.badImageData(url)
-      //          }
-      //        case ContentType.pdf:
-      //          return data
-      //        default:
-      //          throw CacheError.unsupportedEncoding(url, contentType.rawValue)
-      //        }
-      //      } else {
-      //        return data
-      //      }
+//      return data
+
+        if let contentType = contentType {
+        switch contentType {
+        case ContentType.jpg, ContentType.png, ContentType.gif:
+          if let serializedImageData = OSImage(data: data)?.serialize() {
+            return serializedImageData
+          } else {
+            throw CacheError.badImageData(url)
+          }
+        case ContentType.pdf:
+          return data
+        default:
+          throw CacheError.unsupportedEncoding(url, contentType.rawValue)
+        }
+      } else {
+        return data
+      }
       }.recover { (error, promise) in
         if error.httpStatusCode == .notFound {
           promise.fail(CacheError.miss(url))
