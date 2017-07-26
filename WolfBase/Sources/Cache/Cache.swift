@@ -13,7 +13,7 @@ public enum CacheError: Error {
   case miss(URL)
   case unsupportedEncoding(URL, String)
   case unsupportedContentType(URL, String)
-  //case badImageData(URL)
+  case badImageData(URL)
 }
 
 extension Error {

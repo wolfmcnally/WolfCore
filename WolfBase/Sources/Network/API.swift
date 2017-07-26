@@ -85,7 +85,7 @@ open class API<T: AuthorizationProtocol> {
   public func newPromise<T>(method: HTTPMethod, path: [Any]? = nil, query: [String : String]? = nil, isAuth: Bool = true, body json: JSON? = nil, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil, with f: @escaping (JSON) throws -> T) -> Promise<T> {
     do {
       let request = try self.newRequest(method: method, path: path, query: query, isAuth: isAuth, body: json)
-      return HTTP.retrieveJSONDictionary(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock).then { json in
+      return HTTP.retrieveJSON(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock).then { json in
         return try f(json)
         }.recover { (error, promise) in
           self.handle(error: error, promise: promise)

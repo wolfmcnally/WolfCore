@@ -39,6 +39,7 @@ extension OSView {
 extension OSView {
   public var skin: Skin! {
     get {
+      guard skinsEnabled else { return nil }
       if let s = privateSkin {
         return s
       } else if let s = superview?.skin {
@@ -113,6 +114,7 @@ extension OSView {
   }
   
   public func propagateSkin(why: String) {
+    guard skinsEnabled else { return }
     let skin = self.skin!
     logTrace("💟 [\(why)] \(skin.identifierPath) ⏩ \(self††)", group: .skinV)
     OSView.propagate(skin: skin, to: self)

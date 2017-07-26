@@ -21,6 +21,14 @@ extension URL {
   }
 }
 
+extension URL {
+  public func convertedToHTTPS() -> URL {
+    var comps = URLComponents(url: self, resolvingAgainstBaseURL: false)!
+    comps.scheme = HTTPScheme.https.rawValue
+    return comps.url!
+  }
+}
+
 extension String {
   public static func url(from string: String) throws -> URL {
     guard let url = URL(string: string) else {
