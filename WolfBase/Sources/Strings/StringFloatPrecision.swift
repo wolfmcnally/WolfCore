@@ -21,7 +21,7 @@ extension String {
   }
 }
 
-infix operator %%
+infix operator %% : AttributeAssignmentPrecedence
 
 public func %% (left: Double, right: Int) -> String {
   return String(value: left, precision: right)

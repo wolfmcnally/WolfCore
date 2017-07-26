@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfBase
 
 private let gestureActionSelector = #selector(GestureRecognizerAction.gestureAction)
 
@@ -16,7 +17,8 @@ public class GestureRecognizerAction: NSObject, OSGestureRecognizerDelegate {
   public var action: GestureBlock?
   public let gestureRecognizer: OSGestureRecognizer
   public var shouldReceiveTouch: ((OSTouch) -> Bool)?
-  
+  public var shouldBegin: (() -> Bool)?
+
   public init(gestureRecognizer: OSGestureRecognizer, action: GestureBlock? = nil) {
     self.gestureRecognizer = gestureRecognizer
     self.action = action
@@ -31,30 +33,34 @@ public class GestureRecognizerAction: NSObject, OSGestureRecognizerDelegate {
   }
   
   deinit {
-        #if os(iOS) || os(tvOS)
-            gestureRecognizer.removeTarget(self, action: gestureActionSelector)
-        #else
-            gestureRecognizer.target = nil
-            gestureRecognizer.action = nil
-        #endif
-    }
+    #if os(iOS) || os(tvOS)
+      gestureRecognizer.removeTarget(self, action: gestureActionSelector)
+    #else
+      gestureRecognizer.target = nil
+      gestureRecognizer.action = nil
+    #endif
+  }
 
-    @objc public func gestureAction() {
-        action?(gestureRecognizer)
-    }
+  @objc public func gestureAction() {
+    action?(gestureRecognizer)
+  }
 
-    public func gestureRecognizer(_ gestureRecognizer: OSGestureRecognizer, shouldReceive touch: OSTouch) -> Bool {
-        return shouldReceiveTouch?(touch) ?? true
-    }
+  public func gestureRecognizer(_ gestureRecognizer: OSGestureRecognizer, shouldReceive touch: OSTouch) -> Bool {
+    return shouldReceiveTouch?(touch) ?? true
+  }
+
+  public func gestureRecognizerShouldBegin(_ gestureRecognizer: OSGestureRecognizer) -> Bool {
+    return shouldBegin?() ?? true
+  }
 }
 
 extension OSView {
-    public func addAction<G: OSGestureRecognizer>(forGestureRecognizer gestureRecognizer: G, action: @escaping (G) -> Void) -> GestureRecognizerAction {
-        self.addGestureRecognizer(gestureRecognizer)
-        return GestureRecognizerAction(gestureRecognizer: gestureRecognizer as OSGestureRecognizer, action: { recognizer in
-            action(recognizer as! G)
-            }
-        )
+  public func addAction<G: OSGestureRecognizer>(forGestureRecognizer gestureRecognizer: G, action: @escaping (G) -> Void) -> GestureRecognizerAction {
+    self.addGestureRecognizer(gestureRecognizer)
+    return GestureRecognizerAction(gestureRecognizer: gestureRecognizer as OSGestureRecognizer, action: { recognizer in
+      action(recognizer as! G)
     }
+    )
+  }
 }
 
