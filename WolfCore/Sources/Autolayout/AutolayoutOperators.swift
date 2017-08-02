@@ -14,33 +14,33 @@
 
 import WolfBase
 
-public func + (left: NSLayoutXAxisAnchor!, right: CGFloat) -> (anchor: NSLayoutXAxisAnchor, constant: CGFloat) {
+public func + (left: NSLayoutXAxisAnchor, right: CGFloat) -> (anchor: NSLayoutXAxisAnchor, constant: CGFloat) {
   return (left, right)
 }
 
-public func + (left: NSLayoutYAxisAnchor!, right: CGFloat) -> (anchor: NSLayoutYAxisAnchor, constant: CGFloat) {
+public func + (left: NSLayoutYAxisAnchor, right: CGFloat) -> (anchor: NSLayoutYAxisAnchor, constant: CGFloat) {
   return (left, right)
 }
 
-public func + (left: NSLayoutDimension!, right: CGFloat) -> (anchor: NSLayoutDimension, constant: CGFloat) {
+public func + (left: NSLayoutDimension, right: CGFloat) -> (anchor: NSLayoutDimension, constant: CGFloat) {
   return (left, right)
 }
 
 
-public func - (left: NSLayoutXAxisAnchor!, right: CGFloat) -> (anchor: NSLayoutXAxisAnchor, constant: CGFloat) {
+public func - (left: NSLayoutXAxisAnchor, right: CGFloat) -> (anchor: NSLayoutXAxisAnchor, constant: CGFloat) {
   return (left, -right)
 }
 
-public func - (left: NSLayoutYAxisAnchor!, right: CGFloat) -> (anchor: NSLayoutYAxisAnchor, constant: CGFloat) {
+public func - (left: NSLayoutYAxisAnchor, right: CGFloat) -> (anchor: NSLayoutYAxisAnchor, constant: CGFloat) {
   return (left, -right)
 }
 
-public func - (left: NSLayoutDimension!, right: CGFloat) -> (anchor: NSLayoutDimension, constant: CGFloat) {
+public func - (left: NSLayoutDimension, right: CGFloat) -> (anchor: NSLayoutDimension, constant: CGFloat) {
   return (left, -right)
 }
 
 
-public func * (left: NSLayoutDimension!, right: CGFloat) -> (anchor: NSLayoutDimension, multiplier: CGFloat) {
+public func * (left: NSLayoutDimension, right: CGFloat) -> (anchor: NSLayoutDimension, multiplier: CGFloat) {
   return (left, right)
 }
 

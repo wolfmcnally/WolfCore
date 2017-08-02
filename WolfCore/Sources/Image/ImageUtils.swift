@@ -47,12 +47,9 @@
       }
     }
 
-    if !isFlipped {
-      context.translateBy(x: 0.0, y: size.height)
-      context.scaleBy(x: 1.0, y: -1.0)
+    drawInto(context, isFlipped: isFlipped, bounds: bounds) { context in
+      drawing(context)
     }
-
-    drawing(context)
 
     image.unlockFocus()
     return image
@@ -65,19 +62,18 @@
     UIGraphicsBeginImageContextWithOptions(size, isOpaque, scale)
     let context = currentGraphicsContext
 
-    if isFlipped {
-      context.translateBy(x: 0.0, y: size.height)
-      context.scaleBy(x: 1.0, y: -1.0)
-    }
+    let bounds = CGRect(origin: .zero, size: size)
 
     if let background = background {
       drawInto(context) { context in
         context.setFillColor(background.cgColor)
-        context.fill(CGRect(origin: .zero, size: size))
+        context.fill(bounds)
       }
     }
 
-    drawing(context)
+    drawInto(context, isFlipped: isFlipped, bounds: bounds) { context in
+      drawing(context)
+    }
 
     let image = UIGraphicsGetImageFromCurrentImageContext()!.withRenderingMode(renderingMode)
     UIGraphicsEndImageContext()

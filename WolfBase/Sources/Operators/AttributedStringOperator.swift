@@ -11,6 +11,8 @@ import Foundation
 ///
 /// Attributed-String-Operator
 ///
+/// The special character here ("§") is called the "section marker" and is typed by pressing Option-6.
+///
 postfix operator §
 
 public postfix func § (left: String) -> AttributedString {

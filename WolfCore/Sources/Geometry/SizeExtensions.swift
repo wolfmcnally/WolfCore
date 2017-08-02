@@ -76,6 +76,18 @@ extension CGSize {
 }
 
 extension CGSize {
+  public var isLandscape: Bool {
+    return width > height
+  }
+
+  public var isPortrait: Bool {
+    return height > width
+  }
+
+  public var isSquare: Bool {
+    return width == height
+  }
+
   public var debugSummary: String {
     let joiner = Joiner(left: "(", right: ")")
     joiner.append(width %% 3, height %% 3)

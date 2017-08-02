@@ -291,6 +291,10 @@
 		0360B5841F00674800A49A9B /* SSLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B5541F00673E00A49A9B /* SSLUtils.swift */; };
 		0360B5851F00674800A49A9B /* URLComponentsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B5551F00673E00A49A9B /* URLComponentsExtensions.swift */; };
 		0360B5861F00674800A49A9B /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B5561F00673E00A49A9B /* URLExtensions.swift */; };
+		036B6A8A1F2AE78E001160D8 /* TextAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B6A891F2AE78E001160D8 /* TextAlignment.swift */; };
+		036B6A8B1F2AE78E001160D8 /* TextAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B6A891F2AE78E001160D8 /* TextAlignment.swift */; };
+		036B6A8C1F2AE78E001160D8 /* TextAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B6A891F2AE78E001160D8 /* TextAlignment.swift */; };
+		036B6A8D1F2AE78E001160D8 /* TextAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B6A891F2AE78E001160D8 /* TextAlignment.swift */; };
 		037F7A051EFDDE8E005D7ABB /* StringLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032C4D751EFCCB6B004E03DD /* StringLocalization.swift */; };
 		037F7A071EFDDF1D005D7ABB /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037F7A061EFDDEFF005D7ABB /* Reference.swift */; };
 		037F7A161EFDDF56005D7ABB /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037F7A0D1EFDDF55005D7ABB /* WolfBase.framework */; };
@@ -824,6 +828,7 @@
 		0360B5541F00673E00A49A9B /* SSLUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLUtils.swift; sourceTree = "<group>"; };
 		0360B5551F00673E00A49A9B /* URLComponentsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentsExtensions.swift; sourceTree = "<group>"; };
 		0360B5561F00673E00A49A9B /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
+		036B6A891F2AE78E001160D8 /* TextAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlignment.swift; sourceTree = "<group>"; };
 		037F7A061EFDDEFF005D7ABB /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
 		037F7A0D1EFDDF55005D7ABB /* WolfBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		037F7A0F1EFDDF55005D7ABB /* WolfBase_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolfBase_tvOS.h; sourceTree = "<group>"; };
@@ -1044,6 +1049,7 @@
 				032C4D7B1EFCCD74004E03DD /* StringFloatPrecision.swift */,
 				032C4D751EFCCB6B004E03DD /* StringLocalization.swift */,
 				037F7ABA1EFDE781005D7ABB /* TextCheckingResult.swift */,
+				036B6A891F2AE78E001160D8 /* TextAlignment.swift */,
 				032C4D821EFCECA9004E03DD /* TextCheckingResultExtensions.swift */,
 				0381CD211F072E72001510EA /* StringTests.swift */,
 			);
@@ -1938,6 +1944,7 @@
 				037F7A621EFDE000005D7ABB /* BinarySearch.swift in Sources */,
 				038FA0451F071CC5001B37C4 /* SequenceExtensions.swift in Sources */,
 				03EF4F721EFF222E0002E947 /* Grid.swift in Sources */,
+				036B6A8B1F2AE78E001160D8 /* TextAlignment.swift in Sources */,
 				035B70261EFF1BDC001E293C /* GeometryUtils.swift in Sources */,
 				03EF4F761EFF222E0002E947 /* Matrix.swift in Sources */,
 				037F7A691EFDE000005D7ABB /* StringFloatPrecision.swift in Sources */,
@@ -2117,6 +2124,7 @@
 				037F7A751EFDE001005D7ABB /* BinarySearch.swift in Sources */,
 				038FA0461F071CC5001B37C4 /* SequenceExtensions.swift in Sources */,
 				03EF4F7D1EFF222F0002E947 /* Grid.swift in Sources */,
+				036B6A8C1F2AE78E001160D8 /* TextAlignment.swift in Sources */,
 				035B70271EFF1BDC001E293C /* GeometryUtils.swift in Sources */,
 				03EF4F811EFF222F0002E947 /* Matrix.swift in Sources */,
 				037F7A7C1EFDE001005D7ABB /* StringFloatPrecision.swift in Sources */,
@@ -2185,6 +2193,7 @@
 				037F7A871EFDE001005D7ABB /* Lerp.swift in Sources */,
 				038FA0AA1F072A3D001B37C4 /* OutputStreamUtils.swift in Sources */,
 				0327AEDC1F14458400ECB8BE /* Time.swift in Sources */,
+				036B6A8D1F2AE78E001160D8 /* TextAlignment.swift in Sources */,
 				03B2E3CA1F008353002856DD /* SQLite.swift in Sources */,
 				037F7A591EFDDFF8005D7ABB /* PipeOperator.swift in Sources */,
 				035B6FB31EFF0E6E001E293C /* EmailValidator.swift in Sources */,
@@ -2457,6 +2466,7 @@
 				0359FF581EFDF35400546B30 /* Framework.swift in Sources */,
 				038FA0441F071CC5001B37C4 /* SequenceExtensions.swift in Sources */,
 				03EF4F671EFF222E0002E947 /* Grid.swift in Sources */,
+				036B6A8A1F2AE78E001160D8 /* TextAlignment.swift in Sources */,
 				035B70251EFF1BDB001E293C /* GeometryUtils.swift in Sources */,
 				03EF4F6B1EFF222E0002E947 /* Matrix.swift in Sources */,
 				032C4D831EFCECAD004E03DD /* TextCheckingResultExtensions.swift in Sources */,

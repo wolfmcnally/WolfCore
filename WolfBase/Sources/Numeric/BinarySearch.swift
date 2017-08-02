@@ -25,3 +25,29 @@ import Foundation
   }
 }
 
+public func compareNeverGreater<T: BinaryFloatingPoint>(_ value1: T, _ value2: T, tolerance: T) -> ComparisonResult {
+  guard value1 <= value2 else { return .orderedDescending }
+  guard abs(value2 - value1) > tolerance else { return .orderedSame }
+  return .orderedAscending
+}
+
+public func isNearLimits<T: BinaryFloatingPoint>(_ value: T, limits: Interval<T>, tolerance: T) -> Bool {
+  guard abs(value - limits.a) > tolerance else { return true }
+  guard abs(value - limits.b) > tolerance else { return true }
+  return false
+}
+
+extension ComparisonResult {
+  public var operatorString: String {
+    switch self {
+    case .orderedSame:
+      return "=="
+    case .orderedAscending:
+      return "<"
+    case .orderedDescending:
+      return ">"
+    }
+  }
+}
+
+

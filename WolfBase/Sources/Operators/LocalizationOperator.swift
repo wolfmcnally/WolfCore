@@ -9,6 +9,8 @@
 ///
 /// Localization-Operator
 ///
+/// The special character here ("¶") is called the "pilcrow" or "paragraph marker" and is typed by pressing Command-Option-7.
+///
 postfix operator ¶
 infix operator ¶ : AttributeAssignmentPrecedence
 

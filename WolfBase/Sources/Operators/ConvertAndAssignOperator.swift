@@ -9,4 +9,6 @@
 ///
 /// Convert-and-Assign-Operator
 ///
+/// The special character here ("©") is called the "copyright symbol" and is typed by pressing Option-G.
+///
 infix operator ©= : AssignmentPrecedence

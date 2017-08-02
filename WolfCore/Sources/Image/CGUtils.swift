@@ -15,14 +15,20 @@ import CoreGraphics
 
 public typealias CGContextBlock = (CGContext) -> Void
 
-public func drawInto(_ context: CGContext, drawing: CGContextBlock) {
+public func flipContext(_ context: CGContext, height: CGFloat) {
+  context.translateBy(x: 0.0, y: height)
+  context.scaleBy(x: 1.0, y: -1.0)
+}
+
+public func drawInto(_ context: CGContext, isFlipped: Bool = false, bounds: CGRect? = nil, drawing: CGContextBlock) {
   context.saveGState()
+  if isFlipped { flipContext(context, height: bounds!.height) }
   drawing(context)
   context.restoreGState()
 }
 
-public func drawIntoCurrentContext(drawing: CGContextBlock) {
-  drawInto(currentGraphicsContext, drawing: drawing)
+public func drawIntoCurrentContext(isFlipped: Bool = false, bounds: CGRect? = nil, drawing: CGContextBlock) {
+  drawInto(currentGraphicsContext, isFlipped: isFlipped, bounds: bounds, drawing: drawing)
 }
 
 public var currentGraphicsContext: CGContext {

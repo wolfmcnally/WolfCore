@@ -9,6 +9,8 @@
 ///
 /// With-Operator
 ///
+/// The special character here ("§") is called the "bullet" and is typed by pressing Option-8.
+///
 infix operator • : CastingPrecedence
 
 //@discardableResult public func • <T: Any>(lhs: T, rhs: (inout T) -> Void) -> T {
