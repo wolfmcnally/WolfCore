@@ -12,9 +12,9 @@ extension UINavigationBar {
   public func setAppearance(barTintColor: UIColor?, tintColor: UIColor?, titleColor: UIColor?) {
     self.barTintColor = barTintColor
     self.tintColor = tintColor
-    var titleTextAttributes = [String: AnyObject]()
+    var titleTextAttributes = [NSAttributedStringKey: AnyObject]()
     if let titleColor = titleColor {
-      titleTextAttributes[NSAttributedStringKey.foregroundColor.rawValue] = titleColor
+      titleTextAttributes[.foregroundColor] = titleColor
     }
     self.titleTextAttributes = titleTextAttributes
   }

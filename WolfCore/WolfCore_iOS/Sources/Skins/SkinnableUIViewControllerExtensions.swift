@@ -69,8 +69,8 @@ extension UIViewController {
         navigationBar.setBackgroundImage(image, for: .default)
         navigationBar.tintColor ©= skin.topbarTintColor
         navigationBar.titleTextAttributes = [
-          NSAttributedStringKey.font.rawValue: skin.topbarTitleStyle.font,
-          NSAttributedStringKey.foregroundColor.rawValue: skin.topbarTitleColor.osColor
+          .font: skin.topbarTitleStyle.font,
+          .foregroundColor: skin.topbarTitleColor.osColor
         ]
 
         // Remove bottom bevel

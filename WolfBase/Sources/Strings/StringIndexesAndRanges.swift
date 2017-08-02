@@ -38,8 +38,8 @@ extension String {
   public func nsRange(from stringRange: Range<String.Index>?) -> NSRange? {
     guard let stringRange = stringRange else { return nil }
     let utf16view = utf16
-    let from = String.UTF16View.Index(stringRange.lowerBound, within: utf16view)
-    let to = String.UTF16View.Index(stringRange.upperBound, within: utf16view)
+    let from = String.UTF16View.Index(stringRange.lowerBound, within: utf16view)!
+    let to = String.UTF16View.Index(stringRange.upperBound, within: utf16view)!
     let location = utf16view.distance(from: utf16view.startIndex, to: from)
     let length = utf16view.distance(from: from, to: to)
     return NSRange(location: location, length: length)

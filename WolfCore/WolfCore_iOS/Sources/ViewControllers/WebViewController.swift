@@ -50,8 +50,8 @@ open class WebViewController: ViewController {
     super.viewWillAppear(animated)
     
     navigationController?.isToolbarHidden = false
-    var titleTextAttributes = navigationController!.navigationBar.titleTextAttributes ?? [String: AnyObject]()
-    titleTextAttributes[NSAttributedStringKey.font.rawValue] = UIFont.boldSystemFont(ofSize: 12)
+    var titleTextAttributes = navigationController!.navigationBar.titleTextAttributes ?? [NSAttributedStringKey: AnyObject]()
+    titleTextAttributes[.font] = UIFont.boldSystemFont(ofSize: 12)
     navigationController?.navigationBar.titleTextAttributes = titleTextAttributes
     
     webView.loadRequest(URLRequest(url: url))
