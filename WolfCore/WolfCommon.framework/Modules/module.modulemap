@@ -1,4 +1,0 @@
-framework module WolfCommon {
-    header "WolfCommon-Swift.h"
-    requires objc
-}

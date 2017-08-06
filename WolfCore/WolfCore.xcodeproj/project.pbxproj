@@ -24,6 +24,15 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0312F53F1F36BACD00C00CF9 /* AngularGradientRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53A1F36BACD00C00CF9 /* AngularGradientRenderer.swift */; };
+		0312F5401F36BACD00C00CF9 /* AngularGradientShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53B1F36BACD00C00CF9 /* AngularGradientShader.metal */; };
+		0312F5411F36BACD00C00CF9 /* MetalTextureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53C1F36BACD00C00CF9 /* MetalTextureUtils.swift */; };
+		0312F5431F36BAE300C00CF9 /* AngularGradientShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53B1F36BACD00C00CF9 /* AngularGradientShader.metal */; };
+		0312F5461F36BBA800C00CF9 /* AngularGradientShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53B1F36BACD00C00CF9 /* AngularGradientShader.metal */; };
+		0312F5471F36BBAD00C00CF9 /* AngularGradientRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53A1F36BACD00C00CF9 /* AngularGradientRenderer.swift */; };
+		0312F5481F36BBAE00C00CF9 /* AngularGradientRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53A1F36BACD00C00CF9 /* AngularGradientRenderer.swift */; };
+		0312F5491F36BBB200C00CF9 /* MetalTextureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53C1F36BACD00C00CF9 /* MetalTextureUtils.swift */; };
+		0312F54A1F36BBB300C00CF9 /* MetalTextureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53C1F36BACD00C00CF9 /* MetalTextureUtils.swift */; };
 		0317E2711F0A302A000FD0C1 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0317E26F1F0A2FFE000FD0C1 /* WolfBase.framework */; };
 		0317E2721F0A3033000FD0C1 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0317E2701F0A300B000FD0C1 /* WolfBase.framework */; };
 		0317E2741F0A3053000FD0C1 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0317E2731F0A3053000FD0C1 /* WolfBase.framework */; };
@@ -505,6 +514,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0312F53A1F36BACD00C00CF9 /* AngularGradientRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngularGradientRenderer.swift; sourceTree = "<group>"; };
+		0312F53B1F36BACD00C00CF9 /* AngularGradientShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AngularGradientShader.metal; sourceTree = "<group>"; };
+		0312F53C1F36BACD00C00CF9 /* MetalTextureUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTextureUtils.swift; sourceTree = "<group>"; };
 		0317E26F1F0A2FFE000FD0C1 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = "../WolfBase/build/Debug-iphoneos/WolfBase.framework"; sourceTree = "<group>"; };
 		0317E2701F0A300B000FD0C1 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = ../WolfBase/build/Debug/WolfBase.framework; sourceTree = "<group>"; };
 		0317E2731F0A3053000FD0C1 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = "../WolfBase/build/Debug-appletvos/WolfBase.framework"; sourceTree = "<group>"; };
@@ -771,6 +783,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0312F5381F36BA9B00C00CF9 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				0312F53C1F36BACD00C00CF9 /* MetalTextureUtils.swift */,
+				0312F53A1F36BACD00C00CF9 /* AngularGradientRenderer.swift */,
+				0312F53B1F36BACD00C00CF9 /* AngularGradientShader.metal */,
+			);
+			path = Metal;
+			sourceTree = "<group>";
+		};
 		031DEE431EFED568001DCF3F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -857,6 +879,7 @@
 		035900091EFE497600546B30 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0312F5381F36BA9B00C00CF9 /* Metal */,
 				038FA0AB1F072D19001B37C4 /* Store */,
 				0359000A1EFE498700546B30 /* Framework.swift */,
 				03B2E3D01F00896C002856DD /* Animation */,
@@ -1754,6 +1777,7 @@
 				038F9FD61F06EF50001B37C4 /* ReachabilityBulletinView.swift in Sources */,
 				035B6F6A1EFF0D75001E293C /* CollectionViewCell.swift in Sources */,
 				035B6F791EFF0D75001E293C /* TextView.swift in Sources */,
+				0312F5401F36BACD00C00CF9 /* AngularGradientShader.metal in Sources */,
 				038F9FEB1F071230001B37C4 /* LocationMonitor.swift in Sources */,
 				0359000B1EFE498700546B30 /* Framework.swift in Sources */,
 				03B2E4451F00A23B002856DD /* ResourceUtils-iOS.swift in Sources */,
@@ -1797,6 +1821,7 @@
 				035B6F451EFF0D6D001E293C /* ActivityIndicatorView.swift in Sources */,
 				0360B45B1F004F2800A49A9B /* OSImageRenderingMode.swift in Sources */,
 				0360B3B31F004D1400A49A9B /* ConicalGradient.swift in Sources */,
+				0312F5411F36BACD00C00CF9 /* MetalTextureUtils.swift in Sources */,
 				0360B43F1F004ED400A49A9B /* SkinValue.swift in Sources */,
 				0360B45A1F004F2800A49A9B /* OSImageOrientation.swift in Sources */,
 				035B6F6E1EFF0D75001E293C /* Label.swift in Sources */,
@@ -1842,6 +1867,7 @@
 				03B2E3F81F008F04002856DD /* ViewControllerExtensions.swift in Sources */,
 				0360B4C81F0056AD00A49A9B /* GestureRecognizerAction.swift in Sources */,
 				0360B3DD1F004D7600A49A9B /* DeviceUtils.swift in Sources */,
+				0312F53F1F36BACD00C00CF9 /* AngularGradientRenderer.swift in Sources */,
 				03B2E4021F008F16002856DD /* ImageViewerPresentationTransitioning.swift in Sources */,
 				0360B4D51F00598500A49A9B /* SpacerView.swift in Sources */,
 				03B2E3F41F008F04002856DD /* PagingViewController.swift in Sources */,
@@ -1954,6 +1980,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0360B4B41F004FD800A49A9B /* OSView.swift in Sources */,
+				0312F5481F36BBAE00C00CF9 /* AngularGradientRenderer.swift in Sources */,
 				035B6F831EFF0D76001E293C /* ImageView.swift in Sources */,
 				035B6F571EFF0D6E001E293C /* ActivityIndicatorView.swift in Sources */,
 				035B6F631EFF0D6E001E293C /* OverlayWindow.swift in Sources */,
@@ -2013,6 +2040,7 @@
 				035B6F5D1EFF0D6E001E293C /* Editable.swift in Sources */,
 				038F9FE81F071210001B37C4 /* LocationManager.swift in Sources */,
 				0360B4A01F004F7E00A49A9B /* Associated.swift in Sources */,
+				0312F5461F36BBA800C00CF9 /* AngularGradientShader.metal in Sources */,
 				0360B4661F004F2900A49A9B /* CoreImageFilters.swift in Sources */,
 				035B6F581EFF0D6E001E293C /* ActivityOverlayView.swift in Sources */,
 				03B2E4431F00A209002856DD /* ResourceUtils.swift in Sources */,
@@ -2045,6 +2073,7 @@
 				0360B41E1F004E2D00A49A9B /* FontFaceName.swift in Sources */,
 				038FA0761F072739001B37C4 /* TVControllerActions.swift in Sources */,
 				035B6F841EFF0D76001E293C /* Label.swift in Sources */,
+				0312F54A1F36BBB300C00CF9 /* MetalTextureUtils.swift in Sources */,
 				0360B4211F004E2D00A49A9B /* OSFont.swift in Sources */,
 				0360B4A11F004F7E00A49A9B /* DebugIdentifier.swift in Sources */,
 				035B6F821EFF0D76001E293C /* Control.swift in Sources */,
@@ -2105,6 +2134,7 @@
 				0360B49E1F004F7D00A49A9B /* Associated.swift in Sources */,
 				0360B45D1F004F2900A49A9B /* CGUtils.swift in Sources */,
 				0360B3FD1F004DD600A49A9B /* AutolayoutUtils.swift in Sources */,
+				0312F5491F36BBB200C00CF9 /* MetalTextureUtils.swift in Sources */,
 				0381CD4B1F073778001510EA /* AnimatedHideable.swift in Sources */,
 				0360B4181F004E2D00A49A9B /* FontFaceName.swift in Sources */,
 				0360B3E31F004D7700A49A9B /* DeviceUtils.swift in Sources */,
@@ -2128,6 +2158,7 @@
 				0360B49F1F004F7D00A49A9B /* DebugIdentifier.swift in Sources */,
 				0360B4E91F005C7400A49A9B /* ViewExtensions-macOS.swift in Sources */,
 				03E483511F1EB466006252B0 /* ImageView.swift in Sources */,
+				0312F5471F36BBAD00C00CF9 /* AngularGradientRenderer.swift in Sources */,
 				038F9FDF1F07011C001B37C4 /* Hideable.swift in Sources */,
 				0360B4401F004ED400A49A9B /* ConcreteSkin.swift in Sources */,
 				0360B4421F004ED400A49A9B /* Skin.swift in Sources */,
@@ -2171,6 +2202,7 @@
 				0360B4841F004F5700A49A9B /* AffineTransformExtensions.swift in Sources */,
 				039F32AC1F0AD1F600D2BAD0 /* SkinnableViewExtensions.swift in Sources */,
 				0360B5461F00671000A49A9B /* Reachability.swift in Sources */,
+				0312F5431F36BAE300C00CF9 /* AngularGradientShader.metal in Sources */,
 				0360B3BC1F004D1400A49A9B /* Shading.swift in Sources */,
 				038F9FEC1F071230001B37C4 /* LocationMonitor.swift in Sources */,
 				0360B3BA1F004D1400A49A9B /* ConicalGradientLayer.swift in Sources */,

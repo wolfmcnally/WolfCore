@@ -58,6 +58,18 @@ public struct Interval<T: FloatingPoint> {
   public var isFlat: Bool {
     return a == b
   }
+
+  public func contains(_ v: T) -> Bool {
+    if a == b {
+      return v == a
+    } else if a < b {
+      return a <= v && v <= b
+    } else if b < a {
+      return b <= v && v <= a
+    } else {
+      return false
+    }
+  }
 }
 
 extension Double {
