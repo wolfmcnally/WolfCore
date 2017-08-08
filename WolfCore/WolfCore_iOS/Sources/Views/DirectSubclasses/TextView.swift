@@ -53,10 +53,12 @@ open class TextView: UITextView, Skinnable {
   }
   
   open func setup() {
+    font = UIFont.systemFont(ofSize: 18)
   }
   
   open override var text: String! {
     didSet {
+      guard skinsEnabled else { return }
       applySkin(skin)
     }
   }

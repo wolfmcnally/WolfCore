@@ -479,11 +479,13 @@ public class PowerTextField: View, Editable {
     🍒.adjustsFontSizeToFitWidth = true
     🍒.minimumScaleFactor = 0.5
     🍒.text = "A"
+    🍒.textColor = UIColor(white: 0.5, alpha: 1)
   }
 
   private lazy var messageContainerView: View = .init()
 
   private lazy var placeholderLabel: Label = .init() • { 🍒 in
+    🍒.textColor = UIColor(white: 0.5, alpha: 1)
     if self.numberOfLines > 1 {
       🍒.numberOfLines = 0
     } else {
@@ -740,9 +742,9 @@ public class PowerTextField: View, Editable {
       onLocked: { [unowned self] in
         self.concealPlaceholder(animated: true)
         self.revealPlaceholderMessage(animated: true)
-      }, onUnlocked: { [unowned self] in
-        self.revealPlaceholder(animated: true)
-        self.concealPlaceholderMessage(animated: true)
+      }, onUnlocked: { [weak self] in
+        self?.revealPlaceholder(animated: true)
+        self?.concealPlaceholderMessage(animated: true)
     })
   }()
 

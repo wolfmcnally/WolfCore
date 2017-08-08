@@ -36,6 +36,7 @@ open class TextField: UITextField, Skinnable {
   
   open override func layoutSubviews() {
     super.layoutSubviews()
+    guard skinsEnabled else { return }
     updateClearButtonAppearance(from: skin)
   }
   
@@ -80,6 +81,7 @@ open class TextField: UITextField, Skinnable {
   
   open override var text: String! {
     didSet {
+      guard skinsEnabled else { return }
       applySkin(skin)
     }
   }

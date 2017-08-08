@@ -454,6 +454,7 @@
 		03B2E4431F00A209002856DD /* ResourceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E4401F00A209002856DD /* ResourceUtils.swift */; };
 		03B2E4451F00A23B002856DD /* ResourceUtils-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E4441F00A23B002856DD /* ResourceUtils-iOS.swift */; };
 		03B2E4461F00A23B002856DD /* ResourceUtils-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E4441F00A23B002856DD /* ResourceUtils-iOS.swift */; };
+		03B2F2301F38E6A400F8249D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B2F22F1F38E69100F8249D /* Assets.xcassets */; };
 		03E483511F1EB466006252B0 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E483501F1EB466006252B0 /* ImageView.swift */; };
 		03E483531F1ED544006252B0 /* DrawCrossedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E483521F1ED544006252B0 /* DrawCrossedBox.swift */; };
 		03E483541F1ED544006252B0 /* DrawCrossedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E483521F1ED544006252B0 /* DrawCrossedBox.swift */; };
@@ -719,6 +720,7 @@
 		03B2E4371F00A152002856DD /* OSNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSNib.swift; sourceTree = "<group>"; };
 		03B2E4401F00A209002856DD /* ResourceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceUtils.swift; sourceTree = "<group>"; };
 		03B2E4441F00A23B002856DD /* ResourceUtils-iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResourceUtils-iOS.swift"; sourceTree = "<group>"; };
+		03B2F22F1F38E69100F8249D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03E483501F1EB466006252B0 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		03E483521F1ED544006252B0 /* DrawCrossedBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawCrossedBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -796,6 +798,7 @@
 		031DEE431EFED568001DCF3F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				03B2F22F1F38E69100F8249D /* Assets.xcassets */,
 				03B2E42C1F009D7F002856DD /* Animation */,
 				031DEE6C1EFEEAA8001DCF3F /* App */,
 				035DAA351EFF62A5001040CE /* Developer */,
@@ -1697,6 +1700,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03B2F2301F38E6A400F8249D /* Assets.xcassets in Resources */,
 				03B2E3F91F008F04002856DD /* WebViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
