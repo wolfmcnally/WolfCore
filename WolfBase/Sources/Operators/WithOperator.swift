@@ -9,7 +9,7 @@
 ///
 /// With-Operator
 ///
-/// The special character here ("§") is called the "bullet" and is typed by pressing Option-8.
+/// The special character here ("•") is called the "bullet" and is typed by pressing Option-8.
 ///
 infix operator • : CastingPrecedence
 
