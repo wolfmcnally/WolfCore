@@ -82,7 +82,7 @@ open class API<T: AuthorizationProtocol> {
     return request
   }
   
-  public func newPromise<T>(method: HTTPMethod, path: [Any]? = nil, query: [String : String]? = nil, isAuth: Bool = true, body json: JSON? = nil, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil, with f: @escaping (JSON) throws -> T) -> Promise<T> {
+  public func newPromise<T>(method: HTTPMethod, path: [Any]? = nil, query: [String : String]? = nil, isAuth: Bool = false, body json: JSON? = nil, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil, with f: @escaping (JSON) throws -> T) -> Promise<T> {
     do {
       let request = try self.newRequest(method: method, path: path, query: query, isAuth: isAuth, body: json)
       return HTTP.retrieveJSON(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock).then { json in
@@ -94,8 +94,21 @@ open class API<T: AuthorizationProtocol> {
       return Promise<T>(error: error)
     }
   }
-  
-  public func newPromise(method: HTTPMethod, path: [Any]? = nil, isAuth: Bool = true, body json: JSON? = nil, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil) -> SuccessPromise {
+
+  public func newPromise<T: Decodable>(method: HTTPMethod, path: [Any]? = nil, query: [String : String]? = nil, isAuth: Bool = false, body json: JSON? = nil, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil) -> Promise<T> {
+    do {
+      let request = try self.newRequest(method: method, path: path, query: query, isAuth: isAuth, body: json)
+      return HTTP.retrieveData(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock).then { data in
+        return try JSONDecoder().decode(T.self, from: data)
+        }.recover { (error, promise) in
+          self.handle(error: error, promise: promise)
+      }
+    } catch let error {
+      return Promise<T>(error: error)
+    }
+  }
+
+  public func newPromise(method: HTTPMethod, path: [Any]? = nil, isAuth: Bool = false, body json: JSON? = nil, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil) -> SuccessPromise {
     do {
       let request = try self.newRequest(method: method, path: path, isAuth: isAuth, body: json)
       return HTTP.retrieve(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock).succeed().recover { (error, promise) in

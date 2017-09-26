@@ -44,7 +44,7 @@ import Foundation
       if let textCheckingResult = self.firstMatch(inString: string, options: options, range: range) {
         result = [String]()
         for range in textCheckingResult.captureRanges(inString: string) {
-          let matchText = string.substring(with: range)
+          let matchText = String(string[range])
           result.append(matchText)
         }
       }

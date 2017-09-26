@@ -22,6 +22,7 @@ typedef struct {
   float initialAngle;
   float innerRadius;
   float outerRadius;
+  bool isOpaque;
   bool isClockwise;
   bool isFlipped;
   int32_t elementsCount;
@@ -52,8 +53,8 @@ float4 colorInGradient(float frac, constant GradientElement *elements, const int
       endColor = startColor;
       break;
     default:
-      startColor = float4(1, 1, 1, 1);
-      endColor = float4(1, 1, 1, 1);
+      startColor = float4(1);
+      endColor = float4(1);
       if(frac <= elements[0].frac) {
         startColor = elements[0].color;
         endColor = startColor;
@@ -62,16 +63,19 @@ float4 colorInGradient(float frac, constant GradientElement *elements, const int
         endColor = startColor;
         startFrac = elements[lastIndex].frac;
       } else {
-        for(int index = 0; index <= lastIndex; index++) {
+        for(int index = 0; index < lastIndex; index++) {
+          GradientElement elem1 = elements[index];
           GradientElement elem2 = elements[index + 1];
-          if(frac <= elem2.frac) {
-            GradientElement elem1 = elements[index];
+          if(frac >= elem1.frac && frac <= elem2.frac) {
             startColor = elem1.color;
             endColor = elem2.color;
             startFrac = elem1.frac;
             endFrac = elem2.frac;
             bias = elem1.bias;
             break;
+          } else {
+            startColor = float4(1);
+            endColor = startColor;
           }
         }
       }
@@ -100,14 +104,19 @@ angularGradientShader(
                       uint2 gid [[thread_position_in_grid]]
                       )
 {
+  float4 outColor = float4(0);
+  if(params.isOpaque) {
+    outColor.a = 1;
+  }
+
   float2 p = float2(gid) + 0.5;
   if(params.isFlipped) {
     p.y = outTexture.get_height() - p.y;
   }
+
   float2 center = params.center;
   float2 delta = p - center;
   float len = length(delta);
-  float4 outColor = float4(0);
   if(len >= params.innerRadius) {
     if(params.outerRadius <= 0 || len <= params.outerRadius) {
       const float twopi = 2.0 * M_PI_F;

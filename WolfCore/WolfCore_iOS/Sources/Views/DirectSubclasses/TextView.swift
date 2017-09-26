@@ -110,7 +110,7 @@ extension TextView {
     let font = attrText.font
     
     let r1: CGRect
-    let lastChar = text.substring(from: text.index(text.endIndex, offsetBy: -1))
+    let lastChar = String(text[text.index(text.endIndex, offsetBy: -1)...])
     if lastChar == "\n" {
       let r = caretRect(for: position(from: endOfDocument, offset: -1)!)
       let sr = caretRect(for: position(from: beginningOfDocument, offset: 0)!)

@@ -25,7 +25,7 @@ extension TextCheckingResult {
 extension TextCheckingResult {
   public func get(atIndex index: Int, inString string: String) -> (Range<String.Index>, String) {
     let range = self.range(atIndex: index, inString: string)
-    let text = string.substring(with: range)
+    let text = String(string[range])
     return (range, text)
   }
 }

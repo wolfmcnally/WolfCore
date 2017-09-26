@@ -33,6 +33,7 @@ struct AngularGradientShaderParams {
   var initialAngle: Float
   var innerRadius: Float
   var outerRadius: Float
+  var isOpaque: Bool
   var isClockwise: Bool
   var isFlipped: Bool
   var elementsCount: Int32
@@ -56,7 +57,7 @@ public class AngularGradientRenderer {
     pipelineState = try! device.makeComputePipelineState(function: shaderFunction)
   }
 
-  public func makeCGImage(size: CGFloat, gradient: [GradientElement], initialAngle: CGFloat = 0, innerRadius: CGFloat = 0, outerRadius: CGFloat = 0, isClockwise: Bool = true, isFlipped: Bool = false) -> CGImage {
+  public func makeCGImage(size: CGFloat, gradient: [GradientElement], initialAngle: CGFloat = 0, innerRadius: CGFloat = 0, outerRadius: CGFloat = 0, isOpaque: Bool = false, isClockwise: Bool = true, isFlipped: Bool = false) -> CGImage {
     let width = Int(size)
     let height = Int(size)
     let halfSize = Float(size) / 2
@@ -68,7 +69,7 @@ public class AngularGradientRenderer {
       return device.makeBuffer(bytes: $0.baseAddress!, length: elementsLength, options: [])
     }
 
-    var params = AngularGradientShaderParams(center: center, initialAngle: Float(initialAngle), innerRadius: Float(innerRadius), outerRadius: Float(outerRadius), isClockwise: isClockwise, isFlipped: isFlipped, elementsCount: Int32(elements.count))
+    var params = AngularGradientShaderParams(center: center, initialAngle: Float(initialAngle), innerRadius: Float(innerRadius), outerRadius: Float(outerRadius), isOpaque: isOpaque, isClockwise: isClockwise, isFlipped: isFlipped, elementsCount: Int32(elements.count))
     let paramsBuffer = device.makeBuffer(bytes: &params, length: MemoryLayout<AngularGradientShaderParams>.stride, options: [])
 
     let commandQueue = device.makeCommandQueue()!
@@ -81,6 +82,7 @@ public class AngularGradientRenderer {
     let threadGroups = MTLSizeMake(blockWidth, blockHeight, 1)
 
     let outTextureDescriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .rgba8Unorm, width: width, height: height, mipmapped: false)
+    outTextureDescriptor.usage = .shaderWrite
     let outTexture = device.makeTexture(descriptor: outTextureDescriptor)!
 
     commandEncoder.setComputePipelineState(pipelineState)
@@ -97,12 +99,12 @@ public class AngularGradientRenderer {
     return outTexture.makeImage()
   }
 
-  public func makeImage(size: CGFloat, gradient: [GradientElement], initialAngle: CGFloat = 0, innerRadius: CGFloat = 0, outerRadius: CGFloat = 0, isClockwise: Bool = true, isFlipped: Bool = false) -> UIImage {
+  public func makeImage(size: CGFloat, gradient: [GradientElement], initialAngle: CGFloat = 0, innerRadius: CGFloat = 0, outerRadius: CGFloat = 0, isOpaque: Bool = false, isClockwise: Bool = true, isFlipped: Bool = false) -> UIImage {
     let scale = UIScreen.main.scale
     let scaledSize = size * scale
     let scaledInnerRadius = innerRadius * scale
     let scaledOuterRadius = outerRadius * scale
-    let cgImage = makeCGImage(size: scaledSize, gradient: gradient, initialAngle: initialAngle, innerRadius: scaledInnerRadius, outerRadius: scaledOuterRadius, isFlipped: true)
+    let cgImage = makeCGImage(size: scaledSize, gradient: gradient, initialAngle: initialAngle, innerRadius: scaledInnerRadius, outerRadius: scaledOuterRadius, isOpaque: isOpaque, isFlipped: isFlipped)
     return UIImage(cgImage: cgImage, scale: scale, orientation: .up)
   }
 }

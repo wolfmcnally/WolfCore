@@ -49,7 +49,7 @@ extension String {
     let taggedKey: String
     let hasTag: Bool
     if self.hasSuffix("¶") {
-      untaggedKey = substring(to: self.index(self.endIndex, offsetBy: -1))
+      untaggedKey = String(self[ ..<self.index(self.endIndex, offsetBy: -1)])
       taggedKey = self
       hasTag = true
     } else {

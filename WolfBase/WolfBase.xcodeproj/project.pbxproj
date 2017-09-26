@@ -104,6 +104,10 @@
 		032C4D8D1EFCEE64004E03DD /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032C4D8C1EFCEE61004E03DD /* DataExtensions.swift */; };
 		032C4D901EFCEEF2004E03DD /* UTF8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032C4D8F1EFCEEEF004E03DD /* UTF8.swift */; };
 		032C4D921EFCEF1B004E03DD /* Joiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032C4D911EFCEF17004E03DD /* Joiner.swift */; };
+		03541FDE1F4B9E1A0040EA87 /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03541FDD1F4B9E1A0040EA87 /* CodableUtils.swift */; };
+		03541FDF1F4B9E1A0040EA87 /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03541FDD1F4B9E1A0040EA87 /* CodableUtils.swift */; };
+		03541FE01F4B9E1A0040EA87 /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03541FDD1F4B9E1A0040EA87 /* CodableUtils.swift */; };
+		03541FE11F4B9E1A0040EA87 /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03541FDD1F4B9E1A0040EA87 /* CodableUtils.swift */; };
 		0359FF581EFDF35400546B30 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359FF571EFDF35400546B30 /* Framework.swift */; };
 		0359FF591EFDF35400546B30 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359FF571EFDF35400546B30 /* Framework.swift */; };
 		0359FF5A1EFDF35400546B30 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359FF571EFDF35400546B30 /* Framework.swift */; };
@@ -779,6 +783,7 @@
 		032C4D8F1EFCEEEF004E03DD /* UTF8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTF8.swift; sourceTree = "<group>"; };
 		032C4D911EFCEF17004E03DD /* Joiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joiner.swift; sourceTree = "<group>"; };
 		03353BD21EFCB7D900332365 /* Numerics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Numerics.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		03541FDD1F4B9E1A0040EA87 /* CodableUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUtils.swift; sourceTree = "<group>"; };
 		0359FF571EFDF35400546B30 /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
 		0359FF5D1EFDF3C900546B30 /* BundleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
 		0359FF631EFDF50C00546B30 /* GeneralError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralError.swift; sourceTree = "<group>"; };
@@ -1114,6 +1119,7 @@
 				0381CD291F072F0B001510EA /* Base64Tests.swift */,
 				03EF4F171EFF203D0002E947 /* Base64URL.swift */,
 				0381CD2D1F072F4C001510EA /* Base64URLTests.swift */,
+				03541FDD1F4B9E1A0040EA87 /* CodableUtils.swift */,
 				03EF4F1A1EFF203D0002E947 /* FoundationJSON.swift */,
 				03EF4F1C1EFF203D0002E947 /* Hex.swift */,
 				0381CD311F072FA5001510EA /* HexTests.swift */,
@@ -1976,6 +1982,7 @@
 				035DAA431EFF7FEE001040CE /* JSONRepresentable.swift in Sources */,
 				03B2E3C71F008217002856DD /* NetworkActivity.swift in Sources */,
 				031DEE9E1EFEF0F1001DCF3F /* Locker.swift in Sources */,
+				03541FDF1F4B9E1A0040EA87 /* CodableUtils.swift in Sources */,
 				035B6FA81EFF0E6D001E293C /* StringValidation.swift in Sources */,
 				03B2E4111F009386002856DD /* Publishable.swift in Sources */,
 				03EF4F571EFF219C0002E947 /* Dimensions.swift in Sources */,
@@ -2156,6 +2163,7 @@
 				035DAA441EFF7FEF001040CE /* JSONRepresentable.swift in Sources */,
 				03B2E3C81F008218002856DD /* NetworkActivity.swift in Sources */,
 				031DEEA91EFEF0F1001DCF3F /* Locker.swift in Sources */,
+				03541FE01F4B9E1A0040EA87 /* CodableUtils.swift in Sources */,
 				035B6FAF1EFF0E6E001E293C /* StringValidation.swift in Sources */,
 				03B2E4161F009386002856DD /* Publishable.swift in Sources */,
 				03EF4F591EFF219C0002E947 /* Dimensions.swift in Sources */,
@@ -2202,6 +2210,7 @@
 				03EF4FC11EFF509A0002E947 /* AttributedString.swift in Sources */,
 				035B6FB61EFF0E6F001E293C /* StringValidation.swift in Sources */,
 				03EF4FB71EFF294A0002E947 /* InvalidateAndAssignOperator.swift in Sources */,
+				03541FE11F4B9E1A0040EA87 /* CodableUtils.swift in Sources */,
 				03EF4F461EFF205C0002E947 /* UniqueID.swift in Sources */,
 				037F7A8D1EFDE001005D7ABB /* Joiner.swift in Sources */,
 				031DEEB31EFEF0F2001DCF3F /* Hysteresis.swift in Sources */,
@@ -2498,6 +2507,7 @@
 				035DAA421EFF7FED001040CE /* JSONRepresentable.swift in Sources */,
 				03B2E3C61F008217002856DD /* NetworkActivity.swift in Sources */,
 				031DEE931EFEF0F0001DCF3F /* Locker.swift in Sources */,
+				03541FDE1F4B9E1A0040EA87 /* CodableUtils.swift in Sources */,
 				035B6FA11EFF0E6D001E293C /* StringValidation.swift in Sources */,
 				03B2E40C1F009385002856DD /* Publishable.swift in Sources */,
 				03EF4F551EFF219B0002E947 /* Dimensions.swift in Sources */,

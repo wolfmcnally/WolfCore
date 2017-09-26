@@ -15,10 +15,10 @@ extension String {
       }.string
   }
 
-  public func truncated(afterCount count: Int, addingSignifier signifier: String? = "…") -> String {
+  public func truncated(afterCount count: Int, adding signifier: String? = "…") -> String {
     guard characters.count > count else { return self }
-    let s = substring(with: startIndex..<index(startIndex, offsetBy: count))
-    return [s, signifier].flatJoined()
+    let s = self[startIndex..<index(startIndex, offsetBy: count)]
+    return [s, signifier as Any].flatJoined()
   }
 }
 
@@ -60,7 +60,7 @@ extension String {
     var start = startIndex
     while start != endIndex {
       let end = index(start, offsetBy: size, limitedBy: endIndex) ?? endIndex
-      parts.append(substring(with: start ..< end))
+      parts.append(String(self[start ..< end]))
       start = end
     }
     return parts

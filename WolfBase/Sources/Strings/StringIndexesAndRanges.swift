@@ -64,7 +64,7 @@ extension String {
   }
 
   public func substring(start: Int, end: Int? = nil) -> String {
-    return substring(with: stringRange(start: start, end: end))
+    return String(self[stringRange(start: start, end: end)])
   }
 
   public func substring(r: Range<Int>) -> String {

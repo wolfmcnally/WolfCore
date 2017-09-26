@@ -16,7 +16,7 @@ private func seedRandom() {
   #if os(Linux)
     srand48(Int(time(nil)))
   #else
-    srand48(Int(extendingOrTruncating: UInt64(arc4random())))
+    srand48(Int(truncatingIfNeeded: UInt64(arc4random())))
   #endif
 }
 

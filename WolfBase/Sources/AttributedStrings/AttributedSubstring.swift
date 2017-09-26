@@ -80,7 +80,7 @@ public class AttributedSubstring {
 
 extension AttributedSubstring : CustomStringConvertible {
   public var description: String {
-    let s = attrString.string.substring(with: strRange)
+    let s = attrString.string[strRange]
     return "(AttributedSubstring attrString:\(s), strRange:\(strRange))"
   }
 }
