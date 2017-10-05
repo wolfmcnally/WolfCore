@@ -7,77 +7,87 @@
 //
 
 #if os(macOS)
-  import Cocoa
+    import Cocoa
 #else
-  import UIKit
+    import UIKit
 #endif
 
+import WolfBase
+
 #if os(macOS)
-  public func newImage(withSize size: CGSize, isOpaque: Bool = false, background: NSColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> NSImage {
-    let image = NSImage.init(size: size)
+    public func newImage(withSize size: Size, isOpaque: Bool = false, background: NSColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> NSImage {
+        return newImage(withSize: size.cgSize, isOpaque: isOpaque, background: background, scale: scale, isFlipped: isFlipped, renderingMode: renderingMode, drawing: drawing)
+    }
 
-    let rep = NSBitmapImageRep.init(bitmapDataPlanes: nil,
-                                    pixelsWide: Int(size.width),
-                                    pixelsHigh: Int(size.height),
-                                    bitsPerSample: 8,
-                                    samplesPerPixel: isOpaque ? 3 : 4,
-                                    hasAlpha: !isOpaque,
-                                    isPlanar: false,
-                                    colorSpaceName: NSColorSpaceName.calibratedRGB,
-                                    bytesPerRow: 0,
-                                    bitsPerPixel: 0)
+    public func newImage(withSize size: CGSize, isOpaque: Bool = false, background: NSColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> NSImage {
+        let image = NSImage.init(size: size)
 
-    image.addRepresentation(rep!)
-    image.lockFocus()
+        let rep = NSBitmapImageRep.init(bitmapDataPlanes: nil,
+                                        pixelsWide: Int(size.width),
+                                        pixelsHigh: Int(size.height),
+                                        bitsPerSample: 8,
+                                        samplesPerPixel: isOpaque ? 3 : 4,
+                                        hasAlpha: !isOpaque,
+                                        isPlanar: false,
+                                        colorSpaceName: NSColorSpaceName.calibratedRGB,
+                                        bytesPerRow: 0,
+                                        bitsPerPixel: 0)
 
-    let bounds = CGRect(origin: .zero, size: size)
-    let nsContext = NSGraphicsContext.current!
-    let context = nsContext.cgContext
+        image.addRepresentation(rep!)
+        image.lockFocus()
 
-    drawInto(context) { context in
-      if isOpaque {
-        context.setFillColor(background?.cgColor ?? OSColor.black.cgColor)
-        context.fill(bounds)
-      } else {
-        context.clear(bounds)
-        if let background = background {
-          context.setFillColor(background.cgColor)
-          context.fill(bounds)
+        let bounds = CGRect(origin: .zero, size: size)
+        let nsContext = NSGraphicsContext.current!
+        let context = nsContext.cgContext
+
+        drawInto(context) { context in
+            if isOpaque {
+                context.setFillColor(background?.cgColor ?? OSColor.black.cgColor)
+                context.fill(bounds)
+            } else {
+                context.clear(bounds)
+                if let background = background {
+                    context.setFillColor(background.cgColor)
+                    context.fill(bounds)
+                }
+            }
         }
-      }
-    }
 
-    drawInto(context, isFlipped: isFlipped, bounds: bounds) { context in
-      drawing(context)
-    }
+        drawInto(context, isFlipped: isFlipped, bounds: bounds) { context in
+            drawing(context)
+        }
 
-    image.unlockFocus()
-    return image
-  }
+        image.unlockFocus()
+        return image
+    }
 #else
-  public func newImage(withSize size: CGSize, isOpaque: Bool = false, background: UIColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> UIImage {
-    guard size.width > 0 && size.height > 0 else {
-      fatalError("Size may not be empty.")
-    }
-    UIGraphicsBeginImageContextWithOptions(size, isOpaque, scale)
-    let context = currentGraphicsContext
-
-    let bounds = CGRect(origin: .zero, size: size)
-
-    if let background = background {
-      drawInto(context) { context in
-        context.setFillColor(background.cgColor)
-        context.fill(bounds)
-      }
+    public func newImage(withSize size: Size, isOpaque: Bool = false, background: UIColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> UIImage {
+        return newImage(withSize: size.cgSize, isOpaque: isOpaque, background: background, scale: scale, isFlipped: isFlipped, renderingMode: renderingMode, drawing: drawing)
     }
 
-    drawInto(context, isFlipped: isFlipped, bounds: bounds) { context in
-      drawing(context)
+    public func newImage(withSize size: CGSize, isOpaque: Bool = false, background: UIColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> UIImage {
+        guard size.width > 0 && size.height > 0 else {
+            fatalError("Size may not be empty.")
+        }
+        UIGraphicsBeginImageContextWithOptions(size, isOpaque, scale)
+        let context = currentGraphicsContext
+
+        let bounds = CGRect(origin: .zero, size: size)
+
+        if let background = background {
+            drawInto(context) { context in
+                context.setFillColor(background.cgColor)
+                context.fill(bounds)
+            }
+        }
+
+        drawInto(context, isFlipped: isFlipped, bounds: bounds) { context in
+            drawing(context)
+        }
+
+        let image = UIGraphicsGetImageFromCurrentImageContext()!.withRenderingMode(renderingMode)
+        UIGraphicsEndImageContext()
+
+        return image
     }
-
-    let image = UIGraphicsGetImageFromCurrentImageContext()!.withRenderingMode(renderingMode)
-    UIGraphicsEndImageContext()
-
-    return image
-  }
 #endif

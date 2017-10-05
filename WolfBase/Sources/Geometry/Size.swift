@@ -112,3 +112,11 @@ public func == (lhs: Size, rhs: Size) -> Bool {
 extension Size {
   public var isEmpty: Bool { return width == 0.0 || height == 0.0 }
 }
+
+public func * (lhs: Size, rhs: Double) -> Size {
+    return Size(width: lhs.width * rhs, height: lhs.height * rhs)
+}
+
+public func / (lhs: Size, rhs: Double) -> Size {
+    return Size(width: lhs.width / rhs, height: lhs.height / rhs)
+}

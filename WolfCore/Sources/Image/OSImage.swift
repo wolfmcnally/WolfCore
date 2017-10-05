@@ -10,10 +10,8 @@ import WolfBase
 
 #if os(macOS)
   import Cocoa
-  public typealias OSImage = NSImage
-#else
+#elseif !os(Linux)
   import UIKit
-  public typealias OSImage = UIImage
 #endif
 
 #if os(macOS)

@@ -9,8 +9,13 @@
 import WolfBase
 import Metal
 import CoreGraphics
-import UIKit
 import simd
+
+#if os(iOS) || os(tvOS)
+    import UIKit
+#else
+    import Cocoa
+#endif
 
 public struct GradientElement {
   public var color: float4
@@ -99,12 +104,16 @@ public class AngularGradientRenderer {
     return outTexture.makeImage()
   }
 
-  public func makeImage(size: CGFloat, gradient: [GradientElement], initialAngle: CGFloat = 0, innerRadius: CGFloat = 0, outerRadius: CGFloat = 0, isOpaque: Bool = false, isClockwise: Bool = true, isFlipped: Bool = false) -> UIImage {
-    let scale = UIScreen.main.scale
+  public func makeImage(size: CGFloat, gradient: [GradientElement], initialAngle: CGFloat = 0, innerRadius: CGFloat = 0, outerRadius: CGFloat = 0, isOpaque: Bool = false, isClockwise: Bool = true, isFlipped: Bool = false) -> OSImage {
+    #if os(macOS)
+        let scale: CGFloat = 1
+    #else
+        let scale = UIScreen.main.scale
+    #endif
     let scaledSize = size * scale
     let scaledInnerRadius = innerRadius * scale
     let scaledOuterRadius = outerRadius * scale
     let cgImage = makeCGImage(size: scaledSize, gradient: gradient, initialAngle: initialAngle, innerRadius: scaledInnerRadius, outerRadius: scaledOuterRadius, isOpaque: isOpaque, isFlipped: isFlipped)
-    return UIImage(cgImage: cgImage, scale: scale, orientation: .up)
+    return OSImage(cgImage: cgImage, scale: scale, orientation: .up)
   }
 }

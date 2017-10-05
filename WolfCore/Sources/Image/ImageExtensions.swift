@@ -32,6 +32,26 @@ extension OSImage {
 }
 
 #if os(macOS)
+#else
+    extension OSImage {
+        public struct Name: ExtensibleEnumeratedName {
+            public let rawValue: String
+
+            public init(_ rawValue: String) {
+                self.rawValue = rawValue
+            }
+
+            // RawRepresentable
+            public init(rawValue: String) { self.init(rawValue) }
+        }
+
+        public convenience init?(named name: Name) {
+            self.init(named: name.rawValue)
+        }
+    }
+#endif
+
+#if os(macOS)
   extension OSImage {
     public convenience init?(named name: String, in bundle: Bundle?) {
       let bundle = bundle ?? Bundle.main
