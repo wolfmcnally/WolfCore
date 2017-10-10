@@ -7,11 +7,17 @@
 //
 
 #if os(macOS)
-  import Cocoa
-  public typealias OSGestureRecognizer = NSGestureRecognizer
-  public typealias OSGestureRecognizerDelegate = NSGestureRecognizerDelegate
+    import Cocoa
+    public typealias OSGestureRecognizer = NSGestureRecognizer
+    public typealias OSGestureRecognizerDelegate = NSGestureRecognizerDelegate
+    public typealias OSGestureRecognizerState = NSGestureRecognizer.State
+    public typealias OSTapClickGestureRecognizer = NSClickGestureRecognizer
+    public typealias OSPanGestureRecognizer = NSPanGestureRecognizer
 #else
-  import UIKit
-  public typealias OSGestureRecognizer = UIGestureRecognizer
-  public typealias OSGestureRecognizerDelegate = UIGestureRecognizerDelegate
+    import UIKit
+    public typealias OSGestureRecognizer = UIGestureRecognizer
+    public typealias OSGestureRecognizerDelegate = UIGestureRecognizerDelegate
+    public typealias OSGestureRecognizerState = UIGestureRecognizerState
+    public typealias OSTapClickGestureRecognizer = UITapGestureRecognizer
+    public typealias OSPanGestureRecognizer = UIPanGestureRecognizer
 #endif

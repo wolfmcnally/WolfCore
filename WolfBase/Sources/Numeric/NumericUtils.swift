@@ -7,30 +7,34 @@
 //
 
 extension BinaryFloatingPoint {
-  /// Returns this value clamped to between 0.0 and 1.0
-  public func clamped() -> Self {
-    return max(min(self, 1.0), 0.0)
-  }
+    /// Returns this value clamped to between 0.0 and 1.0
+    public func clamped() -> Self {
+        return max(min(self, 1.0), 0.0)
+    }
 
-  public func ledge() -> Bool {
-    return self < 0.5
-  }
+    public func clamped(to r: ClosedRange<Self>) -> Self {
+        return max(min(self, r.upperBound), r.lowerBound)
+    }
 
-  public func ledge<T>(_ a: @autoclosure () -> T, _ b: @autoclosure () -> T) -> T {
-    return self.ledge() ? a() : b()
-  }
+    public func ledge() -> Bool {
+        return self < 0.5
+    }
 
-  public var fractionalPart: Self {
-    return self - rounded(.towardZero)
-  }
+    public func ledge<T>(_ a: @autoclosure () -> T, _ b: @autoclosure () -> T) -> T {
+        return self.ledge() ? a() : b()
+    }
+
+    public var fractionalPart: Self {
+        return self - rounded(.towardZero)
+    }
 }
 
 extension BinaryInteger {
-  public var isEven: Bool {
-    return (self & 1) == 0
-  }
-  
-  public var isOdd: Bool {
-    return (self & 1) == 1
-  }
+    public var isEven: Bool {
+        return (self & 1) == 0
+    }
+
+    public var isOdd: Bool {
+        return (self & 1) == 1
+    }
 }

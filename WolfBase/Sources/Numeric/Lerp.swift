@@ -29,7 +29,9 @@ extension Int {
 extension BinaryFloatingPoint {
   /// The value lerped from the interval `a..b` into the interval `0..1`. (`a` may be greater than `b`).
   public func lerpedToFrac(from interval: Interval<Self>) -> Self {
-    return (interval.a - self) / (interval.a - interval.b)
+    let from = interval.a - interval.b
+    assert(from != 0.0)
+    return (interval.a - self) / from
   }
 
   /// The value lerped from the interval `0..1` to the interval `a..b`. (`a` may be greater than `b`).
