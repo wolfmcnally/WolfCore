@@ -44,7 +44,7 @@ extension Sequence {
   public func flatJoined(separator: String = "") -> String {
     let a = flatMap { (i) -> String? in
       if let o = i as? OptionalProtocol {
-        if o.isSome() {
+        if o.isSome {
           return o.unwrappedString()
         } else {
           return nil

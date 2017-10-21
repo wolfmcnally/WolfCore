@@ -66,10 +66,10 @@ extension UIDevice {
 
 public func forcePhoneToPortraitOrientation() {
   if isPhone {
-    UIDevice.current.force(toOrientation: UIInterfaceOrientation.portrait)
+    UIDevice.current.force(toOrientation: .portrait)
   }
 }
 
 public func forceToPortraitOrientation() {
-  UIDevice.current.force(toOrientation: UIInterfaceOrientation.portrait)
+  UIDevice.current.force(toOrientation: .portrait)
 }

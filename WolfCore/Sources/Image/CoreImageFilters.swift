@@ -108,6 +108,41 @@ public class GaussianBlurFilter: CoreImageFilter {
   }
 }
 
+public class QRCodeGeneratorFilter: CoreImageFilter {
+    public init() { super.init(filterName: "CIQRCodeGenerator") }
+
+    public enum CorrectionLevel: String {
+        case low = "L"
+        case medium = "M"
+        case quartile = "Q"
+        case high = "H"
+    }
+
+    public convenience init(string: String, correctionLevel: CorrectionLevel = .medium) {
+        let data = string |> UTF8.init |> Data.init
+        self.init(data: data, correctionLevel: correctionLevel)
+    }
+
+    public convenience init(data: Data, correctionLevel: CorrectionLevel = .medium) {
+        self.init()
+        self.data = data
+        self.correctionLevel = correctionLevel
+    }
+
+    public var data: Data? {
+        get { return filter.value(forKey: "inputMessage" ) as? Data }
+        set { filter.setValue(newValue, forKey: "inputMessage" ) }
+    }
+
+    public var correctionLevel: CorrectionLevel {
+        get {
+            let s = filter.value(forKey: "inputCorrectionLevel") as? String ?? CorrectionLevel.medium.rawValue
+            return CorrectionLevel(rawValue: s)!
+        }
+        set { filter.setValue(newValue.rawValue, forKey: "inputCorrectionLevel") }
+    }
+}
+
 public func |> (lhs: OSImage, rhs: CoreImageFilter) -> CoreImageFilter {
   rhs.inputImage = lhs
   return rhs

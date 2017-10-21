@@ -21,60 +21,68 @@
 //    print(a†)         // prints "5"
 
 public protocol OptionalProtocol {
-  func unwrappedString() -> String
-  func isSome() -> Bool
-  func unwrap() -> Any
+    func unwrappedString() -> String
+    var isNone: Bool { get }
+    var isSome: Bool { get }
+    func unwrap() -> Any
 }
 
 extension Optional: OptionalProtocol {
-  public func unwrappedString() -> String {
-    switch self {
-    case .some(let wrapped as OptionalProtocol): return wrapped.unwrappedString()
-    case .some(let wrapped): return String(describing: wrapped)
-    case .none: return String(describing: self)
+    public func unwrappedString() -> String {
+        switch self {
+        case .some(let wrapped as OptionalProtocol): return wrapped.unwrappedString()
+        case .some(let wrapped): return String(describing: wrapped)
+        case .none: return String(describing: self)
+        }
     }
-  }
-  
-  public func isSome() -> Bool {
-    switch self {
-    case .none: return false
-    case .some: return true
+    
+    public var isNone: Bool {
+        switch self {
+        case .none: return true
+        case .some: return false
+        }
     }
-  }
-  
-  public func unwrap() -> Any {
-    switch self {
-    case .none: preconditionFailure("trying to unwrap nil")
-    case .some(let unwrapped): return unwrapped
+
+    public var isSome: Bool {
+        switch self {
+        case .none: return false
+        case .some: return true
+        }
     }
-  }
+    
+    public func unwrap() -> Any {
+        switch self {
+        case .none: preconditionFailure("trying to unwrap nil")
+        case .some(let unwrapped): return unwrapped
+        }
+    }
 }
 
 public func unwrap<T>(_ any: T) -> Any
 {
-  guard let optional = any as? OptionalProtocol, optional.isSome() else {
-    return any
-  }
-  return optional.unwrap()
+    guard let optional = any as? OptionalProtocol, optional.isSome else {
+        return any
+    }
+    return optional.unwrap()
 }
 
 postfix operator †
 public postfix func † <X> (x: X?) -> String {
-  return x.unwrappedString()
+    return x.unwrappedString()
 }
 
 public func typeName<X>(of x: X) -> String {
-  return "\(type(of: x))"
+    return "\(type(of: x))"
 }
 
 public func identifier<X: AnyObject>(of x: X) -> String {
-  return "0x" + String(ObjectIdentifier(x).hashValue, radix: 16)
+    return "0x" + String(ObjectIdentifier(x).hashValue, radix: 16)
 }
 
 postfix operator ††
 public postfix func †† <X: AnyObject>(x: X) -> String {
-  return "<\(typeName(of: x)): \(identifier(of: x))>"
+    return "<\(typeName(of: x)): \(identifier(of: x))>"
 }
 public postfix func †† <X: AnyObject>(x: X?) -> String {
-  return x == nil ? "nil" : (x!)††
+    return x == nil ? "nil" : (x!)††
 }
