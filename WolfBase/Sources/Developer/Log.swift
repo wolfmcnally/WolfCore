@@ -43,7 +43,7 @@ public struct LogGroup: ExtensibleEnumeratedName {
 }
 
 public class Log {
-    public var level = LogLevel.info
+    public var level = LogLevel.trace
     public var locationLevel = LogLevel.error
     public private(set) var groupLevels = [LogGroup : LogLevel]()
 
