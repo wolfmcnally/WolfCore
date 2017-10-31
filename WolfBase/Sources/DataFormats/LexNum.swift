@@ -9,6 +9,11 @@
 import Foundation
 
 /// Utilities for encoding and decoding integers as strings having the same relative lexicographical order.
+///
+/// Based on:
+/// "Efficient Lexicographic Encoding of Numbers" by Peter Seymour
+/// http://www.zanopha.com/docs/elen.pdf
+
 public struct LexNum {
     private typealias `Self` = LexNum
 
