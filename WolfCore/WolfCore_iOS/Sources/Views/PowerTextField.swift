@@ -179,7 +179,7 @@ public class PowerTextField: View, Editable {
   }
 
   public var characterCount: Int {
-    return text?.characters.count ?? 0
+    return text?.count ?? 0
   }
 
   public var isEmpty: Bool {
@@ -932,7 +932,7 @@ public class PowerTextField: View, Editable {
 
       // Enforce the character limit, if any
       if let characterLimit = characterLimit {
-        guard endText.characters.count <= characterLimit else { return nil }
+        guard endText.count <= characterLimit else { return nil }
       }
 
       guard let validator = validator else { return endText }

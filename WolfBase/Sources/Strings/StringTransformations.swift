@@ -16,7 +16,7 @@ extension String {
   }
 
   public func truncated(afterCount count: Int, adding signifier: String? = "…") -> String {
-    guard characters.count > count else { return self }
+    guard self.count > count else { return self }
     let s = self[startIndex..<index(startIndex, offsetBy: count)]
     return [s, signifier as Any].flatJoined()
   }
@@ -24,7 +24,7 @@ extension String {
 
 extension String {
   public func padded(to count: Int, onRight: Bool = false, with character: Character = " ") -> String {
-    let startCount = self.characters.count
+    let startCount = self.count
     let padCount = count - startCount
     guard padCount > 0 else { return self }
     let pad = String(repeating: String(character), count: padCount)
@@ -67,8 +67,8 @@ extension String {
   }
 
   public func capitalizedFirstCharacter() -> String {
-    let first = String(self.characters.first!).capitalized
-    let rest = String(self.characters.dropFirst())
+    let first = String(self.first!).capitalized
+    let rest = self.dropFirst()
     return first + rest
   }
 

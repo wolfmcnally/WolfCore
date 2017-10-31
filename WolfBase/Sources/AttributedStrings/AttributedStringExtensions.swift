@@ -10,7 +10,7 @@ import Foundation
 
 extension AttributedString {
   public var count: Int {
-    return string.characters.count
+    return string.count
   }
 
   public func attributedSubstring(from range: Range<String.Index>) -> AttributedString {
@@ -171,7 +171,7 @@ extension AttributedString {
   public func printAttributes() {
     let aliaser = ObjectAliaser()
     var strIndex = string.startIndex
-    for char in string.characters {
+    for char in string {
       let joiner = Joiner()
       joiner.append(char)
       let attrs: StringAttributes = attributes(at: strIndex)

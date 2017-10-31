@@ -19,7 +19,7 @@ extension String {
 
     var totalOffset = 0
     for (sourceRange, replacement) in sortedReplacements {
-      let replacementCount = replacement.characters.count
+      let replacementCount = replacement.count
       let rangeCount = source.distance(from: sourceRange.lowerBound, to: sourceRange.upperBound)
       let offset = replacementCount - rangeCount
 

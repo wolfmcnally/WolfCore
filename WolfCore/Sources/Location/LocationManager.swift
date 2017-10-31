@@ -160,3 +160,38 @@ extension CLAuthorizationStatus: CustomStringConvertible {
   }
 }
 
+extension CLRegionState: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .unknown:
+            return "unknown"
+        case .inside:
+            return "inside"
+        case .outside:
+            return "outside"
+        }
+    }
+}
+
+extension CLProximity: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .unknown:
+            return "unknown"
+        case .far:
+            return "far"
+        case .near:
+            return "near"
+        case .immediate:
+            return "immediate"
+        }
+    }
+}
+
+extension CLBeaconRegion {
+    public var majorMinorDescription: String {
+        let majorString = major != nil ? String(describing: major!) : "Any"
+        let minorString = minor != nil ? String(describing: minor!) : "Any"
+        return "Major: \(majorString) Minor: \(minorString)"
+    }
+}

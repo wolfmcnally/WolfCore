@@ -61,7 +61,7 @@ public func |> <A, B>(lhs: A, rhs: (A) -> () throws -> B) throws -> B {
 ///     - lhs: The monad to be transformed.
 ///     - rhs: The function to be called to perform the transformation or
 ///             generate a side-effect.
-public func |> <A>(lhs: A, rhs: (A) -> Void) -> A {
+@discardableResult public func |> <A>(lhs: A, rhs: (A) -> Void) -> A {
   rhs(lhs)
   return lhs
 }

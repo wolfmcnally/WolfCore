@@ -29,7 +29,7 @@ extension StringValidation {
 
   public func minLength(_ minLength: Int?) throws -> StringValidation {
     guard let minLength = minLength else { return self }
-    guard value.characters.count >= minLength else {
+    guard value.count >= minLength else {
       throw ValidationError(message: "#{name} must be at least #{minLength} characters." ¶ ["name": name, "minLength": String(minLength)], violation: "minLength")
     }
     return self
@@ -37,7 +37,7 @@ extension StringValidation {
 
   public func maxLength(_ maxLength: Int?) throws -> StringValidation {
     guard let maxLength = maxLength else { return self }
-    guard value.characters.count <= maxLength else {
+    guard value.count <= maxLength else {
       throw ValidationError(message: "#{name} may not be more than #{maxLength} characters." ¶ ["name": name, "maxLength": String(maxLength)], violation: "maxLength")
     }
     return self

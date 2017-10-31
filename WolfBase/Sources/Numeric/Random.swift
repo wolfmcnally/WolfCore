@@ -102,12 +102,12 @@ public struct Random {
     }
 
     public func index(in string: String) -> String.Index {
-        let i = number(0..<string.characters.count)
+        let i = number(0..<string.count)
         return string.index(string.startIndex, offsetBy: i)
     }
 
     public func insertionPoint(in string: String) -> String.Index {
-        let i = number(0...string.characters.count)
+        let i = number(0...string.count)
         return string.index(string.startIndex, offsetBy: i)
     }
 

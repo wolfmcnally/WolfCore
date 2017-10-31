@@ -178,9 +178,9 @@ public class Lorem {
   }
 
   public static func password() -> String {
-    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".characters
-    let digits = "0123456789".characters
-    let symbols = "!@#$%^&*-_=+".characters
+    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    let digits = "0123456789"
+    let symbols = "!@#$%^&*-_=+"
     var result = Random.count(6...12).reduce("") { (result, _) in
       return result + String(Random.choice(among: alphabet))
     }
@@ -194,7 +194,7 @@ public class Lorem {
   }
 
   public static func alphanumericRecordID() -> String {
-    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".characters
+    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
     return Random.count(4...8).reduce("") { (result, _) in
       return result + String(Random.choice(among: alphabet))
     }

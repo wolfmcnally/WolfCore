@@ -24,7 +24,7 @@ public struct Hex {
   ///
   /// May be used as a monad transformer.
   public init(string: String) throws {
-    let charactersCount = string.characters.count
+    let charactersCount = string.count
 
     var data: Data
 

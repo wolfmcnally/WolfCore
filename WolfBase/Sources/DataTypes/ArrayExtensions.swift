@@ -44,6 +44,12 @@ extension Array {
         }
         return result
     }
+
+    public func appending(_ newElement: Element) -> Array {
+        var s = self
+        s.append(newElement)
+        return s
+    }
 }
 
 extension Sequence {
@@ -59,6 +65,15 @@ extension Sequence {
             return String(describing: i)
         }
         return a.joined(separator: separator)
+    }
+
+    public func filtermap<T>(_ transform: (Element) -> T?) -> Array<T> {
+        var result = [T]()
+        forEach {
+            guard let t = transform($0) else { return }
+            result.append(t)
+        }
+        return result
     }
 }
 

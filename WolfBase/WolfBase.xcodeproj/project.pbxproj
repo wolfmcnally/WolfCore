@@ -104,6 +104,13 @@
 		032C4D8D1EFCEE64004E03DD /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032C4D8C1EFCEE61004E03DD /* DataExtensions.swift */; };
 		032C4D901EFCEEF2004E03DD /* UTF8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032C4D8F1EFCEEEF004E03DD /* UTF8.swift */; };
 		032C4D921EFCEF1B004E03DD /* Joiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032C4D911EFCEF17004E03DD /* Joiner.swift */; };
+		033697651FA8784200A88866 /* LexNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033697641FA8784200A88866 /* LexNum.swift */; };
+		033697661FA8784200A88866 /* LexNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033697641FA8784200A88866 /* LexNum.swift */; };
+		033697671FA8784200A88866 /* LexNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033697641FA8784200A88866 /* LexNum.swift */; };
+		033697681FA8784200A88866 /* LexNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033697641FA8784200A88866 /* LexNum.swift */; };
+		0336976A1FA8788000A88866 /* LexNumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033697691FA8788000A88866 /* LexNumTests.swift */; };
+		0336976B1FA8788000A88866 /* LexNumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033697691FA8788000A88866 /* LexNumTests.swift */; };
+		0336976C1FA8788000A88866 /* LexNumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033697691FA8788000A88866 /* LexNumTests.swift */; };
 		03541FDE1F4B9E1A0040EA87 /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03541FDD1F4B9E1A0040EA87 /* CodableUtils.swift */; };
 		03541FDF1F4B9E1A0040EA87 /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03541FDD1F4B9E1A0040EA87 /* CodableUtils.swift */; };
 		03541FE01F4B9E1A0040EA87 /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03541FDD1F4B9E1A0040EA87 /* CodableUtils.swift */; };
@@ -180,6 +187,14 @@
 		035B70261EFF1BDC001E293C /* GeometryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B70241EFF1BD8001E293C /* GeometryUtils.swift */; };
 		035B70271EFF1BDC001E293C /* GeometryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B70241EFF1BD8001E293C /* GeometryUtils.swift */; };
 		035B70281EFF1BDD001E293C /* GeometryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B70241EFF1BD8001E293C /* GeometryUtils.swift */; };
+		035C7CBC1FA584800093123D /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C7CBB1FA584800093123D /* Heap.swift */; };
+		035C7CBD1FA584800093123D /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C7CBB1FA584800093123D /* Heap.swift */; };
+		035C7CBE1FA584800093123D /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C7CBB1FA584800093123D /* Heap.swift */; };
+		035C7CBF1FA584800093123D /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C7CBB1FA584800093123D /* Heap.swift */; };
+		035C7CC11FA584C50093123D /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C7CC01FA584C50093123D /* PriorityQueue.swift */; };
+		035C7CC21FA584C50093123D /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C7CC01FA584C50093123D /* PriorityQueue.swift */; };
+		035C7CC31FA584C50093123D /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C7CC01FA584C50093123D /* PriorityQueue.swift */; };
+		035C7CC41FA584C50093123D /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C7CC01FA584C50093123D /* PriorityQueue.swift */; };
 		035DAA171EFF5747001040CE /* StringIndexesAndRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA161EFF5747001040CE /* StringIndexesAndRanges.swift */; };
 		035DAA181EFF5747001040CE /* StringIndexesAndRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA161EFF5747001040CE /* StringIndexesAndRanges.swift */; };
 		035DAA191EFF5747001040CE /* StringIndexesAndRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA161EFF5747001040CE /* StringIndexesAndRanges.swift */; };
@@ -533,9 +548,17 @@
 		03B2E43D1F00A1D5002856DD /* ResourceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E43B1F00A1D5002856DD /* ResourceUtils.swift */; };
 		03B2E43E1F00A1D5002856DD /* ResourceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E43B1F00A1D5002856DD /* ResourceUtils.swift */; };
 		03B2E43F1F00A1D5002856DD /* ResourceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E43B1F00A1D5002856DD /* ResourceUtils.swift */; };
-		03D8FF8C1EFC8C570000AAD5 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D8FF821EFC8C570000AAD5 /* WolfBase.framework */; };
+		03C88CE11FA3CE9600E6B859 /* SortWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C88CE01FA3CE9600E6B859 /* SortWeight.swift */; };
+		03C88CE21FA3CE9600E6B859 /* SortWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C88CE01FA3CE9600E6B859 /* SortWeight.swift */; };
+		03C88CE31FA3CE9600E6B859 /* SortWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C88CE01FA3CE9600E6B859 /* SortWeight.swift */; };
+		03C88CE41FA3CE9600E6B859 /* SortWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C88CE01FA3CE9600E6B859 /* SortWeight.swift */; };
 		03D8FF931EFC8C570000AAD5 /* WolfBase_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 03D8FF851EFC8C570000AAD5 /* WolfBase_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03D8FFA11EFC8D610000AAD5 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D8FFA01EFC8D530000AAD5 /* Interval.swift */; };
+		03E131761FA87CBC00C1B937 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D8FF821EFC8C570000AAD5 /* WolfBase.framework */; };
+		03E131781FA8879E00C1B937 /* Ordinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E131771FA8879E00C1B937 /* Ordinal.swift */; };
+		03E131791FA8879E00C1B937 /* Ordinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E131771FA8879E00C1B937 /* Ordinal.swift */; };
+		03E1317A1FA8879E00C1B937 /* Ordinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E131771FA8879E00C1B937 /* Ordinal.swift */; };
+		03E1317B1FA8879E00C1B937 /* Ordinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E131771FA8879E00C1B937 /* Ordinal.swift */; };
 		03EF4EC71EFF1D690002E947 /* AspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF4EC21EFF1D640002E947 /* AspectRatio.swift */; };
 		03EF4EC81EFF1D690002E947 /* Insets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF4EC11EFF1D640002E947 /* Insets.swift */; };
 		03EF4EC91EFF1D690002E947 /* IntPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF4EC61EFF1D650002E947 /* IntPoint.swift */; };
@@ -737,12 +760,12 @@
 			remoteGlobalIDString = 037F7A441EFDDFD8005D7ABB;
 			remoteInfo = WolfBase_watchOS;
 		};
-		03D8FF8D1EFC8C570000AAD5 /* PBXContainerItemProxy */ = {
+		03E131741FA87CB200C1B937 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 03D8FF791EFC8C570000AAD5 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 03D8FF811EFC8C570000AAD5;
-			remoteInfo = WolfBase;
+			remoteInfo = WolfBase_iOS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -783,6 +806,8 @@
 		032C4D8F1EFCEEEF004E03DD /* UTF8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTF8.swift; sourceTree = "<group>"; };
 		032C4D911EFCEF17004E03DD /* Joiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joiner.swift; sourceTree = "<group>"; };
 		03353BD21EFCB7D900332365 /* Numerics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Numerics.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		033697641FA8784200A88866 /* LexNum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexNum.swift; sourceTree = "<group>"; };
+		033697691FA8788000A88866 /* LexNumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexNumTests.swift; sourceTree = "<group>"; };
 		03541FDD1F4B9E1A0040EA87 /* CodableUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUtils.swift; sourceTree = "<group>"; };
 		0359FF571EFDF35400546B30 /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
 		0359FF5D1EFDF3C900546B30 /* BundleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
@@ -803,6 +828,8 @@
 		035B6FF91EFF1878001E293C /* ColorFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFunc.swift; sourceTree = "<group>"; };
 		035B6FFA1EFF18A4001E293C /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		035B70241EFF1BD8001E293C /* GeometryUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryUtils.swift; sourceTree = "<group>"; };
+		035C7CBB1FA584800093123D /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		035C7CC01FA584C50093123D /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
 		035DAA161EFF5747001040CE /* StringIndexesAndRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringIndexesAndRanges.swift; sourceTree = "<group>"; };
 		035DAA1B1EFF5869001040CE /* StringReplacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringReplacement.swift; sourceTree = "<group>"; };
 		035DAA201EFF5ABE001040CE /* StringTransformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTransformations.swift; sourceTree = "<group>"; };
@@ -899,6 +926,7 @@
 		03B2E4081F009377002856DD /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		03B2E4091F009377002856DD /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		03B2E43B1F00A1D5002856DD /* ResourceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceUtils.swift; sourceTree = "<group>"; };
+		03C88CE01FA3CE9600E6B859 /* SortWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortWeight.swift; sourceTree = "<group>"; };
 		03D8FF821EFC8C570000AAD5 /* WolfBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D8FF851EFC8C570000AAD5 /* WolfBase_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolfBase_iOS.h; sourceTree = "<group>"; };
 		03D8FF861EFC8C570000AAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -906,6 +934,7 @@
 		03D8FF921EFC8C570000AAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03D8FFA01EFC8D530000AAD5 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 		03D8FFA21EFC8DA00000AAD5 /* IntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTests.swift; sourceTree = "<group>"; };
+		03E131771FA8879E00C1B937 /* Ordinal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ordinal.swift; sourceTree = "<group>"; };
 		03EF4EBF1EFF1D640002E947 /* IntSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntSize.swift; sourceTree = "<group>"; };
 		03EF4EC01EFF1D640002E947 /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		03EF4EC11EFF1D640002E947 /* Insets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insets.swift; sourceTree = "<group>"; };
@@ -1006,7 +1035,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03D8FF8C1EFC8C570000AAD5 /* WolfBase.framework in Frameworks */,
+				03E131761FA87CBC00C1B937 /* WolfBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1091,6 +1120,7 @@
 				03EF4F531EFF21980002E947 /* Dimensions.swift */,
 				032C4D8A1EFCEE03004E03DD /* ExtensibleEnumeratedName.swift */,
 				03EF4F601EFF22270002E947 /* Grid.swift */,
+				035C7CBB1FA584800093123D /* Heap.swift */,
 				03EF4F631EFF22270002E947 /* Interpolable.swift */,
 				03EF4FAE1EFF291A0002E947 /* Invalidatable.swift */,
 				03EF4F5F1EFF22270002E947 /* JSONModel.swift */,
@@ -1098,7 +1128,10 @@
 				03EF4F641EFF22270002E947 /* Matrix.swift */,
 				03EF4F651EFF22270002E947 /* ModelObject.swift */,
 				031DEEBE1EFEF1A6001DCF3F /* OptionalExtensions.swift */,
+				03E131771FA8879E00C1B937 /* Ordinal.swift */,
+				03C88CE01FA3CE9600E6B859 /* SortWeight.swift */,
 				03EF4F5D1EFF22270002E947 /* Position.swift */,
+				035C7CC01FA584C50093123D /* PriorityQueue.swift */,
 				037F7A061EFDDEFF005D7ABB /* Reference.swift */,
 				038FA0431F071CC5001B37C4 /* SequenceExtensions.swift */,
 				03EF4F5C1EFF22270002E947 /* TransferValue.swift */,
@@ -1126,6 +1159,8 @@
 				03EF4F191EFF203D0002E947 /* ISO8601.swift */,
 				03EF4F1D1EFF203D0002E947 /* JSONUtils.swift */,
 				0381CD441F073373001510EA /* JSONUtilsTests.swift */,
+				033697641FA8784200A88866 /* LexNum.swift */,
+				033697691FA8788000A88866 /* LexNumTests.swift */,
 				03EF4F1B1EFF203D0002E947 /* SwiftJSON.swift */,
 				03EF4F1E1EFF203D0002E947 /* UniqueID.swift */,
 				0381CD391F073014001510EA /* UniqueIDTests.swift */,
@@ -1708,7 +1743,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				03D8FF8E1EFC8C570000AAD5 /* PBXTargetDependency */,
+				03E131751FA87CB200C1B937 /* PBXTargetDependency */,
 			);
 			name = WolfBase_iOSTests;
 			productName = WolfBaseTests;
@@ -1722,7 +1757,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = WolfMcNally.com;
 				TargetAttributes = {
 					037F7A0C1EFDDF55005D7ABB = {
@@ -1845,11 +1880,13 @@
 				038FA0681F0724A3001B37C4 /* FrameBasedSimulator.swift in Sources */,
 				03B2E43D1F00A1D5002856DD /* ResourceUtils.swift in Sources */,
 				03EF4F321EFF205B0002E947 /* UniqueID.swift in Sources */,
+				03C88CE21FA3CE9600E6B859 /* SortWeight.swift in Sources */,
 				03B2E38A1F0071D2002856DD /* MD5.swift in Sources */,
 				035B6FAB1EFF0E6D001E293C /* Validator.swift in Sources */,
 				03EF4ED21EFF1D6A0002E947 /* IntSize.swift in Sources */,
 				03EF4F7C1EFF222E0002E947 /* WeakSet.swift in Sources */,
 				0360B51D1F0061F200A49A9B /* Cache.swift in Sources */,
+				035C7CC21FA584C50093123D /* PriorityQueue.swift in Sources */,
 				03B2E38B1F0071D2002856DD /* SHA1.swift in Sources */,
 				037F7A651EFDE000005D7ABB /* Random.swift in Sources */,
 				035DAA4D1EFF9135001040CE /* AttributeAssignmentPrecedence.swift in Sources */,
@@ -1859,6 +1896,7 @@
 				03EF4F781EFF222E0002E947 /* Position.swift in Sources */,
 				031DEE691EFEE64E001DCF3F /* NetworkUtils.swift in Sources */,
 				038FA06D1F0724C2001B37C4 /* FrameBasedSystem.swift in Sources */,
+				035C7CBD1FA584800093123D /* Heap.swift in Sources */,
 				031DEEBB1EFEF14C001DCF3F /* ArrayExtensions.swift in Sources */,
 				037F7A5E1EFDE000005D7ABB /* Frac.swift in Sources */,
 				031DEEA01EFEF0F1001DCF3F /* Promise.swift in Sources */,
@@ -1918,6 +1956,7 @@
 				03B2E3831F0071D2002856DD /* Credentials.swift in Sources */,
 				03EF4FA01EFF28330002E947 /* InheritsFromOperator.swift in Sources */,
 				0360B5661F00674700A49A9B /* HTTPError.swift in Sources */,
+				03E131791FA8879E00C1B937 /* Ordinal.swift in Sources */,
 				035DAA891EFFA21C001040CE /* AssignPriorityOperator.swift in Sources */,
 				0359FF6D1EFDF51100546B30 /* DescriptiveError.swift in Sources */,
 				03EF4FB01EFF291A0002E947 /* Invalidatable.swift in Sources */,
@@ -1991,6 +2030,7 @@
 				03EF4FC91EFF52460002E947 /* MatchRegularExpressionOperator.swift in Sources */,
 				035DAA1D1EFF5869001040CE /* StringReplacement.swift in Sources */,
 				03B2E3891F0071D2002856DD /* LifeHash.swift in Sources */,
+				033697661FA8784200A88866 /* LexNum.swift in Sources */,
 				03EF4FB51EFF294A0002E947 /* InvalidateAndAssignOperator.swift in Sources */,
 				0360B5641F00674700A49A9B /* HTTPActions.swift in Sources */,
 			);
@@ -2008,6 +2048,7 @@
 				0381CD461F073373001510EA /* JSONUtilsTests.swift in Sources */,
 				0381CD271F072E88001510EA /* StringTests.swift in Sources */,
 				0381CD3B1F073014001510EA /* UniqueIDTests.swift in Sources */,
+				0336976B1FA8788000A88866 /* LexNumTests.swift in Sources */,
 				0381CD371F072FCE001510EA /* UTF8Tests.swift in Sources */,
 				037F7A9C1EFDE039005D7ABB /* LerpTests.swift in Sources */,
 			);
@@ -2026,11 +2067,13 @@
 				038FA0691F0724A3001B37C4 /* FrameBasedSimulator.swift in Sources */,
 				03B2E43E1F00A1D5002856DD /* ResourceUtils.swift in Sources */,
 				03EF4F3C1EFF205C0002E947 /* UniqueID.swift in Sources */,
+				03C88CE31FA3CE9600E6B859 /* SortWeight.swift in Sources */,
 				03B2E3951F0071D2002856DD /* MD5.swift in Sources */,
 				035B6FB21EFF0E6E001E293C /* Validator.swift in Sources */,
 				03EF4EDA1EFF1D6A0002E947 /* IntSize.swift in Sources */,
 				03EF4F871EFF222F0002E947 /* WeakSet.swift in Sources */,
 				0360B5181F0061F200A49A9B /* Cache.swift in Sources */,
+				035C7CC31FA584C50093123D /* PriorityQueue.swift in Sources */,
 				03B2E3961F0071D2002856DD /* SHA1.swift in Sources */,
 				037F7A781EFDE001005D7ABB /* Random.swift in Sources */,
 				035DAA4E1EFF9135001040CE /* AttributeAssignmentPrecedence.swift in Sources */,
@@ -2040,6 +2083,7 @@
 				03EF4F831EFF222F0002E947 /* Position.swift in Sources */,
 				031DEE6A1EFEE64F001DCF3F /* NetworkUtils.swift in Sources */,
 				038FA06E1F0724C2001B37C4 /* FrameBasedSystem.swift in Sources */,
+				035C7CBE1FA584800093123D /* Heap.swift in Sources */,
 				031DEEBC1EFEF14D001DCF3F /* ArrayExtensions.swift in Sources */,
 				037F7A711EFDE001005D7ABB /* Frac.swift in Sources */,
 				031DEEAB1EFEF0F1001DCF3F /* Promise.swift in Sources */,
@@ -2099,6 +2143,7 @@
 				03B2E38E1F0071D2002856DD /* Credentials.swift in Sources */,
 				03EF4FA11EFF28330002E947 /* InheritsFromOperator.swift in Sources */,
 				0360B5721F00674700A49A9B /* HTTPError.swift in Sources */,
+				03E1317A1FA8879E00C1B937 /* Ordinal.swift in Sources */,
 				035DAA8A1EFFA21C001040CE /* AssignPriorityOperator.swift in Sources */,
 				0359FF721EFDF51200546B30 /* DescriptiveError.swift in Sources */,
 				03EF4FB11EFF291A0002E947 /* Invalidatable.swift in Sources */,
@@ -2172,6 +2217,7 @@
 				03EF4FCA1EFF52460002E947 /* MatchRegularExpressionOperator.swift in Sources */,
 				035DAA1E1EFF5869001040CE /* StringReplacement.swift in Sources */,
 				03B2E3941F0071D2002856DD /* LifeHash.swift in Sources */,
+				033697671FA8784200A88866 /* LexNum.swift in Sources */,
 				03EF4FB61EFF294A0002E947 /* InvalidateAndAssignOperator.swift in Sources */,
 				0360B5701F00674700A49A9B /* HTTPActions.swift in Sources */,
 			);
@@ -2189,6 +2235,7 @@
 				0381CD471F073373001510EA /* JSONUtilsTests.swift in Sources */,
 				0381CD281F072E89001510EA /* StringTests.swift in Sources */,
 				0381CD3C1F073014001510EA /* UniqueIDTests.swift in Sources */,
+				0336976C1FA8788000A88866 /* LexNumTests.swift in Sources */,
 				0381CD381F072FCE001510EA /* UTF8Tests.swift in Sources */,
 				037F7A9D1EFDE03A005D7ABB /* LerpTests.swift in Sources */,
 			);
@@ -2203,6 +2250,7 @@
 				0327AEDC1F14458400ECB8BE /* Time.swift in Sources */,
 				036B6A8D1F2AE78E001160D8 /* TextAlignment.swift in Sources */,
 				03B2E3CA1F008353002856DD /* SQLite.swift in Sources */,
+				035C7CBF1FA584800093123D /* Heap.swift in Sources */,
 				037F7A591EFDDFF8005D7ABB /* PipeOperator.swift in Sources */,
 				035B6FB31EFF0E6E001E293C /* EmailValidator.swift in Sources */,
 				03EF4EDF1EFF1D6B0002E947 /* AspectRatio.swift in Sources */,
@@ -2293,6 +2341,7 @@
 				037F7A851EFDE001005D7ABB /* Interval.swift in Sources */,
 				0359FF7A1EFDF51200546B30 /* Result.swift in Sources */,
 				031DEE641EFEE5AE001DCF3F /* DeviceUtils.swift in Sources */,
+				033697681FA8784200A88866 /* LexNum.swift in Sources */,
 				037F7A8E1EFDE001005D7ABB /* StringExtensions.swift in Sources */,
 				035DAA4F1EFF9135001040CE /* AttributeAssignmentPrecedence.swift in Sources */,
 				037F7A8C1EFDE001005D7ABB /* RunningAverage.swift in Sources */,
@@ -2304,6 +2353,7 @@
 				035B6FB81EFF0E6F001E293C /* Validation.swift in Sources */,
 				03B2E3A11F0071D3002856DD /* SHA1.swift in Sources */,
 				03EF4F401EFF205C0002E947 /* BSON.swift in Sources */,
+				03E1317B1FA8879E00C1B937 /* Ordinal.swift in Sources */,
 				035B6FB51EFF0E6E001E293C /* PhoneNumberValidator.swift in Sources */,
 				037F7A881EFDE001005D7ABB /* BinarySearch.swift in Sources */,
 				037F7A8F1EFDE001005D7ABB /* StringFloatPrecision.swift in Sources */,
@@ -2321,6 +2371,7 @@
 				037F7A5B1EFDDFF8005D7ABB /* DataExtensions.swift in Sources */,
 				03B2E43F1F00A1D5002856DD /* ResourceUtils.swift in Sources */,
 				0360B5801F00674800A49A9B /* IPAddress4.swift in Sources */,
+				035C7CC41FA584C50093123D /* PriorityQueue.swift in Sources */,
 				03EF4F3F1EFF205C0002E947 /* Base64URL.swift in Sources */,
 				031DEEAE1EFEF0F2001DCF3F /* Asynchronizer.swift in Sources */,
 				03B2E3A21F0071D3002856DD /* SHA256.swift in Sources */,
@@ -2350,6 +2401,7 @@
 				035B70281EFF1BDD001E293C /* GeometryUtils.swift in Sources */,
 				0360B5861F00674800A49A9B /* URLExtensions.swift in Sources */,
 				031DEEB41EFEF0F2001DCF3F /* Locker.swift in Sources */,
+				03C88CE41FA3CE9600E6B859 /* SortWeight.swift in Sources */,
 				03EF4F891EFF222F0002E947 /* Interpolable.swift in Sources */,
 				03B2E39D1F0071D3002856DD /* HMACSHA256.swift in Sources */,
 				035B70021EFF18AB001E293C /* Gradient.swift in Sources */,
@@ -2370,11 +2422,13 @@
 				038FA0671F0724A3001B37C4 /* FrameBasedSimulator.swift in Sources */,
 				03B2E43C1F00A1D5002856DD /* ResourceUtils.swift in Sources */,
 				03EF4F281EFF205B0002E947 /* UniqueID.swift in Sources */,
+				03C88CE11FA3CE9600E6B859 /* SortWeight.swift in Sources */,
 				03B2E37F1F0071D1002856DD /* MD5.swift in Sources */,
 				035B6FA41EFF0E6D001E293C /* Validator.swift in Sources */,
 				03EF4ECA1EFF1D690002E947 /* IntSize.swift in Sources */,
 				03EF4F711EFF222E0002E947 /* WeakSet.swift in Sources */,
 				0360B5221F0061F300A49A9B /* Cache.swift in Sources */,
+				035C7CC11FA584C50093123D /* PriorityQueue.swift in Sources */,
 				03B2E3801F0071D1002856DD /* SHA1.swift in Sources */,
 				037F7A051EFDDE8E005D7ABB /* StringLocalization.swift in Sources */,
 				035DAA4C1EFF9135001040CE /* AttributeAssignmentPrecedence.swift in Sources */,
@@ -2384,6 +2438,7 @@
 				03EF4F6D1EFF222E0002E947 /* Position.swift in Sources */,
 				031DEE681EFEE64E001DCF3F /* NetworkUtils.swift in Sources */,
 				038FA06C1F0724C2001B37C4 /* FrameBasedSystem.swift in Sources */,
+				035C7CBC1FA584800093123D /* Heap.swift in Sources */,
 				031DEEBA1EFEF14C001DCF3F /* ArrayExtensions.swift in Sources */,
 				03D8FFA11EFC8D610000AAD5 /* Interval.swift in Sources */,
 				031DEE951EFEF0F0001DCF3F /* Promise.swift in Sources */,
@@ -2443,6 +2498,7 @@
 				03B2E3781F0071D1002856DD /* Credentials.swift in Sources */,
 				0383295A1EFC925D0026D259 /* Random.swift in Sources */,
 				0360B55A1F00674600A49A9B /* HTTPError.swift in Sources */,
+				03E131781FA8879E00C1B937 /* Ordinal.swift in Sources */,
 				035DAA881EFFA21C001040CE /* AssignPriorityOperator.swift in Sources */,
 				03EF4F9F1EFF28330002E947 /* InheritsFromOperator.swift in Sources */,
 				0359FF681EFDF51100546B30 /* DescriptiveError.swift in Sources */,
@@ -2516,6 +2572,7 @@
 				03EF4FC81EFF52460002E947 /* MatchRegularExpressionOperator.swift in Sources */,
 				035DAA1C1EFF5869001040CE /* StringReplacement.swift in Sources */,
 				03B2E37E1F0071D1002856DD /* LifeHash.swift in Sources */,
+				033697651FA8784200A88866 /* LexNum.swift in Sources */,
 				03EF4FB41EFF294A0002E947 /* InvalidateAndAssignOperator.swift in Sources */,
 				0360B5581F00674600A49A9B /* HTTPActions.swift in Sources */,
 			);
@@ -2533,6 +2590,7 @@
 				0381CD451F073373001510EA /* JSONUtilsTests.swift in Sources */,
 				0381CD261F072E88001510EA /* StringTests.swift in Sources */,
 				0381CD3A1F073014001510EA /* UniqueIDTests.swift in Sources */,
+				0336976A1FA8788000A88866 /* LexNumTests.swift in Sources */,
 				0381CD361F072FCE001510EA /* UTF8Tests.swift in Sources */,
 				037F7A9B1EFDE038005D7ABB /* LerpTests.swift in Sources */,
 			);
@@ -2571,10 +2629,10 @@
 			target = 037F7A441EFDDFD8005D7ABB /* WolfBase_watchOS */;
 			targetProxy = 037F7AAE1EFDE2A8005D7ABB /* PBXContainerItemProxy */;
 		};
-		03D8FF8E1EFC8C570000AAD5 /* PBXTargetDependency */ = {
+		03E131751FA87CB200C1B937 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 03D8FF811EFC8C570000AAD5 /* WolfBase_iOS */;
-			targetProxy = 03D8FF8D1EFC8C570000AAD5 /* PBXContainerItemProxy */;
+			targetProxy = 03E131741FA87CB200C1B937 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2827,6 +2885,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -2856,6 +2916,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_INCLUDE_PATHS = "${SRCROOT}/CommonCrypto";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2884,6 +2945,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -2972,6 +3035,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2986,6 +3050,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

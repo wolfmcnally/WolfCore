@@ -81,7 +81,7 @@ public let defaultAnimationDuration: TimeInterval = 0.4
   
   public func dispatchAnimated(_ animated: Bool = true, duration: TimeInterval = defaultAnimationDuration, delay: TimeInterval = 0.0, options: OSViewAnimationOptions = [], animations: @escaping Block) -> Promise<Bool> {
     return Promise<Bool> { promise in
-      assert(Thread.isMainThread)
+      checkMainThread()
       if animated {
         UIView.animate(withDuration: duration, delay: delay, options: options, animations: animations) { finished in
           promise.keep(finished)

@@ -14,6 +14,10 @@ public typealias BoolBlock = (Bool) -> Void
 public let mainQueue = DispatchQueue.main
 public let backgroundQueue = DispatchQueue(label: "background", attributes: [.concurrent], target: nil)
 
+public func checkMainThread() {
+    precondition(Thread.isMainThread)
+}
+
 private func _dispatchOnQueue(_ queue: DispatchQueue, cancelable: Cancelable, _ f: @escaping CancelableBlock) {
   queue.async {
     f(cancelable)

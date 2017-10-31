@@ -72,7 +72,7 @@ extension Data {
 extension Base64URL {
   static func toBase64URLString(string: String) -> String {
     var s2 = ""
-    for c in string.characters {
+    for c in string {
       switch c {
       case Character("+"):
         s2.append(Character("_"))
@@ -89,7 +89,7 @@ extension Base64URL {
   
   static func toBase64String(string: String) -> String {
     var s2 = ""
-    let chars = string.characters
+    let chars = string
     for c in chars {
       switch c {
       case Character("_"):
