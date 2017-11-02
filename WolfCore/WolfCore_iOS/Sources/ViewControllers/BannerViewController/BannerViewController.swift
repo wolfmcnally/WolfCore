@@ -253,14 +253,4 @@ open class BannerViewController: ViewController {
       )
     }
   }
-  
-  override open func applySkin(_ skin: Skin) {
-    super.applySkin(skin)
-    view.normalBackgroundColor ©= skin.bannerBarBackgroundColor
-    setNeedsStatusBarAppearanceUpdate()
-  }
-  
-  override open var preferredStatusBarStyle: UIStatusBarStyle {
-    return skin.bannerStatusBarStyle
-  }
 }

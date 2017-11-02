@@ -127,8 +127,6 @@
 		035B70171EFF1A28001E293C /* ConicalGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B70151EFF1A22001E293C /* ConicalGradientView.swift */; };
 		035DAA371EFF62C5001040CE /* DevOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA361EFF62C5001040CE /* DevOverlayView.swift */; };
 		035DAA381EFF62C5001040CE /* DevOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA361EFF62C5001040CE /* DevOverlayView.swift */; };
-		035DAA5C1EFF9B17001040CE /* TopSkin-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA5B1EFF9B17001040CE /* TopSkin-iOS.swift */; };
-		035DAA5E1EFF9B6F001040CE /* Skin-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA5D1EFF9B6F001040CE /* Skin-iOS.swift */; };
 		035DAA611EFF9BA6001040CE /* Skin-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA601EFF9BA6001040CE /* Skin-macOS.swift */; };
 		035DAA651EFF9BDA001040CE /* Skin-tvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA631EFF9BD6001040CE /* Skin-tvOS.swift */; };
 		035DAA811EFFA093001040CE /* ResponderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA801EFFA093001040CE /* ResponderExtensions.swift */; };
@@ -223,24 +221,6 @@
 		0360B4301F004EA400A49A9B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B42E1F004E9F00A49A9B /* StringExtensions.swift */; };
 		0360B4311F004EA500A49A9B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B42E1F004E9F00A49A9B /* StringExtensions.swift */; };
 		0360B4321F004EA600A49A9B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B42E1F004E9F00A49A9B /* StringExtensions.swift */; };
-		0360B43A1F004ED400A49A9B /* ConcreteSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4341F004ECB00A49A9B /* ConcreteSkin.swift */; };
-		0360B43B1F004ED400A49A9B /* InterpolatedSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4351F004ECB00A49A9B /* InterpolatedSkin.swift */; };
-		0360B43C1F004ED400A49A9B /* Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4361F004ECB00A49A9B /* Skin.swift */; };
-		0360B43D1F004ED400A49A9B /* SkinKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4371F004ECB00A49A9B /* SkinKey.swift */; };
-		0360B43E1F004ED400A49A9B /* Skinnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4381F004ECB00A49A9B /* Skinnable.swift */; };
-		0360B43F1F004ED400A49A9B /* SkinValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4391F004ECB00A49A9B /* SkinValue.swift */; };
-		0360B4401F004ED400A49A9B /* ConcreteSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4341F004ECB00A49A9B /* ConcreteSkin.swift */; };
-		0360B4411F004ED400A49A9B /* InterpolatedSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4351F004ECB00A49A9B /* InterpolatedSkin.swift */; };
-		0360B4421F004ED400A49A9B /* Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4361F004ECB00A49A9B /* Skin.swift */; };
-		0360B4431F004ED400A49A9B /* SkinKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4371F004ECB00A49A9B /* SkinKey.swift */; };
-		0360B4441F004ED400A49A9B /* Skinnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4381F004ECB00A49A9B /* Skinnable.swift */; };
-		0360B4451F004ED400A49A9B /* SkinValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4391F004ECB00A49A9B /* SkinValue.swift */; };
-		0360B4461F004ED500A49A9B /* ConcreteSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4341F004ECB00A49A9B /* ConcreteSkin.swift */; };
-		0360B4471F004ED500A49A9B /* InterpolatedSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4351F004ECB00A49A9B /* InterpolatedSkin.swift */; };
-		0360B4481F004ED500A49A9B /* Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4361F004ECB00A49A9B /* Skin.swift */; };
-		0360B4491F004ED500A49A9B /* SkinKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4371F004ECB00A49A9B /* SkinKey.swift */; };
-		0360B44A1F004ED500A49A9B /* Skinnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4381F004ECB00A49A9B /* Skinnable.swift */; };
-		0360B44B1F004ED500A49A9B /* SkinValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4391F004ECB00A49A9B /* SkinValue.swift */; };
 		0360B4551F004F2800A49A9B /* CGUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B44D1F004F2300A49A9B /* CGUtils.swift */; };
 		0360B4561F004F2800A49A9B /* CoreImageFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B44E1F004F2300A49A9B /* CoreImageFilters.swift */; };
 		0360B4571F004F2800A49A9B /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B44F1F004F2300A49A9B /* ImageExtensions.swift */; };
@@ -321,8 +301,6 @@
 		0360B4B41F004FD800A49A9B /* OSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4AB1F004FD000A49A9B /* OSView.swift */; };
 		0360B4B51F004FD800A49A9B /* ViewHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4AC1F004FD000A49A9B /* ViewHierarchy.swift */; };
 		0360B4B61F004FD800A49A9B /* ViewNesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4AD1F004FD000A49A9B /* ViewNesting.swift */; };
-		0360B4BC1F0053B500A49A9B /* SkinnableUIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4BB1F0053AD00A49A9B /* SkinnableUIViewControllerExtensions.swift */; };
-		0360B4BD1F0053B500A49A9B /* SkinnableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4BA1F0053AD00A49A9B /* SkinnableViewExtensions.swift */; };
 		0360B4C01F0055A900A49A9B /* OSGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4BF1F0055A900A49A9B /* OSGestureRecognizer.swift */; };
 		0360B4C11F0055A900A49A9B /* OSGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4BF1F0055A900A49A9B /* OSGestureRecognizer.swift */; };
 		0360B4C21F0055CE00A49A9B /* OSGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4BF1F0055A900A49A9B /* OSGestureRecognizer.swift */; };
@@ -373,9 +351,6 @@
 		038F9FD61F06EF50001B37C4 /* ReachabilityBulletinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F9FD51F06EF50001B37C4 /* ReachabilityBulletinView.swift */; };
 		038F9FDF1F07011C001B37C4 /* Hideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F401EFF0D63001E293C /* Hideable.swift */; };
 		038F9FE01F070550001B37C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3D71F008EF7002856DD /* ViewController.swift */; };
-		038F9FE11F0706B1001B37C4 /* SkinnableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4BA1F0053AD00A49A9B /* SkinnableViewExtensions.swift */; };
-		038F9FE21F0706D2001B37C4 /* SkinnableUIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4BB1F0053AD00A49A9B /* SkinnableUIViewControllerExtensions.swift */; };
-		038F9FE31F070993001B37C4 /* TopSkin-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA5B1EFF9B17001040CE /* TopSkin-iOS.swift */; };
 		038F9FE61F071210001B37C4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F9FE51F071210001B37C4 /* LocationManager.swift */; };
 		038F9FE71F071210001B37C4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F9FE51F071210001B37C4 /* LocationManager.swift */; };
 		038F9FE81F071210001B37C4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F9FE51F071210001B37C4 /* LocationManager.swift */; };
@@ -404,7 +379,6 @@
 		038FA0731F0726EF001B37C4 /* OrientationNotificationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0721F0726EF001B37C4 /* OrientationNotificationActions.swift */; };
 		038FA0761F072739001B37C4 /* TVControllerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0751F072739001B37C4 /* TVControllerActions.swift */; };
 		039F32AB1F0AD0C100D2BAD0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F281EFF0D53001E293C /* View.swift */; };
-		039F32AC1F0AD1F600D2BAD0 /* SkinnableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4BA1F0053AD00A49A9B /* SkinnableViewExtensions.swift */; };
 		039F32AE1F0AD29F00D2BAD0 /* TopSkin-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039F32AD1F0AD29F00D2BAD0 /* TopSkin-macOS.swift */; };
 		03B2E3CC1F008455002856DD /* OSEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3CB1F008455002856DD /* OSEvent.swift */; };
 		03B2E3CD1F008455002856DD /* OSEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3CB1F008455002856DD /* OSEvent.swift */; };
@@ -589,8 +563,6 @@
 		035B6F441EFF0D63001E293C /* ClearFieldButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearFieldButtonView.swift; sourceTree = "<group>"; };
 		035B70151EFF1A22001E293C /* ConicalGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConicalGradientView.swift; sourceTree = "<group>"; };
 		035DAA361EFF62C5001040CE /* DevOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevOverlayView.swift; sourceTree = "<group>"; };
-		035DAA5B1EFF9B17001040CE /* TopSkin-iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopSkin-iOS.swift"; sourceTree = "<group>"; };
-		035DAA5D1EFF9B6F001040CE /* Skin-iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skin-iOS.swift"; sourceTree = "<group>"; };
 		035DAA601EFF9BA6001040CE /* Skin-macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skin-macOS.swift"; sourceTree = "<group>"; };
 		035DAA631EFF9BD6001040CE /* Skin-tvOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skin-tvOS.swift"; sourceTree = "<group>"; };
 		035DAA801EFFA093001040CE /* ResponderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderExtensions.swift; sourceTree = "<group>"; };
@@ -619,12 +591,6 @@
 		0360B40F1F004E2000A49A9B /* OSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSFont.swift; sourceTree = "<group>"; };
 		0360B4291F004E5B00A49A9B /* RunLoopUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLoopUtils.swift; sourceTree = "<group>"; };
 		0360B42E1F004E9F00A49A9B /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		0360B4341F004ECB00A49A9B /* ConcreteSkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteSkin.swift; sourceTree = "<group>"; };
-		0360B4351F004ECB00A49A9B /* InterpolatedSkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpolatedSkin.swift; sourceTree = "<group>"; };
-		0360B4361F004ECB00A49A9B /* Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skin.swift; sourceTree = "<group>"; };
-		0360B4371F004ECB00A49A9B /* SkinKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinKey.swift; sourceTree = "<group>"; };
-		0360B4381F004ECB00A49A9B /* Skinnable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skinnable.swift; sourceTree = "<group>"; };
-		0360B4391F004ECB00A49A9B /* SkinValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinValue.swift; sourceTree = "<group>"; };
 		0360B44D1F004F2300A49A9B /* CGUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGUtils.swift; sourceTree = "<group>"; };
 		0360B44E1F004F2300A49A9B /* CoreImageFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImageFilters.swift; sourceTree = "<group>"; };
 		0360B44F1F004F2300A49A9B /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
@@ -646,9 +612,6 @@
 		0360B4AB1F004FD000A49A9B /* OSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSView.swift; sourceTree = "<group>"; };
 		0360B4AC1F004FD000A49A9B /* ViewHierarchy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHierarchy.swift; sourceTree = "<group>"; };
 		0360B4AD1F004FD000A49A9B /* ViewNesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNesting.swift; sourceTree = "<group>"; };
-		0360B4B71F00501000A49A9B /* SKINS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SKINS.md; sourceTree = "<group>"; };
-		0360B4BA1F0053AD00A49A9B /* SkinnableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinnableViewExtensions.swift; sourceTree = "<group>"; };
-		0360B4BB1F0053AD00A49A9B /* SkinnableUIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinnableUIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		0360B4BF1F0055A900A49A9B /* OSGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSGestureRecognizer.swift; sourceTree = "<group>"; };
 		0360B4C31F00567E00A49A9B /* OSTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSTouch.swift; sourceTree = "<group>"; };
 		0360B4C71F0056AD00A49A9B /* GestureRecognizerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecognizerAction.swift; sourceTree = "<group>"; };
@@ -804,7 +767,6 @@
 				035DAA351EFF62A5001040CE /* Developer */,
 				0360B4CB1F00575C00A49A9B /* Interaction */,
 				03B2E4201F00969B002856DD /* Keyboard */,
-				035DAA5A1EFF9B07001040CE /* Skins */,
 				03B2E3D61F008B5D002856DD /* ViewControllers */,
 				035B6F1B1EFF0B71001E293C /* Views */,
 			);
@@ -899,7 +861,6 @@
 				0360B4BE1F00551000A49A9B /* Interaction */,
 				0360B5411F0066DF00A49A9B /* Internet */,
 				038F9FE41F0711F3001B37C4 /* Location */,
-				0360B4331F004ECB00A49A9B /* Skins */,
 				0360B42D1F004E9F00A49A9B /* Strings */,
 				0360B4091F004E2000A49A9B /* Type */,
 				0360B4AA1F004FD000A49A9B /* Views */,
@@ -1110,7 +1071,6 @@
 		035B6FCB1EFF10B6001E293C /* Guides */ = {
 			isa = PBXGroup;
 			children = (
-				0360B4B71F00501000A49A9B /* SKINS.md */,
 			);
 			path = Guides;
 			sourceTree = "<group>";
@@ -1121,16 +1081,6 @@
 				035DAA361EFF62C5001040CE /* DevOverlayView.swift */,
 			);
 			path = Developer;
-			sourceTree = "<group>";
-		};
-		035DAA5A1EFF9B07001040CE /* Skins */ = {
-			isa = PBXGroup;
-			children = (
-				035DAA5B1EFF9B17001040CE /* TopSkin-iOS.swift */,
-				035DAA5D1EFF9B6F001040CE /* Skin-iOS.swift */,
-				0360B4BB1F0053AD00A49A9B /* SkinnableUIViewControllerExtensions.swift */,
-			);
-			path = Skins;
 			sourceTree = "<group>";
 		};
 		035DAA5F1EFF9B96001040CE /* Skins */ = {
@@ -1226,20 +1176,6 @@
 				0360B42E1F004E9F00A49A9B /* StringExtensions.swift */,
 			);
 			path = Strings;
-			sourceTree = "<group>";
-		};
-		0360B4331F004ECB00A49A9B /* Skins */ = {
-			isa = PBXGroup;
-			children = (
-				0360B4341F004ECB00A49A9B /* ConcreteSkin.swift */,
-				0360B4351F004ECB00A49A9B /* InterpolatedSkin.swift */,
-				0360B4361F004ECB00A49A9B /* Skin.swift */,
-				0360B4371F004ECB00A49A9B /* SkinKey.swift */,
-				0360B4381F004ECB00A49A9B /* Skinnable.swift */,
-				0360B4391F004ECB00A49A9B /* SkinValue.swift */,
-				0360B4BA1F0053AD00A49A9B /* SkinnableViewExtensions.swift */,
-			);
-			path = Skins;
 			sourceTree = "<group>";
 		};
 		0360B44C1F004F2300A49A9B /* Image */ = {
@@ -1757,10 +1693,8 @@
 				035B6F561EFF0D6D001E293C /* PowerTextField.swift in Sources */,
 				035B6F721EFF0D75001E293C /* Slider.swift in Sources */,
 				035B6F4A1EFF0D6D001E293C /* DividerView.swift in Sources */,
-				0360B43A1F004ED400A49A9B /* ConcreteSkin.swift in Sources */,
 				035B6F4D1EFF0D6D001E293C /* FlexView.swift in Sources */,
 				03B2E3CC1F008455002856DD /* OSEvent.swift in Sources */,
-				035DAA5C1EFF9B17001040CE /* TopSkin-iOS.swift in Sources */,
 				031DEE7A1EFEEF24001DCF3F /* DeviceAccess.swift in Sources */,
 				0360B4121F004E2C00A49A9B /* FontFaceName.swift in Sources */,
 				0360B3B61F004D1400A49A9B /* Shading.swift in Sources */,
@@ -1773,8 +1707,6 @@
 				035B6F4C1EFF0D6D001E293C /* EditableContainerView.swift in Sources */,
 				0360B4E01F005A7500A49A9B /* TableViewExtensions.swift in Sources */,
 				0360B4151F004E2C00A49A9B /* OSFont.swift in Sources */,
-				0360B43E1F004ED400A49A9B /* Skinnable.swift in Sources */,
-				0360B43C1F004ED400A49A9B /* Skin.swift in Sources */,
 				0360B4AE1F004FD700A49A9B /* OSView.swift in Sources */,
 				035B6F6C1EFF0D75001E293C /* Control.swift in Sources */,
 				038FA0491F071E81001B37C4 /* ViewDebugging.swift in Sources */,
@@ -1826,7 +1758,6 @@
 				0360B45B1F004F2800A49A9B /* OSImageRenderingMode.swift in Sources */,
 				0360B3B31F004D1400A49A9B /* ConicalGradient.swift in Sources */,
 				0312F5411F36BACD00C00CF9 /* MetalTextureUtils.swift in Sources */,
-				0360B43F1F004ED400A49A9B /* SkinValue.swift in Sources */,
 				0360B45A1F004F2800A49A9B /* OSImageOrientation.swift in Sources */,
 				035B6F6E1EFF0D75001E293C /* Label.swift in Sources */,
 				03B2E42E1F009D85002856DD /* BounceAnimation.swift in Sources */,
@@ -1844,7 +1775,6 @@
 				0360B4141F004E2C00A49A9B /* FontStyle.swift in Sources */,
 				03B2E3F71F008F04002856DD /* ViewControllerDebugging.swift in Sources */,
 				038FA0561F0722C3001B37C4 /* DisplayLink.swift in Sources */,
-				0360B43B1F004ED400A49A9B /* InterpolatedSkin.swift in Sources */,
 				03B2E3F31F008F04002856DD /* NavigationController.swift in Sources */,
 				03B2E3F11F008F04002856DD /* ModelViewController.swift in Sources */,
 				035B6F471EFF0D6D001E293C /* BounceButton.swift in Sources */,
@@ -1897,20 +1827,16 @@
 				0360B3F61F004DD500A49A9B /* AutolayoutOperators.swift in Sources */,
 				0360B4EB1F005D8F00A49A9B /* ViewDebugBackgroundColor.swift in Sources */,
 				03B2E3EF1F008F04002856DD /* AlertControllerExtensions.swift in Sources */,
-				0360B43D1F004ED400A49A9B /* SkinKey.swift in Sources */,
 				035B6F461EFF0D6D001E293C /* ActivityOverlayView.swift in Sources */,
 				038FA04D1F071FE3001B37C4 /* InFlightTokenView.swift in Sources */,
 				035B6F511EFF0D6D001E293C /* OverlayWindow.swift in Sources */,
 				0360B4821F004F5600A49A9B /* SizeExtensions.swift in Sources */,
 				038FA0611F072436001B37C4 /* VectorNode.swift in Sources */,
 				0360B4561F004F2800A49A9B /* CoreImageFilters.swift in Sources */,
-				035DAA5E1EFF9B6F001040CE /* Skin-iOS.swift in Sources */,
 				03B2E42A1F009C5A002856DD /* ViewGestureActions.swift in Sources */,
 				038F9FD31F06EA30001B37C4 /* BulletinView.swift in Sources */,
 				0360B4D01F0057E000A49A9B /* FrameView.swift in Sources */,
 				035B6F701EFF0D75001E293C /* PageControl.swift in Sources */,
-				0360B4BC1F0053B500A49A9B /* SkinnableUIViewControllerExtensions.swift in Sources */,
-				0360B4BD1F0053B500A49A9B /* SkinnableViewExtensions.swift in Sources */,
 				0360B3CD1F004D3F00A49A9B /* AttributedSubstringExtensions.swift in Sources */,
 				03B2E4411F00A209002856DD /* ResourceUtils.swift in Sources */,
 				0381CD1E1F072E23001510EA /* StoreManager.swift in Sources */,
@@ -1990,7 +1916,6 @@
 				035B6F631EFF0D6E001E293C /* OverlayWindow.swift in Sources */,
 				0360B3D01F004D4000A49A9B /* AttributedStringExtensions.swift in Sources */,
 				0360B3BD1F004D1500A49A9B /* CGColorUtils.swift in Sources */,
-				0360B44A1F004ED500A49A9B /* Skinnable.swift in Sources */,
 				0381CD4C1F073778001510EA /* AnimatedHideable.swift in Sources */,
 				0360B4021F004DD600A49A9B /* AutolayoutOperators.swift in Sources */,
 				0360B5481F00671000A49A9B /* Reachability.swift in Sources */,
@@ -2003,12 +1928,10 @@
 				0381CD201F072E23001510EA /* StoreManager.swift in Sources */,
 				0360B4D11F0057E000A49A9B /* FrameView.swift in Sources */,
 				0360B48F1F004F5800A49A9B /* RectExtensions.swift in Sources */,
-				038F9FE11F0706B1001B37C4 /* SkinnableViewExtensions.swift in Sources */,
 				035B6F661EFF0D6E001E293C /* PhotoView.swift in Sources */,
 				0360B3C21F004D1500A49A9B /* Shading.swift in Sources */,
 				0360B3E71F004D7800A49A9B /* AppInfo.swift in Sources */,
 				035B6F5F1EFF0D6E001E293C /* FlexView.swift in Sources */,
-				0360B4491F004ED500A49A9B /* SkinKey.swift in Sources */,
 				038FA0501F07203C001B37C4 /* InFlightTokenView.swift in Sources */,
 				035B6F5E1EFF0D6E001E293C /* EditableContainerView.swift in Sources */,
 				0360B4DE1F0059D500A49A9B /* VerticalStackView.swift in Sources */,
@@ -2020,7 +1943,6 @@
 				035B6F941EFF0D76001E293C /* WindowExtensions.swift in Sources */,
 				0360B4ED1F005D8F00A49A9B /* ViewDebugBackgroundColor.swift in Sources */,
 				038F9FE01F070550001B37C4 /* ViewController.swift in Sources */,
-				038F9FE31F070993001B37C4 /* TopSkin-iOS.swift in Sources */,
 				0360B3E81F004D7800A49A9B /* ApplicationNotificationActions.swift in Sources */,
 				0360B4051F004DD600A49A9B /* LayoutAttribute.swift in Sources */,
 				0360B46B1F004F2900A49A9B /* OSImageRenderingMode.swift in Sources */,
@@ -2062,11 +1984,9 @@
 				0360B4071F004DD600A49A9B /* LayoutRelation.swift in Sources */,
 				0360B48E1F004F5800A49A9B /* PointExtensions.swift in Sources */,
 				0360B3E91F004D7800A49A9B /* DeviceUtils.swift in Sources */,
-				0360B4461F004ED500A49A9B /* ConcreteSkin.swift in Sources */,
 				038F9FD41F06EA30001B37C4 /* BulletinView.swift in Sources */,
 				0360B41F1F004E2D00A49A9B /* FontFamilyName.swift in Sources */,
 				03B2E4321F00A051002856DD /* GestureActions.swift in Sources */,
-				0360B44B1F004ED500A49A9B /* SkinValue.swift in Sources */,
 				0360B4B61F004FD800A49A9B /* ViewNesting.swift in Sources */,
 				0360B41C1F004E2D00A49A9B /* FontDebugging.swift in Sources */,
 				03B2E43A1F00A152002856DD /* OSNib.swift in Sources */,
@@ -2087,9 +2007,7 @@
 				03B2E4461F00A23B002856DD /* ResourceUtils-iOS.swift in Sources */,
 				035B6F931EFF0D76001E293C /* ViewExtensions-iOS.swift in Sources */,
 				038FA0541F07206D001B37C4 /* InFlightView.swift in Sources */,
-				0360B4481F004ED500A49A9B /* Skin.swift in Sources */,
 				035B6F861EFF0D76001E293C /* PageControl.swift in Sources */,
-				038F9FE21F0706D2001B37C4 /* SkinnableUIViewControllerExtensions.swift in Sources */,
 				0360B4F11F005DD700A49A9B /* ViewExtensions.swift in Sources */,
 				0360B4C61F00567E00A49A9B /* OSTouch.swift in Sources */,
 				035B6F811EFF0D76001E293C /* CollectionViewExtensions.swift in Sources */,
@@ -2106,7 +2024,6 @@
 				035B6F871EFF0D76001E293C /* ScrollView.swift in Sources */,
 				0360B46A1F004F2900A49A9B /* OSImageOrientation.swift in Sources */,
 				035DAA821EFFA093001040CE /* ResponderExtensions.swift in Sources */,
-				0360B4471F004ED500A49A9B /* InterpolatedSkin.swift in Sources */,
 				03E483551F1ED544006252B0 /* DrawCrossedBox.swift in Sources */,
 				035B6F8C1EFF0D76001E293C /* TableViewCell.swift in Sources */,
 				0360B4651F004F2900A49A9B /* CGUtils.swift in Sources */,
@@ -2130,7 +2047,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				03B2E4351F00A13C002856DD /* OSStoryboard.swift in Sources */,
-				0360B4431F004ED400A49A9B /* SkinKey.swift in Sources */,
 				0360B4611F004F2900A49A9B /* OSImage.swift in Sources */,
 				0360B4891F004F5700A49A9B /* SizeExtensions.swift in Sources */,
 				03E483541F1ED544006252B0 /* DrawCrossedBox.swift in Sources */,
@@ -2164,8 +2080,6 @@
 				03E483511F1EB466006252B0 /* ImageView.swift in Sources */,
 				0312F5471F36BBAD00C00CF9 /* AngularGradientRenderer.swift in Sources */,
 				038F9FDF1F07011C001B37C4 /* Hideable.swift in Sources */,
-				0360B4401F004ED400A49A9B /* ConcreteSkin.swift in Sources */,
-				0360B4421F004ED400A49A9B /* Skin.swift in Sources */,
 				0360B4C91F0056AD00A49A9B /* GestureRecognizerAction.swift in Sources */,
 				0360B4001F004DD600A49A9B /* LayoutPriority.swift in Sources */,
 				0360B3E11F004D7700A49A9B /* AppInfo.swift in Sources */,
@@ -2176,8 +2090,6 @@
 				0360B4F01F005DD700A49A9B /* ViewExtensions.swift in Sources */,
 				0360B4B11F004FD700A49A9B /* OSView.swift in Sources */,
 				0360B4011F004DD600A49A9B /* LayoutRelation.swift in Sources */,
-				0360B4411F004ED400A49A9B /* InterpolatedSkin.swift in Sources */,
-				0360B4451F004ED400A49A9B /* SkinValue.swift in Sources */,
 				03B2E4421F00A209002856DD /* ResourceUtils.swift in Sources */,
 				0360B4601F004F2900A49A9B /* ImageUtils.swift in Sources */,
 				0360B4A71F004FAF00A49A9B /* JSONUtils.swift in Sources */,
@@ -2193,7 +2105,6 @@
 				0360B3FC1F004DD600A49A9B /* AutolayoutOperators.swift in Sources */,
 				038F9FE71F071210001B37C4 /* LocationManager.swift in Sources */,
 				0360B4881F004F5700A49A9B /* RectExtensions.swift in Sources */,
-				0360B4441F004ED400A49A9B /* Skinnable.swift in Sources */,
 				0360B3E21F004D7700A49A9B /* ApplicationNotificationActions.swift in Sources */,
 				038FA05D1F07240D001B37C4 /* SpriteKitExtensions.swift in Sources */,
 				0360B4621F004F2900A49A9B /* OSImageOrientation.swift in Sources */,
@@ -2204,7 +2115,6 @@
 				0360B4EC1F005D8F00A49A9B /* ViewDebugBackgroundColor.swift in Sources */,
 				0360B3B81F004D1400A49A9B /* ColorExtensions.swift in Sources */,
 				0360B4841F004F5700A49A9B /* AffineTransformExtensions.swift in Sources */,
-				039F32AC1F0AD1F600D2BAD0 /* SkinnableViewExtensions.swift in Sources */,
 				0360B5461F00671000A49A9B /* Reachability.swift in Sources */,
 				0312F5431F36BAE300C00CF9 /* AngularGradientShader.metal in Sources */,
 				0360B3BC1F004D1400A49A9B /* Shading.swift in Sources */,

@@ -8,50 +8,36 @@
 
 import UIKit
 
-open class TableViewCell: UITableViewCell, Skinnable {
-  public required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    _setup()
-  }
-  
-  public override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
-    super.init(style: style, reuseIdentifier: reuseIdentifier)
-    _setup()
-  }
-  
-  public init(reuseIdentifier: String = "none") {
-    super.init(style: .default, reuseIdentifier: reuseIdentifier)
-  }
-  
-  private func _setup() {
-    setup()
-  }
-  
-  open func reviseSkin(_ skin: Skin) -> Skin? {
-    return _reviseSkin(skin)
-  }
-  
-  open func applySkin(_ skin: Skin) {
-    _applySkin(skin)
-  }
-  
-  open override func didMoveToSuperview() {
-    super.didMoveToSuperview()
-    guard superview != nil else { return }
-    propagateSkin(why: "didMoveToSuperview")
-  }
-  
-  open func setup() { }
-  
-  //    private let heightEstimator = RunningAverage<CGFloat>()
-  //
-  //    public var estimatedHeight: CGFloat? {
-  //        return heightEstimator.value
-  //    }
-  
-  //    open override func layoutSubviews() {
-  //        super.layoutSubviews()
-  //        print("height: \(bounds.height)")
-  ////        heightEstimator.update(bounds.height)
-  //    }
+open class TableViewCell: UITableViewCell {
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        _setup()
+    }
+
+    public override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        _setup()
+    }
+
+    public init(reuseIdentifier: String = "none") {
+        super.init(style: .default, reuseIdentifier: reuseIdentifier)
+    }
+
+    private func _setup() {
+        setup()
+    }
+
+    open func setup() { }
+
+    //    private let heightEstimator = RunningAverage<CGFloat>()
+    //
+    //    public var estimatedHeight: CGFloat? {
+    //        return heightEstimator.value
+    //    }
+
+    //    open override func layoutSubviews() {
+    //        super.layoutSubviews()
+    //        print("height: \(bounds.height)")
+    ////        heightEstimator.update(bounds.height)
+    //    }
 }

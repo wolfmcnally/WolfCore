@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class Control: UIControl, Skinnable {
+open class Control: UIControl {
   public convenience init() {
     self.init(frame: .zero)
   }
@@ -26,14 +26,6 @@ open class Control: UIControl, Skinnable {
   private func _setup() {
     __setup()
     setup()
-  }
-  
-  open func reviseSkin(_ skin: Skin) -> Skin? {
-    return _reviseSkin(skin)
-  }
-  
-  open func applySkin(_ skin: Skin) {
-    _applySkin(skin)
   }
   
   open func setup() { }

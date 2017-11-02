@@ -18,7 +18,7 @@ import WolfBase
 
 public typealias TagAction = (String) -> Void
 
-open class Label: OSLabel, Skinnable {
+open class Label: OSLabel {
   #if os(macOS)
   public var text: String {
   get {
@@ -48,13 +48,6 @@ open class Label: OSLabel, Skinnable {
     
     let pointSize = baseFont.pointSize * factor
     font = UIFont(descriptor: baseFont, size: pointSize)
-  }
-  
-  open override var text: String? {
-    didSet {
-      guard skinsEnabled else { return }
-      syncToSkin(skin)
-    }
   }
   
   open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
@@ -89,33 +82,6 @@ open class Label: OSLabel, Skinnable {
   private func _setup() {
     __setup()
     setup()
-  }
-  
-  public var fontStyle: FontStyle {
-    get { return skin.labelStyle }
-    set {
-      var s = skin!
-      s.labelStyle = newValue
-      s.addIdentifier("label(\(newValue.identifierPath))")
-      skin = s
-    }
-  }
-  
-  open func reviseSkin(_ skin: Skin) -> Skin? {
-    return _reviseSkin(skin)
-  }
-  
-  open func applySkin(_ skin: Skin) {
-    _applySkin(skin)
-    syncToSkin(skin)
-  }
-  
-  private func syncToSkin(_ skin: Skin) {
-    guard skinsEnabled else { return }
-    let style = skin.labelStyle
-    textColor ©= style.color
-    font = style.font
-    attributedText = style.apply(to: text)
   }
   
   public var drawAtTop = false {

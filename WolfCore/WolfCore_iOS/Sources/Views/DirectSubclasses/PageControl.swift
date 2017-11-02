@@ -9,7 +9,7 @@
 import UIKit
 import WolfBase
 
-public class PageControl: UIPageControl, Skinnable {
+public class PageControl: UIPageControl {
   public convenience init() {
     self.init(frame: .zero)
   }
@@ -30,14 +30,4 @@ public class PageControl: UIPageControl, Skinnable {
   }
   
   open func setup() { }
-  
-  open func reviseSkin(_ skin: Skin) -> Skin? {
-    return _reviseSkin(skin)
-  }
-  
-  open func applySkin(_ skin: Skin) {
-    _applySkin(skin)
-    pageIndicatorTintColor ©= skin.pageIndicatorTintColor
-    currentPageIndicatorTintColor ©= skin.currentPageIndicatorTintColor
-  }
 }

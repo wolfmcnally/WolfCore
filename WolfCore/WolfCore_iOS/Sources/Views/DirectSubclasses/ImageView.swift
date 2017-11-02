@@ -15,7 +15,7 @@ public var sharedDataCache: Cache<Data>! = Cache<Data>(filename: "sharedDataCach
 public typealias ImageViewBlock = (ImageView) -> Void
 public typealias ImageProcessingBlock = (UIImage) -> UIImage
 
-open class ImageView: UIImageView, Skinnable {
+open class ImageView: UIImageView {
   public var isTransparentToTouches = false
   //private var updatePDFCanceler: Cancelable?
   private var retrievePromise: Cancelable?
@@ -156,14 +156,6 @@ open class ImageView: UIImageView, Skinnable {
   private func _setup() {
     __setup()
     setup()
-  }
-  
-  open func reviseSkin(_ skin: Skin) -> Skin? {
-    return _reviseSkin(skin)
-  }
-  
-  open func applySkin(_ skin: Skin) {
-    _applySkin(skin)
   }
   
   open func setup() { }

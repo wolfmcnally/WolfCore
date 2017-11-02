@@ -890,7 +890,6 @@
 		0383295D1EFC92F20026D259 /* Lerp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lerp.swift; sourceTree = "<group>"; };
 		0383295F1EFC93D10026D259 /* LerpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LerpTests.swift; sourceTree = "<group>"; };
 		038F9FD81F06FE7F001B37C4 /* LAZY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LAZY.md; sourceTree = "<group>"; };
-		038F9FD91F06FE7F001B37C4 /* SKINS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SKINS.md; sourceTree = "<group>"; };
 		038F9FDC1F06FF67001B37C4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		038F9FDD1F06FF67001B37C4 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		038F9FDE1F070077001B37C4 /* LINUX.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LINUX.md; sourceTree = "<group>"; };
@@ -1066,7 +1065,6 @@
 				035B6FCD1EFF146D001E293C /* PROMISES.md */,
 				03EF4FE21EFF55E30002E947 /* STRINGS.md */,
 				038F9FD81F06FE7F001B37C4 /* LAZY.md */,
-				038F9FD91F06FE7F001B37C4 /* SKINS.md */,
 			);
 			path = Guides;
 			sourceTree = "<group>";

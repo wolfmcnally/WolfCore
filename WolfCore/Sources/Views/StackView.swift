@@ -9,7 +9,7 @@
 import CoreGraphics
 import Foundation
 
-open class StackView: OSStackView, Skinnable, Editable {
+open class StackView: OSStackView, Editable {
   public var isTransparentToTouches = false
   public var isEditing = false
 
@@ -77,14 +77,6 @@ open class StackView: OSStackView, Skinnable, Editable {
     }
   }
   #endif
-
-  open func reviseSkin(_ skin: Skin) -> Skin? {
-    return _reviseSkin(skin)
-  }
-
-  open func applySkin(_ skin: Skin) {
-    _applySkin(skin)
-  }
 
   open func setup() { }
 }

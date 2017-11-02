@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class TableView: UITableView, Skinnable {
+open class TableView: UITableView {
   public convenience init() {
     self.init(frame: .zero)
   }
@@ -29,13 +29,6 @@ open class TableView: UITableView, Skinnable {
   }
   
   open func setup() { }
-  
-  open func reviseSkin(_ skin: Skin) -> Skin? {
-    return _reviseSkin(skin)
-  }
-  
-  open func applySkin(_ skin: Skin) {
-  }
 
   public func deselectAll(animated: Bool) {
     guard let selectedIndexPaths = indexPathsForSelectedRows else { return }

@@ -16,15 +16,7 @@ extension LogGroup {
   public static let viewControllerLifecycle = LogGroup("viewControllers")
 }
 
-open class ViewController: UIViewController, Skinnable {
-  open func reviseSkin(_ skin: Skin) -> Skin? {
-    return _reviseSkin(skin)
-  }
-  
-  open func applySkin(_ skin: Skin) {
-    _applySkin(skin)
-  }
-  
+open class ViewController: UIViewController {
   open var navigationItemTitleView: UIView? { return nil }
   
   public private(set) lazy var activityOverlayView: ActivityOverlayView = {
@@ -33,7 +25,6 @@ open class ViewController: UIViewController, Skinnable {
       activityView
     ]
     activityView.constrainFrameToFrame(priority: .defaultLow)
-    activityView.propagateSkin(why: "newView")
     return activityView
   }()
   
@@ -78,16 +69,12 @@ open class ViewController: UIViewController, Skinnable {
   }
   
   open override func viewWillAppear(_ animated: Bool) {
-    #if !os(tvOS)
-      logTrace("viewWillAppear", obj: self, group: .statusBar)
-    #endif
     super.viewWillAppear(animated)
     if navigationItem.titleView == nil {
       if let navigationItemTitleView = navigationItemTitleView {
         navigationItem.titleView = navigationItemTitleView
       }
     }
-    propagateSkin(why: "viewWillAppear")
   }
   
   open override func didMove(toParentViewController parent: UIViewController?) {
@@ -97,10 +84,6 @@ open class ViewController: UIViewController, Skinnable {
   open func setup() { }
 
   #if !os(tvOS)
-  open override var preferredStatusBarStyle: UIStatusBarStyle {
-    return _preferredStatusBarStyle(for: skin)
-  }
-
   public var leftItemAction: BarButtonItemAction? {
     didSet {
       navigationItem.leftBarButtonItem = leftItemAction?.item

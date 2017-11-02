@@ -69,12 +69,6 @@ public class ActivityOverlayView: View {
     hide()
   }
   
-  public override func applySkin(_ skin: Skin) {
-    super.applySkin(skin)
-    backgroundColor = UIColor(white: 0, alpha: 0.5)
-    frameView.backgroundColor = UIColor(white: 0, alpha: 0.5)
-  }
-  
   public func show(animated: Bool) {
     superview?.bringSubview(toFront: self)
     super.show(animated: animated)

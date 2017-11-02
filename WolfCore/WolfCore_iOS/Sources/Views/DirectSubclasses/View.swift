@@ -14,7 +14,7 @@
 
 import WolfBase
 
-open class View: OSView, Skinnable {
+open class View: OSView {
   public convenience init() {
     self.init(frame: .zero)
   }
@@ -35,14 +35,6 @@ open class View: OSView, Skinnable {
   }
   
   open func setup() { }
-  
-  open func reviseSkin(_ skin: Skin) -> Skin? {
-    return _reviseSkin(skin)
-  }
-  
-  open func applySkin(_ skin: Skin) {
-    _applySkin(skin)
-  }
   
   #if os(iOS) || os(tvOS)
   
