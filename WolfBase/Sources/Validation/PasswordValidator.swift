@@ -7,17 +7,17 @@
 //
 
 open class PasswordValidator: Validator {
-  public override init(name: String = "Password", isRequired: Bool = true) {
-    super.init(name: name, isRequired: isRequired)
-  }
-  
-  open override func editValidate(_ validation: StringValidation) -> String? {
-    return try? validation.maxLength(24).value
-  }
+    public override init(name: String = "Password", isRequired: Bool = true) {
+        super.init(name: name, isRequired: isRequired)
+    }
+    
+    open override func editValidate(_ validation: StringValidation) -> String? {
+        return try? validation.maxLength(24).value
+    }
 }
 
 open class CreatePasswordValidator: PasswordValidator {
-  open override func submitValidate(_ validation: StringValidation) throws -> String {
-    return try validation.minLength(4).maxLength(24).containsDigit().value
-  }
+    open override func submitValidate(_ validation: StringValidation) throws -> String {
+        return try validation.minLength(4).maxLength(24).containsDigit().value
+    }
 }

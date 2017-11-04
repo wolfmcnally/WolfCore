@@ -7,7 +7,7 @@
 //
 
 public protocol Validation {
-  associatedtype Value
-  var value: Value { get }
-  var name: String { get }
+    associatedtype Value
+    var value: Value { get }
+    var name: String { get }
 }

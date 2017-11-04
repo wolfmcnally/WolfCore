@@ -87,6 +87,10 @@
 		031DEEC61EFEF1FD001DCF3F /* Lorem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEEC51EFEF1F9001DCF3F /* Lorem.swift */; };
 		031DEEC71EFEF1FD001DCF3F /* Lorem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEEC51EFEF1F9001DCF3F /* Lorem.swift */; };
 		031DEEC81EFEF1FE001DCF3F /* Lorem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEEC51EFEF1F9001DCF3F /* Lorem.swift */; };
+		03228B901FAD2C8600550720 /* UUIDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03228B8F1FAD2C8600550720 /* UUIDValidator.swift */; };
+		03228B911FAD2C8600550720 /* UUIDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03228B8F1FAD2C8600550720 /* UUIDValidator.swift */; };
+		03228B921FAD2C8600550720 /* UUIDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03228B8F1FAD2C8600550720 /* UUIDValidator.swift */; };
+		03228B931FAD2C8600550720 /* UUIDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03228B8F1FAD2C8600550720 /* UUIDValidator.swift */; };
 		0327AED91F14458400ECB8BE /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0327AED81F14458400ECB8BE /* Time.swift */; };
 		0327AEDA1F14458400ECB8BE /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0327AED81F14458400ECB8BE /* Time.swift */; };
 		0327AEDB1F14458400ECB8BE /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0327AED81F14458400ECB8BE /* Time.swift */; };
@@ -310,6 +314,10 @@
 		0360B5841F00674800A49A9B /* SSLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B5541F00673E00A49A9B /* SSLUtils.swift */; };
 		0360B5851F00674800A49A9B /* URLComponentsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B5551F00673E00A49A9B /* URLComponentsExtensions.swift */; };
 		0360B5861F00674800A49A9B /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B5561F00673E00A49A9B /* URLExtensions.swift */; };
+		0360C0D81FAD1EE200A77477 /* IntValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360C0D71FAD1EE200A77477 /* IntValidator.swift */; };
+		0360C0D91FAD1EE200A77477 /* IntValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360C0D71FAD1EE200A77477 /* IntValidator.swift */; };
+		0360C0DA1FAD1EE200A77477 /* IntValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360C0D71FAD1EE200A77477 /* IntValidator.swift */; };
+		0360C0DB1FAD1EE200A77477 /* IntValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360C0D71FAD1EE200A77477 /* IntValidator.swift */; };
 		036B6A8A1F2AE78E001160D8 /* TextAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B6A891F2AE78E001160D8 /* TextAlignment.swift */; };
 		036B6A8B1F2AE78E001160D8 /* TextAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B6A891F2AE78E001160D8 /* TextAlignment.swift */; };
 		036B6A8C1F2AE78E001160D8 /* TextAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B6A891F2AE78E001160D8 /* TextAlignment.swift */; };
@@ -790,6 +798,7 @@
 		031DEECF1EFEF6CC001DCF3F /* WolfBase_macOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfBase_macOS-Bridging-Header.h"; path = "../WolfBase_macOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		031DEED01EFEF71C001DCF3F /* WolfBase_tvOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfBase_tvOS-Bridging-Header.h"; path = "../WolfBase_tvOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		031DEED11EFEF768001DCF3F /* WolfBase_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfBase_iOS-Bridging-Header.h"; path = "../WolfBase_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		03228B8F1FAD2C8600550720 /* UUIDValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDValidator.swift; sourceTree = "<group>"; };
 		0327AED81F14458400ECB8BE /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		032C4D6E1EFCCA02004E03DD /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 		032C4D701EFCCA58004E03DD /* RunningAverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningAverage.swift; sourceTree = "<group>"; };
@@ -860,6 +869,7 @@
 		0360B5541F00673E00A49A9B /* SSLUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLUtils.swift; sourceTree = "<group>"; };
 		0360B5551F00673E00A49A9B /* URLComponentsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentsExtensions.swift; sourceTree = "<group>"; };
 		0360B5561F00673E00A49A9B /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
+		0360C0D71FAD1EE200A77477 /* IntValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntValidator.swift; sourceTree = "<group>"; };
 		036B6A891F2AE78E001160D8 /* TextAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlignment.swift; sourceTree = "<group>"; };
 		037F7A061EFDDEFF005D7ABB /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
 		037F7A0D1EFDDF55005D7ABB /* WolfBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1236,6 +1246,8 @@
 			isa = PBXGroup;
 			children = (
 				035B6F9A1EFF0E5C001E293C /* EmailValidator.swift */,
+				0360C0D71FAD1EE200A77477 /* IntValidator.swift */,
+				03228B8F1FAD2C8600550720 /* UUIDValidator.swift */,
 				035B6F9D1EFF0E5C001E293C /* PasswordValidator.swift */,
 				035B6F991EFF0E5C001E293C /* PhoneNumberValidator.swift */,
 				035B6F981EFF0E5C001E293C /* StringValidation.swift */,
@@ -1980,6 +1992,7 @@
 				03EF4F291EFF205B0002E947 /* ASN1Parser.swift in Sources */,
 				03B2E3841F0071D2002856DD /* CryptoUtils.swift in Sources */,
 				03EF4F2A1EFF205B0002E947 /* Base64.swift in Sources */,
+				03228B911FAD2C8600550720 /* UUIDValidator.swift in Sources */,
 				031DEE9C1EFEF0F1001DCF3F /* Heartbeat.swift in Sources */,
 				035B6FA91EFF0E6D001E293C /* TrimmedValidator.swift in Sources */,
 				0360B5201F0061F200A49A9B /* LocalStorageCacheLayer.swift in Sources */,
@@ -2009,6 +2022,7 @@
 				038FA03B1F071BD8001B37C4 /* RunesArray.swift in Sources */,
 				03EF4F561EFF219C0002E947 /* DictionaryExtensions.swift in Sources */,
 				03EF4F2B1EFF205B0002E947 /* Base64URL.swift in Sources */,
+				0360C0D91FAD1EE200A77477 /* IntValidator.swift in Sources */,
 				031DEE981EFEF0F1001DCF3F /* Asynchronizer.swift in Sources */,
 				0359FF711EFDF51100546B30 /* ValidationError.swift in Sources */,
 				03B2E3861F0071D2002856DD /* HashIDs.swift in Sources */,
@@ -2167,6 +2181,7 @@
 				03EF4F331EFF205C0002E947 /* ASN1Parser.swift in Sources */,
 				03B2E38F1F0071D2002856DD /* CryptoUtils.swift in Sources */,
 				03EF4F341EFF205C0002E947 /* Base64.swift in Sources */,
+				03228B921FAD2C8600550720 /* UUIDValidator.swift in Sources */,
 				031DEEA71EFEF0F1001DCF3F /* Heartbeat.swift in Sources */,
 				035B6FB01EFF0E6E001E293C /* TrimmedValidator.swift in Sources */,
 				0360B51B1F0061F200A49A9B /* LocalStorageCacheLayer.swift in Sources */,
@@ -2196,6 +2211,7 @@
 				038FA03E1F071BD9001B37C4 /* RunesArray.swift in Sources */,
 				03EF4F581EFF219C0002E947 /* DictionaryExtensions.swift in Sources */,
 				03EF4F351EFF205C0002E947 /* Base64URL.swift in Sources */,
+				0360C0DA1FAD1EE200A77477 /* IntValidator.swift in Sources */,
 				031DEEA31EFEF0F1001DCF3F /* Asynchronizer.swift in Sources */,
 				0359FF761EFDF51200546B30 /* ValidationError.swift in Sources */,
 				03B2E3911F0071D2002856DD /* HashIDs.swift in Sources */,
@@ -2286,6 +2302,7 @@
 				0360B5851F00674800A49A9B /* URLComponentsExtensions.swift in Sources */,
 				035DAA451EFF7FEF001040CE /* JSONRepresentable.swift in Sources */,
 				031DEEB01EFEF0F2001DCF3F /* Canceler.swift in Sources */,
+				0360C0DB1FAD1EE200A77477 /* IntValidator.swift in Sources */,
 				031DEEB11EFEF0F2001DCF3F /* DispatchUtils.swift in Sources */,
 				0360B52C1F00625000A49A9B /* UserDefaultsExtensions.swift in Sources */,
 				03EF4F881EFF222F0002E947 /* Grid.swift in Sources */,
@@ -2392,6 +2409,7 @@
 				03EF4F8F1EFF222F0002E947 /* TransferValue.swift in Sources */,
 				038FA0411F071BD9001B37C4 /* RunesArray.swift in Sources */,
 				03EF4F8C1EFF222F0002E947 /* Matrix.swift in Sources */,
+				03228B931FAD2C8600550720 /* UUIDValidator.swift in Sources */,
 				035DAA3D1EFF6319001040CE /* HTTPDebugging.swift in Sources */,
 				035DAA1F1EFF5869001040CE /* StringReplacement.swift in Sources */,
 				037F7A5A1EFDDFF8005D7ABB /* ExtensibleEnumeratedName.swift in Sources */,
@@ -2522,6 +2540,7 @@
 				032C4D861EFCED15004E03DD /* Log.swift in Sources */,
 				03B2E3791F0071D1002856DD /* CryptoUtils.swift in Sources */,
 				03EF4F1F1EFF205B0002E947 /* ASN1Parser.swift in Sources */,
+				03228B901FAD2C8600550720 /* UUIDValidator.swift in Sources */,
 				03EF4F201EFF205B0002E947 /* Base64.swift in Sources */,
 				031DEE911EFEF0F0001DCF3F /* Heartbeat.swift in Sources */,
 				0360B5251F0061F300A49A9B /* LocalStorageCacheLayer.swift in Sources */,
@@ -2551,6 +2570,7 @@
 				038FA0381F071BD8001B37C4 /* RunesArray.swift in Sources */,
 				03EF4F541EFF219B0002E947 /* DictionaryExtensions.swift in Sources */,
 				03EF4F211EFF205B0002E947 /* Base64URL.swift in Sources */,
+				0360C0D81FAD1EE200A77477 /* IntValidator.swift in Sources */,
 				031DEE8D1EFEF0F0001DCF3F /* Asynchronizer.swift in Sources */,
 				0359FF6C1EFDF51100546B30 /* ValidationError.swift in Sources */,
 				03B2E37B1F0071D1002856DD /* HashIDs.swift in Sources */,

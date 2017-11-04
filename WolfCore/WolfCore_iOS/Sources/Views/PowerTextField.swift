@@ -9,32 +9,16 @@
 import UIKit
 import WolfBase
 
-private protocol TextEditor: AnyObject {
-    var inputView: UIView? { get set }
-    var plainText: String { get set }
-    var font: UIFont? { get set }
-    var isDebug: Bool { get set }
-    var debugBackgroundColor: UIColor? { get set }
-    var textAlignment: NSTextAlignment { get set }
-
-    // UITextInputTraits
-    var autocapitalizationType: UITextAutocapitalizationType { get set }
-    var autocorrectionType: UITextAutocorrectionType { get set }
-    var spellCheckingType: UITextSpellCheckingType { get set }
-    var returnKeyType: UIReturnKeyType { get set }
-    var enablesReturnKeyAutomatically: Bool { get set }
-    var isSecureTextEntry: Bool { get set }
-
-    @available(iOS 10.0, *)
-    var textContentType: UITextContentType! { get set }
-}
-
-extension TextField: TextEditor { }
-
-extension TextView: TextEditor { }
+//public class PlaceholderMessageLabel: Label { }
+//public class PlaceholderLabel: Label { }
 
 public class PowerTextField: View, Editable {
-    public init(contentType: ContentType = .text, numberOfLines: Int = 1) {
+    public let name: String
+    public let contentType: ContentType
+    public let numberOfLines: Int
+
+    public init(name: String, contentType: ContentType = .text, numberOfLines: Int = 1) {
+        self.name = name
         self.contentType = contentType
         self.numberOfLines = numberOfLines
         super.init(frame: .zero)
@@ -48,14 +32,13 @@ public class PowerTextField: View, Editable {
 
     public enum ContentType {
         case text
+        case rawText
+        case integer(CountableClosedRange<Int>)
         case social
         case date
         case email
         case password
     }
-
-    public private(set) var contentType: ContentType
-    public private(set) var numberOfLines: Int
 
     public var textAlignment: NSTextAlignment = .natural {
         didSet {
@@ -112,8 +95,6 @@ public class PowerTextField: View, Editable {
         return formatter
     }()
 
-    public var name: String = "Field"¶
-
     public var validator: Validator?
     private var remoteValidationActivity: LockerCause?
     private var currentRemoteValidation: SuccessPromise? {
@@ -153,6 +134,11 @@ public class PowerTextField: View, Editable {
 
     private func setNeedsOnTextChanged() {
         syncOnTextChanged.setNeedsSync()
+    }
+
+    public var keyboardType: UIKeyboardType {
+        get { return textEditor.keyboardType }
+        set { textEditor.keyboardType = newValue }
     }
 
     public var placeholder: String? {
@@ -238,14 +224,7 @@ public class PowerTextField: View, Editable {
         characterCountLabel.text = characterCountString
     }
 
-    public var submitValidatedText: String?
-
-    private func setSubmitValidatedText(_ text: String?) {
-        submitValidatedText = text
-        if text != nil {
-            onSubmitValidated?(self)
-        }
-    }
+    public private(set) var validatedText: String?
 
     public private(set) var validationError: ValidationError? {
         didSet {
@@ -260,12 +239,6 @@ public class PowerTextField: View, Editable {
     private enum ValidationMessage {
         case failure(String)
         case success(String)
-    }
-
-    private var validationMessageStyle: FontStyle! {
-        didSet {
-
-        }
     }
 
     private var validationMessage: ValidationMessage? {
@@ -397,7 +370,11 @@ public class PowerTextField: View, Editable {
     public var onBeginEditing: ResponseBlock?
     public var onEndEditing: ResponseBlock?
     public var onChanged: ResponseBlock?
-    public var onSubmitValidated: ResponseBlock?
+
+    @objc dynamic public var verticalSpacing: CGFloat {
+        get { return verticalStackView.spacing }
+        set { verticalStackView.spacing = newValue }
+    }
 
     private lazy var verticalStackView: VerticalStackView = .init() • { 🍒 in
         🍒.alignment = .leading
@@ -417,19 +394,26 @@ public class PowerTextField: View, Editable {
         🍒.alignment = .center
     }
 
-    public var frameColor: UIColor {
+    @objc dynamic public var frameColor: UIColor {
+        get { return frameView.color }
+        set { frameView.color = newValue }
+    }
+
+    @objc dynamic public var frameCornerRadius: CGFloat {
         get {
-            return frameView.color
+            switch frameStyle {
+            case .rounded(let cornerRadius):
+                return cornerRadius
+            default:
+                return 0
+            }
         }
-        set {
-            frameView.color = newValue
-        }
+
+        set { frameStyle = .rounded(cornerRadius: newValue) }
     }
 
     public var frameStyle: FrameView.Style {
-        get {
-            return frameView.style
-        }
+        get { return frameView.style }
 
         set {
             frameView.style = newValue
@@ -437,19 +421,14 @@ public class PowerTextField: View, Editable {
         }
     }
 
-    public var frameLineWidth: CGFloat {
-        get {
-            return frameView.lineWidth
-        }
-
-        set {
-            frameView.lineWidth = newValue
-        }
+    @objc dynamic public var frameLineWidth: CGFloat {
+        get { return frameView.lineWidth }
+        set { frameView.lineWidth = newValue }
     }
 
     private lazy var frameView: FrameView = .init()
 
-    public var horizontalSpacing: CGFloat = 6 {
+    @objc dynamic public var horizontalSpacing: CGFloat = 6 {
         didSet {
             horizontalStackView.spacing = horizontalSpacing
         }
@@ -463,27 +442,59 @@ public class PowerTextField: View, Editable {
     private lazy var characterCountLabel: Label = .init()
 
     private lazy var messageSpacerView: SpacerView = .init() • { 🍒 in
-        🍒.setPriority(hugH: .defaultHigh)
+        🍒.setPriority(hugH: .defaultHigh, crH: .required)
+    }
+
+    @objc dynamic public var validationMessageTextColor: UIColor? {
+        get { return validationMessageLabel.textColor }
+        set { validationMessageLabel.textColor = newValue }
+    }
+
+    @objc dynamic public var validationMessageFont: UIFont? {
+        get { return validationMessageLabel.font }
+        set { validationMessageLabel.font = newValue }
     }
 
     private lazy var validationMessageLabel: Label = .init() • { 🍒 in
+        🍒.setPriority(hugH: .required, crH: .required)
         🍒.adjustsFontSizeToFitWidth = true
         🍒.minimumScaleFactor = 0.5
         🍒.text = "A"
         🍒.alpha = 0
     }
 
+    @objc dynamic public var placeholderMessageTextColor: UIColor? {
+        get { return placeholderMessageLabel.textColor }
+        set { placeholderMessageLabel.textColor = newValue }
+    }
+
+    @objc dynamic public var placeholderMessageFont: UIFont? {
+        get { return placeholderMessageLabel.font }
+        set { placeholderMessageLabel.font = newValue }
+    }
+
     private lazy var placeholderMessageLabel: Label = .init() • { 🍒 in
+        🍒.setPriority(hugH: .required, crH: .required)
         🍒.adjustsFontSizeToFitWidth = true
         🍒.minimumScaleFactor = 0.5
         🍒.text = "A"
-        🍒.textColor = UIColor(white: 0.5, alpha: 1)
     }
 
-    private lazy var messageContainerView: View = .init()
+    private lazy var messageContainerView: View = .init() • { 🍒 in
+        🍒.setPriority(hugH: .required, crH: .required)
+    }
+
+    @objc dynamic public var placeholderTextColor: UIColor? {
+        get { return placeholderLabel.textColor }
+        set { placeholderLabel.textColor = newValue }
+    }
+
+    @objc dynamic public var placeholderFont: UIFont? {
+        get { return placeholderLabel.font }
+        set { placeholderLabel.font = newValue }
+    }
 
     private lazy var placeholderLabel: Label = .init() • { 🍒 in
-        🍒.textColor = UIColor(white: 0.5, alpha: 1)
         if self.numberOfLines > 1 {
             🍒.numberOfLines = 0
         } else {
@@ -493,11 +504,27 @@ public class PowerTextField: View, Editable {
     }
 
     private lazy var textEditorView: UIView = {
-        let needsTextField = self.contentType == .password
+        let needsTextField: Bool
+        switch self.contentType {
+        case .password:
+            needsTextField = true
+        default:
+            needsTextField = false
+        }
         let needsTextView = self.numberOfLines > 1
         assert(!needsTextField || !needsTextView)
         return needsTextView ? self.textView : self.textField
     }()
+
+    @objc dynamic public var textColor: UIColor? {
+        get { return textEditor.textColor }
+        set { textEditor.textColor = newValue }
+    }
+
+    @objc dynamic public var font: UIFont? {
+        get { return textEditor.font }
+        set { textEditor.font = newValue }
+    }
 
     private var textEditor: TextEditor {
         return textEditorView as! TextEditor
@@ -551,11 +578,12 @@ public class PowerTextField: View, Editable {
     }
 
     private func syncToSecureTextEntry() {
-        if contentType == .password && showsToggleSecureTextEntryButton {
+        switch contentType {
+        case .password where showsToggleSecureTextEntryButton:
             toggleSecureTextEntryButton.show()
             let title = isSecureTextEntry ? "Show"¶ : "Hide"¶
             toggleSecureTextEntryButton.setTitle(title, for: .normal)
-        } else {
+        default:
             toggleSecureTextEntryButton.hide()
         }
     }
@@ -563,10 +591,13 @@ public class PowerTextField: View, Editable {
     public func clear(animated: Bool) {
         setText("", animated: animated)
         removeValidation()
-        needsValidation = true
+        setNeedsValidation()
+//        needsValidation = true
     }
 
-    private lazy var activityIndicatorView: ActivityIndicatorView = .init()
+    private lazy var activityIndicatorView: ActivityIndicatorView = .init() • { 🍒 in
+        🍒.setPriority(crH: .required)
+    }
 
     public override var isDebug: Bool {
         didSet {
@@ -630,6 +661,17 @@ public class PowerTextField: View, Editable {
         messageSpacerView.width = CGFloat(frameInsets.left!)
     }
 
+    public var topRightViews = [UIView]() {
+        didSet {
+            topRightItemsView.removeAllSubviews()
+            topRightItemsView => topRightViews
+        }
+    }
+
+    private lazy var topRightItemsView: HorizontalStackView = .init() • { 🍒 in
+        🍒.spacing = 5
+    }
+
     public override func setup() {
         super.setup()
 
@@ -643,9 +685,13 @@ public class PowerTextField: View, Editable {
                         placeholderMessageContainer => [
                             placeholderMessageLabel,
                             activityIndicatorView,
-                            View()
                         ],
                     ],
+                    SpacerView() • {
+                        $0.width = noSize
+                        $0.setPriority(crH: .defaultLow)
+                    },
+                    topRightItemsView
                 ],
                 frameView => [
                     horizontalStackView => [
@@ -662,8 +708,6 @@ public class PowerTextField: View, Editable {
             placeholderLabel
         ]
 
-        validationMessageLabel.constrainFrameToFrame()
-        placeholderMessageContainer.constrainFrameToFrame()
         Constraints(frameView.widthAnchor == verticalStackView.widthAnchor)
         verticalStackView.constrainFrameToFrame()
         syncToFrameInsets()
@@ -672,11 +716,31 @@ public class PowerTextField: View, Editable {
         Constraints(
             placeholderLabel.leadingAnchor == textEditorView.leadingAnchor,
             placeholderLabel.trailingAnchor == textEditorView.trailingAnchor,
-            placeholderLabel.topAnchor == textEditorView.topAnchor,
+            placeholderLabel.topAnchor == textEditorView.topAnchor
+        )
+
+        Constraints(
             textEditorView.heightAnchor >= clearButtonView.heightAnchor,
-            toggleSecureTextEntryButton.heightAnchor == clearButtonView.heightAnchor,
-            messageContainerView.widthAnchor == topRowView.widthAnchor,
+            toggleSecureTextEntryButton.heightAnchor == clearButtonView.heightAnchor
+        )
+
+        Constraints(
+            //messageContainerView.widthAnchor == topRowView.widthAnchor,
             topRowView.widthAnchor == verticalStackView.widthAnchor
+        )
+
+        Constraints(
+            messageContainerView.topAnchor == validationMessageLabel.topAnchor,
+            messageContainerView.bottomAnchor == validationMessageLabel.bottomAnchor,
+            messageContainerView.leadingAnchor == validationMessageLabel.leadingAnchor,
+            messageContainerView.widthAnchor == validationMessageLabel.widthAnchor =&= .defaultLow,
+            messageContainerView.widthAnchor >= validationMessageLabel.widthAnchor,
+
+            messageContainerView.topAnchor == placeholderMessageContainer.topAnchor,
+            messageContainerView.bottomAnchor == placeholderMessageContainer.bottomAnchor,
+            messageContainerView.leadingAnchor == placeholderMessageContainer.leadingAnchor,
+            messageContainerView.widthAnchor == placeholderMessageContainer.widthAnchor =&= .defaultLow,
+            messageContainerView.widthAnchor >= placeholderMessageContainer.widthAnchor
         )
 
         syncClearButton(animated: false)
@@ -738,7 +802,15 @@ public class PowerTextField: View, Editable {
         switch contentType {
         case .text:
             break
-        case .social, .email:
+        case .integer(let validRange):
+            keyboardType = .decimalPad
+            validator = IntValidator(name: name, validRange: validRange)
+        case .rawText, .social:
+            autocapitalizationType = .none
+            spellCheckingType = .no
+            autocorrectionType = .no
+        case .email:
+            keyboardType = .emailAddress
             autocapitalizationType = .none
             spellCheckingType = .no
             autocorrectionType = .no
@@ -815,11 +887,6 @@ public class PowerTextField: View, Editable {
         syncToTextEditor(animated: animated)
     }
 
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        syncToAlignment()
-    }
-
     private var validationTimer: Cancelable?
     private func restartValidationTimer() {
         guard validator != nil else { return }
@@ -843,7 +910,7 @@ public class PowerTextField: View, Editable {
         removeValidation()
     }
 
-    private var needsValidation = false {
+    private var needsValidation = true {
         didSet {
             //print("needsValidation: \(needsValidation)")
         }
@@ -854,7 +921,12 @@ public class PowerTextField: View, Editable {
         validate()
     }
 
-    private func validate() {
+    public func setNeedsValidation() {
+        needsValidation = true
+        restartValidationTimer()
+    }
+
+    public func validate() {
         defer {
             needsValidation = false
         }
@@ -863,15 +935,14 @@ public class PowerTextField: View, Editable {
 
         cancelValidationTimer()
         do {
-            let validText = try validator.submitValidate(text)
-            setSubmitValidatedText(validText)
+            validatedText = try validator.submitValidate(text)
             removeValidation()
             remoteValidate()
         } catch let error as ValidationError {
-            setSubmitValidatedText(nil)
+            validatedText = nil
             validationError = error
-        } catch let error {
-            setSubmitValidatedText(nil)
+        } catch {
+            validatedText = nil
             logError(error)
         }
     }
@@ -881,13 +952,13 @@ public class PowerTextField: View, Editable {
 
         currentRemoteValidation?.cancel()
 
-        currentRemoteValidation = validator.remoteValidate(submitValidatedText)?.then { _ in
+        currentRemoteValidation = validator.remoteValidate(validatedText)?.then { _ in
             if let remoteValidationSuccessMessage = validator.remoteValidationSuccessMessage {
                 self.validationMessage = .success(remoteValidationSuccessMessage)
             }
             }.catch { error in
                 if let error = error as? ValidationError {
-                    self.setSubmitValidatedText(nil)
+                    self.validatedText = nil
                     self.validationError = error
                 }
             }.finally {
@@ -898,7 +969,12 @@ public class PowerTextField: View, Editable {
     fileprivate func shouldChange(from startText: String, in range: NSRange, replacementText text: String) -> Bool {
         func _shouldChange() -> String? {
             // Don't allow any keyboard-based changes when entering dates
-            guard contentType != .date else { return nil }
+            switch contentType {
+            case .date:
+                return nil
+            default:
+                break
+            }
 
             // Determine the final string
             let endText = startText.replacingCharacters(in: startText.stringRange(from: range)!, with: text)
@@ -932,8 +1008,7 @@ public class PowerTextField: View, Editable {
         if endText.isEmpty {
             removeValidation()
         } else {
-            needsValidation = true
-            restartValidationTimer()
+            setNeedsValidation()
         }
 
         if startText != endText {

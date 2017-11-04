@@ -71,7 +71,6 @@
 		035B6F531EFF0D6D001E293C /* PhotoSafeAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F391EFF0D63001E293C /* PhotoSafeAreaView.swift */; };
 		035B6F541EFF0D6D001E293C /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F381EFF0D63001E293C /* PhotoView.swift */; };
 		035B6F551EFF0D6D001E293C /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F3C1EFF0D63001E293C /* PlaceholderView.swift */; };
-		035B6F561EFF0D6D001E293C /* PowerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F371EFF0D63001E293C /* PowerTextField.swift */; };
 		035B6F571EFF0D6E001E293C /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F421EFF0D63001E293C /* ActivityIndicatorView.swift */; };
 		035B6F581EFF0D6E001E293C /* ActivityOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F3E1EFF0D63001E293C /* ActivityOverlayView.swift */; };
 		035B6F5A1EFF0D6E001E293C /* ClearFieldButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F441EFF0D63001E293C /* ClearFieldButtonView.swift */; };
@@ -128,7 +127,6 @@
 		035DAA371EFF62C5001040CE /* DevOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA361EFF62C5001040CE /* DevOverlayView.swift */; };
 		035DAA381EFF62C5001040CE /* DevOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA361EFF62C5001040CE /* DevOverlayView.swift */; };
 		035DAA611EFF9BA6001040CE /* Skin-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA601EFF9BA6001040CE /* Skin-macOS.swift */; };
-		035DAA651EFF9BDA001040CE /* Skin-tvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA631EFF9BD6001040CE /* Skin-tvOS.swift */; };
 		035DAA811EFFA093001040CE /* ResponderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA801EFFA093001040CE /* ResponderExtensions.swift */; };
 		035DAA821EFFA093001040CE /* ResponderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA801EFFA093001040CE /* ResponderExtensions.swift */; };
 		0360B3B11F004D1400A49A9B /* CGColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AB1F004D0800A49A9B /* CGColorUtils.swift */; };
@@ -339,6 +337,7 @@
 		0360B5471F00671000A49A9B /* ReachabilityBulletin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B5421F00670700A49A9B /* ReachabilityBulletin.swift */; };
 		0360B5481F00671000A49A9B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B5431F00670700A49A9B /* Reachability.swift */; };
 		0360B5491F00671000A49A9B /* ReachabilityBulletin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B5421F00670700A49A9B /* ReachabilityBulletin.swift */; };
+		0360C0D61FAD1B3E00A77477 /* PowerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360C0D51FAD1B3E00A77477 /* PowerTextField.swift */; };
 		0381CD1E1F072E23001510EA /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381CD1D1F072E23001510EA /* StoreManager.swift */; };
 		0381CD1F1F072E23001510EA /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381CD1D1F072E23001510EA /* StoreManager.swift */; };
 		0381CD201F072E23001510EA /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381CD1D1F072E23001510EA /* StoreManager.swift */; };
@@ -378,6 +377,9 @@
 		038FA0641F072436001B37C4 /* VectorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0601F072436001B37C4 /* VectorNode.swift */; };
 		038FA0731F0726EF001B37C4 /* OrientationNotificationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0721F0726EF001B37C4 /* OrientationNotificationActions.swift */; };
 		038FA0761F072739001B37C4 /* TVControllerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0751F072739001B37C4 /* TVControllerActions.swift */; };
+		0397CAE81FABE09B00468747 /* ScrollingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397CAE71FABE09A00468747 /* ScrollingStackView.swift */; };
+		0397CAEA1FABE2FC00468747 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397CAE91FABE2FC00468747 /* TextEditor.swift */; };
+		0397CAEC1FABF30C00468747 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397CAEB1FABF30C00468747 /* Appearance.swift */; };
 		039F32AB1F0AD0C100D2BAD0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F281EFF0D53001E293C /* View.swift */; };
 		039F32AE1F0AD29F00D2BAD0 /* TopSkin-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039F32AD1F0AD29F00D2BAD0 /* TopSkin-macOS.swift */; };
 		03B2E3CC1F008455002856DD /* OSEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3CB1F008455002856DD /* OSEvent.swift */; };
@@ -547,7 +549,6 @@
 		035B6F341EFF0D63001E293C /* EditableContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableContainerView.swift; sourceTree = "<group>"; };
 		035B6F351EFF0D63001E293C /* GradientOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientOverlayView.swift; sourceTree = "<group>"; };
 		035B6F361EFF0D63001E293C /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
-		035B6F371EFF0D63001E293C /* PowerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerTextField.swift; sourceTree = "<group>"; };
 		035B6F381EFF0D63001E293C /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		035B6F391EFF0D63001E293C /* PhotoSafeAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSafeAreaView.swift; sourceTree = "<group>"; };
 		035B6F3A1EFF0D63001E293C /* PagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
@@ -564,7 +565,6 @@
 		035B70151EFF1A22001E293C /* ConicalGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConicalGradientView.swift; sourceTree = "<group>"; };
 		035DAA361EFF62C5001040CE /* DevOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevOverlayView.swift; sourceTree = "<group>"; };
 		035DAA601EFF9BA6001040CE /* Skin-macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skin-macOS.swift"; sourceTree = "<group>"; };
-		035DAA631EFF9BD6001040CE /* Skin-tvOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skin-tvOS.swift"; sourceTree = "<group>"; };
 		035DAA801EFFA093001040CE /* ResponderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderExtensions.swift; sourceTree = "<group>"; };
 		0360B3AB1F004D0800A49A9B /* CGColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGColorUtils.swift; sourceTree = "<group>"; };
 		0360B3AC1F004D0800A49A9B /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
@@ -629,6 +629,7 @@
 		0360B4F21F00606100A49A9B /* VideoControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoControllerView.swift; sourceTree = "<group>"; };
 		0360B5421F00670700A49A9B /* ReachabilityBulletin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityBulletin.swift; sourceTree = "<group>"; };
 		0360B5431F00670700A49A9B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		0360C0D51FAD1B3E00A77477 /* PowerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerTextField.swift; sourceTree = "<group>"; };
 		0381CD1D1F072E23001510EA /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		0381CD491F073778001510EA /* AnimatedHideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedHideable.swift; sourceTree = "<group>"; };
 		038F9FD21F06EA30001B37C4 /* BulletinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinView.swift; sourceTree = "<group>"; };
@@ -647,6 +648,9 @@
 		038FA0601F072436001B37C4 /* VectorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorNode.swift; sourceTree = "<group>"; };
 		038FA0721F0726EF001B37C4 /* OrientationNotificationActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationNotificationActions.swift; sourceTree = "<group>"; };
 		038FA0751F072739001B37C4 /* TVControllerActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVControllerActions.swift; sourceTree = "<group>"; };
+		0397CAE71FABE09A00468747 /* ScrollingStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollingStackView.swift; path = Sources/Views/ScrollingStackView.swift; sourceTree = SOURCE_ROOT; };
+		0397CAE91FABE2FC00468747 /* TextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
+		0397CAEB1FABF30C00468747 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		039F32AD1F0AD29F00D2BAD0 /* TopSkin-macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopSkin-macOS.swift"; sourceTree = "<group>"; };
 		03B2E3CB1F008455002856DD /* OSEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSEvent.swift; sourceTree = "<group>"; };
 		03B2E3D11F00896C002856DD /* AnimationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUtils.swift; sourceTree = "<group>"; };
@@ -807,7 +811,6 @@
 			isa = PBXGroup;
 			children = (
 				038FA0741F072722001B37C4 /* Interaction */,
-				035DAA621EFF9BBA001040CE /* Skins */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -837,6 +840,7 @@
 				031DEE771EFEEECC001DCF3F /* DeviceOrientationAction.swift */,
 				031DEE791EFEEF24001DCF3F /* DeviceAccess.swift */,
 				03B2E4441F00A23B002856DD /* ResourceUtils-iOS.swift */,
+				0397CAEB1FABF30C00468747 /* Appearance.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1034,7 +1038,9 @@
 				035B6F391EFF0D63001E293C /* PhotoSafeAreaView.swift */,
 				035B6F381EFF0D63001E293C /* PhotoView.swift */,
 				035B6F3C1EFF0D63001E293C /* PlaceholderView.swift */,
-				035B6F371EFF0D63001E293C /* PowerTextField.swift */,
+				0360C0D51FAD1B3E00A77477 /* PowerTextField.swift */,
+				0397CAE91FABE2FC00468747 /* TextEditor.swift */,
+				0397CAE71FABE09A00468747 /* ScrollingStackView.swift */,
 				0360B4D41F00598400A49A9B /* SpacerView.swift */,
 				0360B4DF1F005A7500A49A9B /* TableViewExtensions.swift */,
 				0360B4E21F005ACD00A49A9B /* TraitCollectionExtensions.swift */,
@@ -1088,14 +1094,6 @@
 			children = (
 				035DAA601EFF9BA6001040CE /* Skin-macOS.swift */,
 				039F32AD1F0AD29F00D2BAD0 /* TopSkin-macOS.swift */,
-			);
-			path = Skins;
-			sourceTree = "<group>";
-		};
-		035DAA621EFF9BBA001040CE /* Skins */ = {
-			isa = PBXGroup;
-			children = (
-				035DAA631EFF9BD6001040CE /* Skin-tvOS.swift */,
 			);
 			path = Skins;
 			sourceTree = "<group>";
@@ -1690,7 +1688,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				035B6F561EFF0D6D001E293C /* PowerTextField.swift in Sources */,
+				0360C0D61FAD1B3E00A77477 /* PowerTextField.swift in Sources */,
 				035B6F721EFF0D75001E293C /* Slider.swift in Sources */,
 				035B6F4A1EFF0D6D001E293C /* DividerView.swift in Sources */,
 				035B6F4D1EFF0D6D001E293C /* FlexView.swift in Sources */,
@@ -1777,6 +1775,7 @@
 				038FA0561F0722C3001B37C4 /* DisplayLink.swift in Sources */,
 				03B2E3F31F008F04002856DD /* NavigationController.swift in Sources */,
 				03B2E3F11F008F04002856DD /* ModelViewController.swift in Sources */,
+				0397CAEA1FABE2FC00468747 /* TextEditor.swift in Sources */,
 				035B6F471EFF0D6D001E293C /* BounceButton.swift in Sources */,
 				03B2E4281F009705002856DD /* KeyboardNotificationActions.swift in Sources */,
 				035B6F4B1EFF0D6D001E293C /* Editable.swift in Sources */,
@@ -1828,6 +1827,7 @@
 				0360B4EB1F005D8F00A49A9B /* ViewDebugBackgroundColor.swift in Sources */,
 				03B2E3EF1F008F04002856DD /* AlertControllerExtensions.swift in Sources */,
 				035B6F461EFF0D6D001E293C /* ActivityOverlayView.swift in Sources */,
+				0397CAE81FABE09B00468747 /* ScrollingStackView.swift in Sources */,
 				038FA04D1F071FE3001B37C4 /* InFlightTokenView.swift in Sources */,
 				035B6F511EFF0D6D001E293C /* OverlayWindow.swift in Sources */,
 				0360B4821F004F5600A49A9B /* SizeExtensions.swift in Sources */,
@@ -1846,6 +1846,7 @@
 				0360B4B01F004FD700A49A9B /* ViewNesting.swift in Sources */,
 				035B6F6B1EFF0D75001E293C /* CollectionViewExtensions.swift in Sources */,
 				0360B4C41F00567E00A49A9B /* OSTouch.swift in Sources */,
+				0397CAEC1FABF30C00468747 /* Appearance.swift in Sources */,
 				035B6F491EFF0D6D001E293C /* ConcealerView.swift in Sources */,
 				0360B4581F004F2800A49A9B /* ImageUtils.swift in Sources */,
 			);
@@ -1939,7 +1940,6 @@
 				038FA05E1F07240D001B37C4 /* SpriteKitExtensions.swift in Sources */,
 				0360B4CA1F0056AD00A49A9B /* GestureRecognizerAction.swift in Sources */,
 				0360B4911F004F5800A49A9B /* VectorExtensions.swift in Sources */,
-				035DAA651EFF9BDA001040CE /* Skin-tvOS.swift in Sources */,
 				035B6F941EFF0D76001E293C /* WindowExtensions.swift in Sources */,
 				0360B4ED1F005D8F00A49A9B /* ViewDebugBackgroundColor.swift in Sources */,
 				038F9FE01F070550001B37C4 /* ViewController.swift in Sources */,

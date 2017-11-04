@@ -9,81 +9,74 @@
 import CoreGraphics
 import WolfBase
 
+public protocol FontStyleable {
+    var fontStyle: FontStyle? { get set }
+    func syncToFontStyle()
+}
+
 public struct FontStyle: Equatable {
-  private var _identifierPath = [String]()
-  public var identifierPath: String { return _identifierPath.joined(separator: "/") }
-  public var descriptor: OSFontDescriptor
-  public var color: Color?
-  public var allCaps: Bool
+    public var descriptor: OSFontDescriptor
+    public var color: Color?
+    public var allCaps: Bool
 
-  public mutating func addIdentifier(_ id: String) {
-    guard _identifierPath.last != id else { return }
-    _identifierPath.append(id)
-  }
-
-  #if os(macOS)
-  public var font: OSFont {
-    return OSFont(descriptor: descriptor, size: 0)!
-  }
-  #else
-  public var font: OSFont {
+    #if os(macOS)
+    public var font: OSFont {
+        return OSFont(descriptor: descriptor, size: 0)!
+    }
+    #else
+    public var font: OSFont {
     return OSFont(descriptor: descriptor, size: 0)
-  }
-  #endif
-
-  public var attributes: StringAttributes {
-    var a = StringAttributes()
-    a[.font] = font
-    if let color = color {
-      a[.foregroundColor] = color.osColor
     }
-    return a
-  }
+    #endif
 
-  public init(_ identifier: String, font: OSFont, color: Color? = nil, allCaps: Bool = false) {
-    self.descriptor = font.fontDescriptor
-    self.color = color
-    self.allCaps = allCaps
-    addIdentifier(identifier)
-  }
-
-  public init(_ identifier: String, descriptor: OSFontDescriptor, color: Color? = nil, allCaps: Bool = false) {
-    self.descriptor = descriptor
-    self.color = color
-    self.allCaps = allCaps
-    addIdentifier(identifier)
-  }
-
-  public init(_ identifier: String, family: FontFamilyName, face: FontFaceName? = nil, size: CGFloat, color: Color? = nil, allCaps: Bool = false) {
-    var descriptor = OSFontDescriptor().withFamily(family.rawValue).withSize(size)
-    if let face = face {
-      descriptor = descriptor.withFace(face.rawValue)
+    public var attributes: StringAttributes {
+        var a = StringAttributes()
+        a[.font] = font
+        if let color = color {
+            a[.foregroundColor] = color.osColor
+        }
+        return a
     }
-    self.init(identifier, descriptor: descriptor, color: color, allCaps: allCaps)
-  }
 
-  public func apply(to string: String?) -> AttributedString? {
-    guard var string = string else { return nil }
-    string = allCaps ? (string.uppercased()) : string
-    let aString = string§
-    aString.setAttributes(attributes)
-    return aString
-  }
-
-  public func withColor(_ color: Color, _ identifier: String? = nil) -> FontStyle {
-    var f = self
-    f.color = color
-    if let identifier = identifier {
-      f.addIdentifier(identifier)
+    public init(font: OSFont, color: Color? = nil, allCaps: Bool = false) {
+        self.descriptor = font.fontDescriptor
+        self.color = color
+        self.allCaps = allCaps
     }
-    return f
-  }
 
-  public static func ==(lhs: FontStyle, rhs: FontStyle) -> Bool {
-    return lhs.descriptor == rhs.descriptor &&
-      lhs.color == rhs.color &&
-      lhs.allCaps == rhs.allCaps
-  }
+    public init(descriptor: OSFontDescriptor, color: Color? = nil, allCaps: Bool = false) {
+        self.descriptor = descriptor
+        self.color = color
+        self.allCaps = allCaps
+    }
+
+    public init(family: FontFamilyName, face: FontFaceName? = nil, size: CGFloat, color: Color? = nil, allCaps: Bool = false) {
+        var descriptor = OSFontDescriptor().withFamily(family.rawValue).withSize(size)
+        if let face = face {
+            descriptor = descriptor.withFace(face.rawValue)
+        }
+        self.init(descriptor: descriptor, color: color, allCaps: allCaps)
+    }
+
+    public func apply(to string: String?) -> AttributedString? {
+        guard var string = string else { return nil }
+        string = allCaps ? (string.uppercased()) : string
+        let aString = string§
+        aString.setAttributes(attributes)
+        return aString
+    }
+
+    public func withColor(_ color: Color) -> FontStyle {
+        var f = self
+        f.color = color
+        return f
+    }
+
+    public static func ==(lhs: FontStyle, rhs: FontStyle) -> Bool {
+        return lhs.descriptor == rhs.descriptor &&
+            lhs.color == rhs.color &&
+            lhs.allCaps == rhs.allCaps
+    }
 }
 
 /*
