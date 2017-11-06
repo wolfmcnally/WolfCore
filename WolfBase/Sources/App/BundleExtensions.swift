@@ -12,24 +12,24 @@ import Foundation
 public class BundleClass { }
 
 extension Bundle {
-  /// Similar to Bundle.bundleForClass, except if aClass is nil (or omitted) the main bundle is returned
-  public static func findBundle(forClass aClass: AnyClass? = nil) -> Bundle {
-    let bundle: Bundle
-    if let aClass = aClass {
-      bundle = Bundle(for: aClass)
-    } else {
-      bundle = Bundle.main
+    /// Similar to Bundle.bundleForClass, except if aClass is nil (or omitted) the main bundle is returned
+    public static func findBundle(forClass aClass: AnyClass? = nil) -> Bundle {
+        let bundle: Bundle
+        if let aClass = aClass {
+            bundle = Bundle(for: aClass)
+        } else {
+            bundle = Bundle.main
+        }
+        return bundle
     }
-    return bundle
-  }
-
-  public static func urlForResource(_ name: String, withExtension anExtension: String? = nil, subdirectory subpath: String? = nil) -> (Bundle) throws -> URL {
-    return { bundle in
-      guard let url = bundle.url(forResource: name, withExtension: anExtension, subdirectory: subpath) else {
-        throw GeneralError(message: "Resource not found.")
-      }
-      return url
+    
+    public static func urlForResource(_ name: String, withExtension anExtension: String? = nil, subdirectory subpath: String? = nil) -> (Bundle) throws -> URL {
+        return { bundle in
+            guard let url = bundle.url(forResource: name, withExtension: anExtension, subdirectory: subpath) else {
+                throw GeneralError(message: "Resource not found.")
+            }
+            return url
+        }
     }
-  }
 }
 

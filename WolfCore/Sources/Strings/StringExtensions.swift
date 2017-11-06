@@ -10,9 +10,9 @@ import CoreGraphics
 import Foundation
 
 public extension NSString {
-  var cgFloatValue: CGFloat {
-    get {
-      return CGFloat(self.doubleValue)
+    var cgFloatValue: CGFloat {
+        get {
+            return CGFloat(self.doubleValue)
+        }
     }
-  }
 }

@@ -7,9 +7,9 @@
 //
 
 #if os(macOS)
-  import Cocoa
-  public typealias OSStoryboard = NSStoryboard
+    import Cocoa
+    public typealias OSStoryboard = NSStoryboard
 #else
-  import UIKit
-  public typealias OSStoryboard = UIStoryboard
+    import UIKit
+    public typealias OSStoryboard = UIStoryboard
 #endif

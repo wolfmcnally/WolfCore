@@ -10,116 +10,116 @@ import XCTest
 @testable import WolfBase
 
 public struct ResultItem: Equatable {
-  let frameNumber: Int
-  let index: Int
-  let state: TestSystem.State
-  let duration: TimeInterval
+    let frameNumber: Int
+    let index: Int
+    let state: TestSystem.State
+    let duration: TimeInterval
 
-  public static func ==(lhs: ResultItem, rhs: ResultItem) -> Bool {
-    return lhs.frameNumber == rhs.frameNumber &&
-      lhs.index == rhs.index &&
-      lhs.state == rhs.state &&
-      abs(lhs.duration - rhs.duration) < 0.001
-  }
+    public static func ==(lhs: ResultItem, rhs: ResultItem) -> Bool {
+        return lhs.frameNumber == rhs.frameNumber &&
+            lhs.index == rhs.index &&
+            lhs.state == rhs.state &&
+            abs(lhs.duration - rhs.duration) < 0.001
+    }
 }
 
 public class TestSystem: FrameBasedSystem {
-  public var results = [ResultItem]()
+    public var results = [ResultItem]()
 
-  public init() { }
+    public init() { }
 
-  public enum State {
-    case on
-    case off
-  }
-
-  struct Event {
-    let state: State
-    let duration: TimeInterval
-  }
-
-  let events = [Event(state: .off, duration: 1.5),
-                Event(state: .on , duration: 1.5),
-                Event(state: .off, duration: 0.5),
-                Event(state: .on , duration: 0.5),
-                Event(state: .off, duration: 0.3),
-                Event(state: .on , duration: 0.5),
-                Event(state: .off, duration: 0.3),
-                Event(state: .on , duration: 0.3),
-                Event(state: .off, duration: 0.3),
-                Event(state: .on , duration: 0.5),
-                Event(state: .off, duration: 0.75),
-                Event(state: .on , duration: 0.5),
-                Event(state: .off, duration: 0.75)
-  ]
-
-  public var frameNumber: Int = 0
-
-  var eventIndex: Int!
-  var currentEvent: Event { return events[eventIndex] }
-
-  var timeBeforeTransition: TimeInterval = 0
-
-  public func simulate(forUpTo maxDuration: TimeInterval) -> (actualDuration: TimeInterval, timeBeforeTransition: TimeInterval) {
-    let actualDuration = min(maxDuration, timeBeforeTransition)
-    timeBeforeTransition -= actualDuration
-
-    //print("Event \(eventIndex!) simulatedFor: \(actualDuration %% 2)")
-    results.append(ResultItem(frameNumber: frameNumber, index: eventIndex, state: currentEvent.state, duration: actualDuration))
-
-    return (actualDuration, timeBeforeTransition)
-  }
-
-  public func transition() -> Bool {
-    if eventIndex == nil {
-      eventIndex = 0
-    } else {
-      eventIndex = eventIndex + 1
+    public enum State {
+        case on
+        case off
     }
-    //print("Event \(eventIndex!) \(currentEvent.state)(\(currentEvent.duration %% 2))")
-    guard eventIndex < events.count else { return true }
-    timeBeforeTransition = currentEvent.duration
-    return false
-  }
+
+    struct Event {
+        let state: State
+        let duration: TimeInterval
+    }
+
+    let events = [Event(state: .off, duration: 1.5),
+                  Event(state: .on , duration: 1.5),
+                  Event(state: .off, duration: 0.5),
+                  Event(state: .on , duration: 0.5),
+                  Event(state: .off, duration: 0.3),
+                  Event(state: .on , duration: 0.5),
+                  Event(state: .off, duration: 0.3),
+                  Event(state: .on , duration: 0.3),
+                  Event(state: .off, duration: 0.3),
+                  Event(state: .on , duration: 0.5),
+                  Event(state: .off, duration: 0.75),
+                  Event(state: .on , duration: 0.5),
+                  Event(state: .off, duration: 0.75)
+    ]
+
+    public var frameNumber: Int = 0
+
+    var eventIndex: Int!
+    var currentEvent: Event { return events[eventIndex] }
+
+    var timeBeforeTransition: TimeInterval = 0
+
+    public func simulate(forUpTo maxDuration: TimeInterval) -> (actualDuration: TimeInterval, timeBeforeTransition: TimeInterval) {
+        let actualDuration = min(maxDuration, timeBeforeTransition)
+        timeBeforeTransition -= actualDuration
+
+        //print("Event \(eventIndex!) simulatedFor: \(actualDuration %% 2)")
+        results.append(ResultItem(frameNumber: frameNumber, index: eventIndex, state: currentEvent.state, duration: actualDuration))
+
+        return (actualDuration, timeBeforeTransition)
+    }
+
+    public func transition() -> Bool {
+        if eventIndex == nil {
+            eventIndex = 0
+        } else {
+            eventIndex = eventIndex + 1
+        }
+        //print("Event \(eventIndex!) \(currentEvent.state)(\(currentEvent.duration %% 2))")
+        guard eventIndex < events.count else { return true }
+        timeBeforeTransition = currentEvent.duration
+        return false
+    }
 }
 
 class FrameBasedSimulatorTests: XCTestCase {
-  let correctResults: [ResultItem] = [
-    ResultItem(frameNumber: 1, index: 0, state: .off, duration: 1.0),
-    ResultItem(frameNumber: 2, index: 0, state: .off, duration: 0.5),
-    ResultItem(frameNumber: 2, index: 1, state: .on, duration: 0.5),
-    ResultItem(frameNumber: 3, index: 1, state: .on, duration: 0.9),
-    ResultItem(frameNumber: 4, index: 1, state: .on, duration: 0.1),
-    ResultItem(frameNumber: 4, index: 2, state: .off, duration: 0.5),
-    ResultItem(frameNumber: 4, index: 3, state: .on, duration: 0.4),
-    ResultItem(frameNumber: 5, index: 3, state: .on, duration: 0.1),
-    ResultItem(frameNumber: 5, index: 4, state: .off, duration: 0.3),
-    ResultItem(frameNumber: 5, index: 5, state: .on, duration: 0.5),
-    ResultItem(frameNumber: 5, index: 6, state: .off, duration: 0.3),
-    ResultItem(frameNumber: 5, index: 7, state: .on, duration: 0.1),
-    ResultItem(frameNumber: 6, index: 7, state: .on, duration: 0.2),
-    ResultItem(frameNumber: 6, index: 8, state: .off, duration: 0.3),
-    ResultItem(frameNumber: 6, index: 9, state: .on, duration: 0.5),
-    ResultItem(frameNumber: 7, index: 10, state: .off, duration: 0.75),
-    ResultItem(frameNumber: 7, index: 11, state: .on, duration: 0.25),
-    ResultItem(frameNumber: 8, index: 11, state: .on, duration: 0.25),
-    ResultItem(frameNumber: 8, index: 12, state: .off, duration: 0.75)
-  ]
+    let correctResults: [ResultItem] = [
+        ResultItem(frameNumber: 1, index: 0, state: .off, duration: 1.0),
+        ResultItem(frameNumber: 2, index: 0, state: .off, duration: 0.5),
+        ResultItem(frameNumber: 2, index: 1, state: .on, duration: 0.5),
+        ResultItem(frameNumber: 3, index: 1, state: .on, duration: 0.9),
+        ResultItem(frameNumber: 4, index: 1, state: .on, duration: 0.1),
+        ResultItem(frameNumber: 4, index: 2, state: .off, duration: 0.5),
+        ResultItem(frameNumber: 4, index: 3, state: .on, duration: 0.4),
+        ResultItem(frameNumber: 5, index: 3, state: .on, duration: 0.1),
+        ResultItem(frameNumber: 5, index: 4, state: .off, duration: 0.3),
+        ResultItem(frameNumber: 5, index: 5, state: .on, duration: 0.5),
+        ResultItem(frameNumber: 5, index: 6, state: .off, duration: 0.3),
+        ResultItem(frameNumber: 5, index: 7, state: .on, duration: 0.1),
+        ResultItem(frameNumber: 6, index: 7, state: .on, duration: 0.2),
+        ResultItem(frameNumber: 6, index: 8, state: .off, duration: 0.3),
+        ResultItem(frameNumber: 6, index: 9, state: .on, duration: 0.5),
+        ResultItem(frameNumber: 7, index: 10, state: .off, duration: 0.75),
+        ResultItem(frameNumber: 7, index: 11, state: .on, duration: 0.25),
+        ResultItem(frameNumber: 8, index: 11, state: .on, duration: 0.25),
+        ResultItem(frameNumber: 8, index: 12, state: .off, duration: 0.75)
+    ]
 
-  func test1() {
-    let frameTimes: [TimeInterval] = [0.0, 1.0, 2.0, 2.9, 3.9, 5.2, 6.2, 7.2, 8.2]
-    let mySystem = TestSystem()
-    let sim = FrameBasedSimulator(system: mySystem)
-    for (frameNumber, currentTime) in frameTimes.enumerated() {
-      mySystem.frameNumber = frameNumber
-      //print("\nFrame \(frameNumber): \(currentTime)")
-      sim.update(to: currentTime)
+    func test1() {
+        let frameTimes: [TimeInterval] = [0.0, 1.0, 2.0, 2.9, 3.9, 5.2, 6.2, 7.2, 8.2]
+        let mySystem = TestSystem()
+        let sim = FrameBasedSimulator(system: mySystem)
+        for (frameNumber, currentTime) in frameTimes.enumerated() {
+            mySystem.frameNumber = frameNumber
+            //print("\nFrame \(frameNumber): \(currentTime)")
+            sim.update(to: currentTime)
+        }
+        XCTAssert(mySystem.results.count == correctResults.count)
+        for i in 0 ..< mySystem.results.count {
+            XCTAssert(mySystem.results[i] == correctResults[i])
+        }
     }
-    XCTAssert(mySystem.results.count == correctResults.count)
-    for i in 0 ..< mySystem.results.count {
-      XCTAssert(mySystem.results[i] == correctResults[i])
-    }
-  }
 }
 
 /*

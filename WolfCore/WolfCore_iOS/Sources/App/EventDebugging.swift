@@ -10,13 +10,13 @@ import UIKit
 import WolfBase
 
 public func printViewTouchedInEvent(_ event: UIEvent) {
-  guard event.type == .touches else { return }
-  guard let touch = event.allTouches?.first else { return }
-  guard touch.phase == .began else { return }
-  guard let window = touch.window else { return }
-  let locationInWindow = touch.location(in: window)
-  let view = window.hitTest(locationInWindow, with: event)
-  print("touch in: \(view†)")
+    guard event.type == .touches else { return }
+    guard let touch = event.allTouches?.first else { return }
+    guard touch.phase == .began else { return }
+    guard let window = touch.window else { return }
+    let locationInWindow = touch.location(in: window)
+    let view = window.hitTest(locationInWindow, with: event)
+    print("touch in: \(view†)")
 }
 
 //

@@ -7,19 +7,19 @@
 //
 
 public struct IntSize {
-  public var width: Int = 0
-  public var height: Int = 0
+    public var width: Int = 0
+    public var height: Int = 0
 }
 
 extension IntSize: CustomStringConvertible {
-  public var description: String {
-    return("IntSize(\(width), \(height))")
-  }
+    public var description: String {
+        return("IntSize(\(width), \(height))")
+    }
 }
 
 extension IntSize : Equatable {
 }
 
 public func == (lhs: IntSize, rhs: IntSize) -> Bool {
-  return lhs.width == rhs.width && lhs.height == rhs.height
+    return lhs.width == rhs.width && lhs.height == rhs.height
 }

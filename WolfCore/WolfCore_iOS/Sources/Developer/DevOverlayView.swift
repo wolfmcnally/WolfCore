@@ -12,18 +12,18 @@ import WolfBase
 public var devOverlay = DevOverlayView()
 
 public class DevOverlayView: View {
-  public override func setup() {
-    super.setup()
+    public override func setup() {
+        super.setup()
 
-    let window = UIApplication.shared.windows[0]
-    window => [
-      self
-    ]
-    isTransparentToTouches = true
-    bounds = window.frame
-    constrainFrameToFrame(identifier: "DevOverlay")
-    dispatchRepeatedOnMain(atInterval: 0.2) { canceler in
-      window.bringSubview(toFront: self)
+        let window = UIApplication.shared.windows[0]
+        window => [
+            self
+        ]
+        isTransparentToTouches = true
+        bounds = window.frame
+        constrainFrameToFrame(identifier: "DevOverlay")
+        dispatchRepeatedOnMain(atInterval: 0.2) { canceler in
+            window.bringSubview(toFront: self)
+        }
     }
-  }
 }

@@ -9,39 +9,39 @@
 import UIKit
 
 extension UIStackViewDistribution: CustomStringConvertible {
-  public var description: String {
-    switch self {
-    case .equalCentering:
-      return ".equalCentering"
-    case .equalSpacing:
-      return ".equalSpacing"
-    case .fill:
-      return ".fill"
-    case .fillEqually:
-      return ".fillEqually"
-    case .fillProportionally:
-      return ".fillProportionally"
+    public var description: String {
+        switch self {
+        case .equalCentering:
+            return ".equalCentering"
+        case .equalSpacing:
+            return ".equalSpacing"
+        case .fill:
+            return ".fill"
+        case .fillEqually:
+            return ".fillEqually"
+        case .fillProportionally:
+            return ".fillProportionally"
+        }
     }
-  }
 }
 
 extension UIStackViewAlignment: CustomStringConvertible {
-  public var description: String {
-    switch self {
-    case .center:
-      return ".center"
-    case .fill:
-      return ".fill"
-    case .firstBaseline:
-      return ".firstBaseline"
-    case .lastBaseline:
-      return ".lastBaseline"
-    case .leading:
-      return ".leading"
-    case .trailing:
-      return ".trailing"
+    public var description: String {
+        switch self {
+        case .center:
+            return ".center"
+        case .fill:
+            return ".fill"
+        case .firstBaseline:
+            return ".firstBaseline"
+        case .lastBaseline:
+            return ".lastBaseline"
+        case .leading:
+            return ".leading"
+        case .trailing:
+            return ".trailing"
+        }
     }
-  }
 }
 //
 //extension UIStackView {

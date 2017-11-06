@@ -9,5 +9,5 @@
 import Foundation
 
 public class Framework {
-  public static var bundle: Bundle { return Bundle.findBundle(forClass: self) }
+    public static var bundle: Bundle { return Bundle.findBundle(forClass: self) }
 }

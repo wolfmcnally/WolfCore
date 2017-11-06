@@ -7,9 +7,9 @@
 //
 
 public protocol ModelObject {
-  associatedtype Model
-  
-  var model: Model! { get set }
-  
-  func syncToModel()
+    associatedtype Model
+
+    var model: Model! { get set }
+
+    func syncToModel()
 }

@@ -7,22 +7,22 @@
 //
 
 #if os(macOS)
-  import Cocoa
-  public typealias LayoutRelation = NSLayoutConstraint.Relation
+    import Cocoa
+    public typealias LayoutRelation = NSLayoutConstraint.Relation
 #else
-  import UIKit
-  public typealias LayoutRelation = NSLayoutRelation
+    import UIKit
+    public typealias LayoutRelation = NSLayoutRelation
 #endif
 
 public func string(forRelation relation: LayoutRelation) -> String {
-  let result: String
-  switch relation {
-  case .equal:
-    result = "=="
-  case .lessThanOrEqual:
-    result = "<="
-  case .greaterThanOrEqual:
-    result = ">="
-  }
-  return result
+    let result: String
+    switch relation {
+    case .equal:
+        result = "=="
+    case .lessThanOrEqual:
+        result = "<="
+    case .greaterThanOrEqual:
+        result = ">="
+    }
+    return result
 }

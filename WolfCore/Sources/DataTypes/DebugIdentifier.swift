@@ -11,14 +11,14 @@ import Foundation
 private var debugIdentifierKey = "debugIdentifier"
 
 extension NSObject {
-  /// A string used for debugging purposes that can be set on any NSObject.
-  public var debugIdentifier: String? {
-    get {
-      return getAssociatedValue(for: &debugIdentifierKey)
-    }
+    /// A string used for debugging purposes that can be set on any NSObject.
+    public var debugIdentifier: String? {
+        get {
+            return getAssociatedValue(for: &debugIdentifierKey)
+        }
 
-    set {
-      setAssociatedValue(newValue, for: &debugIdentifierKey)
+        set {
+            setAssociatedValue(newValue, for: &debugIdentifierKey)
+        }
     }
-  }
 }

@@ -14,8 +14,8 @@
 infix operator ◊= : AssignmentPrecedence
 
 public func ◊= <T: Invalidatable>(lhs: inout T, rhs: @autoclosure () -> T) {
-  lhs.invalidate()
-  lhs = rhs()
+    lhs.invalidate()
+    lhs = rhs()
 }
 
 public func ◊= <T: Invalidatable>(lhs: inout T!, rhs: @autoclosure () -> T) {

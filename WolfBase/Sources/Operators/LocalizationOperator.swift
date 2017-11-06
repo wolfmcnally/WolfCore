@@ -15,9 +15,9 @@ postfix operator ¶
 infix operator ¶ : AttributeAssignmentPrecedence
 
 public postfix func ¶ (left: String) -> String {
-  return left.localized()
+    return left.localized()
 }
 
 public func ¶ (left: String, right: Replacements) -> String {
-  return left.localized(replacingPlaceholdersWithReplacements: right)
+    return left.localized(replacingPlaceholdersWithReplacements: right)
 }

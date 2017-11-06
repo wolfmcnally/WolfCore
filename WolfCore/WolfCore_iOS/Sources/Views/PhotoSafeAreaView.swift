@@ -10,25 +10,25 @@ import UIKit
 import WolfBase
 
 public class PhotoSafeAreaView: View {
-  public static func addToView(view: UIView) -> PhotoSafeAreaView {
-    let safeAreaView = PhotoSafeAreaView()
-    view => [
-      safeAreaView
-    ]
-    Constraints(
-      safeAreaView.centerXAnchor == view.centerXAnchor,
-      safeAreaView.centerYAnchor == view.centerYAnchor,
-      safeAreaView.widthAnchor == safeAreaView.heightAnchor,
-      safeAreaView.widthAnchor == view.widthAnchor =&= .defaultLow,
-      safeAreaView.heightAnchor == view.heightAnchor =&= .defaultLow,
-      safeAreaView.widthAnchor <= view.widthAnchor,
-      safeAreaView.heightAnchor <= view.heightAnchor
-    )
-    return safeAreaView
-  }
-  
-  public override func setup() {
-    super.setup()
-    isUserInteractionEnabled = false
-  }
+    public static func addToView(view: UIView) -> PhotoSafeAreaView {
+        let safeAreaView = PhotoSafeAreaView()
+        view => [
+            safeAreaView
+        ]
+        Constraints(
+            safeAreaView.centerXAnchor == view.centerXAnchor,
+            safeAreaView.centerYAnchor == view.centerYAnchor,
+            safeAreaView.widthAnchor == safeAreaView.heightAnchor,
+            safeAreaView.widthAnchor == view.widthAnchor =&= .defaultLow,
+            safeAreaView.heightAnchor == view.heightAnchor =&= .defaultLow,
+            safeAreaView.widthAnchor <= view.widthAnchor,
+            safeAreaView.heightAnchor <= view.heightAnchor
+        )
+        return safeAreaView
+    }
+    
+    public override func setup() {
+        super.setup()
+        isUserInteractionEnabled = false
+    }
 }

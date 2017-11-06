@@ -7,34 +7,34 @@
 //
 
 #if os(macOS)
-  import Cocoa
+    import Cocoa
 #else
-  import UIKit
+    import UIKit
 #endif
 
 public protocol Hideable: class {
-  var isHidden: Bool { get set }
+    var isHidden: Bool { get set }
 }
 
 extension Hideable {
-  public var isShown: Bool {
-    get { return !isHidden }
-    set { isHidden = !newValue }
-  }
-  
-  public func show() {
-    isHidden = false
-  }
-  
-  public func hide() {
-    isHidden = true
-  }
-  
-  public func showIf(_ condition: Bool) {
-    isHidden = !condition
-  }
-  
-  public func hideIf(_ condition: Bool) {
-    isHidden = condition
-  }
+    public var isShown: Bool {
+        get { return !isHidden }
+        set { isHidden = !newValue }
+    }
+    
+    public func show() {
+        isHidden = false
+    }
+    
+    public func hide() {
+        isHidden = true
+    }
+    
+    public func showIf(_ condition: Bool) {
+        isHidden = !condition
+    }
+    
+    public func hideIf(_ condition: Bool) {
+        isHidden = condition
+    }
 }

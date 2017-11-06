@@ -9,13 +9,13 @@
 import Foundation
 
 public struct Endpoint {
-  public let name: String
-  public let host: String
-  public let basePath: String?
-  
-  public init(name: String, host: String, basePath: String? = nil) {
-    self.name = name
-    self.host = host
-    self.basePath = basePath
-  }
+    public let name: String
+    public let host: String
+    public let basePath: String?
+    
+    public init(name: String, host: String, basePath: String? = nil) {
+        self.name = name
+        self.host = host
+        self.basePath = basePath
+    }
 }

@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 import WolfBase
 
+//
+// Based on:
+// https://github.com/victor-pavlychko/SwiftyAppearance
+//
+
 public extension NSNotification.Name {
     public static let appearanceWillRefreshApplication = NSNotification.Name(rawValue: "appearanceWillRefreshApplicationNotification")
     public static let appearanceDidRefreshApplication = NSNotification.Name(rawValue: "appearanceDidRefreshApplicationNotification")

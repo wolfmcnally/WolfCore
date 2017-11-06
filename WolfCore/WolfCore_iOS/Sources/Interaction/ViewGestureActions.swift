@@ -9,10 +9,10 @@
 import UIKit
 
 public class ViewGestureActions: GestureActions {
-  private let tapName = "tap"
-  
-  public var onTap: GestureBlock? {
-    get { return getAction(for: tapName) }
-    set { setTapAction(named: tapName, action: newValue) }
-  }
+    private let tapName = "tap"
+    
+    public var onTap: GestureBlock? {
+        get { return getAction(for: tapName) }
+        set { setTapAction(named: tapName, action: newValue) }
+    }
 }

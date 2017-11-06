@@ -1498,7 +1498,6 @@
 			isa = PBXGroup;
 			children = (
 				03D8FF921EFC8C570000AAD5 /* Info.plist */,
-				03D8FF9D1EFC8CA40000AAD5 /* Supporting Files */,
 			);
 			path = WolfBase_iOSTests;
 			sourceTree = "<group>";
@@ -1511,13 +1510,6 @@
 				03D8FF861EFC8C570000AAD5 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		03D8FF9D1EFC8CA40000AAD5 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		03D8FF9E1EFC8D250000AAD5 /* Sources */ = {

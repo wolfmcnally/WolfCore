@@ -9,5 +9,5 @@
 import Foundation
 
 #if !os(Linux)
-  public typealias TextCheckingResult = NSTextCheckingResult
+    public typealias TextCheckingResult = NSTextCheckingResult
 #endif

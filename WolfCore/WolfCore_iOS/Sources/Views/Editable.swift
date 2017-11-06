@@ -7,14 +7,14 @@
 //
 
 public protocol Editable: class {
-  var isEditing: Bool { get set }
-  func setEditing(_ isEditing: Bool, animated: Bool)
-  func syncToEditing(animated: Bool)
+    var isEditing: Bool { get set }
+    func setEditing(_ isEditing: Bool, animated: Bool)
+    func syncToEditing(animated: Bool)
 }
 
 extension Editable {
-  public func setEditing(_ isEditing: Bool, animated: Bool) {
-    self.isEditing = isEditing
-    syncToEditing(animated: animated)
-  }
+    public func setEditing(_ isEditing: Bool, animated: Bool) {
+        self.isEditing = isEditing
+        syncToEditing(animated: animated)
+    }
 }

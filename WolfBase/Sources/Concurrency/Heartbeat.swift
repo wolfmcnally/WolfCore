@@ -24,28 +24,28 @@ import Foundation
 // When expired() is called, you've lost the heartbeat, so disconnect. If you're the client, attempt to reconnect.
 
 public class Heartbeat {
-  public var interval: TimeInterval
-  public var expired: Block
-  private var canceler: Cancelable?
-  
-  public init(interval: TimeInterval, expired: @escaping Block) {
-    self.interval = interval
-    self.expired = expired
-  }
-  
-  deinit {
-    cancel()
-  }
-  
-  public func cancel() {
-    canceler?.cancel()
-    canceler = nil
-  }
-  
-  public func reset() {
-    cancel()
-    canceler = dispatchOnMain(afterDelay: interval) { [unowned self] in
-      self.expired()
+    public var interval: TimeInterval
+    public var expired: Block
+    private var canceler: Cancelable?
+    
+    public init(interval: TimeInterval, expired: @escaping Block) {
+        self.interval = interval
+        self.expired = expired
     }
-  }
+    
+    deinit {
+        cancel()
+    }
+    
+    public func cancel() {
+        canceler?.cancel()
+        canceler = nil
+    }
+    
+    public func reset() {
+        cancel()
+        canceler = dispatchOnMain(afterDelay: interval) { [unowned self] in
+            self.expired()
+        }
+    }
 }

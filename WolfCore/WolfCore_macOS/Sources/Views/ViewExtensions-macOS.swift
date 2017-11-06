@@ -9,21 +9,21 @@
 import Cocoa
 
 extension NSView {
-  public var alpha: CGFloat {
-    get {
-      return alphaValue
+    public var alpha: CGFloat {
+        get {
+            return alphaValue
+        }
+        
+        set {
+            alphaValue = newValue
+        }
     }
-
-    set {
-      alphaValue = newValue
+    
+    public func setNeedsLayout() {
+        needsLayout = true
     }
-  }
-
-  public func setNeedsLayout() {
-    needsLayout = true
-  }
-
-  public func layoutIfNeeded() {
-    layoutSubtreeIfNeeded()
-  }
+    
+    public func layoutIfNeeded() {
+        layoutSubtreeIfNeeded()
+    }
 }

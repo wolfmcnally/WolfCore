@@ -7,14 +7,13 @@
 //
 
 #if os(macOS)
-  import Cocoa
-  public enum OSImageRenderingMode: Int {
-    case automatic
-    case alwaysOriginal
-    case alwaysTemplate
-  }
+    import Cocoa
+    public enum OSImageRenderingMode: Int {
+        case automatic
+        case alwaysOriginal
+        case alwaysTemplate
+    }
 #else
-  import UIKit
-  public typealias OSImageRenderingMode = UIImageRenderingMode
+    import UIKit
+    public typealias OSImageRenderingMode = UIImageRenderingMode
 #endif
-

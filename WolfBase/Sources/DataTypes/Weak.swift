@@ -7,6 +7,6 @@
 //
 
 public struct Weak<T> where T: AnyObject {
-  public typealias Element = T
-  public weak var element: Element?
+    public typealias Element = T
+    public weak var element: Element?
 }

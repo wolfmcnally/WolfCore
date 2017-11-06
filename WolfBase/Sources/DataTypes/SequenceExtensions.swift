@@ -7,24 +7,23 @@
 //
 
 extension Sequence where Iterator.Element == String {
-  public var spaceSeparated: String {
-    return joined(separator: .space)
-  }
+    public var spaceSeparated: String {
+        return joined(separator: .space)
+    }
 
-  public var tabSeparated: String {
-    return joined(separator: .tab)
-  }
+    public var tabSeparated: String {
+        return joined(separator: .tab)
+    }
 
-  public var commaSeparated: String {
-    return joined(separator: .comma)
-  }
+    public var commaSeparated: String {
+        return joined(separator: .comma)
+    }
 
-  public var newlineSeparated: String {
-    return joined(separator: .newline)
-  }
+    public var newlineSeparated: String {
+        return joined(separator: .newline)
+    }
 
-  public var crlfSeparated: String {
-    return joined(separator: .crlf)
-  }
+    public var crlfSeparated: String {
+        return joined(separator: .crlf)
+    }
 }
-

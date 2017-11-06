@@ -7,17 +7,17 @@
 //
 
 #if os(macOS)
-  import Cocoa
+    import Cocoa
 #else
-  import UIKit
+    import UIKit
 #endif
 
 public func printFontNames() {
-  for family in OSFont.familyNames {
-    print("")
-    print("\(family)")
-    for fontName in OSFont.fontNames(forFamilyName: family) {
-      print("\(fontName)".indented())
+    for family in OSFont.familyNames {
+        print("")
+        print("\(family)")
+        for fontName in OSFont.fontNames(forFamilyName: family) {
+            print("\(fontName)".indented())
+        }
     }
-  }
 }

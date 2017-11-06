@@ -9,16 +9,16 @@
 import UIKit
 
 extension UIResponder {
-  public var viewController: UIViewController? {
-    var resultViewController: UIViewController?
-    var responder: UIResponder! = self
-    repeat {
-      if let viewController = responder as? UIViewController {
-        resultViewController = viewController
-        break
-      }
-      responder = responder.next
-    } while responder != nil
-    return resultViewController
-  }
+    public var viewController: UIViewController? {
+        var resultViewController: UIViewController?
+        var responder: UIResponder! = self
+        repeat {
+            if let viewController = responder as? UIViewController {
+                resultViewController = viewController
+                break
+            }
+            responder = responder.next
+        } while responder != nil
+        return resultViewController
+    }
 }

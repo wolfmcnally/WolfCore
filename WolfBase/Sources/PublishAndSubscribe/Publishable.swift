@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol Publishable: Hashable {
-  var duration: TimeInterval? { get }
+    var duration: TimeInterval? { get }
 }

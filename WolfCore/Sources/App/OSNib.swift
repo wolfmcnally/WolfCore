@@ -7,9 +7,9 @@
 //
 
 #if os(macOS)
-  import Cocoa
-  public typealias OSNib = NSNib
+    import Cocoa
+    public typealias OSNib = NSNib
 #else
-  import UIKit
-  public typealias OSNib = UINib
+    import UIKit
+    public typealias OSNib = UINib
 #endif

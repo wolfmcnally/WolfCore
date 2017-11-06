@@ -9,7 +9,7 @@
 import Foundation
 
 extension RunLoop {
-  public func runOnce() {
-    run(until: Date.distantPast)
-  }
+    public func runOnce() {
+        run(until: Date.distantPast)
+    }
 }

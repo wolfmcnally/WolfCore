@@ -9,31 +9,31 @@
 import Foundation
 
 extension String {
-  public var debugSummary: String {
-    return escapingNewlines().truncated(afterCount: 20)
-  }
+    public var debugSummary: String {
+        return escapingNewlines().truncated(afterCount: 20)
+    }
 }
 
 // Support the Serializable protocol used for caching
 extension String: Serializable {
-  public typealias ValueType = String
-
-  public func serialize() -> Data {
-    return self |> Data.init
-  }
-
-  public static func deserialize(from data: Data) throws -> String {
-    return try data |> UTF8.init |> String.init
-  }
+    public typealias ValueType = String
+    
+    public func serialize() -> Data {
+        return self |> Data.init
+    }
+    
+    public static func deserialize(from data: Data) throws -> String {
+        return try data |> UTF8.init |> String.init
+    }
 }
 
 extension String {
-  public static let empty = ""
-  public static let space = " "
-  public static let comma = ","
-  public static let tab = "\t"
-  public static let newline = "\n"
-  public static let cr = "\r"
-  public static let crlf = "\r\n"
+    public static let empty = ""
+    public static let space = " "
+    public static let comma = ","
+    public static let tab = "\t"
+    public static let newline = "\n"
+    public static let cr = "\r"
+    public static let crlf = "\r\n"
 }
 

@@ -7,10 +7,10 @@
 //
 
 #if os(Linux)
-  import Glibc
+    import Glibc
 #else
-  import Darwin
-  import CoreGraphics
+    import Darwin
+    import CoreGraphics
 #endif
 
 public let piOverTwo: Double = .pi / 2.0
@@ -19,11 +19,11 @@ public let twoPi: Double = .pi * 2.0
 public let a: Double = sin(.pi)
 
 public func degrees<T: BinaryFloatingPoint>(for radians: T) -> T {
-  return radians / .pi * 180.0
+    return radians / .pi * 180.0
 }
 
 public func radians<T: BinaryFloatingPoint>(for degrees: T) -> T {
-  return degrees / 180.0 * .pi
+    return degrees / 180.0 * .pi
 }
 
 // These versions use parabola segments (hermite curves)
@@ -41,17 +41,17 @@ public func easeIn(_ t: Double) -> Double { return 1.0 - cos(t * .pi / 2) }
 public func easeInAndOut(_ t: Double) -> Double { return 0.5 * (1 + sin(.pi * (t - 0.5))) }
 
 #if !os(Linux)
-  public func easeOut(_ t: CGFloat) -> CGFloat { return sin(t * .pi / 2) }
-  public func easeIn(_ t: CGFloat) -> CGFloat { return 1.0 - cos(t * .pi / 2) }
-  public func easeInAndOut(_ t: CGFloat) -> CGFloat { return 0.5 * (1 + sin(.pi * (t - 0.5))) }
+    public func easeOut(_ t: CGFloat) -> CGFloat { return sin(t * .pi / 2) }
+    public func easeIn(_ t: CGFloat) -> CGFloat { return 1.0 - cos(t * .pi / 2) }
+    public func easeInAndOut(_ t: CGFloat) -> CGFloat { return 0.5 * (1 + sin(.pi * (t - 0.5))) }
 #endif
 
 public func triangleUpThenDown<T: BinaryFloatingPoint>(_ t: T) -> T {
-  return t < 0.5 ? t.lerped(from: 0.0..0.5, to: 0.0..1.0) : t.lerped(from: 0.5..1.0, to: 1.0..0.0)
+    return t < 0.5 ? t.lerped(from: 0.0..0.5, to: 0.0..1.0) : t.lerped(from: 0.5..1.0, to: 1.0..0.0)
 }
 
 public func triangleDownThenUp<T: BinaryFloatingPoint>(_ t: T) -> T {
-  return t < 0.5 ? t.lerped(from: 0.0..0.5, to: 1.0..0.0) : t.lerped(from: 0.5..1.0, to: 0.0..1.0)
+    return t < 0.5 ? t.lerped(from: 0.0..0.5, to: 1.0..0.0) : t.lerped(from: 0.5..1.0, to: 0.0..1.0)
 }
 
 public func sawtoothUp<T: BinaryFloatingPoint>(_ t: T) -> T { return t }
@@ -70,55 +70,55 @@ public func cosineDownThenUp(_ t: Double) -> Double { return cos(t * .pi * 2) * 
 public func miterLength(lineWidth: Double, phi: Double) -> Double { return lineWidth * (1.0 / sin(phi / 2.0)) }
 
 #if !os(Linux)
-  public func sineUpThenDown(_ t: CGFloat) -> CGFloat { return sin(t * .pi * 2) * 0.5 + 0.5 }
-  public func sineDownThenUp(_ t: CGFloat) -> CGFloat { return 1.0 - sin(t * .pi * 2) * 0.5 + 0.5 }
-  public func cosineUpThenDown(_ t: CGFloat) -> CGFloat { return 1.0 - cos(t * .pi * 2) * 0.5 + 0.5 }
-  public func cosineDownThenUp(_ t: CGFloat) -> CGFloat { return cos(t * .pi * 2) * 0.5 + 0.5 }
-  public func miterLength(lineWidth: CGFloat, phi: CGFloat) -> CGFloat { return lineWidth * (1.0 / sin(phi / 2.0)) }
+    public func sineUpThenDown(_ t: CGFloat) -> CGFloat { return sin(t * .pi * 2) * 0.5 + 0.5 }
+    public func sineDownThenUp(_ t: CGFloat) -> CGFloat { return 1.0 - sin(t * .pi * 2) * 0.5 + 0.5 }
+    public func cosineUpThenDown(_ t: CGFloat) -> CGFloat { return 1.0 - cos(t * .pi * 2) * 0.5 + 0.5 }
+    public func cosineDownThenUp(_ t: CGFloat) -> CGFloat { return cos(t * .pi * 2) * 0.5 + 0.5 }
+    public func miterLength(lineWidth: CGFloat, phi: CGFloat) -> CGFloat { return lineWidth * (1.0 / sin(phi / 2.0)) }
 #endif
 
 public func angleOfLineSegment(_ p1: Point, _ p2: Point) -> Double {
-  return Vector(p1, p2).angle
+    return Vector(p1, p2).angle
 }
 
 public func angleBetweenVectors(_ v1: Vector, _ v2: Vector) -> Double {
-  return atan2(cross(v1, v2), dot(v1, v2))
+    return atan2(cross(v1, v2), dot(v1, v2))
 }
 
 public func turningAngleAtVertex(_ p1: Point, _ p2: Point, _ p3: Point) -> Double {
-  let v1 = Vector(p1, p2)
-  let v2 = Vector(p2, p3)
-  return angleBetweenVectors(v1, v2)
+    let v1 = Vector(p1, p2)
+    let v2 = Vector(p2, p3)
+    return angleBetweenVectors(v1, v2)
 }
 
 public func meetingAngleAtVertex(_ p1: Point, _ p2: Point, _ p3: Point) -> Double {
-  let v1 = Vector(p1, p2)
-  let v2 = Vector(p3, p2)
-  return angleBetweenVectors(v1, v2)
+    let v1 = Vector(p1, p2)
+    let v2 = Vector(p3, p2)
+    return angleBetweenVectors(v1, v2)
 }
 
 public func partingAngleAtVertex(_ p1: Point, _ p2: Point, _ p3: Point) -> Double {
-  let v1 = Vector(p2, p1)
-  let v2 = Vector(p2, p3)
-  return angleBetweenVectors(v1, v2)
+    let v1 = Vector(p2, p1)
+    let v2 = Vector(p2, p3)
+    return angleBetweenVectors(v1, v2)
 }
 
 //
 // http://math.stackexchange.com/questions/797828/calculate-center-of-circle-tangent-to-two-lines-in-space
 //
 public func infoForRoundedCornerArcAtVertex(withRadius radius: Double, _ p1: Point, _ p2: Point, _ p3: Point) -> (center: Point, startPoint: Point, startAngle: Double, endPoint: Point, endAngle: Double, clockwise: Bool) {
-  let alpha = partingAngleAtVertex(p1, p2, p3)
-  let distanceFromVertexToCenter = radius / (sin(alpha / 2))
-
-  let p1p2angle = angleOfLineSegment(p1, p2)
-  let bisectionAngle = alpha / 2.0
-  let centerAngle = p1p2angle + bisectionAngle
-  let center = Point(center: p2, angle: centerAngle, radius: distanceFromVertexToCenter)
-  let startAngle = p1p2angle - .pi / 2
-  let endAngle = angleOfLineSegment(p2, p3) - .pi / 2
-  let clockwise = true // TODO
-  let startPoint = Point(center: center, angle: startAngle, radius: radius)
-  let endPoint = Point(center: center, angle: endAngle, radius: radius)
-
-  return (center, startPoint, startAngle, endPoint, endAngle, clockwise)
+    let alpha = partingAngleAtVertex(p1, p2, p3)
+    let distanceFromVertexToCenter = radius / (sin(alpha / 2))
+    
+    let p1p2angle = angleOfLineSegment(p1, p2)
+    let bisectionAngle = alpha / 2.0
+    let centerAngle = p1p2angle + bisectionAngle
+    let center = Point(center: p2, angle: centerAngle, radius: distanceFromVertexToCenter)
+    let startAngle = p1p2angle - .pi / 2
+    let endAngle = angleOfLineSegment(p2, p3) - .pi / 2
+    let clockwise = true // TODO
+    let startPoint = Point(center: center, angle: startAngle, radius: radius)
+    let endPoint = Point(center: center, angle: endAngle, radius: radius)
+    
+    return (center, startPoint, startAngle, endPoint, endAngle, clockwise)
 }

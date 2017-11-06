@@ -7,5 +7,5 @@
 //
 
 public protocol Invalidatable {
-  func invalidate()
+    func invalidate()
 }

@@ -9,8 +9,8 @@
 import Foundation
 
 public protocol Serializable {
-  associatedtype ValueType
-  
-  func serialize() -> Data
-  static func deserialize(from data: Data) throws -> ValueType
+    associatedtype ValueType
+    
+    func serialize() -> Data
+    static func deserialize(from data: Data) throws -> ValueType
 }

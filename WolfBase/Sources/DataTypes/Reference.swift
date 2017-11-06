@@ -7,13 +7,13 @@
 //
 
 public protocol Reference {
-  associatedtype ReferentType
-  
-  var referent: ReferentType { get }
+    associatedtype ReferentType
+    
+    var referent: ReferentType { get }
 }
 
 postfix operator ®
 
 public postfix func ® <T: Reference>(rhs: T) -> T.ReferentType {
-  return rhs.referent
+    return rhs.referent
 }

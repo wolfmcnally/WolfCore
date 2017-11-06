@@ -16,28 +16,28 @@ import Foundation
 postfix operator §
 
 public postfix func § (left: String) -> AttributedString {
-  return AttributedString(string: left)
+    return AttributedString(string: left)
 }
 
 public postfix func § (left: AttributedString) -> AttributedString {
-  return left.mutableCopy() as! AttributedString
+    return left.mutableCopy() as! AttributedString
 }
 
 public postfix func § (left: String?) -> AttributedString? {
-  guard let left = left else { return nil }
-  return AttributedString(string: left)
+    guard let left = left else { return nil }
+    return AttributedString(string: left)
 }
 
 public postfix func § (left: AttributedString?) -> AttributedString? {
-  guard let left = left else { return nil }
-  return left.mutableCopy() as? AttributedString
+    guard let left = left else { return nil }
+    return left.mutableCopy() as? AttributedString
 }
 
 public postfix func § (left: NSAttributedString) -> AttributedString {
-  return left.mutableCopy() as! AttributedString
+    return left.mutableCopy() as! AttributedString
 }
 
 public postfix func § (left: NSAttributedString?) -> AttributedString? {
-  guard let left = left else { return nil }
-  return left.mutableCopy() as? AttributedString
+    guard let left = left else { return nil }
+    return left.mutableCopy() as? AttributedString
 }

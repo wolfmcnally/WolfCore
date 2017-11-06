@@ -8,30 +8,30 @@
 
 import CoreGraphics
 #if os(macOS)
-  import Cocoa
+    import Cocoa
 #else
-  import UIKit
+    import UIKit
 #endif
 
 public var mainScreenScale: CGFloat {
-  #if os(iOS) || os(tvOS)
-    return UIScreen.main.scale
-  #elseif os(macOS)
-    return NSScreen.main!.backingScaleFactor
-  #else
-    return 1.0
-  #endif
+    #if os(iOS) || os(tvOS)
+        return UIScreen.main.scale
+    #elseif os(macOS)
+        return NSScreen.main!.backingScaleFactor
+    #else
+        return 1.0
+    #endif
 }
 
 #if os(iOS) || os(tvOS)
 
-  public let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
-  public let isPhone: Bool = UIDevice.current.userInterfaceIdiom == .phone
-  public let isTV: Bool = UIDevice.current.userInterfaceIdiom == .tv
-  public let isCarPlay: Bool = UIDevice.current.userInterfaceIdiom == .carPlay
+    public let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
+    public let isPhone: Bool = UIDevice.current.userInterfaceIdiom == .phone
+    public let isTV: Bool = UIDevice.current.userInterfaceIdiom == .tv
+    public let isCarPlay: Bool = UIDevice.current.userInterfaceIdiom == .carPlay
 
-  public var defaultTintColor: UIColor = {
-    return UIView().tintColor!
-  }()
+    public var defaultTintColor: UIColor = {
+        return UIView().tintColor!
+    }()
 
 #endif

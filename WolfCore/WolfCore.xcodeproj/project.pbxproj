@@ -122,34 +122,24 @@
 		035B6F921EFF0D76001E293C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F281EFF0D53001E293C /* View.swift */; };
 		035B6F931EFF0D76001E293C /* ViewExtensions-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F211EFF0D53001E293C /* ViewExtensions-iOS.swift */; };
 		035B6F941EFF0D76001E293C /* WindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F1D1EFF0D53001E293C /* WindowExtensions.swift */; };
-		035B70161EFF1A27001E293C /* ConicalGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B70151EFF1A22001E293C /* ConicalGradientView.swift */; };
-		035B70171EFF1A28001E293C /* ConicalGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B70151EFF1A22001E293C /* ConicalGradientView.swift */; };
 		035DAA371EFF62C5001040CE /* DevOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA361EFF62C5001040CE /* DevOverlayView.swift */; };
 		035DAA381EFF62C5001040CE /* DevOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA361EFF62C5001040CE /* DevOverlayView.swift */; };
-		035DAA611EFF9BA6001040CE /* Skin-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA601EFF9BA6001040CE /* Skin-macOS.swift */; };
 		035DAA811EFFA093001040CE /* ResponderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA801EFFA093001040CE /* ResponderExtensions.swift */; };
 		035DAA821EFFA093001040CE /* ResponderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DAA801EFFA093001040CE /* ResponderExtensions.swift */; };
 		0360B3B11F004D1400A49A9B /* CGColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AB1F004D0800A49A9B /* CGColorUtils.swift */; };
 		0360B3B21F004D1400A49A9B /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AC1F004D0800A49A9B /* ColorExtensions.swift */; };
-		0360B3B31F004D1400A49A9B /* ConicalGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AD1F004D0800A49A9B /* ConicalGradient.swift */; };
-		0360B3B41F004D1400A49A9B /* ConicalGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AE1F004D0800A49A9B /* ConicalGradientLayer.swift */; };
 		0360B3B51F004D1400A49A9B /* OSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AF1F004D0800A49A9B /* OSColor.swift */; };
 		0360B3B61F004D1400A49A9B /* Shading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3B01F004D0800A49A9B /* Shading.swift */; };
 		0360B3B71F004D1400A49A9B /* CGColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AB1F004D0800A49A9B /* CGColorUtils.swift */; };
 		0360B3B81F004D1400A49A9B /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AC1F004D0800A49A9B /* ColorExtensions.swift */; };
-		0360B3B91F004D1400A49A9B /* ConicalGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AD1F004D0800A49A9B /* ConicalGradient.swift */; };
-		0360B3BA1F004D1400A49A9B /* ConicalGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AE1F004D0800A49A9B /* ConicalGradientLayer.swift */; };
 		0360B3BB1F004D1400A49A9B /* OSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AF1F004D0800A49A9B /* OSColor.swift */; };
 		0360B3BC1F004D1400A49A9B /* Shading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3B01F004D0800A49A9B /* Shading.swift */; };
 		0360B3BD1F004D1500A49A9B /* CGColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AB1F004D0800A49A9B /* CGColorUtils.swift */; };
 		0360B3BE1F004D1500A49A9B /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AC1F004D0800A49A9B /* ColorExtensions.swift */; };
-		0360B3BF1F004D1500A49A9B /* ConicalGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AD1F004D0800A49A9B /* ConicalGradient.swift */; };
-		0360B3C01F004D1500A49A9B /* ConicalGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AE1F004D0800A49A9B /* ConicalGradientLayer.swift */; };
 		0360B3C11F004D1500A49A9B /* OSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AF1F004D0800A49A9B /* OSColor.swift */; };
 		0360B3C21F004D1500A49A9B /* Shading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3B01F004D0800A49A9B /* Shading.swift */; };
 		0360B3C31F004D1500A49A9B /* CGColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AB1F004D0800A49A9B /* CGColorUtils.swift */; };
 		0360B3C41F004D1500A49A9B /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AC1F004D0800A49A9B /* ColorExtensions.swift */; };
-		0360B3C51F004D1500A49A9B /* ConicalGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AD1F004D0800A49A9B /* ConicalGradient.swift */; };
 		0360B3C71F004D1500A49A9B /* OSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3AF1F004D0800A49A9B /* OSColor.swift */; };
 		0360B3C81F004D1500A49A9B /* Shading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3B01F004D0800A49A9B /* Shading.swift */; };
 		0360B3CC1F004D3F00A49A9B /* AttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B3CA1F004D3800A49A9B /* AttributedStringExtensions.swift */; };
@@ -381,7 +371,6 @@
 		0397CAEA1FABE2FC00468747 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397CAE91FABE2FC00468747 /* TextEditor.swift */; };
 		0397CAEC1FABF30C00468747 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397CAEB1FABF30C00468747 /* Appearance.swift */; };
 		039F32AB1F0AD0C100D2BAD0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F281EFF0D53001E293C /* View.swift */; };
-		039F32AE1F0AD29F00D2BAD0 /* TopSkin-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039F32AD1F0AD29F00D2BAD0 /* TopSkin-macOS.swift */; };
 		03B2E3CC1F008455002856DD /* OSEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3CB1F008455002856DD /* OSEvent.swift */; };
 		03B2E3CD1F008455002856DD /* OSEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3CB1F008455002856DD /* OSEvent.swift */; };
 		03B2E3CE1F008455002856DD /* OSEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3CB1F008455002856DD /* OSEvent.swift */; };
@@ -562,14 +551,10 @@
 		035B6F421EFF0D63001E293C /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		035B6F431EFF0D63001E293C /* Editable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editable.swift; sourceTree = "<group>"; };
 		035B6F441EFF0D63001E293C /* ClearFieldButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearFieldButtonView.swift; sourceTree = "<group>"; };
-		035B70151EFF1A22001E293C /* ConicalGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConicalGradientView.swift; sourceTree = "<group>"; };
 		035DAA361EFF62C5001040CE /* DevOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevOverlayView.swift; sourceTree = "<group>"; };
-		035DAA601EFF9BA6001040CE /* Skin-macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Skin-macOS.swift"; sourceTree = "<group>"; };
 		035DAA801EFFA093001040CE /* ResponderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderExtensions.swift; sourceTree = "<group>"; };
 		0360B3AB1F004D0800A49A9B /* CGColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGColorUtils.swift; sourceTree = "<group>"; };
 		0360B3AC1F004D0800A49A9B /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
-		0360B3AD1F004D0800A49A9B /* ConicalGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConicalGradient.swift; sourceTree = "<group>"; };
-		0360B3AE1F004D0800A49A9B /* ConicalGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConicalGradientLayer.swift; sourceTree = "<group>"; };
 		0360B3AF1F004D0800A49A9B /* OSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSColor.swift; sourceTree = "<group>"; };
 		0360B3B01F004D0800A49A9B /* Shading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shading.swift; sourceTree = "<group>"; };
 		0360B3CA1F004D3800A49A9B /* AttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringExtensions.swift; sourceTree = "<group>"; };
@@ -651,7 +636,6 @@
 		0397CAE71FABE09A00468747 /* ScrollingStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollingStackView.swift; path = Sources/Views/ScrollingStackView.swift; sourceTree = SOURCE_ROOT; };
 		0397CAE91FABE2FC00468747 /* TextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
 		0397CAEB1FABF30C00468747 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
-		039F32AD1F0AD29F00D2BAD0 /* TopSkin-macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopSkin-macOS.swift"; sourceTree = "<group>"; };
 		03B2E3CB1F008455002856DD /* OSEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSEvent.swift; sourceTree = "<group>"; };
 		03B2E3D11F00896C002856DD /* AnimationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUtils.swift; sourceTree = "<group>"; };
 		03B2E3D71F008EF7002856DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -818,7 +802,6 @@
 		031DEE481EFED5A8001DCF3F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				035DAA5F1EFF9B96001040CE /* Skins */,
 				0360B4E71F005C3F00A49A9B /* Views */,
 			);
 			path = Sources;
@@ -1022,7 +1005,6 @@
 				035B6F331EFF0D63001E293C /* BounceButton.swift */,
 				035B6F441EFF0D63001E293C /* ClearFieldButtonView.swift */,
 				035B6F3B1EFF0D63001E293C /* ConcealerView.swift */,
-				035B70151EFF1A22001E293C /* ConicalGradientView.swift */,
 				035B6F3F1EFF0D63001E293C /* DividerView.swift */,
 				035B6F431EFF0D63001E293C /* Editable.swift */,
 				035B6F341EFF0D63001E293C /* EditableContainerView.swift */,
@@ -1089,22 +1071,11 @@
 			path = Developer;
 			sourceTree = "<group>";
 		};
-		035DAA5F1EFF9B96001040CE /* Skins */ = {
-			isa = PBXGroup;
-			children = (
-				035DAA601EFF9BA6001040CE /* Skin-macOS.swift */,
-				039F32AD1F0AD29F00D2BAD0 /* TopSkin-macOS.swift */,
-			);
-			path = Skins;
-			sourceTree = "<group>";
-		};
 		0360B3AA1F004D0800A49A9B /* Color */ = {
 			isa = PBXGroup;
 			children = (
 				0360B3AB1F004D0800A49A9B /* CGColorUtils.swift */,
 				0360B3AC1F004D0800A49A9B /* ColorExtensions.swift */,
-				0360B3AD1F004D0800A49A9B /* ConicalGradient.swift */,
-				0360B3AE1F004D0800A49A9B /* ConicalGradientLayer.swift */,
 				0360B3AF1F004D0800A49A9B /* OSColor.swift */,
 				0360B3B01F004D0800A49A9B /* Shading.swift */,
 			);
@@ -1754,7 +1725,6 @@
 				0360B4AF1F004FD700A49A9B /* ViewHierarchy.swift in Sources */,
 				035B6F451EFF0D6D001E293C /* ActivityIndicatorView.swift in Sources */,
 				0360B45B1F004F2800A49A9B /* OSImageRenderingMode.swift in Sources */,
-				0360B3B31F004D1400A49A9B /* ConicalGradient.swift in Sources */,
 				0312F5411F36BACD00C00CF9 /* MetalTextureUtils.swift in Sources */,
 				0360B45A1F004F2800A49A9B /* OSImageOrientation.swift in Sources */,
 				035B6F6E1EFF0D75001E293C /* Label.swift in Sources */,
@@ -1812,7 +1782,6 @@
 				0360B4DC1F0059D500A49A9B /* VerticalStackView.swift in Sources */,
 				0360B3DB1F004D7600A49A9B /* AppInfo.swift in Sources */,
 				0360B47D1F004F5600A49A9B /* AffineTransformExtensions.swift in Sources */,
-				0360B3B41F004D1400A49A9B /* ConicalGradientLayer.swift in Sources */,
 				0381CD4A1F073778001510EA /* AnimatedHideable.swift in Sources */,
 				0360B4131F004E2C00A49A9B /* FontFamilyName.swift in Sources */,
 				0360B4CD1F00576300A49A9B /* ControlAction.swift in Sources */,
@@ -1840,7 +1809,6 @@
 				0360B3CD1F004D3F00A49A9B /* AttributedSubstringExtensions.swift in Sources */,
 				03B2E4411F00A209002856DD /* ResourceUtils.swift in Sources */,
 				0381CD1E1F072E23001510EA /* StoreManager.swift in Sources */,
-				035B70161EFF1A27001E293C /* ConicalGradientView.swift in Sources */,
 				0360B5451F00670F00A49A9B /* ReachabilityBulletin.swift in Sources */,
 				035B6F551EFF0D6D001E293C /* PlaceholderView.swift in Sources */,
 				0360B4B01F004FD700A49A9B /* ViewNesting.swift in Sources */,
@@ -1890,7 +1858,6 @@
 				0360B3D21F004D4000A49A9B /* AttributedStringExtensions.swift in Sources */,
 				0360B4721F004F2A00A49A9B /* OSImageOrientation.swift in Sources */,
 				0360B4271F004E2E00A49A9B /* OSFont.swift in Sources */,
-				0360B3C51F004D1500A49A9B /* ConicalGradient.swift in Sources */,
 				0360B4961F004F5800A49A9B /* RectExtensions.swift in Sources */,
 				0360B3C81F004D1500A49A9B /* Shading.swift in Sources */,
 				038FA05F1F07240D001B37C4 /* SpriteKitExtensions.swift in Sources */,
@@ -1955,7 +1922,6 @@
 				035B6F7F1EFF0D76001E293C /* Button.swift in Sources */,
 				0360B5491F00671000A49A9B /* ReachabilityBulletin.swift in Sources */,
 				0360B4671F004F2900A49A9B /* ImageExtensions.swift in Sources */,
-				0360B3BF1F004D1500A49A9B /* ConicalGradient.swift in Sources */,
 				0359000D1EFE498700546B30 /* Framework.swift in Sources */,
 				035B6F8E1EFF0D76001E293C /* TextField.swift in Sources */,
 				03B2E42B1F009C5A002856DD /* ViewGestureActions.swift in Sources */,
@@ -2013,11 +1979,9 @@
 				035B6F811EFF0D76001E293C /* CollectionViewExtensions.swift in Sources */,
 				035B6F921EFF0D76001E293C /* View.swift in Sources */,
 				0360B4E41F005ACE00A49A9B /* TraitCollectionExtensions.swift in Sources */,
-				035B70171EFF1A28001E293C /* ConicalGradientView.swift in Sources */,
 				0360B4681F004F2900A49A9B /* ImageUtils.swift in Sources */,
 				035B6F5B1EFF0D6E001E293C /* ConcealerView.swift in Sources */,
 				035B6F651EFF0D6E001E293C /* PhotoSafeAreaView.swift in Sources */,
-				0360B3C01F004D1500A49A9B /* ConicalGradientLayer.swift in Sources */,
 				0360B4D61F00598500A49A9B /* SpacerView.swift in Sources */,
 				0360B4A81F004FB000A49A9B /* JSONUtils.swift in Sources */,
 				035B6F621EFF0D6E001E293C /* ModelView.swift in Sources */,
@@ -2068,9 +2032,7 @@
 				03B2E4391F00A152002856DD /* OSNib.swift in Sources */,
 				0360B48A1F004F5700A49A9B /* VectorExtensions.swift in Sources */,
 				0360B4B31F004FD700A49A9B /* ViewNesting.swift in Sources */,
-				035DAA611EFF9BA6001040CE /* Skin-macOS.swift in Sources */,
 				0360B45F1F004F2900A49A9B /* ImageExtensions.swift in Sources */,
-				039F32AE1F0AD29F00D2BAD0 /* TopSkin-macOS.swift in Sources */,
 				0360B4B21F004FD700A49A9B /* ViewHierarchy.swift in Sources */,
 				0360B4161F004E2D00A49A9B /* FontDebugging.swift in Sources */,
 				0360B41B1F004E2D00A49A9B /* OSFont.swift in Sources */,
@@ -2099,7 +2061,6 @@
 				0360B4171F004E2D00A49A9B /* FontExtensions.swift in Sources */,
 				03B2E3D31F008973002856DD /* AnimationUtils.swift in Sources */,
 				0360B45E1F004F2900A49A9B /* CoreImageFilters.swift in Sources */,
-				0360B3B91F004D1400A49A9B /* ConicalGradient.swift in Sources */,
 				0360B4641F004F2900A49A9B /* PDF.swift in Sources */,
 				0360B42B1F004E6000A49A9B /* RunLoopUtils.swift in Sources */,
 				0360B3FC1F004DD600A49A9B /* AutolayoutOperators.swift in Sources */,
@@ -2119,7 +2080,6 @@
 				0312F5431F36BAE300C00CF9 /* AngularGradientShader.metal in Sources */,
 				0360B3BC1F004D1400A49A9B /* Shading.swift in Sources */,
 				038F9FEC1F071230001B37C4 /* LocationMonitor.swift in Sources */,
-				0360B3BA1F004D1400A49A9B /* ConicalGradientLayer.swift in Sources */,
 				0360B4191F004E2D00A49A9B /* FontFamilyName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

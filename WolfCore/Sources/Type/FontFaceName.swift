@@ -9,13 +9,12 @@
 import WolfBase
 
 public struct FontFaceName: ExtensibleEnumeratedName {
-  public let rawValue: String
+    public let rawValue: String
 
-  public init(_ rawValue: String) {
-    self.rawValue = rawValue
-  }
+    public init(_ rawValue: String) {
+        self.rawValue = rawValue
+    }
 
-  // RawRepresentable
-  public init?(rawValue: String) { self.init(rawValue) }
+    // RawRepresentable
+    public init?(rawValue: String) { self.init(rawValue) }
 }
-

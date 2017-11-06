@@ -26,5 +26,5 @@
 infix operator <- : ComparisonPrecedence
 
 public func <- <U, T>(lhs: U?, rhs: T.Type) -> Bool {
-  return (lhs as? T) != nil
+    return (lhs as? T) != nil
 }

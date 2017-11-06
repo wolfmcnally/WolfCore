@@ -7,68 +7,68 @@
 //
 
 #if os(macOS)
-  import Cocoa
+    import Cocoa
 #else
-  import UIKit
+    import UIKit
 #endif
 
 import WolfBase
 
 extension NSAttributedStringKey {
-  public static let overrideTintColorTag = NSAttributedStringKey("overrideTintColorTag")
+    public static let overrideTintColorTag = NSAttributedStringKey("overrideTintColorTag")
 }
 
 #if os(watchOS)
-  extension NSAttributedStringKey {
-    public static let font = NSAttributedStringKey("NSFont")
-    public static let foregroundColor = NSAttributedStringKey("NSColor")
-    public static let paragraphStyle = NSAttributedStringKey("NSParagraphStyle")
-  }
+    extension NSAttributedStringKey {
+        public static let font = NSAttributedStringKey("NSFont")
+        public static let foregroundColor = NSAttributedStringKey("NSColor")
+        public static let paragraphStyle = NSAttributedStringKey("NSParagraphStyle")
+    }
 #endif
 
 extension AttributedSubstring {
-  public var font: OSFont {
-    get {
-      return attribute(.font) as? OSFont ?? OSFont.systemFont(ofSize: 12)
+    public var font: OSFont {
+        get {
+            return attribute(.font) as? OSFont ?? OSFont.systemFont(ofSize: 12)
+        }
+        set { addAttribute(.font, value: newValue) }
     }
-    set { addAttribute(.font, value: newValue) }
-  }
 
-  public var foregroundColor: OSColor {
-    get { return attribute(.foregroundColor) as? OSColor ?? .black }
-    set { addAttribute(.foregroundColor, value: newValue) }
-  }
+    public var foregroundColor: OSColor {
+        get { return attribute(.foregroundColor) as? OSColor ?? .black }
+        set { addAttribute(.foregroundColor, value: newValue) }
+    }
 
-  public var paragraphStyle: NSMutableParagraphStyle {
-    get {
-      if let value = attribute(.paragraphStyle) as? NSParagraphStyle {
-        return value.mutableCopy() as! NSMutableParagraphStyle
-      } else {
-        return NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
-      }
+    public var paragraphStyle: NSMutableParagraphStyle {
+        get {
+            if let value = attribute(.paragraphStyle) as? NSParagraphStyle {
+                return value.mutableCopy() as! NSMutableParagraphStyle
+            } else {
+                return NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+            }
+        }
+        set { addAttribute(.paragraphStyle, value: newValue) }
     }
-    set { addAttribute(.paragraphStyle, value: newValue) }
-  }
+    
+    public var textAlignment: NSTextAlignment {
+        get {
+            return self.paragraphStyle.alignment
+        }
+        set {
+            let paragraphStyle = self.paragraphStyle
+            paragraphStyle.alignment = newValue
+            self.paragraphStyle = paragraphStyle
+        }
+    }
 
-  public var textAlignment: NSTextAlignment {
-    get {
-      return self.paragraphStyle.alignment
+    public var overrideTintColor: Bool {
+        get { return hasTag(.overrideTintColorTag) }
+        set {
+            if newValue {
+                addTag(.overrideTintColorTag)
+            } else {
+                removeAttribute(.overrideTintColorTag)
+            }
+        }
     }
-    set {
-      let paragraphStyle = self.paragraphStyle
-      paragraphStyle.alignment = newValue
-      self.paragraphStyle = paragraphStyle
-    }
-  }
-
-  public var overrideTintColor: Bool {
-    get { return hasTag(.overrideTintColorTag) }
-    set {
-      if newValue {
-        addTag(.overrideTintColorTag)
-      } else {
-        removeAttribute(.overrideTintColorTag)
-      }
-    }
-  }
 }

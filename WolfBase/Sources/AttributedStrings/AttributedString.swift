@@ -13,5 +13,5 @@ public typealias AttributedString = NSMutableAttributedString
 public typealias StringAttributes = [NSAttributedStringKey : Any]
 
 public func += (left: AttributedString, right: NSAttributedString) {
-  left.append(right)
+    left.append(right)
 }

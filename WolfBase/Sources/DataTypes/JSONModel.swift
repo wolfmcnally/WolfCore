@@ -7,11 +7,11 @@
 //
 
 public protocol JSONModel: CustomStringConvertible, JSONRepresentable {
-  init(json: JSON)
+    init(json: JSON)
 }
 
 extension JSONModel {
-  public var description: String {
-    return json.prettyString
-  }
+    public var description: String {
+        return json.prettyString
+    }
 }

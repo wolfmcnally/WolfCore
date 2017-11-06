@@ -9,12 +9,11 @@
 import WolfBase
 
 @discardableResult public func => (lhs: OSView, rhs: [OSView]) -> OSView {
-  rhs.forEach { lhs.addSubview($0) }
-  return lhs
+    rhs.forEach { lhs.addSubview($0) }
+    return lhs
 }
 
 @discardableResult public func => (lhs: OSStackView, rhs: [OSView]) -> OSStackView {
-  rhs.forEach { lhs.addArrangedSubview($0) }
-  return lhs
+    rhs.forEach { lhs.addArrangedSubview($0) }
+    return lhs
 }
-

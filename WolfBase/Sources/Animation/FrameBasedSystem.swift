@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol FrameBasedSystem {
-  func simulate(forUpTo maxDuration: TimeInterval) -> (actualDuration: TimeInterval, timeBeforeTransition: TimeInterval)
-  func transition() -> Bool
+    func simulate(forUpTo maxDuration: TimeInterval) -> (actualDuration: TimeInterval, timeBeforeTransition: TimeInterval)
+    func transition() -> Bool
 }

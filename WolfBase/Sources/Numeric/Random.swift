@@ -64,17 +64,17 @@ public struct Random {
     }
 
     /// Returns an integer in the half-open range start..<end
-    public func number(_ i: CountableRange<Int>) -> Int {
-        return Int(number(Double(i.lowerBound)..Double(i.upperBound)))
+    public func number<T: BinaryInteger>(_ i: CountableRange<T>) -> T {
+        return T(number(Double(exactly: i.lowerBound)! .. Double(exactly: i.upperBound)!))
     }
 
     /// Returns an integer in the closed range start...end
-    public func number(_ i: CountableClosedRange<Int>) -> Int {
-        return Int(number(Double(i.lowerBound)..Double(i.upperBound + 1)))
+    public func number<T: BinaryInteger>(_ i: CountableClosedRange<T>) -> T {
+        return T(number(Double(exactly: i.lowerBound)! .. Double(exactly: i.upperBound + 1)! ))
     }
 
-    public func count(_ i: CountableClosedRange<Int>) -> CountableClosedRange<Int> {
-        return 0 ... number(i.lowerBound..<i.upperBound)
+    public func count<T: BinaryInteger>(_ i: CountableClosedRange<T>) -> CountableClosedRange<T> {
+        return 0 ... number(i.lowerBound ..< i.upperBound)
     }
 
     /// Returns a random boolean
@@ -121,16 +121,16 @@ public struct Random {
     }
 
     /// Returns an integer in the half-open range start..<end
-    public static func number(_ i: CountableRange<Int>) -> Int {
+    public static func number<T: BinaryInteger>(_ i: CountableRange<T>) -> T {
         return Random.shared.number(i)
     }
 
     /// Returns an integer in the closed range start...end
-    public static func number(_ i: CountableClosedRange<Int>) -> Int {
+    public static func number<T: BinaryInteger>(_ i: CountableClosedRange<T>) -> T {
         return Random.shared.number(i)
     }
 
-    public static func count(_ i: CountableClosedRange<Int>) -> CountableClosedRange<Int> {
+    public static func count<T: BinaryInteger>(_ i: CountableClosedRange<T>) -> CountableClosedRange<T> {
         return Random.shared.count(i)
     }
 

@@ -7,9 +7,9 @@
 //
 
 #if os(macOS)
-  import Cocoa
-  public typealias LayoutPriority = NSLayoutConstraint.Priority
+    import Cocoa
+    public typealias LayoutPriority = NSLayoutConstraint.Priority
 #else
-  import UIKit
-  public typealias LayoutPriority = UILayoutPriority
+    import UIKit
+    public typealias LayoutPriority = UILayoutPriority
 #endif

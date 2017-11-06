@@ -9,9 +9,9 @@
 import Foundation
 
 #if os(macOS)
-  import Cocoa
-  public typealias OSBezierPath = NSBezierPath
+    import Cocoa
+    public typealias OSBezierPath = NSBezierPath
 #else
-  import UIKit
-  public typealias OSBezierPath = UIBezierPath
+    import UIKit
+    public typealias OSBezierPath = UIBezierPath
 #endif

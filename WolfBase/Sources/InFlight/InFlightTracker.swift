@@ -9,83 +9,83 @@
 public internal(set) var inFlightTracker: InFlightTracker?
 
 extension LogGroup {
-  public static let inFlight = LogGroup("inFlight")
+    public static let inFlight = LogGroup("inFlight")
 }
 
 public class InFlightTracker {
-  private let serializer = Serializer(label: "InFlightTracker")
-  private var tokens = Set<InFlightToken>()
-  public var didStart: ((InFlightToken) -> Void)?
-  public var didEnd: ((InFlightToken) -> Void)?
-  //    #if os(Linux)
-  //    public var isHidden: Bool = false
-  //    {
-  //        didSet {
-  //            syncToHidden()
-  //        }
-  //    }
-  //    #else
-  //    public var isHidden: Bool = {
-  //        return !((userDefaults["DevInFlight"] as? Bool) ?? false)
-  //    }()
-  //    {
-  //        didSet {
-  //            syncToHidden()
-  //        }
-  //    }
-  //    #endif
-  
-  //    #if os(Linux)
-  //    public static func setup(withView: Bool = false) {
-  //        inFlightTracker = InFlightTracker()
-  //        inFlightTracker!.syncToHidden()
-  //    }
-  //    #endif
-  
-  //    #if !os(Linux)
-  //    public static func setup(withView: Bool = false) {
-  //        inFlightTracker = InFlightTracker()
-  //        if withView {
-  //            inFlightView = InFlightView()
-  //            devOverlay => [
-  //                inFlightView
-  //            ]
-  //            inFlightView.constrainFrameToFrame(identifier: "inFlight")
-  //        }
-  //        inFlightTracker!.syncToHidden()
-  //    }
-  //    #endif
-  
-  //    public func syncToHidden() {
-  //        logTrace("syncToHidden: \(isHidden)", group: .inFlight)
-  //        #if !os(Linux)
-  //            inFlightView.hideIf(isHidden)
-  //        #endif
-  //    }
-  
-  public func start(withName name: String) -> InFlightToken {
-    let token = InFlightToken(name: name)
-    token.isNetworkActive = true
-    didStart?(token)
-    serializer.dispatch {
-      self.tokens.insert(token)
+    private let serializer = Serializer(label: "InFlightTracker")
+    private var tokens = Set<InFlightToken>()
+    public var didStart: ((InFlightToken) -> Void)?
+    public var didEnd: ((InFlightToken) -> Void)?
+    //    #if os(Linux)
+    //    public var isHidden: Bool = false
+    //    {
+    //        didSet {
+    //            syncToHidden()
+    //        }
+    //    }
+    //    #else
+    //    public var isHidden: Bool = {
+    //        return !((userDefaults["DevInFlight"] as? Bool) ?? false)
+    //    }()
+    //    {
+    //        didSet {
+    //            syncToHidden()
+    //        }
+    //    }
+    //    #endif
+    
+    //    #if os(Linux)
+    //    public static func setup(withView: Bool = false) {
+    //        inFlightTracker = InFlightTracker()
+    //        inFlightTracker!.syncToHidden()
+    //    }
+    //    #endif
+    
+    //    #if !os(Linux)
+    //    public static func setup(withView: Bool = false) {
+    //        inFlightTracker = InFlightTracker()
+    //        if withView {
+    //            inFlightView = InFlightView()
+    //            devOverlay => [
+    //                inFlightView
+    //            ]
+    //            inFlightView.constrainFrameToFrame(identifier: "inFlight")
+    //        }
+    //        inFlightTracker!.syncToHidden()
+    //    }
+    //    #endif
+    
+    //    public func syncToHidden() {
+    //        logTrace("syncToHidden: \(isHidden)", group: .inFlight)
+    //        #if !os(Linux)
+    //            inFlightView.hideIf(isHidden)
+    //        #endif
+    //    }
+    
+    public func start(withName name: String) -> InFlightToken {
+        let token = InFlightToken(name: name)
+        token.isNetworkActive = true
+        didStart?(token)
+        serializer.dispatch {
+            self.tokens.insert(token)
+        }
+        logTrace("started: \(token)", group: .inFlight)
+        return token
     }
-    logTrace("started: \(token)", group: .inFlight)
-    return token
-  }
-  
-  public func end(withToken token: InFlightToken, result: ResultSummary) {
-    token.isNetworkActive = false
-    token.result = result
-    serializer.dispatch {
-      if let token = self.tokens.remove(token) {
-        logTrace("ended: \(token)", group: .inFlight)
-      } else {
-        fatalError("Token \(token) not found.")
-      }
+    
+    public func end(withToken token: InFlightToken, result: ResultSummary) {
+        token.isNetworkActive = false
+        token.result = result
+        serializer.dispatch {
+            if let token = self.tokens.remove(token) {
+                logTrace("ended: \(token)", group: .inFlight)
+            } else {
+                fatalError("Token \(token) not found.")
+            }
+        }
+        self.didEnd?(token)
     }
-    self.didEnd?(token)
-  }
 }
 
 //private var testTokens = [InFlightToken]()

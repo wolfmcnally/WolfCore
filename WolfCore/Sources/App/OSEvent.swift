@@ -7,9 +7,9 @@
 //
 
 #if os(macOS)
-  import Cocoa
-  public typealias OSEvent = NSEvent
+    import Cocoa
+    public typealias OSEvent = NSEvent
 #else
-  import UIKit
-  public typealias OSEvent = UIEvent
+    import UIKit
+    public typealias OSEvent = UIEvent
 #endif

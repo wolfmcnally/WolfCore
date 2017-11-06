@@ -7,17 +7,17 @@
 //
 
 #if os(macOS)
-  public enum OSImageOrientation: Int {
-    case up
-    case down
-    case left
-    case right
-    case upMirrored
-    case downMirrored
-    case leftMirrored
-    case rightMirrored
-  }
+    public enum OSImageOrientation: Int {
+        case up
+        case down
+        case left
+        case right
+        case upMirrored
+        case downMirrored
+        case leftMirrored
+        case rightMirrored
+    }
 #else
-  import UIKit
-  public typealias OSImageOrientation = UIImageOrientation
+    import UIKit
+    public typealias OSImageOrientation = UIImageOrientation
 #endif

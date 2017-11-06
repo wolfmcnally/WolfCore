@@ -7,31 +7,31 @@
 //
 
 #if os(macOS)
-  import Cocoa
+    import Cocoa
 #else
-  import UIKit
+    import UIKit
 #endif
 
 extension OSView: AnimatedHideable { }
 
 extension OSView {
-  public func removeAllSubviews() {
-    for subview in subviews {
-      subview.removeFromSuperview()
+    public func removeAllSubviews() {
+        for subview in subviews {
+            subview.removeFromSuperview()
+        }
     }
-  }
 }
 
 extension OSView {
-  public func makeTransparent() {
-    #if !os(macOS)
-      isOpaque = false
-    #endif
-    normalBackgroundColor = .clear
-  }
-
-  public func __setup() {
-    translatesAutoresizingMaskIntoConstraints = false
-    makeTransparent()
-  }
+    public func makeTransparent() {
+        #if !os(macOS)
+            isOpaque = false
+        #endif
+        normalBackgroundColor = .clear
+    }
+    
+    public func __setup() {
+        translatesAutoresizingMaskIntoConstraints = false
+        makeTransparent()
+    }
 }

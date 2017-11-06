@@ -7,9 +7,9 @@
 //
 
 #if os(macOS)
-  import Cocoa
-  public typealias OSTouch = NSTouch
+    import Cocoa
+    public typealias OSTouch = NSTouch
 #else
-  import UIKit
-  public typealias OSTouch = UITouch
+    import UIKit
+    public typealias OSTouch = UITouch
 #endif

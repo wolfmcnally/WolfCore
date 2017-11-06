@@ -7,14 +7,14 @@
 //
 
 public enum VerticalAlignment {
-  case baseline
-  case center
-  case top
-  case bottom
+    case baseline
+    case center
+    case top
+    case bottom
 }
 
 public enum HorizontalAlignment {
-  case left
-  case center
-  case right
+    case left
+    case center
+    case right
 }

@@ -14,7 +14,7 @@ import Foundation
 prefix operator ~/
 
 public prefix func ~/ (pattern: String) throws -> NSRegularExpression {
-  return try NSRegularExpression(pattern: pattern, options: [])
+    return try NSRegularExpression(pattern: pattern, options: [])
 }
 
 //public func testRegex() -> Bool {

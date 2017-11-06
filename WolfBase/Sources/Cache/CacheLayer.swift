@@ -9,8 +9,8 @@
 import Foundation
 
 public protocol CacheLayer {
-  func store(data: Data, for url: URL)
-  func retrieveData(for url: URL) -> DataPromise
-  func removeData(for url: URL)
-  func removeAll()
+    func store(data: Data, for url: URL)
+    func retrieveData(for url: URL) -> DataPromise
+    func removeData(for url: URL)
+    func removeAll()
 }

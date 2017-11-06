@@ -7,5 +7,5 @@
 //
 
 public protocol Interpolable {
-  func interpolated(to other: Self, at frac: Frac) -> Self
+    func interpolated(to other: Self, at frac: Frac) -> Self
 }

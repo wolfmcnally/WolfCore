@@ -42,7 +42,7 @@
  - returns: A value of type `[U]`
  */
 public func <^> <T, U>(f: (T) -> U, a: [T]) -> [U] {
-  return a.map(f)
+    return a.map(f)
 }
 
 /**
@@ -56,7 +56,7 @@ public func <^> <T, U>(f: (T) -> U, a: [T]) -> [U] {
  - returns: A value of type `[U]`
  */
 public func <*> <T, U>(fs: [(T) -> U], a: [T]) -> [U] {
-  return a.apply(fs)
+    return a.apply(fs)
 }
 
 /**
@@ -70,7 +70,7 @@ public func <*> <T, U>(fs: [(T) -> U], a: [T]) -> [U] {
  - returns: A value of type `[U]`
  */
 public func >>- <T, U>(a: [T], f: (T) -> [U]) -> [U] {
-  return a.flatMap(f)
+    return a.flatMap(f)
 }
 
 /**
@@ -84,7 +84,7 @@ public func >>- <T, U>(a: [T], f: (T) -> [U]) -> [U] {
  - returns: A value of type `[U]`
  */
 public func -<< <T, U>(f: (T) -> [U], a: [T]) -> [U] {
-  return a.flatMap(f)
+    return a.flatMap(f)
 }
 
 /**
@@ -98,7 +98,7 @@ public func -<< <T, U>(f: (T) -> [U], a: [T]) -> [U] {
  - returns: A value of type `[C]`
  */
 public func >-> <A, B, C>(f: @escaping (A) -> [B], g: @escaping (B) -> [C]) -> (A) -> [C] {
-  return { x in f(x) >>- g }
+    return { x in f(x) >>- g }
 }
 
 /**
@@ -112,7 +112,7 @@ public func >-> <A, B, C>(f: @escaping (A) -> [B], g: @escaping (B) -> [C]) -> (
  - returns: A value of type `[C]`
  */
 public func <-< <A, B, C>(f: @escaping (B) -> [C], g: @escaping (A) -> [B]) -> (A) -> [C] {
-  return { x in g(x) >>- f }
+    return { x in g(x) >>- f }
 }
 
 /**
@@ -123,20 +123,20 @@ public func <-< <A, B, C>(f: @escaping (B) -> [C], g: @escaping (A) -> [B]) -> (
  - returns: The provided value wrapped in an array
  */
 public func pure<T>(_ a: T) -> [T] {
-  return [a]
+    return [a]
 }
 
 public extension Array {
-  /**
-   apply an array of functions to `self`
-   
-   This will return a new array resulting from the matrix of each function being applied to each value inside `self`
-   
-   - parameter fs: An array of transformation functions from type `Element` to type `U`
-   
-   - returns: A value of type `[U]`
-   */
-  func apply<U>(_ fs: [(Element) -> U]) -> [U] {
-    return fs.flatMap { self.map($0) }
-  }
+    /**
+     apply an array of functions to `self`
+     
+     This will return a new array resulting from the matrix of each function being applied to each value inside `self`
+     
+     - parameter fs: An array of transformation functions from type `Element` to type `U`
+     
+     - returns: A value of type `[U]`
+     */
+    func apply<U>(_ fs: [(Element) -> U]) -> [U] {
+        return fs.flatMap { self.map($0) }
+    }
 }

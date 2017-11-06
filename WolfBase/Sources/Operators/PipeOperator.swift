@@ -13,15 +13,15 @@ infix operator |> : PipeLeftPrecedence
 infix operator <| : PipeRightPrecedence
 
 precedencegroup PipeLeftPrecedence {
-  associativity: left
-  higherThan: ComparisonPrecedence
-  lowerThan: NilCoalescingPrecedence
+    associativity: left
+    higherThan: ComparisonPrecedence
+    lowerThan: NilCoalescingPrecedence
 }
 
 precedencegroup PipeRightPrecedence {
-  associativity: right
-  higherThan: ComparisonPrecedence
-  lowerThan: NilCoalescingPrecedence
+    associativity: right
+    higherThan: ComparisonPrecedence
+    lowerThan: NilCoalescingPrecedence
 }
 
 // precedence is above comparative operators (130) and below additive operators (140)
@@ -34,11 +34,11 @@ precedencegroup PipeRightPrecedence {
 ///     - lhs: The monad to be transformed.
 ///     - rhs: The function to be called to perform the transformation.
 public func |> <A, B>(lhs: A, rhs: (A) -> B) -> B {
-  return rhs(lhs)
+    return rhs(lhs)
 }
 
 public func |> <A, B>(lhs: A, rhs: (A) -> () -> B) -> B {
-  return rhs(lhs)()
+    return rhs(lhs)()
 }
 
 /// An operator to transform a monad. The transformation function may throw.
@@ -47,11 +47,11 @@ public func |> <A, B>(lhs: A, rhs: (A) -> () -> B) -> B {
 ///     - lhs: The monad to be transformed.
 ///     - rhs: The function to be called to perform the transformation.
 public func |> <A, B>(lhs: A, rhs: (A) throws -> B) throws -> B {
-  return try rhs(lhs)
+    return try rhs(lhs)
 }
 
 public func |> <A, B>(lhs: A, rhs: (A) -> () throws -> B) throws -> B {
-  return try rhs(lhs)()
+    return try rhs(lhs)()
 }
 
 /// An operator used to transform a monad in place or where a side effect
@@ -62,8 +62,8 @@ public func |> <A, B>(lhs: A, rhs: (A) -> () throws -> B) throws -> B {
 ///     - rhs: The function to be called to perform the transformation or
 ///             generate a side-effect.
 @discardableResult public func |> <A>(lhs: A, rhs: (A) -> Void) -> A {
-  rhs(lhs)
-  return lhs
+    rhs(lhs)
+    return lhs
 }
 
 //public func |> <A>(lhs: A, rhs: (A) -> (Void) -> Void) -> A {

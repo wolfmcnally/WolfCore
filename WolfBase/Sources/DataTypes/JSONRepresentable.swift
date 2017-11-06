@@ -9,49 +9,49 @@
 import Foundation
 
 public protocol JSONRepresentable {
-  var json: JSON { get }
+    var json: JSON { get }
 }
 
 extension Int: JSONRepresentable {
-  public var json: JSON { return JSON(self) }
+    public var json: JSON { return JSON(self) }
 }
 
 extension Double: JSONRepresentable {
-  public var json: JSON { return JSON(self) }
+    public var json: JSON { return JSON(self) }
 }
 
 extension Float: JSONRepresentable {
-  public var json: JSON { return JSON(self) }
+    public var json: JSON { return JSON(self) }
 }
 
 extension Bool: JSONRepresentable {
-  public var json: JSON { return JSON(self) }
+    public var json: JSON { return JSON(self) }
 }
 
 extension String: JSONRepresentable {
-  public var json: JSON { return JSON(self) }
+    public var json: JSON { return JSON(self) }
 }
 
 extension JSON: JSONRepresentable {
-  public var json: JSON { return self }
+    public var json: JSON { return self }
 }
 
 extension URL: JSONRepresentable {
-  public var json: JSON { return JSON(absoluteString) }
+    public var json: JSON { return JSON(absoluteString) }
 }
 
 extension Date: JSONRepresentable {
-  public var json: JSON { return JSON(iso8601) }
+    public var json: JSON { return JSON(iso8601) }
 }
 
 extension NSNumber: JSONRepresentable {
-  public var json: JSON { return JSON(doubleValue) }
+    public var json: JSON { return JSON(doubleValue) }
 }
 
 extension Locale: JSONRepresentable {
-  public var json: JSON { return JSON(String(describing: self)) }
+    public var json: JSON { return JSON(String(describing: self)) }
 }
 
 extension NSNull: JSONRepresentable {
-  public var json: JSON { return JSON(JSON.null) }
+    public var json: JSON { return JSON(JSON.null) }
 }

@@ -7,8 +7,8 @@
 //
 
 open class HorizontalStackView: StackView {
-  open override func setup() {
-    super.setup()
-    axis = .horizontal
-  }
+    open override func setup() {
+        super.setup()
+        axis = .horizontal
+    }
 }

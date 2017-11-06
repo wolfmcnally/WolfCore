@@ -13,30 +13,30 @@ open class ModelView<M>: View, ModelObject {
     public typealias Model = M
     public typealias ModelBlock = (Model) -> Void
     private lazy var gestureActions: ViewGestureActions = .init(view: self)
-
+    
     public var model: Model! {
         didSet {
             syncToModel()
         }
     }
-
+    
     open func syncToModel() {
     }
-
+    
     public init(model: Model) {
         super.init(frame: .zero)
         self.model = model
         syncToModel()
     }
-
+    
     public init() {
         super.init(frame: .zero)
     }
-
+    
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
     public var onTap: ModelBlock? {
         didSet {
             if onTap != nil {

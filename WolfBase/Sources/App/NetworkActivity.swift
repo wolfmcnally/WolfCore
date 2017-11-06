@@ -7,32 +7,32 @@
 //
 
 #if os(iOS)
-  import UIKit
+    import UIKit
 #endif
 
 public let networkActivity = NetworkActivity()
 
 public class NetworkActivity {
-  private let hysteresis: Hysteresis
-  
-  init() {
-    hysteresis = Hysteresis( 
-      onStart: {
-        #if os(iOS)
-          UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        #endif
-    },
-      onEnd: {
-        #if os(iOS)
-          UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        #endif
-    },
-      startLag: 0.2,
-      endLag: 0.2
-    )
-  }
-  
-  public func newActivity() -> LockerCause {
-    return hysteresis.newCause()
-  }
+    private let hysteresis: Hysteresis
+    
+    init() {
+        hysteresis = Hysteresis( 
+            onStart: {
+                #if os(iOS)
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                #endif
+        },
+            onEnd: {
+                #if os(iOS)
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                #endif
+        },
+            startLag: 0.2,
+            endLag: 0.2
+        )
+    }
+    
+    public func newActivity() -> LockerCause {
+        return hysteresis.newCause()
+    }
 }

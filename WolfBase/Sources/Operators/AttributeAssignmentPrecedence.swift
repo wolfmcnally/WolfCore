@@ -7,8 +7,7 @@
 //
 
 precedencegroup AttributeAssignmentPrecedence {
-  associativity: left
-  higherThan: AssignmentPrecedence
-  lowerThan: ComparisonPrecedence
+    associativity: left
+    higherThan: AssignmentPrecedence
+    lowerThan: ComparisonPrecedence
 }
-

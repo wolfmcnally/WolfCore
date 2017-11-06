@@ -7,25 +7,25 @@
 //
 
 public protocol ExtensibleEnumeratedName: RawRepresentable, Hashable, Comparable, CustomStringConvertible {
-  associatedtype ValueType: Hashable, Comparable
-  var rawValue: ValueType { get }
+    associatedtype ValueType: Hashable, Comparable
+    var rawValue: ValueType { get }
 }
 
 extension ExtensibleEnumeratedName {
-  // Hashable
-  public var hashValue: Int { return rawValue.hashValue }
-  
-  // RawRepresentable
-  // You must still provide this constructor:
-  //public init?(rawValue: ValueType?)
-  
-  // CustomStringConvertible
-  public var description: String {
-    return String(describing: rawValue)
-  }
+    // Hashable
+    public var hashValue: Int { return rawValue.hashValue }
+    
+    // RawRepresentable
+    // You must still provide this constructor:
+    //public init?(rawValue: ValueType?)
+    
+    // CustomStringConvertible
+    public var description: String {
+        return String(describing: rawValue)
+    }
 }
 
 public func < <T: ExtensibleEnumeratedName>(left: T, right: T) -> Bool {
-  return left.rawValue < right.rawValue
+    return left.rawValue < right.rawValue
 }
 
