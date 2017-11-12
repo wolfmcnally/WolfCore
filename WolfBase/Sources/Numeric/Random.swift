@@ -65,12 +65,16 @@ public struct Random {
 
     /// Returns an integer in the half-open range start..<end
     public func number<T: BinaryInteger>(_ i: CountableRange<T>) -> T {
-        return T(number(Double(exactly: i.lowerBound)! .. Double(exactly: i.upperBound)!))
+        let a = Double(exactly: Int(i.lowerBound))
+        let b = Double(exactly: Int(i.upperBound))
+        return T(number(a! .. b!))
     }
 
     /// Returns an integer in the closed range start...end
     public func number<T: BinaryInteger>(_ i: CountableClosedRange<T>) -> T {
-        return T(number(Double(exactly: i.lowerBound)! .. Double(exactly: i.upperBound + 1)! ))
+        let a = Double(exactly: Int(i.lowerBound))
+        let b = Double(exactly: Int(i.upperBound) + 1)
+        return T(number(a! .. b!))
     }
 
     public func count<T: BinaryInteger>(_ i: CountableClosedRange<T>) -> CountableClosedRange<T> {
