@@ -24,6 +24,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		031B4DBA1FBA6EDC00C4881A /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B4DB91FBA6EDC00C4881A /* StateMachine.swift */; };
+		031B4DBB1FBA6EDC00C4881A /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B4DB91FBA6EDC00C4881A /* StateMachine.swift */; };
+		031B4DBC1FBA6EDC00C4881A /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B4DB91FBA6EDC00C4881A /* StateMachine.swift */; };
+		031B4DBD1FBA6EDC00C4881A /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B4DB91FBA6EDC00C4881A /* StateMachine.swift */; };
 		031DEE611EFEE5AE001DCF3F /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE601EFEE5AE001DCF3F /* DeviceUtils.swift */; };
 		031DEE621EFEE5AE001DCF3F /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE601EFEE5AE001DCF3F /* DeviceUtils.swift */; };
 		031DEE631EFEE5AE001DCF3F /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE601EFEE5AE001DCF3F /* DeviceUtils.swift */; };
@@ -778,6 +782,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031B4DB91FBA6EDC00C4881A /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		031DEE601EFEE5AE001DCF3F /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
 		031DEE671EFEE645001DCF3F /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		031DEE821EFEF0EB001DCF3F /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
@@ -1423,6 +1428,7 @@
 				0381CD401F0732FE001510EA /* FrameBaseSimulatorTests.swift */,
 				038FA0711F0724E6001B37C4 /* FrameBasedSimulator.pdf */,
 				038FA0701F0724E6001B37C4 /* FrameBasedSimulator.sketch */,
+				031B4DB91FBA6EDC00C4881A /* StateMachine.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -1901,6 +1907,7 @@
 				035C7CBD1FA584800093123D /* Heap.swift in Sources */,
 				031DEEBB1EFEF14C001DCF3F /* ArrayExtensions.swift in Sources */,
 				037F7A5E1EFDE000005D7ABB /* Frac.swift in Sources */,
+				031B4DBB1FBA6EDC00C4881A /* StateMachine.swift in Sources */,
 				031DEEA01EFEF0F1001DCF3F /* Promise.swift in Sources */,
 				0360B56D1F00674700A49A9B /* URLComponentsExtensions.swift in Sources */,
 				03EF4F771EFF222E0002E947 /* ModelObject.swift in Sources */,
@@ -2090,6 +2097,7 @@
 				035C7CBE1FA584800093123D /* Heap.swift in Sources */,
 				031DEEBC1EFEF14D001DCF3F /* ArrayExtensions.swift in Sources */,
 				037F7A711EFDE001005D7ABB /* Frac.swift in Sources */,
+				031B4DBC1FBA6EDC00C4881A /* StateMachine.swift in Sources */,
 				031DEEAB1EFEF0F1001DCF3F /* Promise.swift in Sources */,
 				0360B5791F00674700A49A9B /* URLComponentsExtensions.swift in Sources */,
 				03EF4F821EFF222F0002E947 /* ModelObject.swift in Sources */,
@@ -2394,6 +2402,7 @@
 				038FA06A1F0724A3001B37C4 /* FrameBasedSimulator.swift in Sources */,
 				03B2E4191F009387002856DD /* Bulletin.swift in Sources */,
 				03B2E41D1F009387002856DD /* Subscriber.swift in Sources */,
+				031B4DBD1FBA6EDC00C4881A /* StateMachine.swift in Sources */,
 				035DAA241EFF5ABE001040CE /* StringTransformations.swift in Sources */,
 				0360B53D1F00635700A49A9B /* CacheLayer.swift in Sources */,
 				035DAA541EFF9188001040CE /* LocalizationOperator.swift in Sources */,
@@ -2449,6 +2458,7 @@
 				035C7CBC1FA584800093123D /* Heap.swift in Sources */,
 				031DEEBA1EFEF14C001DCF3F /* ArrayExtensions.swift in Sources */,
 				03D8FFA11EFC8D610000AAD5 /* Interval.swift in Sources */,
+				031B4DBA1FBA6EDC00C4881A /* StateMachine.swift in Sources */,
 				031DEE951EFEF0F0001DCF3F /* Promise.swift in Sources */,
 				0360B5611F00674600A49A9B /* URLComponentsExtensions.swift in Sources */,
 				03EF4F6C1EFF222E0002E947 /* ModelObject.swift in Sources */,

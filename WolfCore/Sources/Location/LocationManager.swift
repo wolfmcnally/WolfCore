@@ -173,6 +173,7 @@ extension CLRegionState: CustomStringConvertible {
     }
 }
 
+#if os(iOS)
 extension CLProximity: CustomStringConvertible {
     public var description: String {
         switch self {
@@ -187,4 +188,4 @@ extension CLProximity: CustomStringConvertible {
         }
     }
 }
-
+#endif
