@@ -29,19 +29,44 @@ extension Int {
 extension BinaryFloatingPoint {
     /// The value lerped from the interval `a..b` into the interval `0..1`. (`a` may be greater than `b`).
     public func lerpedToFrac(from interval: Interval<Self>) -> Self {
-        let from = interval.a - interval.b
+        let a = interval.a
+        let b = interval.b
+        let from = a - b
+
+        assert(self.isFinite)
+        assert(a.isFinite)
+        assert(b.isFinite)
         assert(from != 0.0)
-        return (interval.a - self) / from
+
+        return (a - self) / from
     }
     
     /// The value lerped from the interval `0..1` to the interval `a..b`. (`a` may be greater than `b`).
     public func lerpedFromFrac(to interval: Interval<Self>) -> Self {
-        return self * (interval.b - interval.a) + interval.a
+        let a = interval.a
+        let b = interval.b
+
+        assert(self.isFinite)
+        assert(a.isFinite)
+        assert(b.isFinite)
+
+        return self * (b - a) + a
     }
     
     /// The value lerped from the interval `a1..b1` to the interval `a2..b2`. (the `a`'s may be greater than the `b`'s).
     public func lerped(from interval1: Interval<Self>, to interval2: Interval<Self>) -> Self {
-        return interval2.a + ((interval2.b - interval2.a) * (self - interval1.a)) / (interval1.b - interval1.a)
+        let a1 = interval1.a
+        let b1 = interval1.b
+        let a2 = interval2.a
+        let b2 = interval2.b
+
+        assert(self.isFinite)
+        assert(a1.isFinite)
+        assert(b1.isFinite)
+        assert(a2.isFinite)
+        assert(b2.isFinite)
+
+        return a2 + ((b2 - a2) * (self - a1)) / (b1 - a1)
     }
 }
 

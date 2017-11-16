@@ -8,7 +8,12 @@
 
 import Foundation
 
-public protocol FrameBasedSystem {
-    func simulate(forUpTo maxDuration: TimeInterval) -> (actualDuration: TimeInterval, timeBeforeTransition: TimeInterval)
-    func transition() -> Bool
-}
+//public protocol FrameBasedSystem: AnyObject {
+//    func simulate(forUpTo maxDuration: TimeInterval) -> (actualDuration: TimeInterval, timeBeforeTransition: TimeInterval)
+//    func transition()
+//}
+
+//public protocol FrameBasedSystem: AnyObject {
+//    func update(deltaTime seconds: TimeInterval) -> TimeInterval
+//}
+
