@@ -24,6 +24,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0304FD851FBD4A06007ECDAF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304FD841FBD4A06007ECDAF /* Event.swift */; };
+		0304FD861FBD4A06007ECDAF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304FD841FBD4A06007ECDAF /* Event.swift */; };
+		0304FD871FBD4A06007ECDAF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304FD841FBD4A06007ECDAF /* Event.swift */; };
+		0304FD881FBD4A06007ECDAF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304FD841FBD4A06007ECDAF /* Event.swift */; };
 		031DEE611EFEE5AE001DCF3F /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE601EFEE5AE001DCF3F /* DeviceUtils.swift */; };
 		031DEE621EFEE5AE001DCF3F /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE601EFEE5AE001DCF3F /* DeviceUtils.swift */; };
 		031DEE631EFEE5AE001DCF3F /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE601EFEE5AE001DCF3F /* DeviceUtils.swift */; };
@@ -778,6 +782,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0304FD841FBD4A06007ECDAF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		031DEE601EFEE5AE001DCF3F /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
 		031DEE671EFEE645001DCF3F /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		031DEE821EFEF0EB001DCF3F /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
@@ -1058,6 +1063,7 @@
 				031DEE8C1EFEF0EB001DCF3F /* Block.swift */,
 				031DEE851EFEF0EB001DCF3F /* Canceler.swift */,
 				031DEE841EFEF0EB001DCF3F /* DispatchUtils.swift */,
+				0304FD841FBD4A06007ECDAF /* Event.swift */,
 				031DEE881EFEF0EB001DCF3F /* Heartbeat.swift */,
 				031DEE8B1EFEF0EB001DCF3F /* Hysteresis.swift */,
 				031DEE861EFEF0EB001DCF3F /* Locker.swift */,
@@ -1907,6 +1913,7 @@
 				03B2E3C01F00816D002856DD /* InFlightTracker.swift in Sources */,
 				03B2E3AD1F007D22002856DD /* NotificationCenterExtensions.swift in Sources */,
 				037F7A4D1EFDDFF2005D7ABB /* UTF8.swift in Sources */,
+				0304FD861FBD4A06007ECDAF /* Event.swift in Sources */,
 				035B6FA61EFF0E6D001E293C /* PasswordValidator.swift in Sources */,
 				0360B51E1F0061F200A49A9B /* CacheLayer.swift in Sources */,
 				037F7A641EFDE000005D7ABB /* NumericUtils.swift in Sources */,
@@ -2096,6 +2103,7 @@
 				03B2E3C21F00816E002856DD /* InFlightTracker.swift in Sources */,
 				03B2E3AE1F007D22002856DD /* NotificationCenterExtensions.swift in Sources */,
 				037F7A4E1EFDDFF3005D7ABB /* UTF8.swift in Sources */,
+				0304FD871FBD4A06007ECDAF /* Event.swift in Sources */,
 				035B6FAD1EFF0E6E001E293C /* PasswordValidator.swift in Sources */,
 				0360B5191F0061F200A49A9B /* CacheLayer.swift in Sources */,
 				037F7A771EFDE001005D7ABB /* NumericUtils.swift in Sources */,
@@ -2403,6 +2411,7 @@
 				03EF4F8C1EFF222F0002E947 /* Matrix.swift in Sources */,
 				03228B931FAD2C8600550720 /* UUIDValidator.swift in Sources */,
 				035DAA3D1EFF6319001040CE /* HTTPDebugging.swift in Sources */,
+				0304FD881FBD4A06007ECDAF /* Event.swift in Sources */,
 				035DAA1F1EFF5869001040CE /* StringReplacement.swift in Sources */,
 				037F7A5A1EFDDFF8005D7ABB /* ExtensibleEnumeratedName.swift in Sources */,
 				03EF4EE31EFF1D6B0002E947 /* Point.swift in Sources */,
@@ -2455,6 +2464,7 @@
 				03B2E3BE1F00816C002856DD /* InFlightTracker.swift in Sources */,
 				03B2E3AC1F007D21002856DD /* NotificationCenterExtensions.swift in Sources */,
 				032C4D901EFCEEF2004E03DD /* UTF8.swift in Sources */,
+				0304FD851FBD4A06007ECDAF /* Event.swift in Sources */,
 				035B6F9F1EFF0E6D001E293C /* PasswordValidator.swift in Sources */,
 				0360B5231F0061F300A49A9B /* CacheLayer.swift in Sources */,
 				0383295C1EFC927D0026D259 /* NumericUtils.swift in Sources */,
