@@ -36,4 +36,3 @@ extension String {
     public static let cr = "\r"
     public static let crlf = "\r\n"
 }
-

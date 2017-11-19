@@ -10,9 +10,9 @@ import Foundation
 
 // KLUDGE: These are causing compiler crashes under Swift 3.1.
 //
-//public typealias StringIndex = String.Index
-//public typealias StringRange = Range<StringIndex>
-//public typealias RangeReplacement = (Range<String.Index>, String)
+public typealias StringIndex = String.Index
+public typealias StringRange = Range<StringIndex>
+public typealias RangeReplacement = (Range<String.Index>, String)
 
 extension String {
     public func stringRange(from nsRange: NSRange?) -> Range<String.Index>? {

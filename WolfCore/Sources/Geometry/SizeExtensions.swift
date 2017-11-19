@@ -73,6 +73,10 @@ extension CGSize {
     public func swapped() -> CGSize {
         return CGSize(width: height, height: width)
     }
+
+    public var bounds: CGRect {
+        return CGRect(origin: .zero, size: self)
+    }
 }
 
 extension CGSize {

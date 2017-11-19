@@ -26,8 +26,8 @@ extension OSView {
     public func makeTransparent() {
         #if !os(macOS)
             isOpaque = false
+            normalBackgroundColor = .clear
         #endif
-        normalBackgroundColor = .clear
     }
     
     public func __setup() {

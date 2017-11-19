@@ -315,7 +315,6 @@
 		0360B4E41F005ACE00A49A9B /* TraitCollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4E21F005ACD00A49A9B /* TraitCollectionExtensions.swift */; };
 		0360B4E91F005C7400A49A9B /* ViewExtensions-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4E81F005C7400A49A9B /* ViewExtensions-macOS.swift */; };
 		0360B4EB1F005D8F00A49A9B /* ViewDebugBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4EA1F005D8F00A49A9B /* ViewDebugBackgroundColor.swift */; };
-		0360B4EC1F005D8F00A49A9B /* ViewDebugBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4EA1F005D8F00A49A9B /* ViewDebugBackgroundColor.swift */; };
 		0360B4ED1F005D8F00A49A9B /* ViewDebugBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4EA1F005D8F00A49A9B /* ViewDebugBackgroundColor.swift */; };
 		0360B4EF1F005DD700A49A9B /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4EE1F005DD700A49A9B /* ViewExtensions.swift */; };
 		0360B4F01F005DD700A49A9B /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B4EE1F005DD700A49A9B /* ViewExtensions.swift */; };
@@ -2073,7 +2072,6 @@
 				0360B3BB1F004D1400A49A9B /* OSColor.swift in Sources */,
 				0360B4871F004F5700A49A9B /* PointExtensions.swift in Sources */,
 				0360B5471F00671000A49A9B /* ReachabilityBulletin.swift in Sources */,
-				0360B4EC1F005D8F00A49A9B /* ViewDebugBackgroundColor.swift in Sources */,
 				0360B3B81F004D1400A49A9B /* ColorExtensions.swift in Sources */,
 				0360B4841F004F5700A49A9B /* AffineTransformExtensions.swift in Sources */,
 				0360B5461F00671000A49A9B /* Reachability.swift in Sources */,
