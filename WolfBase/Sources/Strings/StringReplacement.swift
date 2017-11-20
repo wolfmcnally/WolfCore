@@ -11,10 +11,10 @@ import Foundation
 public typealias Replacements = [String: String]
 
 extension String {
-    public func replacing(replacements: [(Range<String.Index>, String)]) -> (string: String, ranges: [Range<String.Index>]) {
+    public func replacing(replacements: [RangeReplacement]) -> (string: String, ranges: [StringRange]) {
         let source = self
         var target = self
-        var targetReplacedRanges = [Range<String.Index>]()
+        var targetReplacedRanges = [StringRange]()
         let sortedReplacements = replacements.sorted { $0.0.lowerBound < $1.0.lowerBound }
         
         var totalOffset = 0
@@ -23,7 +23,7 @@ extension String {
             let rangeCount = source.distance(from: sourceRange.lowerBound, to: sourceRange.upperBound)
             let offset = replacementCount - rangeCount
             
-            let newTargetStartIndex: String.Index
+            let newTargetStartIndex: StringIndex
             let originalTarget = target
             do {
                 let targetStartIndex = target.convert(index: sourceRange.lowerBound, fromString: source, offset: totalOffset)
@@ -53,8 +53,8 @@ extension String {
 }
 
 extension String {
-    public func replacing(matchesTo regex: NSRegularExpression, usingBlock block: ((Range<String.Index>, String)) -> String) -> (string: String, ranges: [Range<String.Index>]) {
-        let results = (regex ~?? self).map { match -> (Range<String.Index>, String) in
+    public func replacing(matchesTo regex: NSRegularExpression, usingBlock block: (RangeReplacement) -> String) -> (string: String, ranges: [StringRange]) {
+        let results = (regex ~?? self).map { match -> RangeReplacement in
             let matchRange = match.range(atIndex: 0, inString: self)
             let substring = String(self[matchRange])
             let replacement = block((matchRange, substring))
@@ -70,7 +70,7 @@ private let placeholderReplacementRegex = try! ~/"(?:(?<!\\\\)#\\{(\\w+)\\})"
 
 extension String {
     public func replacingPlaceholders(with replacements: Replacements) -> String {
-        var replacementsArray = [(Range<String.Index>, String)]()
+        var replacementsArray = [RangeReplacement]()
         let matches = placeholderReplacementRegex ~?? self
         for match in matches {
             let matchRange = stringRange(from: match.range)!

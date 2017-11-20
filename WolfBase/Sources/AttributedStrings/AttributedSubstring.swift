@@ -10,16 +10,16 @@ import Foundation
 
 public class AttributedSubstring {
     public let attrString: AttributedString
-    public let strRange: Range<String.Index>
+    public let strRange: StringRange
     public let nsRange: NSRange
     
-    public init(string attrString: AttributedString, range strRange: Range<String.Index>? = nil) {
+    public init(string attrString: AttributedString, range strRange: StringRange? = nil) {
         self.attrString = attrString
         self.strRange = strRange ?? attrString.string.stringRange
         self.nsRange = attrString.string.nsRange(from: self.strRange)!
     }
     
-    public convenience init(string attrString: AttributedString, fromIndex index: String.Index) {
+    public convenience init(string attrString: AttributedString, fromIndex index: StringIndex) {
         self.init(string: attrString, range: index..<attrString.string.endIndex)
     }
     
@@ -35,29 +35,29 @@ public class AttributedSubstring {
         return attrString.attributedSubstring(from: strRange)
     }
     
-    public func attributes(in rangeLimit: Range<String.Index>? = nil) -> StringAttributes {
+    public func attributes(in rangeLimit: StringRange? = nil) -> StringAttributes {
         return attrString.attributes(at: strRange.lowerBound, in: rangeLimit)
     }
     
-    public func attributesWithLongestEffectiveRange(in rangeLimit: Range<String.Index>? = nil) -> (attributes: StringAttributes, longestEffectiveRange: Range<String.Index>) {
+    public func attributesWithLongestEffectiveRange(in rangeLimit: StringRange? = nil) -> (attributes: StringAttributes, longestEffectiveRange: StringRange) {
         return attrString.attributesWithLongestEffectiveRange(at: strRange.lowerBound, in: rangeLimit)
     }
     
-    public func attribute(_ name: NSAttributedStringKey, in rangeLimit: Range<String.Index>? = nil) -> Any? {
+    public func attribute(_ name: NSAttributedStringKey, in rangeLimit: StringRange? = nil) -> Any? {
         return attrString.attribute(name, at: strRange.lowerBound, in: rangeLimit)
     }
     
-    public func attributeWithLongestEffectiveRange(_ name: NSAttributedStringKey, in rangeLimit: Range<String.Index>? = nil) -> (attribute: Any?, longestEffectiveRange: Range<String.Index>) {
+    public func attributeWithLongestEffectiveRange(_ name: NSAttributedStringKey, in rangeLimit: StringRange? = nil) -> (attribute: Any?, longestEffectiveRange: StringRange) {
         return attrString.attributeWithLongestEffectiveRange(name, at: strRange.lowerBound, in: rangeLimit)
     }
     
     // swiftlint:disable:next custom_rules
-    public func enumerateAttributes(options opts: NSAttributedString.EnumerationOptions = [], using block: (StringAttributes, Range<String.Index>, AttributedSubstring) -> Bool) {
+    public func enumerateAttributes(options opts: NSAttributedString.EnumerationOptions = [], using block: (StringAttributes, StringRange, AttributedSubstring) -> Bool) {
         attrString.enumerateAttributes(in: strRange, options: opts, using: block)
     }
     
     // swiftlint:disable:next custom_rules
-    public func enumerateAttribute(_ name: NSAttributedStringKey, options opts: NSAttributedString.EnumerationOptions = [], using block: (Any?, Range<String.Index>, AttributedSubstring) -> Bool) {
+    public func enumerateAttribute(_ name: NSAttributedStringKey, options opts: NSAttributedString.EnumerationOptions = [], using block: (Any?, StringRange, AttributedSubstring) -> Bool) {
         attrString.enumerateAttribute(name, in: strRange, options: opts, using: block)
     }
     
@@ -90,7 +90,7 @@ extension AttributedSubstring {
         self[tag] = true
     }
     
-    public func getRange(forTag tag: NSAttributedStringKey) -> Range<String.Index>? {
+    public func getRange(forTag tag: NSAttributedStringKey) -> StringRange? {
         let (value, longestEffectiveRange) = attributeWithLongestEffectiveRange(tag)
         if value is Bool {
             return longestEffectiveRange

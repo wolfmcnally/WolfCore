@@ -13,44 +13,44 @@ extension AttributedString {
         return string.count
     }
     
-    public func attributedSubstring(from range: Range<String.Index>) -> AttributedString {
+    public func attributedSubstring(from range: StringRange) -> AttributedString {
         return attributedSubstring(from: string.nsRange(from: range)!)§
     }
     
-    public func attributes(at index: String.Index, in rangeLimit: Range<String.Index>? = nil) -> StringAttributes {
-        let location = string.location(fromIndex: index)
+    public func attributes(at index: StringIndex, in rangeLimit: StringRange? = nil) -> StringAttributes {
+        let nsLocation = string.nsLocation(fromIndex: index)
         let nsRangeLimit = string.nsRange(from: rangeLimit) ?? string.nsRange
-        let attrs = attributes(at: location, longestEffectiveRange: nil, in: nsRangeLimit)
+        let attrs = attributes(at: nsLocation, longestEffectiveRange: nil, in: nsRangeLimit)
         return attrs
     }
     
-    public func attributesWithLongestEffectiveRange(at index: String.Index, in rangeLimit: Range<String.Index>? = nil) -> (attributes: StringAttributes, longestEffectiveRange: Range<String.Index>) {
-        let location = string.location(fromIndex: index)
+    public func attributesWithLongestEffectiveRange(at index: StringIndex, in rangeLimit: StringRange? = nil) -> (attributes: StringAttributes, longestEffectiveRange: StringRange) {
+        let nsLocation = string.nsLocation(fromIndex: index)
         let nsRangeLimit = string.nsRange(from: rangeLimit) ?? string.nsRange
         var nsRange = NSRange()
-        let attrs = attributes(at: location, longestEffectiveRange: &nsRange, in: nsRangeLimit)
+        let attrs = attributes(at: nsLocation, longestEffectiveRange: &nsRange, in: nsRangeLimit)
         let range = string.stringRange(from: nsRange)!
         return (attrs, range)
     }
     
-    public func attribute(_ name: NSAttributedStringKey, at index: String.Index, in rangeLimit: Range<String.Index>? = nil) -> Any? {
-        let location = string.location(fromIndex: index)
+    public func attribute(_ name: NSAttributedStringKey, at index: StringIndex, in rangeLimit: StringRange? = nil) -> Any? {
+        let nsLocation = string.nsLocation(fromIndex: index)
         let nsRangeLimit = string.nsRange(from: rangeLimit) ?? string.nsRange
-        let attr = attribute(name, at: location, longestEffectiveRange: nil, in: nsRangeLimit)
+        let attr = attribute(name, at: nsLocation, longestEffectiveRange: nil, in: nsRangeLimit)
         return attr
     }
     
-    public func attributeWithLongestEffectiveRange(_ name: NSAttributedStringKey, at index: String.Index, in rangeLimit: Range<String.Index>? = nil) -> (attribute: Any?, longestEffectiveRange: Range<String.Index>) {
-        let location = string.location(fromIndex: index)
+    public func attributeWithLongestEffectiveRange(_ name: NSAttributedStringKey, at index: StringIndex, in rangeLimit: StringRange? = nil) -> (attribute: Any?, longestEffectiveRange: StringRange) {
+        let nsLocation = string.nsLocation(fromIndex: index)
         let nsRangeLimit = string.nsRange(from: rangeLimit) ?? string.nsRange
         var nsRange = NSRange()
-        let attr = attribute(name, at: location, longestEffectiveRange: &nsRange, in: nsRangeLimit)
+        let attr = attribute(name, at: nsLocation, longestEffectiveRange: &nsRange, in: nsRangeLimit)
         let range = string.stringRange(from: nsRange)!
         return (attr, range)
     }
     
     // swiftlint:disable:next custom_rules
-    public func enumerateAttributes(in enumerationRange: Range<String.Index>? = nil, options opts: NSAttributedString.EnumerationOptions = [], using block: (StringAttributes, Range<String.Index>, AttributedSubstring) -> Bool) {
+    public func enumerateAttributes(in enumerationRange: StringRange? = nil, options opts: NSAttributedString.EnumerationOptions = [], using block: (StringAttributes, StringRange, AttributedSubstring) -> Bool) {
         let nsRange = string.nsRange(from: enumerationRange) ?? string.nsRange
         enumerateAttributes(in: nsRange, options: opts) { (attrs, nsRange, stop) in
             let range = self.string.stringRange(from: nsRange)!
@@ -59,7 +59,7 @@ extension AttributedString {
     }
     
     // swiftlint:disable:next custom_rules
-    public func enumerateAttribute(_ name: NSAttributedStringKey, in enumerationRange: Range<String.Index>? = nil, options opts: NSAttributedString.EnumerationOptions = [], using block: (Any?, Range<String.Index>, AttributedSubstring) -> Bool) {
+    public func enumerateAttribute(_ name: NSAttributedStringKey, in enumerationRange: StringRange? = nil, options opts: NSAttributedString.EnumerationOptions = [], using block: (Any?, StringRange, AttributedSubstring) -> Bool) {
         let nsEnumerationRange = string.nsRange(from: enumerationRange) ?? string.nsRange
         enumerateAttribute(name, in: nsEnumerationRange, options: opts) { (value, nsRange, stop) in
             let range = self.string.stringRange(from: nsRange)!
@@ -67,53 +67,53 @@ extension AttributedString {
         }
     }
     
-    public func replaceCharacters(in range: Range<String.Index>, with str: String) {
+    public func replaceCharacters(in range: StringRange, with str: String) {
         let nsRange = string.nsRange(from: range)!
         replaceCharacters(in: nsRange, with: str)
     }
     
-    public func setAttributes(_ attrs: StringAttributes?, range: Range<String.Index>? = nil) {
+    public func setAttributes(_ attrs: StringAttributes?, range: StringRange? = nil) {
         let nsRange = string.nsRange(from: range) ?? string.nsRange
         setAttributes(attrs, range: nsRange)
     }
     
-    public func addAttribute(_ name: NSAttributedStringKey, value: Any, range: Range<String.Index>? = nil) {
+    public func addAttribute(_ name: NSAttributedStringKey, value: Any, range: StringRange? = nil) {
         let nsRange = string.nsRange(from: range) ?? string.nsRange
         addAttribute(name, value: value, range: nsRange)
     }
     
-    public func addAttributes(_ attrs: StringAttributes, range: Range<String.Index>? = nil) {
+    public func addAttributes(_ attrs: StringAttributes, range: StringRange? = nil) {
         let nsRange = string.nsRange(from: range) ?? string.nsRange
         addAttributes(attrs, range: nsRange)
     }
     
-    public func removeAttribute(_ name: NSAttributedStringKey, range: Range<String.Index>? = nil) {
+    public func removeAttribute(_ name: NSAttributedStringKey, range: StringRange? = nil) {
         let nsRange = string.nsRange(from: range) ?? string.nsRange
         removeAttribute(name, range: nsRange)
     }
     
-    public func replaceCharacters(in range: Range<String.Index>, with attrString: AttributedString) {
+    public func replaceCharacters(in range: StringRange, with attrString: AttributedString) {
         let nsRange = string.nsRange(from: range)!
         replaceCharacters(in: nsRange, with: attrString)
     }
     
-    public func insert(_ attrString: AttributedString, at index: String.Index) {
-        let location = string.location(fromIndex: index)
-        insert(attrString, at: location)
+    public func insert(_ attrString: AttributedString, at index: StringIndex) {
+        let nsLocation = string.nsLocation(fromIndex: index)
+        insert(attrString, at: nsLocation)
     }
     
-    public func deleteCharacters(in range: Range<String.Index>) {
+    public func deleteCharacters(in range: StringRange) {
         let nsRange = string.nsRange(from: range)!
         deleteCharacters(in: nsRange)
     }
 }
 
 extension AttributedString {
-    public func substring(in range: Range<String.Index>? = nil) -> AttributedSubstring {
+    public func substring(in range: StringRange? = nil) -> AttributedSubstring {
         return AttributedSubstring(string: self, range: range)
     }
     
-    public func substring(from index: String.Index) -> AttributedSubstring {
+    public func substring(from index: StringIndex) -> AttributedSubstring {
         return AttributedSubstring(string: self, fromIndex: index)
     }
     
@@ -146,11 +146,11 @@ extension AttributedString {
         set { substring()[attribute] = newValue! }
     }
     
-    public func getString(forTag tag: NSAttributedStringKey, atIndex index: String.Index) -> String? {
+    public func getString(forTag tag: NSAttributedStringKey, atIndex index: StringIndex) -> String? {
         return substring(from: index).getString(forTag: tag)
     }
     
-    public func has(tag: NSAttributedStringKey, atIndex index: String.Index) -> Bool {
+    public func has(tag: NSAttributedStringKey, atIndex index: StringIndex) -> Bool {
         return substring(from: index).hasTag(tag)
     }
     
@@ -160,7 +160,7 @@ extension AttributedString {
         endEditing()
     }
     
-    public func edit(in range: Range<String.Index>, f: (AttributedSubstring) -> Void) {
+    public func edit(in range: StringRange, f: (AttributedSubstring) -> Void) {
         beginEditing()
         f(substring(in: range))
         endEditing()

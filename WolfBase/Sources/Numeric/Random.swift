@@ -105,12 +105,12 @@ public struct Random {
         return T(y1)
     }
 
-    public func index(in string: String) -> String.Index {
+    public func index(in string: String) -> StringIndex {
         let i = number(0..<string.count)
         return string.index(string.startIndex, offsetBy: i)
     }
 
-    public func insertionPoint(in string: String) -> String.Index {
+    public func insertionPoint(in string: String) -> StringIndex {
         let i = number(0...string.count)
         return string.index(string.startIndex, offsetBy: i)
     }
@@ -157,11 +157,11 @@ public struct Random {
         return Random.shared.gaussian()
     }
 
-    public static func index(in string: String) -> String.Index {
+    public static func index(in string: String) -> StringIndex {
         return Random.shared.index(in: string)
     }
 
-    public static func insertionPoint(in string: String) -> String.Index {
+    public static func insertionPoint(in string: String) -> StringIndex {
         return Random.shared.insertionPoint(in: string)
     }
 }

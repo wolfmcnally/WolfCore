@@ -24,6 +24,22 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		030346A61FC2DF5300455986 /* TypeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346A51FC2DF5300455986 /* TypeBounds.swift */; };
+		030346A71FC2DF5300455986 /* TypeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346A51FC2DF5300455986 /* TypeBounds.swift */; };
+		030346A81FC2DF5300455986 /* TypeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346A51FC2DF5300455986 /* TypeBounds.swift */; };
+		030346A91FC2DF5300455986 /* TypeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346A51FC2DF5300455986 /* TypeBounds.swift */; };
+		030346AB1FC2DF8F00455986 /* TypeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346AA1FC2DF8F00455986 /* TypeLine.swift */; };
+		030346AC1FC2DF8F00455986 /* TypeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346AA1FC2DF8F00455986 /* TypeLine.swift */; };
+		030346AD1FC2DF8F00455986 /* TypeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346AA1FC2DF8F00455986 /* TypeLine.swift */; };
+		030346AE1FC2DF8F00455986 /* TypeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346AA1FC2DF8F00455986 /* TypeLine.swift */; };
+		030346B01FC2DFF800455986 /* TypeRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346AF1FC2DFF800455986 /* TypeRun.swift */; };
+		030346B11FC2DFF800455986 /* TypeRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346AF1FC2DFF800455986 /* TypeRun.swift */; };
+		030346B21FC2DFF800455986 /* TypeRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346AF1FC2DFF800455986 /* TypeRun.swift */; };
+		030346B31FC2DFF800455986 /* TypeRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346AF1FC2DFF800455986 /* TypeRun.swift */; };
+		030346B51FC2E01100455986 /* Typesetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346B41FC2E01100455986 /* Typesetter.swift */; };
+		030346B61FC2E01100455986 /* Typesetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346B41FC2E01100455986 /* Typesetter.swift */; };
+		030346B71FC2E01100455986 /* Typesetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346B41FC2E01100455986 /* Typesetter.swift */; };
+		030346B81FC2E01100455986 /* Typesetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030346B41FC2E01100455986 /* Typesetter.swift */; };
 		0312F53F1F36BACD00C00CF9 /* AngularGradientRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53A1F36BACD00C00CF9 /* AngularGradientRenderer.swift */; };
 		0312F5401F36BACD00C00CF9 /* AngularGradientShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53B1F36BACD00C00CF9 /* AngularGradientShader.metal */; };
 		0312F5411F36BACD00C00CF9 /* MetalTextureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53C1F36BACD00C00CF9 /* MetalTextureUtils.swift */; };
@@ -479,6 +495,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030346A51FC2DF5300455986 /* TypeBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeBounds.swift; sourceTree = "<group>"; };
+		030346AA1FC2DF8F00455986 /* TypeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeLine.swift; sourceTree = "<group>"; };
+		030346AF1FC2DFF800455986 /* TypeRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRun.swift; sourceTree = "<group>"; };
+		030346B41FC2E01100455986 /* Typesetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typesetter.swift; sourceTree = "<group>"; };
 		0312F53A1F36BACD00C00CF9 /* AngularGradientRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngularGradientRenderer.swift; sourceTree = "<group>"; };
 		0312F53B1F36BACD00C00CF9 /* AngularGradientShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AngularGradientShader.metal; sourceTree = "<group>"; };
 		0312F53C1F36BACD00C00CF9 /* MetalTextureUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTextureUtils.swift; sourceTree = "<group>"; };
@@ -1126,6 +1146,10 @@
 				0360B40D1F004E2000A49A9B /* FontFamilyName.swift */,
 				0360B40E1F004E2000A49A9B /* FontStyle.swift */,
 				0360B40F1F004E2000A49A9B /* OSFont.swift */,
+				030346A51FC2DF5300455986 /* TypeBounds.swift */,
+				030346AA1FC2DF8F00455986 /* TypeLine.swift */,
+				030346AF1FC2DFF800455986 /* TypeRun.swift */,
+				030346B41FC2E01100455986 /* Typesetter.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -1677,6 +1701,7 @@
 				0360B4151F004E2C00A49A9B /* OSFont.swift in Sources */,
 				0360B4AE1F004FD700A49A9B /* OSView.swift in Sources */,
 				035B6F6C1EFF0D75001E293C /* Control.swift in Sources */,
+				030346AB1FC2DF8F00455986 /* TypeLine.swift in Sources */,
 				038FA0491F071E81001B37C4 /* ViewDebugging.swift in Sources */,
 				038F9FD61F06EF50001B37C4 /* ReachabilityBulletinView.swift in Sources */,
 				035B6F6A1EFF0D75001E293C /* CollectionViewCell.swift in Sources */,
@@ -1686,6 +1711,7 @@
 				0359000B1EFE498700546B30 /* Framework.swift in Sources */,
 				03B2E4451F00A23B002856DD /* ResourceUtils-iOS.swift in Sources */,
 				0360B49D1F004F7C00A49A9B /* DebugIdentifier.swift in Sources */,
+				030346B01FC2DFF800455986 /* TypeRun.swift in Sources */,
 				035DAA811EFFA093001040CE /* ResponderExtensions.swift in Sources */,
 				03B2E3F61F008F04002856DD /* ViewController.swift in Sources */,
 				035B6F4E1EFF0D6D001E293C /* GradientOverlayView.swift in Sources */,
@@ -1737,6 +1763,7 @@
 				03B2E3F21F008F04002856DD /* NavigationBarBlurEffect.swift in Sources */,
 				031DEE781EFEEECC001DCF3F /* DeviceOrientationAction.swift in Sources */,
 				035B6F741EFF0D75001E293C /* StackViewExtensions.swift in Sources */,
+				030346A61FC2DF5300455986 /* TypeBounds.swift in Sources */,
 				0360B4D81F0059B800A49A9B /* HorizontalStackView.swift in Sources */,
 				0360B4C01F0055A900A49A9B /* OSGestureRecognizer.swift in Sources */,
 				0360B4141F004E2C00A49A9B /* FontStyle.swift in Sources */,
@@ -1779,6 +1806,7 @@
 				03E483531F1ED544006252B0 /* DrawCrossedBox.swift in Sources */,
 				0360B4811F004F5600A49A9B /* RectExtensions.swift in Sources */,
 				0360B4DC1F0059D500A49A9B /* VerticalStackView.swift in Sources */,
+				030346B51FC2E01100455986 /* Typesetter.swift in Sources */,
 				0360B3DB1F004D7600A49A9B /* AppInfo.swift in Sources */,
 				0360B47D1F004F5600A49A9B /* AffineTransformExtensions.swift in Sources */,
 				0381CD4A1F073778001510EA /* AnimatedHideable.swift in Sources */,
@@ -1844,11 +1872,13 @@
 				0360B4951F004F5800A49A9B /* PointExtensions.swift in Sources */,
 				0381CD481F073741001510EA /* Hideable.swift in Sources */,
 				0360B4261F004E2E00A49A9B /* FontStyle.swift in Sources */,
+				030346A91FC2DF5300455986 /* TypeBounds.swift in Sources */,
 				0360B4981F004F5800A49A9B /* VectorExtensions.swift in Sources */,
 				0360B4A91F004FB100A49A9B /* JSONUtils.swift in Sources */,
 				038FA0641F072436001B37C4 /* VectorNode.swift in Sources */,
 				0360B4221F004E2E00A49A9B /* FontDebugging.swift in Sources */,
 				0360B46D1F004F2A00A49A9B /* CGUtils.swift in Sources */,
+				030346AE1FC2DF8F00455986 /* TypeLine.swift in Sources */,
 				0360B46F1F004F2A00A49A9B /* ImageExtensions.swift in Sources */,
 				0360B4321F004EA600A49A9B /* StringExtensions.swift in Sources */,
 				038F9FE91F071210001B37C4 /* LocationManager.swift in Sources */,
@@ -1857,6 +1887,7 @@
 				0360B3D21F004D4000A49A9B /* AttributedStringExtensions.swift in Sources */,
 				0360B4721F004F2A00A49A9B /* OSImageOrientation.swift in Sources */,
 				0360B4271F004E2E00A49A9B /* OSFont.swift in Sources */,
+				030346B81FC2E01100455986 /* Typesetter.swift in Sources */,
 				0360B4961F004F5800A49A9B /* RectExtensions.swift in Sources */,
 				0360B3C81F004D1500A49A9B /* Shading.swift in Sources */,
 				038FA05F1F07240D001B37C4 /* SpriteKitExtensions.swift in Sources */,
@@ -1866,6 +1897,7 @@
 				0360B4741F004F2A00A49A9B /* PDF.swift in Sources */,
 				03E483561F1ED544006252B0 /* DrawCrossedBox.swift in Sources */,
 				0360B4A21F004F7E00A49A9B /* Associated.swift in Sources */,
+				030346B31FC2DFF800455986 /* TypeRun.swift in Sources */,
 				038F9FEE1F071230001B37C4 /* LocationMonitor.swift in Sources */,
 				0360B4251F004E2E00A49A9B /* FontFamilyName.swift in Sources */,
 				0360B4921F004F5800A49A9B /* AffineTransformExtensions.swift in Sources */,
@@ -1886,6 +1918,7 @@
 				0381CD4C1F073778001510EA /* AnimatedHideable.swift in Sources */,
 				0360B4021F004DD600A49A9B /* AutolayoutOperators.swift in Sources */,
 				0360B5481F00671000A49A9B /* Reachability.swift in Sources */,
+				030346B21FC2DFF800455986 /* TypeRun.swift in Sources */,
 				0360B4061F004DD600A49A9B /* LayoutPriority.swift in Sources */,
 				035B6F5A1EFF0D6E001E293C /* ClearFieldButtonView.swift in Sources */,
 				035B6F8F1EFF0D76001E293C /* TextView.swift in Sources */,
@@ -1895,6 +1928,7 @@
 				0381CD201F072E23001510EA /* StoreManager.swift in Sources */,
 				0360B4D11F0057E000A49A9B /* FrameView.swift in Sources */,
 				0360B48F1F004F5800A49A9B /* RectExtensions.swift in Sources */,
+				030346B71FC2E01100455986 /* Typesetter.swift in Sources */,
 				035B6F661EFF0D6E001E293C /* PhotoView.swift in Sources */,
 				0360B3C21F004D1500A49A9B /* Shading.swift in Sources */,
 				0360B3E71F004D7800A49A9B /* AppInfo.swift in Sources */,
@@ -1955,6 +1989,7 @@
 				0360B4B61F004FD800A49A9B /* ViewNesting.swift in Sources */,
 				0360B41C1F004E2D00A49A9B /* FontDebugging.swift in Sources */,
 				03B2E43A1F00A152002856DD /* OSNib.swift in Sources */,
+				030346A81FC2DF5300455986 /* TypeBounds.swift in Sources */,
 				0360B4691F004F2900A49A9B /* OSImage.swift in Sources */,
 				0360B4311F004EA500A49A9B /* StringExtensions.swift in Sources */,
 				0360B4201F004E2D00A49A9B /* FontStyle.swift in Sources */,
@@ -1974,6 +2009,7 @@
 				038FA0541F07206D001B37C4 /* InFlightView.swift in Sources */,
 				035B6F861EFF0D76001E293C /* PageControl.swift in Sources */,
 				0360B4F11F005DD700A49A9B /* ViewExtensions.swift in Sources */,
+				030346AD1FC2DF8F00455986 /* TypeLine.swift in Sources */,
 				0360B4C61F00567E00A49A9B /* OSTouch.swift in Sources */,
 				035B6F811EFF0D76001E293C /* CollectionViewExtensions.swift in Sources */,
 				035B6F921EFF0D76001E293C /* View.swift in Sources */,
@@ -2012,6 +2048,7 @@
 				03B2E4351F00A13C002856DD /* OSStoryboard.swift in Sources */,
 				0360B4611F004F2900A49A9B /* OSImage.swift in Sources */,
 				0360B4891F004F5700A49A9B /* SizeExtensions.swift in Sources */,
+				030346AC1FC2DF8F00455986 /* TypeLine.swift in Sources */,
 				03E483541F1ED544006252B0 /* DrawCrossedBox.swift in Sources */,
 				0360B4C51F00567E00A49A9B /* OSTouch.swift in Sources */,
 				0360B49E1F004F7D00A49A9B /* Associated.swift in Sources */,
@@ -2039,10 +2076,12 @@
 				0360B49F1F004F7D00A49A9B /* DebugIdentifier.swift in Sources */,
 				0360B4E91F005C7400A49A9B /* ViewExtensions-macOS.swift in Sources */,
 				03E483511F1EB466006252B0 /* ImageView.swift in Sources */,
+				030346A71FC2DF5300455986 /* TypeBounds.swift in Sources */,
 				0312F5471F36BBAD00C00CF9 /* AngularGradientRenderer.swift in Sources */,
 				038F9FDF1F07011C001B37C4 /* Hideable.swift in Sources */,
 				0360B4C91F0056AD00A49A9B /* GestureRecognizerAction.swift in Sources */,
 				0360B4001F004DD600A49A9B /* LayoutPriority.swift in Sources */,
+				030346B11FC2DFF800455986 /* TypeRun.swift in Sources */,
 				0360B3E11F004D7700A49A9B /* AppInfo.swift in Sources */,
 				0360B4301F004EA400A49A9B /* StringExtensions.swift in Sources */,
 				0359000E1EFE498700546B30 /* Framework.swift in Sources */,
@@ -2052,6 +2091,7 @@
 				0360B4B11F004FD700A49A9B /* OSView.swift in Sources */,
 				0360B4011F004DD600A49A9B /* LayoutRelation.swift in Sources */,
 				03B2E4421F00A209002856DD /* ResourceUtils.swift in Sources */,
+				030346B61FC2E01100455986 /* Typesetter.swift in Sources */,
 				0360B4601F004F2900A49A9B /* ImageUtils.swift in Sources */,
 				0360B4A71F004FAF00A49A9B /* JSONUtils.swift in Sources */,
 				039F32AB1F0AD0C100D2BAD0 /* View.swift in Sources */,

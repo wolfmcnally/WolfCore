@@ -32,3 +32,11 @@ public func drawCrossedBox(into context: CGContext, size: CGSize, color: OSColor
     let frame = CGRect(origin: .zero, size: size)
     drawCrossedBox(into: context, frame: frame, color: color, lineWidth: lineWidth, showOriginIndicators: showOriginIndicators)
 }
+
+public func drawDot(into context: CGContext, at point: CGPoint, radius: CGFloat = 2.0, color: OSColor = .red) {
+    let r = CGRect(origin: point, size: .zero).insetBy(dx: -radius, dy: -radius)
+    drawInto(context) { context in
+        context.setFillColor(color.cgColor)
+        context.fillEllipse(in: r)
+    }
+}

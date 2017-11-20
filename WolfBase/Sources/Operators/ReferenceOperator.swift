@@ -1,5 +1,5 @@
 //
-//  Reference.swift
+//  ReferenceOperator.swift
 //  WolfBase
 //
 //  Created by Wolf McNally on 6/29/16.
@@ -12,8 +12,14 @@ public protocol Reference {
     var referent: ReferentType { get }
 }
 
+///
+/// Reference-Operator
+///
+/// The special character here ("®") is called the "registered trademark symbol" and is typed by pressing Option-R.
+///
 postfix operator ®
 
 public postfix func ® <T: Reference>(rhs: T) -> T.ReferentType {
     return rhs.referent
 }
+

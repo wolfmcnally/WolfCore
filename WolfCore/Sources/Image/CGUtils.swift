@@ -39,6 +39,10 @@ public var currentGraphicsContext: CGContext {
     #endif
 }
 
+public func rotateContext(_ context: CGContext, by angle: CGFloat, around point: CGPoint) {
+    context.concatenate(context.ctm.rotated(by: angle, around: point))
+}
+
 public func drawPlaceholderRect(_ rect: CGRect, lineWidth: CGFloat = 1.0, color: OSColor? = OSColor(white: 0.5, alpha: 0.5)) {
     drawIntoCurrentContext() { context in
         context.setLineWidth(lineWidth)

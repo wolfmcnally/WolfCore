@@ -85,7 +85,7 @@ public struct SwiftJSON {
     
     public final class Reader {
         private let string: String
-        private var index: String.Index
+        private var index: StringIndex
         
         init(data: Data) throws {
             self.string = try data |> UTF8.init |> String.init

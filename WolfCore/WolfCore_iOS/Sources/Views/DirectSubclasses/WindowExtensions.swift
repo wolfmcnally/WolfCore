@@ -63,13 +63,13 @@ extension UIWindow {
     public func transformForOrientation(_ orientation: UIInterfaceOrientation) -> CGAffineTransform {
         switch orientation {
         case .landscapeLeft:
-            return CGAffineTransform(rotationAngle: radians(for: -90))
+            return CGAffineTransform(rotationAngle: -90°)
         case .landscapeRight:
-            return CGAffineTransform(rotationAngle: radians(for: 90))
+            return CGAffineTransform(rotationAngle: 90°)
         case .portraitUpsideDown:
-            return CGAffineTransform(rotationAngle: radians(for: 180))
+            return CGAffineTransform(rotationAngle: 180°)
         default:
-            return CGAffineTransform(rotationAngle: radians(for: 0))
+            return CGAffineTransform(rotationAngle: 0°)
         }
     }
 #endif
