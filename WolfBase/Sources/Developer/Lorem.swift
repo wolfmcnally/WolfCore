@@ -23,12 +23,13 @@ public class Lorem {
     // MARK: - Text
     // ======================================================= //
 
-    public static func word() -> String {
+    public static func word(emojisFrac: Frac = 0) -> String {
+        guard Random.number() > emojisFrac else { return emoji() }
         return Random.choice(among: allWords)
     }
 
-    public static func words(_ count: Int) -> String {
-        return compose({ word() }, count: count, middleSeparator: .space)
+    public static func words(_ count: Int, emojisFrac: Frac = 0) -> String {
+        return compose({ word(emojisFrac: emojisFrac) }, count: count, middleSeparator: .space)
     }
 
     private static let sentenceEnds: [Separator] = [
@@ -43,33 +44,33 @@ public class Lorem {
         return Random.choice(among: sentenceEnds)
     }
 
-    public static func sentence() -> String {
+    public static func sentence(emojisFrac: Frac = 0) -> String {
         let numberOfWordsInSentence = Random.number(4...16)
         let capitalizeFirstLetterDecorator: Decorator = { $0.capitalizedFirstCharacter() }
-        return compose({ word() }, count: numberOfWordsInSentence, middleSeparator: .space, endSeparator: sentenceEnd(), decorator: capitalizeFirstLetterDecorator)
+        return compose({ word(emojisFrac: emojisFrac) }, count: numberOfWordsInSentence, middleSeparator: .space, endSeparator: sentenceEnd(), decorator: capitalizeFirstLetterDecorator)
     }
 
-    public static func shortSentence() -> String {
+    public static func shortSentence(emojisFrac: Frac = 0) -> String {
         let numberOfWordsInSentence = Random.number(3...8)
         let capitalizeFirstLetterDecorator: Decorator = { $0.capitalizedFirstCharacter() }
-        return compose({ word() }, count: numberOfWordsInSentence, middleSeparator: .space, endSeparator: sentenceEnd(), decorator: capitalizeFirstLetterDecorator)
+        return compose({ word(emojisFrac: emojisFrac) }, count: numberOfWordsInSentence, middleSeparator: .space, endSeparator: sentenceEnd(), decorator: capitalizeFirstLetterDecorator)
     }
 
-    public static func sentences(_ count: Int) -> String {
-        return compose({ sentence() }, count: count, middleSeparator: .space)
+    public static func sentences(_ count: Int, emojisFrac: Frac = 0) -> String {
+        return compose({ sentence(emojisFrac: emojisFrac) }, count: count, middleSeparator: .space)
     }
 
-    public static func shortSentences(_ count: Int) -> String {
-        return compose({ shortSentence() }, count: count, middleSeparator: .space)
+    public static func shortSentences(_ count: Int, emojisFrac: Frac = 0) -> String {
+        return compose({ shortSentence(emojisFrac: emojisFrac) }, count: count, middleSeparator: .space)
     }
 
-    public static func paragraph() -> String {
+    public static func paragraph(emojisFrac: Frac = 0) -> String {
         let numberOfSentencesInParagraph = Random.number(3...9)
-        return sentences(numberOfSentencesInParagraph)
+        return sentences(numberOfSentencesInParagraph, emojisFrac: emojisFrac)
     }
 
-    public static func paragraphs(_ count: Int) -> String {
-        return compose({ paragraph() }, count: count, middleSeparator: .newLine)
+    public static func paragraphs(_ count: Int, emojisFrac: Frac = 0) -> String {
+        return compose({ paragraph(emojisFrac: emojisFrac) }, count: count, middleSeparator: .newLine)
     }
 
     public static func title() -> String {
@@ -82,6 +83,14 @@ public class Lorem {
         let numberOfWordsInTitle = Random.number(2...3)
         let capitalizeStringDecorator: Decorator = { $0.capitalized }
         return compose({ word() }, count: numberOfWordsInTitle, middleSeparator: .space, decorator: capitalizeStringDecorator)
+    }
+
+    public static func emoji() -> String {
+        return String(Random.choice(among: allEmoji))
+    }
+
+    public static func emojis(_ count: Int) -> String {
+        return compose({ emoji() }, count: count, middleSeparator: .none)
     }
 
     // ======================================================= //
@@ -244,6 +253,8 @@ public class Lorem {
     // ======================================================= //
     // MARK: - Data
     // ======================================================= //
+
+    private static let allEmoji = "😀😁😅🤣😇😍🤪🤓🤩😎😡😳😰🤗🙄😲🤐🤮😈🤡💩👻💀👽🎃😺😻🤲🏻🙌🏼👍🏼✊🏼✌🏼🤘🏼💄👁👧🏻👨🏽‍⚕️👨🏼‍🚀🧙🏼‍♂️👼🏼🤷🏼‍♀️👨‍❤️‍💋‍👨👪👔🐱🐶🐯🐵🙈🙉🙊🐤🦆🐺🐝🐞🐙🦈🐳🐂🦌🐿🍀🌞🌙🌏🌟🌧💦☔️🍉🍓🥩🍛🍧🥛🍸🎱⛹🏼‍♂️🧗🏼‍♀️🎪🎺🎲🚙🚇🏟🏤🌁🕹💶💊🔑📆📘✏️❤️💙🖤☮️🈺🅰️💯⚠️✳️🅿️🆒🎵✖️☑️🔴🔶🔔♣️🏳️🏁🏳️‍🌈"
 
     private static let allWords = "alias consequatur aut perferendis sit voluptatem accusantium doloremque aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque dolorem ipsum quia dolor sit amet consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem ut enim ad minima veniam quis nostrum exercitationem ullam corporis nemo enim ipsam voluptatem quia voluptas sit suscipit laboriosam nisi ut aliquid ex ea commodi consequatur quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae et iusto odio dignissimos ducimus qui blanditiis praesentium laudantium totam rem voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident sed ut perspiciatis unde omnis iste natus error similique sunt in culpa qui officia deserunt mollitia animi id est laborum et dolorum fuga et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo porro quisquam est qui minus id quod maxime placeat facere possimus omnis voluptas assumenda est omnis dolor repellendus temporibus autem quibusdam et aut consequatur vel illum qui dolorem eum fugiat quo voluptas nulla pariatur at vero eos et accusamus officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores doloribus asperiores repellat".components(separatedBy: " ")
 
