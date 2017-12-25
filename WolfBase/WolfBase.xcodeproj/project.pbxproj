@@ -471,6 +471,10 @@
 		038FA0A81F072A3D001B37C4 /* OutputStreamUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0A61F072A3D001B37C4 /* OutputStreamUtils.swift */; };
 		038FA0A91F072A3D001B37C4 /* OutputStreamUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0A61F072A3D001B37C4 /* OutputStreamUtils.swift */; };
 		038FA0AA1F072A3D001B37C4 /* OutputStreamUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FA0A61F072A3D001B37C4 /* OutputStreamUtils.swift */; };
+		0393316D1FEF747700798B14 /* ApproximatelyEqualsOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393316C1FEF747700798B14 /* ApproximatelyEqualsOperator.swift */; };
+		0393316E1FEF747700798B14 /* ApproximatelyEqualsOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393316C1FEF747700798B14 /* ApproximatelyEqualsOperator.swift */; };
+		0393316F1FEF747700798B14 /* ApproximatelyEqualsOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393316C1FEF747700798B14 /* ApproximatelyEqualsOperator.swift */; };
+		039331701FEF747700798B14 /* ApproximatelyEqualsOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0393316C1FEF747700798B14 /* ApproximatelyEqualsOperator.swift */; };
 		03B2E3771F0071D1002856DD /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3741F0071CA002856DD /* Authorization.swift */; };
 		03B2E3781F0071D1002856DD /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E36C1F0071CA002856DD /* Credentials.swift */; };
 		03B2E3791F0071D1002856DD /* CryptoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E36E1F0071CA002856DD /* CryptoUtils.swift */; };
@@ -739,6 +743,10 @@
 		03EF4FD91EFF54C50002E947 /* AttributedSubstring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF4FD71EFF54C50002E947 /* AttributedSubstring.swift */; };
 		03EF4FDA1EFF54C50002E947 /* AttributedSubstring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF4FD71EFF54C50002E947 /* AttributedSubstring.swift */; };
 		03EF4FDB1EFF54C50002E947 /* AttributedSubstring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EF4FD71EFF54C50002E947 /* AttributedSubstring.swift */; };
+		79CF092F1FE6021C00F11E35 /* IntervalCreationOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF092E1FE6021C00F11E35 /* IntervalCreationOperator.swift */; };
+		79CF09301FE6021C00F11E35 /* IntervalCreationOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF092E1FE6021C00F11E35 /* IntervalCreationOperator.swift */; };
+		79CF09311FE6021C00F11E35 /* IntervalCreationOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF092E1FE6021C00F11E35 /* IntervalCreationOperator.swift */; };
+		79CF09321FE6021C00F11E35 /* IntervalCreationOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF092E1FE6021C00F11E35 /* IntervalCreationOperator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -932,6 +940,7 @@
 		038FA0701F0724E6001B37C4 /* FrameBasedSimulator.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = FrameBasedSimulator.sketch; sourceTree = "<group>"; };
 		038FA0711F0724E6001B37C4 /* FrameBasedSimulator.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = FrameBasedSimulator.pdf; sourceTree = "<group>"; };
 		038FA0A61F072A3D001B37C4 /* OutputStreamUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputStreamUtils.swift; sourceTree = "<group>"; };
+		0393316C1FEF747700798B14 /* ApproximatelyEqualsOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApproximatelyEqualsOperator.swift; sourceTree = "<group>"; };
 		03B2E36C1F0071CA002856DD /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		03B2E36D1F0071CA002856DD /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
 		03B2E36E1F0071CA002856DD /* CryptoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUtils.swift; sourceTree = "<group>"; };
@@ -1009,6 +1018,8 @@
 		03EF4FD21EFF54630002E947 /* AttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringExtensions.swift; sourceTree = "<group>"; };
 		03EF4FD71EFF54C50002E947 /* AttributedSubstring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedSubstring.swift; sourceTree = "<group>"; };
 		03EF4FE21EFF55E30002E947 /* STRINGS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = STRINGS.md; sourceTree = "<group>"; };
+		79CF092E1FE6021C00F11E35 /* IntervalCreationOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalCreationOperator.swift; sourceTree = "<group>"; };
+		79CF09341FE71ADB00F11E35 /* Intervals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Intervals.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1568,6 +1579,7 @@
 			children = (
 				038329571EFC91580026D259 /* Frac.swift */,
 				03D8FFA01EFC8D530000AAD5 /* Interval.swift */,
+				79CF09341FE71ADB00F11E35 /* Intervals.playground */,
 				03D8FFA21EFC8DA00000AAD5 /* IntervalTests.swift */,
 				0383295D1EFC92F20026D259 /* Lerp.swift */,
 				032C4D6E1EFCCA02004E03DD /* BinarySearch.swift */,
@@ -1583,6 +1595,7 @@
 			isa = PBXGroup;
 			children = (
 				038FA0331F071BB1001B37C4 /* Runes */,
+				0393316C1FEF747700798B14 /* ApproximatelyEqualsOperator.swift */,
 				035DAA871EFFA21C001040CE /* AssignPriorityOperator.swift */,
 				035DAA8C1EFFA255001040CE /* AssignIdentifierOperator.swift */,
 				035DAA4B1EFF9135001040CE /* AttributeAssignmentPrecedence.swift */,
@@ -1591,6 +1604,7 @@
 				03EF4FCC1EFF52F70002E947 /* CreateRegularExpressionOperator.swift */,
 				030346A01FC2C6A400455986 /* DegressToRadiansOperator.swift */,
 				03EF4F9E1EFF28330002E947 /* InheritsFromOperator.swift */,
+				79CF092E1FE6021C00F11E35 /* IntervalCreationOperator.swift */,
 				03EF4FB31EFF294A0002E947 /* InvalidateAndAssignOperator.swift */,
 				035DAA501EFF9188001040CE /* LocalizationOperator.swift */,
 				03EF4FC71EFF52460002E947 /* MatchRegularExpressionOperator.swift */,
@@ -2009,6 +2023,7 @@
 				037F7A661EFDE000005D7ABB /* RunningAverage.swift in Sources */,
 				03B2E3871F0071D2002856DD /* HMACSHA256.swift in Sources */,
 				03EF4F291EFF205B0002E947 /* ASN1Parser.swift in Sources */,
+				79CF09301FE6021C00F11E35 /* IntervalCreationOperator.swift in Sources */,
 				03B2E3841F0071D2002856DD /* CryptoUtils.swift in Sources */,
 				03EF4F2A1EFF205B0002E947 /* Base64.swift in Sources */,
 				03228B911FAD2C8600550720 /* UUIDValidator.swift in Sources */,
@@ -2020,6 +2035,7 @@
 				038FA0451F071CC5001B37C4 /* SequenceExtensions.swift in Sources */,
 				03EF4F721EFF222E0002E947 /* Grid.swift in Sources */,
 				036B6A8B1F2AE78E001160D8 /* TextAlignment.swift in Sources */,
+				0393316E1FEF747700798B14 /* ApproximatelyEqualsOperator.swift in Sources */,
 				035B70261EFF1BDC001E293C /* GeometryUtils.swift in Sources */,
 				03EF4F761EFF222E0002E947 /* Matrix.swift in Sources */,
 				037F7A691EFDE000005D7ABB /* StringFloatPrecision.swift in Sources */,
@@ -2202,6 +2218,7 @@
 				037F7A791EFDE001005D7ABB /* RunningAverage.swift in Sources */,
 				03B2E3921F0071D2002856DD /* HMACSHA256.swift in Sources */,
 				03EF4F331EFF205C0002E947 /* ASN1Parser.swift in Sources */,
+				79CF09311FE6021C00F11E35 /* IntervalCreationOperator.swift in Sources */,
 				03B2E38F1F0071D2002856DD /* CryptoUtils.swift in Sources */,
 				03EF4F341EFF205C0002E947 /* Base64.swift in Sources */,
 				03228B921FAD2C8600550720 /* UUIDValidator.swift in Sources */,
@@ -2213,6 +2230,7 @@
 				038FA0461F071CC5001B37C4 /* SequenceExtensions.swift in Sources */,
 				03EF4F7D1EFF222F0002E947 /* Grid.swift in Sources */,
 				036B6A8C1F2AE78E001160D8 /* TextAlignment.swift in Sources */,
+				0393316F1FEF747700798B14 /* ApproximatelyEqualsOperator.swift in Sources */,
 				035B70271EFF1BDC001E293C /* GeometryUtils.swift in Sources */,
 				03EF4F811EFF222F0002E947 /* Matrix.swift in Sources */,
 				037F7A7C1EFDE001005D7ABB /* StringFloatPrecision.swift in Sources */,
@@ -2322,6 +2340,7 @@
 				035B6FF71EFF181C001E293C /* Color.swift in Sources */,
 				03B2E41B1F009387002856DD /* Publishable.swift in Sources */,
 				0360B57C1F00674800A49A9B /* HTTPActions.swift in Sources */,
+				039331701FEF747700798B14 /* ApproximatelyEqualsOperator.swift in Sources */,
 				03EF4FDB1EFF54C50002E947 /* AttributedSubstring.swift in Sources */,
 				0360B5851F00674800A49A9B /* URLComponentsExtensions.swift in Sources */,
 				035DAA451EFF7FEF001040CE /* JSONRepresentable.swift in Sources */,
@@ -2370,6 +2389,7 @@
 				031DEEC31EFEF1AF001DCF3F /* OptionalExtensions.swift in Sources */,
 				037F7A921EFDE001005D7ABB /* StringLocalization.swift in Sources */,
 				03EF4EE01EFF1D6B0002E947 /* Insets.swift in Sources */,
+				79CF09321FE6021C00F11E35 /* IntervalCreationOperator.swift in Sources */,
 				03EF4F911EFF222F0002E947 /* Weak.swift in Sources */,
 				0360B57E1F00674800A49A9B /* HTTPError.swift in Sources */,
 				0360B57F1F00674800A49A9B /* HTTPUtils.swift in Sources */,
@@ -2569,6 +2589,7 @@
 				03EF4FA51EFF28930002E947 /* ConvertAndAssignOperator.swift in Sources */,
 				03B2E37C1F0071D1002856DD /* HMACSHA256.swift in Sources */,
 				032C4D861EFCED15004E03DD /* Log.swift in Sources */,
+				79CF092F1FE6021C00F11E35 /* IntervalCreationOperator.swift in Sources */,
 				03B2E3791F0071D1002856DD /* CryptoUtils.swift in Sources */,
 				03EF4F1F1EFF205B0002E947 /* ASN1Parser.swift in Sources */,
 				03228B901FAD2C8600550720 /* UUIDValidator.swift in Sources */,
@@ -2580,6 +2601,7 @@
 				038FA0441F071CC5001B37C4 /* SequenceExtensions.swift in Sources */,
 				03EF4F671EFF222E0002E947 /* Grid.swift in Sources */,
 				036B6A8A1F2AE78E001160D8 /* TextAlignment.swift in Sources */,
+				0393316D1FEF747700798B14 /* ApproximatelyEqualsOperator.swift in Sources */,
 				035B70251EFF1BDB001E293C /* GeometryUtils.swift in Sources */,
 				03EF4F6B1EFF222E0002E947 /* Matrix.swift in Sources */,
 				032C4D831EFCECAD004E03DD /* TextCheckingResultExtensions.swift in Sources */,

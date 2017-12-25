@@ -16,10 +16,30 @@ import Foundation
         case .orderedSame:
             return current
         case .orderedAscending:
-            interval = current..interval.b
+            interval = current .. interval.b
             current = T(0.5).lerpedFromFrac(to: interval)
         case .orderedDescending:
-            interval = interval.a..current
+            interval = interval.a .. current
+            current = T(0.5).lerpedFromFrac(to: interval)
+        }
+    }
+}
+
+public func binarySearch<T: BinaryFloatingPoint, S>(interval: Interval<T>, start: T, state: S, compare: (T, S) -> (ComparisonResult, S)) -> S {
+    var current = start
+    var interval = interval
+    var state = state
+    while true {
+        let result: ComparisonResult
+        (result, state) = compare(current, state)
+        switch result {
+        case .orderedSame:
+            return state
+        case .orderedAscending:
+            interval = current .. interval.b
+            current = T(0.5).lerpedFromFrac(to: interval)
+        case .orderedDescending:
+            interval = interval.a .. current
             current = T(0.5).lerpedFromFrac(to: interval)
         }
     }
@@ -29,12 +49,6 @@ public func compareNeverGreater<T: BinaryFloatingPoint>(_ value1: T, _ value2: T
     guard value1 <= value2 else { return .orderedDescending }
     guard abs(value2 - value1) > tolerance else { return .orderedSame }
     return .orderedAscending
-}
-
-public func isNearLimits<T: BinaryFloatingPoint>(_ value: T, limits: Interval<T>, tolerance: T) -> Bool {
-    guard abs(value - limits.a) > tolerance else { return true }
-    guard abs(value - limits.b) > tolerance else { return true }
-    return false
 }
 
 extension ComparisonResult {
