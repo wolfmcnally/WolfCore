@@ -45,21 +45,25 @@ struct AngularGradientShaderParams {
 }
 
 public class AngularGradientRenderer {
-    private let device: MTLDevice
-    private let library: MTLLibrary
-    private let shaderFunction: MTLFunction
-    private let pipelineState: MTLComputePipelineState
+    private typealias `Self` = AngularGradientRenderer
 
-    public init() {
+    private static let device: MTLDevice = {
         guard let dev = MTLCreateSystemDefaultDevice() else {
             fatalError("Metal not supported on this device.")
         }
+        return dev
+    }()
 
-        device = dev
+    private static let library: MTLLibrary = {
         let libPath = Framework.bundle.path(forResource: "default", ofType: "metallib")!
-        library = try! device.makeLibrary(filepath: libPath)
-        shaderFunction = library.makeFunction(name: "angularGradientShader")!
-        pipelineState = try! device.makeComputePipelineState(function: shaderFunction)
+        return try! device.makeLibrary(filepath: libPath)
+    }()
+
+    private static let shaderFunction: MTLFunction = {
+        return library.makeFunction(name: "angularGradientShader")!
+    }()
+
+    public init() {
     }
 
     public func makeCGImage(size: CGFloat, gradient: [GradientElement], initialAngle: CGFloat = 0, innerRadius: CGFloat = 0, outerRadius: CGFloat = 0, isOpaque: Bool = false, isClockwise: Bool = true, isFlipped: Bool = false) -> CGImage {
@@ -71,13 +75,13 @@ public class AngularGradientRenderer {
         let elements = ContiguousArray(gradient)
         let elementsLength = MemoryLayout<GradientElement>.stride * elements.count
         let elementsBuffer = elements.withUnsafeBytes {
-            return device.makeBuffer(bytes: $0.baseAddress!, length: elementsLength, options: [])
+            return Self.device.makeBuffer(bytes: $0.baseAddress!, length: elementsLength, options: [])
         }
 
-        var params = AngularGradientShaderParams(center: center, initialAngle: Float(initialAngle), innerRadius: Float(innerRadius), outerRadius: Float(outerRadius), isOpaque: isOpaque, isClockwise: isClockwise, isFlipped: isFlipped, elementsCount: Int32(elements.count))
-        let paramsBuffer = device.makeBuffer(bytes: &params, length: MemoryLayout<AngularGradientShaderParams>.stride, options: [])
+        var params = AngularGradientShaderParams(center: center, initialAngle: Float(initialAngle), innerRadius: Float(innerRadius), outerRadius: Float(outerRadius), isOpaque: isOpaque, isClockwise: isClockwise, isFlipped: isFlipped, elementsCount: Int32(gradient.count))
+        let paramsBuffer = Self.device.makeBuffer(bytes: &params, length: MemoryLayout<AngularGradientShaderParams>.stride, options: [])
 
-        let commandQueue = device.makeCommandQueue()!
+        let commandQueue = Self.device.makeCommandQueue()!
         let commandBuffer = commandQueue.makeCommandBuffer()!
         let commandEncoder = commandBuffer.makeComputeCommandEncoder()!
 
@@ -88,8 +92,9 @@ public class AngularGradientRenderer {
 
         let outTextureDescriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .rgba8Unorm, width: width, height: height, mipmapped: false)
         outTextureDescriptor.usage = .shaderWrite
-        let outTexture = device.makeTexture(descriptor: outTextureDescriptor)!
+        let outTexture = Self.device.makeTexture(descriptor: outTextureDescriptor)!
 
+        let pipelineState = try! Self.device.makeComputePipelineState(function: Self.shaderFunction)
         commandEncoder.setComputePipelineState(pipelineState)
         commandEncoder.setTexture(outTexture, index: 0)
         commandEncoder.setBuffer(paramsBuffer, offset: 0, index: 0)
@@ -97,6 +102,12 @@ public class AngularGradientRenderer {
 
         commandEncoder.dispatchThreadgroups(threadGroups, threadsPerThreadgroup: threadGroupsCount)
         commandEncoder.endEncoding()
+
+        #if os(macOS)
+            let blitEncoder = commandBuffer.makeBlitCommandEncoder()!
+            blitEncoder.synchronize(texture: outTexture, slice: 0, level: 0)
+            blitEncoder.endEncoding()
+        #endif
 
         commandBuffer.commit()
         commandBuffer.waitUntilCompleted()

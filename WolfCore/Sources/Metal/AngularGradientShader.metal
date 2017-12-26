@@ -1,10 +1,10 @@
-    //
-    //  AngularGradientShader.metal
-    //  AngularGradientShader
-    //
-    //  Created by Wolf McNally on 8/5/17.
-    //  Copyright © 2017 WolfMcNally.com. All rights reserved.
-    //
+//
+//  AngularGradientShader.metal
+//  AngularGradientShader
+//
+//  Created by Wolf McNally on 8/5/17.
+//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//
 
 #include <metal_stdlib>
 #import <simd/simd.h>
@@ -131,6 +131,6 @@ angularGradientShader(
             outColor = colorInGradient(frac, elements, params.elementsCount);
         }
     }
-
+    
     outTexture.write(outColor, gid, 0);
 }

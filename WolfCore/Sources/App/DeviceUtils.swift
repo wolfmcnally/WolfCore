@@ -23,6 +23,12 @@ public var mainScreenScale: CGFloat {
     #endif
 }
 
+#if os(macOS)
+    public let defaultIsFlipped = false
+#else
+    public let defaultIsFlipped = true
+#endif
+
 #if os(iOS) || os(tvOS)
 
     public let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
