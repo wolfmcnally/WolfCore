@@ -12,6 +12,8 @@
     import Glibc
 #endif
 
+import Foundation
+
 public struct Vector {
     public var dx: Double = 0
     public var dy: Double = 0

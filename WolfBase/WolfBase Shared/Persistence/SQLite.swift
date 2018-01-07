@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SQLite3
 
 //
 // Useful: http://stackoverflow.com/questions/24102775/accessing-an-sqlite-database-in-swift

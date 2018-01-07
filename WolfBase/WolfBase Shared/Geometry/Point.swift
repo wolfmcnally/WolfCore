@@ -6,6 +6,8 @@
 //  Copyright © 2016 WolfMcNally.com. All rights reserved.
 //
 
+import Foundation
+
 /// Represents a 2-dimensional point, with Double precision.
 public struct Point {
     public var x: Double = 0

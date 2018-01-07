@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0359FFEE1EFE482100546B30"
-               BuildableName = "WolfCore_all"
-               BlueprintName = "WolfCore_all"
-               ReferencedContainer = "container:WolfCore.xcodeproj">
+               BlueprintIdentifier = "037F7A441EFDDFD8005D7ABB"
+               BuildableName = "WolfBase.framework"
+               BlueprintName = "WolfBase watchOS"
+               ReferencedContainer = "container:WolfBase.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,10 +47,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0359FFEE1EFE482100546B30"
-            BuildableName = "WolfCore_all"
-            BlueprintName = "WolfCore_all"
-            ReferencedContainer = "container:WolfCore.xcodeproj">
+            BlueprintIdentifier = "037F7A441EFDDFD8005D7ABB"
+            BuildableName = "WolfBase.framework"
+            BlueprintName = "WolfBase watchOS"
+            ReferencedContainer = "container:WolfBase.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,10 +65,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0359FFEE1EFE482100546B30"
-            BuildableName = "WolfCore_all"
-            BlueprintName = "WolfCore_all"
-            ReferencedContainer = "container:WolfCore.xcodeproj">
+            BlueprintIdentifier = "037F7A441EFDDFD8005D7ABB"
+            BuildableName = "WolfBase.framework"
+            BlueprintName = "WolfBase watchOS"
+            ReferencedContainer = "container:WolfBase.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

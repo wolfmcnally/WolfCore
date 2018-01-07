@@ -160,6 +160,7 @@ extension CLAuthorizationStatus: CustomStringConvertible {
     }
 }
 
+#if os(macOS) || os(iOS)
 extension CLRegionState: CustomStringConvertible {
     public var description: String {
         switch self {
@@ -172,6 +173,7 @@ extension CLRegionState: CustomStringConvertible {
         }
     }
 }
+#endif
 
 #if os(iOS)
 extension CLProximity: CustomStringConvertible {

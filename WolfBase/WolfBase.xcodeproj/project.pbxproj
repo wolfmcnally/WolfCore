@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		037F7AA41EFDE26E005D7ABB /* WolfBase_all */ = {
+		037F7AA41EFDE26E005D7ABB /* WolfBase all */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 037F7AA51EFDE26E005D7ABB /* Build configuration list for PBXAggregateTarget "WolfBase_all" */;
+			buildConfigurationList = 037F7AA51EFDE26E005D7ABB /* Build configuration list for PBXAggregateTarget "WolfBase all" */;
 			buildPhases = (
 			);
 			dependencies = (
@@ -18,7 +18,7 @@
 				037F7AAF1EFDE2A8005D7ABB /* PBXTargetDependency */,
 				037F7AAD1EFDE2A8005D7ABB /* PBXTargetDependency */,
 			);
-			name = WolfBase_all;
+			name = "WolfBase all";
 			productName = WolfBase_All;
 		};
 /* End PBXAggregateTarget section */
@@ -822,10 +822,6 @@
 		031DEEB91EFEF148001DCF3F /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		031DEEBE1EFEF1A6001DCF3F /* OptionalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtensions.swift; sourceTree = "<group>"; };
 		031DEEC51EFEF1F9001DCF3F /* Lorem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lorem.swift; sourceTree = "<group>"; };
-		031DEECE1EFEF6B3001DCF3F /* WolfBase_watchOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfBase_watchOS-Bridging-Header.h"; path = "../WolfBase_watchOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		031DEECF1EFEF6CC001DCF3F /* WolfBase_macOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfBase_macOS-Bridging-Header.h"; path = "../WolfBase_macOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		031DEED01EFEF71C001DCF3F /* WolfBase_tvOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfBase_tvOS-Bridging-Header.h"; path = "../WolfBase_tvOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		031DEED11EFEF768001DCF3F /* WolfBase_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfBase_iOS-Bridging-Header.h"; path = "../WolfBase_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		03228B8F1FAD2C8600550720 /* UUIDValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDValidator.swift; sourceTree = "<group>"; };
 		0327AED81F14458400ECB8BE /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		032C4D6E1EFCCA02004E03DD /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
@@ -903,12 +899,12 @@
 		037F7A0D1EFDDF55005D7ABB /* WolfBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		037F7A0F1EFDDF55005D7ABB /* WolfBase_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolfBase_tvOS.h; sourceTree = "<group>"; };
 		037F7A101EFDDF55005D7ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		037F7A151EFDDF56005D7ABB /* WolfBase_tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolfBase_tvOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		037F7A151EFDDF56005D7ABB /* WolfBase_tvOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolfBase_tvOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		037F7A1C1EFDDF56005D7ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037F7A291EFDDFA1005D7ABB /* WolfBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		037F7A2B1EFDDFA1005D7ABB /* WolfBase_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolfBase_macOS.h; sourceTree = "<group>"; };
 		037F7A2C1EFDDFA1005D7ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		037F7A311EFDDFA1005D7ABB /* WolfBase_macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolfBase_macOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		037F7A311EFDDFA1005D7ABB /* WolfBase_macOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolfBase_macOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		037F7A381EFDDFA1005D7ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037F7A451EFDDFD8005D7ABB /* WolfBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		037F7A471EFDDFD8005D7ABB /* WolfBase_watchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolfBase_watchOS.h; sourceTree = "<group>"; };
@@ -968,7 +964,7 @@
 		03D8FF821EFC8C570000AAD5 /* WolfBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D8FF851EFC8C570000AAD5 /* WolfBase_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolfBase_iOS.h; sourceTree = "<group>"; };
 		03D8FF861EFC8C570000AAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03D8FF8B1EFC8C570000AAD5 /* WolfBase_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolfBase_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03D8FF8B1EFC8C570000AAD5 /* WolfBase_iOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolfBase_iOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D8FF921EFC8C570000AAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03D8FFA01EFC8D530000AAD5 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 		03D8FFA21EFC8DA00000AAD5 /* IntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTests.swift; sourceTree = "<group>"; };
@@ -1248,7 +1244,6 @@
 			isa = PBXGroup;
 			children = (
 				037F7A2B1EFDDFA1005D7ABB /* WolfBase_macOS.h */,
-				031DEECF1EFEF6CC001DCF3F /* WolfBase_macOS-Bridging-Header.h */,
 				037F7A2C1EFDDFA1005D7ABB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -1258,7 +1253,6 @@
 			isa = PBXGroup;
 			children = (
 				037F7A0F1EFDDF55005D7ABB /* WolfBase_tvOS.h */,
-				031DEED01EFEF71C001DCF3F /* WolfBase_tvOS-Bridging-Header.h */,
 				037F7A101EFDDF55005D7ABB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -1268,7 +1262,6 @@
 			isa = PBXGroup;
 			children = (
 				037F7A471EFDDFD8005D7ABB /* WolfBase_watchOS.h */,
-				031DEECE1EFEF6B3001DCF3F /* WolfBase_watchOS-Bridging-Header.h */,
 				037F7A481EFDDFD8005D7ABB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -1376,65 +1369,44 @@
 			path = Security;
 			sourceTree = "<group>";
 		};
-		037F7A0E1EFDDF55005D7ABB /* WolfBase_tvOS */ = {
+		037F7A0E1EFDDF55005D7ABB /* WolfBase tvOS */ = {
 			isa = PBXGroup;
 			children = (
 				035B6F181EFF0096001E293C /* Supporting Files */,
 			);
-			path = WolfBase_tvOS;
+			path = "WolfBase tvOS";
 			sourceTree = "<group>";
 		};
-		037F7A191EFDDF56005D7ABB /* WolfBase_tvOSTests */ = {
+		037F7A191EFDDF56005D7ABB /* WolfBase tvOS Tests */ = {
 			isa = PBXGroup;
 			children = (
 				037F7A1C1EFDDF56005D7ABB /* Info.plist */,
 			);
-			path = WolfBase_tvOSTests;
+			path = "WolfBase tvOS Tests";
 			sourceTree = "<group>";
 		};
-		037F7A2A1EFDDFA1005D7ABB /* WolfBase_macOS */ = {
+		037F7A2A1EFDDFA1005D7ABB /* WolfBase macOS */ = {
 			isa = PBXGroup;
 			children = (
 				035B6F171EFF0089001E293C /* Supporting Files */,
 			);
-			path = WolfBase_macOS;
+			path = "WolfBase macOS";
 			sourceTree = "<group>";
 		};
-		037F7A351EFDDFA1005D7ABB /* WolfBase_macOSTests */ = {
+		037F7A351EFDDFA1005D7ABB /* WolfBase macOS Tests */ = {
 			isa = PBXGroup;
 			children = (
 				037F7A381EFDDFA1005D7ABB /* Info.plist */,
 			);
-			path = WolfBase_macOSTests;
+			path = "WolfBase macOS Tests";
 			sourceTree = "<group>";
 		};
-		037F7A461EFDDFD8005D7ABB /* WolfBase_watchOS */ = {
+		037F7A461EFDDFD8005D7ABB /* WolfBase watchOS */ = {
 			isa = PBXGroup;
 			children = (
 				035B6F191EFF009D001E293C /* Supporting Files */,
 			);
-			path = WolfBase_watchOS;
-			sourceTree = "<group>";
-		};
-		037F7ABF1EFDEA51005D7ABB /* Platforms */ = {
-			isa = PBXGroup;
-			children = (
-				03D8FF841EFC8C570000AAD5 /* WolfBase_iOS */,
-				037F7A2A1EFDDFA1005D7ABB /* WolfBase_macOS */,
-				037F7A0E1EFDDF55005D7ABB /* WolfBase_tvOS */,
-				037F7A461EFDDFD8005D7ABB /* WolfBase_watchOS */,
-			);
-			name = Platforms;
-			sourceTree = "<group>";
-		};
-		037F7AC01EFDEC0B005D7ABB /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				03D8FF8F1EFC8C570000AAD5 /* WolfBase_iOSTests */,
-				037F7A191EFDDF56005D7ABB /* WolfBase_tvOSTests */,
-				037F7A351EFDDFA1005D7ABB /* WolfBase_macOSTests */,
-			);
-			name = Tests;
+			path = "WolfBase watchOS";
 			sourceTree = "<group>";
 		};
 		038FA0331F071BB1001B37C4 /* Runes */ = {
@@ -1496,10 +1468,15 @@
 				038F9FDD1F06FF67001B37C4 /* LICENSE.md */,
 				038F9FDE1F070077001B37C4 /* LINUX.md */,
 				031DEE7C1EFEF00A001DCF3F /* Guides */,
-				03D8FF9E1EFC8D250000AAD5 /* Sources */,
 				03353BD11EFCB7D900332365 /* Playgrounds */,
-				037F7ABF1EFDEA51005D7ABB /* Platforms */,
-				037F7AC01EFDEC0B005D7ABB /* Tests */,
+				03D8FF9E1EFC8D250000AAD5 /* WolfBase Shared */,
+				03D8FF841EFC8C570000AAD5 /* WolfBase iOS */,
+				037F7A2A1EFDDFA1005D7ABB /* WolfBase macOS */,
+				037F7A0E1EFDDF55005D7ABB /* WolfBase tvOS */,
+				037F7A461EFDDFD8005D7ABB /* WolfBase watchOS */,
+				03D8FF8F1EFC8C570000AAD5 /* WolfBase iOS Tests */,
+				037F7A191EFDDF56005D7ABB /* WolfBase tvOS Tests */,
+				037F7A351EFDDFA1005D7ABB /* WolfBase macOS Tests */,
 				0360B5311F0062C600A49A9B /* Frameworks */,
 				03D8FF831EFC8C570000AAD5 /* Products */,
 			);
@@ -1509,43 +1486,42 @@
 			isa = PBXGroup;
 			children = (
 				03D8FF821EFC8C570000AAD5 /* WolfBase.framework */,
-				03D8FF8B1EFC8C570000AAD5 /* WolfBase_iOSTests.xctest */,
+				03D8FF8B1EFC8C570000AAD5 /* WolfBase_iOS_Tests.xctest */,
 				037F7A0D1EFDDF55005D7ABB /* WolfBase.framework */,
-				037F7A151EFDDF56005D7ABB /* WolfBase_tvOSTests.xctest */,
+				037F7A151EFDDF56005D7ABB /* WolfBase_tvOS_Tests.xctest */,
 				037F7A291EFDDFA1005D7ABB /* WolfBase.framework */,
-				037F7A311EFDDFA1005D7ABB /* WolfBase_macOSTests.xctest */,
+				037F7A311EFDDFA1005D7ABB /* WolfBase_macOS_Tests.xctest */,
 				037F7A451EFDDFD8005D7ABB /* WolfBase.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		03D8FF841EFC8C570000AAD5 /* WolfBase_iOS */ = {
+		03D8FF841EFC8C570000AAD5 /* WolfBase iOS */ = {
 			isa = PBXGroup;
 			children = (
 				03D8FF9C1EFC8C9C0000AAD5 /* Supporting Files */,
 			);
-			path = WolfBase_iOS;
+			path = "WolfBase iOS";
 			sourceTree = "<group>";
 		};
-		03D8FF8F1EFC8C570000AAD5 /* WolfBase_iOSTests */ = {
+		03D8FF8F1EFC8C570000AAD5 /* WolfBase iOS Tests */ = {
 			isa = PBXGroup;
 			children = (
 				03D8FF921EFC8C570000AAD5 /* Info.plist */,
 			);
-			path = WolfBase_iOSTests;
+			path = "WolfBase iOS Tests";
 			sourceTree = "<group>";
 		};
 		03D8FF9C1EFC8C9C0000AAD5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				03D8FF851EFC8C570000AAD5 /* WolfBase_iOS.h */,
-				031DEED11EFEF768001DCF3F /* WolfBase_iOS-Bridging-Header.h */,
 				03D8FF861EFC8C570000AAD5 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		03D8FF9E1EFC8D250000AAD5 /* Sources */ = {
+		03D8FF9E1EFC8D250000AAD5 /* WolfBase Shared */ = {
 			isa = PBXGroup;
 			children = (
 				0359FF571EFDF35400546B30 /* Framework.swift */,
@@ -1571,7 +1547,7 @@
 				032C4D721EFCCAB7004E03DD /* Strings */,
 				035B6F961EFF0E0A001E293C /* Validation */,
 			);
-			path = Sources;
+			path = "WolfBase Shared";
 			sourceTree = "<group>";
 		};
 		03D8FF9F1EFC8D330000AAD5 /* Numeric */ = {
@@ -1664,9 +1640,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		037F7A0C1EFDDF55005D7ABB /* WolfBase_tvOS */ = {
+		037F7A0C1EFDDF55005D7ABB /* WolfBase tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 037F7A1E1EFDDF56005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase_tvOS" */;
+			buildConfigurationList = 037F7A1E1EFDDF56005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase tvOS" */;
 			buildPhases = (
 				037F7A081EFDDF55005D7ABB /* Sources */,
 				037F7A091EFDDF55005D7ABB /* Frameworks */,
@@ -1677,14 +1653,14 @@
 			);
 			dependencies = (
 			);
-			name = WolfBase_tvOS;
+			name = "WolfBase tvOS";
 			productName = WolfBase_tvOS;
 			productReference = 037F7A0D1EFDDF55005D7ABB /* WolfBase.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		037F7A141EFDDF56005D7ABB /* WolfBase_tvOSTests */ = {
+		037F7A141EFDDF56005D7ABB /* WolfBase tvOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 037F7A211EFDDF56005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase_tvOSTests" */;
+			buildConfigurationList = 037F7A211EFDDF56005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase tvOS Tests" */;
 			buildPhases = (
 				037F7A111EFDDF56005D7ABB /* Sources */,
 				037F7A121EFDDF56005D7ABB /* Frameworks */,
@@ -1695,14 +1671,14 @@
 			dependencies = (
 				037F7A181EFDDF56005D7ABB /* PBXTargetDependency */,
 			);
-			name = WolfBase_tvOSTests;
+			name = "WolfBase tvOS Tests";
 			productName = WolfBase_tvOSTests;
-			productReference = 037F7A151EFDDF56005D7ABB /* WolfBase_tvOSTests.xctest */;
+			productReference = 037F7A151EFDDF56005D7ABB /* WolfBase_tvOS_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		037F7A281EFDDFA1005D7ABB /* WolfBase_macOS */ = {
+		037F7A281EFDDFA1005D7ABB /* WolfBase macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 037F7A3A1EFDDFA1005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase_macOS" */;
+			buildConfigurationList = 037F7A3A1EFDDFA1005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase macOS" */;
 			buildPhases = (
 				037F7A241EFDDFA1005D7ABB /* Sources */,
 				037F7A251EFDDFA1005D7ABB /* Frameworks */,
@@ -1713,14 +1689,14 @@
 			);
 			dependencies = (
 			);
-			name = WolfBase_macOS;
+			name = "WolfBase macOS";
 			productName = WolfBase_macOS;
 			productReference = 037F7A291EFDDFA1005D7ABB /* WolfBase.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		037F7A301EFDDFA1005D7ABB /* WolfBase_macOSTests */ = {
+		037F7A301EFDDFA1005D7ABB /* WolfBase macOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 037F7A3D1EFDDFA1005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase_macOSTests" */;
+			buildConfigurationList = 037F7A3D1EFDDFA1005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase macOS Tests" */;
 			buildPhases = (
 				037F7A2D1EFDDFA1005D7ABB /* Sources */,
 				037F7A2E1EFDDFA1005D7ABB /* Frameworks */,
@@ -1731,14 +1707,14 @@
 			dependencies = (
 				037F7A341EFDDFA1005D7ABB /* PBXTargetDependency */,
 			);
-			name = WolfBase_macOSTests;
+			name = "WolfBase macOS Tests";
 			productName = WolfBase_macOSTests;
-			productReference = 037F7A311EFDDFA1005D7ABB /* WolfBase_macOSTests.xctest */;
+			productReference = 037F7A311EFDDFA1005D7ABB /* WolfBase_macOS_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		037F7A441EFDDFD8005D7ABB /* WolfBase_watchOS */ = {
+		037F7A441EFDDFD8005D7ABB /* WolfBase watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 037F7A4A1EFDDFD8005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase_watchOS" */;
+			buildConfigurationList = 037F7A4A1EFDDFD8005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase watchOS" */;
 			buildPhases = (
 				037F7A401EFDDFD8005D7ABB /* Sources */,
 				037F7A411EFDDFD8005D7ABB /* Frameworks */,
@@ -1749,14 +1725,14 @@
 			);
 			dependencies = (
 			);
-			name = WolfBase_watchOS;
+			name = "WolfBase watchOS";
 			productName = WolfBase_watchOS;
 			productReference = 037F7A451EFDDFD8005D7ABB /* WolfBase.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		03D8FF811EFC8C570000AAD5 /* WolfBase_iOS */ = {
+		03D8FF811EFC8C570000AAD5 /* WolfBase iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03D8FF961EFC8C570000AAD5 /* Build configuration list for PBXNativeTarget "WolfBase_iOS" */;
+			buildConfigurationList = 03D8FF961EFC8C570000AAD5 /* Build configuration list for PBXNativeTarget "WolfBase iOS" */;
 			buildPhases = (
 				03D8FF7D1EFC8C570000AAD5 /* Sources */,
 				03D8FF7E1EFC8C570000AAD5 /* Frameworks */,
@@ -1767,14 +1743,14 @@
 			);
 			dependencies = (
 			);
-			name = WolfBase_iOS;
+			name = "WolfBase iOS";
 			productName = WolfBase;
 			productReference = 03D8FF821EFC8C570000AAD5 /* WolfBase.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		03D8FF8A1EFC8C570000AAD5 /* WolfBase_iOSTests */ = {
+		03D8FF8A1EFC8C570000AAD5 /* WolfBase iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03D8FF991EFC8C570000AAD5 /* Build configuration list for PBXNativeTarget "WolfBase_iOSTests" */;
+			buildConfigurationList = 03D8FF991EFC8C570000AAD5 /* Build configuration list for PBXNativeTarget "WolfBase iOS Tests" */;
 			buildPhases = (
 				03D8FF871EFC8C570000AAD5 /* Sources */,
 				03D8FF881EFC8C570000AAD5 /* Frameworks */,
@@ -1785,9 +1761,9 @@
 			dependencies = (
 				03E131751FA87CB200C1B937 /* PBXTargetDependency */,
 			);
-			name = WolfBase_iOSTests;
+			name = "WolfBase iOS Tests";
 			productName = WolfBaseTests;
-			productReference = 03D8FF8B1EFC8C570000AAD5 /* WolfBase_iOSTests.xctest */;
+			productReference = 03D8FF8B1EFC8C570000AAD5 /* WolfBase_iOS_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1842,14 +1818,14 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03D8FF811EFC8C570000AAD5 /* WolfBase_iOS */,
-				037F7A0C1EFDDF55005D7ABB /* WolfBase_tvOS */,
-				037F7A281EFDDFA1005D7ABB /* WolfBase_macOS */,
-				037F7A441EFDDFD8005D7ABB /* WolfBase_watchOS */,
-				037F7AA41EFDE26E005D7ABB /* WolfBase_all */,
-				03D8FF8A1EFC8C570000AAD5 /* WolfBase_iOSTests */,
-				037F7A141EFDDF56005D7ABB /* WolfBase_tvOSTests */,
-				037F7A301EFDDFA1005D7ABB /* WolfBase_macOSTests */,
+				03D8FF811EFC8C570000AAD5 /* WolfBase iOS */,
+				037F7A0C1EFDDF55005D7ABB /* WolfBase tvOS */,
+				037F7A281EFDDFA1005D7ABB /* WolfBase macOS */,
+				037F7A441EFDDFD8005D7ABB /* WolfBase watchOS */,
+				037F7AA41EFDE26E005D7ABB /* WolfBase all */,
+				03D8FF8A1EFC8C570000AAD5 /* WolfBase iOS Tests */,
+				037F7A141EFDDF56005D7ABB /* WolfBase tvOS Tests */,
+				037F7A301EFDDFA1005D7ABB /* WolfBase macOS Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -2673,37 +2649,37 @@
 /* Begin PBXTargetDependency section */
 		037F7A181EFDDF56005D7ABB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 037F7A0C1EFDDF55005D7ABB /* WolfBase_tvOS */;
+			target = 037F7A0C1EFDDF55005D7ABB /* WolfBase tvOS */;
 			targetProxy = 037F7A171EFDDF56005D7ABB /* PBXContainerItemProxy */;
 		};
 		037F7A341EFDDFA1005D7ABB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 037F7A281EFDDFA1005D7ABB /* WolfBase_macOS */;
+			target = 037F7A281EFDDFA1005D7ABB /* WolfBase macOS */;
 			targetProxy = 037F7A331EFDDFA1005D7ABB /* PBXContainerItemProxy */;
 		};
 		037F7AA91EFDE2A8005D7ABB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 03D8FF811EFC8C570000AAD5 /* WolfBase_iOS */;
+			target = 03D8FF811EFC8C570000AAD5 /* WolfBase iOS */;
 			targetProxy = 037F7AA81EFDE2A8005D7ABB /* PBXContainerItemProxy */;
 		};
 		037F7AAB1EFDE2A8005D7ABB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 037F7A0C1EFDDF55005D7ABB /* WolfBase_tvOS */;
+			target = 037F7A0C1EFDDF55005D7ABB /* WolfBase tvOS */;
 			targetProxy = 037F7AAA1EFDE2A8005D7ABB /* PBXContainerItemProxy */;
 		};
 		037F7AAD1EFDE2A8005D7ABB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 037F7A281EFDDFA1005D7ABB /* WolfBase_macOS */;
+			target = 037F7A281EFDDFA1005D7ABB /* WolfBase macOS */;
 			targetProxy = 037F7AAC1EFDE2A8005D7ABB /* PBXContainerItemProxy */;
 		};
 		037F7AAF1EFDE2A8005D7ABB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 037F7A441EFDDFD8005D7ABB /* WolfBase_watchOS */;
+			target = 037F7A441EFDDFD8005D7ABB /* WolfBase watchOS */;
 			targetProxy = 037F7AAE1EFDE2A8005D7ABB /* PBXContainerItemProxy */;
 		};
 		03E131751FA87CB200C1B937 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 03D8FF811EFC8C570000AAD5 /* WolfBase_iOS */;
+			target = 03D8FF811EFC8C570000AAD5 /* WolfBase iOS */;
 			targetProxy = 03E131741FA87CB200C1B937 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -2718,15 +2694,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WolfBase_tvOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-tvOS";
-				PRODUCT_NAME = WolfBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_tvOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 10.2;
@@ -2742,15 +2714,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WolfBase_tvOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-tvOS";
-				PRODUCT_NAME = WolfBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_tvOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 10.2;
@@ -2762,10 +2730,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = P776N9776G;
-				INFOPLIST_FILE = WolfBase_tvOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-tvOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -2778,10 +2744,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = P776N9776G;
-				INFOPLIST_FILE = WolfBase_tvOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-tvOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -2800,16 +2764,12 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = WolfBase_macOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-macOS";
-				PRODUCT_NAME = WolfBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_macOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -2825,16 +2785,12 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = WolfBase_macOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-macOS";
-				PRODUCT_NAME = WolfBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_macOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -2845,11 +2801,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = P776N9776G;
-				INFOPLIST_FILE = WolfBase_macOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-macOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
 			};
@@ -2861,11 +2815,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = P776N9776G;
-				INFOPLIST_FILE = WolfBase_macOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-macOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
 			};
@@ -2881,15 +2833,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WolfBase_watchOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-watchOS";
-				PRODUCT_NAME = WolfBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_watchOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
@@ -2906,15 +2854,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WolfBase_watchOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-watchOS";
-				PRODUCT_NAME = WolfBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_watchOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
@@ -2969,7 +2913,7 @@
 				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2986,9 +2930,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.$(TARGET_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_INCLUDE_PATHS = "${SRCROOT}/CommonCrypto";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3040,8 +2986,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.$(TARGET_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
 				SWIFT_INCLUDE_PATHS = "${SRCROOT}/CommonCrypto";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -3059,16 +3007,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/WolfBase_iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-iOS";
-				PRODUCT_NAME = WolfBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_iOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3083,16 +3027,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/WolfBase_iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-iOS";
-				PRODUCT_NAME = WolfBase;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfBase_iOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3103,10 +3043,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = P776N9776G;
-				INFOPLIST_FILE = WolfBase_iOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-iOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3118,10 +3056,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = P776N9776G;
-				INFOPLIST_FILE = WolfBase_iOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfBase-iOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3131,7 +3067,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		037F7A1E1EFDDF56005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase_tvOS" */ = {
+		037F7A1E1EFDDF56005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				037F7A1F1EFDDF56005D7ABB /* Debug */,
@@ -3140,7 +3076,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		037F7A211EFDDF56005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase_tvOSTests" */ = {
+		037F7A211EFDDF56005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase tvOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				037F7A221EFDDF56005D7ABB /* Debug */,
@@ -3149,7 +3085,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		037F7A3A1EFDDFA1005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase_macOS" */ = {
+		037F7A3A1EFDDFA1005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				037F7A3B1EFDDFA1005D7ABB /* Debug */,
@@ -3158,7 +3094,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		037F7A3D1EFDDFA1005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase_macOSTests" */ = {
+		037F7A3D1EFDDFA1005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase macOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				037F7A3E1EFDDFA1005D7ABB /* Debug */,
@@ -3167,7 +3103,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		037F7A4A1EFDDFD8005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase_watchOS" */ = {
+		037F7A4A1EFDDFD8005D7ABB /* Build configuration list for PBXNativeTarget "WolfBase watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				037F7A4B1EFDDFD8005D7ABB /* Debug */,
@@ -3176,7 +3112,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		037F7AA51EFDE26E005D7ABB /* Build configuration list for PBXAggregateTarget "WolfBase_all" */ = {
+		037F7AA51EFDE26E005D7ABB /* Build configuration list for PBXAggregateTarget "WolfBase all" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				037F7AA61EFDE26E005D7ABB /* Debug */,
@@ -3194,7 +3130,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03D8FF961EFC8C570000AAD5 /* Build configuration list for PBXNativeTarget "WolfBase_iOS" */ = {
+		03D8FF961EFC8C570000AAD5 /* Build configuration list for PBXNativeTarget "WolfBase iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03D8FF971EFC8C570000AAD5 /* Debug */,
@@ -3203,7 +3139,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03D8FF991EFC8C570000AAD5 /* Build configuration list for PBXNativeTarget "WolfBase_iOSTests" */ = {
+		03D8FF991EFC8C570000AAD5 /* Build configuration list for PBXNativeTarget "WolfBase iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03D8FF9A1EFC8C570000AAD5 /* Debug */,

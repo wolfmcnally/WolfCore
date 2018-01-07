@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		0359FFEE1EFE482100546B30 /* WolfCore_all */ = {
+		0359FFEE1EFE482100546B30 /* WolfCore all */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 0359FFEF1EFE482100546B30 /* Build configuration list for PBXAggregateTarget "WolfCore_all" */;
+			buildConfigurationList = 0359FFEF1EFE482100546B30 /* Build configuration list for PBXAggregateTarget "WolfCore all" */;
 			buildPhases = (
 			);
 			dependencies = (
@@ -18,7 +18,7 @@
 				0359FFF71EFE482D00546B30 /* PBXTargetDependency */,
 				0359FFF91EFE482D00546B30 /* PBXTargetDependency */,
 			);
-			name = WolfCore_all;
+			name = "WolfCore all";
 			productName = WolfCore_all;
 		};
 /* End PBXAggregateTarget section */
@@ -49,10 +49,6 @@
 		0312F5481F36BBAE00C00CF9 /* AngularGradientRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53A1F36BACD00C00CF9 /* AngularGradientRenderer.swift */; };
 		0312F5491F36BBB200C00CF9 /* MetalTextureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53C1F36BACD00C00CF9 /* MetalTextureUtils.swift */; };
 		0312F54A1F36BBB300C00CF9 /* MetalTextureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0312F53C1F36BACD00C00CF9 /* MetalTextureUtils.swift */; };
-		0317E2711F0A302A000FD0C1 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0317E26F1F0A2FFE000FD0C1 /* WolfBase.framework */; };
-		0317E2721F0A3033000FD0C1 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0317E2701F0A300B000FD0C1 /* WolfBase.framework */; };
-		0317E2741F0A3053000FD0C1 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0317E2731F0A3053000FD0C1 /* WolfBase.framework */; };
-		0317E2761F0A305F000FD0C1 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0317E2751F0A305F000FD0C1 /* WolfBase.framework */; };
 		031DEE721EFEEC49001DCF3F /* OrientationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE711EFEEC49001DCF3F /* OrientationUtils.swift */; };
 		031DEE781EFEEECC001DCF3F /* DeviceOrientationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE771EFEEECC001DCF3F /* DeviceOrientationAction.swift */; };
 		031DEE7A1EFEEF24001DCF3F /* DeviceAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE791EFEEF24001DCF3F /* DeviceAccess.swift */; };
@@ -343,6 +339,10 @@
 		0360B5481F00671000A49A9B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B5431F00670700A49A9B /* Reachability.swift */; };
 		0360B5491F00671000A49A9B /* ReachabilityBulletin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360B5421F00670700A49A9B /* ReachabilityBulletin.swift */; };
 		0360C0D61FAD1B3E00A77477 /* PowerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360C0D51FAD1B3E00A77477 /* PowerTextField.swift */; };
+		036BD3142002182B00E3C6B0 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036BD3152002182B00E3C6B0 /* WolfBase.framework */; };
+		036BD316200218AD00E3C6B0 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036BD3152002182B00E3C6B0 /* WolfBase.framework */; };
+		036BD3172002191500E3C6B0 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036BD3182002191500E3C6B0 /* WolfBase.framework */; };
+		036BD3192002197400E3C6B0 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036BD31A2002197400E3C6B0 /* WolfBase.framework */; };
 		0381CD1E1F072E23001510EA /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381CD1D1F072E23001510EA /* StoreManager.swift */; };
 		0381CD1F1F072E23001510EA /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381CD1D1F072E23001510EA /* StoreManager.swift */; };
 		0381CD201F072E23001510EA /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381CD1D1F072E23001510EA /* StoreManager.swift */; };
@@ -502,22 +502,14 @@
 		0312F53A1F36BACD00C00CF9 /* AngularGradientRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngularGradientRenderer.swift; sourceTree = "<group>"; };
 		0312F53B1F36BACD00C00CF9 /* AngularGradientShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AngularGradientShader.metal; sourceTree = "<group>"; };
 		0312F53C1F36BACD00C00CF9 /* MetalTextureUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTextureUtils.swift; sourceTree = "<group>"; };
-		0317E26F1F0A2FFE000FD0C1 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = "../WolfBase/build/Debug-iphoneos/WolfBase.framework"; sourceTree = "<group>"; };
-		0317E2701F0A300B000FD0C1 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = ../WolfBase/build/Debug/WolfBase.framework; sourceTree = "<group>"; };
-		0317E2731F0A3053000FD0C1 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = "../WolfBase/build/Debug-appletvos/WolfBase.framework"; sourceTree = "<group>"; };
-		0317E2751F0A305F000FD0C1 /* WolfBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WolfBase.framework; path = "../WolfBase/build/Debug-watchos/WolfBase.framework"; sourceTree = "<group>"; };
 		031DEE711EFEEC49001DCF3F /* OrientationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUtils.swift; sourceTree = "<group>"; };
 		031DEE771EFEEECC001DCF3F /* DeviceOrientationAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceOrientationAction.swift; sourceTree = "<group>"; };
 		031DEE791EFEEF24001DCF3F /* DeviceAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceAccess.swift; sourceTree = "<group>"; };
-		031DEED91EFEF85D001DCF3F /* WolfCore_macOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfCore_macOS-Bridging-Header.h"; path = "../WolfCore_macOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		031DEEDA1EFEF875001DCF3F /* WolfCore_watchOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfCore_watchOS-Bridging-Header.h"; path = "../WolfCore_watchOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		031DEEDB1EFEF88F001DCF3F /* WolfCore_tvOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfCore_tvOS-Bridging-Header.h"; path = "../WolfCore_tvOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		031DEEDC1EFEF8A2001DCF3F /* WolfCore_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WolfCore_iOS-Bridging-Header.h"; path = "../WolfCore_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		0359000A1EFE498700546B30 /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
 		0359FF8A1EFE38CB00546B30 /* WolfCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359FF8D1EFE38CB00546B30 /* WolfCore_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolfCore_iOS.h; sourceTree = "<group>"; };
 		0359FF8E1EFE38CB00546B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0359FF931EFE38CB00546B30 /* WolfCore_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolfCore_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0359FF931EFE38CB00546B30 /* WolfCore_iOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolfCore_iOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359FF981EFE38CB00546B30 /* WolfCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolfCoreTests.swift; sourceTree = "<group>"; };
 		0359FF9A1EFE38CB00546B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0359FFAE1EFE478900546B30 /* WolfCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -526,13 +518,13 @@
 		0359FFBB1EFE47A300546B30 /* WolfCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359FFBD1EFE47A300546B30 /* WolfCore_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolfCore_tvOS.h; sourceTree = "<group>"; };
 		0359FFBE1EFE47A300546B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0359FFC31EFE47A300546B30 /* WolfCore_tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolfCore_tvOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0359FFC31EFE47A300546B30 /* WolfCore_tvOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolfCore_tvOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359FFC81EFE47A300546B30 /* WolfCore_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolfCore_tvOSTests.swift; sourceTree = "<group>"; };
 		0359FFCA1EFE47A300546B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0359FFD71EFE47FA00546B30 /* WolfCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359FFD91EFE47FA00546B30 /* WolfCore_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolfCore_macOS.h; sourceTree = "<group>"; };
 		0359FFDA1EFE47FA00546B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0359FFDF1EFE47FA00546B30 /* WolfCore_macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolfCore_macOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0359FFDF1EFE47FA00546B30 /* WolfCore_macOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WolfCore_macOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359FFE41EFE47FB00546B30 /* WolfCore_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolfCore_macOSTests.swift; sourceTree = "<group>"; };
 		0359FFE61EFE47FB00546B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		035B6F1D1EFF0D53001E293C /* WindowExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowExtensions.swift; sourceTree = "<group>"; };
@@ -634,6 +626,9 @@
 		0360B5421F00670700A49A9B /* ReachabilityBulletin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityBulletin.swift; sourceTree = "<group>"; };
 		0360B5431F00670700A49A9B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0360C0D51FAD1B3E00A77477 /* PowerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerTextField.swift; sourceTree = "<group>"; };
+		036BD3152002182B00E3C6B0 /* WolfBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WolfBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		036BD3182002191500E3C6B0 /* WolfBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WolfBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		036BD31A2002197400E3C6B0 /* WolfBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WolfBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0381CD1D1F072E23001510EA /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		0381CD491F073778001510EA /* AnimatedHideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedHideable.swift; sourceTree = "<group>"; };
 		038F9FD21F06EA30001B37C4 /* BulletinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinView.swift; sourceTree = "<group>"; };
@@ -652,7 +647,7 @@
 		038FA0601F072436001B37C4 /* VectorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorNode.swift; sourceTree = "<group>"; };
 		038FA0721F0726EF001B37C4 /* OrientationNotificationActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationNotificationActions.swift; sourceTree = "<group>"; };
 		038FA0751F072739001B37C4 /* TVControllerActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVControllerActions.swift; sourceTree = "<group>"; };
-		0397CAE71FABE09A00468747 /* ScrollingStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollingStackView.swift; path = Sources/Views/ScrollingStackView.swift; sourceTree = SOURCE_ROOT; };
+		0397CAE71FABE09A00468747 /* ScrollingStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingStackView.swift; sourceTree = "<group>"; };
 		0397CAE91FABE2FC00468747 /* TextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
 		0397CAEB1FABF30C00468747 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		03B2E3CB1F008455002856DD /* OSEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSEvent.swift; sourceTree = "<group>"; };
@@ -700,7 +695,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0317E2711F0A302A000FD0C1 /* WolfBase.framework in Frameworks */,
+				036BD3142002182B00E3C6B0 /* WolfBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,7 +711,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0317E2761F0A305F000FD0C1 /* WolfBase.framework in Frameworks */,
+				036BD3192002197400E3C6B0 /* WolfBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,7 +719,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0317E2741F0A3053000FD0C1 /* WolfBase.framework in Frameworks */,
+				036BD3172002191500E3C6B0 /* WolfBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,7 +735,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0317E2721F0A3033000FD0C1 /* WolfBase.framework in Frameworks */,
+				036BD316200218AD00E3C6B0 /* WolfBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,7 +779,6 @@
 			isa = PBXGroup;
 			children = (
 				0359FFBD1EFE47A300546B30 /* WolfCore_tvOS.h */,
-				031DEEDB1EFEF88F001DCF3F /* WolfCore_tvOS-Bridging-Header.h */,
 				0359FFBE1EFE47A300546B30 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -794,7 +788,6 @@
 			isa = PBXGroup;
 			children = (
 				0359FFD91EFE47FA00546B30 /* WolfCore_macOS.h */,
-				031DEED91EFEF85D001DCF3F /* WolfCore_macOS-Bridging-Header.h */,
 				0359FFDA1EFE47FA00546B30 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -804,7 +797,6 @@
 			isa = PBXGroup;
 			children = (
 				0359FFB01EFE478A00546B30 /* WolfCore_watchOS.h */,
-				031DEEDA1EFEF875001DCF3F /* WolfCore_watchOS-Bridging-Header.h */,
 				0359FFB11EFE478A00546B30 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -847,7 +839,7 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		035900091EFE497600546B30 /* Sources */ = {
+		035900091EFE497600546B30 /* WolfCore Shared */ = {
 			isa = PBXGroup;
 			children = (
 				0312F5381F36BA9B00C00CF9 /* Metal */,
@@ -871,7 +863,7 @@
 				0360B4091F004E2000A49A9B /* Type */,
 				0360B4AA1F004FD000A49A9B /* Views */,
 			);
-			path = Sources;
+			path = "WolfCore Shared";
 			sourceTree = "<group>";
 		};
 		0359FF801EFE38CB00546B30 = {
@@ -880,9 +872,14 @@
 				038F9FDA1F06FF28001B37C4 /* README.md */,
 				038F9FDB1F06FF3A001B37C4 /* LICENSE.md */,
 				035B6FCB1EFF10B6001E293C /* Guides */,
-				035900091EFE497600546B30 /* Sources */,
-				0359FFA71EFE473C00546B30 /* Platforms */,
-				0359FFA81EFE474800546B30 /* Tests */,
+				035900091EFE497600546B30 /* WolfCore Shared */,
+				0359FF8C1EFE38CB00546B30 /* WolfCore iOS */,
+				0359FFD81EFE47FA00546B30 /* WolfCore macOS */,
+				0359FFBC1EFE47A300546B30 /* WolfCore tvOS */,
+				0359FFAF1EFE478900546B30 /* WolfCore watchOS */,
+				0359FF971EFE38CB00546B30 /* WolfCore iOS Tests */,
+				0359FFE31EFE47FB00546B30 /* WolfCore macOS Tests */,
+				0359FFC71EFE47A300546B30 /* WolfCore tvOS Tests */,
 				0359FFFA1EFE484A00546B30 /* Frameworks */,
 				0359FF8B1EFE38CB00546B30 /* Products */,
 			);
@@ -892,38 +889,37 @@
 			isa = PBXGroup;
 			children = (
 				0359FF8A1EFE38CB00546B30 /* WolfCore.framework */,
-				0359FF931EFE38CB00546B30 /* WolfCore_iOSTests.xctest */,
+				0359FF931EFE38CB00546B30 /* WolfCore_iOS_Tests.xctest */,
 				0359FFAE1EFE478900546B30 /* WolfCore.framework */,
 				0359FFBB1EFE47A300546B30 /* WolfCore.framework */,
-				0359FFC31EFE47A300546B30 /* WolfCore_tvOSTests.xctest */,
+				0359FFC31EFE47A300546B30 /* WolfCore_tvOS_Tests.xctest */,
 				0359FFD71EFE47FA00546B30 /* WolfCore.framework */,
-				0359FFDF1EFE47FA00546B30 /* WolfCore_macOSTests.xctest */,
+				0359FFDF1EFE47FA00546B30 /* WolfCore_macOS_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0359FF8C1EFE38CB00546B30 /* WolfCore_iOS */ = {
+		0359FF8C1EFE38CB00546B30 /* WolfCore iOS */ = {
 			isa = PBXGroup;
 			children = (
 				031DEE431EFED568001DCF3F /* Sources */,
 				0359FFA41EFE466100546B30 /* Supporting Files */,
 			);
-			path = WolfCore_iOS;
+			path = "WolfCore iOS";
 			sourceTree = "<group>";
 		};
-		0359FF971EFE38CB00546B30 /* WolfCore_iOSTests */ = {
+		0359FF971EFE38CB00546B30 /* WolfCore iOS Tests */ = {
 			isa = PBXGroup;
 			children = (
 				0359FFA51EFE467B00546B30 /* Supporting Files */,
 			);
-			path = WolfCore_iOSTests;
+			path = "WolfCore iOS Tests";
 			sourceTree = "<group>";
 		};
 		0359FFA41EFE466100546B30 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				0359FF8D1EFE38CB00546B30 /* WolfCore_iOS.h */,
-				031DEEDC1EFEF8A2001DCF3F /* WolfCore_iOS-Bridging-Header.h */,
 				0359FF8E1EFE38CB00546B30 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -938,79 +934,57 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0359FFA71EFE473C00546B30 /* Platforms */ = {
-			isa = PBXGroup;
-			children = (
-				0359FF8C1EFE38CB00546B30 /* WolfCore_iOS */,
-				0359FFD81EFE47FA00546B30 /* WolfCore_macOS */,
-				0359FFBC1EFE47A300546B30 /* WolfCore_tvOS */,
-				0359FFAF1EFE478900546B30 /* WolfCore_watchOS */,
-			);
-			name = Platforms;
-			sourceTree = "<group>";
-		};
-		0359FFA81EFE474800546B30 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				0359FF971EFE38CB00546B30 /* WolfCore_iOSTests */,
-				0359FFE31EFE47FB00546B30 /* WolfCore_macOSTests */,
-				0359FFC71EFE47A300546B30 /* WolfCore_tvOSTests */,
-			);
-			name = Tests;
-			sourceTree = "<group>";
-		};
-		0359FFAF1EFE478900546B30 /* WolfCore_watchOS */ = {
+		0359FFAF1EFE478900546B30 /* WolfCore watchOS */ = {
 			isa = PBXGroup;
 			children = (
 				031DEE491EFED5AD001DCF3F /* Sources */,
 				031DEE461EFED590001DCF3F /* Supporting Files */,
 			);
-			path = WolfCore_watchOS;
+			path = "WolfCore watchOS";
 			sourceTree = "<group>";
 		};
-		0359FFBC1EFE47A300546B30 /* WolfCore_tvOS */ = {
+		0359FFBC1EFE47A300546B30 /* WolfCore tvOS */ = {
 			isa = PBXGroup;
 			children = (
 				031DEE471EFED5A1001DCF3F /* Sources */,
 				031DEE441EFED571001DCF3F /* Supporting Files */,
 			);
-			path = WolfCore_tvOS;
+			path = "WolfCore tvOS";
 			sourceTree = "<group>";
 		};
-		0359FFC71EFE47A300546B30 /* WolfCore_tvOSTests */ = {
+		0359FFC71EFE47A300546B30 /* WolfCore tvOS Tests */ = {
 			isa = PBXGroup;
 			children = (
 				0359FFC81EFE47A300546B30 /* WolfCore_tvOSTests.swift */,
 				0359FFCA1EFE47A300546B30 /* Info.plist */,
 			);
-			path = WolfCore_tvOSTests;
+			path = "WolfCore tvOS Tests";
 			sourceTree = "<group>";
 		};
-		0359FFD81EFE47FA00546B30 /* WolfCore_macOS */ = {
+		0359FFD81EFE47FA00546B30 /* WolfCore macOS */ = {
 			isa = PBXGroup;
 			children = (
 				031DEE481EFED5A8001DCF3F /* Sources */,
 				031DEE451EFED580001DCF3F /* Supporting Files */,
 			);
-			path = WolfCore_macOS;
+			path = "WolfCore macOS";
 			sourceTree = "<group>";
 		};
-		0359FFE31EFE47FB00546B30 /* WolfCore_macOSTests */ = {
+		0359FFE31EFE47FB00546B30 /* WolfCore macOS Tests */ = {
 			isa = PBXGroup;
 			children = (
 				0359FFE41EFE47FB00546B30 /* WolfCore_macOSTests.swift */,
 				0359FFE61EFE47FB00546B30 /* Info.plist */,
 			);
-			path = WolfCore_macOSTests;
+			path = "WolfCore macOS Tests";
 			sourceTree = "<group>";
 		};
 		0359FFFA1EFE484A00546B30 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0317E2751F0A305F000FD0C1 /* WolfBase.framework */,
-				0317E2731F0A3053000FD0C1 /* WolfBase.framework */,
-				0317E2701F0A300B000FD0C1 /* WolfBase.framework */,
-				0317E26F1F0A2FFE000FD0C1 /* WolfBase.framework */,
+				036BD31A2002197400E3C6B0 /* WolfBase.framework */,
+				036BD3182002191500E3C6B0 /* WolfBase.framework */,
+				036BD3152002182B00E3C6B0 /* WolfBase.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1429,9 +1403,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0359FF891EFE38CB00546B30 /* WolfCore_iOS */ = {
+		0359FF891EFE38CB00546B30 /* WolfCore iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0359FF9E1EFE38CB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore_iOS" */;
+			buildConfigurationList = 0359FF9E1EFE38CB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore iOS" */;
 			buildPhases = (
 				0359FF851EFE38CB00546B30 /* Sources */,
 				0359FF861EFE38CB00546B30 /* Frameworks */,
@@ -1442,14 +1416,14 @@
 			);
 			dependencies = (
 			);
-			name = WolfCore_iOS;
+			name = "WolfCore iOS";
 			productName = WolfCore;
 			productReference = 0359FF8A1EFE38CB00546B30 /* WolfCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		0359FF921EFE38CB00546B30 /* WolfCore_iOSTests */ = {
+		0359FF921EFE38CB00546B30 /* WolfCore iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0359FFA11EFE38CB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore_iOSTests" */;
+			buildConfigurationList = 0359FFA11EFE38CB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore iOS Tests" */;
 			buildPhases = (
 				0359FF8F1EFE38CB00546B30 /* Sources */,
 				0359FF901EFE38CB00546B30 /* Frameworks */,
@@ -1460,14 +1434,14 @@
 			dependencies = (
 				0359FF961EFE38CB00546B30 /* PBXTargetDependency */,
 			);
-			name = WolfCore_iOSTests;
+			name = "WolfCore iOS Tests";
 			productName = WolfCoreTests;
-			productReference = 0359FF931EFE38CB00546B30 /* WolfCore_iOSTests.xctest */;
+			productReference = 0359FF931EFE38CB00546B30 /* WolfCore_iOS_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0359FFAD1EFE478900546B30 /* WolfCore_watchOS */ = {
+		0359FFAD1EFE478900546B30 /* WolfCore watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0359FFB31EFE478A00546B30 /* Build configuration list for PBXNativeTarget "WolfCore_watchOS" */;
+			buildConfigurationList = 0359FFB31EFE478A00546B30 /* Build configuration list for PBXNativeTarget "WolfCore watchOS" */;
 			buildPhases = (
 				0359FFA91EFE478900546B30 /* Sources */,
 				0359FFAA1EFE478900546B30 /* Frameworks */,
@@ -1478,14 +1452,14 @@
 			);
 			dependencies = (
 			);
-			name = WolfCore_watchOS;
+			name = "WolfCore watchOS";
 			productName = WolfCore_watchOS;
 			productReference = 0359FFAE1EFE478900546B30 /* WolfCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		0359FFBA1EFE47A300546B30 /* WolfCore_tvOS */ = {
+		0359FFBA1EFE47A300546B30 /* WolfCore tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0359FFCC1EFE47A300546B30 /* Build configuration list for PBXNativeTarget "WolfCore_tvOS" */;
+			buildConfigurationList = 0359FFCC1EFE47A300546B30 /* Build configuration list for PBXNativeTarget "WolfCore tvOS" */;
 			buildPhases = (
 				0359FFB61EFE47A300546B30 /* Sources */,
 				0359FFB71EFE47A300546B30 /* Frameworks */,
@@ -1496,14 +1470,14 @@
 			);
 			dependencies = (
 			);
-			name = WolfCore_tvOS;
+			name = "WolfCore tvOS";
 			productName = WolfCore_tvOS;
 			productReference = 0359FFBB1EFE47A300546B30 /* WolfCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		0359FFC21EFE47A300546B30 /* WolfCore_tvOSTests */ = {
+		0359FFC21EFE47A300546B30 /* WolfCore tvOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0359FFCF1EFE47A300546B30 /* Build configuration list for PBXNativeTarget "WolfCore_tvOSTests" */;
+			buildConfigurationList = 0359FFCF1EFE47A300546B30 /* Build configuration list for PBXNativeTarget "WolfCore tvOS Tests" */;
 			buildPhases = (
 				0359FFBF1EFE47A300546B30 /* Sources */,
 				0359FFC01EFE47A300546B30 /* Frameworks */,
@@ -1514,14 +1488,14 @@
 			dependencies = (
 				0359FFC61EFE47A300546B30 /* PBXTargetDependency */,
 			);
-			name = WolfCore_tvOSTests;
+			name = "WolfCore tvOS Tests";
 			productName = WolfCore_tvOSTests;
-			productReference = 0359FFC31EFE47A300546B30 /* WolfCore_tvOSTests.xctest */;
+			productReference = 0359FFC31EFE47A300546B30 /* WolfCore_tvOS_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0359FFD61EFE47FA00546B30 /* WolfCore_macOS */ = {
+		0359FFD61EFE47FA00546B30 /* WolfCore macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0359FFE81EFE47FB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore_macOS" */;
+			buildConfigurationList = 0359FFE81EFE47FB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore macOS" */;
 			buildPhases = (
 				0359FFD21EFE47FA00546B30 /* Sources */,
 				0359FFD31EFE47FA00546B30 /* Frameworks */,
@@ -1532,14 +1506,14 @@
 			);
 			dependencies = (
 			);
-			name = WolfCore_macOS;
+			name = "WolfCore macOS";
 			productName = WolfCore_macOS;
 			productReference = 0359FFD71EFE47FA00546B30 /* WolfCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		0359FFDE1EFE47FA00546B30 /* WolfCore_macOSTests */ = {
+		0359FFDE1EFE47FA00546B30 /* WolfCore macOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0359FFEB1EFE47FB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore_macOSTests" */;
+			buildConfigurationList = 0359FFEB1EFE47FB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore macOS Tests" */;
 			buildPhases = (
 				0359FFDB1EFE47FA00546B30 /* Sources */,
 				0359FFDC1EFE47FA00546B30 /* Frameworks */,
@@ -1550,9 +1524,9 @@
 			dependencies = (
 				0359FFE21EFE47FB00546B30 /* PBXTargetDependency */,
 			);
-			name = WolfCore_macOSTests;
+			name = "WolfCore macOS Tests";
 			productName = WolfCore_macOSTests;
-			productReference = 0359FFDF1EFE47FA00546B30 /* WolfCore_macOSTests.xctest */;
+			productReference = 0359FFDF1EFE47FA00546B30 /* WolfCore_macOS_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1611,14 +1585,14 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0359FF891EFE38CB00546B30 /* WolfCore_iOS */,
-				0359FFD61EFE47FA00546B30 /* WolfCore_macOS */,
-				0359FFBA1EFE47A300546B30 /* WolfCore_tvOS */,
-				0359FFAD1EFE478900546B30 /* WolfCore_watchOS */,
-				0359FF921EFE38CB00546B30 /* WolfCore_iOSTests */,
-				0359FFC21EFE47A300546B30 /* WolfCore_tvOSTests */,
-				0359FFDE1EFE47FA00546B30 /* WolfCore_macOSTests */,
-				0359FFEE1EFE482100546B30 /* WolfCore_all */,
+				0359FF891EFE38CB00546B30 /* WolfCore iOS */,
+				0359FFD61EFE47FA00546B30 /* WolfCore macOS */,
+				0359FFBA1EFE47A300546B30 /* WolfCore tvOS */,
+				0359FFAD1EFE478900546B30 /* WolfCore watchOS */,
+				0359FFEE1EFE482100546B30 /* WolfCore all */,
+				0359FF921EFE38CB00546B30 /* WolfCore iOS Tests */,
+				0359FFC21EFE47A300546B30 /* WolfCore tvOS Tests */,
+				0359FFDE1EFE47FA00546B30 /* WolfCore macOS Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -2135,37 +2109,37 @@
 /* Begin PBXTargetDependency section */
 		0359FF961EFE38CB00546B30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0359FF891EFE38CB00546B30 /* WolfCore_iOS */;
+			target = 0359FF891EFE38CB00546B30 /* WolfCore iOS */;
 			targetProxy = 0359FF951EFE38CB00546B30 /* PBXContainerItemProxy */;
 		};
 		0359FFC61EFE47A300546B30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0359FFBA1EFE47A300546B30 /* WolfCore_tvOS */;
+			target = 0359FFBA1EFE47A300546B30 /* WolfCore tvOS */;
 			targetProxy = 0359FFC51EFE47A300546B30 /* PBXContainerItemProxy */;
 		};
 		0359FFE21EFE47FB00546B30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0359FFD61EFE47FA00546B30 /* WolfCore_macOS */;
+			target = 0359FFD61EFE47FA00546B30 /* WolfCore macOS */;
 			targetProxy = 0359FFE11EFE47FB00546B30 /* PBXContainerItemProxy */;
 		};
 		0359FFF31EFE482D00546B30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0359FF891EFE38CB00546B30 /* WolfCore_iOS */;
+			target = 0359FF891EFE38CB00546B30 /* WolfCore iOS */;
 			targetProxy = 0359FFF21EFE482D00546B30 /* PBXContainerItemProxy */;
 		};
 		0359FFF51EFE482D00546B30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0359FFAD1EFE478900546B30 /* WolfCore_watchOS */;
+			target = 0359FFAD1EFE478900546B30 /* WolfCore watchOS */;
 			targetProxy = 0359FFF41EFE482D00546B30 /* PBXContainerItemProxy */;
 		};
 		0359FFF71EFE482D00546B30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0359FFBA1EFE47A300546B30 /* WolfCore_tvOS */;
+			target = 0359FFBA1EFE47A300546B30 /* WolfCore tvOS */;
 			targetProxy = 0359FFF61EFE482D00546B30 /* PBXContainerItemProxy */;
 		};
 		0359FFF91EFE482D00546B30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0359FFD61EFE47FA00546B30 /* WolfCore_macOS */;
+			target = 0359FFD61EFE47FA00546B30 /* WolfCore macOS */;
 			targetProxy = 0359FFF81EFE482D00546B30 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -2203,7 +2177,7 @@
 				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2220,9 +2194,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.$(TARGET_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2273,8 +2249,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.$(TARGET_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2292,16 +2270,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/WolfCore_iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wolfmcnally.WolfCore;
-				PRODUCT_NAME = WolfCore;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfCore_iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2318,16 +2292,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/WolfCore_iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wolfmcnally.WolfCore;
-				PRODUCT_NAME = WolfCore;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfCore_iOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2338,10 +2308,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = P776N9776G;
-				INFOPLIST_FILE = WolfCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wolfmcnally.WolfCoreTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2352,10 +2320,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = P776N9776G;
-				INFOPLIST_FILE = WolfCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wolfmcnally.WolfCoreTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2372,19 +2338,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WolfCore_watchOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfCore-watchOS";
-				PRODUCT_NAME = WolfCore;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfCore_watchOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
 			};
 			name = Debug;
 		};
@@ -2399,18 +2361,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WolfCore_watchOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfCore-watchOS";
-				PRODUCT_NAME = WolfCore;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfCore_watchOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
 			};
 			name = Release;
 		};
@@ -2424,15 +2382,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WolfCore_tvOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfCore-tvOS";
-				PRODUCT_NAME = WolfCore;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfCore_tvOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -2450,15 +2404,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WolfCore_tvOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfCore-tvOS";
-				PRODUCT_NAME = WolfCore;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfCore_tvOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 11.0;
@@ -2470,14 +2420,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = P776N9776G;
-				INFOPLIST_FILE = WolfCore_tvOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfCore-tvOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
 			};
 			name = Debug;
 		};
@@ -2486,14 +2434,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = P776N9776G;
-				INFOPLIST_FILE = WolfCore_tvOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfCore-tvOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
 			};
 			name = Release;
 		};
@@ -2509,16 +2455,12 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = WolfCore_macOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfCore-macOS";
-				PRODUCT_NAME = WolfCore;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfCore_macOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -2536,16 +2478,12 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = WolfCore_macOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfCore-macOS";
-				PRODUCT_NAME = WolfCore;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "WolfCore_macOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -2556,11 +2494,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = P776N9776G;
-				INFOPLIST_FILE = WolfCore_macOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfCore-macOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
 			};
@@ -2572,11 +2508,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = P776N9776G;
-				INFOPLIST_FILE = WolfCore_macOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wolfmcnally.WolfCore-macOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
 			};
@@ -2610,7 +2544,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0359FF9E1EFE38CB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore_iOS" */ = {
+		0359FF9E1EFE38CB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0359FF9F1EFE38CB00546B30 /* Debug */,
@@ -2619,7 +2553,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0359FFA11EFE38CB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore_iOSTests" */ = {
+		0359FFA11EFE38CB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0359FFA21EFE38CB00546B30 /* Debug */,
@@ -2628,7 +2562,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0359FFB31EFE478A00546B30 /* Build configuration list for PBXNativeTarget "WolfCore_watchOS" */ = {
+		0359FFB31EFE478A00546B30 /* Build configuration list for PBXNativeTarget "WolfCore watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0359FFB41EFE478A00546B30 /* Debug */,
@@ -2637,7 +2571,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0359FFCC1EFE47A300546B30 /* Build configuration list for PBXNativeTarget "WolfCore_tvOS" */ = {
+		0359FFCC1EFE47A300546B30 /* Build configuration list for PBXNativeTarget "WolfCore tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0359FFCD1EFE47A300546B30 /* Debug */,
@@ -2646,7 +2580,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0359FFCF1EFE47A300546B30 /* Build configuration list for PBXNativeTarget "WolfCore_tvOSTests" */ = {
+		0359FFCF1EFE47A300546B30 /* Build configuration list for PBXNativeTarget "WolfCore tvOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0359FFD01EFE47A300546B30 /* Debug */,
@@ -2655,7 +2589,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0359FFE81EFE47FB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore_macOS" */ = {
+		0359FFE81EFE47FB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0359FFE91EFE47FB00546B30 /* Debug */,
@@ -2664,7 +2598,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0359FFEB1EFE47FB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore_macOSTests" */ = {
+		0359FFEB1EFE47FB00546B30 /* Build configuration list for PBXNativeTarget "WolfCore macOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0359FFEC1EFE47FB00546B30 /* Debug */,
@@ -2673,7 +2607,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0359FFEF1EFE482100546B30 /* Build configuration list for PBXAggregateTarget "WolfCore_all" */ = {
+		0359FFEF1EFE482100546B30 /* Build configuration list for PBXAggregateTarget "WolfCore all" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0359FFF01EFE482100546B30 /* Debug */,

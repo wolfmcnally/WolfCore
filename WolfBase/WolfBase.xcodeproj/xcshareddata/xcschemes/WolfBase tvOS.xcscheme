@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0359FFBA1EFE47A300546B30"
-               BuildableName = "WolfCore.framework"
-               BlueprintName = "WolfCore_tvOS"
-               ReferencedContainer = "container:WolfCore.xcodeproj">
+               BlueprintIdentifier = "037F7A0C1EFDDF55005D7ABB"
+               BuildableName = "WolfBase.framework"
+               BlueprintName = "WolfBase tvOS"
+               ReferencedContainer = "container:WolfBase.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,20 +33,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0359FFC21EFE47A300546B30"
-               BuildableName = "WolfCore_tvOSTests.xctest"
-               BlueprintName = "WolfCore_tvOSTests"
-               ReferencedContainer = "container:WolfCore.xcodeproj">
+               BlueprintIdentifier = "037F7A141EFDDF56005D7ABB"
+               BuildableName = "WolfBase_tvOS_Tests.xctest"
+               BlueprintName = "WolfBase tvOS Tests"
+               ReferencedContainer = "container:WolfBase.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0359FFBA1EFE47A300546B30"
-            BuildableName = "WolfCore.framework"
-            BlueprintName = "WolfCore_tvOS"
-            ReferencedContainer = "container:WolfCore.xcodeproj">
+            BlueprintIdentifier = "037F7A0C1EFDDF55005D7ABB"
+            BuildableName = "WolfBase.framework"
+            BlueprintName = "WolfBase tvOS"
+            ReferencedContainer = "container:WolfBase.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,10 +66,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0359FFBA1EFE47A300546B30"
-            BuildableName = "WolfCore.framework"
-            BlueprintName = "WolfCore_tvOS"
-            ReferencedContainer = "container:WolfCore.xcodeproj">
+            BlueprintIdentifier = "037F7A0C1EFDDF55005D7ABB"
+            BuildableName = "WolfBase.framework"
+            BlueprintName = "WolfBase tvOS"
+            ReferencedContainer = "container:WolfBase.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -84,10 +84,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0359FFBA1EFE47A300546B30"
-            BuildableName = "WolfCore.framework"
-            BlueprintName = "WolfCore_tvOS"
-            ReferencedContainer = "container:WolfCore.xcodeproj">
+            BlueprintIdentifier = "037F7A0C1EFDDF55005D7ABB"
+            BuildableName = "WolfBase.framework"
+            BlueprintName = "WolfBase tvOS"
+            ReferencedContainer = "container:WolfBase.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

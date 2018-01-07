@@ -6,7 +6,7 @@
 //  Copyright © 2016 WolfMcNally.com. All rights reserved.
 //
 
-#if os(iOS) || os(macOS) || os(tvOS)
+#if !os(Linux)
     import CoreGraphics
 #endif
 
@@ -27,7 +27,7 @@ public struct Size {
     }
 }
 
-#if os(iOS) || os(macOS) || os(tvOS)
+#if !os(Linux)
     extension Size {
         public init(s: CGSize) {
             width = Double(s.width)

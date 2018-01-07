@@ -12,6 +12,8 @@
     import CoreGraphics
 #endif
 
+import Foundation
+
 public struct Rect {
     public var origin: Point
     public var size: Size
