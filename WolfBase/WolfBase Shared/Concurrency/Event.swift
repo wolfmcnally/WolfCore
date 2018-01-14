@@ -58,5 +58,9 @@ public class Event<T> {
             observer.closure(value)
         }
     }
+
+    public var isEmpty: Bool {
+        return observers.isEmpty
+    }
 }
 

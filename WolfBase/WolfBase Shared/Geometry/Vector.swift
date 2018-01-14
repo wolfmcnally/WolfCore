@@ -105,6 +105,14 @@ extension Vector {
     public mutating func rotate(byAngle theta: Double) {
         self = rotated(by: theta)
     }
+
+    public var swapped: Vector {
+        return Vector(dx: dy, dy: dx)
+    }
+
+    public mutating func swap() {
+        self = swapped
+    }
     
     public static var unit = Vector(dx: 1, dy: 0)
 }
@@ -114,6 +122,18 @@ extension Vector: Equatable {
 
 public func == (lhs: Vector, rhs: Vector) -> Bool {
     return lhs.dx == rhs.dx && lhs.dy == rhs.dy
+}
+
+public prefix func - (v: Vector) -> Vector {
+    return Vector(dx: -v.dx, dy: -v.dy)
+}
+
+public func + (lhs: Vector, rhs: Vector) -> Vector {
+    return Vector(dx: lhs.dx + rhs.dx, dy: lhs.dy + rhs.dy)
+}
+
+public func - (lhs: Vector, rhs: Vector) -> Vector {
+    return Vector(dx: lhs.dx - rhs.dx, dy: lhs.dy - rhs.dy)
 }
 
 public func / (lhs: Vector, rhs: Double) -> Vector {

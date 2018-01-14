@@ -386,6 +386,7 @@
 		0397CAEA1FABE2FC00468747 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397CAE91FABE2FC00468747 /* TextEditor.swift */; };
 		0397CAEC1FABF30C00468747 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397CAEB1FABF30C00468747 /* Appearance.swift */; };
 		039F32AB1F0AD0C100D2BAD0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F281EFF0D53001E293C /* View.swift */; };
+		03AF5FC120097EDD00929EF9 /* DeepPressGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AF5FC020097EDD00929EF9 /* DeepPressGestureRecognizer.swift */; };
 		03B2E3CC1F008455002856DD /* OSEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3CB1F008455002856DD /* OSEvent.swift */; };
 		03B2E3CD1F008455002856DD /* OSEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3CB1F008455002856DD /* OSEvent.swift */; };
 		03B2E3CE1F008455002856DD /* OSEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3CB1F008455002856DD /* OSEvent.swift */; };
@@ -650,6 +651,7 @@
 		0397CAE71FABE09A00468747 /* ScrollingStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingStackView.swift; sourceTree = "<group>"; };
 		0397CAE91FABE2FC00468747 /* TextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
 		0397CAEB1FABF30C00468747 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		03AF5FC020097EDD00929EF9 /* DeepPressGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepPressGestureRecognizer.swift; sourceTree = "<group>"; };
 		03B2E3CB1F008455002856DD /* OSEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSEvent.swift; sourceTree = "<group>"; };
 		03B2E3D11F00896C002856DD /* AnimationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUtils.swift; sourceTree = "<group>"; };
 		03B2E3D71F008EF7002856DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -1223,6 +1225,7 @@
 				0360B4CC1F00575C00A49A9B /* ControlAction.swift */,
 				03B2E4291F009C59002856DD /* ViewGestureActions.swift */,
 				038FA0721F0726EF001B37C4 /* OrientationNotificationActions.swift */,
+				03AF5FC020097EDD00929EF9 /* DeepPressGestureRecognizer.swift */,
 			);
 			path = Interaction;
 			sourceTree = "<group>";
@@ -1704,6 +1707,7 @@
 				035B6F731EFF0D75001E293C /* StackView.swift in Sources */,
 				03B2E4251F009705002856DD /* KeyboardAvoidantView.swift in Sources */,
 				035B6F501EFF0D6D001E293C /* ModelView.swift in Sources */,
+				03AF5FC120097EDD00929EF9 /* DeepPressGestureRecognizer.swift in Sources */,
 				035B6F6D1EFF0D75001E293C /* ImageView.swift in Sources */,
 				0360B3F91F004DD500A49A9B /* LayoutAttribute.swift in Sources */,
 				0360B3CC1F004D3F00A49A9B /* AttributedStringExtensions.swift in Sources */,

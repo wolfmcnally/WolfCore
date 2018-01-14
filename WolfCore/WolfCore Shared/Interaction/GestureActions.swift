@@ -55,6 +55,38 @@ public class GestureActions {
         }
     }
 
+    func setLongPressAction(named name: String, action: GestureBlock?) {
+        if let action = action {
+            let recognizer = UILongPressGestureRecognizer()
+            setAction(named: name, gestureRecognizer: recognizer, action: action)
+        } else {
+            removeAction(for: name)
+        }
+    }
+
+    func setDeepPressAction(named name: String, action: GestureBlock?) {
+        if let action = action {
+            let recognizer = DeepPressGestureRecognizer()
+            setAction(named: name, gestureRecognizer: recognizer, action: action)
+        } else {
+            removeAction(for: name)
+        }
+    }
+
+    func setLongOrDeepPressAction(named name: String, action: GestureBlock?) {
+        if let action = action {
+            if UIScreen.main.traitCollection.forceTouchCapability == .available {
+                let recognizer = DeepPressGestureRecognizer()
+                setAction(named: name, gestureRecognizer: recognizer, action: action)
+            } else {
+                let recognizer = UILongPressGestureRecognizer()
+                setAction(named: name, gestureRecognizer: recognizer, action: action)
+            }
+        } else {
+            removeAction(for: name)
+        }
+    }
+
     func removeAction(for name: String) {
         gestureRecognizerActions.removeValue(forKey: name)
     }
