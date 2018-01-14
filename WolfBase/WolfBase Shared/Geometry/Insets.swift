@@ -18,6 +18,10 @@ public struct Insets {
         self.bottom = bottom
         self.right = right
     }
+
+    public init(all n: Double) {
+        self.init(top: n, left: n, bottom: n, right: n)
+    }
     
     public init(size: Double) {
         self.init(top: size, left: size, bottom: size, right: size)
