@@ -69,6 +69,20 @@ extension OSView {
         return Constraints(activate: activate, identifier: identifier, constraints)
     }
 
+    @available(iOS 11.0, *)
+    @discardableResult public func constrainFrameToSafeArea(of view: OSView? = nil, topAnchor viewTopAnchor: NSLayoutYAxisAnchor? = nil, bottomAnchor viewBottomAnchor: NSLayoutYAxisAnchor? = nil, insets: Insets = .zero, priority: LayoutPriority = .required, activate: Bool = true, identifier: String? = nil) -> Constraints {
+        let view = checkTargetView(view: view)
+        let safeAreaLayoutGuide = view.safeAreaLayoutGuide
+        let viewTopAnchor = viewTopAnchor ?? safeAreaLayoutGuide.topAnchor
+        let viewBottomAnchor = viewBottomAnchor ?? safeAreaLayoutGuide.bottomAnchor
+        var constraints = [NSLayoutConstraint]()
+        if let 🍒 = insets.left { constraints.append(leadingAnchor == safeAreaLayoutGuide.leadingAnchor + CGFloat(🍒) =&= priority =%= [identifier, "leading"]) }
+        if let 🍒 = insets.right { constraints.append(trailingAnchor == safeAreaLayoutGuide.trailingAnchor - CGFloat(🍒) =&= priority =%= [identifier, "trailing"]) }
+        if let 🍒 = insets.top { constraints.append(topAnchor == viewTopAnchor + CGFloat(🍒) =&= priority =%= [identifier, "top"]) }
+        if let 🍒 = insets.bottom { constraints.append(bottomAnchor == viewBottomAnchor - CGFloat(🍒) =&= priority =%= [identifier, "bottom"]) }
+        return Constraints(activate: activate, identifier: identifier, constraints)
+    }
+
     @discardableResult public func constrainCenter(to point: CGPoint, of view: OSView? = nil, priority: LayoutPriority = .required, activate: Bool = true, identifier: String? = nil) -> Constraints {
         let view = checkTargetView(view: view)
         return Constraints(activate: activate, identifier: identifier,

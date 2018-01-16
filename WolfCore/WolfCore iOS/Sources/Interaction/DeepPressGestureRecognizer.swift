@@ -136,7 +136,7 @@ public class DeepPressGestureRecognizer: UIGestureRecognizer
     }
 
     private func handleTouch(_ touch: UITouch) {
-        guard let view = view, touch.force != 0 && touch.maximumPossibleForce != 0 else {
+        guard touch.force != 0 && touch.maximumPossibleForce != 0 else {
             return
         }
 
