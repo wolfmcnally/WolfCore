@@ -70,6 +70,11 @@ public class EditableContainerView: View, Editable {
         clipsToBounds = true
     }
 
+    public func setEditing(_ isEditing: Bool, animated: Bool) {
+        self.isEditing = isEditing
+        syncToEditing(animated: animated)
+    }
+
     public func syncToEditing(animated: Bool) {
         switch isEditing {
         case false:

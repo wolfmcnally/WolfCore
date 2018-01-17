@@ -90,7 +90,7 @@ open class View: OSView {
     
     func loadContentFromNib() {
     if let contentNibName = contentNibName {
-    let view = ~loadView(fromNibNamed: contentNibName, owner: self)
+    let view = ‡loadView(fromNibNamed: contentNibName, owner: self)
     transferContent(from: view)
     }
     }

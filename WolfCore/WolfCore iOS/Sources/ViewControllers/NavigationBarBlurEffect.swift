@@ -21,7 +21,7 @@ class NavigationBarBlurEffect {
     
     func setup() {
         let effect = UIBlurEffect(style: .light)
-        effectView = ~UIVisualEffectView(effect: effect)
+        effectView = ‡UIVisualEffectView(effect: effect)
         // Add the effect view as a the first subview of the _UIBarBackground view
         let navigationBar = navigationController.navigationBar
         navigationBar.subviews[0].insertSubview(effectView, at: 0)

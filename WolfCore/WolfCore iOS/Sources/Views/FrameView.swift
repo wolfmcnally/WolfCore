@@ -21,10 +21,28 @@ public class FrameView: View {
         case rectangle
         case rounded(cornerRadius: CGFloat) // corner radius
         case underline // uses bottom of first child view as the place to draw the underline
+        case custom(view: UIView)
     }
     
     public var style: Style = .rectangle {
+        willSet {
+            switch style {
+            case .custom(let view):
+                view.removeFromSuperview()
+            default:
+                break
+            }
+        }
+
         didSet {
+            switch style {
+            case .custom(let view):
+                insertSubview(‡view, at: 0)
+                view.constrainFrameToFrame()
+            default:
+                break
+            }
+            
             setNeedsDisplay()
         }
     }
@@ -68,6 +86,8 @@ public class FrameView: View {
                 path.move(to: childFrame.minXmaxY)
                 path.addLine(to: childFrame.maxXmaxY)
                 path.stroke()
+            case .custom:
+                break
             }
         }
     }

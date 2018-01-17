@@ -35,7 +35,7 @@ public class ActivityOverlayView: View {
     }
     
     private lazy var activityIndicatorView: UIActivityIndicatorView = .init(activityIndicatorStyle: .whiteLarge) • { 🍒 in
-        ~🍒
+        ‡🍒
         🍒.hidesWhenStopped = false
     }
     

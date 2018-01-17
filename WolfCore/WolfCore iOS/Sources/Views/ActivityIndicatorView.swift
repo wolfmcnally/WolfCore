@@ -47,7 +47,7 @@ public class ActivityIndicatorView: View {
     }
 
     private lazy var activityIndicatorView: UIActivityIndicatorView = .init(activityIndicatorStyle: self.style) • { 🍒 in
-        ~🍒
+        ‡🍒
         🍒.hidesWhenStopped = false
         🍒.startAnimating()
     }

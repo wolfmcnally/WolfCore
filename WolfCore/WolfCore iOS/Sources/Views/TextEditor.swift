@@ -9,7 +9,11 @@
 import UIKit
 
 protocol TextEditor: AnyObject {
+    func becomeFirstResponder() -> Bool
+    func reloadInputViews()
+
     var inputView: UIView? { get set }
+    var inputAccessoryView: UIView? { get set }
     var plainText: String { get set }
     var textColor: UIColor? { get set }
     var font: UIFont? { get set }
@@ -24,6 +28,7 @@ protocol TextEditor: AnyObject {
     var returnKeyType: UIReturnKeyType { get set }
     var enablesReturnKeyAutomatically: Bool { get set }
     var keyboardType: UIKeyboardType { get set }
+    var keyboardAppearance: UIKeyboardAppearance { get set }
     var isSecureTextEntry: Bool { get set }
 
     @available(iOS 10.0, *)
@@ -33,4 +38,3 @@ protocol TextEditor: AnyObject {
 extension TextField: TextEditor { }
 
 extension TextView: TextEditor { }
-

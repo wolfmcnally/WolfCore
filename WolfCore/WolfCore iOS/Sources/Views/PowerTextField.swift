@@ -17,6 +17,19 @@ public class PowerTextField: View, Editable {
     public let contentType: ContentType
     public let numberOfLines: Int
 
+    public enum ContentType {
+        case text           // Generic prose
+        case rawText        // Text with no correction or capitalization
+        case name           // A person's name
+        case email          // An e-mail address
+        case phone          // A phone number
+        case phoneOrEmail   // A phone number or email address (Apple ID), for text messaging
+        case integer(CountableClosedRange<Int>) // An integer in the specified range
+        case social         // A social-media handle
+        case date           // A date
+        case password       // A password (numberOfLines must be 1)
+    }
+
     public init(name: String, contentType: ContentType = .text, numberOfLines: Int = 1) {
         self.name = name
         self.contentType = contentType
@@ -28,16 +41,15 @@ public class PowerTextField: View, Editable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public var isEditing: Bool = false
+    public private(set) var isEditing: Bool = false
 
-    public enum ContentType {
-        case text
-        case rawText
-        case integer(CountableClosedRange<Int>)
-        case social
-        case date
-        case email
-        case password
+    public func setEditing(_ isEditing: Bool, animated: Bool) {
+        guard self.isEditing != isEditing else { return }
+        self.isEditing = isEditing
+        if isEditing {
+            _ = textEditor.becomeFirstResponder()
+        }
+        syncToEditing(animated: animated)
     }
 
     public var textAlignment: NSTextAlignment = .natural {
@@ -288,6 +300,11 @@ public class PowerTextField: View, Editable {
         dispatchAnimated(animated, delay: 0.1, options: .beginFromCurrentState) {
             self.placeholderMessageContainer.alpha = 0
             }.run()
+    }
+
+    public var keyboardAppearance: UIKeyboardAppearance {
+        get { return textEditor.keyboardAppearance }
+        set { textEditor.keyboardAppearance = newValue }
     }
 
     public var disallowedCharacters: CharacterSet? = CharacterSet.controlCharacters
@@ -653,7 +670,7 @@ public class PowerTextField: View, Editable {
 
     private func syncToFrameMode() {
         switch frameStyle {
-        case .rectangle, .rounded, .none:
+        case .rectangle, .rounded, .none, .custom:
             frameInsets = rectangleFrameInsets
         case .underline:
             frameInsets = underlineFrameInsets
@@ -798,22 +815,55 @@ public class PowerTextField: View, Editable {
         })
     }()
 
+    public override func tintColorDidChange() {
+        super.tintColorDidChange()
+        keyboardSwitchView?.tintColor = tintColor
+    }
+
+    private var keyboardSwitchView: SegmentedAccessoryInputView!
+
     private func syncToContentType() {
+        func setEmailKeyboard() {
+            keyboardType = .emailAddress
+            autocapitalizationType = .none
+            spellCheckingType = .no
+            autocorrectionType = .no
+        }
+
+        func setPhoneKeyboard() {
+            keyboardType = .numberPad
+        }
+
         switch contentType {
         case .text:
             break
         case .integer(let validRange):
             keyboardType = .decimalPad
             validator = IntValidator(name: name, validRange: validRange)
+        case .name:
+            autocapitalizationType = .words
+            spellCheckingType = .no
+            autocorrectionType = .no
         case .rawText, .social:
             autocapitalizationType = .none
             spellCheckingType = .no
             autocorrectionType = .no
         case .email:
-            keyboardType = .emailAddress
-            autocapitalizationType = .none
-            spellCheckingType = .no
-            autocorrectionType = .no
+            setEmailKeyboard()
+        case .phone:
+            setPhoneKeyboard()
+        case .phoneOrEmail:
+            keyboardSwitchView = SegmentedAccessoryInputView()
+            keyboardSwitchView.tintColor = tintColor
+            keyboardSwitchView.addSegment(title: "Phone Number") { [unowned self] in
+                setPhoneKeyboard()
+                self.textEditor.reloadInputViews()
+            }
+            keyboardSwitchView.addSegment(title: "Apple ID (Email)") { [unowned self] in
+                setEmailKeyboard()
+                self.textEditor.reloadInputViews()
+            }
+            textEditor.inputAccessoryView = keyboardSwitchView
         case .date:
             datePicker = UIDatePicker()
         case .password:

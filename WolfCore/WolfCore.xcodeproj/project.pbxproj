@@ -436,6 +436,7 @@
 		03B2E4451F00A23B002856DD /* ResourceUtils-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E4441F00A23B002856DD /* ResourceUtils-iOS.swift */; };
 		03B2E4461F00A23B002856DD /* ResourceUtils-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E4441F00A23B002856DD /* ResourceUtils-iOS.swift */; };
 		03B2F2301F38E6A400F8249D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B2F22F1F38E69100F8249D /* Assets.xcassets */; };
+		03D60DDF200EE947005B2518 /* SegmentedAccessoryInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D60DDE200EE947005B2518 /* SegmentedAccessoryInputView.swift */; };
 		03E483511F1EB466006252B0 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E483501F1EB466006252B0 /* ImageView.swift */; };
 		03E483531F1ED544006252B0 /* DrawCrossedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E483521F1ED544006252B0 /* DrawCrossedBox.swift */; };
 		03E483541F1ED544006252B0 /* DrawCrossedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E483521F1ED544006252B0 /* DrawCrossedBox.swift */; };
@@ -688,6 +689,7 @@
 		03B2E4401F00A209002856DD /* ResourceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceUtils.swift; sourceTree = "<group>"; };
 		03B2E4441F00A23B002856DD /* ResourceUtils-iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResourceUtils-iOS.swift"; sourceTree = "<group>"; };
 		03B2F22F1F38E69100F8249D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03D60DDE200EE947005B2518 /* SegmentedAccessoryInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedAccessoryInputView.swift; sourceTree = "<group>"; };
 		03E483501F1EB466006252B0 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		03E483521F1ED544006252B0 /* DrawCrossedBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawCrossedBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1016,6 +1018,7 @@
 				035B6F381EFF0D63001E293C /* PhotoView.swift */,
 				035B6F3C1EFF0D63001E293C /* PlaceholderView.swift */,
 				0360C0D51FAD1B3E00A77477 /* PowerTextField.swift */,
+				03D60DDE200EE947005B2518 /* SegmentedAccessoryInputView.swift */,
 				0397CAE91FABE2FC00468747 /* TextEditor.swift */,
 				0397CAE71FABE09A00468747 /* ScrollingStackView.swift */,
 				0360B4D41F00598400A49A9B /* SpacerView.swift */,
@@ -1712,6 +1715,7 @@
 				0360B3F91F004DD500A49A9B /* LayoutAttribute.swift in Sources */,
 				0360B3CC1F004D3F00A49A9B /* AttributedStringExtensions.swift in Sources */,
 				03B2E3F01F008F04002856DD /* EmailUtils.swift in Sources */,
+				03D60DDF200EE947005B2518 /* SegmentedAccessoryInputView.swift in Sources */,
 				0360B42A1F004E5F00A49A9B /* RunLoopUtils.swift in Sources */,
 				03B2E3FD1F008F0B002856DD /* MessageBulletinView.swift in Sources */,
 				035B6F541EFF0D6D001E293C /* PhotoView.swift in Sources */,

@@ -580,6 +580,10 @@
 		03C88CE21FA3CE9600E6B859 /* SortWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C88CE01FA3CE9600E6B859 /* SortWeight.swift */; };
 		03C88CE31FA3CE9600E6B859 /* SortWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C88CE01FA3CE9600E6B859 /* SortWeight.swift */; };
 		03C88CE41FA3CE9600E6B859 /* SortWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C88CE01FA3CE9600E6B859 /* SortWeight.swift */; };
+		03D60DDA200EA58C005B2518 /* TweakOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D60DD9200EA58C005B2518 /* TweakOperator.swift */; };
+		03D60DDB200EA58C005B2518 /* TweakOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D60DD9200EA58C005B2518 /* TweakOperator.swift */; };
+		03D60DDC200EA58C005B2518 /* TweakOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D60DD9200EA58C005B2518 /* TweakOperator.swift */; };
+		03D60DDD200EA58C005B2518 /* TweakOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D60DD9200EA58C005B2518 /* TweakOperator.swift */; };
 		03D8FF931EFC8C570000AAD5 /* WolfBase_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 03D8FF851EFC8C570000AAD5 /* WolfBase_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03D8FFA11EFC8D610000AAD5 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D8FFA01EFC8D530000AAD5 /* Interval.swift */; };
 		03E131761FA87CBC00C1B937 /* WolfBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D8FF821EFC8C570000AAD5 /* WolfBase.framework */; };
@@ -961,6 +965,7 @@
 		03B2E4091F009377002856DD /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		03B2E43B1F00A1D5002856DD /* ResourceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceUtils.swift; sourceTree = "<group>"; };
 		03C88CE01FA3CE9600E6B859 /* SortWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortWeight.swift; sourceTree = "<group>"; };
+		03D60DD9200EA58C005B2518 /* TweakOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakOperator.swift; sourceTree = "<group>"; };
 		03D8FF821EFC8C570000AAD5 /* WolfBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D8FF851EFC8C570000AAD5 /* WolfBase_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolfBase_iOS.h; sourceTree = "<group>"; };
 		03D8FF861EFC8C570000AAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1587,6 +1592,7 @@
 				03EF4F991EFF27800002E947 /* NestingOperator.swift */,
 				032C4D881EFCED6E004E03DD /* PipeOperator.swift */,
 				037F7A061EFDDEFF005D7ABB /* ReferenceOperator.swift */,
+				03D60DD9200EA58C005B2518 /* TweakOperator.swift */,
 				03EF4FA91EFF28E50002E947 /* WithOperator.swift */,
 			);
 			path = Operators;
@@ -1927,6 +1933,7 @@
 				0360B51E1F0061F200A49A9B /* CacheLayer.swift in Sources */,
 				037F7A641EFDE000005D7ABB /* NumericUtils.swift in Sources */,
 				03EF4F2F1EFF205B0002E947 /* ISO8601.swift in Sources */,
+				03D60DDB200EA58C005B2518 /* TweakOperator.swift in Sources */,
 				0360B5691F00674700A49A9B /* IPAddress6.swift in Sources */,
 				0359FF6F1EFDF51100546B30 /* GeneralError.swift in Sources */,
 				03EF4ED41EFF1D6A0002E947 /* Rect.swift in Sources */,
@@ -2122,6 +2129,7 @@
 				0360B5191F0061F200A49A9B /* CacheLayer.swift in Sources */,
 				037F7A771EFDE001005D7ABB /* NumericUtils.swift in Sources */,
 				03EF4F391EFF205C0002E947 /* ISO8601.swift in Sources */,
+				03D60DDC200EA58C005B2518 /* TweakOperator.swift in Sources */,
 				0360B5751F00674700A49A9B /* IPAddress6.swift in Sources */,
 				0359FF741EFDF51200546B30 /* GeneralError.swift in Sources */,
 				03EF4EDC1EFF1D6A0002E947 /* Rect.swift in Sources */,
@@ -2399,6 +2407,7 @@
 				037F7A581EFDDFF8005D7ABB /* ReferenceOperator.swift in Sources */,
 				03EF4F921EFF222F0002E947 /* WeakSet.swift in Sources */,
 				03EF4FA21EFF28330002E947 /* InheritsFromOperator.swift in Sources */,
+				03D60DDD200EA58C005B2518 /* TweakOperator.swift in Sources */,
 				0360B5401F00635700A49A9B /* MemoryCacheLayer.swift in Sources */,
 				037F7ABE1EFDE781005D7ABB /* TextCheckingResult.swift in Sources */,
 				03EF4EE61EFF1D6B0002E947 /* Vector.swift in Sources */,
@@ -2493,6 +2502,7 @@
 				0360B5231F0061F300A49A9B /* CacheLayer.swift in Sources */,
 				0383295C1EFC927D0026D259 /* NumericUtils.swift in Sources */,
 				032C4D781EFCCC31004E03DD /* RegularExpressionExtensions.swift in Sources */,
+				03D60DDA200EA58C005B2518 /* TweakOperator.swift in Sources */,
 				0360B55D1F00674600A49A9B /* IPAddress6.swift in Sources */,
 				03EF4F251EFF205B0002E947 /* ISO8601.swift in Sources */,
 				0359FF6A1EFDF51100546B30 /* GeneralError.swift in Sources */,

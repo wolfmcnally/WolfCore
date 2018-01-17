@@ -22,6 +22,11 @@ open class StackView: OSStackView, Editable {
         _setup()
     }
 
+    public func setEditing(_ isEditing: Bool, animated: Bool) {
+        self.isEditing = isEditing
+        syncToEditing(animated: animated)
+    }
+
     public func syncToEditing(animated: Bool) {
         for view in arrangedSubviews {
             if let editableView = view as? Editable {

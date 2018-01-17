@@ -186,12 +186,10 @@ extension OSView {
     }
 }
 
-//#if os(iOS) || os(tvOS)
-@discardableResult public prefix func ~<T: OSView> (right: T) -> T {
-    right.translatesAutoresizingMaskIntoConstraints = false
-    return right
+@discardableResult public prefix func ‡<T: OSView> (rhs: T) -> T {
+    rhs.translatesAutoresizingMaskIntoConstraints = false
+    return rhs
 }
-//#endif
 
 // swiftlint:enable cyclomatic_complexity
 
