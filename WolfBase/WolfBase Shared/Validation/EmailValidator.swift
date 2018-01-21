@@ -21,7 +21,7 @@ open class EmailValidator: Validator {
 }
 
 extension StringValidation {
-    fileprivate func containsOnlyValidEmailCharacters() throws -> StringValidation {
+    func containsOnlyValidEmailCharacters() throws -> StringValidation {
         do {
             return try pattern("^[_+.a-zA-Z0-9@-]*$")
         } catch is ValidationError {
@@ -29,7 +29,7 @@ extension StringValidation {
         }
     }
     
-    fileprivate func isEmail() throws -> StringValidation {
+    func isEmail() throws -> StringValidation {
         guard matchesDataDetector(type: .link, scheme: "mailto") else {
             throw ValidationError(message: "#{name} must be a valid email address." ¶ ["name": name], violation: "emailAddress")
         }

@@ -643,7 +643,7 @@ public class PowerTextField: View, Editable {
         }
     }
 
-    private var frameInsets = Insets(top: 8, left: 8, bottom: 8, right: 8) {
+    private var frameInsets = CGInsets(top: 8, left: 8, bottom: 8, right: 8) {
         didSet {
             syncToFrameInsets()
         }
@@ -654,14 +654,14 @@ public class PowerTextField: View, Editable {
         frameContentConstraints ◊= horizontalStackView.constrainFrameToFrame(insets: frameInsets)
     }
 
-    public var rectangleFrameInsets = Insets(top: 8, left: 8, bottom: 8, right: 8) {
+    public var rectangleFrameInsets = CGInsets(top: 8, left: 8, bottom: 8, right: 8) {
         didSet {
             frameInsets = rectangleFrameInsets
             syncToFrameInsets()
         }
     }
 
-    public var underlineFrameInsets = Insets(top: 2, left: 0, bottom: 6, right: 0) {
+    public var underlineFrameInsets = CGInsets(top: 2, left: 0, bottom: 6, right: 0) {
         didSet {
             frameInsets = underlineFrameInsets
             syncToFrameInsets()
@@ -675,7 +675,7 @@ public class PowerTextField: View, Editable {
         case .underline:
             frameInsets = underlineFrameInsets
         }
-        messageSpacerView.width = CGFloat(frameInsets.left!)
+        messageSpacerView.width = frameInsets.left!
     }
 
     public var topRightViews = [UIView]() {
@@ -974,6 +974,11 @@ public class PowerTextField: View, Editable {
     public func setNeedsValidation() {
         needsValidation = true
         restartValidationTimer()
+    }
+
+    public var prevalidatedText: String? {
+        guard let validator = validator else { return nil }
+        return try? validator.submitValidate(text)
     }
 
     public func validate() {

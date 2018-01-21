@@ -44,7 +44,7 @@ public class MessageBulletinView<B: MessageBulletin>: BulletinView<B> {
             contentView
         ]
 
-        contentView.constrainFrameToFrame(insets: Insets(top: 2, left: 2, bottom: 2, right: 2))
+        contentView.constrainFrameToFrame(insets: CGInsets(top: 2, left: 2, bottom: 2, right: 2))
     }
 
     private func setupStackView() {

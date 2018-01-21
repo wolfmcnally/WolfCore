@@ -51,8 +51,8 @@ public class MailComposer: NSObject {
 
 extension MailComposer : MFMailComposeViewControllerDelegate {
     public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        self.completion?(result)
         viewController.dismiss() {
+            self.completion?(result)
             self.viewController = nil
         }
     }

@@ -15,11 +15,11 @@
 import WolfBase
 
 #if os(macOS)
-    public func newImage(withSize size: Size, isOpaque: Bool = false, background: NSColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = true, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> NSImage {
+    public func newImage(withSize size: Size, isOpaque: Bool = false, background: NSColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = true, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock? = nil) -> NSImage {
         return newImage(withSize: size.cgSize, isOpaque: isOpaque, background: background, scale: scale, isFlipped: isFlipped, renderingMode: renderingMode, drawing: drawing)
     }
 
-    public func newImage(withSize size: CGSize, isOpaque: Bool = false, background: NSColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = true, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> NSImage {
+    public func newImage(withSize size: CGSize, isOpaque: Bool = false, background: NSColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = true, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock? = nil) -> NSImage {
         let image = NSImage.init(size: size)
 
         let rep = NSBitmapImageRep.init(bitmapDataPlanes: nil,
@@ -53,19 +53,21 @@ import WolfBase
             }
         }
 
-        drawInto(context, isFlipped: isFlipped, bounds: bounds) { context in
-            drawing(context)
+        if let drawing = drawing {
+            drawInto(context, isFlipped: isFlipped, bounds: bounds) { context in
+                drawing(context)
+            }
         }
 
         image.unlockFocus()
         return image
     }
 #else
-    public func newImage(withSize size: Size, isOpaque: Bool = false, background: UIColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> UIImage {
+    public func newImage(withSize size: Size, isOpaque: Bool = false, background: UIColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock? = nil) -> UIImage {
         return newImage(withSize: size.cgSize, isOpaque: isOpaque, background: background, scale: scale, isFlipped: isFlipped, renderingMode: renderingMode, drawing: drawing)
     }
 
-    public func newImage(withSize size: CGSize, isOpaque: Bool = false, background: UIColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock) -> UIImage {
+    public func newImage(withSize size: CGSize, isOpaque: Bool = false, background: UIColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = false, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock? = nil) -> UIImage {
         guard size.width > 0 && size.height > 0 else {
             fatalError("Size may not be empty.")
         }
@@ -81,8 +83,10 @@ import WolfBase
             }
         }
 
-        drawInto(context, isFlipped: isFlipped, bounds: bounds) { context in
-            drawing(context)
+        if let drawing = drawing {
+            drawInto(context, isFlipped: isFlipped, bounds: bounds) { context in
+                drawing(context)
+            }
         }
 
         let image = UIGraphicsGetImageFromCurrentImageContext()!.withRenderingMode(renderingMode)

@@ -196,7 +196,7 @@ public class InFlightView: View {
         self => [
             columnsStackView
         ]
-        columnsStackView.constrainFrameToFrame(insets: Insets(top: 20, left: 20, bottom: 20, right: 20), identifier: "inFlightColumns")
+        columnsStackView.constrainFrameToFrame(insets: CGInsets(top: 20, left: 20, bottom: 20, right: 20), identifier: "inFlightColumns")
     }
 }
 

@@ -334,6 +334,14 @@
 		0360C0D91FAD1EE200A77477 /* IntValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360C0D71FAD1EE200A77477 /* IntValidator.swift */; };
 		0360C0DA1FAD1EE200A77477 /* IntValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360C0D71FAD1EE200A77477 /* IntValidator.swift */; };
 		0360C0DB1FAD1EE200A77477 /* IntValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360C0D71FAD1EE200A77477 /* IntValidator.swift */; };
+		03626D242014401C00E204E2 /* PhoneValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03626D232014401C00E204E2 /* PhoneValidator.swift */; };
+		03626D252014401C00E204E2 /* PhoneValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03626D232014401C00E204E2 /* PhoneValidator.swift */; };
+		03626D262014401C00E204E2 /* PhoneValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03626D232014401C00E204E2 /* PhoneValidator.swift */; };
+		03626D272014401C00E204E2 /* PhoneValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03626D232014401C00E204E2 /* PhoneValidator.swift */; };
+		03626D292014427200E204E2 /* PhoneOrEmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03626D282014427200E204E2 /* PhoneOrEmailValidator.swift */; };
+		03626D2A2014427200E204E2 /* PhoneOrEmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03626D282014427200E204E2 /* PhoneOrEmailValidator.swift */; };
+		03626D2B2014427200E204E2 /* PhoneOrEmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03626D282014427200E204E2 /* PhoneOrEmailValidator.swift */; };
+		03626D2C2014427200E204E2 /* PhoneOrEmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03626D282014427200E204E2 /* PhoneOrEmailValidator.swift */; };
 		036B6A8A1F2AE78E001160D8 /* TextAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B6A891F2AE78E001160D8 /* TextAlignment.swift */; };
 		036B6A8B1F2AE78E001160D8 /* TextAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B6A891F2AE78E001160D8 /* TextAlignment.swift */; };
 		036B6A8C1F2AE78E001160D8 /* TextAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B6A891F2AE78E001160D8 /* TextAlignment.swift */; };
@@ -898,6 +906,8 @@
 		0360B5551F00673E00A49A9B /* URLComponentsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentsExtensions.swift; sourceTree = "<group>"; };
 		0360B5561F00673E00A49A9B /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 		0360C0D71FAD1EE200A77477 /* IntValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntValidator.swift; sourceTree = "<group>"; };
+		03626D232014401C00E204E2 /* PhoneValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneValidator.swift; sourceTree = "<group>"; };
+		03626D282014427200E204E2 /* PhoneOrEmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneOrEmailValidator.swift; sourceTree = "<group>"; };
 		036B6A891F2AE78E001160D8 /* TextAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlignment.swift; sourceTree = "<group>"; };
 		037F7A061EFDDEFF005D7ABB /* ReferenceOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceOperator.swift; sourceTree = "<group>"; };
 		037F7A0D1EFDDF55005D7ABB /* WolfBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1276,6 +1286,8 @@
 			isa = PBXGroup;
 			children = (
 				035B6F9A1EFF0E5C001E293C /* EmailValidator.swift */,
+				03626D232014401C00E204E2 /* PhoneValidator.swift */,
+				03626D282014427200E204E2 /* PhoneOrEmailValidator.swift */,
 				0360C0D71FAD1EE200A77477 /* IntValidator.swift */,
 				03228B8F1FAD2C8600550720 /* UUIDValidator.swift */,
 				035B6F9D1EFF0E5C001E293C /* PasswordValidator.swift */,
@@ -1930,6 +1942,7 @@
 				037F7A4D1EFDDFF2005D7ABB /* UTF8.swift in Sources */,
 				0304FD861FBD4A06007ECDAF /* Event.swift in Sources */,
 				035B6FA61EFF0E6D001E293C /* PasswordValidator.swift in Sources */,
+				03626D252014401C00E204E2 /* PhoneValidator.swift in Sources */,
 				0360B51E1F0061F200A49A9B /* CacheLayer.swift in Sources */,
 				037F7A641EFDE000005D7ABB /* NumericUtils.swift in Sources */,
 				03EF4F2F1EFF205B0002E947 /* ISO8601.swift in Sources */,
@@ -2012,6 +2025,7 @@
 				03228B911FAD2C8600550720 /* UUIDValidator.swift in Sources */,
 				031DEE9C1EFEF0F1001DCF3F /* Heartbeat.swift in Sources */,
 				035B6FA91EFF0E6D001E293C /* TrimmedValidator.swift in Sources */,
+				03626D2A2014427200E204E2 /* PhoneOrEmailValidator.swift in Sources */,
 				0360B5201F0061F200A49A9B /* LocalStorageCacheLayer.swift in Sources */,
 				0359FF591EFDF35400546B30 /* Framework.swift in Sources */,
 				037F7A621EFDE000005D7ABB /* BinarySearch.swift in Sources */,
@@ -2126,6 +2140,7 @@
 				037F7A4E1EFDDFF3005D7ABB /* UTF8.swift in Sources */,
 				0304FD871FBD4A06007ECDAF /* Event.swift in Sources */,
 				035B6FAD1EFF0E6E001E293C /* PasswordValidator.swift in Sources */,
+				03626D262014401C00E204E2 /* PhoneValidator.swift in Sources */,
 				0360B5191F0061F200A49A9B /* CacheLayer.swift in Sources */,
 				037F7A771EFDE001005D7ABB /* NumericUtils.swift in Sources */,
 				03EF4F391EFF205C0002E947 /* ISO8601.swift in Sources */,
@@ -2208,6 +2223,7 @@
 				03228B921FAD2C8600550720 /* UUIDValidator.swift in Sources */,
 				031DEEA71EFEF0F1001DCF3F /* Heartbeat.swift in Sources */,
 				035B6FB01EFF0E6E001E293C /* TrimmedValidator.swift in Sources */,
+				03626D2B2014427200E204E2 /* PhoneOrEmailValidator.swift in Sources */,
 				0360B51B1F0061F200A49A9B /* LocalStorageCacheLayer.swift in Sources */,
 				0359FF5A1EFDF35400546B30 /* Framework.swift in Sources */,
 				037F7A751EFDE001005D7ABB /* BinarySearch.swift in Sources */,
@@ -2436,6 +2452,7 @@
 				035DAA241EFF5ABE001040CE /* StringTransformations.swift in Sources */,
 				0360B53D1F00635700A49A9B /* CacheLayer.swift in Sources */,
 				035DAA541EFF9188001040CE /* LocalizationOperator.swift in Sources */,
+				03626D2C2014427200E204E2 /* PhoneOrEmailValidator.swift in Sources */,
 				035B6FB41EFF0E6E001E293C /* PasswordValidator.swift in Sources */,
 				03EF4F8F1EFF222F0002E947 /* TransferValue.swift in Sources */,
 				038FA0411F071BD9001B37C4 /* RunesArray.swift in Sources */,
@@ -2454,6 +2471,7 @@
 				03EF4F891EFF222F0002E947 /* Interpolable.swift in Sources */,
 				03B2E39D1F0071D3002856DD /* HMACSHA256.swift in Sources */,
 				035B70021EFF18AB001E293C /* Gradient.swift in Sources */,
+				03626D272014401C00E204E2 /* PhoneValidator.swift in Sources */,
 				03B2E3AF1F007D23002856DD /* NotificationCenterExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2499,6 +2517,7 @@
 				032C4D901EFCEEF2004E03DD /* UTF8.swift in Sources */,
 				0304FD851FBD4A06007ECDAF /* Event.swift in Sources */,
 				035B6F9F1EFF0E6D001E293C /* PasswordValidator.swift in Sources */,
+				03626D242014401C00E204E2 /* PhoneValidator.swift in Sources */,
 				0360B5231F0061F300A49A9B /* CacheLayer.swift in Sources */,
 				0383295C1EFC927D0026D259 /* NumericUtils.swift in Sources */,
 				032C4D781EFCCC31004E03DD /* RegularExpressionExtensions.swift in Sources */,
@@ -2581,6 +2600,7 @@
 				03228B901FAD2C8600550720 /* UUIDValidator.swift in Sources */,
 				03EF4F201EFF205B0002E947 /* Base64.swift in Sources */,
 				031DEE911EFEF0F0001DCF3F /* Heartbeat.swift in Sources */,
+				03626D292014427200E204E2 /* PhoneOrEmailValidator.swift in Sources */,
 				0360B5251F0061F300A49A9B /* LocalStorageCacheLayer.swift in Sources */,
 				035B6FA21EFF0E6D001E293C /* TrimmedValidator.swift in Sources */,
 				0359FF581EFDF35400546B30 /* Framework.swift in Sources */,
