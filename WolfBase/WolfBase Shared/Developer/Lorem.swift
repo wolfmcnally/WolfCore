@@ -154,10 +154,12 @@ public class Lorem {
         return "\(firstName) \(lastName)"
     }
 
-    public static func email() -> String {
+    public static func email(firstName: String? = nil, lastName: String? = nil) -> String {
         let delimiter = Random.choice(among: emailDelimiters)
         let domain = Random.choice(among: emailDomains)
-        return "\(firstName())\(delimiter)\(lastName())@\(domain)".lowercased()
+        let fn = firstName ?? self.firstName()
+        let ln = lastName ?? self.lastName()
+        return "\(fn)\(delimiter)\(ln)@\(domain)".lowercased()
     }
 
     public static func url() -> URL {
