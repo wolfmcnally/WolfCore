@@ -244,6 +244,19 @@ public class Lorem {
         return uuid().uuidString
     }
 
+    public static func letters(_ count: Int) -> String {
+        let alphabet = Array("abcdefghijklmnopqrstuvwxyz")
+        return (0 ..< count).reduce("") { result, _ in
+            result + String(Random.choice(among: alphabet))
+        }
+    }
+
+    public static func digits(_ count: Int) -> String {
+        return (0 ..< count).reduce("") { result, _ in
+            result + String(Random.number(0 ... 9))
+        }
+    }
+
     // ======================================================= //
     // MARK: - Private
     // ======================================================= //
