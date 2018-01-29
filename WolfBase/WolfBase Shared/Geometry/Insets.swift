@@ -6,55 +6,34 @@
 //  Copyright © 2017 WolfMcNally.com. All rights reserved.
 //
 
-public struct Insets {
-    public var top: Double?
-    public var left: Double?
-    public var bottom: Double?
-    public var right: Double?
+import UIKit
+
+public struct Insets<T: BinaryFloatingPoint> {
+    public var top: T?
+    public var left: T?
+    public var bottom: T?
+    public var right: T?
     
-    public init(top: Double? = nil, left: Double? = nil, bottom: Double? = nil, right: Double? = nil) {
+    public init(top: T? = nil, left: T? = nil, bottom: T? = nil, right: T? = nil) {
         self.top = top
         self.left = left
         self.bottom = bottom
         self.right = right
     }
 
-    public init(all n: Double) {
+    public init(all n: T) {
         self.init(top: n, left: n, bottom: n, right: n)
     }
     
-    public init(size: Double) {
+    public init(size: T) {
         self.init(top: size, left: size, bottom: size, right: size)
     }
     
-    public static let zero = Insets(top: 0, left: 0, bottom: 0, right: 0)
+    public static var zero: Insets { return Insets(top: 0, left: 0, bottom: 0, right: 0) }
 }
 
 #if !os(Linux)
     import CoreGraphics
 
-    public struct CGInsets {
-        public var top: CGFloat?
-        public var left: CGFloat?
-        public var bottom: CGFloat?
-        public var right: CGFloat?
-
-        public init(top: CGFloat? = nil, left: CGFloat? = nil, bottom: CGFloat? = nil, right: CGFloat? = nil) {
-            self.top = top
-            self.left = left
-            self.bottom = bottom
-            self.right = right
-        }
-
-        public init(all n: CGFloat) {
-            self.init(top: n, left: n, bottom: n, right: n)
-        }
-
-        public init(size: CGFloat) {
-            self.init(top: size, left: size, bottom: size, right: size)
-        }
-
-        public static let zero = CGInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-
+    public typealias CGInsets = Insets<CGFloat>
 #endif
