@@ -72,6 +72,7 @@ extension ContentType {
     public static let txt = ContentType("text/plain")
     public static let pdf = ContentType("application/pdf")
     public static let mp4 = ContentType("video/mp4")
+    public static let vcard = ContentType("text/vcard")
 }
 
 public struct Charset: ExtensibleEnumeratedName {
