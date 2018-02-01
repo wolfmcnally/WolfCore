@@ -52,6 +52,7 @@
 		031DEE721EFEEC49001DCF3F /* OrientationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE711EFEEC49001DCF3F /* OrientationUtils.swift */; };
 		031DEE781EFEEECC001DCF3F /* DeviceOrientationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE771EFEEECC001DCF3F /* DeviceOrientationAction.swift */; };
 		031DEE7A1EFEEF24001DCF3F /* DeviceAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DEE791EFEEF24001DCF3F /* DeviceAccess.swift */; };
+		033DBC6B2021502300DC4E86 /* TextMessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033DBC6A2021502300DC4E86 /* TextMessageComposer.swift */; };
 		0359000B1EFE498700546B30 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359000A1EFE498700546B30 /* Framework.swift */; };
 		0359000C1EFE498700546B30 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359000A1EFE498700546B30 /* Framework.swift */; };
 		0359000D1EFE498700546B30 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359000A1EFE498700546B30 /* Framework.swift */; };
@@ -394,7 +395,7 @@
 		03B2E3D31F008973002856DD /* AnimationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3D11F00896C002856DD /* AnimationUtils.swift */; };
 		03B2E3D41F008974002856DD /* AnimationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3D11F00896C002856DD /* AnimationUtils.swift */; };
 		03B2E3EF1F008F04002856DD /* AlertControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3ED1F008EF7002856DD /* AlertControllerExtensions.swift */; };
-		03B2E3F01F008F04002856DD /* EmailUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3EB1F008EF7002856DD /* EmailUtils.swift */; };
+		03B2E3F01F008F04002856DD /* EmailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3EB1F008EF7002856DD /* EmailComposer.swift */; };
 		03B2E3F11F008F04002856DD /* ModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3E71F008EF7002856DD /* ModelViewController.swift */; };
 		03B2E3F21F008F04002856DD /* NavigationBarBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3E61F008EF7002856DD /* NavigationBarBlurEffect.swift */; };
 		03B2E3F31F008F04002856DD /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3E51F008EF7002856DD /* NavigationController.swift */; };
@@ -507,6 +508,7 @@
 		031DEE711EFEEC49001DCF3F /* OrientationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUtils.swift; sourceTree = "<group>"; };
 		031DEE771EFEEECC001DCF3F /* DeviceOrientationAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceOrientationAction.swift; sourceTree = "<group>"; };
 		031DEE791EFEEF24001DCF3F /* DeviceAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceAccess.swift; sourceTree = "<group>"; };
+		033DBC6A2021502300DC4E86 /* TextMessageComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageComposer.swift; sourceTree = "<group>"; };
 		0359000A1EFE498700546B30 /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
 		0359FF8A1EFE38CB00546B30 /* WolfCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WolfCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359FF8D1EFE38CB00546B30 /* WolfCore_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WolfCore_iOS.h; sourceTree = "<group>"; };
@@ -672,7 +674,7 @@
 		03B2E3E81F008EF7002856DD /* PagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingViewController.swift; sourceTree = "<group>"; };
 		03B2E3E91F008EF7002856DD /* WebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebViewController.storyboard; sourceTree = "<group>"; };
 		03B2E3EA1F008EF7002856DD /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
-		03B2E3EB1F008EF7002856DD /* EmailUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailUtils.swift; sourceTree = "<group>"; };
+		03B2E3EB1F008EF7002856DD /* EmailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailComposer.swift; sourceTree = "<group>"; };
 		03B2E3EC1F008EF7002856DD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		03B2E3ED1F008EF7002856DD /* AlertControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerExtensions.swift; sourceTree = "<group>"; };
 		03B2E3EE1F008EF7002856DD /* ViewControllerDebugging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDebugging.swift; sourceTree = "<group>"; };
@@ -1303,7 +1305,8 @@
 				03B2E3DD1F008EF7002856DD /* ImagePickerViewController */,
 				03B2E3E01F008EF7002856DD /* ImageViewerViewController */,
 				03B2E3ED1F008EF7002856DD /* AlertControllerExtensions.swift */,
-				03B2E3EB1F008EF7002856DD /* EmailUtils.swift */,
+				03B2E3EB1F008EF7002856DD /* EmailComposer.swift */,
+				033DBC6A2021502300DC4E86 /* TextMessageComposer.swift */,
 				03B2E3E71F008EF7002856DD /* ModelViewController.swift */,
 				03B2E3E61F008EF7002856DD /* NavigationBarBlurEffect.swift */,
 				03B2E3E51F008EF7002856DD /* NavigationController.swift */,
@@ -1687,6 +1690,7 @@
 				035B6F6A1EFF0D75001E293C /* CollectionViewCell.swift in Sources */,
 				035B6F791EFF0D75001E293C /* TextView.swift in Sources */,
 				0312F5401F36BACD00C00CF9 /* AngularGradientShader.metal in Sources */,
+				033DBC6B2021502300DC4E86 /* TextMessageComposer.swift in Sources */,
 				038F9FEB1F071230001B37C4 /* LocationMonitor.swift in Sources */,
 				0359000B1EFE498700546B30 /* Framework.swift in Sources */,
 				03B2E4451F00A23B002856DD /* ResourceUtils-iOS.swift in Sources */,
@@ -1714,7 +1718,7 @@
 				035B6F6D1EFF0D75001E293C /* ImageView.swift in Sources */,
 				0360B3F91F004DD500A49A9B /* LayoutAttribute.swift in Sources */,
 				0360B3CC1F004D3F00A49A9B /* AttributedStringExtensions.swift in Sources */,
-				03B2E3F01F008F04002856DD /* EmailUtils.swift in Sources */,
+				03B2E3F01F008F04002856DD /* EmailComposer.swift in Sources */,
 				03D60DDF200EE947005B2518 /* SegmentedAccessoryInputView.swift in Sources */,
 				0360B42A1F004E5F00A49A9B /* RunLoopUtils.swift in Sources */,
 				03B2E3FD1F008F0B002856DD /* MessageBulletinView.swift in Sources */,
