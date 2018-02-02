@@ -14,16 +14,40 @@ public protocol BulletinViewProtocol: class {
     var view: View { get }
 }
 
-public class BulletinView<B: Bulletin>: ModelView<B> {
+public class BulletinView<B: Bulletin>: View {
+    public typealias BulletinType = B
+
+    public var specificBulletin: BulletinType! {
+        didSet {
+            syncToBulletin()
+        }
+    }
+
+    open func syncToBulletin() {
+    }
+
+    public init(bulletin: BulletinType) {
+        super.init(frame: .zero)
+        self.specificBulletin = bulletin
+        syncToBulletin()
+    }
+
+    public init() {
+        super.init(frame: .zero)
+    }
+
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }
 
 extension BulletinView: BulletinViewProtocol {
     public var bulletin: Bulletin {
         get {
-            return model!
+            return specificBulletin!
         }
         set {
-            model = newValue as! Model
+            specificBulletin = newValue as! BulletinType
         }
     }
     

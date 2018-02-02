@@ -26,11 +26,11 @@ public class BulletinViewRegistry {
     
     fileprivate init() {
         register(bulletinType: MessageBulletin.self) {
-            return MessageBulletinView(model: $0 as! MessageBulletin)
+            return MessageBulletinView(bulletin: $0 as! MessageBulletin)
         }
         
         register(bulletinType: ReachabilityBulletin.self) {
-            return ReachabilityBulletinView(model: $0 as! ReachabilityBulletin)
+            return ReachabilityBulletinView(bulletin: $0 as! ReachabilityBulletin)
         }
     }
     

@@ -72,16 +72,16 @@ public class MessageBulletinView<B: MessageBulletin>: BulletinView<B> {
         ]
     }
 
-    public override func syncToModel() {
-        super.syncToModel()
+    public override func syncToBulletin() {
+        super.syncToBulletin()
 
-        if let title = model.title {
+        if let title = specificBulletin.title {
             titleLabel.show()
             titleLabel.text = title
         } else {
             titleLabel.hide()
         }
-        if let message = model.message {
+        if let message = specificBulletin.message {
             messageLabel.show()
             messageLabel.text = message
         } else {

@@ -78,7 +78,6 @@
 		035B6F4D1EFF0D6D001E293C /* FlexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F411EFF0D63001E293C /* FlexView.swift */; };
 		035B6F4E1EFF0D6D001E293C /* GradientOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F351EFF0D63001E293C /* GradientOverlayView.swift */; };
 		035B6F4F1EFF0D6D001E293C /* Hideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F401EFF0D63001E293C /* Hideable.swift */; };
-		035B6F501EFF0D6D001E293C /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F361EFF0D63001E293C /* ModelView.swift */; };
 		035B6F511EFF0D6D001E293C /* OverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F3D1EFF0D63001E293C /* OverlayWindow.swift */; };
 		035B6F521EFF0D6D001E293C /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F3A1EFF0D63001E293C /* PagingView.swift */; };
 		035B6F531EFF0D6D001E293C /* PhotoSafeAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F391EFF0D63001E293C /* PhotoSafeAreaView.swift */; };
@@ -94,7 +93,6 @@
 		035B6F5F1EFF0D6E001E293C /* FlexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F411EFF0D63001E293C /* FlexView.swift */; };
 		035B6F601EFF0D6E001E293C /* GradientOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F351EFF0D63001E293C /* GradientOverlayView.swift */; };
 		035B6F611EFF0D6E001E293C /* Hideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F401EFF0D63001E293C /* Hideable.swift */; };
-		035B6F621EFF0D6E001E293C /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F361EFF0D63001E293C /* ModelView.swift */; };
 		035B6F631EFF0D6E001E293C /* OverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F3D1EFF0D63001E293C /* OverlayWindow.swift */; };
 		035B6F641EFF0D6E001E293C /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F3A1EFF0D63001E293C /* PagingView.swift */; };
 		035B6F651EFF0D6E001E293C /* PhotoSafeAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6F391EFF0D63001E293C /* PhotoSafeAreaView.swift */; };
@@ -396,7 +394,6 @@
 		03B2E3D41F008974002856DD /* AnimationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3D11F00896C002856DD /* AnimationUtils.swift */; };
 		03B2E3EF1F008F04002856DD /* AlertControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3ED1F008EF7002856DD /* AlertControllerExtensions.swift */; };
 		03B2E3F01F008F04002856DD /* EmailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3EB1F008EF7002856DD /* EmailComposer.swift */; };
-		03B2E3F11F008F04002856DD /* ModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3E71F008EF7002856DD /* ModelViewController.swift */; };
 		03B2E3F21F008F04002856DD /* NavigationBarBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3E61F008EF7002856DD /* NavigationBarBlurEffect.swift */; };
 		03B2E3F31F008F04002856DD /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3E51F008EF7002856DD /* NavigationController.swift */; };
 		03B2E3F41F008F04002856DD /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2E3E81F008EF7002856DD /* PagingViewController.swift */; };
@@ -552,7 +549,6 @@
 		035B6F331EFF0D63001E293C /* BounceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
 		035B6F341EFF0D63001E293C /* EditableContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableContainerView.swift; sourceTree = "<group>"; };
 		035B6F351EFF0D63001E293C /* GradientOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientOverlayView.swift; sourceTree = "<group>"; };
-		035B6F361EFF0D63001E293C /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		035B6F381EFF0D63001E293C /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		035B6F391EFF0D63001E293C /* PhotoSafeAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSafeAreaView.swift; sourceTree = "<group>"; };
 		035B6F3A1EFF0D63001E293C /* PagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
@@ -670,7 +666,6 @@
 		03B2E3E41F008EF7002856DD /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
 		03B2E3E51F008EF7002856DD /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		03B2E3E61F008EF7002856DD /* NavigationBarBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBlurEffect.swift; sourceTree = "<group>"; };
-		03B2E3E71F008EF7002856DD /* ModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewController.swift; sourceTree = "<group>"; };
 		03B2E3E81F008EF7002856DD /* PagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingViewController.swift; sourceTree = "<group>"; };
 		03B2E3E91F008EF7002856DD /* WebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebViewController.storyboard; sourceTree = "<group>"; };
 		03B2E3EA1F008EF7002856DD /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
@@ -1012,7 +1007,6 @@
 				035B6F351EFF0D63001E293C /* GradientOverlayView.swift */,
 				035B6F401EFF0D63001E293C /* Hideable.swift */,
 				0381CD491F073778001510EA /* AnimatedHideable.swift */,
-				035B6F361EFF0D63001E293C /* ModelView.swift */,
 				0360B4D21F0058A100A49A9B /* NavigationBarExtensions.swift */,
 				035B6F3D1EFF0D63001E293C /* OverlayWindow.swift */,
 				035B6F3A1EFF0D63001E293C /* PagingView.swift */,
@@ -1307,7 +1301,6 @@
 				03B2E3ED1F008EF7002856DD /* AlertControllerExtensions.swift */,
 				03B2E3EB1F008EF7002856DD /* EmailComposer.swift */,
 				033DBC6A2021502300DC4E86 /* TextMessageComposer.swift */,
-				03B2E3E71F008EF7002856DD /* ModelViewController.swift */,
 				03B2E3E61F008EF7002856DD /* NavigationBarBlurEffect.swift */,
 				03B2E3E51F008EF7002856DD /* NavigationController.swift */,
 				03B2E3E81F008EF7002856DD /* PagingViewController.swift */,
@@ -1713,7 +1706,6 @@
 				035DAA371EFF62C5001040CE /* DevOverlayView.swift in Sources */,
 				035B6F731EFF0D75001E293C /* StackView.swift in Sources */,
 				03B2E4251F009705002856DD /* KeyboardAvoidantView.swift in Sources */,
-				035B6F501EFF0D6D001E293C /* ModelView.swift in Sources */,
 				03AF5FC120097EDD00929EF9 /* DeepPressGestureRecognizer.swift in Sources */,
 				035B6F6D1EFF0D75001E293C /* ImageView.swift in Sources */,
 				0360B3F91F004DD500A49A9B /* LayoutAttribute.swift in Sources */,
@@ -1756,7 +1748,6 @@
 				03B2E3F71F008F04002856DD /* ViewControllerDebugging.swift in Sources */,
 				038FA0561F0722C3001B37C4 /* DisplayLink.swift in Sources */,
 				03B2E3F31F008F04002856DD /* NavigationController.swift in Sources */,
-				03B2E3F11F008F04002856DD /* ModelViewController.swift in Sources */,
 				0397CAEA1FABE2FC00468747 /* TextEditor.swift in Sources */,
 				035B6F471EFF0D6D001E293C /* BounceButton.swift in Sources */,
 				03B2E4281F009705002856DD /* KeyboardNotificationActions.swift in Sources */,
@@ -2005,7 +1996,6 @@
 				035B6F651EFF0D6E001E293C /* PhotoSafeAreaView.swift in Sources */,
 				0360B4D61F00598500A49A9B /* SpacerView.swift in Sources */,
 				0360B4A81F004FB000A49A9B /* JSONUtils.swift in Sources */,
-				035B6F621EFF0D6E001E293C /* ModelView.swift in Sources */,
 				035B6F871EFF0D76001E293C /* ScrollView.swift in Sources */,
 				0360B46A1F004F2900A49A9B /* OSImageOrientation.swift in Sources */,
 				035DAA821EFFA093001040CE /* ResponderExtensions.swift in Sources */,

@@ -12,9 +12,9 @@ import WolfBase
 public class ReachabilityBulletinView: MessageBulletinView<ReachabilityBulletin> {
     private typealias `Self` = ReachabilityBulletinView
 
-    public override func syncToModel() {
-        super.syncToModel()
-        if model.flags.contains(.reachable) {
+    public override func syncToBulletin() {
+        super.syncToBulletin()
+        if specificBulletin.flags.contains(.reachable) {
 //            skin = Self.reachableSkin
         } else {
 //            skin = Self.unreachableSkin
