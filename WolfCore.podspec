@@ -1,0 +1,46 @@
+#
+# Be sure to run `pod lib lint WolfCore.podspec' to ensure this is a
+# valid spec before submitting.
+#
+# Any lines starting with a # are optional, but their use is encouraged
+# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
+#
+
+Pod::Spec.new do |s|
+  s.name             = 'WolfCore'
+  s.version          = '0.1.0'
+  s.summary          = 'A library of conveniences for Swift, iOS, MacOS, tvOS, and WatchOS.'
+
+# This description is used to generate tags and improve search results.
+#   * Think: What does it do? Why did you write it? What is the focus?
+#   * Try to keep it short, snappy and to the point.
+#   * Write the description between the DESC delimiters below.
+#   * Finally, don't worry about the indent, CocoaPods strips it!
+
+  s.description      = <<-DESC
+This is a library of conveniences for constructing Swift applications in Linux, iOS, tvOS and MacOS. It us underpinned by WolfCore, which is oriented towards creating Swift applications across all platforms. WolfCore and WolfCore are maintained by Wolf McNally.
+
+Over the years I've carried a continuously-evolving tool kit of software tools and techniques that I use to avoid re-inventing the wheel. It's had many iterations over the years and WolfCore is the latest— open source (MIT license), cross-platform (iOS, MacOS, tvOS, WatchOS, and Linux), pure Swift (including Foundation and GCD under Linux) It's basically a collection of embodied conveniences and best practices that make the code built on it easier to read, write, and maintain, often reducing or eliminating the need for boilerplate code.
+                       DESC
+
+  s.homepage         = 'https://github.com/wolfmcnally/WolfCore'
+  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.author           = { 'ironwolf' => 'wolf@wolfmcnally.com' }
+  s.source           = { :git => 'https://github.com/wolfmcnally/WolfCore.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/wolfmcnally'
+
+  s.ios.deployment_target = '9.3'
+  s.swift_version = '4.0'
+
+  s.source_files = 'WolfCore/Classes/**/*'
+
+  # s.resource_bundles = {
+  #   'WolfCore' => ['WolfCore/Assets/*.png']
+  # }
+
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.frameworks = 'UIKit', 'MapKit'
+  s.resources = 'WolfCore/Assets/*'
+  s.dependency 'CommonCryptoModule'
+end

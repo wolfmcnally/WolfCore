@@ -1,0 +1,5 @@
+use_frameworks!
+
+target 'WolfCore' do
+    pod 'CommonCryptoModule'
+end

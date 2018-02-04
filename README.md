@@ -1,7 +1,29 @@
 # WolfCore
 
-See LICENSE.md for licensing information.
+[![CI Status](http://img.shields.io/travis/ironwolf/WolfCore.svg?style=flat)](https://travis-ci.org/ironwolf/WolfCore)
+[![Version](https://img.shields.io/cocoapods/v/WolfCore.svg?style=flat)](http://cocoapods.org/pods/WolfCore)
+[![License](https://img.shields.io/cocoapods/l/WolfCore.svg?style=flat)](http://cocoapods.org/pods/WolfCore)
+[![Platform](https://img.shields.io/cocoapods/p/WolfCore.svg?style=flat)](http://cocoapods.org/pods/WolfCore)
 
-This is a library of conveniences for constructing Swift applications in Linux, iOS, tvOS and MacOS. It us underpinned by WolfBase, which is oriented towards creating Swift applications across all platforms. WolfCore and WolfBase are maintained by Wolf McNally.
+## Example
 
-Over the years I've carried a continuously-evolving tool kit of software tools and techniques that I use to avoid re-inventing the wheel. It's had many iterations over the years and WolfCore is the latest— open source (MIT license), cross-platform (iOS, MacOS, tvOS, WatchOS, and Linux), pure Swift (including Foundation and GCD under Linux) It's basically a collection of embodied conveniences and best practices that make the code built on it easier to read, write, and maintain, often reducing or eliminating the need for boilerplate code.
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+## Installation
+
+WolfCore is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'WolfCore'
+```
+
+## Author
+
+ironwolf, wolf@wolfmcnally.com
+
+## License
+
+WolfCore is available under the MIT license. See the LICENSE file for more info.
