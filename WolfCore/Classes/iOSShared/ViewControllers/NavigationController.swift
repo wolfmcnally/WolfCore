@@ -11,6 +11,7 @@ import UIKit
 open class NavigationController: UINavigationController, UINavigationControllerDelegate {
     public var onWillShow: ((_ viewController: UIViewController, _ animated: Bool) -> Void)?
     public var onDidShow: ((_ viewController: UIViewController, _ animated: Bool) -> Void)?
+    #if !os(tvOS)
     private var blurEffect: NavigationBarBlurEffect!
 
     var isBlurred = true {
@@ -22,6 +23,7 @@ open class NavigationController: UINavigationController, UINavigationControllerD
             }
         }
     }
+    #endif
 
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -54,7 +56,9 @@ open class NavigationController: UINavigationController, UINavigationControllerD
 
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+        #if !os(tvOS)
         blurEffect.update()
+        #endif
     }
 
     deinit {
@@ -69,7 +73,9 @@ open class NavigationController: UINavigationController, UINavigationControllerD
     open override func viewDidLoad() {
         super.viewDidLoad()
         view.debugIdentifier = "\(typeName(of: self)).view"
+        #if !os(tvOS)
         blurEffect = NavigationBarBlurEffect(navigationController: self)
+        #endif
     }
 
     open func setup() { }

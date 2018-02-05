@@ -106,10 +106,10 @@ extension UIView {
     private func appendFocusedPrefix(for view: UIView, prefixJoiner: Joiner, constraintPrefixJoiner: Joiner) {
         #if os(tvOS)
             var focusedPrefix = "⬜️"
-            if view.canBecomeFocused() {
+            if view.canBecomeFocused {
                 focusedPrefix = "💙"
             }
-            if view.focused {
+            if view.isFocused {
                 focusedPrefix = "💚"
             }
             prefixJoiner.append(focusedPrefix)

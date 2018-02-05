@@ -35,7 +35,7 @@ open class View: OSView {
     
     open func setup() { }
 
-    #if os(iOS)
+    #if os(iOS) || os(tvOS)
     public var osLayer: CALayer {
         return layer
     }

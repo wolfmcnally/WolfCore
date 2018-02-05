@@ -24,6 +24,7 @@ public class ViewGestureActions: GestureActions {
         set { setLongPressAction(named: longPressName, action: newValue) }
     }
 
+    #if !os(tvOS)
     public var onDeepPress: GestureBlock? {
         get { return getAction(for: deepPressName) }
         set { setDeepPressAction(named: longPressName, action: newValue) }
@@ -33,4 +34,5 @@ public class ViewGestureActions: GestureActions {
         get { return getAction(for: longOrDeepPressName) }
         set { setLongOrDeepPressAction(named: longOrDeepPressName, action: newValue) }
     }
+    #endif
 }

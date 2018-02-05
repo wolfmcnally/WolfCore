@@ -38,7 +38,8 @@ extension UIViewController {
     @objc open func dismiss() {
         dismiss(completion: nil)
     }
-    
+
+    #if !os(tvOS)
     public func setBackButtonText(to text: String) {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: text, style: .plain, target: nil, action: nil)
     }
@@ -46,6 +47,7 @@ extension UIViewController {
     public func removeBackButtonText() {
         setBackButtonText(to: "")
     }
+    #endif
 }
 
 public typealias AlertActionBlock = (UIAlertAction) -> Void

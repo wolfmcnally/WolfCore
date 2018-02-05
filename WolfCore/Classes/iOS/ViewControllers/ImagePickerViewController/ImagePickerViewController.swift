@@ -25,7 +25,7 @@ private let movieRawType: NSString = kUTTypeMovie
 
 public typealias ImagePickerSuccessAction = (UIImage?) -> Void
 
-public class ImagePickerViewController: UIImagePickerController {  
+public class ImagePickerViewController: UIImagePickerController {
     private var successAction: ImagePickerSuccessAction!
     private var cancelAction: Block?
     fileprivate var allowsCropping: Bool = false

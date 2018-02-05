@@ -8,16 +8,24 @@
 
 import UIKit
 
-extension UIView {
-    public func isTransparentToTouch(at point: CGPoint, with event: UIEvent?) -> Bool {
-        for subview in subviews {
-            if !subview.isHidden && subview.alpha > 0 && subview.isUserInteractionEnabled && subview.point(inside: convert(point, to: subview), with: event) {
-                return true
+#if !os(tvOS)
+    extension UIView {
+        public func isTransparentToTouch(at point: CGPoint, with event: UIEvent?) -> Bool {
+            for subview in subviews {
+                if !subview.isHidden && subview.alpha > 0 && subview.isUserInteractionEnabled && subview.point(inside: convert(point, to: subview), with: event) {
+                    return true
+                }
             }
+            return false
         }
-        return false
     }
-}
+#else
+    extension UIView {
+        public func isTransparentToTouch(at point: CGPoint, with event: UIEvent?) -> Bool {
+            return self.point(inside: point, with: event)
+        }
+    }
+#endif
 
 extension UIView {
     public func setBorder(cornerRadius radius: CGFloat? = nil, width: CGFloat? = nil, color: UIColor? = nil) {

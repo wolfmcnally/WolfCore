@@ -30,10 +30,6 @@ extension UIViewController {
             joiner.append( indent, "\(level)".padded(to: 2) )
             joiner.append(aliaser.name(for: controller))
             
-            if !controller.automaticallyAdjustsScrollViewInsets {
-                joiner.append("automaticallyAdjustsScrollViewInsets:\(controller.automaticallyAdjustsScrollViewInsets)")
-            }
-            
             if let view = controller.viewIfLoaded {
                 joiner.append("view: \(view)")
             } else {

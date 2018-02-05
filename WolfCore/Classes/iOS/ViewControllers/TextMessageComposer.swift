@@ -73,3 +73,4 @@ extension TextMessageComposer : MFMessageComposeViewControllerDelegate {
         }
     }
 }
+

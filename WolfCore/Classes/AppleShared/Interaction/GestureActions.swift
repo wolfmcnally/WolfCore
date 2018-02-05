@@ -6,13 +6,17 @@
 //  Copyright © 2016 WolfMcNally.com. All rights reserved.
 //
 
-import UIKit
+#if os(macOS)
+    import AppKit
+#else
+    import UIKit
+#endif
 
 public class GestureActions {
-    unowned let view: UIView
+    unowned let view: OSView
     var gestureRecognizerActions = [String: GestureRecognizerAction]()
 
-    public init(view: UIView) {
+    public init(view: OSView) {
         self.view = view
     }
 
@@ -25,7 +29,8 @@ public class GestureActions {
             action(recognizer)
         }
     }
-    
+
+    #if !os(macOS)
     func setSwipeAction(named name: String, direction: UISwipeGestureRecognizerDirection, action: GestureBlock?) {
         if let action = action {
             let recognizer = UISwipeGestureRecognizer()
@@ -63,7 +68,9 @@ public class GestureActions {
             removeAction(for: name)
         }
     }
+    #endif
 
+    #if os(iOS)
     func setDeepPressAction(named name: String, action: GestureBlock?) {
         if let action = action {
             let recognizer = DeepPressGestureRecognizer()
@@ -86,6 +93,7 @@ public class GestureActions {
             removeAction(for: name)
         }
     }
+    #endif
 
     func removeAction(for name: String) {
         gestureRecognizerActions.removeValue(forKey: name)

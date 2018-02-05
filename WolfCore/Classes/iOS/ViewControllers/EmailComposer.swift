@@ -38,17 +38,17 @@ public class EmailComposer: NSObject {
             presentingViewController.presentOKAlert(withMessage: "The simulator cannot send e-mail.", identifier: "notEmailCapable")
             return
         }
-        
+
         guard MFMailComposeViewController.canSendMail() else {
             presentingViewController.presentOKAlert(withMessage: "Your device is not configured to send email."¶, identifier: "notEmailCapable")
             return
         }
-        
+
         guard Self.viewController == nil else {
             logError("There is already a mail composer active.")
             return
         }
-        
+
         viewController = MFMailComposeViewController()
         viewController.mailComposeDelegate = emailComposer
         viewController.setToRecipients(recipients)
@@ -60,7 +60,7 @@ public class EmailComposer: NSObject {
         }
 
         self.completion = completion
-        
+
         presentingViewController.present(viewController, animated: true, completion: nil)
     }
 }
@@ -74,3 +74,4 @@ extension EmailComposer : MFMailComposeViewControllerDelegate {
         }
     }
 }
+

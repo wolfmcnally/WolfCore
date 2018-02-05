@@ -54,6 +54,7 @@ public struct DeviceAccess {
         }
     }
 
+    #if !os(tvOS)
     public static func checkCameraAuthorized(from viewController: UIViewController) -> Bool {
         Item.camera.checkUsageDescription()
 
@@ -78,6 +79,7 @@ public struct DeviceAccess {
             return false
         }
     }
+    #endif
 
     public static func checkPhotoLibraryAuthorized(from viewController: UIViewController) -> Bool {
         Item.photoLibrary.checkUsageDescription()
@@ -160,7 +162,12 @@ public struct DeviceAccess {
 extension UIViewController {
     public func presentAccessSheet(for accessItem: DeviceAccess.Item, popoverSourceView: UIView? = nil, popoverSourceRect: CGRect? = nil, popoverBarButtonItem: UIBarButtonItem? = nil, popoverPermittedArrowDirections: UIPopoverArrowDirection = .any, didAppear: Block? = nil, didDisappear: Block? = nil) {
         let openSettingsAction = AlertAction(title: "Open Settings"¶, identifier: "openSettings") { _ in
-            UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
+            let url = URL(string: UIApplicationOpenSettingsURLString)!
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
         }
         let actions = [
             openSettingsAction,

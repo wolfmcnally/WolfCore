@@ -54,7 +54,7 @@ extension UIDevice {
     public func force(toOrientation orientation: UIInterfaceOrientation) {
         setValue(orientation.rawValue, forKey: "orientation")
     }
-    
+
     public static var currentOrientation: UIDeviceOrientation {
         let device = UIDevice.current
         device.beginGeneratingDeviceOrientationNotifications()
@@ -72,3 +72,4 @@ public func forcePhoneToPortraitOrientation() {
 public func forceToPortraitOrientation() {
     UIDevice.current.force(toOrientation: .portrait)
 }
+
