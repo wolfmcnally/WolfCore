@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WolfCore'
-  s.version          = '2.1.2'
+  s.version          = '2.1.3'
   s.summary          = 'A library of conveniences for Swift, iOS, MacOS, tvOS, WatchOS, and Linux.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-WolfCore is a library of conveniences for constructing Swift applications in iOS, tvOS, MacOS, WatchOS, and Linux.WolfCore is maintained by Wolf McNally.
+WolfCore is a library of conveniences for constructing Swift applications in iOS, tvOS, MacOS, WatchOS, and Linux. WolfCore is maintained by Wolf McNally.
 
 Over the years I've carried a continuously-evolving tool kit of software tools and techniques that I use to avoid re-inventing the wheel. It's had many iterations over the years and WolfCore is the latest— open source (MIT license), cross-platform (iOS, MacOS, tvOS, WatchOS, and Linux), pure Swift (including Foundation and GCD under Linux) It's basically a collection of embodied conveniences and best practices that make the code built on it easier to read, write, and maintain, often reducing or eliminating the need for boilerplate code.
 
