@@ -7,7 +7,4 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:WolfCore_Example.xcodeproj">
-   </FileRef>
 </Workspace>

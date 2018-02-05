@@ -48,10 +48,10 @@ class InFlightTokenView: View {
 
         #if !os(macOS)
             isTransparentToTouches = true
-
-            layer.cornerRadius = type(of: self).viewHeight / 2
-            layer.borderWidth = 1.0
         #endif
+
+        osLayer.cornerRadius = type(of: self).viewHeight / 2
+        osLayer.borderWidth = 1.0
 
         idLabel = createLabel()
         idLabel.setPriority(crH: .required)
@@ -136,7 +136,7 @@ class InFlightTokenView: View {
         }
 
         backgroundColor = color.withAlphaComponent(0.4)
-        layer.borderColor = color.withAlphaComponent(0.6).cgColor
+        osLayer.borderColor = color.withAlphaComponent(0.6).cgColor
 
         resultLabel.text = resultText
     }

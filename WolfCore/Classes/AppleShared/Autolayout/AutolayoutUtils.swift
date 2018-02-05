@@ -67,6 +67,7 @@ extension OSView {
         return Constraints(activate: activate, identifier: identifier, constraints)
     }
 
+    #if os(iOS) || os(tvOS)
     @available(iOS 11.0, *)
     @discardableResult public func constrainFrameToSafeArea(of view: OSView? = nil, topAnchor viewTopAnchor: NSLayoutYAxisAnchor? = nil, bottomAnchor viewBottomAnchor: NSLayoutYAxisAnchor? = nil, insets: CGInsets = .zero, priority: LayoutPriority = .required, activate: Bool = true, identifier: String? = nil) -> Constraints {
         let view = checkTargetView(view: view)
@@ -80,6 +81,7 @@ extension OSView {
         if let 🍒 = insets.bottom { constraints.append(bottomAnchor == viewBottomAnchor - 🍒 =&= priority =%= [identifier, "bottom"]) }
         return Constraints(activate: activate, identifier: identifier, constraints)
     }
+    #endif
 
     @discardableResult public func constrainCenter(to point: CGPoint, of view: OSView? = nil, priority: LayoutPriority = .required, activate: Bool = true, identifier: String? = nil) -> Constraints {
         let view = checkTargetView(view: view)

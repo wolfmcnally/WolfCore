@@ -34,14 +34,24 @@ open class View: OSView {
     }
     
     open func setup() { }
+
+    #if os(iOS)
+    public var osLayer: CALayer {
+        return layer
+    }
+    #elseif os(macOS)
+    public var osLayer: CALayer! {
+        return layer
+    }
+    #endif
     
+    @IBInspectable public var isTransparentToTouches: Bool = false
+
     #if os(iOS) || os(tvOS)
     
     var baseSize: CGSize!
     @IBInspectable public var managesSublabelScaling = false
-    
-    @IBInspectable public var isTransparentToTouches: Bool = false
-    
+
     @IBInspectable public var contentNibName: String? = nil
     //
     //    private var endEditingAction: GestureRecognizerAction!

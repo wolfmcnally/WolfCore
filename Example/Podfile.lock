@@ -1,6 +1,6 @@
 PODS:
   - CommonCryptoModule (1.0.2)
-  - WolfCore (0.1.0):
+  - WolfCore (2.1.0):
     - CommonCryptoModule
 
 DEPENDENCIES:
@@ -12,7 +12,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CommonCryptoModule: 63a68b57abed79655b3a01011419bf037a05b0a0
-  WolfCore: abaa01840005d781adf9780358844b746c92d5c6
+  WolfCore: 673f470fb5308d9d61d069e220633fa8d6ba6a1b
 
 PODFILE CHECKSUM: 401e8f8bcad30ce735bddbf962691d768ddb799b
 

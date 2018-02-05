@@ -32,10 +32,20 @@ The purpose of WolfCore is different than many third-party libraries. It neither
   s.source           = { :git => 'https://github.com/wolfmcnally/WolfCore.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/wolfmcnally'
 
-  s.ios.deployment_target = '9.3'
   s.swift_version = '4.0'
 
-  s.source_files = 'WolfCore/Classes/**/*'
+  s.source_files = 'WolfCore/Classes/Shared/**/*'
+  s.dependency 'CommonCryptoModule'
+
+  # s.ios.deployment_target = '9.3'
+  # s.ios.source_files = 'WolfCore/Classes/iOS/**/*', 'WolfCore/Classes/AppleShared/**/*'
+  # s.ios.resources = 'WolfCore/Assets/*'
+  #
+  # s.macos.deployment_target = '10.13'
+  # s.macos.source_files = 'WolfCore/Classes/macOS/**/*', 'WolfCore/Classes/AppleShared/**/*'
+
+  s.tvos.deployment_target = '11.0'
+  s.tvos.source_files = 'WolfCore/Classes/tvOS/**/*', 'WolfCore/Classes/AppleShared/**/*'
 
   # s.resource_bundles = {
   #   'WolfCore' => ['WolfCore/Assets/*.png']
@@ -43,6 +53,4 @@ The purpose of WolfCore is different than many third-party libraries. It neither
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.resources = 'WolfCore/Assets/*'
-  s.dependency 'CommonCryptoModule'
 end

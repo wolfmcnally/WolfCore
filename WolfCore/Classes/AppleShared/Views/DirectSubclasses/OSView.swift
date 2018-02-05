@@ -14,6 +14,13 @@
     public typealias OSEdgeInsets = NSEdgeInsets
     public let OSEdgeInsetsZero = NSEdgeInsetsZero
     public let OSViewNoIntrinsicMetric = NSView.noIntrinsicMetric
+
+    extension OSStackView {
+        public var axis: NSUserInterfaceLayoutOrientation {
+            get { return orientation }
+            set { orientation = newValue }
+        }
+    }
 #else
     import UIKit
     public typealias OSView = UIView
@@ -25,4 +32,3 @@
 #endif
 
 public typealias ViewBlock = (OSView) -> Bool
-
