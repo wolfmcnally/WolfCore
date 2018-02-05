@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WolfCore'
-  s.version          = '2.1.0'
+  s.version          = '2.1.1'
   s.summary          = 'A library of conveniences for Swift, iOS, MacOS, tvOS, WatchOS, and Linux.'
 
 # This description is used to generate tags and improve search results.
@@ -37,12 +37,12 @@ The purpose of WolfCore is different than many third-party libraries. It neither
   s.source_files = 'WolfCore/Classes/Shared/**/*'
   s.dependency 'CommonCryptoModule'
 
-  # s.ios.deployment_target = '9.3'
-  # s.ios.source_files = 'WolfCore/Classes/iOS/**/*', 'WolfCore/Classes/AppleShared/**/*'
-  # s.ios.resources = 'WolfCore/Assets/*'
-  #
-  # s.macos.deployment_target = '10.13'
-  # s.macos.source_files = 'WolfCore/Classes/macOS/**/*', 'WolfCore/Classes/AppleShared/**/*'
+  s.ios.deployment_target = '9.3'
+  s.ios.source_files = 'WolfCore/Classes/iOS/**/*', 'WolfCore/Classes/AppleShared/**/*'
+  s.ios.resources = 'WolfCore/Assets/*'
+
+  s.macos.deployment_target = '10.13'
+  s.macos.source_files = 'WolfCore/Classes/macOS/**/*', 'WolfCore/Classes/AppleShared/**/*'
 
   s.tvos.deployment_target = '11.0'
   s.tvos.source_files = 'WolfCore/Classes/tvOS/**/*', 'WolfCore/Classes/AppleShared/**/*'
