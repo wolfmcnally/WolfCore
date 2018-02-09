@@ -53,4 +53,16 @@ public final class ValueCache<N: Hashable> {
     public func removeAll() {
         d.removeAll()
     }
+
+    public subscript<T>(key: NameType) -> T? {
+        get { return get(key) }
+
+        set {
+            if let value = newValue {
+                set(key, to: value)
+            } else {
+                remove(key)
+            }
+        }
+    }
 }
