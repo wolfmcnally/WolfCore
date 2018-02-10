@@ -107,11 +107,19 @@ public class FeedbackGenerator {
 // MARK: GestureRecognizer
 public class DeepPressGestureRecognizer: UIGestureRecognizer
 {
-    public let threshold: CGFloat
-    private var deepPressed: Bool = false
+    public var forceThreshold: Frac = 0.75
+    public var timeThreshold: TimeInterval = 0
 
-    public required init(target: AnyObject? = nil, action: Selector? = nil, threshold: CGFloat = 0.75) {
-        self.threshold = threshold
+    enum State {
+        case notPressing
+        case pressingLight
+        case pressingHeavy(TimeInterval) // startTime
+        case pressingDeep
+    }
+
+    private var myState: State = .notPressing
+
+    public required init(target: AnyObject? = nil, action: Selector? = nil) {
         super.init(target: target, action: action)
     }
 
@@ -130,9 +138,20 @@ public class DeepPressGestureRecognizer: UIGestureRecognizer
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesEnded(touches, with: event)
 
-        state = deepPressed ? .ended : .failed
+        switch myState {
+        case .pressingDeep:
+            state = .ended
+        default:
+            state = .failed
+        }
+        myState = .notPressing
+    }
 
-        deepPressed = false
+    public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
+        super.touchesCancelled(touches, with: event)
+
+        state = .ended
+        myState = .notPressing
     }
 
     private func handleTouch(_ touch: UITouch) {
@@ -140,13 +159,29 @@ public class DeepPressGestureRecognizer: UIGestureRecognizer
             return
         }
 
-        if !deepPressed && (touch.force / touch.maximumPossibleForce) >= threshold {
-            state = .began
-            feedbackGenerator.heavy()
-            deepPressed = true
-        } else if deepPressed && (touch.force / touch.maximumPossibleForce) < threshold {
-            state = .ended
-            deepPressed = false
+        let force = Frac(touch.force / touch.maximumPossibleForce)
+        switch myState {
+        case .notPressing:
+            myState = .pressingLight
+        case .pressingLight:
+            if force >= forceThreshold {
+                myState = .pressingHeavy(Date.timeIntervalSinceReferenceDate)
+                if timeThreshold > 0 {
+                    feedbackGenerator.light()
+                }
+            }
+        case .pressingHeavy(let startTime):
+            if force >= forceThreshold {
+                if Date.timeIntervalSinceReferenceDate - startTime > timeThreshold {
+                    myState = .pressingDeep
+                    state = .began
+                    feedbackGenerator.heavy()
+                }
+            } else {
+                myState = .pressingLight
+            }
+        case .pressingDeep:
+            break
         }
     }
 }

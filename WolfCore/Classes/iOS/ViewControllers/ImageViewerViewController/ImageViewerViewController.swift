@@ -139,13 +139,13 @@ public class ImageViewerViewController: ViewController {
     
     private func setupGestures() {
         let singleTapRecognizer = UITapGestureRecognizer()
-        tapAction = view.addAction(forGestureRecognizer: singleTapRecognizer) { [unowned self] _ in
+        tapAction = view.addAction(for: singleTapRecognizer) { [unowned self] _ in
             self.toggleChrome(animated: true)
         }
         
         let doubleTapRecognizer = UITapGestureRecognizer()
         doubleTapRecognizer.numberOfTapsRequired = 2
-        doubleTapAction = view.addAction(forGestureRecognizer: doubleTapRecognizer) { [unowned self] recognizer in
+        doubleTapAction = view.addAction(for: doubleTapRecognizer) { [unowned self] recognizer in
             let p = recognizer.location(in: self.contentView)
             self.toggleZoom(animated: true, focusPoint: p)
         }
@@ -154,7 +154,7 @@ public class ImageViewerViewController: ViewController {
         
         let dismissRecognizer = ImageViewerDismissGestureRecognizer()
         dismissRecognizer.delegate = self
-        dismissAction = view.addAction(forGestureRecognizer: dismissRecognizer) { [unowned self] recognizer in
+        dismissAction = view.addAction(for: dismissRecognizer) { [unowned self] recognizer in
             self.dismiss()
         }
     }

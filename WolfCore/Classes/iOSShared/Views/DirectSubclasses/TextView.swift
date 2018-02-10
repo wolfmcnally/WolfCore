@@ -66,7 +66,7 @@ extension TextView {
             tapAction = nil
         } else {
             if tapAction == nil {
-                tapAction = addAction(forGestureRecognizer: UITapGestureRecognizer()) { [unowned self] recognizer in
+                tapAction = addAction(for: UITapGestureRecognizer()) { [unowned self] recognizer in
                     self.handleTap(fromRecognizer: recognizer)
                 }
             }

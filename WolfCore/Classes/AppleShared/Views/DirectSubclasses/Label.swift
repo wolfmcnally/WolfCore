@@ -109,7 +109,7 @@ open class Label: OSLabel {
                 if tapAction == nil {
                     isUserInteractionEnabled = true
                     
-                    tapAction = addAction(forGestureRecognizer: UITapGestureRecognizer()) { [unowned self] recognizer in
+                    tapAction = addAction(for: UITapGestureRecognizer()) { [unowned self] recognizer in
                         self.handleTap(fromRecognizer: recognizer)
                     }
                 }

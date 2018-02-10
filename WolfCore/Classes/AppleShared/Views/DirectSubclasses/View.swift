@@ -61,7 +61,7 @@ open class View: OSView {
     //            if endsEditingWhenTapped {
     //                let tapGestureRecognizer = UITapGestureRecognizer()
     //                tapGestureRecognizer.cancelsTouchesInView = false
-    //                endEditingAction = addAction(forGestureRecognizer: tapGestureRecognizer) { [unowned self] _ in
+    //                endEditingAction = addAction(for: tapGestureRecognizer) { [unowned self] _ in
     //                    self.window?.endEditing(false)
     //                }
     //                endEditingAction.shouldReceiveTouch = { touch in

@@ -25,7 +25,7 @@ public class GestureActions {
     }
 
     func setAction(named name: String, gestureRecognizer: OSGestureRecognizer, action: @escaping GestureBlock) {
-        gestureRecognizerActions[name] = view.addAction(forGestureRecognizer: gestureRecognizer) { recognizer in
+        gestureRecognizerActions[name] = view.addAction(for: gestureRecognizer) { recognizer in
             action(recognizer)
         }
     }
