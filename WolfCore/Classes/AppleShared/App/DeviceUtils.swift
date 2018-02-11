@@ -78,3 +78,7 @@ public var mainScreenScale: CGFloat {
         return UIView().tintColor!
     }()
 #endif
+
+#if os(iOS)
+    public let hasForceTouch = UIScreen.main.traitCollection.forceTouchCapability == .available
+#endif

@@ -10,11 +10,15 @@ import UIKit
 
 open class TableView: UITableView {
     public convenience init() {
-        self.init(frame: .zero)
+        self.init(frame: .zero, style: .plain)
     }
-    
+
+    public convenience init(style: UITableViewStyle) {
+        self.init(frame: .zero, style: style)
+    }
+
     public override init(frame: CGRect, style: UITableViewStyle) {
-        super.init(frame: frame, style: .plain)
+        super.init(frame: frame, style: style)
         _setup()
     }
     

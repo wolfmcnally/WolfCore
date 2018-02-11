@@ -82,7 +82,7 @@ public class GestureActions {
 
     func setLongOrDeepPressAction(named name: String, action: GestureBlock?) {
         if let action = action {
-            if UIScreen.main.traitCollection.forceTouchCapability == .available {
+            if hasForceTouch {
                 let recognizer = DeepPressGestureRecognizer()
                 setAction(named: name, gestureRecognizer: recognizer, action: action)
             } else {
