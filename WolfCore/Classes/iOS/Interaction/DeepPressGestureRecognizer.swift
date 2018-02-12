@@ -9,7 +9,6 @@
 import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
-// MARK: GestureRecognizer
 public class DeepPressGestureRecognizer: UIGestureRecognizer
 {
     public var forceThreshold: Frac = 0.75
