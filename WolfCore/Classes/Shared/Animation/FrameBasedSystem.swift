@@ -16,4 +16,3 @@ import Foundation
 //public protocol FrameBasedSystem: AnyObject {
 //    func update(deltaTime seconds: TimeInterval) -> TimeInterval
 //}
-

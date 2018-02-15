@@ -14,19 +14,19 @@ public class InFlightToken: Equatable, Hashable, CustomStringConvertible {
     #if !os(Linux)
     private var networkActivityRef: LockerCause?
     #endif
-    
+
     init(name: String) {
         id = InFlightToken.nextID
         InFlightToken.nextID += 1
         self.name = name
     }
-    
+
     public var hashValue: Int { return id }
-    
+
     public var description: String {
         return "InFlightToken(id: \(id), name: \(name), result: \(result†))"
     }
-    
+
     public var isNetworkActive: Bool = false {
         didSet {
             #if !os(Linux)

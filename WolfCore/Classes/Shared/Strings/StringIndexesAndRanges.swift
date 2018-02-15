@@ -21,7 +21,7 @@ extension String {
         let rangeCount = distance(from: range.lowerBound, to: range.upperBound)
         return "[\(rangeStart) ..< \(rangeEnd)] (\(rangeCount))"
     }
-    
+
     public func stringRange(nsLocation: Int, nsLength: Int) -> StringRange? {
         let utf16view = utf16
         let from16 = utf16view.index(utf16view.startIndex, offsetBy: nsLocation, limitedBy: utf16view.endIndex)!
@@ -42,15 +42,15 @@ extension String {
         guard let cfRange = cfRange else { return nil }
         return stringRange(nsLocation: cfRange.location, nsLength: cfRange.length)
     }
-    
+
     public func nsLocation(fromIndex index: StringIndex) -> Int {
         return nsRange(from: index..<index)!.location
     }
-    
+
     public func index(fromLocation nsLocation: Int) -> StringIndex {
         return stringRange(from: NSRange(location: nsLocation, length: 0))!.lowerBound
     }
-    
+
     public func nsRange(from stringRange: StringRange?) -> NSRange? {
         guard let stringRange = stringRange else { return nil }
         let utf16view = utf16
@@ -73,11 +73,11 @@ extension String {
     public var cfRange: CFRange {
         return cfRange(from: stringRange)!
     }
-    
+
     public var stringRange: StringRange {
         return startIndex..<endIndex
     }
-    
+
     public func stringRange(start: Int, end: Int? = nil) -> StringRange {
         let s = self.index(self.startIndex, offsetBy: start)
         let e = self.index(self.startIndex, offsetBy: (end ?? start))
@@ -87,11 +87,11 @@ extension String {
     public func stringRange(r: Range<Int>) -> StringRange {
         return stringRange(start: r.lowerBound, end: r.upperBound)
     }
-    
+
     public func substring(start: Int, end: Int? = nil) -> String {
         return String(self[stringRange(start: start, end: end)])
     }
-    
+
     public func substring(r: Range<Int>) -> String {
         return substring(start: r.lowerBound, end: r.upperBound)
     }
@@ -102,22 +102,21 @@ extension String {
         let distance = string.distance(from: string.startIndex, to: index) + offset
         return self.index(self.startIndex, offsetBy: distance)
     }
-    
+
     public func convert(index: StringIndex, toString string: String, offset: Int = 0) -> StringIndex {
         let distance = self.distance(from: self.startIndex, to: index) + offset
         return string.index(string.startIndex, offsetBy: distance)
     }
-    
+
     public func convert(range: StringRange, fromString string: String, offset: Int = 0) -> StringRange {
         let s = convert(index: range.lowerBound, fromString: string, offset: offset)
         let e = convert(index: range.upperBound, fromString: string, offset: offset)
         return s..<e
     }
-    
+
     public func convert(range: StringRange, toString string: String, offset: Int = 0) -> StringRange {
         let s = convert(index: range.lowerBound, toString: string, offset: offset)
         let e = convert(index: range.upperBound, toString: string, offset: offset)
         return s..<e
     }
 }
-

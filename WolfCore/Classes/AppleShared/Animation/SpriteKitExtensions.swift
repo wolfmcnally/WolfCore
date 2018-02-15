@@ -34,3 +34,8 @@ extension SKNode {
 }
 
 extension SKNode: Hideable { }
+
+@discardableResult public func => (lhs: SKNode, rhs: [SKNode]) -> SKNode {
+    rhs.forEach { lhs.addChild($0) }
+    return lhs
+}

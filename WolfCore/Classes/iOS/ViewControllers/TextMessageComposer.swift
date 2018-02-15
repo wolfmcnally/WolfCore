@@ -64,13 +64,12 @@ public class TextMessageComposer: NSObject {
     }
 }
 
-extension TextMessageComposer : MFMessageComposeViewControllerDelegate {
+extension TextMessageComposer: MFMessageComposeViewControllerDelegate {
     public func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        Self.viewController.dismiss() {
+        Self.viewController.dismiss {
             Self.completion?(result)
             Self.completion = nil
             Self.viewController = nil
         }
     }
 }
-

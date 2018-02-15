@@ -72,7 +72,7 @@ public struct LexNum {
     private static func elen(_ n: Int, c: Character, acc: String = "") -> String {
         var acc = acc
         if n > 0 {
-            acc = acc + String(c)
+            acc += String(c)
         }
         let len = Int(ceil(log10(Double(n + 1))))
         if len > 1 {

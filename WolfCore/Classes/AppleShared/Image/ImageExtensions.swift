@@ -137,7 +137,7 @@ extension OSImage {
         let backgroundBounds = CGRect(origin: .zero, size: backgroundImage.size)
         let foregroundBounds = CGRect(origin: .zero, size: self.size)
 
-        return newImage(withSize: backgroundBounds.size, isOpaque: false, scale: backgroundImage.scale, renderingMode: .alwaysOriginal) { context in
+        return newImage(withSize: backgroundBounds.size, isOpaque: false, scale: backgroundImage.scale, renderingMode: .alwaysOriginal) { _ in
             backgroundImage.draw(in: backgroundBounds)
             self.draw(in: foregroundBounds)
         }
@@ -157,13 +157,13 @@ extension OSImage {
 
     public func scaled(toSize size: CGSize, isOpaque: Bool = false) -> OSImage {
         let targetSize = self.size.aspectFit(within: size)
-        return newImage(withSize: targetSize, isOpaque: isOpaque, scale: scale, renderingMode: self.renderingMode) { context in
+        return newImage(withSize: targetSize, isOpaque: isOpaque, scale: scale, renderingMode: self.renderingMode) { _ in
             self.draw(in: CGRect(origin: .zero, size: targetSize))
         }
     }
 
     public func cropped(toRect rect: CGRect, isOpaque: Bool = false) -> OSImage {
-        return newImage(withSize: rect.size, isOpaque: isOpaque, scale: scale, renderingMode: self.renderingMode) { context in
+        return newImage(withSize: rect.size, isOpaque: isOpaque, scale: scale, renderingMode: self.renderingMode) { _ in
             self.draw(in: CGRect(x: -rect.minX, y: -rect.minY, width: rect.width, height: rect.height))
         }
     }
@@ -177,7 +177,7 @@ extension OSImage {
         } else {
             scaledImage = self
         }
-        
+
         let length = min(scaledImage.size.width, scaledImage.size.height)
         let croppedSize = CGSize(width: length, height: length)
         let croppedImage: OSImage

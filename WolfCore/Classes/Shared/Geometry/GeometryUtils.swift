@@ -109,7 +109,7 @@ public func partingAngleAtVertex(_ p1: Point, _ p2: Point, _ p3: Point) -> Doubl
 public func infoForRoundedCornerArcAtVertex(withRadius radius: Double, _ p1: Point, _ p2: Point, _ p3: Point) -> (center: Point, startPoint: Point, startAngle: Double, endPoint: Point, endAngle: Double, clockwise: Bool) {
     let alpha = partingAngleAtVertex(p1, p2, p3)
     let distanceFromVertexToCenter = radius / (sin(alpha / 2))
-    
+
     let p1p2angle = angleOfLineSegment(p1, p2)
     let bisectionAngle = alpha / 2.0
     let centerAngle = p1p2angle + bisectionAngle
@@ -119,6 +119,6 @@ public func infoForRoundedCornerArcAtVertex(withRadius radius: Double, _ p1: Poi
     let clockwise = true // TODO
     let startPoint = Point(center: center, angle: startAngle, radius: radius)
     let endPoint = Point(center: center, angle: endAngle, radius: radius)
-    
+
     return (center, startPoint, startAngle, endPoint, endAngle, clockwise)
 }

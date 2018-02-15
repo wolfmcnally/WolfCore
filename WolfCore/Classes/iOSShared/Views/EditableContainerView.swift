@@ -41,7 +41,7 @@ public class EditableContainerView: View, Editable {
         view.setNeedsLayout()
         view.layoutIfNeeded()
     }
-    
+
     private weak var currentContentView: UIView!
 
     private func setContentView(_ view: UIView) {

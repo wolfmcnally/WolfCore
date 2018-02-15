@@ -21,7 +21,7 @@ public class InFlightView: View {
     private var rightColumnView: View!
     private var leftTokenViews = [InFlightTokenView]()
     private var rightTokenViews = [InFlightTokenView]()
-    private var tokenViewsByID = [Int : InFlightTokenView]()
+    private var tokenViewsByID = [Int: InFlightTokenView]()
     private var tokenViewConstraintsByID = [Int: Constraints]()
     private var enteringTokenViews = [InFlightTokenView]()
     private var leavingTokenViews = [InFlightTokenView]()
@@ -117,7 +117,7 @@ public class InFlightView: View {
         for tokenView in leavingTokenViews {
             dispatchAnimated(animated, duration: animationDuration, options: [.beginFromCurrentState, .curveEaseOut]) {
                 tokenView.alpha = 0.0
-                }.then { finished in
+                }.then { _ in
                     tokenView.removeFromSuperview()
                     self.tokenViewsByID.removeValue(forKey: tokenView.token.id)
                     if let index = self.leftTokenViews.index(of: tokenView) {
@@ -168,7 +168,7 @@ public class InFlightView: View {
             self.addView(forToken: token)
         }
     }
-    
+
     private func didEnd(withToken token: InFlightToken) {
         dispatchOnMain {
             self.updateView(forToken: token)
@@ -197,4 +197,3 @@ public class InFlightView: View {
         columnsStackView.constrainFrameToFrame(insets: CGInsets(top: 20, left: 20, bottom: 20, right: 20), identifier: "inFlightColumns")
     }
 }
-

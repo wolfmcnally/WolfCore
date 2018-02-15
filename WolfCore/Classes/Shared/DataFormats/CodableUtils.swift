@@ -24,7 +24,7 @@ extension KeyedDecodingContainer {
     public subscript<T>(key: Key) -> T where T: Decodable {
         return try! decode(T.self, forKey: key)
     }
-    
+
     public subscript<NestedKey>(type: NestedKey.Type, key: Key) -> KeyedDecodingContainer<NestedKey> {
         return try! nestedContainer(keyedBy: type, forKey: key)
     }
@@ -35,7 +35,7 @@ extension KeyedEncodingContainer {
         get { fatalError() }
         set { try! encode(newValue, forKey: key) }
     }
-    
+
     //  public subscript<NestedKey>(type: NestedKey.Type, key: Key) -> KeyedEncodingContainer<NestedKey> {
     //    return try! nestedContainer(keyedBy: type, forKey: key)
     //  }

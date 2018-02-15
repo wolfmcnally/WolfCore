@@ -9,14 +9,14 @@
 import Foundation
 
 #if os(Linux)
-    
+
     extension NSRegularExpression {
         public func firstMatch(inString string: String, options: NSMatchingOptions, range: StringRange? = nil) -> TextCheckingResult? {
             let range = range ?? string.stringRange
             let nsRange = string.nsRange(from: range)!
             return firstMatch(in: string, options: options, range: nsRange)
         }
-        
+
         public func matchedSubstrings(inString string: String, options: NSMatchingOptions = [], range: StringRange? = nil) -> [String]? {
             var result: [String]! = nil
             if let textCheckingResult = self.firstMatch(inString: string, options: options, range: range) {
@@ -29,16 +29,16 @@ import Foundation
             return result
         }
     }
-    
+
 #else
-    
+
     extension NSRegularExpression {
         public func firstMatch(inString string: String, options: NSRegularExpression.MatchingOptions, range: StringRange? = nil) -> TextCheckingResult? {
             let range = range ?? string.stringRange
             let nsRange = string.nsRange(from: range)!
             return firstMatch(in: string, options: options, range: nsRange)
         }
-        
+
         public func matchedSubstrings(inString string: String, options: NSRegularExpression.MatchingOptions = [], range: StringRange? = nil) -> [String]? {
             var result: [String]! = nil
             if let textCheckingResult = self.firstMatch(inString: string, options: options, range: range) {
@@ -51,5 +51,5 @@ import Foundation
             return result
         }
     }
-    
+
 #endif

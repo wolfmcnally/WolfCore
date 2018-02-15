@@ -17,27 +17,27 @@ public class Paginator<T> {
     public typealias Page = [Record]
     public typealias RetrieveResult = (countOfRecords: Int?, page: Page)
     public typealias RetrieveBlock = (_ startIndex: Int, _ maxRecords: Int) -> Promise<RetrieveResult>
-    
-    private var pages = [Int : Page]()
+
+    private var pages = [Int: Page]()
     private var pagePromises = [Int: [Promise<Page>]]()
     private var recordPromises = [Int: [(recordPromise: Promise<Record>, itemIndex: Int)]]()
-    
+
     public let recordsPerPage: Int
     public let retrieve: RetrieveBlock
     public private(set) var countOfRecords: Int?
-    
+
     public init(recordsPerPage: Int, retrieve: @escaping RetrieveBlock) {
         self.recordsPerPage = recordsPerPage
         self.retrieve = retrieve
     }
-    
+
     public var countOfPages: Int? {
         guard let countOfRecords = countOfRecords else { return nil }
         let fullPages = countOfRecords / recordsPerPage
         let recordsOnPartialPage = countOfRecords - (recordsPerPage * fullPages)
         return fullPages + (recordsOnPartialPage > 0 ? 1 : 0)
     }
-    
+
     public func retrievePage(at pageIndex: Int = 0) -> Promise<Page> {
         let startIndex = pageIndex * recordsPerPage
         let maxRecords = recordsPerPage
@@ -64,7 +64,7 @@ public class Paginator<T> {
             }
         }
     }
-    
+
     public func retrieveRecord(at recordIndex: Int) -> Promise<Record> {
         let pageIndex = recordIndex / recordsPerPage
         let itemIndex = recordIndex % recordsPerPage
@@ -102,20 +102,20 @@ public class Paginator<T> {
 //
 
 #if false
-    
+
     public class PaginatorTest {
         let retriever: Retriever
         let paginator: Paginator<String>
-        
+
         class Retriever {
             typealias RetrieveResult = (countOfRecords: Int?, page: [String])
-            
+
             let countOfRecords: Int?
-            
+
             init(countOfRecords: Int?) {
                 self.countOfRecords = countOfRecords
             }
-            
+
             func retrieve(startIndex: Int, maxRecords: Int) -> Promise<RetrieveResult> {
                 return Promise<RetrieveResult> { promise in
                     dispatchOnBackground {
@@ -130,32 +130,32 @@ public class Paginator<T> {
                 }
             }
         }
-        
+
         public init() {
             retriever = Retriever(countOfRecords: 100)
             paginator = Paginator(recordsPerPage: 10, retrieve: retriever.retrieve)
         }
-        
+
         static private var test: PaginatorTest!
-        
+
         public static func run() {
             test = PaginatorTest()
             test.run()
         }
-        
+
         private func run() {
             dispatchOnMain(afterDelay: 4) {
                 self.paginator.retrieveRecord(at: 5).then { record in
                     print(record)
                     }.run()
             }
-            
+
             dispatchOnMain(afterDelay: 4) {
                 self.paginator.retrieveRecord(at: 5).then { record in
                     print(record)
                     }.run()
             }
-            
+
             dispatchOnMain(afterDelay: 5) {
                 self.paginator.retrieveRecord(at: 55).then { record in
                     print(record)

@@ -351,6 +351,6 @@ public class Lorem {
         "https://68.media.tumblr.com/8d3f3f938b49ea4dae3a6fb674a6c954/tumblr_nrjecjv3Pe1u1uaauo1_500.jpg", // bautista mine
         "https://68.media.tumblr.com/ac6a52b3f129da7a551515a6e5f15f7a/tumblr_nmcmic62Oi1u1uaauo1_500.jpg", // bautista no
         "https://s-media-cache-ak0.pinimg.com/736x/b3/cb/a5/b3cba5d6b7d7b7013a0e282a8dbbc607.jpg", // parkes juggler
-        "https://s-media-cache-ak0.pinimg.com/736x/c7/65/0a/c7650affd2fa0d4e2cda5128a2275976.jpg", // parkes gargoyle
+        "https://s-media-cache-ak0.pinimg.com/736x/c7/65/0a/c7650affd2fa0d4e2cda5128a2275976.jpg" // parkes gargoyle
     ]
 }

@@ -10,7 +10,7 @@ import Foundation
 
 public class IPAddress6 {
     typealias Run = Range<Int>
-    
+
     private static func replace(longestRun: Run?, wordsCount: Int, components: inout [String]) {
         if let longestRun = longestRun {
             let replacement: [String]
@@ -27,10 +27,10 @@ public class IPAddress6 {
             components.replaceSubrange(longestRun, with: replacement)
         }
     }
-    
+
     public static func encode(_ words: [UInt16], padWithZeroes: Bool = false, collapseLongestZeroRun: Bool = true) -> String {
         assert(words.count == 8)
-        
+
         var longestRun: Run? = nil
         if collapseLongestZeroRun {
             var currentRun: Run? = nil
@@ -42,18 +42,18 @@ public class IPAddress6 {
                         // print("started currentRun: \(currentRun!)")
                     }
                 }
-                
+
                 if currentRun != nil {
                     if word == 0 {
                         if longestRun == nil {
                             longestRun = currentRun
                             // print("started longestRun: \(longestRun!)")
                         }
-                        
+
                         // print("currentRun: \(currentRun!), longestRun: \(longestRun!)")
                         currentRun = currentRun!.lowerBound ..< currentRun!.upperBound + 1
                         // print("extended currentRun: \(currentRun!)")
-                        
+
                         let currentLength = currentRun!.upperBound - currentRun!.lowerBound
                         let longestLength = longestRun!.upperBound - longestRun!.lowerBound
                         if currentLength > longestLength {
@@ -68,7 +68,7 @@ public class IPAddress6 {
             }
         }
         // print("longestRun: \(longestRun)")
-        
+
         var components = [String]()
         for word in words {
             var component = String(word, radix: 16)
@@ -77,12 +77,12 @@ public class IPAddress6 {
             }
             components.append(component)
         }
-        
+
         replace(longestRun: longestRun, wordsCount: words.count, components: &components)
-        
+
         return components.joined(separator: ":")
     }
-    
+
     private static func toWords(_ data: Data) -> [UInt16] {
         assert(data.count == 16)
         return data.withUnsafeBytes { (p: UnsafePointer<UInt8>) -> [UInt16] in
@@ -96,7 +96,7 @@ public class IPAddress6 {
             }
         }
     }
-    
+
     private static func toData(_ words: [UInt16]) -> Data {
         assert(words.count == 8)
         var data = Data(capacity: 16)
@@ -110,11 +110,11 @@ public class IPAddress6 {
         }
         return data
     }
-    
+
     public static func encode(_ data: Data, padWithZeroes: Bool = false, collapseLongestZeroRun: Bool = true) -> String {
         return encode(toWords(data), padWithZeroes: padWithZeroes, collapseLongestZeroRun: collapseLongestZeroRun)
     }
-    
+
     public static func decode(_ string: String) throws -> [UInt16] {
         var components = string.components(separatedBy: ":")
         guard components.count >= 3 else {
@@ -136,7 +136,7 @@ public class IPAddress6 {
             components.replaceSubrange(index...index, with: ["#"])
         }
         //        print(components)
-        
+
         if let index = components.index(of: "#") {
             let count = 9 - components.count
             let zeros = [String](repeating: "0", count: count)
@@ -146,7 +146,7 @@ public class IPAddress6 {
         guard components.count == 8 else {
             throw ValidationError(message: "Invalid IP address.", violation: "ipv6Format")
         }
-        
+
         var words = [UInt16]()
         words.reserveCapacity(8)
         for component in components {
@@ -155,33 +155,33 @@ public class IPAddress6 {
             }
             words.append(i)
         }
-        
+
         //        print("words: \(words)")
-        
+
         return words
     }
-    
+
     public static func decode(string: String) throws -> Data {
         return toData(try decode(string))
     }
-    
+
     public static func test() {
         test([0x0, 0x0, 0x1, 0x0, 0xfffe, 0x0, 0x0, 0x1234],
              encodedLong: "0000:0000:0001:0000:fffe:0000:0000:1234",
              encodedShort: "::1:0:fffe:0:0:1234")
-        
+
         test([0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0],
              encodedLong: "0000:0000:0000:0000:0000:0000:0000:0000",
              encodedShort: "::")
-        
+
         test([0x1, 0x0, 0x0, 0x2, 0x0, 0x0, 0x0, 0x3],
              encodedLong: "0001:0000:0000:0002:0000:0000:0000:0003",
              encodedShort: "1:0:0:2::3")
-        
+
         test([0x1, 0x0, 0x0, 0x2, 0x3, 0x0, 0x0, 0x0],
              encodedLong: "0001:0000:0000:0002:0003:0000:0000:0000",
              encodedShort: "1:0:0:2:3::")
-        
+
         do {
             print(try [UInt16](IPAddress6.decode("::f:a:1")))
             print(IPAddress6.encode([UInt16]([0, 0, 0, 0, 0, 2, 3, 1])))
@@ -189,23 +189,23 @@ public class IPAddress6 {
             logError(error)
         }
     }
-    
+
     public static func test(_ words: [UInt16], encodedLong: String, encodedShort: String) {
         do {
             logInfo("words: \(words), encodedLong: \(encodedLong), encodedShort: \(encodedShort)")
-            
+
             let encoded1 = IPAddress6.encode(words, padWithZeroes: true, collapseLongestZeroRun: false)
             assert(encoded1 == encodedLong)
             let encoded2 = IPAddress6.encode(words)
             assert(encoded2 == encodedShort)
-            
+
             let data = toData(words)
             let encoded3 = IPAddress6.encode(data, padWithZeroes: true, collapseLongestZeroRun: false)
             assert(encoded3 == encoded1)
-            
+
             let decodeWords: [UInt16] = try IPAddress6.decode(encoded2)
             assert(decodeWords == words)
-            
+
             logInfo("Passed.")
         } catch let error {
             logError(error)

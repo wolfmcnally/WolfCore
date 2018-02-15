@@ -29,7 +29,7 @@
                 }
             }
         }
-        
+
         public func setAction(accessibilityIdentifiers identifiers: [String]) {
             for index in 0..<actions.count {
                 setAction(identifier: identifiers[index], at: index)

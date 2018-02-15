@@ -65,13 +65,12 @@ public class EmailComposer: NSObject {
     }
 }
 
-extension EmailComposer : MFMailComposeViewControllerDelegate {
+extension EmailComposer: MFMailComposeViewControllerDelegate {
     public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        Self.viewController.dismiss() {
+        Self.viewController.dismiss {
             Self.completion?(result)
             Self.completion = nil
             Self.viewController = nil
         }
     }
 }
-

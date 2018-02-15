@@ -25,7 +25,7 @@ extension AnimatedHideable {
                 self.hide()
             }.run()
     }
-    
+
     public func show(animated: Bool) {
         guard isHidden else { return }
         dispatchAnimated(animated) {
@@ -33,7 +33,7 @@ extension AnimatedHideable {
             self.alpha = 1
             }.run()
     }
-    
+
     public func showIf(_ condition: Bool, animated: Bool) {
         if condition {
             show(animated: animated)
@@ -41,7 +41,7 @@ extension AnimatedHideable {
             hide(animated: animated)
         }
     }
-    
+
     public func hideIf(_ condition: Bool, animated: Bool) {
         if condition {
             hide(animated: animated)

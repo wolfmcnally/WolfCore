@@ -35,7 +35,7 @@ extension Optional: OptionalProtocol {
         case .none: return String(describing: self)
         }
     }
-    
+
     public var isNone: Bool {
         switch self {
         case .none: return true
@@ -49,7 +49,7 @@ extension Optional: OptionalProtocol {
         case .some: return true
         }
     }
-    
+
     public func unwrap() -> Any {
         switch self {
         case .none: preconditionFailure("trying to unwrap nil")
@@ -58,8 +58,7 @@ extension Optional: OptionalProtocol {
     }
 }
 
-public func unwrap<T>(_ any: T) -> Any
-{
+public func unwrap<T>(_ any: T) -> Any {
     guard let optional = any as? OptionalProtocol, optional.isSome else {
         return any
     }

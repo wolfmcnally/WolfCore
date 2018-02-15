@@ -15,7 +15,7 @@ private var nextQueueContext: Int = 1
 public class Serializer {
     let queue: DispatchQueue
     let queueContext: Int
-    
+
     public init(label: String? = nil) {
         let label = label ?? String(nextQueueContext)
         queue = DispatchQueue(label: label, attributes: [])
@@ -23,12 +23,12 @@ public class Serializer {
         queue.setSpecific(key: serializerKey, value: queueContext)
         nextQueueContext += 1
     }
-    
+
     var isExecutingOnMyQueue: Bool {
         guard let context = DispatchQueue.getSpecific(key: serializerKey) else { return false }
         return context == queueContext
     }
-    
+
     public func dispatch(f: Block) {
         if isExecutingOnMyQueue {
             f()
@@ -36,10 +36,10 @@ public class Serializer {
             queue.sync(execute: f)
         }
     }
-    
+
     public func dispatchWithReturn<T>(f: () -> T) -> T {
         var result: T!
-        
+
         if isExecutingOnMyQueue {
             result = f()
         } else {
@@ -47,7 +47,7 @@ public class Serializer {
                 result = f()
             }
         }
-        
+
         return result!
     }
 }

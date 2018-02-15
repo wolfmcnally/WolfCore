@@ -71,7 +71,7 @@ public struct FontStyle: Equatable {
         return f
     }
 
-    public static func ==(lhs: FontStyle, rhs: FontStyle) -> Bool {
+    public static func == (lhs: FontStyle, rhs: FontStyle) -> Bool {
         return lhs.descriptor == rhs.descriptor &&
             lhs.color == rhs.color &&
             lhs.allCaps == rhs.allCaps
@@ -480,4 +480,3 @@ public struct FontStyle: Equatable {
  Bangla Sangam MN
 
  */
-

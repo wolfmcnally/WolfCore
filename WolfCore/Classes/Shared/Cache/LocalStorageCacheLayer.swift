@@ -11,22 +11,22 @@ import Foundation
 public class LocalStorageCacheLayer: CacheLayer {
     public let fileURL: URL
     public let sizeLimit: Int
-    
+
     private var db: SQLite! = nil
     private let serializer = Serializer()
-    
+
     public init?(fileURL: URL, sizeLimit: Int) {
         self.fileURL = fileURL
         self.sizeLimit = sizeLimit
-        
+
         logInfo("init filename: \(fileURL.lastPathComponent), sizeLimit: \(sizeLimit)", obj: self, group: .cache)
-        
+
         do {
             db = try SQLite(fileURL: fileURL)
             try db.exec(sql: "CREATE TABLE IF NOT EXISTS cache ( dateAccessed INTEGER NOT NULL, url TEXT UNIQUE NOT NULL, size INTEGER NOT NULL, data BLOB NOT NULL )")
             try db.exec(sql: "CREATE INDEX IF NOT EXISTS cacheURLIndex ON cache ( url )")
             try db.exec(sql: "CREATE INDEX IF NOT EXISTS cacheDateAccessedIndex ON cache ( dateAccessed )")
-            
+
             try db.exec(sql: "CREATE TABLE IF NOT EXISTS admin ( key TEXT UNIQUE NOT NULL, value )")
             try db.exec(sql: "CREATE INDEX IF NOT EXISTS adminKeyIndex ON admin ( key )")
             try db.exec(sql: "INSERT OR IGNORE INTO admin ( key, value ) VALUES ( 'version', 0 )")
@@ -36,7 +36,7 @@ public class LocalStorageCacheLayer: CacheLayer {
             return nil
         }
     }
-    
+
     public convenience init?(filename: String, sizeLimit: Int) {
         do {
             let fileManager = FileManager.default
@@ -49,7 +49,7 @@ public class LocalStorageCacheLayer: CacheLayer {
             return nil
         }
     }
-    
+
     public func store(data: Data, for url: URL) {
         logTrace("storeData for: \(url)", obj: self, group: .cache)
         dispatchOnBackground {
@@ -58,9 +58,9 @@ public class LocalStorageCacheLayer: CacheLayer {
             }
         }
     }
-    
+
     private func _store(data: Data, for url: URL) {
-        
+
         // Get the current total size of the cache
         var totalSize: Int
         do {
@@ -76,7 +76,7 @@ public class LocalStorageCacheLayer: CacheLayer {
             logError("Accessing cache size: \(error)", obj: self)
             return
         }
-        
+
         // If the cache already contains an entry for the given URL
         do {
             let selectStatement = try db.prepare(sql: "SELECT rowid, size FROM cache WHERE url=:url")
@@ -97,7 +97,7 @@ public class LocalStorageCacheLayer: CacheLayer {
             logError("Finding existing item: \(error).", obj: self)
             return
         }
-        
+
         // If the cache is over the size limit
         let sizeNeeded = totalSize - sizeLimit
         if sizeNeeded > 0 {
@@ -110,14 +110,14 @@ public class LocalStorageCacheLayer: CacheLayer {
                 return
             }
         }
-        
+
         // Calculate the new size of the cache including the item being added
         let dataLength = data.count
         totalSize += dataLength
-        
+
         do {
             db.beginTransaction()
-            
+
             // Add the new item to the cache
             do {
                 let statement = try db.prepare(sql: "INSERT INTO cache ( dateAccessed, url, size, data ) VALUES ( CURRENT_TIMESTAMP, :url, :size, :data )")
@@ -129,7 +129,7 @@ public class LocalStorageCacheLayer: CacheLayer {
                 logError("Storing cache object: \(error)", obj: self)
                 throw error
             }
-            
+
             // Store the updated size of the cache
             do {
                 let statement = try db.prepare(sql: "UPDATE admin SET value=:totalSize WHERE key='totalSize'")
@@ -139,16 +139,16 @@ public class LocalStorageCacheLayer: CacheLayer {
                 logError("Updating total cache size: \(error)", obj: self)
                 throw error
             }
-            
+
             db.commitTransaction()
         } catch {
             db.rollbackTransaction()
         }
     }
-    
+
     private func pruneCache(sizeNeeded: Int) throws -> Int {
         var sizeReclaimed = 0
-        
+
         // Get the cache entries, sorted by least-recently-accessed first
         db.beginTransaction()
         do {
@@ -173,10 +173,10 @@ public class LocalStorageCacheLayer: CacheLayer {
             db.rollbackTransaction()
             throw error
         }
-        
+
         return sizeReclaimed
     }
-    
+
     public func retrieveData(for url: URL) -> DataPromise {
         func perform(promise: DataPromise) {
             logTrace("retrieveDataForURL: \(url)", obj: self, group: .cache)
@@ -186,7 +186,7 @@ public class LocalStorageCacheLayer: CacheLayer {
                 }
             }
         }
-        
+
         func _perform(promise: DataPromise) {
             do {
                 let selectStatement = try db.prepare(sql: "SELECT data FROM cache where url=:url")
@@ -197,11 +197,11 @@ public class LocalStorageCacheLayer: CacheLayer {
                     dispatchOnMain {
                         promise.keep(data)
                     }
-                    
+
                     let updateStatement = try db.prepare(sql: "UPDATE cache SET dateAccessed=CURRENT_TIMESTAMP WHERE url=:url")
                     updateStatement.bindParameter(named: "url", toURL: url)
                     try updateStatement.step()
-                    
+
                 case .done:
                     dispatchOnMain {
                         promise.fail(CacheError.miss(url))
@@ -214,10 +214,10 @@ public class LocalStorageCacheLayer: CacheLayer {
                 }
             }
         }
-        
+
         return DataPromise(with: perform)
     }
-    
+
     public func removeData(for url: URL) {
         logTrace("removeDataForURL: \(url)", obj: self, group: .cache)
         dispatchOnBackground {
@@ -226,7 +226,7 @@ public class LocalStorageCacheLayer: CacheLayer {
             }
         }
     }
-    
+
     private func _removeData(for url: URL) {
         do {
             let deleteStatement = try db.prepare(sql: "DELETE FROM cache WHERE url=:url")
@@ -236,7 +236,7 @@ public class LocalStorageCacheLayer: CacheLayer {
             logError("Removing cache data for URL: \(url) error: \(error).", obj: self)
         }
     }
-    
+
     public func removeAll() {
         logTrace("removeAll", obj: self, group: .cache)
         dispatchOnBackground {
@@ -245,7 +245,7 @@ public class LocalStorageCacheLayer: CacheLayer {
             }
         }
     }
-    
+
     private func _removeAll() {
         do {
             db.beginTransaction()

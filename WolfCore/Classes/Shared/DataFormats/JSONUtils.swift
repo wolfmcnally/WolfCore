@@ -31,11 +31,11 @@ extension JSON {
             throw Error.wrongType(key, value)
         }
     }
-    
+
     public func getValue<T>(for key: String) throws -> T? {
         return try getGenericValue(for: key)
     }
-    
+
     /// Get a value of RawRepresentable type `T` for a given key in the JSON dictionary. The value is nullable,
     /// and the return value will be `nil` if either the key does not exist or the value is `null`.
     /// An error will be thrown if the value exists but cannot be used as a valid `rawValue` of the type `T`.
@@ -44,12 +44,12 @@ extension JSON {
         guard let v = T(rawValue: s) else { throw Error.wrongType(key, s) }
         return v
     }
-    
+
     public func getValue(for key: String) throws -> JSON? {
         guard let v: JSON.Value = try getGenericValue(for: key) else { return nil }
         return try JSON(value: v)
     }
-    
+
     /// Get a value of JSONModel type `T` for a given key in the JSON dictionary. The value is nullable,
     /// and the return value will be `nil` if either the key does not exist or the value is `null`.
     /// An error will be thrown if the value exists but cannot be used as a valid JSON.Dictionary.
@@ -57,7 +57,7 @@ extension JSON {
         guard let v: JSON = try getGenericValue(for: key) else { return nil }
         return T(json: v)
     }
-    
+
     /// Get a `URL` value for a given key in the JSON dictionary. The value is nullable,
     /// and the return value will be `nil` if either the key does not exist or the value is `null`.
     /// An error will be thrown if the value exists but cannot be parsed into a `URL`.
@@ -66,7 +66,7 @@ extension JSON {
         guard let url = URL(string: s) else { throw Error.wrongType(key, s) }
         return url
     }
-    
+
     /// Get a `Date` value for a given key in the JSON dictionary. The value is nullable,
     /// and the return value will be `nil` if either the key does not exist or the value is `null`.
     /// An error will be thrown if the value exists but cannot be parsed into a `Date`.
@@ -74,7 +74,7 @@ extension JSON {
         guard let s: String = try getGenericValue(for: key) else { return nil }
         return try Date(iso8601: s)
     }
-    
+
     /// Get a `Color` value for a given key in the JSON dictionary. The value is nullable,
     /// and the return value will be `nil` if either the key does not exist or the value is `null`.
     /// An error will be thrown if the value exists but cannot be parsed into a color.
@@ -94,14 +94,14 @@ extension JSON {
             throw Error.missingKey(key)
         }
     }
-    
+
     /// Get a value of type `T` for a given key in the JSON dictionary. If the `fallback` argument is provided,
     /// it will be substituted only if the key is `null` or nonexistent. An error will be thrown
     /// if the value exists but cannot be cast to the generic type `T`.
     public func getValue<T>(for key: String, with fallback: T? = nil) throws -> T {
         return try genericValue(for: key, with: fallback) { return $0 }
     }
-    
+
     /// Get a value of the RawRepresentable type `T` for a given key in the JSON dictionary. If
     /// the `fallback` argument is provided, it will be substituted only if the key is `null` or nonexistent.
     /// An error will be thrown if the value exists but cannot be used as a valid `rawValue` of `T`.
@@ -111,13 +111,13 @@ extension JSON {
             return v
         }
     }
-    
+
     public func getValue(for key: String, with fallback: JSON? = nil) throws -> JSON {
         return try genericValue(for: key, with: fallback) { (v: JSON.Value) throws -> JSON in
             return try JSON(value: v)
         }
     }
-    
+
     /// Get a value of the JSONModel type `T` for a given key in the JSON dictionary. If
     /// the `fallback` argument is provided, it will be substituted only if the key is `null` or nonexistent.
     /// An error will be thrown if the value exists but cannot be used as a valid JSON.Dictionary
@@ -126,7 +126,7 @@ extension JSON {
             return try T(json: JSON(value: v))
         }
     }
-    
+
     /// Get a `URL` value for a given key in the JSON dictionary. The URL will be parsed from a string value in
     /// the dictionary. If the `fallback` argument is provided, it will be substituted only if the key is `null`
     /// or nonexistent. An error will be thrown if the value exists but cannot be parsed into a `URL`.
@@ -136,7 +136,7 @@ extension JSON {
             return url
         }
     }
-    
+
     /// Get a `Date` value for a given key in the JSON dictionary. The URL will be parsed from a string value in
     /// the dictionary. If the `fallback` argument is provided, it will be substituted only if the key is `null`
     /// or nonexistent. An error will be thrown if the value exists but cannot be parsed into a `Date`.
@@ -145,7 +145,7 @@ extension JSON {
             return try Date(iso8601: $0)
         }
     }
-    
+
     /// Get a `Color` value for a given key in the JSON dictionary. The color will be parsed from a string value in
     /// the dictionary. If the `fallback` argument is provided, it will be substituted only if the key is `null`
     /// or nonexistent. An error will be thrown if the value exists but cannot be parsed into a `OSColor`.
@@ -155,4 +155,3 @@ extension JSON {
         }
     }
 }
-

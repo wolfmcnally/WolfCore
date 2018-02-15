@@ -33,9 +33,7 @@ public struct Random {
     #endif
 
     public static var shared: Random {
-        get {
-            return _instance
-        }
+        return _instance
     }
 
     #if os(iOS) || os(macOS) || os(tvOS)

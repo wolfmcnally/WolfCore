@@ -17,7 +17,7 @@ extension Int {
     public func lerpedFromRange<T: BinaryFloatingPoint>(_ range: CountableRange<Int>, to interval: Interval<T>) -> T {
         return T(self).lerped(from: T(range.lowerBound)..T(range.upperBound - 1), to: interval)
     }
-    
+
     /// Interpolates from a integer `CountableClosedRange` to a floating-point `Interval`.
     ///
     ///     5.lerped(from: 0 ..< 10, to: 0 .. 100) == 50.0
@@ -40,7 +40,7 @@ extension BinaryFloatingPoint {
 
         return (a - self) / from
     }
-    
+
     /// The value lerped from the interval `0 .. 1` to the interval `a .. b`. (`a` may be greater than `b`).
     public func lerpedFromFrac(to interval: Interval<Self>) -> Self {
         let a = interval.a
@@ -52,7 +52,7 @@ extension BinaryFloatingPoint {
 
         return self * (b - a) + a
     }
-    
+
     /// The value lerped from the interval `a1 .. b1` to the interval `a2 .. b2`. (the `a`'s may be greater than the `b`'s).
     public func lerped(from interval1: Interval<Self>, to interval2: Interval<Self>) -> Self {
         let a1 = interval1.a

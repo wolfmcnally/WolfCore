@@ -13,14 +13,14 @@
 public struct Size {
     public var width: Double = 0
     public var height: Double = 0
-    
+
     public static let None = -1.0
-    
+
     public init() {
         width = 0.0
         height = 0.0
     }
-    
+
     public init(width: Double, height: Double) {
         self.width = width
         self.height = height
@@ -33,7 +33,7 @@ public struct Size {
             width = Double(s.width)
             height = Double(s.height)
         }
-        
+
         public var cgSize: CGSize {
             return CGSize(width: CGFloat(width), height: CGFloat(height))
         }
@@ -45,11 +45,11 @@ extension Size {
         width = vector.dx
         height = vector.dy
     }
-    
+
     public var aspect: Double {
         return width / height
     }
-    
+
     public func scaleForAspectFit(within size: Size) -> Double {
         if size.width != Size.None && size.height != Size.None {
             return min(size.width / width, size.height / height)
@@ -59,7 +59,7 @@ extension Size {
             return size.height / height
         }
     }
-    
+
     public func scaleForAspectFill(within size: Size) -> Double {
         if size.width != Size.None && size.height != Size.None {
             return max(size.width / width, size.height / height)
@@ -69,12 +69,12 @@ extension Size {
             return size.height / height
         }
     }
-    
+
     public func aspectFit(within size: Size) -> Size {
         let scale = scaleForAspectFit(within: size)
         return Size(vector: Vector(size: self) * scale)
     }
-    
+
     public func aspectFill(within size: Size) -> Size {
         let scale = scaleForAspectFill(within: size)
         return Size(vector: Vector(size: self) * scale)
@@ -90,19 +90,19 @@ extension Size: CustomStringConvertible {
 extension Size {
     public static let zero = Size()
     public static let infinite = Size(width: Double.infinity, height: Double.infinity)
-    
+
     public init(width: Int, height: Int) {
         self.width = Double(width)
         self.height = Double(height)
     }
-    
+
     public init(width: Float, height: Float) {
         self.width = Double(width)
         self.height = Double(height)
     }
 }
 
-extension Size : Equatable {
+extension Size: Equatable {
 }
 
 public func == (lhs: Size, rhs: Size) -> Bool {

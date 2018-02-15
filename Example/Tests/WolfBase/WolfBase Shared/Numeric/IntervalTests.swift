@@ -19,7 +19,7 @@ class IntervalTests: XCTestCase {
         XCTAssert(i.isAscending)
         XCTAssert(!i.isDescending)
         XCTAssert(!i.isFlat)
-        
+
         let j = Interval(5, -2)
         XCTAssert(j.a == 5)
         XCTAssert(j.b == -2)
@@ -28,11 +28,11 @@ class IntervalTests: XCTestCase {
         XCTAssert(j.isDescending)
         XCTAssert(!j.isAscending)
         XCTAssert(!j.isFlat)
-        
+
         let range_i = i.closedRange
         XCTAssert(range_i.lowerBound == 1)
         XCTAssert(range_i.upperBound == 2)
-        
+
         let range_j = j.closedRange
         XCTAssert(range_j.lowerBound == -2)
         XCTAssert(range_j.upperBound == 5)

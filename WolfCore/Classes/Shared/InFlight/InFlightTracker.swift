@@ -34,14 +34,14 @@ public class InFlightTracker {
     //        }
     //    }
     //    #endif
-    
+
     //    #if os(Linux)
     //    public static func setup(withView: Bool = false) {
     //        inFlightTracker = InFlightTracker()
     //        inFlightTracker!.syncToHidden()
     //    }
     //    #endif
-    
+
     //    #if !os(Linux)
     //    public static func setup(withView: Bool = false) {
     //        inFlightTracker = InFlightTracker()
@@ -55,14 +55,14 @@ public class InFlightTracker {
     //        inFlightTracker!.syncToHidden()
     //    }
     //    #endif
-    
+
     //    public func syncToHidden() {
     //        logTrace("syncToHidden: \(isHidden)", group: .inFlight)
     //        #if !os(Linux)
     //            inFlightView.hideIf(isHidden)
     //        #endif
     //    }
-    
+
     public func start(withName name: String) -> InFlightToken {
         let token = InFlightToken(name: name)
         token.isNetworkActive = true
@@ -73,7 +73,7 @@ public class InFlightTracker {
         logTrace("started: \(token)", group: .inFlight)
         return token
     }
-    
+
     public func end(withToken token: InFlightToken, result: ResultSummary) {
         token.isNetworkActive = false
         token.result = result
@@ -112,4 +112,3 @@ public class InFlightTracker {
 //        }
 //    }
 //}
-

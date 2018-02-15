@@ -13,11 +13,11 @@ private let controlActionSelector = #selector(ControlAction.controlAction)
 open class ControlAction<C: UIControl>: NSObject {
     public typealias ControlType = C
     public typealias ResponseBlock = (ControlType) -> Void
-    
+
     public var action: ResponseBlock?
     public let control: ControlType
     private let controlEvents: UIControlEvents
-    
+
     public init(control: ControlType, for controlEvents: UIControlEvents, action: ResponseBlock? = nil) {
         self.control = control
         self.action = action
@@ -25,11 +25,11 @@ open class ControlAction<C: UIControl>: NSObject {
         super.init()
         control.addTarget(self, action: controlActionSelector, for: controlEvents)
     }
-    
+
     deinit {
         control.removeTarget(self, action: controlActionSelector, for: controlEvents)
     }
-    
+
     @objc public func controlAction() {
         action?(control)
     }
@@ -70,7 +70,7 @@ public typealias RefreshBlock = (_ completion: @escaping (_ endText: AttributedS
             }
             scrollView.refreshControl = UIRefreshControl()
             super.init(control: scrollView.refreshControl!, for: .valueChanged) { refreshControl in
-                let startTitle = refreshAction() { endTitle in
+                let startTitle = refreshAction { endTitle in
                     dispatchOnMain {
                         refreshControl.attributedTitle = endTitle
                         refreshControl.endRefreshing()
@@ -79,15 +79,15 @@ public typealias RefreshBlock = (_ completion: @escaping (_ endText: AttributedS
                 refreshControl.attributedTitle = startTitle
             }
         }
-        
+
         deinit {
             scrollView.refreshControl = nil
         }
     }
-    
+
     @available(iOS 10.0, *)
     public func addRefreshControlAction(to scrollView: UIScrollView, action: @escaping RefreshBlock) -> RefreshControlAction {
         return RefreshControlAction(scrollView: scrollView, refreshAction: action)
     }
-    
+
 #endif

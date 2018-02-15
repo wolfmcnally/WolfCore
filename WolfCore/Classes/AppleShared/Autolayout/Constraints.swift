@@ -19,10 +19,8 @@ extension LogGroup {
 public func warnForNoIdentifier(in constraints: [NSLayoutConstraint]) {
     guard let logger = logger else { return }
     guard logger.isGroupActive(.layout) else { return }
-    for constraint in constraints {
-        if constraint.identifier == nil {
-            logWarning("No identifier for: \(constraint)", group: .layout)
-        }
+    for constraint in constraints where constraint.identifier == nil {
+        logWarning("No identifier for: \(constraint)", group: .layout)
     }
 }
 
@@ -52,7 +50,7 @@ public final class Constraints: Invalidatable {
         get { return first.constant }
         set { first.constant = newValue }
     }
-    
+
     public func append(_ constraints: Constraints) {
         self.constraints.append(contentsOf: constraints.constraints)
     }

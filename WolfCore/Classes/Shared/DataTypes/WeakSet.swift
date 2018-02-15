@@ -16,24 +16,24 @@
 public struct WeakSet<T> where T: AnyObject, T: Hashable {
     public typealias Element = T
     public typealias Entry = Weak<Element>
-    
+
     /// Maps Element hashValues to arrays of Entry objects.
     /// Invalid Entry instances are culled as a side effect of add() and remove()
     /// when they touch an object with the same hashValue.
     public typealias Contents = [Int: [Entry]]
-    
+
     fileprivate var contents = Contents()
-    
+
     public init(_ objects: T...) {
         self.init(objects)
     }
-    
+
     public init(_ objects: [T]) {
         for object in objects {
             insert(object)
         }
     }
-    
+
     /// Inserts the given element in the set if it is not already present.
     @discardableResult public mutating func insert(_ newMember: Element) -> (inserted: Bool, memberAfterInsert: Element) {
         let hash = newMember.hashValue
@@ -50,7 +50,7 @@ public struct WeakSet<T> where T: AnyObject, T: Hashable {
         contents[hash] = entriesAtHash
         return (true, newMember)
     }
-    
+
     /// Removes the specified element from the set.
     @discardableResult public mutating func remove(_ member: Element) -> Element? {
         let hash = member.hashValue
@@ -68,33 +68,30 @@ public struct WeakSet<T> where T: AnyObject, T: Hashable {
             return nil
         }
     }
-    
+
     /// Returns a Boolean value that indicates whether the given element exists
     /// in the set.
     public func contains(_ member: Element) -> Bool {
         let entriesAtHash = validEntriesAtHash(member.hashValue)
-        for entry in entriesAtHash {
-            if entry.element == member {
-                return true
-            }
+        for entry in entriesAtHash where entry.element == member {
+            return true
         }
         return false
     }
-    
+
     private func validEntriesAtHash(_ hashValue: Int) -> [Entry] {
         if let entries = contents[hashValue] {
             return entries.filter {
                 $0.element != nil
             }
-        }
-        else {
+        } else {
             return []
         }
     }
-    
+
     public struct Iterator: IteratorProtocol {
         var n: () -> T?
-        
+
         public init(_ s: WeakSet<Element>) {
             var contentsIterator = s.contents.values.makeIterator()         // generates arrays of entities
             var entryIterator = contentsIterator.next()?.makeIterator()  // generates entries
@@ -102,14 +99,13 @@ public struct WeakSet<T> where T: AnyObject, T: Hashable {
                 // Note: If entryIterator is nil, the party is over. No more.
                 if let element = entryIterator?.next()?.element {
                     return element
-                }
-                else { // Ran out of entities in this array. Get the next one, if there is one.
+                } else { // Ran out of entities in this array. Get the next one, if there is one.
                     entryIterator = contentsIterator.next()?.makeIterator()
                     return entryIterator?.next()?.element
                 }
             }
         }
-        
+
         public mutating func next() -> T? {
             return n()
         }

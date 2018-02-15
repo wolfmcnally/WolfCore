@@ -49,7 +49,7 @@ extension BulletinView: BulletinViewProtocol {
             specificBulletin = newValue as! BulletinType
         }
     }
-    
+
     public var view: View {
         return self
     }

@@ -15,7 +15,7 @@ extension URL {
 }
 
 extension URL {
-    public init(scheme: HTTPScheme, host: String, basePath: String? = nil, pathComponents: [Any]? = nil, query: [String : String]? = nil) {
+    public init(scheme: HTTPScheme, host: String, basePath: String? = nil, pathComponents: [Any]? = nil, query: [String: String]? = nil) {
         let comps = URLComponents(scheme: scheme, host: host, basePath: basePath, pathComponents: pathComponents, query: query)
         self.init(string: comps.string!)!
     }

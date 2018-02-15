@@ -79,14 +79,14 @@ open class StateMachine {
         var remainingTime = elapsedTime
         while remainingTime > 0 && currentTime < newCurrentTime {
             guard let currentState = currentState else {
-                currentTime = currentTime + remainingTime
+                currentTime = currentTime! + remainingTime
                 remainingTime = 0
                 return
             }
             let actualDuration = currentState.update(deltaTime: remainingTime)
             assert(actualDuration <= remainingTime)
             remainingTime -= actualDuration
-            currentTime = currentTime + actualDuration
+            currentTime = currentTime! + actualDuration
         }
     }
 }

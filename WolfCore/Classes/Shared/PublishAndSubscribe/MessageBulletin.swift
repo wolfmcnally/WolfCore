@@ -11,7 +11,7 @@ import Foundation
 open class MessageBulletin: Bulletin {
     public let title: String?
     public let message: String?
-    
+
     public init(title: String? = nil, message: String? = nil, priority: Int = normalPriority, duration: TimeInterval? = nil) {
         self.title = title
         self.message = message

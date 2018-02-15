@@ -16,15 +16,15 @@ import Foundation
 
 public struct SHA1 {
     private typealias `Self` = SHA1
-    
+
     #if os(Linux)
     private static let digestLength = Int(SHA_DIGEST_LENGTH)
     #else
     private static let digestLength = Int(CC_SHA1_DIGEST_LENGTH)
     #endif
-    
+
     public private(set) var digest = Data(repeating: 0, count: Self.digestLength)
-    
+
     public init(data: Data) {
         digest.withUnsafeMutableBytes { (digestPtr: UnsafeMutablePointer<UInt8>) in
             data.withUnsafeBytes { (dataPtr: UnsafePointer<UInt8>) in
@@ -36,7 +36,7 @@ public struct SHA1 {
             }
         }
     }
-    
+
     public static func test() {
         // $ openssl dgst -sha1 -hex
         // The quick brown fox\n^d

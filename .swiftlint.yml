@@ -1,0 +1,16 @@
+disabled_rules:
+    - force_try
+    - line_length
+    - identifier_name
+    - force_cast
+    - cyclomatic_complexity
+    - function_body_length
+    - vertical_whitespace
+    - large_tuple
+    - type_name
+    - file_length
+    - function_parameter_count
+    - type_body_length
+    - todo
+
+maxEmptyLines: 3

@@ -8,19 +8,19 @@
 
 public struct ValidationError: DescriptiveError {
     public let isCancelled = false
-    
+
     public let message: String
     public let violation: String
     public let source: String?
     public let code: Int
-    
+
     public init(message: String, violation: String, source: String? = nil, code: Int = 1) {
         self.message = message
         self.violation = violation
         self.source = source
         self.code = code
     }
-    
+
     public var identifier: String {
         if let fieldIdentifier = source {
             return "\(fieldIdentifier)-\(violation)"

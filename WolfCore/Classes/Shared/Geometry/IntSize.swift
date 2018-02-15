@@ -17,7 +17,7 @@ extension IntSize: CustomStringConvertible {
     }
 }
 
-extension IntSize : Equatable {
+extension IntSize: Equatable {
 }
 
 public func == (lhs: IntSize, rhs: IntSize) -> Bool {

@@ -14,12 +14,12 @@ public struct UTF8 {
         /// Thrown if the Data cannot be decoded to String.
         case invalid
     }
-    
+
     /// The String.
     public let string: String
     /// The raw data for the String as encoded in UTF-8.
     public let data: Data
-    
+
     /// Create a UTF8 from a Data. Throws if the Data does not represent a valid UTF-8 encoded String.
     ///
     /// May be used as a monad transformer.
@@ -30,7 +30,7 @@ public struct UTF8 {
         self.data = data
         self.string = string
     }
-    
+
     /// Create a UTF8 from a String.
     ///
     /// May be used as a monad transformer.

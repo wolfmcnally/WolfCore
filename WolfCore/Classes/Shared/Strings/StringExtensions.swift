@@ -44,9 +44,7 @@ extension String {
 #if !os(Linux)
 public extension NSString {
     var cgFloatValue: CGFloat {
-        get {
-            return CGFloat(self.doubleValue)
-        }
+        return CGFloat(self.doubleValue)
     }
 }
 #endif

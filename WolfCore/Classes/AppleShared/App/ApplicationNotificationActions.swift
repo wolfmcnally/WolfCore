@@ -105,7 +105,7 @@
             get { return getAction(for: .UIApplicationDidBecomeActive) }
             set { setAction(using: newValue, object: nil, name: .UIApplicationDidBecomeActive) }
         }
-        
+
         public var willResignActive: NotificationBlock? {
             get { return getAction(for: .UIApplicationWillResignActive) }
             set { setAction(using: newValue, object: nil, name: .UIApplicationWillResignActive) }

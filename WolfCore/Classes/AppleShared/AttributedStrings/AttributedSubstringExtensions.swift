@@ -47,7 +47,7 @@ extension AttributedSubstring {
         }
         set { addAttribute(.paragraphStyle, value: newValue) }
     }
-    
+
     public var textAlignment: NSTextAlignment {
         get {
             return self.paragraphStyle.alignment

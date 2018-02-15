@@ -35,7 +35,7 @@ extension Array {
 
     /// Fisher–Yates shuffle
     /// http://datagenetics.com/blog/november42014/index.html
-    public var shuffled: Array<Element> {
+    public var shuffled: [Element] {
         var result = self
         let hi = count - 1
         for a in 0 ..< hi {
@@ -67,7 +67,7 @@ extension Sequence {
         return a.joined(separator: separator)
     }
 
-    public func filtermap<T>(_ transform: (Element) -> T?) -> Array<T> {
+    public func filtermap<T>(_ transform: (Element) -> T?) -> [T] {
         var result = [T]()
         forEach {
             guard let t = transform($0) else { return }

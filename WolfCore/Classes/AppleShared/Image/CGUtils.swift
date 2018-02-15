@@ -44,7 +44,7 @@ public func rotateContext(_ context: CGContext, by angle: CGFloat, around point:
 }
 
 public func drawPlaceholderRect(_ rect: CGRect, lineWidth: CGFloat = 1.0, color: OSColor? = OSColor(white: 0.5, alpha: 0.5)) {
-    drawIntoCurrentContext() { context in
+    drawIntoCurrentContext { context in
         context.setLineWidth(lineWidth)
         if let color = color {
             context.setStrokeColor(color.cgColor)
@@ -64,4 +64,3 @@ public func drawPlaceholderRect(_ rect: CGRect, lineWidth: CGFloat = 1.0, color:
 //extension CGFloat: JSONRepresentable {
 //    public var json: JSON { return JSON(Double(self)) }
 //}
-

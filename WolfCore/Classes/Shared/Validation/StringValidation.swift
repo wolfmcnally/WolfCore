@@ -11,7 +11,7 @@ import Foundation
 public struct StringValidation: Validation {
     public let value: String
     public let name: String
-    
+
     public init(value: String?, name: String) {
         self.name = name
         self.value = value ?? ""
@@ -26,7 +26,7 @@ extension StringValidation {
         }
         return self
     }
-    
+
     public func minLength(_ minLength: Int?) throws -> StringValidation {
         guard let minLength = minLength else { return self }
         guard value.count >= minLength else {
@@ -34,7 +34,7 @@ extension StringValidation {
         }
         return self
     }
-    
+
     public func maxLength(_ maxLength: Int?) throws -> StringValidation {
         guard let maxLength = maxLength else { return self }
         guard value.count <= maxLength else {
@@ -42,7 +42,7 @@ extension StringValidation {
         }
         return self
     }
-    
+
     public func trimmed() -> StringValidation {
         return StringValidation(value: value.trimmed(), name: name)
     }
@@ -54,15 +54,15 @@ extension StringValidation {
     public func lowercased() -> StringValidation {
         return StringValidation(value: value.lowercased(), name: name)
     }
-    
+
     public func pattern(_ pattern: String) throws -> StringValidation {
         let regex = try! ~/pattern
-        guard (regex ~? value) else {
+        guard regex ~? value else {
             throw ValidationError(message: "#{name} contains invalid characters." ¶ ["name": name], violation: "pattern")
         }
         return self
     }
-    
+
     public func beginsWithLetter() throws -> StringValidation {
         do {
             return try pattern("^[a-zA-Z]")
@@ -70,7 +70,7 @@ extension StringValidation {
             throw ValidationError(message: "#{name} must begin with a letter." ¶ ["name": name], violation: "beginsWithLetter")
         }
     }
-    
+
     public func beginsWithLetterOrNumber() throws -> StringValidation {
         do {
             return try pattern("^[a-zA-Z0-9]")
@@ -78,7 +78,7 @@ extension StringValidation {
             throw ValidationError(message: "#{name} must begin with a letter or number." ¶ ["name": name], violation: "beginsWithLetterOrNumber")
         }
     }
-    
+
     public func endsWithLetterOrNumber() throws -> StringValidation {
         do {
             return try pattern("[a-zA-Z0-9]$")
@@ -86,7 +86,7 @@ extension StringValidation {
             throw ValidationError(message: "#{name} must end with a letter or number." ¶ ["name": name], violation: "endsWithLetterOrNumber")
         }
     }
-    
+
     public func containsDigit() throws -> StringValidation {
         do {
             return try pattern("[0-9]")
@@ -94,7 +94,7 @@ extension StringValidation {
             throw ValidationError(message: "#{name} must contain a digit." ¶ ["name": name], violation: "containsDigit")
         }
     }
-    
+
     func matchesDataDetector(type: TextCheckingResult.CheckingType, scheme: String? = nil) -> Bool {
         let dataDetector = try! NSDataDetector(types: type.rawValue)
         let length = (value as NSString).length

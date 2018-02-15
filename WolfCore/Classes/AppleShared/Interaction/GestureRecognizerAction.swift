@@ -30,7 +30,7 @@ public class GestureRecognizerAction: NSObject, OSGestureRecognizerDelegate {
         #endif
         gestureRecognizer.delegate = self
     }
-    
+
     deinit {
         #if os(iOS) || os(tvOS)
             gestureRecognizer.removeTarget(self, action: gestureActionSelector)
@@ -62,4 +62,3 @@ extension OSView {
         )
     }
 }
-

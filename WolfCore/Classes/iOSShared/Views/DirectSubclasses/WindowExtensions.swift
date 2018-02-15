@@ -13,12 +13,12 @@ extension UIWindow {
         func perform(promise: SuccessPromise) {
             let snapshotImageView = UIImageView(image: snapshot())
             self.addSubview(snapshotImageView)
-            
+
             func onCompletion() {
                 snapshotImageView.removeFromSuperview()
                 promise.keep(())
             }
-            
+
             func animateTransition() {
                 rootViewController = newController
                 bringSubview(toFront: snapshotImageView)
@@ -32,7 +32,7 @@ extension UIWindow {
                     onCompletion()
                 }
             }
-            
+
             if let presentedViewController = rootViewController?.presentedViewController {
                 presentedViewController.dismiss(animated: false) {
                     animateTransition()
@@ -41,7 +41,7 @@ extension UIWindow {
                 animateTransition()
             }
         }
-        
+
         return SuccessPromise(with: perform)
     }
 }
@@ -51,14 +51,14 @@ extension UIWindow {
         public func updateForOrientation() {
             let orientation = UIApplication.shared.statusBarOrientation
             transform = transformForOrientation(orientation)
-            
+
             let screen = UIScreen.main
             let screenRect = screen.nativeBounds
             let scale = screen.nativeScale
             frame = CGRect(x: 0, y: 0, width: screenRect.width / scale, height: screenRect.height / scale)
         }
     }
-    
+
     public func transformForOrientation(_ orientation: UIInterfaceOrientation) -> CGAffineTransform {
         switch orientation {
         case .landscapeLeft:

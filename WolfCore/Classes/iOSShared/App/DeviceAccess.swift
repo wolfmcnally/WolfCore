@@ -22,14 +22,14 @@ public struct DeviceAccess {
         private typealias `Self` = Item
 
         private static let messages: [Item: String] = [
-            .camera : "Please allow #{appName} to access the camera.",
-            .photoLibrary : "Please allow #{appName} to access your photo library.",
-            .locationWhenInUse : "Please allow #{appName} to access your location.",
-            .locationAlways : "Please allow #{appName} to access your location."
+            .camera: "Please allow #{appName} to access the camera.",
+            .photoLibrary: "Please allow #{appName} to access your photo library.",
+            .locationWhenInUse: "Please allow #{appName} to access your location.",
+            .locationAlways: "Please allow #{appName} to access your location."
         ]
 
         private static let usageDescriptionKeys: [Item: String] = [
-            .camera : "NSCameraUsageDescription",
+            .camera: "NSCameraUsageDescription",
             .photoLibrary: "NSPhotoLibraryUsageDescription",
             .locationWhenInUse: "NSLocationWhenInUseUsageDescription",
             .locationAlways: "NSLocationAlwaysUsageDescription"

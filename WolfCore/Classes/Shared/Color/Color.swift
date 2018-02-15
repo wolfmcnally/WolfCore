@@ -105,8 +105,6 @@ public struct Color: Decodable {
         self.alpha = alpha
     }
 
-    // swiftlint:disable cyclomatic_complexity
-
     public init(hue h: Frac, saturation s: Frac, brightness v: Frac, alpha a: Frac = 1.0) {
         let v = v.clamped()
         let s = s.clamped()
@@ -135,8 +133,6 @@ public struct Color: Decodable {
             }
         }
     }
-
-    // swiftlint:enable cyclomatic_complexity
 
     private static func components(forSingleHexStrings strings: [String], components: inout [Double]) throws {
         for (index, string) in strings.enumerated() {
@@ -304,7 +300,7 @@ public struct Color: Decodable {
     public static let deepBlue = Color(redByte: 60, greenByte: 55, blueByte: 149)
 }
 
-extension Color : Equatable { }
+extension Color: Equatable { }
 
 public func == (left: Color, right: Color) -> Bool {
     return left.red == right.red &&
@@ -313,11 +309,9 @@ public func == (left: Color, right: Color) -> Bool {
         left.alpha == right.alpha
 }
 
-extension Color : CustomStringConvertible {
+extension Color: CustomStringConvertible {
     public var description: String {
-        get {
-            return "Color(\(debugSummary))"
-        }
+        return "Color(\(debugSummary))"
     }
 }
 
@@ -364,4 +358,3 @@ public func * (lhs: Color, rhs: Frac) -> Color {
 public func + (lhs: Color, rhs: Color) -> Color {
     return lhs.added(to: rhs)
 }
-

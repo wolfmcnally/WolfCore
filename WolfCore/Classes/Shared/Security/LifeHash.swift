@@ -10,7 +10,7 @@ public class LifeHash {
     struct Cell {
         var alive: Bool = false
     }
-    
+
     class CellGrid: Grid<Cell> {
         func countNeighbors(_ g: IntPoint) -> Int {
             var count = 0
@@ -22,7 +22,7 @@ public class LifeHash {
             }
             return count
         }
-        
+
         static func isAliveInNextGeneration(_ currentAlive: Bool, neighborsCount: Int) -> Bool {
             if currentAlive {
                 return neighborsCount == 2 || neighborsCount == 3
@@ -30,7 +30,7 @@ public class LifeHash {
                 return neighborsCount == 3
             }
         }
-        
+
         func nextGeneration(currentChangeGrid: ChangeGrid, nextCellGrid: CellGrid, nextChangeGrid: ChangeGrid) {
             forAll { p in
                 if currentChangeGrid[p].changed {
@@ -47,23 +47,23 @@ public class LifeHash {
             }
         }
     }
-    
+
     struct Change {
         var changed: Bool = false
     }
-    
+
     class ChangeGrid: Grid<Change> {
         func setChanged(_ g: IntPoint) {
-            forNeighborhood(at: g) { (o, p) in
+            forNeighborhood(at: g) { (_, p) in
                 self[p] = true
             }
         }
-        
+
         func setAll() {
             setAll(true)
         }
     }
-    
+
     class ColorGrid: Grid<Color> {
         func transformPoint(p: IntPoint, transpose: Bool, reflectX: Bool, reflectY: Bool) -> IntPoint {
             var x = p.x
@@ -80,14 +80,14 @@ public class LifeHash {
             return IntPoint(x: x, y: y)
         }
     }
-    
+
     struct Counter {
         var count: Int = 0
     }
-    
+
     class CounterGrid: Grid<Counter> {
         private(set) var maxValue = 0
-        
+
         func add(cellGrid: CellGrid) {
             forAll { p in
                 if cellGrid[p].alive {
@@ -98,7 +98,7 @@ public class LifeHash {
             }
         }
     }
-    
+
     class FracGrid: Grid<Frac> {
         func setAll(counterGrid: CounterGrid) {
             let maxValue = Double(counterGrid.maxValue)

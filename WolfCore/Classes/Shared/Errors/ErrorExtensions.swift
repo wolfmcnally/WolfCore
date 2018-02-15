@@ -15,7 +15,7 @@ extension NSError: DescriptiveError {
     public var message: String {
         return localizedDescription
     }
-    
+
     public var identifier: String {
         return "NSError(\(code))"
     }
@@ -25,11 +25,11 @@ extension NSError {
     public var isNotConnectedToInternet: Bool {
         return domain == NSURLErrorDomain && code == NSURLErrorNotConnectedToInternet
     }
-    
+
     public var isCancelled: Bool {
         return domain == NSURLErrorDomain && code == NSURLErrorCancelled
     }
-    
+
     // Thrown by poorly-bridged Objective-C frameworks.
     public var isNilError: Bool {
         return domain == "Foundation._GenericObjCError" && code == 0

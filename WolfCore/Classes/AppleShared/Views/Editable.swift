@@ -11,4 +11,3 @@ public protocol Editable: class {
     func setEditing(_ isEditing: Bool, animated: Bool)
     func syncToEditing(animated: Bool)
 }
-

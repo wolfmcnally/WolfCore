@@ -85,4 +85,3 @@ open class StackView: OSStackView, Editable {
 
     open func setup() { }
 }
-

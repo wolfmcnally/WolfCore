@@ -12,27 +12,27 @@ public let bulletinViewRegistry = BulletinViewRegistry()
 
 public class BulletinViewRegistry {
     private var viewTypesForBulletinTypes = [ObjectIdentifier: (Bulletin) -> BulletinViewProtocol]()
-    
+
     public func register(bulletinType: Bulletin.Type, viewCreator: @escaping (Bulletin) -> BulletinViewProtocol) {
         let oid = ObjectIdentifier(bulletinType)
         viewTypesForBulletinTypes[oid] = viewCreator
     }
-    
+
     public func unregister(bulletinType: Bulletin.Type) {
         let oid = ObjectIdentifier(bulletinType)
         viewTypesForBulletinTypes[oid] = nil
     }
-    
+
     fileprivate init() {
         register(bulletinType: MessageBulletin.self) {
             return MessageBulletinView(bulletin: $0 as! MessageBulletin)
         }
-        
+
         register(bulletinType: ReachabilityBulletin.self) {
             return ReachabilityBulletinView(bulletin: $0 as! ReachabilityBulletin)
         }
     }
-    
+
     public func newViewForBulletin(_ bulletin: Bulletin) -> BulletinViewProtocol {
         let bulletinType = type(of: bulletin)
         let oid = ObjectIdentifier(bulletinType)
@@ -48,78 +48,78 @@ public class BulletinViewRegistry {
 open class BannerViewController: ViewController {
     // For embedding from within Interface Builder
     @IBOutlet var contentViewContainer: View!
-    
+
     public enum PresentationStyle {
         case overlayBulletinViews
         case compressMainView
     }
-    
+
     private var subscriber = BulletinSubscriber()
-    
+
     private var bannersContainerHeightConstraint = Constraints()
     private var presentationStyle: PresentationStyle! = .compressMainView
     private var maxBannersVisible: Int! = 5
-    
+
     open override func setup() {
         super.setup()
-        
+
         subscriber.onAddedItem = { [unowned self] item in
             self.addView(for: item)
         }
-        
+
         subscriber.onRemovedItem = { [unowned self] item in
             self.removeView(for: item)
         }
     }
-    
+
     public init(presentationStyle: PresentationStyle = .compressMainView, maxBannersVisible: Int = 1) {
         super.init(nibName: nil, bundle: nil)
         self.presentationStyle = presentationStyle
         self.maxBannersVisible = maxBannersVisible
     }
-    
+
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     public func subscribe(to publisher: BulletinPublisher) {
         subscriber.subscribe(to: publisher)
     }
-    
+
     public func unsubscribe(from publisher: BulletinPublisher) {
         subscriber.unsubscribe(from: publisher)
     }
-    
+
     private func addView(for bulletin: Bulletin) {
         addBulletinView(bulletinViewRegistry.newViewForBulletin(bulletin))
     }
-    
+
     private func addBulletinView(_ bulletinView: BulletinViewProtocol) {
         bannersView.addBulletinView(bulletinView, animated: true) {
             self.syncToVisibleBanners()
         }
     }
-    
+
     private func removeView(for bulletin: Bulletin) {
         bannersView.removeView(for: bulletin, animated: true) {
             self.syncToVisibleBanners()
         }
     }
-    
+
     private func removeContentViewController() {
         guard let existingContentViewController = contentViewController else { return }
         existingContentViewController.willMove(toParentViewController: nil)
         existingContentViewController.removeFromParentViewController()
         existingContentViewController.view.removeFromSuperview()
     }
-    
+
     private func getContentViewController() -> UIViewController? {
         return contentViewContainer?.subviews.first?.viewController
     }
-    
+
     private func setContentViewController(to newViewController: UIViewController?) {
         guard let newContentViewController = newViewController else { return }
-        
+
         let newView = newContentViewController.view!
         newView.translatesAutoresizingMaskIntoConstraints = false
         addChildViewController(newContentViewController)
@@ -129,18 +129,18 @@ open class BannerViewController: ViewController {
         newView.constrainFrameToFrame(of: contentViewContainer)
         setNeedsStatusBarAppearanceUpdate()
     }
-    
+
     private func replaceContentViewController(with newViewController: UIViewController?, animated: Bool = true) -> SuccessPromise {
         var animated = animated
         var snapshotImageView: UIImageView!
-        
+
         if let contentViewController = contentViewController, contentViewController.isViewLoaded {
             snapshotImageView = UIImageView(image: contentViewController.view.snapshot())
             contentViewContainer.addSubview(snapshotImageView)
         } else {
             animated = false
         }
-        
+
         func perform(promise: SuccessPromise) {
             func animateTransition() {
                 removeContentViewController()
@@ -157,7 +157,7 @@ open class BannerViewController: ViewController {
                     promise.keep(())
                 }
             }
-            
+
             if let presentedViewController = contentViewController?.presentedViewController {
                 presentedViewController.dismiss(animated: false) {
                     animateTransition()
@@ -166,24 +166,24 @@ open class BannerViewController: ViewController {
                 animateTransition()
             }
         }
-        
+
         return SuccessPromise(with: perform)
     }
-    
+
     public var contentViewController: UIViewController? {
         get {
             return getContentViewController()
         }
-        
+
         set {
             replaceContentViewController(with: newValue, animated: false).run()
         }
     }
-    
+
     open override var childViewControllerForStatusBarHidden: UIViewController? {
         return contentViewController
     }
-    
+
     open override var childViewControllerForStatusBarStyle: UIViewController? {
         if hasVisibleBanners {
             return nil
@@ -191,11 +191,11 @@ open class BannerViewController: ViewController {
             return contentViewController
         }
     }
-    
+
     private var bannersContainerTopConstraint = Constraints()
-    
+
     private var hasVisibleBanners = false
-    
+
     private func syncToVisibleBanners() {
         let heightForBanners = bannersView.heightForBanners(count: maxBannersVisible)
         bannersContainerHeightConstraint.constant = heightForBanners
@@ -213,34 +213,34 @@ open class BannerViewController: ViewController {
         view.layoutIfNeeded()
         setNeedsStatusBarAppearanceUpdate()
     }
-    
+
     private lazy var bannersView: BannersView = .init()
-    
+
     open override func build() {
         super.build()
-        
+
         // If was not added by Interface Builder
         if contentViewContainer == nil {
             contentViewContainer = View()
         }
-        
+
         view => [
             contentViewContainer,
             bannersView
         ]
-        
+
         bannersContainerTopConstraint = Constraints(bannersView.topAnchor == view.topAnchor)
         bannersContainerHeightConstraint = Constraints(bannersView.heightAnchor == 0)
-        
+
         Constraints(
             bannersView.leadingAnchor == view.leadingAnchor,
             bannersView.trailingAnchor == view.trailingAnchor,
-            
+
             contentViewContainer.leadingAnchor == view.leadingAnchor,
             contentViewContainer.trailingAnchor == view.trailingAnchor,
             contentViewContainer.bottomAnchor == view.bottomAnchor
         )
-        
+
         switch presentationStyle! {
         case .compressMainView:
             Constraints(

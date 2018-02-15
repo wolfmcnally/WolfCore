@@ -12,7 +12,7 @@ public class DeviceOrientationAction {
     public typealias ResponseBlock = (UIDeviceOrientation) -> Void
     private let action: ResponseBlock
     private var notificationAction: NotificationAction!
-    
+
     public init(action: @escaping ResponseBlock) {
         self.action = action
         notificationAction = NotificationAction(name: .UIDeviceOrientationDidChange) { [unowned self] _ in
@@ -20,7 +20,7 @@ public class DeviceOrientationAction {
         }
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
     }
-    
+
     deinit {
         UIDevice.current.endGeneratingDeviceOrientationNotifications()
     }

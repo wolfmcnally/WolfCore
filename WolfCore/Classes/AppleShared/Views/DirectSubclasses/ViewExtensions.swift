@@ -29,7 +29,7 @@ extension OSView {
             normalBackgroundColor = .clear
         #endif
     }
-    
+
     public func __setup() {
         translatesAutoresizingMaskIntoConstraints = false
         makeTransparent()

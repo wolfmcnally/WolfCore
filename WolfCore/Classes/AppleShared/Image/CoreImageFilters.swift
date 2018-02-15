@@ -127,7 +127,7 @@ public class QRCodeGeneratorFilter: CoreImageFilter {
         self.data = data
         self.correctionLevel = correctionLevel
     }
-    
+
     public var data: Data? {
         get { return filter.value(forKey: "inputMessage" ) as? Data }
         set { filter.setValue(newValue, forKey: "inputMessage" ) }
@@ -155,4 +155,3 @@ public func |> (lhs: CoreImageFilter, rhs: CoreImageFilter) -> CoreImageFilter {
 public func |> (filter: CoreImageFilter, rhs: (orientation: OSImageOrientation, scale: CGFloat)) -> OSImage {
     return filter.outputImage(with: rhs.orientation, scale: rhs.scale)
 }
-

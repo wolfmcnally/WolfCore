@@ -21,19 +21,19 @@ open class TableView: UITableView {
         super.init(frame: frame, style: style)
         _setup()
     }
-    
+
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         _setup()
     }
-    
+
     private func _setup() {
         __setup()
         setup()
     }
-    
+
     open func setup() { }
-    
+
     public func deselectAll(animated: Bool) {
         guard let selectedIndexPaths = indexPathsForSelectedRows else { return }
         for indexPath in selectedIndexPaths {

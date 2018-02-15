@@ -55,7 +55,7 @@ extension UIView {
     }
 }
 
-fileprivate struct AssociatedKeys {
+private struct AssociatedKeys {
     static var endEditingGestureRecognizerAction = "WolfCore_endEditingTapGestureRecognizerAction"
 }
 
@@ -69,7 +69,7 @@ extension UIView {
             setAssociatedValue(newValue, for: &AssociatedKeys.endEditingGestureRecognizerAction)
         }
     }
-    
+
     public var endsEditingWhenTapped: Bool {
         get {
             return endEditingAction != nil

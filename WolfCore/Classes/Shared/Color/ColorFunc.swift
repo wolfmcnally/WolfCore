@@ -34,7 +34,7 @@ public func blend(from color1: Color, to color2: Color, at frac: Frac, alpha: Fr
     } else {
         c.alpha = f.lerpedFromFrac(to: color1.alpha..color2.alpha)
     }
-    
+
     return c
 }
 

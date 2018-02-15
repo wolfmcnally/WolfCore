@@ -29,7 +29,7 @@ public class BounceAnimation {
             self.view.transform = .identity
             }.run()
     }
-    
+
     private var completion: Block?
 
     public func animateRelease(completion: Block? = nil) {

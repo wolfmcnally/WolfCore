@@ -14,9 +14,9 @@ public let networkActivity = NetworkActivity()
 
 public class NetworkActivity {
     private let hysteresis: Hysteresis
-    
+
     init() {
-        hysteresis = Hysteresis( 
+        hysteresis = Hysteresis(
             onStart: {
                 #if os(iOS)
                     UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -31,7 +31,7 @@ public class NetworkActivity {
             endLag: 0.2
         )
     }
-    
+
     public func newActivity() -> LockerCause {
         return hysteresis.newCause()
     }

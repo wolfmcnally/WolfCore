@@ -13,7 +13,7 @@ public class ViewGestureActions: GestureActions {
     private let longPressName = "longPress"
     private let deepPressName = "deepPress"
     private let longOrDeepPressName = "longOrDeepPress"
-    
+
     public var onTap: GestureBlock? {
         get { return getAction(for: tapName) }
         set { setTapAction(named: tapName, action: newValue) }

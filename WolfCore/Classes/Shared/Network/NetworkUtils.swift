@@ -18,18 +18,18 @@ public enum IPAddressType: Int {
 public struct NetworkError: Error, CustomStringConvertible {
     public let message: String
     public let code: Int?
-    
+
     public init(message: String, code: Int? = nil) {
         self.message = message
         self.code = code
     }
-    
+
     public var description: String {
         var c = [message]
         if let code = code {
             c.append("[\(code)]")
         }
-        
+
         return "NetworkError(\(c.joined(separator: " ")))"
     }
 }
@@ -44,7 +44,7 @@ public struct NetworkError: Error, CustomStringConvertible {
         //         throw CryptoError(message: message, code: code)
         //     }
         // }
-        
+
         public static func checkCode(_ ret: Int32, message: String) throws {
             guard ret == 0 else {
                 throw NetworkError(message: message, code: Int(ret))
@@ -58,7 +58,7 @@ public class Host {
     public let port: Int
     public private(set) var officialHostname: String!
     public private(set) var aliases = [String]()
-    
+
     public init(hostname: String, port: Int = 0) {
         self.hostname = hostname
         self.port = port
@@ -70,17 +70,17 @@ public class Host {
         public func resolve(for addressType: IPAddressType) throws {
             var hostent_p = UnsafeMutablePointer<hostent>.allocate(capacity: 1)
             defer { hostent_p.deallocate(capacity: 1) }
-            
+
             let buflen = 2048
             var buf_p = UnsafeMutablePointer<Int8>.allocate(capacity: buflen)
             defer { buf_p.deallocate(capacity: buflen) }
-            
+
             var result_p = UnsafeMutablePointer<HostEntRef>.allocate(capacity: 1)
             defer { result_p.deallocate(capacity: 1) }
-            
+
             var errno_p = UnsafeMutablePointer<Int32>.allocate(capacity: 1)
             defer { errno_p.deallocate(capacity: 1) }
-            
+
             try NetworkError.checkCode(
                 gethostbyname2_r(
                     hostname,
@@ -92,15 +92,15 @@ public class Host {
                     errno_p
                 ),
                 message: "Resolving address.")
-            
+
             officialHostname = String(cString: hostent_p.pointee.h_name!)
-            
+
             var nextAlias_p = hostent_p.pointee.h_aliases!
             //var q: String = nextAlias_p
             while nextAlias_p.pointee != nil {
                 let alias = String(cString: UnsafePointer(nextAlias_p.pointee!))
                 aliases.append(alias)
-                nextAlias_p = nextAlias_p + 1
+                nextAlias_p += 1
             }
         }
     }

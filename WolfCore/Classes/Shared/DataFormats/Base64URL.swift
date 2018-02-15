@@ -14,14 +14,14 @@ import Foundation
 public struct Base64URL {
     /// The Base-64 URL-encoded representation.
     public let string: String
-    
+
     /// The raw data.
     public var data: Data {
         return base64.data
     }
-    
+
     let base64: Base64
-    
+
     /// Create a Base64URL from a Base64.
     ///
     /// May be used as a monad transformer.
@@ -29,14 +29,14 @@ public struct Base64URL {
         self.base64 = base64
         self.string = base64.string |> Base64URL.toBase64URLString
     }
-    
+
     /// Create a Base64URL from a Base-64 URL encoded string. Throws if the String cannot be decoded to Data.
     ///
     /// May be used as a monad transformer.
     public init(string: String) throws {
         try self.init(base64: string |> Base64URL.toBase64String |> Base64.init)
     }
-    
+
     /// Create a Base64URL from a Data.
     ///
     /// May be used as a monad transformer.
@@ -86,7 +86,7 @@ extension Base64URL {
         }
         return s2
     }
-    
+
     static func toBase64String(string: String) -> String {
         var s2 = ""
         let chars = string

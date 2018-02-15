@@ -700,8 +700,8 @@ public class PowerTextField: View, Editable {
                         validationMessageLabel,
                         placeholderMessageContainer => [
                             placeholderMessageLabel,
-                            activityIndicatorView,
-                        ],
+                            activityIndicatorView
+                        ]
                     ],
                     SpacerView() • {
                         $0.width = noSize

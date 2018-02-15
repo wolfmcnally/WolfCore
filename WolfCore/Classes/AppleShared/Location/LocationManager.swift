@@ -62,28 +62,28 @@ extension LocationManager: CLLocationManagerDelegate {
     }
 
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        logTrace("didChangeAuthorizationStatus: \(status)", group:. location)
+        logTrace("didChangeAuthorizationStatus: \(status)", group: .location)
         didChangeAuthorizationStatus?(status)
     }
 
     #if os(iOS) || os(macOS)
     public func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
-        logTrace("didStartMonitoringForRegion", group:. location)
+        logTrace("didStartMonitoringForRegion", group: .location)
         didStartMonitoringForRegion?(region)
     }
 
     public func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
-        logTrace("monitoringFailedForRegion", group:. location)
+        logTrace("monitoringFailedForRegion", group: .location)
         monitoringFailedForRegion?(region, error)
     }
 
     public func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        logTrace("didEnterRegion", group:. location)
+        logTrace("didEnterRegion", group: .location)
         didEnterRegion?(region)
     }
 
     public func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        logTrace("didExitRegion", group:. location)
+        logTrace("didExitRegion", group: .location)
         didExitRegion?(region)
     }
 
@@ -99,19 +99,19 @@ extension LocationManager: CLLocationManagerDelegate {
     }
 
     public func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
-        logTrace("didDetermineStateForRegion", group:. location)
+        logTrace("didDetermineStateForRegion", group: .location)
         didDetermineStateForRegion?(state, region)
     }
     #endif
 
     #if os(iOS)
     public func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
-    logTrace("didPauseLocationUpdates", group:. location)
+    logTrace("didPauseLocationUpdates", group: .location)
     didPauseLocationUpdates?()
     }
 
     public func locationManagerDidResumeLocationUpdates(_ manager: CLLocationManager) {
-    logTrace("didResumeLocationUpdates", group:. location)
+    logTrace("didResumeLocationUpdates", group: .location)
     didResumeLocationUpdates?()
     }
 
@@ -121,22 +121,22 @@ extension LocationManager: CLLocationManagerDelegate {
     }
 
     public func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
-    logTrace("shouldDisplayHeadingCalibration", group:. location)
+    logTrace("shouldDisplayHeadingCalibration", group: .location)
     return shouldDisplayHeadingCalibration?() ?? true
     }
 
     public func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-    logTrace("didRangeBeacons", group:. location)
+    logTrace("didRangeBeacons", group: .location)
     didRangeBeacons?(beacons, region)
     }
 
     public func locationManager(_ manager: CLLocationManager, rangingBeaconsDidFailFor region: CLBeaconRegion, withError error: Error) {
-    logTrace("rangingBeaconsFailedInRegion", group:. location)
+    logTrace("rangingBeaconsFailedInRegion", group: .location)
     rangingBeaconsFailedInRegion?(region, error)
     }
 
     public func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
-    logTrace("didVisit", group:. location)
+    logTrace("didVisit", group: .location)
     didVisit?(visit)
     }
     #endif

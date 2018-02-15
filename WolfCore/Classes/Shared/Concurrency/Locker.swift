@@ -8,12 +8,12 @@
 
 public class LockerCause {
     private weak var locker: Locker?
-    
+
     init(locker: Locker) {
         self.locker = locker
         locker.lock()
     }
-    
+
     deinit {
         locker?.unlock()
     }
@@ -23,13 +23,13 @@ public class Locker {
     private var count = 0
     private var serializer: Serializer?
     private lazy var reasonCauses: [String: LockerCause] = .init()
-    
+
     public var onLocked: Block?
     public var onUnlocked: Block?
     public typealias ChangedBlock = (Locker) -> Void
     public var onChanged: ChangedBlock?
     public var onReasonsChanged: ChangedBlock?
-    
+
     public init(useMainQueue: Bool = true, onLocked: Block? = nil, onUnlocked: Block? = nil, onChanged: ChangedBlock? = nil, onReasonsChanged: ChangedBlock? = nil) {
         self.onLocked = onLocked
         self.onUnlocked = onUnlocked
@@ -39,24 +39,24 @@ public class Locker {
             serializer = Serializer(label: "\(self)")
         }
     }
-    
+
     public var isLocked: Bool {
         return count > 0
     }
-    
+
     public func newCause() -> LockerCause {
         return LockerCause(locker: self)
     }
-    
+
     public var reasons: [String] {
         return Array(reasonCauses.keys)
     }
-    
+
     public subscript(reason: String) -> Bool {
         get {
             return reasonCauses[reason] != nil
         }
-        
+
         set {
             if newValue {
                 guard reasonCauses[reason] == nil else { return }
@@ -68,24 +68,24 @@ public class Locker {
             }
         }
     }
-    
+
     private func _lock() {
-        count = count + 1
+        count += 1
         if count == 1 {
             onLocked?()
         }
         onChanged?(self)
     }
-    
+
     private func _unlock() {
         assert(count > 0)
-        count = count - 1
+        count -= 1
         if count == 0 {
             onUnlocked?()
         }
         onChanged?(self)
     }
-    
+
     public func lock() {
         if let serializer = serializer {
             serializer.dispatch {
@@ -97,7 +97,7 @@ public class Locker {
             }
         }
     }
-    
+
     public func unlock() {
         if let serializer = serializer {
             serializer.dispatch {

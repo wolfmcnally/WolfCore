@@ -16,7 +16,7 @@ import Foundation
 
 public struct MD5 {
   private typealias `Self` = MD5
-  
+
   #if os(Linux)
   private static let digestLength = Int(MD5_DIGEST_LENGTH)
   #else

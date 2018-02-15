@@ -10,15 +10,15 @@ import UIKit
 
 open class PagingViewController: ViewController {
     @IBOutlet public weak var bottomView: UIView!
-    
+
     public private(set) lazy var pagingView: PagingView = {
         let view = PagingView()
         view.hidesPagingControlForOnePage = true
         return view
     }()
-    
+
     private var bottomViewToPageControlConstraint: NSLayoutConstraint!
-    
+
     open override func setup() {
         super.setup()
         automaticallyAdjustsScrollViewInsets = false
@@ -26,10 +26,10 @@ open class PagingViewController: ViewController {
             self.didLayoutPagingView(fromIndex: fromIndex, toIndex: toIndex, frac: frac)
         }
     }
-    
+
     open func didLayoutPagingView(fromIndex: Int, toIndex: Int, frac: Frac) {
     }
-    
+
     public var pagedViewControllers: [UIViewController]! {
         didSet {
             pagingView.arrangedViews = []
@@ -44,19 +44,19 @@ open class PagingViewController: ViewController {
             pagingView.arrangedViews = pageViews
         }
     }
-    
+
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         view.insertSubview(pagingView, at: 0)
         pagingView.constrainFrameToFrame()
-        
+
         if let bottomView = bottomView {
             bottomViewToPageControlConstraint = pagingView.pageControl.bottomAnchor == bottomView.topAnchor - 20
             bottomViewToPageControlConstraint.isActive = true
         }
     }
-    
+
     open override var childViewControllerForStatusBarStyle: UIViewController? {
         guard pagingView.pageControl.numberOfPages == pagedViewControllers?.count else { return nil }
         let currentPage = pagingView.currentPage

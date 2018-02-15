@@ -145,7 +145,7 @@ public class ImagePickerViewController: UIImagePickerController {
     }
 
     fileprivate func cancel() {
-        dismiss() {
+        dismiss {
             self.cancelAction?()
         }
     }
@@ -160,7 +160,7 @@ public class ImagePickerViewController: UIImagePickerController {
 }
 
 extension ImagePickerViewController: UIImagePickerControllerDelegate {
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         guard let image = (info[UIImagePickerControllerEditedImage] as? UIImage) ?? info[UIImagePickerControllerOriginalImage] as? UIImage else {
             logError("Image not retrieved from picker.")
             cancel()

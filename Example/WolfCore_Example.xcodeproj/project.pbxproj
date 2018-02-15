@@ -231,6 +231,7 @@
 				607FACCE1AFB9204008FA782 /* Resources */,
 				E40B7C08618964990B88460E /* [CP] Embed Pods Frameworks */,
 				E732E200F06AC1DB9FD17FF6 /* [CP] Copy Pods Resources */,
+				03E46A73203573FF003EB4F1 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -323,6 +324,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		03E46A73203573FF003EB4F1 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ${SRCROOT}/..\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
 		2387D430F4D45B5D655F6E33 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -615,10 +630,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F903F2057A84D1EE6235666 /* Pods-WolfCore_Tests.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -636,10 +647,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2E89DBB88D61EF9E24493907 /* Pods-WolfCore_Tests.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";

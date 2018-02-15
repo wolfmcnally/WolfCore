@@ -29,13 +29,13 @@ public class Hysteresis {
     private var startCanceler: Cancelable?
     private var endCanceler: Cancelable?
     private var isStarted: Bool = false
-    
+
     private lazy var locker: Locker = .init(
         useMainQueue: self.useMainQueue,
         onLocked: { [unowned self] in self.startEffectLagged() },
         onUnlocked: { [unowned self] in self.endEffectLagged() }
     )
-    
+
     /// It is *not* guaranteed that `onStart` and `onEnd` will be called on the main queue.
     public init(useMainQueue: Bool = true, onStart: @escaping Block, onEnd: @escaping Block, startLag: TimeInterval, endLag: TimeInterval) {
         self.useMainQueue = useMainQueue
@@ -44,11 +44,11 @@ public class Hysteresis {
         self.startLag = startLag
         self.endLag = endLag
     }
-    
+
     public func newCause() -> LockerCause {
         return locker.newCause()
     }
-    
+
     private func startEffectLagged() {
         endCanceler?.cancel()
         let queue = useMainQueue ? mainQueue : backgroundQueue
@@ -59,7 +59,7 @@ public class Hysteresis {
             }
         }
     }
-    
+
     private func endEffectLagged() {
         startCanceler?.cancel()
         let queue = useMainQueue ? mainQueue : backgroundQueue
@@ -70,11 +70,11 @@ public class Hysteresis {
             }
         }
     }
-    
+
     public func startCause() {
         locker.lock()
     }
-    
+
     public func endCause() {
         locker.unlock()
     }

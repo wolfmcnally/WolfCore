@@ -31,20 +31,20 @@ extension LogGroup {
 public class Cache<T: Serializable> {
     public typealias SerializableType = T
     public typealias ValueType = T.ValueType
-    
+
     private let layers: [CacheLayer]
-    
+
     public init(layers: [CacheLayer]) {
         self.layers = layers
     }
-    
+
     public convenience init(filename: String, sizeLimit: Int, includeHTTP: Bool) {
-        
+
         #if !os(tvOS)
             var layers: [CacheLayer] = [
                 MemoryCacheLayer(),
-                LocalStorageCacheLayer(filename: filename, sizeLimit: sizeLimit)!,
-                ]
+                LocalStorageCacheLayer(filename: filename, sizeLimit: sizeLimit)!
+            ]
         #else
             var layers: [CacheLayer] = [
                 MemoryCacheLayer()
@@ -55,7 +55,7 @@ public class Cache<T: Serializable> {
         }
         self.init(layers: layers)
     }
-    
+
     //    public func storeObject(obj: SerializableType, for url: URL, withSize size: CGSize) {
     //        let scale = mainScreenScale
     //
@@ -75,7 +75,7 @@ public class Cache<T: Serializable> {
     //            logError("storeObject obj: \(obj), for: \(url)", obj: self, group: .cache)
     //        }
     //    }
-    
+
     public func store(obj: SerializableType, for url: URL) {
         logInfo("storeObject obj: \(obj), for: \(url)", obj: self, group: .cache)
         let data = obj.serialize()
@@ -83,26 +83,26 @@ public class Cache<T: Serializable> {
             layer.store(data: data, for: url)
         }
     }
-    
+
     @discardableResult public func retrieveObject(for url: URL) -> Promise<ValueType> {
         logInfo("retrieveObjectForURL: \(url)", obj: self, group: .cache)
         return retrieveObject(at: 0, for: url)
     }
-    
+
     public func removeObject(for url: URL) {
         logInfo("removeObjectForURL: \(url)", obj: self, group: .cache)
         for layer in layers {
             layer.removeData(for: url)
         }
     }
-    
+
     public func removeAll() {
         logInfo("removeAll", obj: self, group: .cache)
         for layer in layers {
             layer.removeAll()
         }
     }
-    
+
     private func retrieveObject(at layerIndex: Int, for url: URL) -> Promise<ValueType> {
         let layer = layers[layerIndex]
         return layer.retrieveData(for: url).then { data in
@@ -127,12 +127,12 @@ public class Cache<T: Serializable> {
                     promise.fail(error)
                     return
                 }
-                
+
                 guard layerIndex < self.layers.count - 1 else {
                     promise.fail(CacheError.miss(url))
                     return
                 }
-                
+
                 self.retrieveObject(at: layerIndex + 1, for: url).then { value in
                     promise.keep(value)
                     }.catch { error in

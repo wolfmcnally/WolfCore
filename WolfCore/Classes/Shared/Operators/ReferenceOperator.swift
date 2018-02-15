@@ -8,7 +8,7 @@
 
 public protocol Reference {
     associatedtype ReferentType
-    
+
     var referent: ReferentType { get }
 }
 
@@ -22,4 +22,3 @@ postfix operator ®
 public postfix func ® <T: Reference>(rhs: T) -> T.ReferentType {
     return rhs.referent
 }
-

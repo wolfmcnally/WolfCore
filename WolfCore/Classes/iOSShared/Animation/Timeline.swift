@@ -51,7 +51,7 @@ public class Timeline {
         let event = Event(at: time, named: name, action: action)
         events.append(event)
     }
-    
+
     private func finish() {
         displayLink?.invalidate()
     }
@@ -73,7 +73,7 @@ public class Timeline {
     public func play() {
         events.sort(by: <)
         nextEventIndex = 0
-        displayLink = DisplayLink() { [unowned self] displayLink in
+        displayLink = DisplayLink { [unowned self] displayLink in
             self.executeCurrentEvents(elapsedTime: displayLink.elapsedTime)
         }
     }
@@ -82,4 +82,3 @@ public class Timeline {
         finish()
     }
 }
-

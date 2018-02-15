@@ -51,7 +51,7 @@ extension OSView {
         }
         return descendants
     }
-    
+
     public func allAncestors() -> [OSView] {
         var parents = [OSView]()
         var currentParent: OSView? = superview

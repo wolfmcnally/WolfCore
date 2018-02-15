@@ -15,11 +15,11 @@ public enum HTTPUtilsError: Error {
 
 public struct HTTPScheme: ExtensibleEnumeratedName {
     public let rawValue: String
-    
+
     public init(_ rawValue: String) {
         self.rawValue = rawValue
     }
-    
+
     // RawRepresentable
     public init?(rawValue: String) { self.init(rawValue) }
 }
@@ -31,11 +31,11 @@ extension HTTPScheme {
 
 public struct HTTPMethod: ExtensibleEnumeratedName {
     public let rawValue: String
-    
+
     public init(_ rawValue: String) {
         self.rawValue = rawValue
     }
-    
+
     // RawRepresentable
     public init?(rawValue: String) { self.init(rawValue) }
 }
@@ -54,11 +54,11 @@ extension HTTPMethod {
 
 public struct ContentType: ExtensibleEnumeratedName {
     public let rawValue: String
-    
+
     public init(_ rawValue: String) {
         self.rawValue = rawValue
     }
-    
+
     // RawRepresentable
     public init?(rawValue: String) { self.init(rawValue) }
 }
@@ -102,11 +102,11 @@ extension UniformTypeIdentifier {
 
 public struct Charset: ExtensibleEnumeratedName {
     public let rawValue: String
-    
+
     public init(_ rawValue: String) {
         self.rawValue = rawValue
     }
-    
+
     // RawRepresentable
     public init?(rawValue: String) { self.init(rawValue) }
 }
@@ -117,11 +117,11 @@ extension Charset {
 
 public struct HeaderField: ExtensibleEnumeratedName {
     public let rawValue: String
-    
+
     public init(_ rawValue: String) {
         self.rawValue = rawValue
     }
-    
+
     // RawRepresentable
     public init?(rawValue: String) { self.init(rawValue) }
 }
@@ -141,11 +141,11 @@ extension HeaderField {
 
 public struct StatusCode: ExtensibleEnumeratedName {
     public let rawValue: Int
-    
+
     public init(_ rawValue: Int) {
         self.rawValue = rawValue
     }
-    
+
     // RawRepresentable
     public init?(rawValue: Int) { self.init(rawValue) }
 }
@@ -155,14 +155,14 @@ extension StatusCode {
     public static let created = StatusCode(201)
     public static let accepted = StatusCode(202)
     public static let noContent = StatusCode(204)
-    
+
     public static let badRequest = StatusCode(400)
     public static let unauthorized = StatusCode(401)
     public static let forbidden = StatusCode(403)
     public static let notFound = StatusCode(404)
     public static let conflict = StatusCode(409)
     public static let tooManyRequests = StatusCode(429)
-    
+
     public static let internalServerError = StatusCode(500)
     public static let notImplemented = StatusCode(501)
     public static let badGateway = StatusCode(502)
@@ -172,11 +172,11 @@ extension StatusCode {
 
 public struct ConnectionType: ExtensibleEnumeratedName {
     public let rawValue: String
-    
+
     public init(_ rawValue: String) {
         self.rawValue = rawValue
     }
-    
+
     public init?(rawValue: String) { self.init(rawValue) }
 }
 
@@ -187,10 +187,10 @@ extension ConnectionType {
 
 public class HTTP {
     public static func retrieveData(with request: URLRequest, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil, name: String? = nil) -> DataPromise {
-        
+
         let name = name ?? request.name
         let token: InFlightToken! = inFlightTracker?.start(withName: name)
-        
+
         func onComplete(promise: DataPromise, task: Cancelable?, error: Error?, response: URLResponse?, data: Data?) {
             guard error == nil else {
                 switch error {
@@ -205,77 +205,77 @@ public class HTTP {
                 default:
                     inFlightTracker?.end(withToken: token, result: Result<Error>.failure(error!))
                     logError("\(token) retrieveData returned error")
-                    
+
                     dispatchOnMain {
                         promise.fail(error!)
                     }
                 }
                 return
             }
-            
+
             guard let httpResponse = response as? HTTPURLResponse else {
                 fatalError("\(token) improper response type: \(response†)")
             }
-            
+
             guard data != nil else {
                 let error = HTTPError(request: request, response: httpResponse)
-                
+
                 inFlightTracker?.end(withToken: token, result: Result<HTTPError>.failure(error))
                 logError("\(token) No data returned")
-                
+
                 dispatchOnMain {
                     promise.fail(error)
                 }
                 return
             }
-            
+
             guard let statusCode = StatusCode(rawValue: httpResponse.statusCode) else {
                 let error = HTTPError(request: request, response: httpResponse, data: data)
-                
+
                 inFlightTracker?.end(withToken: token, result: Result<HTTPError>.failure(error))
                 logError("\(token) Unknown response code: \(httpResponse.statusCode)")
-                
+
                 dispatchOnMain {
                     promise.fail(error)
                 }
                 return
             }
-            
+
             guard successStatusCodes.contains(statusCode) else {
                 let error = HTTPError(request: request, response: httpResponse, data: data)
-                
+
                 inFlightTracker?.end(withToken: token, result: Result<HTTPError>.failure(error))
-                
+
                 if !expectedFailureStatusCodes.contains(statusCode) {
                     logError("\(token) Failure response code: \(statusCode)")
                 }
-                
+
                 dispatchOnMain {
                     promise.fail(error)
                 }
                 return
             }
-            
+
             inFlightTracker?.end(withToken: token, result: Result<HTTPURLResponse>.success(httpResponse))
-            
+
             let inFlightData = data!
             dispatchOnMain {
                 promise.task = task
                 promise.keep(inFlightData)
             }
         }
-        
+
         func perform(promise: DataPromise) {
             let _sessionActions = HTTPActions()
-            
+
             _sessionActions.didReceiveResponse = { (sessionActions, session, dataTask, response, completionHandler) in
                 completionHandler(.allow)
             }
-            
+
             _sessionActions.didComplete = { (sessionActions, session, task, error) in
                 onComplete(promise: promise, task: task, error: error, response: sessionActions.response, data: sessionActions.data)
             }
-            
+
             let sharedSession = URLSession.shared
             let config = sharedSession.configuration.copy() as! URLSessionConfiguration
             let session = URLSession(configuration: config, delegate: _sessionActions, delegateQueue: nil)
@@ -283,7 +283,7 @@ public class HTTP {
             promise.task = session.dataTask(with: request)
             task.resume()
         }
-        
+
         func mockPerform(promise: DataPromise) {
             let mock = mock!
             dispatchOnBackground(afterDelay: mock.delay) {
@@ -297,30 +297,30 @@ public class HTTP {
                 }
             }
         }
-        
+
         if mock != nil {
             return DataPromise(with: mockPerform)
         } else {
             return DataPromise(with: perform)
         }
     }
-    
-    
+
+
     public static func retrieve(with request: URLRequest, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil, name: String? = nil) -> SuccessPromise {
         return retrieveData(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock, name: name).then { _ in }
     }
-    
-    
+
+
     public static func retrieveJSON(with request: URLRequest, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil, name: String? = nil) -> JSONPromise {
         var request = request
         request.setAcceptContentType(.json)
-        
+
         return retrieveData(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock, name: name).then { data in
             return try data |> JSON.init
         }
     }
-    
-    
+
+
     public static func retrieveJSONDictionary(with request: URLRequest, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil, name: String? = nil) -> JSONPromise {
         return retrieveJSON(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock, name: name).then { json in
             guard json.value is JSON.Dictionary else {
@@ -329,8 +329,8 @@ public class HTTP {
             return json
         }
     }
-    
-    
+
+
     //    #if !os(Linux)
     //    public static func retrieveImage(with request: URLRequest, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil, name: String? = nil) -> ImagePromise {
     //        return retrieveData(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock, name: name).then { data in
@@ -351,23 +351,23 @@ extension URLRequest {
     public func value(for headerField: HeaderField) -> String? {
         return value(forHTTPHeaderField: headerField.rawValue)
     }
-    
+
     public mutating func setMethod(_ method: HTTPMethod) {
         httpMethod = method.rawValue
     }
-    
+
     public mutating func setValue(_ value: String?, for headerField: HeaderField) {
         setValue(value, forHTTPHeaderField: headerField.rawValue)
     }
-    
+
     public mutating func addValue(_ value: String, for headerField: HeaderField) {
         addValue(value, forHTTPHeaderField: headerField.rawValue)
     }
-    
+
     public mutating func setAcceptContentType(_ contentType: ContentType) {
         setValue(contentType.rawValue, for: .accept)
     }
-    
+
     public mutating func setContentType(_ contentType: ContentType, charset: Charset? = nil) {
         if let charset = charset {
             setValue("\(contentType.rawValue); charset=\(charset.rawValue)", for: .contentType)
@@ -375,27 +375,27 @@ extension URLRequest {
             setValue(contentType.rawValue, for: .contentType)
         }
     }
-    
+
     public mutating func setContentTypeJSON() {
         setValue("\(ContentType.json.rawValue); charset=utf-8", for: .contentType)
     }
-    
+
     public mutating func setContentLength(_ length: Int) {
         setValue(String(length), for: .contentLength)
     }
-    
+
     public mutating func setConnection(_ connection: ConnectionType) {
         setValue(connection.rawValue, for: .connection)
     }
-    
+
     public mutating func setAuthorization(_ value: String) {
         setValue(value, for: .authorization)
     }
-    
+
     public mutating func setClientRequestID() {
         setValue(UniqueID() |> String.init, for: .clientRequestID)
     }
-    
+
     public var name: String {
         var name = [String]()
         name.append(httpMethod†)

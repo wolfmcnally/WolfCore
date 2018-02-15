@@ -16,13 +16,13 @@ extension String {
         var target = self
         var targetReplacedRanges = [StringRange]()
         let sortedReplacements = replacements.sorted { $0.0.lowerBound < $1.0.lowerBound }
-        
+
         var totalOffset = 0
         for (sourceRange, replacement) in sortedReplacements {
             let replacementCount = replacement.count
             let rangeCount = source.distance(from: sourceRange.lowerBound, to: sourceRange.upperBound)
             let offset = replacementCount - rangeCount
-            
+
             let newTargetStartIndex: StringIndex
             let originalTarget = target
             do {
@@ -32,7 +32,7 @@ extension String {
                 target.replaceSubrange(targetReplacementRange, with: replacement)
                 newTargetStartIndex = target.convert(index: targetStartIndex, fromString: originalTarget)
             }
-            
+
             targetReplacedRanges = targetReplacedRanges.map { originalTargetReplacedRange in
                 let targetReplacedRange = target.convert(range: originalTargetReplacedRange, fromString: originalTarget)
                 guard targetReplacedRange.lowerBound >= newTargetStartIndex else {
@@ -45,9 +45,9 @@ extension String {
             let targetEndIndex = target.index(newTargetStartIndex, offsetBy: replacementCount)
             let targetReplacedRange = newTargetStartIndex..<targetEndIndex
             targetReplacedRanges.append(targetReplacedRange)
-            totalOffset = totalOffset + offset
+            totalOffset += offset
         }
-        
+
         return (target, targetReplacedRanges)
     }
 }
@@ -82,7 +82,7 @@ extension String {
                 logError("Replacement in \"\(self)\" not found for placeholder \"\(replacementName)\".")
             }
         }
-        
+
         return replacing(replacements: replacementsArray).string
     }
 }

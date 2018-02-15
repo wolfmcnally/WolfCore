@@ -12,20 +12,20 @@ import Foundation
 public struct UniqueID {
     /// The size of a uuid in bytes
     public let uuidSize = MemoryLayout<uuid_t>.size
-    
+
     public enum Error: Swift.Error {
         /// Thrown if the String cannot be decoded to UUID.
         case invalid
     }
-    
+
     /// The underlying Foundation UUID object, which is itself a wrapper for a Unix uuid_t struct.
     public let uuid: Foundation.UUID
-    
+
     /// The representation of this UniqueID as a String/
     public var string: String {
         return self.uuid.uuidString |> String.lowercased
     }
-    
+
     /// The UniqueID as a Data/
     public var data: Data {
         var u = uuid.uuid
@@ -33,12 +33,12 @@ public struct UniqueID {
             return Data(bytes: UnsafePointer(p), count: uuidSize)
         }
     }
-    
+
     /// Create a new, unique identifier/
     public init() {
         self.uuid = Foundation.UUID()
     }
-    
+
     /// Construct a UniqueID from a String.
     ///
     /// May be used as a monad transformer.
@@ -46,7 +46,7 @@ public struct UniqueID {
         guard let uuid = Foundation.UUID(uuidString: string) else { throw type(of: self).Error.invalid }
         self.uuid = uuid
     }
-    
+
     /// Construct a UniqueID from a Data.
     ///
     /// May be used as a monad transformer.

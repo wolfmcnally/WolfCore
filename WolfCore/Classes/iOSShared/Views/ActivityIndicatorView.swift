@@ -40,7 +40,7 @@ public class ActivityIndicatorView: View {
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     public func newActivity() -> LockerCause {
         return hysteresis.newCause()
     }

@@ -16,12 +16,12 @@ public struct Base64 {
         /// Thrown if the String cannot be decoded to Data.
         case invalid
     }
-    
+
     /// The Base-64 encoded representation.
     public let string: String
     /// The raw data.
     public let data: Data
-    
+
     /// Create a Base64 from a Base-64 encoded string. Throws if the String cannot be decoded to Data.
     ///
     /// May be used as a monad transformer.
@@ -33,7 +33,7 @@ public struct Base64 {
             throw Error.invalid
         }
     }
-    
+
     /// Create a Base64 from a Data.
     ///
     /// May be used as a monad transformer.

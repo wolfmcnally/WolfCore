@@ -8,9 +8,9 @@
 
 public class RunningAverage<T: BinaryFloatingPoint> {
     public private(set) var value: T?
-    
+
     public init() { }
-    
+
     public func update(_ newValue: T) {
         guard let oldValue = value else { value = newValue; return }
         value = (oldValue + newValue) / 2

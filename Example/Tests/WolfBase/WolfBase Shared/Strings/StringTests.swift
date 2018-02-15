@@ -11,7 +11,7 @@ import XCTest
 
 class StringTests: XCTestCase {
     func testReplacing() {
-        let s = "The #{subjectAdjective} #{subjectColor} #{subjectSpecies} #{action} the #{objectAdjective} #{objectSpecies}." // swiftlint:disable:this line_length
+        let s = "The #{subjectAdjective} #{subjectColor} #{subjectSpecies} #{action} the #{objectAdjective} #{objectSpecies}."
         let replacements: Replacements = [
             "subjectAdjective": "quick",
             "subjectColor": "brown",

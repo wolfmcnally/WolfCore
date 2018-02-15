@@ -76,6 +76,10 @@ extension CGSize {
     public var bounds: CGRect {
         return CGRect(origin: .zero, size: self)
     }
+
+    public var asPoint: CGPoint {
+        return CGPoint(x: width, y: height)
+    }
 }
 
 extension CGSize {

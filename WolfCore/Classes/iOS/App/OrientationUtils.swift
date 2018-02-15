@@ -72,4 +72,3 @@ public func forcePhoneToPortraitOrientation() {
 public func forceToPortraitOrientation() {
     UIDevice.current.force(toOrientation: .portrait)
 }
-

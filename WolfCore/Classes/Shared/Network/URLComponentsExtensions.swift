@@ -20,7 +20,7 @@ extension URLComponents {
             }
             return dict
         }
-        
+
         set {
             let queryItems: [URLQueryItem] = newValue.map {
                 return URLQueryItem(name: $0.0, value: $0.1)
@@ -28,7 +28,7 @@ extension URLComponents {
             self.queryItems = queryItems
         }
     }
-    
+
     public static func parametersDictionary(from string: String?) -> [String: String] {
         var dict = [String: String]()
         guard let string = string else { return dict }
@@ -43,13 +43,13 @@ extension URLComponents {
 }
 
 extension URLComponents {
-    public init(scheme: HTTPScheme, host: String, basePath: String? = nil, pathComponents: [Any]? = nil, query: [String : String]? = nil) {
+    public init(scheme: HTTPScheme, host: String, basePath: String? = nil, pathComponents: [Any]? = nil, query: [String: String]? = nil) {
         self.init()
-        
+
         self.scheme = scheme.rawValue
-        
+
         self.host = host
-        
+
         let joiner = Joiner(left: "/", separator: "/")
         if let basePath = basePath {
             joiner.append(basePath)
@@ -58,7 +58,7 @@ extension URLComponents {
             joiner.append(contentsOf: pathComponents)
         }
         self.path = joiner.description
-        
+
         if let query = query {
             queryDictionary = query
         }

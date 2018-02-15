@@ -115,7 +115,7 @@ class InFlightTokenView: View {
 
     private func syncToToken() {
         guard let token = token else { return }
-        
+
         idLabel.text = String(token.id)
         nameLabel.text = token.name
         var resultText: String?
@@ -141,4 +141,3 @@ class InFlightTokenView: View {
         resultLabel.text = resultText
     }
 }
-

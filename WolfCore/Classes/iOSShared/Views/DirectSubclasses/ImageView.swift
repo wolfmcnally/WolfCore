@@ -23,12 +23,12 @@ open class ImageView: UIImageView {
     public var onRetrieveFailure: ImageViewBlock?
     public var onRetrieveFinally: ImageViewBlock?
     public var onPostprocessImage: ImageProcessingBlock?
-    
+
     open override var image: UIImage? {
         get {
             return super.image
         }
-        
+
         set {
             if let image = newValue, let onPostprocessImage = onPostprocessImage {
                 super.image = onPostprocessImage(image)
@@ -37,21 +37,21 @@ open class ImageView: UIImageView {
             }
         }
     }
-    
+
     public var pdfTintColor: UIColor? {
         didSet {
             //updatePDFImage()
             setNeedsLayout()
         }
     }
-    
+
     public var pdf: PDF? {
         didSet {
             //updatePDFImage()
             setNeedsLayout()
         }
     }
-    
+
     public var url: URL? {
         didSet {
             retrievePromise?.cancel()
@@ -64,7 +64,7 @@ open class ImageView: UIImageView {
                 self.retrievePromise = sharedDataCache.retrieveObject(for: url).then { data in
                     self.pdf = PDF(data: data)
                     self.onRetrieveSuccess?(self)
-                    }.catch { error in
+                    }.catch { _ in
                         self.onRetrieveFailure?(self)
                     }.run { _ in
                         self.onRetrieveFinally?(self)
@@ -74,7 +74,7 @@ open class ImageView: UIImageView {
                 self.retrievePromise = sharedImageCache.retrieveObject(for: url).then { image in
                     self.image = image
                     self.onRetrieveSuccess?(self)
-                    }.catch { error in
+                    }.catch { _ in
                         self.onRetrieveFailure?(self)
                     }.run { _ in
                         self.onRetrieveFinally?(self)
@@ -83,13 +83,13 @@ open class ImageView: UIImageView {
             }
         }
     }
-    
+
     private var lastFittingSize: CGSize?
     private weak var lastPDF: PDF?
-    
+
     private func updatePDFImage() {
         guard let pdf = pdf else { return }
-        
+
         let fittingSize = bounds.size
         if lastFittingSize != fittingSize || lastPDF !== pdf {
             var newImage = pdf.getImage(fittingSize: fittingSize)
@@ -101,12 +101,12 @@ open class ImageView: UIImageView {
             lastPDF = pdf
         }
     }
-    
+
     open override func layoutSubviews() {
         super.layoutSubviews()
         updatePDFImage()
     }
-    
+
     //    open override func layoutSubviews() {
     //        updatePDFCanceler?.cancel()
     //        lastFittingSize = nil
@@ -117,12 +117,12 @@ open class ImageView: UIImageView {
     //        }
     //        super.layoutSubviews()
     //    }
-    
+
     open override func invalidateIntrinsicContentSize() {
         super.invalidateIntrinsicContentSize()
         lastFittingSize = nil
     }
-    
+
     //    open override var intrinsicContentSize: CGSize {
     //        let size: CGSize
     //        if let pdf = pdf {
@@ -132,33 +132,33 @@ open class ImageView: UIImageView {
     //        }
     //        return size
     //    }
-    
+
     public convenience init() {
         self.init(frame: .zero)
     }
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         _setup()
     }
-    
+
     public override init(image: UIImage?) {
         super.init(image: image)
         _setup()
     }
-    
+
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         _setup()
     }
-    
+
     private func _setup() {
         __setup()
         setup()
     }
-    
+
     open func setup() { }
-    
+
     open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         if isTransparentToTouches {
             return isTransparentToTouch(at: point, with: event)

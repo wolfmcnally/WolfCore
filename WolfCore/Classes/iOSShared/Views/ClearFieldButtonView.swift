@@ -13,7 +13,7 @@ public class ClearFieldButtonView: View {
         let button = ClearFieldButton()
         return button
     }()
-    
+
     public override func setup() {
         super.setup()
         self => [
@@ -24,12 +24,12 @@ public class ClearFieldButtonView: View {
         Constraints(
             button.centerXAnchor == centerXAnchor,
             button.centerYAnchor == centerYAnchor,
-            
+
             widthAnchor == size.width,
             heightAnchor == size.height
         )
     }
-    
+
     public func conceal(animated: Bool) {
         if isShown {
             dispatchAnimated(animated) {
@@ -39,7 +39,7 @@ public class ClearFieldButtonView: View {
                 }.run()
         }
     }
-    
+
     public func reveal(animated: Bool) {
         if isHidden {
             self.show()
@@ -53,7 +53,7 @@ public class ClearFieldButtonView: View {
 public class ClearFieldButton: Button {
     public override func setup() {
         super.setup()
-        
+
         let image = UIImage.init(named: "clearFieldButton", in: Framework.bundle)
         setImage(image, for: .normal)
         setPriority(hugH: .required, hugV: .required)

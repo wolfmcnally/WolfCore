@@ -75,7 +75,7 @@ extension OSColor {
                 "red: 0.3 green: 0.5 blue: 0.7 alpha: 0.5",
                 "h: 0.2 s: 0.8 b: 1.0",
                 "hue: 0.2 saturation: 0.8 brightness: 1.0",
-                "hue: 0.2 saturation: 0.8 brightness: 1.0 alpha: 0.5",
+                "hue: 0.2 saturation: 0.8 brightness: 1.0 alpha: 0.5"
                 ]
             for string in strings {
                 let color = try OSColor(string: string)

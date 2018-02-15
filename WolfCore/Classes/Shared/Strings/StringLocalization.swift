@@ -23,14 +23,14 @@ public var localizationTableNames = [String]() {
 
 public struct StringName: ExtensibleEnumeratedName, Reference {
     public let rawValue: String
-    
+
     public init(_ rawValue: String) {
         self.rawValue = rawValue
     }
-    
+
     // RawRepresentable
     public init?(rawValue: String) { self.init(rawValue) }
-    
+
     // Reference
     public var referent: String {
         return rawValue¶
@@ -57,30 +57,30 @@ extension String {
             taggedKey = self + "¶"
             hasTag = false
         }
-        
+
         guard !mustHaveTag || hasTag else { return self }
-        
+
         var s: String?
         for bundle in localizationBundles {
             s = localized(key: taggedKey, in: bundle, inLanguage: language)
             if s != nil { break }
         }
-        
+
         if s == nil {
             logWarning("No localization found for: \"\(taggedKey)\".", group: .localization)
             s = untaggedKey
         }
-        
+
         if let replacements = replacements {
             s = s!.replacingPlaceholders(with: replacements)
         }
-        
+
         return s!
     }
-    
+
     private func localized(key: String, in bundle: Bundle, inLanguage language: String?) -> String? {
         var bundle = bundle
-        
+
         if let language = language {
             if let path = bundle.path(forResource: language, ofType: "lproj") {
                 if let langBundle = Bundle(path: path) {
@@ -88,7 +88,7 @@ extension String {
                 }
             }
         }
-        
+
         var localized: String?
         let notFoundValue = "⁉️"
         for tableName in _localizationTableNames {
@@ -98,7 +98,7 @@ extension String {
                 break
             }
         }
-        
+
         return localized
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 public class KeyboardNotificationActions {
-    private var actions = Dictionary<NSNotification.Name, KeyboardMovementAction>()
+    private var actions = [NSNotification.Name: KeyboardMovementAction]()
 
     public init() {
     }
@@ -26,7 +26,7 @@ public class KeyboardNotificationActions {
             removeAction(for: name)
         }
     }
-    
+
     func removeAction(for name: NSNotification.Name) {
         actions.removeValue(forKey: name)
     }

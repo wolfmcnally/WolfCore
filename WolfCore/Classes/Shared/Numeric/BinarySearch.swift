@@ -63,5 +63,3 @@ extension ComparisonResult {
         }
     }
 }
-
-

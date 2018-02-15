@@ -16,15 +16,15 @@ import Foundation
 
 public struct HMACSHA256 {
     private typealias `Self` = HMACSHA256
-    
+
     #if os(Linux)
     private static let digestLength = Int(SHA256_DIGEST_LENGTH)
     #else
     private static let digestLength = Int(CC_SHA256_DIGEST_LENGTH)
     #endif
-    
+
     public private(set) var digest = Data(repeating: 0, count: Self.digestLength)
-    
+
     public init(data: Data, key: Data) {
         digest.withUnsafeMutableBytes { (digestPtr: UnsafeMutablePointer<UInt8>) in
             data.withUnsafeBytes { (dataPtr: UnsafePointer<UInt8>) in
@@ -38,7 +38,7 @@ public struct HMACSHA256 {
             }
         }
     }
-    
+
     public static func test() {
         // $ openssl dgst -sha256 -hmac "secret"
         // The quick brown fox\n^d

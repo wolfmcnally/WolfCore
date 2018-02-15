@@ -63,4 +63,3 @@ public class Event<T> {
         return observers.isEmpty
     }
 }
-

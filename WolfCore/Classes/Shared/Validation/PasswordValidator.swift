@@ -10,7 +10,7 @@ open class PasswordValidator: Validator {
     public override init(name: String = "Password", isRequired: Bool = true) {
         super.init(name: name, isRequired: isRequired)
     }
-    
+
     open override func editValidate(_ validation: StringValidation) -> String? {
         return try? validation.maxLength(24).value
     }

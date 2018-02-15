@@ -1,9 +1,12 @@
 PODS:
   - CommonCryptoModule (1.0.2)
-  - WolfCore (2.1.0):
+  - SwiftLint (0.24.2)
+  - WolfCore (2.1.4):
     - CommonCryptoModule
+    - SwiftLint
 
 DEPENDENCIES:
+  - SwiftLint
   - WolfCore (from `../`)
 
 EXTERNAL SOURCES:
@@ -12,8 +15,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CommonCryptoModule: 63a68b57abed79655b3a01011419bf037a05b0a0
-  WolfCore: 673f470fb5308d9d61d069e220633fa8d6ba6a1b
+  SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
+  WolfCore: ca416717d8a0b39150c56dbdd04cfdd8036897b8
 
-PODFILE CHECKSUM: 401e8f8bcad30ce735bddbf962691d768ddb799b
+PODFILE CHECKSUM: fdbe103ec524b1919c0b9ffa91ef4728d15ddf54
 
 COCOAPODS: 1.4.0

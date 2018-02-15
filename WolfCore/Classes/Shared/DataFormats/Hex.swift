@@ -14,20 +14,20 @@ public struct Hex {
         /// Thrown if the String cannot be decoded to Data.
         case invalid
     }
-    
+
     /// The hexadecimal encoded representation.
     public let string: String
     /// The raw data.
     public let data: Data
-    
+
     /// Create a Hex from a hexadecimal encoded String. Throws if the String cannot be decoded to Data.
     ///
     /// May be used as a monad transformer.
     public init(string: String) throws {
         let charactersCount = string.count
-        
+
         var data: Data
-        
+
         if charactersCount == 1 {
             guard let b = UInt8(string, radix: 16) else {
                 throw Error.invalid
@@ -38,9 +38,9 @@ public struct Hex {
             guard charactersCount % 2 == 0 else {
                 throw Error.invalid
             }
-            
+
             let bytesCount = charactersCount / 2
-            
+
             data = Data(count: bytesCount)
             for (index, s) in string.split(by: 2).enumerated() {
                 guard let b = UInt8(s, radix: 16) else {
@@ -49,11 +49,11 @@ public struct Hex {
                 data[index] = b
             }
         }
-        
+
         self.data = data
         self.string = string
     }
-    
+
     /// Create a Hex from a Data.
     ///
     /// May be used as a monad transformer.
@@ -63,11 +63,11 @@ public struct Hex {
             let s = String(byte, radix: 16, uppercase: false) |> String.paddedWithZeros(to: 2)
             string += s
         }
-        
+
         self.data = data
         self.string = string
     }
-    
+
     /// Create a Hex from a single byte.
     ///
     /// May be used as a monad transformer.

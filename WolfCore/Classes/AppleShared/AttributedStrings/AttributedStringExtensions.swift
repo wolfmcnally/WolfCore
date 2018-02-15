@@ -55,7 +55,6 @@ extension AttributedString {
         return (attr, range)
     }
 
-    // swiftlint:disable:next custom_rules
     public func enumerateAttributes(in enumerationRange: StringRange? = nil, options opts: NSAttributedString.EnumerationOptions = [], using block: (StringAttributes, StringRange, AttributedSubstring) -> Bool) {
         let nsRange = string.nsRange(from: enumerationRange) ?? string.nsRange
         enumerateAttributes(in: nsRange, options: opts) { (attrs, nsRange, stop) in
@@ -64,7 +63,6 @@ extension AttributedString {
         }
     }
 
-    // swiftlint:disable:next custom_rules
     public func enumerateAttribute(_ name: NSAttributedStringKey, in enumerationRange: StringRange? = nil, options opts: NSAttributedString.EnumerationOptions = [], using block: (Any?, StringRange, AttributedSubstring) -> Bool) {
         let nsEnumerationRange = string.nsRange(from: enumerationRange) ?? string.nsRange
         enumerateAttribute(name, in: nsEnumerationRange, options: opts) { (value, nsRange, stop) in

@@ -17,12 +17,12 @@ import Foundation
 public struct Vector {
     public var dx: Double = 0
     public var dy: Double = 0
-    
+
     public init() {
         dx = 0
         dy = 0
     }
-    
+
     public init(dx: Double, dy: Double) {
         self.dx = dx
         self.dy = dy
@@ -35,7 +35,7 @@ public struct Vector {
             dx = Double(v.dx)
             dy = Double(v.dy)
         }
-        
+
         public var cgVector: CGVector {
             return CGVector(dx: CGFloat(dx), dy: CGFloat(dy))
         }
@@ -50,12 +50,12 @@ extension Vector: CustomStringConvertible {
 
 extension Vector {
     public static let zero = Vector()
-    
+
     public init(dx: Int, dy: Int) {
         self.dx = Double(dx)
         self.dy = Double(dy)
     }
-    
+
     public init(dx: Float, dy: Float) {
         self.dx = Double(dx)
         self.dy = Double(dy)
@@ -67,41 +67,41 @@ extension Vector {
         dx = point2.x - point1.x
         dy = point2.y - point1.y
     }
-    
+
     public init(point: Point) {
         dx = point.x
         dy = point.y
     }
-    
+
     public init(size: Size) {
         dx = size.width
         dy = size.height
     }
-    
+
     public var magnitude: Double {
         return hypot(dx, dy)
     }
-    
+
     public var angle: Double {
         return atan2(dy, dx)
     }
-    
+
     public var normalized: Vector {
         let m = magnitude
         assert(m > 0.0)
         return self / m
     }
-    
+
     public mutating func normalize() {
         self = self.normalized
     }
-    
+
     public func rotated(by theta: Double) -> Vector {
         let sinTheta = sin(theta)
         let cosTheta = cos(theta)
         return Vector(dx: dx * cosTheta - dy * sinTheta, dy: dx * sinTheta + dy * cosTheta)
     }
-    
+
     public mutating func rotate(byAngle theta: Double) {
         self = rotated(by: theta)
     }
@@ -113,7 +113,7 @@ extension Vector {
     public mutating func swap() {
         self = swapped
     }
-    
+
     public static var unit = Vector(dx: 1, dy: 0)
 }
 

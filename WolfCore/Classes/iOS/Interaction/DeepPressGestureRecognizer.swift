@@ -9,8 +9,7 @@
 import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
-public class DeepPressGestureRecognizer: UIGestureRecognizer
-{
+public class DeepPressGestureRecognizer: UIGestureRecognizer {
     public var forceThreshold: Frac = 0.75
     public var timeThreshold: TimeInterval = 0 {
         didSet {

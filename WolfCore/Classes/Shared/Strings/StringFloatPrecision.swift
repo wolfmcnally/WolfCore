@@ -15,7 +15,7 @@ extension String {
         formatter.maximumFractionDigits = precision
         self.init(formatter.string(from: NSNumber(value: value))!)
     }
-    
+
     public init(value: Float, precision: Int) {
         self.init(value: Double(value), precision: precision)
     }
@@ -37,15 +37,14 @@ public func %% (left: Float, right: Int) -> String {
     #else
     import UIKit
 #endif
-    
+
     extension String {
         public init(value: CGFloat, precision: Int) {
             self.init(value: Double(value), precision: precision)
         }
     }
-    
+
     public func %% (left: CGFloat, right: Int) -> String {
         return String(value: left, precision: right)
     }
 #endif
-

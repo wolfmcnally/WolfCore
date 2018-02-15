@@ -95,7 +95,7 @@ extension OSBezierPath {
             let corner = CGPoint(x: cornerX, y: cornerY)
             corners.append(corner)
         }
-        
+
         if cornerRadius <= 0.0 {
             for (index, corner) in corners.enumerated() {
                 if index == 0 {

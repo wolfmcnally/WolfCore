@@ -17,47 +17,47 @@ public class ImageViewerViewController: ViewController {
     private var chromeHidden = false
     private var willDismissAction: Block?
     private var navbarTitle: String!
-    
+
     public var image: UIImage {
         guard sourceImageView.image != nil else {
             return UIImage()
         }
         return sourceImageView.image!
     }
-    
+
     public static func present(with sourceImageView: UIImageView, from presentingViewController: UIViewController, navbarTitle: String = "Photo"¶, willDismissAction: Block? = nil) {
         let viewController = ImageViewerViewController(with: sourceImageView)
         viewController.navbarTitle = navbarTitle
         viewController.willDismissAction = willDismissAction
         viewController.present(from: presentingViewController, animated: true, completion: nil)
     }
-    
+
     public init(with sourceImageView: UIImageView) {
         self.sourceImageView = sourceImageView
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     public override func setup() {
         super.setup()
         automaticallyAdjustsScrollViewInsets = false
     }
-    
+
     private lazy var imageView: ImageView = .init()
-    
+
     public var imageViewFrame: CGRect {
         view.layoutIfNeeded()
         return view.convert(imageView.frame, from: imageView.superview!)
     }
-    
+
     lazy var contentView: View = {
         let view = View()
         return view
     }()
-    
+
     lazy var scrollView: ScrollView = {
         let view = ScrollView()
         view.minimumZoomScale = 1.0
@@ -70,28 +70,28 @@ public class ImageViewerViewController: ViewController {
         view.delegate = self
         return view
     }()
-    
+
     private func present(from presentingViewController: UIViewController, animated: Bool, completion: Block?) {
         let navController = NavigationController(rootViewController: self)
         navController.transitioningDelegate = self
         navController.modalPresentationStyle = .custom
         presentingViewController.present(navController, animated: animated, completion: completion)
     }
-    
+
     // view
     //   scrollView
     //     contentView
     //       imageView
     //         image
-    
+
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupNavigationItem()
         setupSubviews()
         setupGestures()
     }
-    
+
     private func setupNavigationItem() {
         let doneItem = UIBarButtonItem(barButtonSystemItem: .done)
         doneAction = doneItem.addAction { [unowned self] in
@@ -100,7 +100,7 @@ public class ImageViewerViewController: ViewController {
         navigationItem.leftBarButtonItem = doneItem
         navigationItem.title = navbarTitle
     }
-    
+
     private func setupSubviews() {
         view => [
             scrollView => [
@@ -109,11 +109,11 @@ public class ImageViewerViewController: ViewController {
                 ]
             ]
         ]
-        
+
         scrollView.constrainFrameToFrame()
-        
+
         contentView.constrainFrameToFrame()
-        
+
         imageView.constrainCenterToCenter()
         Constraints(
             imageView.widthAnchor <= contentView.widthAnchor,
@@ -122,43 +122,43 @@ public class ImageViewerViewController: ViewController {
             imageView.heightAnchor == contentView.heightAnchor =&= .defaultHigh,
             imageView.widthAnchor == imageView.heightAnchor * image.size.aspect
         )
-        
+
         imageView.image = image
-        
+
         Constraints(
             contentView.widthAnchor == view.widthAnchor,
             contentView.heightAnchor == view.heightAnchor
         )
     }
-    
+
     public var isImageViewHidden: Bool = false {
         didSet {
             imageView.hideIf(isImageViewHidden)
         }
     }
-    
+
     private func setupGestures() {
         let singleTapRecognizer = UITapGestureRecognizer()
         tapAction = view.addAction(for: singleTapRecognizer) { [unowned self] _ in
             self.toggleChrome(animated: true)
         }
-        
+
         let doubleTapRecognizer = UITapGestureRecognizer()
         doubleTapRecognizer.numberOfTapsRequired = 2
         doubleTapAction = view.addAction(for: doubleTapRecognizer) { [unowned self] recognizer in
             let p = recognizer.location(in: self.contentView)
             self.toggleZoom(animated: true, focusPoint: p)
         }
-        
+
         singleTapRecognizer.require(toFail: doubleTapRecognizer)
-        
+
         let dismissRecognizer = ImageViewerDismissGestureRecognizer()
         dismissRecognizer.delegate = self
-        dismissAction = view.addAction(for: dismissRecognizer) { [unowned self] recognizer in
+        dismissAction = view.addAction(for: dismissRecognizer) { [unowned self] _ in
             self.dismiss()
         }
     }
-    
+
     private func toggleChrome(animated: Bool) {
         if chromeHidden {
             showChrome(animated: animated)
@@ -166,19 +166,19 @@ public class ImageViewerViewController: ViewController {
             hideChrome(animated: animated)
         }
     }
-    
+
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         UIViewController.attemptRotationToDeviceOrientation()
-        
+
         hideChrome(animated: animated)
     }
-    
+
     public override var prefersStatusBarHidden: Bool {
         return chromeHidden ? true : super.prefersStatusBarHidden
     }
-    
+
     private func hideChrome(animated: Bool) {
         chromeHidden = true
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -187,7 +187,7 @@ public class ImageViewerViewController: ViewController {
             self.view.backgroundColor = .black
             }.run()
     }
-    
+
     private func showChrome(animated: Bool) {
         chromeHidden = false
         navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -196,7 +196,7 @@ public class ImageViewerViewController: ViewController {
             //            self.view.backgroundColor = .white
             }.run()
     }
-    
+
     private func toggleZoom(animated: Bool, focusPoint point: CGPoint) {
         if scrollView.zoomScale > scrollView.minimumZoomScale {
             zoomOut(animated: animated)
@@ -204,16 +204,16 @@ public class ImageViewerViewController: ViewController {
             zoomIn(animated: animated, focusPoint: point)
         }
     }
-    
+
     private func zoomOut(animated: Bool) {
         scrollView.zoom(to: contentView.bounds, animated: animated)
     }
-    
+
     private func zoomIn(animated: Bool, focusPoint point: CGPoint) {
         let rect = CGRect(origin: point, size: .zero)
         scrollView.zoom(to: rect, animated: animated)
     }
-    
+
     public override func dismiss() {
         willDismissAction?()
         super.dismiss()
@@ -224,7 +224,7 @@ extension ImageViewerViewController: UIScrollViewDelegate {
     public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return contentView
     }
-    
+
     public func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
     }
 }
@@ -242,7 +242,7 @@ extension ImageViewerViewController: UIViewControllerTransitioningDelegate {
     public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return ImageViewerPresentationTransitioning()
     }
-    
+
     public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return ImageViewerDismissalTransitioning()
     }

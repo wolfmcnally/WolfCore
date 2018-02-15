@@ -22,7 +22,7 @@ extension Bundle {
         }
         return bundle
     }
-    
+
     public static func urlForResource(_ name: String, withExtension anExtension: String? = nil, subdirectory subpath: String? = nil) -> (Bundle) throws -> URL {
         return { bundle in
             guard let url = bundle.url(forResource: name, withExtension: anExtension, subdirectory: subpath) else {
@@ -32,4 +32,3 @@ extension Bundle {
         }
     }
 }
-

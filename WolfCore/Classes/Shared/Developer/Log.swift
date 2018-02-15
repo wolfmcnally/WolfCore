@@ -45,7 +45,7 @@ public struct LogGroup: ExtensibleEnumeratedName {
 public class Log {
     public var level = LogLevel.trace
     public var locationLevel = LogLevel.error
-    public private(set) var groupLevels = [LogGroup : LogLevel]()
+    public private(set) var groupLevels = [LogGroup: LogLevel]()
 
     public func print<T>(_ message: @autoclosure () -> T, level: LogLevel, obj: Any? = nil, group: LogGroup? = nil, _ file: String = #file, _ line: Int = #line, _ function: String = #function) {
 

@@ -10,15 +10,15 @@ import UIKit
 
 class NavigationBarBlurEffect {
     weak var navigationController: NavigationController!
-    
+
     private var effectView: UIVisualEffectView!
     private var topConstraint: NSLayoutConstraint!
-    
+
     required init(navigationController: NavigationController) {
         self.navigationController = navigationController
         setup()
     }
-    
+
     func setup() {
         let effect = UIBlurEffect(style: .light)
         effectView = ‡UIVisualEffectView(effect: effect)
@@ -34,7 +34,7 @@ class NavigationBarBlurEffect {
             topConstraint
         )
     }
-    
+
     func update() {
         var statusBarAdjustment: CGFloat = -20
         out: do {
@@ -46,15 +46,15 @@ class NavigationBarBlurEffect {
         }
         topConstraint.constant = statusBarAdjustment
     }
-    
+
     //    func invalidate() {
     //        effectView.removeFromSuperview()
     //    }
-    
+
     func show() {
         effectView.show()
     }
-    
+
     func hide() {
         effectView.hide()
     }

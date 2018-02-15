@@ -11,18 +11,18 @@ import Foundation
 extension URLRequest {
     public func printRequest(includeAuxFields: Bool = false, level: Int = 0) {
         print("➡️ \(httpMethod†) \(url†)".indented(level))
-        
+
         let level = level + 1
-        
+
         if let headers = allHTTPHeaderFields {
             for (key, value) in headers {
                 print("\(key): \(value)".indented(level))
             }
         }
-        
+
         if let data = httpBody, data.count > 0 {
             print("body:".indented(level))
-            
+
             let level = level + 1
             do {
                 try print((data |> JSON.init).prettyString.indented(level))
@@ -30,14 +30,14 @@ extension URLRequest {
                 print("Non-JSON Data: \(data)".indented(level))
             }
         }
-        
+
         guard includeAuxFields else { return }
-        
+
         let cachePolicyStrings: [URLRequest.CachePolicy: String] = [
             .useProtocolCachePolicy: ".useProtocolCachePolicy",
             .reloadIgnoringLocalCacheData: ".reloadIgnoringLocalCacheData",
             .returnCacheDataElseLoad: ".returnCacheDataElseLoad",
-            .returnCacheDataDontLoad: ".returnCacheDataDontLoad",
+            .returnCacheDataDontLoad: ".returnCacheDataDontLoad"
             ]
         let networkServiceTypes: [URLRequest.NetworkServiceType: String]
         if #available(iOS 10.0, *) {
@@ -47,7 +47,7 @@ extension URLRequest {
                 .video: ".video",
                 .background: ".background",
                 .voice: ".voice",
-                .networkServiceTypeCallSignaling: ".networkServiceTypeCallSignaling",
+                .networkServiceTypeCallSignaling: ".networkServiceTypeCallSignaling"
             ]
         } else {
             networkServiceTypes = [
@@ -55,10 +55,10 @@ extension URLRequest {
                 .voip: ".voip",
                 .video: ".video",
                 .background: ".background",
-                .voice: ".voice",
+                .voice: ".voice"
             ]
         }
-        
+
         print("timeoutInterval: \(timeoutInterval)".indented(level))
         print("cachePolicy: \(cachePolicyStrings[cachePolicy]!)".indented(level))
         print("allowsCellularAccess: \(allowsCellularAccess)".indented(level))
@@ -68,4 +68,3 @@ extension URLRequest {
         print("networkServiceType: \(networkServiceTypes[networkServiceType]!)".indented(level))
     }
 }
-

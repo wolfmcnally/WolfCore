@@ -12,27 +12,25 @@ import Foundation
 public class ObjectAliaser {
     private var aliases = [ObjectIdentifier: Int]()
     private var nextAlias = 0
-    
+
     public init() { }
-    
+
     func alias(for object: AnyObject) -> Int {
         let objectIdentifier = ObjectIdentifier(object)
         var alias: Int! = aliases[objectIdentifier]
         if alias == nil {
             alias = nextAlias
             aliases[objectIdentifier] = nextAlias
-            nextAlias = nextAlias + 1
+            nextAlias += 1
         }
         return alias
     }
-    
-    // swiftlint:disable cyclomatic_complexity
-    
+
     public func name(for object: AnyObject) -> String {
         let joiner = Joiner(left: "(", right: ")")
-        
+
         joiner.append("0x\(String(alias(for: object), radix: 16).paddedWithZeros(to: 2))")
-        
+
         var id: String?
         var className: String? = NSStringFromClass(type(of: object))
         //    #if os(iOS) || os(tvOS)
@@ -52,7 +50,7 @@ public class ObjectAliaser {
         //        break
         //      }
         //    #endif
-        
+
         //    #if os(iOS) || os(tvOS) || os(macOS)
         //      switch object {
         //
@@ -76,29 +74,27 @@ public class ObjectAliaser {
         //        break
         //      }
         //    #endif
-        
+
         switch object {
         case let number as NSNumber:
             className = nil
             id = getID(for: number)
-            
+
         default:
             break
         }
-        
+
         if let className = className {
             joiner.append(className)
         }
-        
+
         if let id = id {
             joiner.append(id)
         }
-        
+
         return joiner.description
     }
-    
-    // swiftlint:enable cyclomatic_complexity
-    
+
     #if os(Linux)
     private func getID(for number: NSNumber) -> String {
     return String(describing: number)
@@ -111,7 +107,7 @@ public class ObjectAliaser {
             return String(describing: number)
         }
     }
-    
+
     //  private func getID(for font: OSFont) -> String {
     //    let idJoiner = Joiner()
     //    idJoiner.append("\"\(font.familyName)\"")
@@ -126,4 +122,3 @@ public class ObjectAliaser {
     //  }
     #endif
 }
-

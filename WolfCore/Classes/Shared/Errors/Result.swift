@@ -10,19 +10,19 @@
 public protocol ResultSummary {
     /// Returns true if the process completed successfully; false otherwise.
     var isSuccess: Bool { get }
-    
+
     /// Returns true if the process was cancelled; false otherwise.
     var isCanceled: Bool { get }
-    
+
     /// Returns a human-readable error message, or `nil` if none was provided.
     var message: String? { get }
-    
+
     /// Returns a numeric error code, or `nil` if none was provided.
     var code: Int? { get }
-    
+
     /// Returns a non-user-facing indentifier used for automated UI testing
     var identifier: String? { get }
-    
+
     /// Returns the error object
     var error: Error? { get }
 }
@@ -37,7 +37,7 @@ public enum Result<T>: ResultSummary {
     case failure(Error)
     case aborted
     case canceled
-    
+
     /// Returns true if the process completed successfully; false otherwise.
     public var isSuccess: Bool {
         switch self {
@@ -47,7 +47,7 @@ public enum Result<T>: ResultSummary {
             return false
         }
     }
-    
+
     public var isFailure: Bool {
         switch self {
         case .failure:
@@ -56,7 +56,7 @@ public enum Result<T>: ResultSummary {
             return false
         }
     }
-    
+
     public var isAborted: Bool {
         switch self {
         case .aborted:
@@ -65,7 +65,7 @@ public enum Result<T>: ResultSummary {
             return false
         }
     }
-    
+
     public var isCanceled: Bool {
         switch self {
         case .canceled:
@@ -74,7 +74,7 @@ public enum Result<T>: ResultSummary {
             return false
         }
     }
-    
+
     /// Returns a human-readable error message, or `nil` if none was provided.
     public var message: String? {
         switch self {
@@ -84,7 +84,7 @@ public enum Result<T>: ResultSummary {
             return nil
         }
     }
-    
+
     /// Returns a numeric error code, or `nil` if none was provided.
     public var code: Int? {
         switch self {
@@ -94,7 +94,7 @@ public enum Result<T>: ResultSummary {
             return nil
         }
     }
-    
+
     /// Returns a non-user-facing indentifier used for automated UI testing
     public var identifier: String? {
         switch self {
@@ -104,7 +104,7 @@ public enum Result<T>: ResultSummary {
             return nil
         }
     }
-    
+
     /// Returns the error object
     public var error: Error? {
         switch self {
