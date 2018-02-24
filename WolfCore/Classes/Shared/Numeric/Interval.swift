@@ -22,6 +22,12 @@ public struct Interval<T: FloatingPoint> {
 }
 
 extension Interval {
+    public var extent: T {
+        return b - a
+    }
+}
+
+extension Interval {
     /// Returns `true` if `a` is less than `b`, and `false` otherwise.
     public var isAscending: Bool {
         return a < b

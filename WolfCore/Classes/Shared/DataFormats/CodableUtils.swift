@@ -21,7 +21,8 @@ extension Encoder {
 }
 
 extension KeyedDecodingContainer {
-    public subscript<T>(key: Key) -> T where T: Decodable {
+    public subscript<T>(key: Key) -> T? where T: Decodable {
+        guard contains(key) else { return nil }
         return try! decode(T.self, forKey: key)
     }
 
@@ -31,12 +32,11 @@ extension KeyedDecodingContainer {
 }
 
 extension KeyedEncodingContainer {
-    public subscript<T>(key: Key) -> T where T: Encodable {
-        get { fatalError() }
-        set { try! encode(newValue, forKey: key) }
+    public subscript<T>(key: Key) -> T? where T: Encodable {
+        get { fatalError("Cannot read from an encoding container") }
+        set {
+            guard let newValue = newValue else { return }
+            try! encode(newValue, forKey: key)
+        }
     }
-
-    //  public subscript<NestedKey>(type: NestedKey.Type, key: Key) -> KeyedEncodingContainer<NestedKey> {
-    //    return try! nestedContainer(keyedBy: type, forKey: key)
-    //  }
 }

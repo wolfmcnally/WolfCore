@@ -12,5 +12,6 @@ disabled_rules:
     - function_parameter_count
     - type_body_length
     - todo
+    - nesting
 
 maxEmptyLines: 3
