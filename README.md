@@ -61,11 +61,11 @@ Assuming they want me to.
 
 ## So What is WolfCore?
 
-Using the above as analogy, WolfCore is my “master’s workshop”.
+Using the above as analogy, WolfCore is my “master’s workshop.”
 
 I have stood in other masters’ workshops— a stained glass artist, a furniture designer, an electronic musician, a concept car creator, even a castle builder. When you stand in such a space in a mindset to properly appreciate it, you can’t help but feel awe at the amount of time, effort, and knowledge that has gone into creating this space of creation. Gazing at its details, one notices how the tools and work areas are carefully chosen, organized, and arranged. Some of the details might be intensely personal and even quirky. But the space’s utility is undeniable.
 
-As programmers we’re used to dealing with conceptual boxes-within-boxes. My home holds my office— my workshop. My office holds my computer running Xcode— a workshop within a workshop. Xcode provides tools to create iOS software— the Swift standard libraries and iOS APIs are another nested workshop. Finally there is WolfCore, a set of “embodied conveniences”, *tools* I use to create great software.
+As programmers we’re used to dealing with conceptual boxes-within-boxes. My home holds my office— my workshop. My office holds my computer running Xcode— a workshop within a workshop. Xcode provides tools to create iOS software— the Swift standard libraries and iOS APIs are another nested workshop. Finally there is WolfCore, a set of “embodied conveniences”— *tools*— I use to create great software.
 
 I truly appreciate the cornucopia of open-source software. Almost every project I do incoporates one or more third-party open-source libraries. What distinguishes WolfCore from other open-source software frameworks and libraries is that while those libraries are often aimed at providing specific functionality, WolfCore is aimed at providing general convenience in a myriad of tasks I commonly encounter when writing apps.
 
