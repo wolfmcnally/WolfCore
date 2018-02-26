@@ -6,32 +6,40 @@
 //  Copyright © 2015 WolfMcNally.com. All rights reserved.
 //
 
-extension Array {
-    public mutating func rearrange(from: Int, to: Int) {
+extension RangeReplaceableCollection {
+    @discardableResult public mutating func arrange(from: Index, to: Index) -> Bool {
         precondition(indices.contains(from) && indices.contains(to), "invalid indexes")
-        guard from != to else { return }
+        guard from != to else { return false }
         insert(remove(at: from), at: to)
+        return true
     }
+}
 
-    public func circularIndex(at index: Int) -> Int {
-        return makeCircularIndex(at: index, count: count)
-    }
-
-    public func element(atCircularIndex index: Int) -> Element {
-        return self[circularIndex(at: index)]
-    }
-
-    public mutating func replaceElement(atCircularIndex index: Index, withElement element: Element) {
-        self[circularIndex(at: index)] = element
-    }
-
-    public var randomIndex: Int {
-        return Random.number(0 ..< self.count)
+extension Collection where IndexDistance == Int {
+    public var randomIndex: Index {
+        return index(startIndex, offsetBy: Random.number(0 ..< count))
     }
 
     public var randomElement: Element {
         return self[randomIndex]
     }
+
+    public func circularIndex(at index: Int) -> Index {
+        return self.index(startIndex, offsetBy: makeCircularIndex(at: index, count: count))
+    }
+
+    public func element(atCircularIndex index: Int) -> Element {
+        return self[circularIndex(at: index)]
+    }
+}
+
+extension MutableCollection where IndexDistance == Int {
+    public mutating func replaceElement(atCircularIndex index: Int, withElement element: Element) {
+        self[circularIndex(at: index)] = element
+    }
+}
+
+extension Array {
 
     /// Fisher–Yates shuffle
     /// http://datagenetics.com/blog/november42014/index.html

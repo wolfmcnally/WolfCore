@@ -40,26 +40,8 @@ extension CGPoint {
 }
 
 extension CGPoint {
-    public func toNormalizedCoordinates(fromSize size: CGSize) -> CGPoint {
-        let nx = x.lerped(from: 0..size.width, to: -1..1)
-        let ny = y.lerped(from: 0..size.height, to: -1..1)
-        return CGPoint(x: nx, y: ny)
-    }
-
-    public func fromNormalizedCoordinates(toSize size: CGSize) -> CGPoint {
-        let nx = x.lerped(from: -1..1, to: 0..size.width)
-        let ny = y.lerped(from: -1..1, to: 0..size.height)
-        return CGPoint(x: nx, y: ny)
-    }
-
-    public func transformCoordinates(fromSize: CGSize, toSize: CGSize) -> CGPoint {
-//        let p = toNormalizedCoordinates(fromSize: fromSize)
-//        let r = p.fromNormalizedCoordinates(toSize: toSize)
-//        return r
-        let nx = x.lerped(from: 0..fromSize.width, to: 0..toSize.width)
-        let ny = y.lerped(from: 0..fromSize.height, to: 0..toSize.height)
-        return CGPoint(x: nx, y: ny)
-    }
+    public func settingX(_ newX: CGFloat) -> CGPoint { return CGPoint(x: newX, y: y) }
+    public func settingY(_ newY: CGFloat) -> CGPoint { return CGPoint(x: x, y: newY) }
 }
 
 extension CGPoint {

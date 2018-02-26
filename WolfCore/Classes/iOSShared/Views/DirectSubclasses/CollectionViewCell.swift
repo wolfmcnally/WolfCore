@@ -25,6 +25,10 @@ open class CollectionViewCell: UICollectionViewCell {
 
     private func _setup() {
         __setup()
+
+        // https://stackoverflow.com/questions/24750158/autoresizing-issue-of-uicollectionviewcell-contentviews-frame-in-storyboard-pro
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
         setup()
     }
 
