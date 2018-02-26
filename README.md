@@ -28,8 +28,6 @@ wolfmcnally, wolf@wolfmcnally.com
 
 WolfCore is available under the MIT license. See the LICENSE file for more info.
 
---
-
 # WolfCore: The Master’s Workshop
 
 ## The Master and the Mentor
