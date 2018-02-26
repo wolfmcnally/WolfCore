@@ -122,22 +122,22 @@ This is an example of a simple, robust, reusable solution that I use in virtuall
 
 ```swift
 class MyView: UIView {
-	var tapRecognizer: UITapGestureRecognizer!
-	
-	func addTapAction() {
-		tapRecognizer = UITapGestureRecognizer()
-		tapRecognizer.addTarget(self, action: #selector(.handleTap))
-		addGestureRecognizer(tapRecognizer)
-	}
-	
-	func removeTapAction() {
-		removeGestureRecognizer(tapRecognizer)
-		tapRecognizer = nil
-	}
-	
-	@objc func handleTap() {
-		print("tapped!")
-	}
+    var tapRecognizer: UITapGestureRecognizer!
+    
+    func addTapAction() {
+        tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(.handleTap))
+        addGestureRecognizer(tapRecognizer)
+    }
+    
+    func removeTapAction() {
+        removeGestureRecognizer(tapRecognizer)
+        tapRecognizer = nil
+    }
+    
+    @objc func handleTap() {
+        print("tapped!")
+    }
 }
 ```
 
@@ -145,17 +145,17 @@ class MyView: UIView {
 
 ```swift
 class MyView: UIView {
-	var tapAction: GestureRecognizerAction!
-	
-	func addTapAction() {
-		tapAction = addAction(for: UITapGestureRecognizer()) { _ in
-			print("tapped")
-		}
-	}
-	
-	func removeTapAction() {
-		tapAction = nil
-	}
+    var tapAction: GestureRecognizerAction!
+    
+    func addTapAction() {
+        tapAction = addAction(for: UITapGestureRecognizer()) { _ in
+            print("tapped")
+        }
+    }
+    
+    func removeTapAction() {
+        tapAction = nil
+    }
 }
 ```
 
@@ -183,13 +183,13 @@ stackView.addArrangedSubview(view5)
 
 ```swift
 view1 => [
-	view2 => [
-		view3,
-		stackView => [
-			view4,
-			view5
-		]
-	]
+    view2 => [
+        view3,
+        stackView => [
+            view4,
+            view5
+        ]
+    ]
 ]
 ```
 
