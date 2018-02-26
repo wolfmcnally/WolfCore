@@ -196,7 +196,7 @@ view1 => [
 The WolfCore version has several advantages:
 
 * The code is more visual, using the IDE’s natural indentation to show the hierarchical structure, and without the visual “buzz” of the repeated `addSubview` and `addArrangedSubview` symbols.
-* The code is easier to debug. Sibling order is obvious by inspection, any view or subset can be removed by commenting the relevant line(s), and a whole level can be collapsed into its parent level by commenting out the line with the nesting operator and its corresponding line with the close bracket.
+* The code is easier to debug. Sibling order and grouping is obvious by inspection, any view or subset can be removed by commenting the relevant line(s), and a whole level can be collapsed into its parent level by commenting out the line with the nesting operator and its corresponding line with the close bracket.
 * The nesting operator `=>` is polymorphic. Here it is used to call either `addSubview()` or `addArrangedSubview()` depending on whether the object to the left of the operator is derived from `UIView` or more specifically derived from `UIStackView`.
 * Because of the polymorphism, it is harder to make common errors. calling `addSubview()` on a `UIStackView` is rarely what you want to do and will lead to unexpected behavior, but what you do most commonly on a `UIView`. Using the nesting operator takes care of the most common use-cases for both kinds of parent views in a uniform and elegant way.
 * The nesting operator can easily be extended to any sort of hierarchy creation, for example creating view graph hierarchies with `SpriteKit` or `SceneKit`.
