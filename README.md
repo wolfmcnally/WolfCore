@@ -41,7 +41,7 @@ I have long been inspired by the “tradeguild model” of learning. (In fact, d
 
 In the tradeguild model, the *apprentice* works at the side of the master, watching how the craft is performed, and learning by doing under the master’s direction and supervision. The *journeyman* started as an apprentice, and now works independently, traveling to visit customers and learn from other masters. The *master* has long experience and accomplishments, and determines when an apprentice is ready to become a journeyman, and helps judge a journeyman’s “master work” (*“masterpiece”*) to determine whether they are ready to become a master themselves.
 
-(If you prefer an absolutely gender-neutral term, I grudgingly recommend *journeyer*.)
+(If you prefer an absolutely gender-neutral term, I recommend *journeyer*.)
 
 I am also a mentor. A mentor is not dissimilar in level of skill and accomplishments to a master, but the role more connotes that of “trusted counselor or guide.” The job of a mentor, as I see it, is to help the mentee: 1) find their path, and 2) provide knowledge and wisdom to help them navigate their path. It is up to the mentee to actually *walk* the path.
 
@@ -63,7 +63,7 @@ Assuming they want me to.
 
 Using the above as analogy, WolfCore is my “master’s workshop”.
 
-I have stood in other masters’ workshops— a stained glass artist, a furniture designer, an electronic musician, a concept car creator, even a castle builder. When you stand in such a space in a mindset to properly appreciate it, you can’t help but feel awe at the amount of time, effort, and knowledge that has gone into creating this space of creation. Gazing at its details, one notices how the tools and workspaces are carefully chosen, organized, and arranged. Some of the details might be intensely personal and even quirky. But the space’s utility is undeniable.
+I have stood in other masters’ workshops— a stained glass artist, a furniture designer, an electronic musician, a concept car creator, even a castle builder. When you stand in such a space in a mindset to properly appreciate it, you can’t help but feel awe at the amount of time, effort, and knowledge that has gone into creating this space of creation. Gazing at its details, one notices how the tools and work areas are carefully chosen, organized, and arranged. Some of the details might be intensely personal and even quirky. But the space’s utility is undeniable.
 
 As programmers we’re used to dealing with conceptual boxes-within-boxes. My home holds my office— my workshop. My office holds my computer running Xcode— a workshop within a workshop. Xcode provides tools to create iOS software— the Swift standard libraries and iOS APIs are another nested workshop. Finally there is WolfCore, a set of “embodied conveniences”, *tools* I use to create great software.
 
@@ -81,13 +81,13 @@ What do I mean by “convenience?”
 
 DRY stands for *Don’t Repeat Yourself* and is a principle of software development aimed at reducing redundancy and increasing code reuse. Writing an app on iOS (and indeed any operating system) involves semantically singular tasks, “write the file to disk”, that may involve several lines of code “check for the file’s existence, delete the file if it already exists, create the new file, open the new file, encode the data, write the data, close the file.” While it’s necessary to have this level of flexibility in the operating system, the main business logic of the app simply wants to write the file. Moreover, the file may be read, written, or manipulated from several points in the code, dictated again by the business logic.
 
-It’s a basic piece of programming practice that, when one discovers oneself writing the same code twice, it’s time to refactor. Once you’ve refactored those lines of code into a reusable unit, they should be used from then on. For me, when I find myself doing something over and over this way, and I believe the refactored solution would be generally useful in many projects, I put the solution into WolfCore. Invoking this solution rarely requires more than one line of code, and so the top-level business logic becomes more understandable and more maintainable in the process.
+It’s a basic piece of programming practice that, when one discovers oneself writing the same code twice, it’s time to refactor. Once you’ve refactored those lines of code into a reusable unit, that unit should be used from then on. For me, when I find myself doing something over and over this way, and I believe the refactored solution would be generally useful in many projects, I put the solution into WolfCore. Invoking this solution rarely requires more than one line of code, and so the top-level business logic becomes more understandable and more maintainable in the process.
 
 **EXAMPLE:** See the `newImage()` function in the file `ImageUtils.swift`.
 
 ### Do it Best
 
-Just as there are many ways to skin a cat, there are many ways to accomplish a particular UI or processing task in a given language and OS. But not all approaches are equal: some use outdated APIs, some are inefficient, some are insufficiently flexible, or are too flexible and require too much thought to use, and some are hacks that can break in unexpected ways, or fail to work around known issues in the OS.
+Just as there is “more than one way to skin a cat,” there are many ways to accomplish a particular UI or processing task in a given language and OS. But not all approaches are equal: some use outdated APIs, some are inefficient, some are insufficiently flexible, or are too flexible and require too much thought to use, and some are hacks that can break in unexpected ways, or fail to work around known issues in the OS.
 
 When I identify a best practice or the “best” way to accomplish a particular task, it becomes part of WolfCore.
 
@@ -159,7 +159,7 @@ class MyView: UIView {
 }
 ```
 
-Not only is the WolfCore version 5 lines shorter, imagine what would happen if, in the first example, `removeTapAction()` were called either before the recognizer was added, or after it was removed— a crash due to the attempt to force-unwrap `tapRecognizer`. It is code like this that gives force-unwrapping a bad name. Now examine the WolfCore code. The `GestureRecognizerAction` class is designed to use the *Resource Acquisition is Initialization* (RAII) idiom, which means that the lifetime of the object is also the lifetime of the registration. Unregistration will happen automatically when the view itself is deinitializaed, or manually when `nil` is assigned to `tapAction`. This also means that the WolfCore version of `removeTapAction()` is *idempotent*— it can be called additional times without additional effect, including a crash. To add idempotence to the first example, an additional guard line of code would have to be added to `removeTapAction()`.
+Not only is the WolfCore version 5 lines shorter, imagine what would happen if, in the first example, `removeTapAction()` were called either before the recognizer was added, or after it was removed— a crash due to the attempt to force-unwrap `tapRecognizer`. It is code like this that gives force-unwrapping a bad name. Now examine the WolfCore code. The `GestureRecognizerAction` class is designed to use the *Resource Acquisition is Initialization* (RAII) idiom, which means that the lifetime of the object is also the lifetime of the registration. Unregistration will happen automatically when the view itself is deinitialized, or manually when `nil` is assigned to `tapAction`. This also means that the WolfCore version of `removeTapAction()` is *idempotent*— it can be called additional times without additional effect, including a crash. To add idempotence to the first example, an additional guard line of code would have to be added to `removeTapAction()`.
 
 So not only is the WolfCore version shorter, it also uses Swifty closures instead of the outdated target-action pattern and its attendant reference to Objective-C. And on top of that, it is also less crash-prone.
 
@@ -197,7 +197,8 @@ The WolfCore version has several advantages:
 
 * The code is more visual, using the IDE’s natural indentation to show the hierarchical structure, and without the visual “buzz” of the repeated `addSubview` and `addArrangedSubview` symbols.
 * The code is easier to debug. Sibling order is obvious by inspection, any view or subset can be removed by commenting the relevant line(s), and a whole level can be collapsed into its parent level by commenting out the line with the nesting operator and its corresponding line with the close bracket.
-* The nesting operator `=>` is polymorphic. Here it is used to call either `addSubview` or `addArrangedSubview` depending on whether the object to the left of the operator is derived from `UIView` or more specifically derived from `UIStackView`.
+* The nesting operator `=>` is polymorphic. Here it is used to call either `addSubview()` or `addArrangedSubview()` depending on whether the object to the left of the operator is derived from `UIView` or more specifically derived from `UIStackView`.
+* Because of the polymorphism, it is harder to make common errors. calling `addSubview()` on a `UIStackView` is rarely what you want to do and will lead to unexpected behavior, but what you do most commonly on a `UIView`. Using the nesting operator takes care of the most common use-cases for both kinds of parent views in a uniform and elegant way.
 * The nesting operator can easily be extended to any sort of hierarchy creation, for example creating view graph hierarchies with `SpriteKit` or `SceneKit`.
 
 **MORE:** See `NestingOperator.swift` and `ViewNesting.swift`.
@@ -208,7 +209,7 @@ Swift was introduced by Apple as a replacement for Objective-C that powers macOS
 
 Although I specialize in iOS development, I have also done full-stack development, and I’m excited about the possibilities for Swift on other platforms. Within the Apple environments, Swift is now the unifying factor.
 
-So I have designed WolfCore to be cross platform. Many WolfCore files depend only on the `Foundation` and `Dispatch` frameworks, which are completely cross-platform. Within the files shared by the Apple Environments, I have adopted the convention of using typealiases starting with `OS` to denote types that can be used across both iOS and macOS. For example, the file `OSImage.swift` largely unifies `UIImage` from iOS and `NSImage` from macOS, enabling you to more easily write code that runs on either Mac or iOS devices.
+So I have designed WolfCore to be cross platform. Many WolfCore files depend only on the `Foundation` and `Dispatch` frameworks, which are completely cross-platform. Within the files shared by the Apple environments, I have adopted the convention of using typealiases starting with `OS` to denote types that can be used across both iOS and macOS. For example, the file `OSImage.swift` largely unifies `UIImage` from iOS and `NSImage` from macOS, enabling you to more easily write code that runs on either Mac or iOS devices.
 
 ## From the Workshop to the Maker Space
 
@@ -218,6 +219,6 @@ On the downside, WolfCore currently lacks documentation and unit testing. It is 
 
 The other downside is that a few parts of WolfCore really belong in their own frameworks, because they are not highly reused between projects. The actual savings in code size for doing this will not be great: WolfCore in its entirety currently weighs in at 7.8 MB, while the Swift Standard Libraries, which must be included with every Swift-based app, weighs in at 25.3 MB. It is likely that the iOS build of WolfCore, once it is fully refactored into dependent sub-frameworks, will be about 4 MB.
 
-Another movement that has inspired me is the *maker movement*. This groundswell of do-it-yourself technological creators has given rise to public *maker spaces* which make tools and expertise available to anyone who desires to create and who are willing to take the time to learn how to properly use them. WolfCore is the latest incarnation of my “master’s workshop”. Now I am inviting everyone in. It’s an “open house” and I am looking to find those willing to help transform it from my personal productivity space into a public “maker space” where thousands can feel comfortable creating and learning.
+Finally, another inspiration to me is the *maker movement*. This groundswell of do-it-yourself technological creators has given rise to public *maker spaces* which provide tools and expertise to anyone who desires to create and who is willing to take the time to learn how to properly use them. WolfCore is the latest incarnation of my “master’s workshop”. Now I am inviting everyone in. It’s an “open house” and I am looking to find those willing to help transform it from my personal productivity space into a public “maker space” where thousands can feel comfortable creating and learning.
 
 🐺 Wolf McNally
