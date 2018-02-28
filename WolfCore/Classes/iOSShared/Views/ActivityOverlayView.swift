@@ -11,6 +11,8 @@ import UIKit
 public class ActivityOverlayView: View {
     public private(set) var hysteresis: Hysteresis!
 
+    @objc dynamic public var color = UIColor.black.withAlphaComponent(0.5)
+
     public init(startLag: TimeInterval = 0.5, endLag: TimeInterval = 0.4) {
         super.init(frame: .zero)
         hysteresis = Hysteresis(
@@ -70,6 +72,7 @@ public class ActivityOverlayView: View {
 
     public func show(animated: Bool) {
         superview?.bringSubview(toFront: self)
+        backgroundColor = color
         super.show(animated: animated)
     }
 }

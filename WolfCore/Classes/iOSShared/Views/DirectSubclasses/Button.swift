@@ -34,4 +34,25 @@ open class Button: UIButton {
     }
 
     open func setup() { }
+
+    public func setTitle(_ title: String, font: UIFont? = nil, normal: UIColor? = nil, highlighted: UIColor? = nil, disabled: UIColor? = .gray) {
+        let title = title§
+        if let font = font {
+            title.font = font
+        }
+        if let normal = normal {
+            title.foregroundColor = normal
+            setAttributedTitle(title, for: [])
+        }
+        if let highlighted = highlighted {
+            let title = title.mutableCopy() as! AttributedString
+            title.foregroundColor = highlighted
+            setAttributedTitle(title, for: [.highlighted])
+        }
+        if let disabled = disabled {
+            let title = title.mutableCopy() as! AttributedString
+            title.foregroundColor = disabled
+            setAttributedTitle(title, for: [.disabled])
+        }
+    }
 }
