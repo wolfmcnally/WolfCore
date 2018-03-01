@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WolfCore
 
 public class SegmentedAccessoryInputView: View {
     private lazy var stackView = HorizontalStackView() • { 🍒 in
