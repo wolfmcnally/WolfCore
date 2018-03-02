@@ -1,7 +1,7 @@
 PODS:
   - CommonCryptoModule (1.0.2)
   - SwiftLint (0.24.2)
-  - WolfCore (2.1.4):
+  - WolfCore (2.1.7):
     - CommonCryptoModule
     - SwiftLint
 
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CommonCryptoModule: 63a68b57abed79655b3a01011419bf037a05b0a0
   SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
-  WolfCore: ca416717d8a0b39150c56dbdd04cfdd8036897b8
+  WolfCore: c7c738998e282be200d711835d2dd2af7e6df17f
 
 PODFILE CHECKSUM: fdbe103ec524b1919c0b9ffa91ef4728d15ddf54
 

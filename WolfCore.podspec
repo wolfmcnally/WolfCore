@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WolfCore'
-  s.version          = '2.1.7'
+  s.version          = '2.1.8'
   s.summary          = 'A library of conveniences for Swift, iOS, MacOS, tvOS, WatchOS, and Linux.'
 
 # This description is used to generate tags and improve search results.
