@@ -6,6 +6,9 @@
 //  Copyright © 2017 WolfMcNally.com. All rights reserved.
 //
 
+///
+/// Interval-Creation Operator
+///
 infix operator .. : RangeFormationPrecedence
 
 /// Operator to create a closed floating-point interval. The first number may

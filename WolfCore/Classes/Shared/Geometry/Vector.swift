@@ -27,6 +27,11 @@ public struct Vector {
         self.dx = dx
         self.dy = dy
     }
+
+    public init(angle theta: Double, magnitude: Double) {
+        dx = cos(theta) * magnitude
+        dy = sin(theta) * magnitude
+    }
 }
 
 #if os(iOS) || os(macOS) || os(tvOS)

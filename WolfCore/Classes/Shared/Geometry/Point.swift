@@ -114,8 +114,16 @@ public func + (lhs: Point, rhs: Vector) -> Point {
     return Point(x: lhs.x + rhs.dx, y: lhs.y + rhs.dy)
 }
 
+public func += (lhs: inout Point, rhs: Vector) {
+    lhs = lhs + rhs
+}
+
 public func - (lhs: Point, rhs: Vector) -> Point {
     return Point(x: lhs.x - rhs.dx, y: lhs.y - rhs.dy)
+}
+
+public func -= (lhs: inout Point, rhs: Vector) {
+    lhs = lhs - rhs
 }
 
 public func + (lhs: Vector, rhs: Point) -> Point {

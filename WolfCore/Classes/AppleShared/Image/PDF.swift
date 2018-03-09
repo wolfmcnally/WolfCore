@@ -66,32 +66,41 @@ public class PDF {
     }
 
     #if os(iOS) || os(tvOS)
+    public func drawImage(into context: CGContext, page index: Int = 0, size: CGSize? = nil) {
+        let page = getPage(atIndex: index)
+        let size = size ?? getSize(ofPageAtIndex: index)
+        let bounds = size.bounds
+        let cropBox = page.getBoxRect(.cropBox)
+        let scaling = CGVector(size: bounds.size) / CGVector(size: cropBox.size)
+        let transform = CGAffineTransform(scaling: scaling)
+        drawInto(context) { context in
+            context.concatenate(transform)
+            context.drawPDFPage(page)
+        }
+    }
+
     public func getImage(forPageAtIndex index: Int = 0, size: CGSize? = nil, scale: CGFloat = 0.0, renderingMode: UIImageRenderingMode = .automatic) -> UIImage {
-    let page = getPage(atIndex: index)
-    let size = size ?? getSize(ofPageAtIndex: index)
-    let bounds = CGRect(origin: .zero, size: size)
-    let cropBox = page.getBoxRect(.cropBox)
-    let scaling = CGVector(size: bounds.size) / CGVector(size: cropBox.size)
-    let transform = CGAffineTransform(scaling: scaling)
-    return newImage(withSize: size, isOpaque: false, scale: scale, isFlipped: true, renderingMode: renderingMode) { context in
-    context.concatenate(transform)
-    context.drawPDFPage(page)
+        let page = getPage(atIndex: index)
+        let size = size ?? getSize(ofPageAtIndex: index)
+        let bounds = size.bounds
+        let cropBox = page.getBoxRect(.cropBox)
+        let scaling = CGVector(size: bounds.size) / CGVector(size: cropBox.size)
+        let transform = CGAffineTransform(scaling: scaling)
+        return newImage(withSize: size, isOpaque: false, scale: scale, isFlipped: true, renderingMode: renderingMode) { context in
+            context.concatenate(transform)
+            context.drawPDFPage(page)
+        }
     }
-    }
-    #endif
 
-    #if os(iOS) || os(tvOS)
     public func getImage(forPageAtIndex index: Int = 0, fittingSize: CGSize, scale: CGFloat = 0.0, renderingMode: UIImageRenderingMode = .automatic) -> UIImage? {
-    guard fittingSize.width > 0 || fittingSize.height > 0 else { return nil }
-    let size = getSize(ofPageAtIndex: index)
-    let newSize = size.aspectFit(within: fittingSize)
-    return getImage(forPageAtIndex: index, size: newSize, scale: scale, renderingMode: renderingMode)
+        guard fittingSize.width > 0 || fittingSize.height > 0 else { return nil }
+        let size = getSize(ofPageAtIndex: index)
+        let newSize = size.aspectFit(within: fittingSize)
+        return getImage(forPageAtIndex: index, size: newSize, scale: scale, renderingMode: renderingMode)
     }
-    #endif
 
-    #if os(iOS) || os(tvOS)
     public func getImage() -> UIImage {
-    return getImage(forPageAtIndex: 0)
+        return getImage(forPageAtIndex: 0)
     }
     #endif
 

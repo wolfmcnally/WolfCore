@@ -131,9 +131,13 @@ public struct Random {
         return Random.shared.boolean()
     }
 
-    public static func choice<T, C: Collection>(among choices: C) -> T where C.IndexDistance == Int, C.Iterator.Element == T {
+    public static func index<C: Collection>(in choices: C) -> C.Index where C.IndexDistance == Int {
         let offset = number(Int(0) ..< choices.count)
-        let index = choices.index(choices.startIndex, offsetBy: offset)
+        return choices.index(choices.startIndex, offsetBy: offset)
+    }
+
+    public static func choice<T, C: Collection>(among choices: C) -> T where C.IndexDistance == Int, C.Iterator.Element == T {
+        let index = self.index(in: choices)
         return choices[index]
     }
 

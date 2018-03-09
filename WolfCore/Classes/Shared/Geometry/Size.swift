@@ -52,7 +52,7 @@ extension Size {
 
     public func scaleForAspectFit(within size: Size) -> Double {
         if size.width != Size.None && size.height != Size.None {
-            return min(size.width / width, size.height / height)
+            return Swift.min(size.width / width, size.height / height)
         } else if size.width != Size.None {
             return size.width / width
         } else {
@@ -62,7 +62,7 @@ extension Size {
 
     public func scaleForAspectFill(within size: Size) -> Double {
         if size.width != Size.None && size.height != Size.None {
-            return max(size.width / width, size.height / height)
+            return Swift.max(size.width / width, size.height / height)
         } else if size.width != Size.None {
             return size.width / width
         } else {
@@ -78,6 +78,14 @@ extension Size {
     public func aspectFill(within size: Size) -> Size {
         let scale = scaleForAspectFill(within: size)
         return Size(vector: Vector(size: self) * scale)
+    }
+
+    public var max: Double {
+        return Swift.max(width, height)
+    }
+
+    public var min: Double {
+        return Swift.min(width, height)
     }
 }
 
