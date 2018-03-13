@@ -10,7 +10,7 @@
     import CoreGraphics
 #endif
 
-public struct Size {
+public struct Size: Codable {
     public var width: Double = 0
     public var height: Double = 0
 

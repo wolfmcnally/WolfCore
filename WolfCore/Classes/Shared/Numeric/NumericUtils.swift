@@ -38,3 +38,9 @@ extension BinaryInteger {
         return (self & 1) == 1
     }
 }
+
+public func mod<I: SignedInteger>(_ a: I, _ n: I) -> I {
+    precondition(n > 0, "modulus must be positive")
+    let r = a % n
+    return r >= 0 ? r : r + n
+}

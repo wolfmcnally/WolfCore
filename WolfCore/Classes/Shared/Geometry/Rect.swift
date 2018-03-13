@@ -14,7 +14,7 @@
 
 import Foundation
 
-public struct Rect {
+public struct Rect: Codable {
     public var origin: Point
     public var size: Size
 

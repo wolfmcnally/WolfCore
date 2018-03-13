@@ -9,7 +9,7 @@
 import Foundation
 
 /// Represents a 2-dimensional point, with Double precision.
-public struct Point {
+public struct Point: Codable {
     public var x: Double = 0
     public var y: Double = 0
 
