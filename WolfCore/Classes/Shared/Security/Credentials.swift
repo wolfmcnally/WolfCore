@@ -8,18 +8,14 @@
 
 public typealias CredentialsPromise = Promise<Credentials>
 
-public enum CredentialsType: String, JSONRepresentable {
+public enum CredentialsType: String, Codable {
     case username
     case email
     case facebook
     case instagram
-
-    public var json: JSON {
-        return JSON(rawValue)
-    }
 }
 
-public struct Credentials {
+public struct Credentials: Codable {
     public let type: CredentialsType
     public let id: String
     public let token: String

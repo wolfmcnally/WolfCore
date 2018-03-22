@@ -310,7 +310,7 @@ public class HTTP {
         return retrieveData(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock, name: name).then { _ in }
     }
 
-
+    
     public static func retrieveJSON(with request: URLRequest, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil, name: String? = nil) -> JSONPromise {
         var request = request
         request.setAcceptContentType(.json)

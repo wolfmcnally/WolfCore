@@ -8,12 +8,9 @@
 import UIKit
 
 open class CollectionView: UICollectionView {
-    public convenience init() {
-        self.init(frame: .zero)
-    }
-
-    public convenience init(collectionViewLayout layout: UICollectionViewLayout) {
-        self.init(frame: .zero, collectionViewLayout: layout)
+    public init(collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame: .zero, collectionViewLayout: layout)
+        _setup()
     }
 
     public override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {

@@ -55,7 +55,7 @@ open class API<T: AuthorizationProtocol> {
         }
     }
 
-    public func newRequest(method: HTTPMethod, scheme: HTTPScheme = .https, path: [Any]? = nil, query: [String: String]? = nil, isAuth: Bool, body json: JSON? = nil) throws -> URLRequest {
+    private func _newRequest(method: HTTPMethod, scheme: HTTPScheme = .https, path: [Any]? = nil, query: [String: String]? = nil, isAuth: Bool) throws -> URLRequest {
         guard !isAuth || authorization != nil else {
             throw Error.credentialsRequired
         }
@@ -66,14 +66,15 @@ open class API<T: AuthorizationProtocol> {
         request.setClientRequestID()
         request.setMethod(method)
         request.setConnection(.close)
-        if let json = json {
-            request.httpBody = json.data
-            request.setContentType(.json, charset: .utf8)
-            request.setContentLength(json.data.count)
-        }
         if isAuth {
             request.setValue(authorizationToken, for: authorizationHeaderField)
         }
+
+        return request
+    }
+
+    public func newRequest(method: HTTPMethod, scheme: HTTPScheme = .https, path: [Any]? = nil, query: [String: String]? = nil, isAuth: Bool) throws -> URLRequest {
+        let request = try _newRequest(method: method, scheme: scheme, path: path, query: query, isAuth: isAuth)
 
         if debugPrintRequests {
             request.printRequest()
@@ -82,22 +83,36 @@ open class API<T: AuthorizationProtocol> {
         return request
     }
 
-    public func newPromise<T>(method: HTTPMethod, scheme: HTTPScheme = .https, path: [Any]? = nil, query: [String: String]? = nil, isAuth: Bool = false, body json: JSON? = nil, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil, with f: @escaping (JSON) throws -> T) -> Promise<T> {
-        do {
-            let request = try self.newRequest(method: method, scheme: scheme, path: path, query: query, isAuth: isAuth, body: json)
-            return HTTP.retrieveJSON(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock).then { json in
-                return try f(json)
-                }.recover { (error, promise) in
-                    self.handle(error: error, promise: promise)
-            }
-        } catch let error {
-            return Promise<T>(error: error)
+    public func newRequest<Body: Encodable>(method: HTTPMethod, scheme: HTTPScheme = .https, path: [Any]? = nil, query: [String: String]? = nil, isAuth: Bool, body: Body) throws -> URLRequest {
+        var request = try _newRequest(method: method, scheme: scheme, path: path, query: query, isAuth: isAuth)
+        let data = try JSONEncoder().encode(body)
+        request.httpBody = data
+        request.setContentType(.json, charset: .utf8)
+        request.setContentLength(data.count)
+
+        if debugPrintRequests {
+            request.printRequest()
         }
+
+        return request
     }
 
-    public func newPromise<T: Decodable>(method: HTTPMethod, scheme: HTTPScheme = .https, path: [Any]? = nil, query: [String: String]? = nil, isAuth: Bool = false, body json: JSON? = nil, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil) -> Promise<T> {
+//    public func newPromise<T, Body: Encodable>(method: HTTPMethod, scheme: HTTPScheme = .https, path: [Any]? = nil, query: [String: String]? = nil, isAuth: Bool = false, body: Body? = nil, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil, with f: @escaping (JSON) throws -> T) -> Promise<T> {
+//        do {
+//            let request = try self.newRequest(method: method, scheme: scheme, path: path, query: query, isAuth: isAuth, body: body)
+//            return HTTP.retrieveJSON(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock).then { json in
+//                return try f(json)
+//                }.recover { (error, promise) in
+//                    self.handle(error: error, promise: promise)
+//            }
+//        } catch let error {
+//            return Promise<T>(error: error)
+//        }
+//    }
+
+    public func newPromise<T: Decodable, Body: Encodable>(method: HTTPMethod, scheme: HTTPScheme = .https, path: [Any]? = nil, query: [String: String]? = nil, isAuth: Bool = false, body: Body, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil) -> Promise<T> {
         do {
-            let request = try self.newRequest(method: method, scheme: scheme, path: path, query: query, isAuth: isAuth, body: json)
+            let request = try self.newRequest(method: method, scheme: scheme, path: path, query: query, isAuth: isAuth, body: body)
             return HTTP.retrieveData(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock).then { data in
                 return try JSONDecoder().decode(T.self, from: data)
                 }.recover { (error, promise) in
@@ -108,9 +123,33 @@ open class API<T: AuthorizationProtocol> {
         }
     }
 
-    public func newPromise(method: HTTPMethod, scheme: HTTPScheme = .https, path: [Any]? = nil, isAuth: Bool = false, body json: JSON? = nil, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil) -> SuccessPromise {
+    public func newPromise<T: Decodable>(method: HTTPMethod, scheme: HTTPScheme = .https, path: [Any]? = nil, query: [String: String]? = nil, isAuth: Bool = false, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil) -> Promise<T> {
         do {
-            let request = try self.newRequest(method: method, scheme: scheme, path: path, isAuth: isAuth, body: json)
+            let request = try self.newRequest(method: method, scheme: scheme, path: path, query: query, isAuth: isAuth)
+            return HTTP.retrieveData(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock).then { data in
+                return try JSONDecoder().decode(T.self, from: data)
+                }.recover { (error, promise) in
+                    self.handle(error: error, promise: promise)
+            }
+        } catch let error {
+            return Promise<T>(error: error)
+        }
+    }
+
+    public func newPromise<Body: Encodable>(method: HTTPMethod, scheme: HTTPScheme = .https, path: [Any]? = nil, isAuth: Bool = false, body: Body, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil) -> SuccessPromise {
+        do {
+            let request = try self.newRequest(method: method, scheme: scheme, path: path, isAuth: isAuth, body: body)
+            return HTTP.retrieve(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock).succeed().recover { (error, promise) in
+                self.handle(error: error, promise: promise)
+            }
+        } catch let error {
+            return SuccessPromise(error: error)
+        }
+    }
+
+    public func newPromise(method: HTTPMethod, scheme: HTTPScheme = .https, path: [Any]? = nil, isAuth: Bool = false, successStatusCodes: [StatusCode] = [.ok], expectedFailureStatusCodes: [StatusCode] = [], mock: Mock? = nil) -> SuccessPromise {
+        do {
+            let request = try self.newRequest(method: method, scheme: scheme, path: path, isAuth: isAuth)
             return HTTP.retrieve(with: request, successStatusCodes: successStatusCodes, expectedFailureStatusCodes: expectedFailureStatusCodes, mock: mock).succeed().recover { (error, promise) in
                 self.handle(error: error, promise: promise)
             }

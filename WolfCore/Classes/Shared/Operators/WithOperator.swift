@@ -15,17 +15,51 @@ infix operator • : CastingPrecedence
 infix operator •• : CastingPrecedence
 infix operator ••• : CastingPrecedence
 
+/// This version of the with-operator is used to configure reference type (class) instances
+/// and also returns the reference for assignment:
+///
+///   let view = View() • {
+///       $0.backgroundColor = .red
+///   }
+///
+/// Because the right-hand side of the with-operator is a class instance, you can operate on a
+/// pre-existing instance:
+///
+///   view • {
+///       $0.alpha = 0.5
+///   }
 @discardableResult public func • <T: AnyObject>(lhs: T, rhs: (T) -> Void) -> T {
     rhs(lhs)
     return lhs
 }
 
-@discardableResult public func •• <T: Any>(lhs: T, rhs: (inout T) -> Void) -> T {
+/// This version of the with-operator is used to configure value type (struct) instances
+/// and also returns the modified copy of the instance for assignment.
+///
+/// Because the right-hand side of the with-operator is a struct instance, you *must*
+/// assign the result of this operator. The assignee may be declared as `let`.
+///
+///   let point = Point.zero •• {
+///       $0.x = 10
+///   }
+///
+public func •• <T: Any>(lhs: T, rhs: (inout T) -> Void) -> T {
     var lhs = lhs
     rhs(&lhs)
     return lhs
 }
 
+/// This version of the with-operator is used to configure pre-existing value type
+/// (struct) instance.
+///
+/// Because this modifies the instance in place, it must be delared as `var`.
+///
+///   var point: Point = .zero
+///
+///   point ••• {
+///       $0.x = 10
+///   }
+///
 public func ••• <T: Any>(lhs: inout T, rhs: (inout T) -> Void) {
     rhs(&lhs)
 }
