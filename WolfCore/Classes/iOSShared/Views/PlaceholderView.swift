@@ -9,17 +9,7 @@
 import UIKit
 
 open class PlaceholderView: View {
-    public private(set) var titleLabel: Label = {
-        let label = Label()
-        label.text = "Title"
-        return label
-    }()
-
-    public private(set) lazy var gestureActions: ViewGestureActions = {
-        return ViewGestureActions(view: self)
-    }()
-
-    private var heightConstraint = Constraints()
+    public private(set) var titleLabel = Label()
 
     @IBInspectable public var title: String! {
         didSet {
@@ -27,36 +17,15 @@ open class PlaceholderView: View {
         }
     }
 
-    public var height: CGFloat? {
-        didSet {
-            syncHeight()
-        }
-    }
-
     private func syncTitle() {
         titleLabel.text = title
     }
 
-    open override func updateConstraints() {
-        super.updateConstraints()
-        if let height = height {
-            heightConstraint.replace(with: Constraints(heightAnchor == height =&= .defaultHigh))
-        } else {
-            heightConstraint.invalidate()
-        }
-    }
-
-    private func syncHeight() {
-        setNeedsUpdateConstraints()
-    }
-
-    public init(title: String, height: CGFloat? = nil, backgroundColor: UIColor = .clear) {
+    public init(title: String? = nil, backgroundColor: UIColor = .clear) {
         super.init(frame: .zero)
         self.title = title
-        self.height = height
         self.backgroundColor = backgroundColor
         syncTitle()
-        syncHeight()
     }
 
     public required init?(coder aDecoder: NSCoder) {

@@ -13,3 +13,7 @@ public typealias Frac = Double
 public func assertFrac<T: BinaryFloatingPoint>(_ n: T) {
     assert(0.0 <= n && n <= 1.0)
 }
+
+#if !os(Linux)
+    public typealias CGFrac = CGFloat
+#endif
