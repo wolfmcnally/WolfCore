@@ -23,8 +23,15 @@ public class FrameView: View {
         case custom(view: UIView)
     }
 
+    public override func setup() {
+        super.setup()
+
+        contentMode = .redraw
+    }
+
     public var style: Style = .rectangle {
         willSet {
+            layer.masksToBounds = false
             switch style {
             case .custom(let view):
                 view.removeFromSuperview()
@@ -38,6 +45,9 @@ public class FrameView: View {
             case .custom(let view):
                 insertSubview(‡view, at: 0)
                 view.constrainFrameToFrame()
+            case .rounded(let cornerRadius):
+                layer.cornerRadius = cornerRadius
+                layer.masksToBounds = true
             default:
                 break
             }
@@ -71,7 +81,7 @@ public class FrameView: View {
                 context.stroke(insetBounds)
 
             case .rounded(let cornerRadius):
-                let path = UIBezierPath(roundedRect: insetBounds, cornerRadius: cornerRadius)
+                let path = UIBezierPath(roundedRect: insetBounds, cornerRadius: cornerRadius - lineWidth)
                 path.stroke()
 
             case .underline:

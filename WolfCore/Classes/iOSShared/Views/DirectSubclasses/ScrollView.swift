@@ -40,3 +40,12 @@ open class ScrollView: UIScrollView {
 
     open func setup() { }
 }
+
+extension UIScrollView {
+    open func scrollToBottom(animated: Bool) {
+        let offset = self.contentSize.height + self.contentInset.bottom - self.bounds.height
+        guard offset > 0 else { return }
+        let p = CGPoint(x: 0, y: offset)
+        self.setContentOffset(p, animated: animated)
+    }
+}

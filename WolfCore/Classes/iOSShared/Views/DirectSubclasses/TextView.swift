@@ -12,6 +12,9 @@ open class TextView: UITextView {
     var tagTapActions = [NSAttributedStringKey: TagAction]()
     var tapAction: GestureRecognizerAction!
 
+    public typealias PredicateBlock = (UITextView) -> Bool
+    public var shouldReturn: PredicateBlock?
+
     public convenience init() {
         self.init(frame: .zero, textContainer: nil)
     }
@@ -28,6 +31,37 @@ open class TextView: UITextView {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         _setup()
+    }
+
+    let returnKeyCommand = UIKeyCommand(input: String.cr, modifierFlags: [], action: #selector(returnKeyPressed))
+
+    override open var keyCommands: [UIKeyCommand]? {
+        return [returnKeyCommand]
+    }
+
+    open func enterCarriageReturn() {
+        // Get a mutable version of the current text
+        var newText = text!
+        // Note the currently selected range, because we'll be replacing it
+        let range = newText.stringRange(from: selectedRange)!
+        // Note the offset of the start of the current range, as we'll be leaving the insertion point just past where we do the replacement
+        let offset = newText.distance(from: newText.startIndex, to: range.lowerBound)
+        // Replace the range with a carriage return
+        newText.replaceSubrange(range, with: String.cr)
+        // Replace the text in the UITextView with our updated version
+        text = newText
+        // Create a range where to leave the insertion point
+        let s = newText.index(newText.startIndex, offsetBy: offset + 1)
+        let newRange = s ..< s
+        // Leave the insertion point after the inserted carriage return
+        selectedRange = newText.nsRange(from: newRange)!
+    }
+
+    @objc func returnKeyPressed() {
+        if shouldReturn?(self) ?? true {
+            enterCarriageReturn()
+            delegate?.textViewDidChange?(self)
+        }
     }
 
     private func _setup() {
