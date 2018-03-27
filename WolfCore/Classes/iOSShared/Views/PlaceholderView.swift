@@ -9,7 +9,14 @@
 import UIKit
 
 open class PlaceholderView: View {
-    public private(set) var titleLabel = Label()
+    public private(set) var titleLabel = Label() • { 🍒 in
+        🍒.font = .systemFont(ofSize: 12)
+        🍒.textColor = .darkGray
+        🍒.adjustsFontSizeToFitWidth = true
+        🍒.minimumScaleFactor = 0.2
+        🍒.baselineAdjustment = .alignCenters
+        🍒.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+    }
 
     @IBInspectable public var title: String! {
         didSet {
@@ -44,6 +51,9 @@ open class PlaceholderView: View {
             titleLabel
         ]
         titleLabel.constrainCenterToCenter()
+        Constraints(
+            titleLabel.widthAnchor <= widthAnchor
+        )
     }
 
     open override func draw(_ rect: CGRect) {
