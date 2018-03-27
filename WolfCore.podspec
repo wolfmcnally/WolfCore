@@ -1,22 +1,7 @@
-#
-# Be sure to run `pod lib lint WolfCore.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'WolfCore'
-  s.version          = '2.1.10'
+  s.version          = '2.1.11'
   s.summary          = 'A library of conveniences for Swift, iOS, MacOS, tvOS, WatchOS, and Linux.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
   s.description      = <<-DESC
 WolfCore is a library of conveniences for constructing Swift applications in iOS, tvOS, MacOS, WatchOS, and Linux. WolfCore is maintained by Wolf McNally.
 
@@ -26,7 +11,6 @@ The purpose of WolfCore is different than many third-party libraries. It neither
                        DESC
 
   s.homepage         = 'https://github.com/wolfmcnally/WolfCore'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wolfmcnally' => 'wolf@wolfmcnally.com' }
   s.source           = { :git => 'https://github.com/wolfmcnally/WolfCore.git', :tag => s.version.to_s }
@@ -47,11 +31,4 @@ The purpose of WolfCore is different than many third-party libraries. It neither
 
   s.tvos.deployment_target = '11.0'
   s.tvos.source_files = 'WolfCore/Classes/tvOS/**/*', 'WolfCore/Classes/iOSShared/**/*', 'WolfCore/Classes/AppleShared/**/*'
-
-  # s.resource_bundles = {
-  #   'WolfCore' => ['WolfCore/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
 end

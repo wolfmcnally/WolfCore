@@ -4,7 +4,8 @@ platform :ios, '9.3'
 pod 'SwiftLint'
 
 target 'WolfCore_Example' do
-    pod 'WolfCore', :path => '../'
+    pod 'WolfCore', '~> 2.1'
+    # pod 'WolfCore', :path => '../'
 
     target 'WolfCore_Tests' do
         inherit! :search_paths
