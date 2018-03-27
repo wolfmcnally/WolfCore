@@ -46,6 +46,10 @@ public struct Insets<T: BinaryFloatingPoint> {
     import CoreGraphics
 
     public typealias CGInsets = Insets<CGFloat>
+#endif
+
+#if os(iOS) || os(watchOS) || os(tvOS)
+    import UIKit
 
     extension Insets where T == CGFloat {
         public init(edgeInsets e: UIEdgeInsets) {
