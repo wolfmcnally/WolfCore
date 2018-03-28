@@ -113,7 +113,7 @@ open class View: OSView {
             isMultipleTouchEnabled = view.isMultipleTouchEnabled
         #endif
         alpha = view.alpha
-        normalBackgroundColor = view.backgroundColor
+        backgroundColor = view.backgroundColor
         tintColor = view.tintColor
         isOpaque = view.isOpaque
         isHidden = view.isHidden

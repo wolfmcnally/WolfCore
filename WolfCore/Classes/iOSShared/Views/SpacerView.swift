@@ -29,7 +29,6 @@ public class SpacerView: View {
         self.width = width
         self.height = height
         super.init(frame: .zero)
-        debugBackgroundColor = .green
         setPriority(hugH: .required, hugV: .required, crH: .required, crV: .required)
     }
 

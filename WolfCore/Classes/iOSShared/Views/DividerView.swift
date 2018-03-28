@@ -23,13 +23,13 @@ public class DividerView: View {
     public init(position: Position = .bottom, color: UIColor = Self.defaultColor) {
         self.position = position
         super.init(frame: .zero)
-        normalBackgroundColor = color
+        backgroundColor = color
     }
 
     required public init?(coder aDecoder: NSCoder) {
         self.position = .bottom
         super.init(coder: aDecoder)
-        normalBackgroundColor = .white
+        backgroundColor = .white
     }
 
     public override func setup() {

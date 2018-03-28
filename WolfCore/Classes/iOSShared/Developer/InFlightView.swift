@@ -181,7 +181,6 @@ public class InFlightView: View {
         leftColumnView.isTransparentToTouches = true
 
         rightColumnView = View()
-        rightColumnView.debugBackgroundColor = .blue
         rightColumnView.isTransparentToTouches = true
 
         columnsStackView = StackView(arrangedSubviews: [leftColumnView, rightColumnView])

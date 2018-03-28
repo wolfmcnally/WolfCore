@@ -411,8 +411,8 @@ public class PowerTextField: View, Editable {
     }
 
     @objc dynamic public var frameColor: UIColor {
-        get { return frameView.color }
-        set { frameView.color = newValue }
+        get { return frameView.strokeColor ?? .clear }
+        set { frameView.strokeColor = newValue }
     }
 
     @objc dynamic public var frameCornerRadius: CGFloat {
@@ -615,32 +615,32 @@ public class PowerTextField: View, Editable {
         🍒.setPriority(crH: .required)
     }
 
-    public override var isDebug: Bool {
-        didSet {
-            frameView.isDebug = isDebug
-            characterCountLabel.isDebug = isDebug
-            validationMessageLabel.isDebug = isDebug
-            placeholderMessageLabel.isDebug = isDebug
-            placeholderMessageContainer.isDebug = isDebug
-            textEditor.isDebug = isDebug
-            iconView.isDebug = isDebug
-            clearButtonView.isDebug = isDebug
-            toggleSecureTextEntryButton.isDebug = isDebug
-            activityIndicatorView.isDebug = isDebug
-
-            debugBackgroundColor = .green
-            frameView.debugBackgroundColor = .blue
-            characterCountLabel.debugBackgroundColor = .gray
-            validationMessageLabel.debugBackgroundColor = .red
-            placeholderMessageLabel.debugBackgroundColor = .blue
-            placeholderMessageContainer.debugBackgroundColor = .blue
-            textEditor.debugBackgroundColor = .green
-            iconView.debugBackgroundColor = .blue
-            clearButtonView.debugBackgroundColor = .blue
-            toggleSecureTextEntryButton.debugBackgroundColor = .blue
-            activityIndicatorView.debugBackgroundColor = .blue
-        }
-    }
+//    public override var isDebug: Bool {
+//        didSet {
+//            frameView.isDebug = isDebug
+//            characterCountLabel.isDebug = isDebug
+//            validationMessageLabel.isDebug = isDebug
+//            placeholderMessageLabel.isDebug = isDebug
+//            placeholderMessageContainer.isDebug = isDebug
+//            textEditor.isDebug = isDebug
+//            iconView.isDebug = isDebug
+//            clearButtonView.isDebug = isDebug
+//            toggleSecureTextEntryButton.isDebug = isDebug
+//            activityIndicatorView.isDebug = isDebug
+//
+//            debugBackgroundColor = .green
+//            frameView.debugBackgroundColor = .blue
+//            characterCountLabel.debugBackgroundColor = .gray
+//            validationMessageLabel.debugBackgroundColor = .red
+//            placeholderMessageLabel.debugBackgroundColor = .blue
+//            placeholderMessageContainer.debugBackgroundColor = .blue
+//            textEditor.debugBackgroundColor = .green
+//            iconView.debugBackgroundColor = .blue
+//            clearButtonView.debugBackgroundColor = .blue
+//            toggleSecureTextEntryButton.debugBackgroundColor = .blue
+//            activityIndicatorView.debugBackgroundColor = .blue
+//        }
+//    }
 
     private var frameInsets = CGInsets(top: 8, left: 8, bottom: 8, right: 8) {
         didSet {

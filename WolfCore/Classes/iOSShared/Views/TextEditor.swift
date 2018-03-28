@@ -17,8 +17,6 @@ protocol TextEditor: AnyObject {
     var plainText: String { get set }
     var textColor: UIColor? { get set }
     var font: UIFont? { get set }
-    var isDebug: Bool { get set }
-    var debugBackgroundColor: UIColor? { get set }
     var textAlignment: NSTextAlignment { get set }
 
     // UITextInputTraits

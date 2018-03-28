@@ -9,10 +9,12 @@
 import UIKit
 
 public class FrameView: View {
-    public var color: UIColor = .black {
-        didSet {
-            setNeedsDisplay()
-        }
+    public var strokeColor: UIColor? = .black {
+        didSet { setNeedsDisplay() }
+    }
+
+    public var fillColor: UIColor? {
+        didSet { setNeedsDisplay() }
     }
 
     public enum Style {
@@ -31,7 +33,6 @@ public class FrameView: View {
 
     public var style: Style = .rectangle {
         willSet {
-            layer.masksToBounds = false
             switch style {
             case .custom(let view):
                 view.removeFromSuperview()
@@ -45,9 +46,6 @@ public class FrameView: View {
             case .custom(let view):
                 insertSubview(‡view, at: 0)
                 view.constrainFrameToFrame()
-            case .rounded(let cornerRadius):
-                layer.cornerRadius = cornerRadius
-                layer.masksToBounds = true
             default:
                 break
             }
@@ -62,27 +60,51 @@ public class FrameView: View {
         }
     }
 
-    private var insetBounds: CGRect {
-        let halfLineWidth = lineWidth / 2
-        return bounds.insetBy(dx: halfLineWidth, dy: halfLineWidth)
-    }
-
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
         drawIntoCurrentContext { context in
-            context.setStrokeColor(color.cgColor)
-            context.setLineWidth(lineWidth)
+            var doStroke = false
+            var effectiveLineWidth: CGFloat = 0
+            var effectiveBounds = bounds
+            if let strokeColor = strokeColor {
+                context.setStrokeColor(strokeColor.cgColor)
+                doStroke = true
+                effectiveLineWidth = lineWidth
+                let halfLineWidth = lineWidth / 2
+                effectiveBounds = bounds.insetBy(dx: halfLineWidth, dy: halfLineWidth)
+            }
+            var doFill = false
+            if let fillColor = fillColor {
+                context.setFillColor(fillColor.cgColor)
+                doFill = true
+            }
+            context.setLineWidth(effectiveLineWidth)
 
             switch style {
             case .none:
                 break
 
             case .rectangle:
-                context.stroke(insetBounds)
+                if doFill {
+                    context.fill(effectiveBounds)
+                }
+                if doStroke {
+                    context.stroke(effectiveBounds)
+                }
 
             case .rounded(let cornerRadius):
-                let path = UIBezierPath(roundedRect: insetBounds, cornerRadius: cornerRadius - lineWidth)
-                path.stroke()
+                var effectiveCornerRadius = cornerRadius
+                if doStroke {
+                    effectiveCornerRadius -= effectiveLineWidth
+                }
+                let path = UIBezierPath(roundedRect: effectiveBounds, cornerRadius: cornerRadius - effectiveLineWidth)
+                if doFill {
+                    path.fill()
+                }
+                if doStroke {
+                    path.lineWidth = effectiveLineWidth
+                    path.stroke()
+                }
 
             case .underline:
                 guard let childView = subviews.first else {
