@@ -43,15 +43,12 @@ open class ScrollView: UIScrollView {
 
 extension UIScrollView {
     public func scrollToBottom(animated: Bool) {
-        dispatchOnMain(afterDelay: 0.1) {
-            let contentHeight = self.contentSize.height
-            let bottomInset = self.contentInset.bottom
-            let boundsHeight = self.bounds.height
-            let offset = contentHeight + bottomInset - boundsHeight
-            //logInfo("scrollToBottom oldOffset: \(self.contentOffset.y), contentHeight: \(contentHeight) + bottomInset: \(bottomInset) - boundsHeight: \(boundsHeight) == offset: \(offset)")
-            guard offset > 0 else { return }
-            let p = CGPoint(x: 0, y: offset)
-            self.setContentOffset(p, animated: animated)
-        }
+        let contentHeight = self.contentSize.height
+        let bottomInset = self.contentInset.bottom
+        let boundsHeight = self.bounds.height
+        let offset = contentHeight + bottomInset - boundsHeight
+        guard offset > 0 else { return }
+        let p = CGPoint(x: 0, y: offset)
+        self.setContentOffset(p, animated: animated)
     }
 }
