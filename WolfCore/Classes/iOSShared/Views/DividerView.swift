@@ -17,24 +17,27 @@ public class DividerView: View {
     }
 
     private let position: Position
+    private let lineWidth: CGFloat
 
     public static let defaultColor = UIColor(white: 0, alpha: 0.1)
 
-    public init(position: Position = .bottom, color: UIColor = Self.defaultColor) {
+    public init(position: Position = .bottom, color: UIColor = Self.defaultColor, lineWidth: CGFloat = 0.5) {
         self.position = position
+        self.lineWidth = lineWidth
         super.init(frame: .zero)
         backgroundColor = color
     }
 
     required public init?(coder aDecoder: NSCoder) {
         self.position = .bottom
+        self.lineWidth = 0.5
         super.init(coder: aDecoder)
         backgroundColor = .white
     }
 
     public override func setup() {
         super.setup()
-        Constraints(heightAnchor == 0.5)
+        constrainHeight(to: lineWidth)
     }
 
     public override func didMoveToSuperview() {

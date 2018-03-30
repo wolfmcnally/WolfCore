@@ -736,7 +736,7 @@ public class PowerTextField: View, Editable {
         )
 
         Constraints(
-            textEditorView.heightAnchor >= clearButtonView.heightAnchor,
+            textEditorView.heightAnchor >= clearButtonView.heightAnchor =&= .defaultHigh,
             toggleSecureTextEntryButton.heightAnchor == clearButtonView.heightAnchor
         )
 

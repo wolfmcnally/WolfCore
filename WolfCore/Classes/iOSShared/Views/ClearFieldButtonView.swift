@@ -9,10 +9,7 @@
 import UIKit
 
 public class ClearFieldButtonView: View {
-    public private(set) lazy var button: ClearFieldButton = {
-        let button = ClearFieldButton()
-        return button
-    }()
+    public private(set) lazy var button = ClearFieldButton()
 
     public override func setup() {
         super.setup()
@@ -34,9 +31,9 @@ public class ClearFieldButtonView: View {
         if isShown {
             dispatchAnimated(animated) {
                 self.button.alpha = 0
-                }.then { _ in
-                    self.hide()
-                }.run()
+            }.then { _ in
+                self.hide()
+            }.run()
         }
     }
 
@@ -45,7 +42,7 @@ public class ClearFieldButtonView: View {
             self.show()
             dispatchAnimated(animated) {
                 self.button.alpha = 1
-                }.run()
+            }.run()
         }
     }
 }
