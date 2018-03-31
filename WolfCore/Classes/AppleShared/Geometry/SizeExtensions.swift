@@ -23,8 +23,7 @@ extension CGSize {
     public static var none = CGSize(width: noSize, height: noSize)
 
     public init(vector: CGVector) {
-        width = vector.dx
-        height = vector.dy
+        self.init(width: vector.dx, height: vector.dy)
     }
 
     public var aspect: CGFloat {

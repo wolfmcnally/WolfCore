@@ -247,7 +247,7 @@ public class Hashids_<T> : HashidsGenerator where T: UnsignedInteger {
         } while( number != 0 )
     }
 
-    private func _unhash<U: Collection>(_ hash: U, _ alphabet: [Char]) -> Int where U.Index == Int, U.IndexDistance == Int, U.Iterator.Element == Char {
+    private func _unhash<U: Collection>(_ hash: U, _ alphabet: [Char]) -> Int where U.Index == Int, U.Iterator.Element == Char {
         var value = 0.0
 
         var hashLength = hash.count
@@ -319,11 +319,11 @@ internal func difference<T: Collection>(_ a: T, _ b: T) -> [T.Iterator.Element] 
     }
 }
 
-internal func shuffle<T: MutableCollection, U: Collection>(_ source: inout T, _ salt: U) where T.Index == Int, T.IndexDistance == Int, T.Iterator.Element: UnsignedInteger, T.Iterator.Element == U.Iterator.Element, U.IndexDistance == Int, T.Index == U.Index {
+internal func shuffle<T: MutableCollection, U: Collection>(_ source: inout T, _ salt: U) where T.Index == Int, T.Iterator.Element: UnsignedInteger, T.Iterator.Element == U.Iterator.Element, T.Index == U.Index {
     return shuffle(&source, salt, 0..<salt.count)
 }
 
-internal func shuffle<T: MutableCollection, U: Collection>(_ source: inout T, _ salt: U, _ saltRange: CountableRange<Int>) where T.Index == Int, T.IndexDistance == Int, T.Iterator.Element: UnsignedInteger, T.Iterator.Element == U.Iterator.Element, T.Index == U.Index {
+internal func shuffle<T: MutableCollection, U: Collection>(_ source: inout T, _ salt: U, _ saltRange: CountableRange<Int>) where T.Index == Int, T.Iterator.Element: UnsignedInteger, T.Iterator.Element == U.Iterator.Element, T.Index == U.Index {
     let sidx0 = saltRange.lowerBound, scnt = (saltRange.upperBound - saltRange.lowerBound)
     var sidx: Int = source.count - 1
     var v = 0

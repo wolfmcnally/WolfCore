@@ -91,19 +91,11 @@ public func ©=(lhs: inout OSColor?, rhs: Color?) {
     lhs = rhs?.osColor
 }
 
-public func ©=(lhs: inout OSColor!, rhs: Color?) {
-    lhs = rhs?.osColor
-}
-
 public func ©=(lhs: inout OSColor, rhs: Color) {
     lhs = rhs.osColor
 }
 
 public func ©=(lhs: inout OSColor?, rhs: Color) {
-    lhs = rhs.osColor
-}
-
-public func ©=(lhs: inout OSColor!, rhs: Color) {
     lhs = rhs.osColor
 }
 

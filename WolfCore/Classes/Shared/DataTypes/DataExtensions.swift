@@ -21,7 +21,7 @@ extension Data: Serializable {
         return data
     }
 
-    public init(bytes: MutableRandomAccessSlice<Data>) {
+    public init(bytes: Slice<Data>) {
         self.init(bytes: Array(bytes))
     }
 }

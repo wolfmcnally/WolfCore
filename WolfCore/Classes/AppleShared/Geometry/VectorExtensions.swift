@@ -10,23 +10,19 @@ import CoreGraphics
 
 extension CGVector {
     public init(angle theta: CGFloat, magnitude: CGFloat) {
-        dx = cos(theta) * magnitude
-        dy = sin(theta) * magnitude
+        self.init(dx: cos(theta) * magnitude, dy: sin(theta) * magnitude)
     }
 
     public init(_ point1: CGPoint, _ point2: CGPoint) {
-        dx = point2.x - point1.x
-        dy = point2.y - point1.y
+        self.init(dx: point2.x - point1.x, dy: point2.y - point1.y)
     }
 
     public init(point: CGPoint) {
-        dx = point.x
-        dy = point.y
+        self.init(dx: point.x, dy: point.y)
     }
 
     public init(size: CGSize) {
-        dx = size.width
-        dy = size.height
+        self.init(dx: size.width, dy: size.height)
     }
 
     public var magnitude: CGFloat {

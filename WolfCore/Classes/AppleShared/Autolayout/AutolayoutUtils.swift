@@ -11,16 +11,16 @@
 #else
     import UIKit
 #endif
-
-extension LayoutPriority: Comparable {
-    public static func == (lhs: LayoutPriority, rhs: LayoutPriority) -> Bool {
-        return lhs.rawValue == rhs.rawValue
-    }
-
-    public static func < (lhs: LayoutPriority, rhs: LayoutPriority) -> Bool {
-        return lhs.rawValue < rhs.rawValue
-    }
-}
+//
+//extension LayoutPriority: Comparable {
+//    public static func == (lhs: LayoutPriority, rhs: LayoutPriority) -> Bool {
+//        return lhs.rawValue == rhs.rawValue
+//    }
+//
+//    public static func < (lhs: LayoutPriority, rhs: LayoutPriority) -> Bool {
+//        return lhs.rawValue < rhs.rawValue
+//    }
+//}
 
 public func + (lhs: LayoutPriority, rhs: Float) -> LayoutPriority {
     return LayoutPriority(rawValue: lhs.rawValue + rhs)

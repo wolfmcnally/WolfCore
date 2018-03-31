@@ -15,7 +15,7 @@ extension RangeReplaceableCollection {
     }
 }
 
-extension Collection where IndexDistance == Int {
+extension Collection {
     public var randomIndex: Index {
         return index(startIndex, offsetBy: Random.number(0 ..< count))
     }
@@ -33,7 +33,7 @@ extension Collection where IndexDistance == Int {
     }
 }
 
-extension MutableCollection where IndexDistance == Int {
+extension MutableCollection {
     public mutating func replaceElement(atCircularIndex index: Int, withElement element: Element) {
         self[circularIndex(at: index)] = element
     }
@@ -62,7 +62,7 @@ extension Array {
 
 extension Sequence {
     public func flatJoined(separator: String = "") -> String {
-        let a = flatMap { (i) -> String? in
+        let a = compactMap { (i) -> String? in
             if let o = i as? OptionalProtocol {
                 if o.isSome {
                     return o.unwrappedString()

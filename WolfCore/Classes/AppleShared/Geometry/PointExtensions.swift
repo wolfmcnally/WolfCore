@@ -10,13 +10,11 @@ import CoreGraphics
 
 extension CGPoint {
     public init(vector: CGVector) {
-        x = vector.dx
-        y = vector.dy
+        self.init(x: vector.dx, y: vector.dy)
     }
 
     public init(center: CGPoint, angle theta: CGFloat, radius: CGFloat) {
-        x = center.x + cos(theta) * radius
-        y = center.y + sin(theta) * radius
+        self.init(x: center.x + cos(theta) * radius, y: center.y + sin(theta) * radius)
     }
 
     public var magnitude: CGFloat {

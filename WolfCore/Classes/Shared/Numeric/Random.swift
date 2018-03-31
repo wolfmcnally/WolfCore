@@ -40,7 +40,7 @@ public struct Random {
     public func cryptoRandom() -> Int32 {
         let a = UnsafeMutablePointer<Int32>.allocate(capacity: 1)
         defer {
-            a.deallocate(capacity: 1)
+            a.deallocate()
         }
         a.withMemoryRebound(to: UInt8.self, capacity: 4) { p in
             _ = SecRandomCopyBytes(kSecRandomDefault, 4, p)
@@ -131,12 +131,12 @@ public struct Random {
         return Random.shared.boolean()
     }
 
-    public static func index<C: Collection>(in choices: C) -> C.Index where C.IndexDistance == Int {
+    public static func index<C: Collection>(in choices: C) -> C.Index {
         let offset = number(Int(0) ..< choices.count)
         return choices.index(choices.startIndex, offsetBy: offset)
     }
 
-    public static func choice<T, C: Collection>(among choices: C) -> T where C.IndexDistance == Int, C.Iterator.Element == T {
+    public static func choice<T, C: Collection>(among choices: C) -> T where C.Iterator.Element == T {
         let index = self.index(in: choices)
         return choices[index]
     }
