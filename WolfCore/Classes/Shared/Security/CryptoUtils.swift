@@ -81,7 +81,7 @@ public class CryptoKey: CustomStringConvertible {
     let count = Int(BN_bn2mpi(bn, nil))
 
     var data = UnsafeMutablePointer<UInt8>.allocate(capacity: count)
-    defer { data.deallocate(capacity: count) }
+    defer { data.deallocate() }
 
     BN_bn2mpi(bn, data)
     let buffer = UnsafeBufferPointer(start: data + 4, count: count - 4)

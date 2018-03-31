@@ -69,17 +69,17 @@ public class Host {
     extension Host {
         public func resolve(for addressType: IPAddressType) throws {
             var hostent_p = UnsafeMutablePointer<hostent>.allocate(capacity: 1)
-            defer { hostent_p.deallocate(capacity: 1) }
+            defer { hostent_p.deallocate() }
 
             let buflen = 2048
             var buf_p = UnsafeMutablePointer<Int8>.allocate(capacity: buflen)
-            defer { buf_p.deallocate(capacity: buflen) }
+            defer { buf_p.deallocate() }
 
             var result_p = UnsafeMutablePointer<HostEntRef>.allocate(capacity: 1)
-            defer { result_p.deallocate(capacity: 1) }
+            defer { result_p.deallocate() }
 
             var errno_p = UnsafeMutablePointer<Int32>.allocate(capacity: 1)
-            defer { errno_p.deallocate(capacity: 1) }
+            defer { errno_p.deallocate() }
 
             try NetworkError.checkCode(
                 gethostbyname2_r(
