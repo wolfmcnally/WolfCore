@@ -15,7 +15,7 @@ public struct OrnamentedCornersBorder: Border {
     public var fillColor: UIColor?
     public var strokeColor: UIColor?
 
-    public init(lineWidth: CGFloat = 1, ornaments: CornerOrnaments = CornerOrnaments(cornerRadius: 8), fillColor: UIColor? = nil, strokeColor: UIColor? = nil) {
+    public init(lineWidth: CGFloat = 1, ornaments: CornerOrnaments = CornerOrnaments(cornerRadius: 8), fillColor: UIColor? = nil, strokeColor: UIColor? = .black) {
         self.lineWidth = lineWidth
         self.ornaments = ornaments
         self.fillColor = fillColor

@@ -410,11 +410,6 @@ public class PowerTextField: View, Editable {
         🍒.alignment = .center
     }
 
-    @objc dynamic public var borderColor: UIColor {
-        get { return borderView.border.strokeColor ?? .clear }
-        set { borderView.border.strokeColor = newValue }
-    }
-
     public var border: Border {
         get { return borderView.border }
 
@@ -424,12 +419,7 @@ public class PowerTextField: View, Editable {
         }
     }
 
-    @objc dynamic public var borderLineWidth: CGFloat {
-        get { return borderView.border.lineWidth }
-        set { borderView.border.lineWidth = newValue }
-    }
-
-    private lazy var borderView = BorderView(border: RectBorder())
+    private lazy var borderView = BorderView()
 
     @objc dynamic public var horizontalSpacing: CGFloat = 6 {
         didSet {
@@ -602,33 +592,6 @@ public class PowerTextField: View, Editable {
         🍒.setPriority(crH: .required)
     }
 
-//    public override var isDebug: Bool {
-//        didSet {
-//            borderView.isDebug = isDebug
-//            characterCountLabel.isDebug = isDebug
-//            validationMessageLabel.isDebug = isDebug
-//            placeholderMessageLabel.isDebug = isDebug
-//            placeholderMessageContainer.isDebug = isDebug
-//            textEditor.isDebug = isDebug
-//            iconView.isDebug = isDebug
-//            clearButtonView.isDebug = isDebug
-//            toggleSecureTextEntryButton.isDebug = isDebug
-//            activityIndicatorView.isDebug = isDebug
-//
-//            debugBackgroundColor = .green
-//            borderView.debugBackgroundColor = .blue
-//            characterCountLabel.debugBackgroundColor = .gray
-//            validationMessageLabel.debugBackgroundColor = .red
-//            placeholderMessageLabel.debugBackgroundColor = .blue
-//            placeholderMessageContainer.debugBackgroundColor = .blue
-//            textEditor.debugBackgroundColor = .green
-//            iconView.debugBackgroundColor = .blue
-//            clearButtonView.debugBackgroundColor = .blue
-//            toggleSecureTextEntryButton.debugBackgroundColor = .blue
-//            activityIndicatorView.debugBackgroundColor = .blue
-//        }
-//    }
-
     private var frameInsets = CGInsets(top: 8, left: 8, bottom: 8, right: 8) {
         didSet {
             syncToFrameInsets()
@@ -640,28 +603,8 @@ public class PowerTextField: View, Editable {
         frameContentConstraints ◊= horizontalStackView.constrainFrameToFrame(insets: frameInsets)
     }
 
-//    public var rectangleFrameInsets = CGInsets(top: 8, left: 8, bottom: 8, right: 8) {
-//        didSet {
-//            frameInsets = rectangleFrameInsets
-//            syncToFrameInsets()
-//        }
-//    }
-//
-//    public var underlineFrameInsets = CGInsets(top: 2, left: 0, bottom: 6, right: 0) {
-//        didSet {
-//            frameInsets = underlineFrameInsets
-//            syncToFrameInsets()
-//        }
-//    }
-
     private func syncToBorder() {
-        let frameInsets = borderView.border.makeInsets()
-//        switch frameStyle {
-//        case .rectangle, .rounded, .none, .custom:
-//            frameInsets = rectangleFrameInsets
-//        case .underline:
-//            frameInsets = underlineFrameInsets
-//        }
+        let frameInsets = borderView.border.insets
         messageSpacerView.width = frameInsets.left
     }
 

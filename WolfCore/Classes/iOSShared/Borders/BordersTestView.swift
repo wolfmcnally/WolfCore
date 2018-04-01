@@ -48,7 +48,7 @@ public class BordersTestView: View {
 
         bounds = bounds.insetBy(dx: 30, dy: 30)
         do {
-            let ornaments = CornerOrnaments(topLeft: .square, bottomLeft: .bubbleTail(cornerRadius: 20), bottomRight: .bubbleTail(cornerRadius: 20), topRight: .rounded(cornerRadius: 30))
+            let ornaments = CornerOrnaments(topLeft: .square, bottomLeft: .bubbleTail(20), bottomRight: .bubbleTail(20), topRight: .rounded(30))
             let border = OrnamentedCornersBorder(lineWidth: lineWidth, ornaments: ornaments, fillColor: fillColor, strokeColor: strokeColor)
             paint(border: border, in: bounds)
         }

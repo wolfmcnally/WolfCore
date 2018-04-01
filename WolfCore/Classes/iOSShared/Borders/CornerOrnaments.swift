@@ -10,8 +10,8 @@ import CoreGraphics
 public struct CornerOrnaments {
     public enum Ornament {
         case square
-        case rounded(cornerRadius: CGFloat)
-        case bubbleTail(cornerRadius: CGFloat)
+        case rounded(CGFloat) // cornerRadius
+        case bubbleTail(CGFloat) // cornerRadius
     }
 
     public var topLeft: Ornament
@@ -31,7 +31,7 @@ public struct CornerOrnaments {
     }
 
     public init(cornerRadius: CGFloat) {
-        self.init(topLeft: .rounded(cornerRadius: cornerRadius), bottomLeft: .rounded(cornerRadius: cornerRadius), bottomRight: .rounded(cornerRadius: cornerRadius), topRight: .rounded(cornerRadius: cornerRadius))
+        self.init(topLeft: .rounded(cornerRadius), bottomLeft: .rounded(cornerRadius), bottomRight: .rounded(cornerRadius), topRight: .rounded(cornerRadius))
     }
 
     public var isAllSquare: Bool {

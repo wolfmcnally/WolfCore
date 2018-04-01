@@ -15,7 +15,7 @@ public struct RoundedCornersBorder: Border {
     public var fillColor: UIColor?
     public var strokeColor: UIColor?
 
-    public init(lineWidth: CGFloat = 1, cornerRadius: CGFloat = 8, fillColor: UIColor? = nil, strokeColor: UIColor? = nil) {
+    public init(lineWidth: CGFloat = 1, cornerRadius: CGFloat = 8, fillColor: UIColor? = nil, strokeColor: UIColor? = .black) {
         self.lineWidth = lineWidth
         self.cornerRadius = cornerRadius
         self.fillColor = fillColor

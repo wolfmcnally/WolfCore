@@ -12,7 +12,7 @@ public struct RectBorder: Border {
     public var fillColor: UIColor?
     public var strokeColor: UIColor?
 
-    public init(lineWidth: CGFloat = 1, fillColor: UIColor? = nil, strokeColor: UIColor? = nil) {
+    public init(lineWidth: CGFloat = 1, fillColor: UIColor? = nil, strokeColor: UIColor? = .black) {
         self.lineWidth = lineWidth
         self.fillColor = fillColor
         self.strokeColor = strokeColor

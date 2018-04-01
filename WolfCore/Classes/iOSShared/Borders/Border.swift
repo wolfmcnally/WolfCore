@@ -15,13 +15,13 @@ public protocol Border {
     func makePath(in frame: CGRect) -> UIBezierPath
     func makeInsets(in frame: CGRect?) -> UIEdgeInsets
 
-    func makeInsets() -> UIEdgeInsets
+    var insets: UIEdgeInsets { get }
 
     func draw(in frame: CGRect)
 }
 
 extension Border {
-    public func makeInsets() -> UIEdgeInsets {
+    public var insets: UIEdgeInsets {
         return makeInsets(in: nil)
     }
     
