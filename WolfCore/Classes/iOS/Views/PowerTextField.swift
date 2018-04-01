@@ -410,39 +410,26 @@ public class PowerTextField: View, Editable {
         🍒.alignment = .center
     }
 
-    @objc dynamic public var frameColor: UIColor {
-        get { return frameView.strokeColor ?? .clear }
-        set { frameView.strokeColor = newValue }
+    @objc dynamic public var borderColor: UIColor {
+        get { return borderView.border.strokeColor ?? .clear }
+        set { borderView.border.strokeColor = newValue }
     }
 
-    @objc dynamic public var frameCornerRadius: CGFloat {
-        get {
-            switch frameStyle {
-            case .rounded(let cornerRadius):
-                return cornerRadius
-            default:
-                return 0
-            }
-        }
-
-        set { frameStyle = .rounded(cornerRadius: newValue) }
-    }
-
-    public var frameStyle: FrameView.Style {
-        get { return frameView.style }
+    public var border: Border {
+        get { return borderView.border }
 
         set {
-            frameView.style = newValue
-            syncToFrameMode()
+            borderView.border = newValue
+            syncToBorder()
         }
     }
 
-    @objc dynamic public var frameLineWidth: CGFloat {
-        get { return frameView.lineWidth }
-        set { frameView.lineWidth = newValue }
+    @objc dynamic public var borderLineWidth: CGFloat {
+        get { return borderView.border.lineWidth }
+        set { borderView.border.lineWidth = newValue }
     }
 
-    private lazy var frameView: FrameView = .init()
+    private lazy var borderView = BorderView(border: RectBorder())
 
     @objc dynamic public var horizontalSpacing: CGFloat = 6 {
         didSet {
@@ -617,7 +604,7 @@ public class PowerTextField: View, Editable {
 
 //    public override var isDebug: Bool {
 //        didSet {
-//            frameView.isDebug = isDebug
+//            borderView.isDebug = isDebug
 //            characterCountLabel.isDebug = isDebug
 //            validationMessageLabel.isDebug = isDebug
 //            placeholderMessageLabel.isDebug = isDebug
@@ -629,7 +616,7 @@ public class PowerTextField: View, Editable {
 //            activityIndicatorView.isDebug = isDebug
 //
 //            debugBackgroundColor = .green
-//            frameView.debugBackgroundColor = .blue
+//            borderView.debugBackgroundColor = .blue
 //            characterCountLabel.debugBackgroundColor = .gray
 //            validationMessageLabel.debugBackgroundColor = .red
 //            placeholderMessageLabel.debugBackgroundColor = .blue
@@ -653,28 +640,29 @@ public class PowerTextField: View, Editable {
         frameContentConstraints ◊= horizontalStackView.constrainFrameToFrame(insets: frameInsets)
     }
 
-    public var rectangleFrameInsets = CGInsets(top: 8, left: 8, bottom: 8, right: 8) {
-        didSet {
-            frameInsets = rectangleFrameInsets
-            syncToFrameInsets()
-        }
-    }
+//    public var rectangleFrameInsets = CGInsets(top: 8, left: 8, bottom: 8, right: 8) {
+//        didSet {
+//            frameInsets = rectangleFrameInsets
+//            syncToFrameInsets()
+//        }
+//    }
+//
+//    public var underlineFrameInsets = CGInsets(top: 2, left: 0, bottom: 6, right: 0) {
+//        didSet {
+//            frameInsets = underlineFrameInsets
+//            syncToFrameInsets()
+//        }
+//    }
 
-    public var underlineFrameInsets = CGInsets(top: 2, left: 0, bottom: 6, right: 0) {
-        didSet {
-            frameInsets = underlineFrameInsets
-            syncToFrameInsets()
-        }
-    }
-
-    private func syncToFrameMode() {
-        switch frameStyle {
-        case .rectangle, .rounded, .none, .custom:
-            frameInsets = rectangleFrameInsets
-        case .underline:
-            frameInsets = underlineFrameInsets
-        }
-        messageSpacerView.width = frameInsets.left!
+    private func syncToBorder() {
+        let frameInsets = borderView.border.makeInsets()
+//        switch frameStyle {
+//        case .rectangle, .rounded, .none, .custom:
+//            frameInsets = rectangleFrameInsets
+//        case .underline:
+//            frameInsets = underlineFrameInsets
+//        }
+        messageSpacerView.width = frameInsets.left
     }
 
     public var topRightViews = [UIView]() {
@@ -709,7 +697,7 @@ public class PowerTextField: View, Editable {
                     },
                     topRightItemsView
                 ],
-                frameView => [
+                borderView => [
                     horizontalStackView => [
                         iconView,
                         textEditorView,
@@ -724,7 +712,7 @@ public class PowerTextField: View, Editable {
             placeholderLabel
         ]
 
-        Constraints(frameView.widthAnchor == verticalStackView.widthAnchor)
+        Constraints(borderView.widthAnchor == verticalStackView.widthAnchor)
         verticalStackView.constrainFrameToFrame()
         syncToFrameInsets()
         syncToSecureTextEntry()
