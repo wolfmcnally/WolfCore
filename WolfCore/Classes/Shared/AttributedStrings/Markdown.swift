@@ -58,13 +58,13 @@ extension AttributedString {
         replaceMatches(for: Self.strikethroughRegex, adding: .markdownStrikethrough)
 
         enumerateAttributes { (attributes, range, substring) -> Bool in
-            var traits = UIFontDescriptorSymbolicTraits()
+            var traits = OSFontDescriptorSymbolicTraits()
             if attributes[.markdownBold] != nil {
-                traits.insert(.traitBold)
+                traits.insertBold()
                 substring.removeAttribute(.markdownBold)
             }
             if attributes[.markdownItalic] != nil {
-                traits.insert(.traitItalic)
+                traits.insertItalic()
                 substring.removeAttribute(.markdownItalic)
             }
             if attributes[.markdownStrikethrough] != nil {
@@ -73,9 +73,9 @@ extension AttributedString {
                     .strikethroughStyle: NSUnderlineStyle.styleSingle.rawValue
                     ])
             }
-            let font = attributes[.font] as! UIFont
-            let descriptor = font.fontDescriptor.withSymbolicTraits(traits)!
-            let newFont = UIFont(descriptor: descriptor, size: 0)
+            let font = attributes[.font] as! OSFont
+            let descriptor = font.fontDescriptor.makeWithSymbolicTraits(traits)
+            let newFont = OSFont.makeWithDescriptor(descriptor)
             substring.font = newFont
 
             return false
