@@ -35,16 +35,6 @@ open class View: OSView {
 
     open func setup() { }
 
-    #if os(iOS) || os(tvOS)
-    public var osLayer: CALayer {
-        return layer
-    }
-    #elseif os(macOS)
-    public var osLayer: CALayer! {
-    return layer
-    }
-    #endif
-
     @IBInspectable public var isTransparentToTouches: Bool = false
 
     #if os(iOS) || os(tvOS)

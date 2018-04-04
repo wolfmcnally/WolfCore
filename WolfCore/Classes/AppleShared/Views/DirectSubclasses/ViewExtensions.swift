@@ -34,4 +34,14 @@ extension OSView {
         translatesAutoresizingMaskIntoConstraints = false
         makeTransparent()
     }
+
+    #if os(iOS) || os(tvOS)
+    public var osLayer: CALayer {
+        return layer
+    }
+    #elseif os(macOS)
+    public var osLayer: CALayer! {
+        return layer
+    }
+    #endif
 }

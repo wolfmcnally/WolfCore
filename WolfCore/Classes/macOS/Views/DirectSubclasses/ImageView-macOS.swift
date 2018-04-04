@@ -48,7 +48,7 @@ public enum ContentMode {
     private static let imageScalings: [ContentMode: NSImageScaling] = [
         .scaleToFill: .scaleAxesIndependently,
         .scaleAspectFit: .scaleProportionallyUpOrDown,
-        .scaleAspectFill: .scaleProportionallyDown,
+        .scaleAspectFill: .scaleAxesIndependently,
         .redraw: .scaleNone,
         .center: .scaleNone,
         .top: .scaleNone,
@@ -66,7 +66,7 @@ public enum ContentMode {
     }
 }
 
-public class ImageView: NSImageView {
+open class ImageView: NSImageView {
     public convenience init() {
         self.init(frame: .zero)
     }
