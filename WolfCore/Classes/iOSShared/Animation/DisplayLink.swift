@@ -6,9 +6,6 @@
 //  Copyright © 2017 WolfMcNally.com. All rights reserved.
 //
 
-import Foundation
-import QuartzCore
-
 public class DisplayLink: Invalidatable {
     public typealias FiredBlock = (DisplayLink) -> Void
     public var firstTimestamp: CFTimeInterval!
@@ -17,14 +14,13 @@ public class DisplayLink: Invalidatable {
     private var displayLink: CADisplayLink!
     private let onFired: FiredBlock
 
-    public init(preferredFramesPerSecond: Int = 60, onFired: @escaping FiredBlock) {
+    public init(preferredFramesPerSecond: Int = 30, onFired: @escaping FiredBlock) {
         self.onFired = onFired
         displayLink = CADisplayLink(target: self, selector: #selector(displayLinkFired))
-        displayLink.add(to: RunLoop.main, forMode: .commonModes)
-
         if #available(iOS 10.0, *) {
-            displayLink.preferredFramesPerSecond = preferredFramesPerSecond
+            displayLink.preferredFramesPerSecond = min(60, preferredFramesPerSecond)
         }
+        displayLink.add(to: RunLoop.main, forMode: .commonModes)
     }
 
     deinit {
@@ -35,6 +31,11 @@ public class DisplayLink: Invalidatable {
         if firstTimestamp == nil {
             firstTimestamp = timestamp
         }
+
+//        if #available(iOS 10.0, *) {
+//        print( 1.0 / (displayLink.targetTimestamp - displayLink.timestamp))
+//        }
+
         onFired(self)
     }
 

@@ -14,6 +14,8 @@ private func timerCallback(timer: CVDisplayLink, currentTime: UnsafePointer<CVTi
     let sourceUnmanaged = Unmanaged<DispatchSourceUserDataAdd>.fromOpaque(sourceUnsafeRaw)
     sourceUnmanaged.takeUnretainedValue().add(data: 1)
 
+//    print(1.0 / CVDisplayLinkGetActualOutputVideoRefreshPeriod(timer))
+
     return kCVReturnSuccess
 }
 
@@ -23,9 +25,11 @@ public class DisplayLink: Invalidatable {
     private let timer: CVDisplayLink
     private let source: DispatchSourceUserDataAdd
     
-    var onFired: FiredBlock
-    
-    var running: Bool { return CVDisplayLinkIsRunning(timer) }
+    public var running: Bool { return CVDisplayLinkIsRunning(timer) }
+
+    private let onFired: FiredBlock
+    private let preferredFramesPerSecond: Int
+    private var timeUntilNextFire: Double
 
     /**
      Creates a new DisplayLink that gets executed on the given queue
@@ -33,8 +37,10 @@ public class DisplayLink: Invalidatable {
      - Parameters:
      - queue: Queue which will receive the callback calls
      */
-    public init(on queue: DispatchQueue = DispatchQueue.main, preferredFramesPerSecond: Int = 60, onFired: @escaping FiredBlock) {
+    public init(on queue: DispatchQueue = DispatchQueue.main, preferredFramesPerSecond: Int = 30, onFired: @escaping FiredBlock) {
+        self.preferredFramesPerSecond = min(60, preferredFramesPerSecond)
         self.onFired = onFired
+        timeUntilNextFire = 1 / Double(preferredFramesPerSecond)
 
         // Source
         source = DispatchSource.makeUserDataAddSource(queue: queue)
@@ -68,7 +74,11 @@ public class DisplayLink: Invalidatable {
         // Timer setup
         source.setEventHandler() { [weak self] in
             guard let slf = self else { return }
-            slf.onFired(slf)
+            slf.timeUntilNextFire -= CVDisplayLinkGetActualOutputVideoRefreshPeriod(slf.timer)
+            while(slf.timeUntilNextFire < 0) {
+                slf.timeUntilNextFire += 1 / Double(slf.preferredFramesPerSecond)
+                slf.onFired(slf)
+            }
         }
 
         start()
