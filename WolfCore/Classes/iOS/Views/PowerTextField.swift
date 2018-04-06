@@ -15,6 +15,7 @@ public class PowerTextField: View, Editable {
     public let name: String
     public let contentType: ContentType
     public let numberOfLines: Int
+    public let backgroundView: BackgroundView
 
     public enum ContentType {
         case text           // Generic prose
@@ -29,10 +30,12 @@ public class PowerTextField: View, Editable {
         case password       // A password (numberOfLines must be 1)
     }
 
-    public init(name: String, contentType: ContentType = .text, numberOfLines: Int = 1) {
+    public init(name: String, contentType: ContentType = .text, numberOfLines: Int = 1, backgroundView: BackgroundView? = nil) {
         self.name = name
         self.contentType = contentType
         self.numberOfLines = numberOfLines
+        self.backgroundView = backgroundView ?? BackgroundView()
+
         super.init(frame: .zero)
     }
 
@@ -410,17 +413,6 @@ public class PowerTextField: View, Editable {
         🍒.alignment = .center
     }
 
-    public var border: Border {
-        get { return borderView.border }
-
-        set {
-            borderView.border = newValue
-            syncToBorder()
-        }
-    }
-
-    private lazy var borderView = BorderView()
-
     @objc dynamic public var horizontalSpacing: CGFloat = 6 {
         didSet {
             horizontalStackView.spacing = horizontalSpacing
@@ -603,11 +595,6 @@ public class PowerTextField: View, Editable {
         frameContentConstraints ◊= horizontalStackView.constrainFrameToFrame(insets: frameInsets)
     }
 
-    private func syncToBorder() {
-        let frameInsets = borderView.border.insets
-        messageSpacerView.width = frameInsets.left
-    }
-
     public var topRightViews = [UIView]() {
         didSet {
             topRightItemsView.removeAllSubviews()
@@ -640,7 +627,7 @@ public class PowerTextField: View, Editable {
                     },
                     topRightItemsView
                 ],
-                borderView => [
+                backgroundView => [
                     horizontalStackView => [
                         iconView,
                         textEditorView,
@@ -655,7 +642,7 @@ public class PowerTextField: View, Editable {
             placeholderLabel
         ]
 
-        Constraints(borderView.widthAnchor == verticalStackView.widthAnchor)
+        Constraints(backgroundView.widthAnchor == verticalStackView.widthAnchor)
         verticalStackView.constrainFrameToFrame()
         syncToFrameInsets()
         syncToSecureTextEntry()
@@ -691,6 +678,10 @@ public class PowerTextField: View, Editable {
         )
 
         syncClearButton(animated: false)
+
+        let frameInsets = backgroundView.insets
+        messageSpacerView.width = frameInsets.left
+
         //isDebug = true
     }
 

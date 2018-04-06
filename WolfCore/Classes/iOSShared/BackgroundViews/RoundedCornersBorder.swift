@@ -28,6 +28,11 @@ public struct RoundedCornersBorder: Border {
         return min(cornerRadius, minDimension / 2)
     }
 
+    public static func makeInsets(for cornerRadius: CGFloat, lineWidth: CGFloat) -> UIEdgeInsets {
+        let inset = cornerRadius - cos(45°) * cornerRadius + cos(45°) * lineWidth
+        return UIEdgeInsets(all: inset)
+    }
+
     public func makePath(in frame: CGRect) -> UIBezierPath {
         let halfLineWidth = lineWidth / 2
         let clampedCornerRadius = Self.clampCornerRadius(cornerRadius, in: frame) - halfLineWidth
@@ -38,7 +43,6 @@ public struct RoundedCornersBorder: Border {
     }
 
     public func makeInsets(in frame: CGRect?) -> UIEdgeInsets {
-        let inset = cornerRadius - cos(45°) * cornerRadius + cos(45°) * lineWidth
-        return UIEdgeInsets(all: inset)
+        return Self.makeInsets(for: cornerRadius, lineWidth: lineWidth)
     }
 }

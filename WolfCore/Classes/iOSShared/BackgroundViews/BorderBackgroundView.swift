@@ -1,5 +1,5 @@
 //
-//  BorderView.swift
+//  BorderBackgroundView
 //  WolfCore
 //
 //  Created by Wolf McNally on 5/4/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BorderView: View {
+open class BorderBackgroundView: BackgroundView {
     public var border: Border {
         didSet { setNeedsDisplay() }
     }
@@ -19,11 +19,15 @@ public class BorderView: View {
         contentMode = .redraw
     }
 
+    open override var insets: UIEdgeInsets {
+        return border.insets
+    }
+
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override public func draw(_ rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         border.draw(in: bounds)
     }
 }
