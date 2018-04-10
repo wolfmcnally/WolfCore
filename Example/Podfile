@@ -1,11 +1,10 @@
 use_frameworks!
-platform :ios, '9.3'
+platform :ios, '11.0'
 
 pod 'SwiftLint'
 
 target 'WolfCore_Example' do
-    pod 'WolfCore', '~> 2.1'
-    # pod 'WolfCore', :path => '../'
+    pod 'WolfCore', :path => '../'
 
     target 'WolfCore_Tests' do
         inherit! :search_paths
