@@ -294,7 +294,7 @@ public struct Color: Decodable {
     public static let clear = Color(red: 0, green: 0, blue: 0, alpha: 0)
     public static let pink = Color(red: 1, green: 0.75294118, blue: 0.79607843)
 
-    public static let chartreuse = blend(from: .yellow, to: .green, at: 0.5)
+    public static let chartreuse = WolfCore.blend(from: .yellow, to: .green, at: 0.5)
     public static let gold = Color(redByte: 251, greenByte: 212, blueByte: 55)
     public static let blueGreen = Color(redByte: 0, greenByte: 169, blueByte: 149)
     public static let mediumBlue = Color(redByte: 0, greenByte: 110, blueByte: 185)
@@ -358,4 +358,10 @@ public func * (lhs: Color, rhs: Frac) -> Color {
 
 public func + (lhs: Color, rhs: Color) -> Color {
     return lhs.added(to: rhs)
+}
+
+extension Color {
+    public func blend(to color: Color, at frac: Frac) -> Color {
+        return WolfCore.blend(from: self, to: color, at: frac)
+    }
 }

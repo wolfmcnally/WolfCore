@@ -13,10 +13,11 @@ public class TVControllerActions: GestureActions {
     private let swipeRightName = "swipeRight"
     private let swipeUpName = "swipeUp"
     private let swipeDownName = "swipeDown"
-    private let pressLeftName = "pressLeft"
-    private let pressRightName = "pressRight"
-    private let pressUpName = "pressUp"
-    private let pressDownName = "pressDown"
+    // only used to obsolete remote
+//    private let pressLeftName = "pressLeft"
+//    private let pressRightName = "pressRight"
+//    private let pressUpName = "pressUp"
+//    private let pressDownName = "pressDown"
     private let pressPlayPauseName = "pressPlayPause"
     private let pressSelectName = "pressSelect"
     private let pressMenuName = "pressMenu"
@@ -41,25 +42,26 @@ public class TVControllerActions: GestureActions {
         set { setSwipeAction(named: swipeDownName, direction: .down, action: newValue) }
     }
 
-    public var onPressLeft: GestureBlock? {
-        get { return getAction(for: pressLeftName) }
-        set { setPressAction(named: pressLeftName, press: .leftArrow, action: newValue) }
-    }
-
-    public var onPressRight: GestureBlock? {
-        get { return getAction(for: pressRightName) }
-        set { setPressAction(named: pressRightName, press: .rightArrow, action: newValue) }
-    }
-
-    public var onPressUp: GestureBlock? {
-        get { return getAction(for: pressUpName) }
-        set { setPressAction(named: pressLeftName, press: .upArrow, action: newValue) }
-    }
-
-    public var onPressDown: GestureBlock? {
-        get { return getAction(for: pressDownName) }
-        set { setPressAction(named: pressDownName, press: .downArrow, action: newValue) }
-    }
+    // only used for obsolete remote
+//    public var onPressLeft: GestureBlock? {
+//        get { return getAction(for: pressLeftName) }
+//        set { setPressAction(named: pressLeftName, press: .leftArrow, action: newValue) }
+//    }
+//
+//    public var onPressRight: GestureBlock? {
+//        get { return getAction(for: pressRightName) }
+//        set { setPressAction(named: pressRightName, press: .rightArrow, action: newValue) }
+//    }
+//
+//    public var onPressUp: GestureBlock? {
+//        get { return getAction(for: pressUpName) }
+//        set { setPressAction(named: pressLeftName, press: .upArrow, action: newValue) }
+//    }
+//
+//    public var onPressDown: GestureBlock? {
+//        get { return getAction(for: pressDownName) }
+//        set { setPressAction(named: pressDownName, press: .downArrow, action: newValue) }
+//    }
 
     public var onPressPlayPause: GestureBlock? {
         get { return getAction(for: pressPlayPauseName) }
