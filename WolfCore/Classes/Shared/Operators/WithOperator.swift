@@ -28,8 +28,8 @@ infix operator ••• : CastingPrecedence
 ///   view • {
 ///       $0.alpha = 0.5
 ///   }
-@discardableResult public func • <T: AnyObject>(lhs: T, rhs: (T) -> Void) -> T {
-    rhs(lhs)
+@discardableResult public func • <T: AnyObject>(lhs: T, rhs: (T) throws -> Void) rethrows -> T {
+    try rhs(lhs)
     return lhs
 }
 
@@ -43,9 +43,9 @@ infix operator ••• : CastingPrecedence
 ///       $0.x = 10
 ///   }
 ///
-public func •• <T: Any>(lhs: T, rhs: (inout T) -> Void) -> T {
+@discardableResult public func •• <T: Any>(lhs: T, rhs: (inout T) throws -> Void) rethrows -> T {
     var lhs = lhs
-    rhs(&lhs)
+    try rhs(&lhs)
     return lhs
 }
 
@@ -60,6 +60,6 @@ public func •• <T: Any>(lhs: T, rhs: (inout T) -> Void) -> T {
 ///       $0.x = 10
 ///   }
 ///
-public func ••• <T: Any>(lhs: inout T, rhs: (inout T) -> Void) {
-    rhs(&lhs)
+public func ••• <T: Any>(lhs: inout T, rhs: (inout T) throws -> Void) rethrows {
+    try rhs(&lhs)
 }
