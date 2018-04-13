@@ -195,4 +195,14 @@ extension Color {
     public var osColor: OSColor {
         return OSColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: CGFloat(alpha))
     }
+
+    #if os(macOS)
+    public var nsColor: NSColor {
+        return osColor
+    }
+    #elseif !os(Linux)
+    public var uiColor: UIColor {
+        return osColor
+    }
+    #endif
 }
