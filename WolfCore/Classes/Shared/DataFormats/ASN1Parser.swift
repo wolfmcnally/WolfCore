@@ -317,7 +317,7 @@ class ASN1Parser {
                             throw ASN1Error("Invalid object identifier with 'more' bit set on last octet.")
                         }
                     }
-                } while(more)
+                } while more
 
                 indexes.append("\(value)")
             }

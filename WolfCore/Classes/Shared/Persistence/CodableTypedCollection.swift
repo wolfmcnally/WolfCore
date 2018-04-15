@@ -61,7 +61,7 @@ open class CodableTypedCollection<Element: Codable, ElementsKey: CodingKey, Elem
         var arrayContainerForType = try topContainer.nestedUnkeyedContainer(forKey: elementsKey)
         var arrayContainer = arrayContainerForType
         var elements = [Element]()
-        while(!arrayContainerForType.isAtEnd) {
+        while !arrayContainerForType.isAtEnd {
             let elementForType = try arrayContainerForType.nestedContainer(keyedBy: ElementTypeKey.self)
             let encodingType = try elementForType.decode(String.self, forKey: elementTypeKey)
             try elements.append(decode(encodingType: encodingType, in: &arrayContainer))

@@ -244,7 +244,7 @@ public class Hashids_<T> : HashidsGenerator where T: UnsignedInteger {
         repeat {
             hash.insert(alphabet[number % length], at: index)
             number /= length
-        } while( number != 0 )
+        } while number != 0
     }
 
     private func _unhash<U: Collection>(_ hash: U, _ alphabet: [Char]) -> Int where U.Index == Int, U.Iterator.Element == Char {
