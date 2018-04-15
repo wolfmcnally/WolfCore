@@ -22,7 +22,7 @@ public class LockerCause {
 public class Locker {
     private var count = 0
     private var serializer: Serializer?
-    private lazy var reasonCauses: [String: LockerCause] = .init()
+    private lazy var reasonCauses = [String: LockerCause]()
 
     public var onLocked: Block?
     public var onUnlocked: Block?

@@ -35,7 +35,7 @@ public class ActivityOverlayView: View {
         return hysteresis.newCause()
     }
 
-    private lazy var activityIndicatorView: UIActivityIndicatorView = .init(activityIndicatorStyle: .whiteLarge) • { 🍒 in
+    private lazy var activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge) • { 🍒 in
         ‡🍒
         🍒.hidesWhenStopped = false
     }
@@ -50,7 +50,7 @@ public class ActivityOverlayView: View {
         }
     }
 
-    private lazy var frameView: View = .init() • { 🍒 in
+    private lazy var frameView = View() • { 🍒 in
         🍒.constrainSize(to: CGSize(width: 80, height: 80))
         🍒.layer.masksToBounds = true
         🍒.layer.cornerRadius = 10

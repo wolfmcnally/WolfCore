@@ -17,20 +17,20 @@ import UIKit
 //          < your non-scrolling views below the scrolling view >
 
 open class ScrollingStackView: View {
-    public private(set) lazy var keyboardAvoidantView: KeyboardAvoidantView = .init()
+    public private(set) lazy var keyboardAvoidantView = KeyboardAvoidantView()
 
-    public private(set) lazy var outerStackView: StackView = .init() • { 🍒 in
+    public private(set) lazy var outerStackView = StackView() • { 🍒 in
         🍒.axis = .vertical
         🍒.distribution = .fill
         🍒.alignment = .fill
     }
 
-    public private(set) lazy var scrollView: ScrollView = .init() • { 🍒 in
+    public private(set) lazy var scrollView = ScrollView() • { 🍒 in
         🍒.indicatorStyle = .white
         🍒.keyboardDismissMode = .interactive
     }
 
-    public private(set) lazy var stackView: StackView = .init() • { 🍒 in
+    public private(set) lazy var stackView = StackView() • { 🍒 in
         🍒.axis = .vertical
         🍒.distribution = .fill
         🍒.alignment = .fill

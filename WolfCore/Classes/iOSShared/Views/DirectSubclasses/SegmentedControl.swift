@@ -24,26 +24,34 @@ open class SegmentedControl: UISegmentedControl {
 
     private func _setup() {
         __setup()
-        setupFont()
+        syncFont()
         setup()
     }
 
     open func setup() { }
 
-    var titleFont: UIFont?
+    public var titleFont: UIFont? {
+        didSet { syncFont() }
+    }
 
     @IBInspectable
-    var segmentPadding: CGSize = .zero
+    public var segmentPadding: CGSize = .zero {
+        didSet { invalidateIntrinsicContentSize() }
+    }
 
     @IBInspectable
-    var titleFontName: String?
+    public var titleFontName: String? {
+        didSet { syncFont() }
+    }
 
     @IBInspectable
-    var titleFontSize: CGFloat = UIFont.systemFontSize
+    public var titleFontSize: CGFloat = UIFont.systemFontSize {
+        didSet { syncFont() }
+    }
 
     #if TARGET_INTERFACE_BUILDER
 
-    override func prepareForInterfaceBuilder() {
+    public override func prepareForInterfaceBuilder() {
         setup()
     }
 
@@ -59,9 +67,10 @@ open class SegmentedControl: UISegmentedControl {
         }
     }
 
-    private func setupFont() {
+    private func syncFont() {
         let attributes: StringAttributes = [.font: effectiveFont]
         setTitleTextAttributes(attributes, for: [])
+        setNeedsLayout()
     }
 
     open override var intrinsicContentSize: CGSize {

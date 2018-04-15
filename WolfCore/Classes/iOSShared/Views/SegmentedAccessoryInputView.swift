@@ -51,14 +51,14 @@ public class SegmentedAccessoryInputView: View {
 
         private var buttonAction: ControlAction<Button>!
 
-        private lazy var button: Button = .init(type: .custom) • { 🍒 in
+        private lazy var button = Button(type: .custom) • { 🍒 in
             🍒.setTitle(title, for: [])
             buttonAction = addTouchUpInsideAction(to: 🍒) { [unowned self] _ in
                 self.action(self)
             }
         }
 
-        private lazy var divider: View = .init() • { 🍒 in
+        private lazy var divider = View() • { 🍒 in
             🍒.backgroundColor = Self.dividerColor
             🍒.constrainWidth(to: 0.5)
         }

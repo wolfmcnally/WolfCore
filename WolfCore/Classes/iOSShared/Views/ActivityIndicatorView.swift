@@ -45,7 +45,7 @@ public class ActivityIndicatorView: View {
         return hysteresis.newCause()
     }
 
-    private lazy var activityIndicatorView: UIActivityIndicatorView = .init(activityIndicatorStyle: self.style) • { 🍒 in
+    private lazy var activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: self.style) • { 🍒 in
         ‡🍒
         🍒.hidesWhenStopped = false
         🍒.startAnimating()

@@ -142,7 +142,7 @@ public class PowerTextField: View, Editable {
         setNeedsOnTextChanged()
     }
 
-    private lazy var syncOnTextChanged: Asynchronizer = .init(name: "onChanged", delay: 0.1) {
+    private lazy var syncOnTextChanged = Asynchronizer(name: "onChanged", delay: 0.1) {
         self.onChanged?(self)
     }
 
@@ -395,21 +395,21 @@ public class PowerTextField: View, Editable {
         set { verticalStackView.spacing = newValue }
     }
 
-    private lazy var verticalStackView: VerticalStackView = .init() • { 🍒 in
+    private lazy var verticalStackView = VerticalStackView() • { 🍒 in
         🍒.alignment = .leading
     }
 
-    private lazy var topRowView: HorizontalStackView = .init() • { 🍒 in
+    private lazy var topRowView = HorizontalStackView() • { 🍒 in
         🍒.alignment = .center
     }
 
-    private lazy var placeholderMessageContainer: HorizontalStackView = .init() • { 🍒 in
+    private lazy var placeholderMessageContainer = HorizontalStackView() • { 🍒 in
         🍒.alignment = .center
         🍒.spacing = 10
         🍒.alpha = 0
     }
 
-    private lazy var bottomRowView: HorizontalStackView = .init() • { 🍒 in
+    private lazy var bottomRowView = HorizontalStackView() • { 🍒 in
         🍒.alignment = .center
     }
 
@@ -419,14 +419,14 @@ public class PowerTextField: View, Editable {
         }
     }
 
-    private lazy var horizontalStackView: HorizontalStackView = .init() • { 🍒 in
+    private lazy var horizontalStackView = HorizontalStackView() • { 🍒 in
         🍒.spacing = self.horizontalSpacing
         🍒.alignment = .center
     }
 
-    private lazy var characterCountLabel: Label = .init()
+    private lazy var characterCountLabel = Label()
 
-    private lazy var messageSpacerView: SpacerView = .init() • { 🍒 in
+    private lazy var messageSpacerView = SpacerView() • { 🍒 in
         🍒.setPriority(hugH: .defaultHigh, crH: .required)
     }
 
@@ -440,7 +440,7 @@ public class PowerTextField: View, Editable {
         set { validationMessageLabel.font = newValue }
     }
 
-    private lazy var validationMessageLabel: Label = .init() • { 🍒 in
+    private lazy var validationMessageLabel = Label() • { 🍒 in
         🍒.setPriority(hugH: .required, crH: .required)
         🍒.adjustsFontSizeToFitWidth = true
         🍒.minimumScaleFactor = 0.5
@@ -458,14 +458,14 @@ public class PowerTextField: View, Editable {
         set { placeholderMessageLabel.font = newValue }
     }
 
-    private lazy var placeholderMessageLabel: Label = .init() • { 🍒 in
+    private lazy var placeholderMessageLabel = Label() • { 🍒 in
         🍒.setPriority(hugH: .required, crH: .required)
         🍒.adjustsFontSizeToFitWidth = true
         🍒.minimumScaleFactor = 0.5
         🍒.text = "A"
     }
 
-    private lazy var messageContainerView: View = .init() • { 🍒 in
+    private lazy var messageContainerView = View() • { 🍒 in
         🍒.setPriority(hugH: .required, crH: .required)
     }
 
@@ -479,7 +479,7 @@ public class PowerTextField: View, Editable {
         set { placeholderLabel.font = newValue }
     }
 
-    private lazy var placeholderLabel: Label = .init() • { 🍒 in
+    private lazy var placeholderLabel = Label() • { 🍒 in
         if self.numberOfLines > 1 {
             🍒.numberOfLines = 0
         } else {
@@ -517,27 +517,27 @@ public class PowerTextField: View, Editable {
 
     private var textChangedAction: ControlAction<TextField>!
 
-    private lazy var textField: TextField = .init() • { 🍒 in
+    private lazy var textField = TextField() • { 🍒 in
         self.textChangedAction = addControlAction(to: 🍒, for: .editingChanged) { [unowned self] _ in
             self.syncToTextEditor(animated: true)
         }
         🍒.delegate = self
     }
 
-    private lazy var textView: TextView = .init() • { 🍒 in
+    private lazy var textView = TextView() • { 🍒 in
         🍒.contentInset = .zero
         🍒.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: -4)
         🍒.scrollsToTop = false
         🍒.delegate = self
     }
 
-    private lazy var iconView: ImageView = .init() • { 🍒 in
+    private lazy var iconView = ImageView() • { 🍒 in
         🍒.setPriority(hugH: .required)
     }
 
     private var onClearAction: ControlAction<Button>!
 
-    private lazy var clearButtonView: ClearFieldButtonView = .init() • { 🍒 in
+    private lazy var clearButtonView = ClearFieldButtonView() • { 🍒 in
         self.onClearAction = addTouchUpInsideAction(to: 🍒.button) { [unowned self] _ in
             self.clear(animated: true)
         }
@@ -551,7 +551,7 @@ public class PowerTextField: View, Editable {
 
     private var onToggleSecureTextEntryAction: ControlAction<Button>!
 
-    private lazy var toggleSecureTextEntryButton: Button = .init() • { 🍒 in
+    private lazy var toggleSecureTextEntryButton = Button() • { 🍒 in
         🍒.setPriority(hugH: .required, hugV: .required)
         self.onToggleSecureTextEntryAction = addTouchUpInsideAction(to: 🍒) { [unowned self] _ in
             self.toggleSecureTextEntry()
@@ -580,7 +580,7 @@ public class PowerTextField: View, Editable {
 //        needsValidation = true
     }
 
-    private lazy var activityIndicatorView: ActivityIndicatorView = .init() • { 🍒 in
+    private lazy var activityIndicatorView = ActivityIndicatorView() • { 🍒 in
         🍒.setPriority(crH: .required)
     }
 
@@ -602,7 +602,7 @@ public class PowerTextField: View, Editable {
         }
     }
 
-    private lazy var topRightItemsView: HorizontalStackView = .init() • { 🍒 in
+    private lazy var topRightItemsView = HorizontalStackView() • { 🍒 in
         🍒.spacing = 5
     }
 

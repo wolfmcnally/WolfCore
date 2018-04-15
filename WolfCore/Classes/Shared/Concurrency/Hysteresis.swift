@@ -30,7 +30,7 @@ public class Hysteresis {
     private var endCanceler: Cancelable?
     private var isStarted: Bool = false
 
-    private lazy var locker: Locker = .init(
+    private lazy var locker = Locker(
         useMainQueue: self.useMainQueue,
         onLocked: { [unowned self] in self.startEffectLagged() },
         onUnlocked: { [unowned self] in self.endEffectLagged() }

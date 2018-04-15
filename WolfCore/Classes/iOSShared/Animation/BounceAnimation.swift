@@ -20,14 +20,14 @@ public class BounceAnimation {
         isReleased = false
         dispatchAnimated(duration: 0.1, options: [.beginFromCurrentState, .curveEaseOut]) {
             self.view.transform = .init(scaleX: 0.7, y: 0.7)
-            }.run()
+        }.run()
     }
 
     public func animateUp() {
         guard !isReleased else { return }
         dispatchAnimated(duration: 0.1, options: [.beginFromCurrentState, .curveEaseInOut]) {
             self.view.transform = .identity
-            }.run()
+        }.run()
     }
 
     private var completion: Block?
