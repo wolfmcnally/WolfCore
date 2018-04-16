@@ -31,8 +31,8 @@ public func %% (left: Float, right: Int) -> String {
     return String(value: left, precision: right)
 }
 
-#if canImport(Cocoa)
-import Cocoa
+#if canImport(AppKit)
+import AppKit
 #elseif canImport(UIKit)
 import UIKit
 #endif

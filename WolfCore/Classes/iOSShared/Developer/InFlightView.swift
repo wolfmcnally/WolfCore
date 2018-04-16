@@ -8,8 +8,8 @@
 
 #if canImport(UIKit)
     import UIKit
-#elseif canImport(Cocoa)
-    import Cocoa
+#elseif canImport(AppKit)
+    import AppKit
 #endif
 
 private let animationDuration: TimeInterval = 0.3

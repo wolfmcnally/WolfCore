@@ -8,8 +8,8 @@
 
 import Foundation
 
-#if canImport(Cocoa)
-    import Cocoa
+#if canImport(AppKit)
+    import AppKit
 #elseif canImport(UIKit)
     import UIKit
 #endif

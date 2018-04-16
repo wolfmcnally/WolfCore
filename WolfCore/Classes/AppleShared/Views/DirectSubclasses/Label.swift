@@ -9,8 +9,8 @@
 #if canImport(UIKit)
     import UIKit
     public typealias OSLabel = UILabel
-#elseif canImport(Cocoa)
-    import Cocoa
+#elseif canImport(AppKit)
+    import AppKit
     public typealias OSLabel = NSTextField
 #endif
 
