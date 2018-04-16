@@ -9,9 +9,9 @@
 import Foundation
 import CoreGraphics
 
-#if os(iOS) || os(tvOS)
+#if canImport(UIKit)
     import UIKit
-#elseif os(macOS)
+#elseif canImport(Cocoa)
     import Cocoa
 #endif
 

@@ -6,9 +6,9 @@
 //  Copyright © 2015 WolfMcNally.com. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS)
+#if canImport(UIKit)
     import UIKit
-#elseif os(macOS)
+#elseif canImport(Cocoa)
     import Cocoa
 #endif
 

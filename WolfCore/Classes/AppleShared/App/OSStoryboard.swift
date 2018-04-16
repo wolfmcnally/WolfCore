@@ -6,10 +6,10 @@
 //  Copyright © 2017 WolfMcNally.com. All rights reserved.
 //
 
-#if os(macOS)
+#if canImport(Cocoa)
     import Cocoa
     public typealias OSStoryboard = NSStoryboard
-#else
+#elseif canImport(UIKit)
     import UIKit
     public typealias OSStoryboard = UIStoryboard
 #endif

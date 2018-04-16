@@ -7,10 +7,10 @@
 //
 
 import Foundation
-#if os(macOS)
+#if canImport(AppKit)
     import AppKit
     public typealias OSImage = NSImage
-#elseif !os(Linux)
+#elseif canImport(UIKit)
     import UIKit
     public typealias OSImage = UIImage
 #endif

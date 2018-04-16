@@ -6,7 +6,7 @@
 //  Copyright © 2016 WolfMcNally.com. All rights reserved.
 //
 
-#if !os(Linux)
+#if canImport(CoreGraphics)
     import CoreGraphics
 #endif
 

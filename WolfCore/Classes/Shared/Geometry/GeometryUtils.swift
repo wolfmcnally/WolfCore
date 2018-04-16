@@ -6,10 +6,13 @@
 //  Copyright © 2015 WolfMcNally.com. All rights reserved.
 //
 
-#if os(Linux)
+#if canImport(Glibc)
     import Glibc
-#else
+#elseif canImport(Darwin)
     import Darwin
+#endif
+
+#if canImport(CoreGraphics)
     import CoreGraphics
 #endif
 

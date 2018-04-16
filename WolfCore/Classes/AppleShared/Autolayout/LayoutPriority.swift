@@ -6,10 +6,10 @@
 //  Copyright © 2017 WolfMcNally.com. All rights reserved.
 //
 
-#if os(macOS)
+#if canImport(Cocoa)
     import Cocoa
     public typealias LayoutPriority = NSLayoutConstraint.Priority
-#else
+#elseif canImport(UIKit)
     import UIKit
     public typealias LayoutPriority = UILayoutPriority
 #endif

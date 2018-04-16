@@ -8,9 +8,9 @@
 
 import Foundation
 
-#if os(Linux)
+#if canImport(COpenSSL)
     import COpenSSL
-#else
+#elseif canImport(CommonCryptoModule)
     import CommonCryptoModule
 #endif
 

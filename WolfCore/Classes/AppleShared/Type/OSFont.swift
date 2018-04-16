@@ -6,7 +6,7 @@
 //  Copyright © 2017 WolfMcNally.com. All rights reserved.
 //
 
-#if os(macOS)
+#if canImport(Cocoa)
 import Cocoa
 public typealias OSFont = NSFont
 public typealias OSFontDescriptor = NSFontDescriptor
@@ -20,7 +20,7 @@ extension NSFont {
         return members.map { $0[0] as! String }
     }
 }
-#else
+#elseif canImport(UIKit)
 import UIKit
 public typealias OSFont = UIFont
 public typealias OSFontDescriptor = UIFontDescriptor

@@ -6,14 +6,14 @@
 //  Copyright © 2017 WolfMcNally.com. All rights reserved.
 //
 
-#if os(macOS)
+#if canImport(Cocoa)
     import Cocoa
     public typealias OSGestureRecognizer = NSGestureRecognizer
     public typealias OSGestureRecognizerDelegate = NSGestureRecognizerDelegate
     public typealias OSGestureRecognizerState = NSGestureRecognizer.State
     public typealias OSTapClickGestureRecognizer = NSClickGestureRecognizer
     public typealias OSPanGestureRecognizer = NSPanGestureRecognizer
-#else
+#elseif canImport(UIKit)
     import UIKit
     public typealias OSGestureRecognizer = UIGestureRecognizer
     public typealias OSGestureRecognizerDelegate = UIGestureRecognizerDelegate

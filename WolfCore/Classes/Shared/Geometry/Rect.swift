@@ -6,9 +6,9 @@
 //  Copyright © 2016 WolfMcNally.com. All rights reserved.
 //
 
-#if os(Linux)
+#if canImport(Glibc)
     import Glibc
-#elseif os(iOS) || os(macOS) || os(tvOS)
+#elseif canImport(CoreGraphics)
     import CoreGraphics
 #endif
 

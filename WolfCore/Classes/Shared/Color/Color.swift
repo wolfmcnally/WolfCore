@@ -8,7 +8,7 @@
 
 import Foundation
 
-#if os(Linux)
+#if canImport(Glibc)
     import Glibc
 #endif
 

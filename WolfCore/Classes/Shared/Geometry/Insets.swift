@@ -42,13 +42,13 @@ public struct Insets<T: BinaryFloatingPoint> {
     }
 }
 
-#if !os(Linux)
+#if canImport(CoreGraphics)
     import CoreGraphics
 
     public typealias CGInsets = Insets<CGFloat>
 #endif
 
-#if os(iOS) || os(watchOS) || os(tvOS)
+#if canImport(UIKit)
     import UIKit
 
     extension Insets where T == CGFloat {

@@ -6,13 +6,13 @@
 //  Copyright © 2016 WolfMcNally.com. All rights reserved.
 //
 
-#if os(Linux)
+#if canImport(COpenSSL)
     import COpenSSL
     typealias KeyRef = UnsafeMutablePointer<RSA>
     typealias Bignum = bignum_st
     typealias BignumRef = UnsafeMutablePointer<Bignum>
     typealias BignumGenCallback = bn_gencb_st
-#else
+#elseif canImport(Security)
     import Security
 #endif
 

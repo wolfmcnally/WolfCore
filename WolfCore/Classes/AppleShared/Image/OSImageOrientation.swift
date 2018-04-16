@@ -17,7 +17,7 @@
         case leftMirrored
         case rightMirrored
     }
-#else
+#elseif canImport(UIKit)
     import UIKit
     public typealias OSImageOrientation = UIImageOrientation
 #endif

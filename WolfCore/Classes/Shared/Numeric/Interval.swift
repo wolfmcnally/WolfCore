@@ -125,7 +125,7 @@ extension Float {
     public static let unit = Interval<Float>(0, 1)
 }
 
-#if !os(Linux)
+#if canImport(CoreGraphics)
     import CoreGraphics
 
     extension CGFloat {

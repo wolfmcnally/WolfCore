@@ -7,9 +7,9 @@
 //
 
 import CoreGraphics
-#if os(macOS)
+#if canImport(Cocoa)
     import Cocoa
-#else
+#elseif canImport(UIKit)
     import UIKit
 #endif
 

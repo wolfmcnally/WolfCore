@@ -6,16 +6,15 @@
 //  Copyright © 2017 WolfMcNally.com. All rights reserved.
 //
 
-#if os(macOS)
+#if canImport(Cocoa)
   import Cocoa
   public typealias OSColor = NSColor
-#else
+#elseif canImport(UIKit)
   import UIKit
   public typealias OSColor = UIColor
 #endif
 
-#if os(macOS)
-#else
+#if !os(macOS)
     @available(iOS 11.0, *)
     extension UIColor {
         public struct Name: ExtensibleEnumeratedName {

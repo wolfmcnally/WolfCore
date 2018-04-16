@@ -6,10 +6,10 @@
 //  Copyright © 2017 WolfMcNally.com. All rights reserved.
 //
 
-#if os(macOS)
+#if canImport(Cocoa)
     import Cocoa
     public typealias LayoutAttribute = NSLayoutConstraint.Attribute
-#else
+#elseif canImport(UIKit)
     import UIKit
     public typealias LayoutAttribute = NSLayoutAttribute
 #endif

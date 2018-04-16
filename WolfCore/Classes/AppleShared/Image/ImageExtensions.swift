@@ -30,8 +30,7 @@ extension OSImage {
     }
 }
 
-#if os(macOS)
-#else
+#if !os(macOS)
     extension OSImage {
         public struct Name: ExtensibleEnumeratedName {
             public let rawValue: String

@@ -18,9 +18,9 @@
 
 // MARK: Hashids options
 
-#if os(Linux)
+#if canImport(Glibc)
     import Glibc
-#else
+#elseif canImport(Darwin)
     import Darwin
 #endif
 

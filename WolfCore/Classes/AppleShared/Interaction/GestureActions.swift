@@ -6,7 +6,7 @@
 //  Copyright © 2016 WolfMcNally.com. All rights reserved.
 //
 
-#if os(macOS)
+#if canImport(AppKit)
     import AppKit
 #else
     import UIKit

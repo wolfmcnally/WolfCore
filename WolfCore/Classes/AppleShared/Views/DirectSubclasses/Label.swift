@@ -6,10 +6,10 @@
 //  Copyright © 2015 WolfMcNally.com. All rights reserved.
 //
 
-#if !os(macOS)
+#if canImport(UIKit)
     import UIKit
     public typealias OSLabel = UILabel
-#else
+#elseif canImport(Cocoa)
     import Cocoa
     public typealias OSLabel = NSTextField
 #endif

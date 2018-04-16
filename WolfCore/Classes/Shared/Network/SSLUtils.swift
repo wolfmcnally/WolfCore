@@ -6,12 +6,15 @@
 //  Copyright © 2016 WolfMcNally.com. All rights reserved.
 //
 
-#if os(Linux)
-    import Glibc
-    import COpenSSL
+#if canImport(Glibc)
+
+import Glibc
+import COpenSSL
 let OPENSSL_free = CRYPTO_free
-    typealias SSLContextRef = UnsafeMutablePointer<SSL_CTX>
-    typealias HostEntRef = UnsafeMutablePointer<hostent>?
+
+typealias SSLContextRef = UnsafeMutablePointer<SSL_CTX>
+typealias HostEntRef = UnsafeMutablePointer<hostent>?
+
 #endif
 
 public struct SSLError: Error, CustomStringConvertible {

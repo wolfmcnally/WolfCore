@@ -31,12 +31,13 @@ public func %% (left: Float, right: Int) -> String {
     return String(value: left, precision: right)
 }
 
-#if !os(Linux)
-#if os(macOS)
-    import Cocoa
-    #else
-    import UIKit
+#if canImport(Cocoa)
+import Cocoa
+#elseif canImport(UIKit)
+import UIKit
 #endif
+
+#if !os(Linux)
 
     extension String {
         public init(value: CGFloat, precision: Int) {
@@ -47,4 +48,5 @@ public func %% (left: Float, right: Int) -> String {
     public func %% (left: CGFloat, right: Int) -> String {
         return String(value: left, precision: right)
     }
+
 #endif

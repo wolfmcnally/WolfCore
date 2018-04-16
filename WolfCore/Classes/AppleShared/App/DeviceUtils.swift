@@ -7,12 +7,15 @@
 //
 
 import Foundation
-#if os(macOS)
-    import Cocoa
-    import CoreGraphics
-#else
-    import UIKit
-    import CoreGraphics
+
+#if canImport(Cocoa)
+import Cocoa
+#elseif canImport(UIKit)
+import UIKit
+#endif
+
+#if canImport(CoreGraphics)
+import CoreGraphics
 #endif
 
 public var osVersion: String {
@@ -43,14 +46,6 @@ public var deviceName: String {
         return UIDevice.current.name
     #endif
 }
-
-//#if os(Linux) || os(macOS)
-//    public let isSimulator = false
-//#elseif arch(i386) || arch(x86_64)
-//    public let isSimulator = true
-//#else
-//    public let isSimulator = false
-//#endif
 
 public var mainScreenScale: CGFloat {
     #if os(iOS) || os(tvOS)

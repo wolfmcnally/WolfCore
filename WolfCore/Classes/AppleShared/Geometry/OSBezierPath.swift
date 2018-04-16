@@ -8,10 +8,10 @@
 
 import Foundation
 
-#if os(macOS)
+#if canImport(Cocoa)
     import Cocoa
     public typealias OSBezierPath = NSBezierPath
-#else
+#elseif canImport(UIKit)
     import UIKit
     public typealias OSBezierPath = UIBezierPath
 #endif

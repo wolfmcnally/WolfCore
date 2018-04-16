@@ -6,7 +6,7 @@
 //  Copyright © 2015 WolfMcNally.com. All rights reserved.
 //
 
-#if os(macOS)
+#if canImport(Cocoa)
     import Cocoa
     public struct OSViewAnimationOptions: OptionSet {
         public let rawValue: UInt
@@ -39,7 +39,7 @@
         public static var transitionFlipFromTop     = OSViewAnimationOptions(rawValue: 6 << 20)
         public static var transitionFlipFromBottom  = OSViewAnimationOptions(rawValue: 7 << 20)
     }
-#else
+#elseif canImport(UIKit)
     import UIKit
     public typealias OSViewAnimationOptions = UIViewAnimationOptions
 #endif

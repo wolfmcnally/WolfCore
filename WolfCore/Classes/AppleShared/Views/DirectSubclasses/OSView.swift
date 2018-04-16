@@ -6,7 +6,7 @@
 //  Copyright © 2017 WolfMcNally.com. All rights reserved.
 //
 
-#if os(macOS)
+#if canImport(Cocoa)
     import Cocoa
     public typealias OSView = NSView
     public typealias OSStackView = NSStackView
@@ -21,7 +21,7 @@
             set { orientation = newValue }
         }
     }
-#else
+#elseif canImport(UIKit)
     import UIKit
     public typealias OSView = UIView
     public typealias OSStackView = UIStackView
