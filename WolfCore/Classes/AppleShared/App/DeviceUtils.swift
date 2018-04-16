@@ -44,13 +44,13 @@ public var deviceName: String {
     #endif
 }
 
-#if os(Linux) || os(macOS)
-    public let isSimulator = false
-#elseif arch(i386) || arch(x86_64)
-    public let isSimulator = true
-#else
-    public let isSimulator = false
-#endif
+//#if os(Linux) || os(macOS)
+//    public let isSimulator = false
+//#elseif arch(i386) || arch(x86_64)
+//    public let isSimulator = true
+//#else
+//    public let isSimulator = false
+//#endif
 
 public var mainScreenScale: CGFloat {
     #if os(iOS) || os(tvOS)

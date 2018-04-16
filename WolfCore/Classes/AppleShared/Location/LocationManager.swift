@@ -53,11 +53,13 @@ extension LocationManager: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         logTrace("didFail", group: .location)
         logError(error)
+        #if targetEnvironment(simulator)
         if let error = error as? CLError {
-            if error.code == .locationUnknown && isSimulator {
+            if error.code == .locationUnknown {
                 logWarning("You are running in the simulator without a location set in the scheme.")
             }
         }
+        #endif
         didFail?(error)
     }
 
