@@ -44,10 +44,16 @@ open class SegmentedControl: UISegmentedControl {
         didSet { syncFont() }
     }
 
+    #if os(iOS)
     @IBInspectable
     public var titleFontSize: CGFloat = UIFont.systemFontSize {
         didSet { syncFont() }
     }
+    #elseif os(tvOS)
+    public var titleFontSize: CGFloat = 14 {
+        didSet { syncFont() }
+    }
+    #endif
 
     #if TARGET_INTERFACE_BUILDER
 
