@@ -7,7 +7,6 @@
 
 import Foundation
 extension CodingUserInfoKey {
-    static let typedEncodeMap = CodingUserInfoKey(rawValue: "typedEncodeMap")!
     static let typedDecodeMap = CodingUserInfoKey(rawValue: "typedDecodeMap")!
 }
 
@@ -19,7 +18,10 @@ public struct TypedEncodeMap {
     }
 
     subscript(o: ObjectIdentifier) -> String {
-        return mappings[o]!
+        guard let typeName = mappings[o] else {
+            preconditionFailure("No typeName for type: \(o)")
+        }
+        return typeName
     }
 }
 
@@ -33,12 +35,16 @@ public struct TypedDecodeMap<T: Decodable> {
     }
 
     subscript(s: String) -> DecodeFunc {
-        return mappings[s]!
+        guard let decodeFunc = mappings[s] else {
+            preconditionFailure("No DecodeFunc for typeName: \(s)")
+        }
+        return decodeFunc
     }
 }
 
-public struct TypedEncodingContainer<T: Encodable>: Encodable {
+struct TypedEncodingContainer<T: Encodable>: Encodable {
     let value: T
+    let encodeMap: TypedEncodeMap
 
     enum CodingKeys: CodingKey {
         case type
@@ -47,7 +53,6 @@ public struct TypedEncodingContainer<T: Encodable>: Encodable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        let encodeMap = encoder.userInfo[.typedEncodeMap] as! TypedEncodeMap
         let typeName = encodeMap[ObjectIdentifier(type(of: value).self)]
         try container.encode(typeName, forKey: .type)
         try container.encode(value, forKey: .value)
@@ -97,20 +102,17 @@ extension PropertyListDecoder: FormatDecoder { }
 
 extension FormatEncoder {
     public func encodeTyped<T: Encodable>(_ object: T, encodeMap: TypedEncodeMap) throws -> Data {
-        userInfo[.typedEncodeMap] = encodeMap
-        let typedObject = TypedEncodingContainer<T>(value: object)
+        let typedObject = TypedEncodingContainer<T>(value: object, encodeMap: encodeMap)
         return try encode(typedObject)
     }
 
     public func encodeTypedArray<T: Encodable>(_ array: [T], encodeMap: TypedEncodeMap) throws -> Data {
-        userInfo[.typedEncodeMap] = encodeMap
-        let typedArray = array.map { return TypedEncodingContainer<T>(value: $0) }
+        let typedArray = array.map { return TypedEncodingContainer<T>(value: $0, encodeMap: encodeMap) }
         return try encode(typedArray)
     }
 
     public func encodeTypedCollection<T: Encodable>(_ collection: CodableTypedCollection<T>) throws -> Data {
-        userInfo[.typedEncodeMap] = type(of: collection).encodeMap
-        let typedArray = collection.map { return TypedEncodingContainer<T>(value: $0) }
+        let typedArray = collection.map { return TypedEncodingContainer<T>(value: $0, encodeMap: type(of: collection).encodeMap) }
         return try encode(typedArray)
     }
 }
@@ -142,6 +144,10 @@ open class CodableTypedCollection<ValueType: Codable>: Codable, RandomAccessColl
     public typealias ArrayType = [ValueType]
 
     var elements = ArrayType()
+
+    private enum CodingKeys: CodingKey {
+        case elements
+    }
 
     // Sequence
     public typealias Iterator = ArrayType.Iterator
@@ -183,6 +189,7 @@ open class CodableTypedCollection<ValueType: Codable>: Codable, RandomAccessColl
         return elements.replaceSubrange(subrange, with: newElements)
     }
 
+
     public init(_ elements: [ValueType]) {
         self.elements = elements
     }
@@ -193,6 +200,26 @@ open class CodableTypedCollection<ValueType: Codable>: Codable, RandomAccessColl
 
     open class var decodeMap: TypedDecodeMap<ValueType> {
         fatalError("Override in subclass.")
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var arrayContainer = encoder.unkeyedContainer()
+        let typedArray = elements.map { return TypedEncodingContainer<ValueType>(value: $0, encodeMap: type(of: self).encodeMap) }
+        for element in typedArray {
+            try arrayContainer.encode(element)
+        }
+    }
+
+    public required init(from decoder: Decoder) throws {
+        var arrayContainer = try decoder.unkeyedContainer()
+        let decodeMap = type(of: self).decodeMap
+        while !arrayContainer.isAtEnd {
+            let container = try arrayContainer.nestedContainer(keyedBy: TypedDecodingContainer<ValueType>.CodingKeys.self)
+            let typeName = try container.decode(String.self, forKey: .type)
+            let decodeFunc = decodeMap[typeName]
+            let value = try decodeFunc(container)
+            elements.append(value)
+        }
     }
 }
 

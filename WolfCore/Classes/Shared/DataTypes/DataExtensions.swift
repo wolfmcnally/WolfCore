@@ -31,3 +31,7 @@ extension Data {
         self.init(utf8: string |> UTF8.init)
     }
 }
+
+public func printDataAsString(_ data: Data) {
+    print(String(data: data, encoding: .utf8)!)
+}
