@@ -223,3 +223,235 @@ open class CodableTypedCollection<ValueType: Codable>: Codable, RandomAccessColl
     }
 }
 
+
+// --------------------------------------------------------------------------------------------
+// Working example
+// --------------------------------------------------------------------------------------------
+
+#if false
+
+class Thing: Codable, CustomStringConvertible {
+    var description: String {
+        return "Thing()"
+    }
+}
+
+class Person: Thing {
+    var name: String
+    var age: Int?
+
+    enum CodingKeys: CodingKey {
+        case name
+        case age
+    }
+
+    init(name: String, age: Int?) {
+        self.name = name
+        self.age = age
+        super.init()
+    }
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        age = try container.decodeIfPresent(Int.self, forKey: .age)
+        try super.init(from: decoder)
+    }
+
+    override func encode(to encoder: Encoder) throws {
+        try super.encode(to: encoder)
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+        try container.encodeIfPresent(age, forKey: .age)
+    }
+
+    override var description: String {
+        return "Person(name: \(name), age: \(String(describing: age)))"
+    }
+}
+
+class Place: Thing {
+    var name: String
+    var latitude: Double
+    var longitude: Double
+
+    enum CodingKeys: CodingKey {
+        case name
+        case latitude
+        case longitude
+    }
+
+    init(name: String, latitude: Double, longitude: Double) {
+        self.name = name
+        self.latitude = latitude
+        self.longitude = longitude
+        super.init()
+    }
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        latitude = try container.decode(Double.self, forKey: .latitude)
+        longitude = try container.decode(Double.self, forKey: .longitude)
+        try super.init(from: decoder)
+    }
+
+    override func encode(to encoder: Encoder) throws {
+        try super.encode(to: encoder)
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+        try container.encode(latitude, forKey: .latitude)
+        try container.encode(longitude, forKey: .longitude)
+    }
+
+    override var description: String {
+        return "Place(name: \(name), latitude: \(latitude), longitude: \(longitude))"
+    }
+}
+
+class ThingCollection: CodableTypedCollection<Thing>, CustomStringConvertible, ExpressibleByArrayLiteral {
+    override class var encodeMap: TypedEncodeMap {
+        return TypedEncodeMap( [
+            ObjectIdentifier(Person.self): "Person",
+            ObjectIdentifier(Place.self): "Place"
+            ] )
+    }
+
+    override class var decodeMap: TypedDecodeMap<Thing> {
+        return TypedDecodeMap<Thing>( [
+            "Person": { return try $0.decode(Person.self, forKey: .value) },
+            "Place": { return try $0.decode(Place.self, forKey: .value) }
+            ] )
+    }
+
+    var description: String {
+        let sa = elements.map { String(describing: $0) }
+        let s = sa.joined(separator: ", ")
+        return "ThingCollection(\(s))"
+    }
+
+    required init(arrayLiteral: Thing...) {
+        super.init(arrayLiteral)
+    }
+
+    public required init<S>(_ elements: S) where Thing == S.Element, S : Sequence {
+        super.init(elements)
+    }
+
+    public required init() {
+        super.init()
+    }
+
+    public required init(from decoder: Decoder) throws {
+        try super.init(from: decoder)
+    }
+}
+
+struct ThingsAndStuff: Codable {
+    var person: Person
+    var place: Place
+    var things: ThingCollection
+}
+
+// --------------------------------------------------------------------------------------------
+
+func testTypedCoding() {
+    let wolf = Person(name: "Wolf", age: 52)
+    let luna = Person(name: "Luna", age: nil)
+    let losAngeles = Place(name: "Los Angeles", latitude: 34.05, longitude: -118.24)
+    let atlanta = Place(name: "Atlanta", latitude: 33.75, longitude: -84.39)
+    let things: ThingCollection = [wolf, losAngeles]
+    let thingsAndStuff = ThingsAndStuff(person: luna, place: atlanta, things: things)
+
+    do {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+
+        let decoder = JSONDecoder()
+
+        print("✳️ Heterogenous array:")
+        things.forEach { print($0) }
+
+        print("✳️ Heterogenous array encoded:")
+        let encodedData = try encoder.encodeTypedCollection(things)
+        print(String(data: encodedData, encoding: .utf8)!)
+
+        print("✳️ Heterogenous array recovered:")
+        let decodedThings: ThingCollection = try decoder.decodeTypedCollection(from: encodedData)
+        decodedThings.forEach { print($0) }
+
+        print("✳️ Complex data type including heterogenous array:")
+        print(thingsAndStuff)
+
+        print("✳️ Complex data type encoded:")
+        let encodedComplexData = try encoder.encode(thingsAndStuff)
+        print(String(data: encodedComplexData, encoding: .utf8)!)
+
+        print("✳️ Complex data type recovered:")
+        let decodedComplex = try decoder.decode(ThingsAndStuff.self, from: encodedComplexData)
+        print(decodedComplex)
+    } catch {
+        print("🛑 \(error)")
+    }
+}
+
+#endif
+
+// Prints:
+//
+//    ✳️ Heterogenous array:
+//    Person(name: Wolf, age: Optional(52))
+//    Place(name: Los Angeles, latitude: 34.05, longitude: -118.24)
+//    ✳️ Heterogenous array encoded:
+//    [
+//      {
+//        "type" : "Person",
+//        "value" : {
+//          "name" : "Wolf",
+//          "age" : 52
+//        }
+//      },
+//      {
+//        "type" : "Place",
+//        "value" : {
+//          "name" : "Los Angeles",
+//          "longitude" : -118.23999999999999,
+//          "latitude" : 34.049999999999997
+//        }
+//      }
+//    ]
+//    ✳️ Heterogenous array recovered:
+//    Person(name: Wolf, age: Optional(52))
+//    Place(name: Los Angeles, latitude: 34.05, longitude: -118.24)
+//    ✳️ Complex data type including heterogenous array:
+//    ThingsAndStuff(person: Person(name: Luna, age: nil), place: Place(name: Atlanta, latitude: 33.75, longitude: -84.39), things: ThingCollection(Person(name: Wolf, age: Optional(52)), Place(name: Los Angeles, latitude: 34.05, longitude: -118.24)))
+//    ✳️ Complex data type encoded:
+//    {
+//      "place" : {
+//        "name" : "Atlanta",
+//        "longitude" : -84.390000000000001,
+//        "latitude" : 33.75
+//      },
+//      "things" : [
+//        {
+//          "type" : "Person",
+//          "value" : {
+//            "name" : "Wolf",
+//            "age" : 52
+//          }
+//        },
+//        {
+//          "type" : "Place",
+//          "value" : {
+//            "name" : "Los Angeles",
+//            "longitude" : -118.23999999999999,
+//            "latitude" : 34.049999999999997
+//          }
+//        }
+//      ],
+//      "person" : {
+//        "name" : "Luna"
+//      }
+//    }
+//    ✳️ Complex data type recovered:
+//    ThingsAndStuff(person: Person(name: Luna, age: nil), place: Place(name: Atlanta, latitude: 33.75, longitude: -84.39), things: ThingCollection(Person(name: Wolf, age: Optional(52)), Place(name: Los Angeles, latitude: 34.05, longitude: -118.24)))

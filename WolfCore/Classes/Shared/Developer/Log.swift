@@ -14,7 +14,7 @@ public enum LogLevel: Int, Comparable {
     case warning
     case error
 
-    private static let symbols = ["🔷", "✅", "⚠️", "🚫"]
+    private static let symbols = ["🔷", "✅", "⚠️", "🛑"]
 
     public var symbol: String {
         return type(of: self).symbols[rawValue]
@@ -47,7 +47,7 @@ public class Log {
     public var locationLevel = LogLevel.error
     public private(set) var groupLevels = [LogGroup: LogLevel]()
 
-    public func print<T>(_ message: @autoclosure () -> T, level: LogLevel, obj: Any? = nil, group: LogGroup? = nil, _ file: String = #file, _ line: Int = #line, _ function: String = #function) {
+    public func print<T>(_ message: @autoclosure () -> T, level: LogLevel, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
 
         // Don't print if the global level is below the level of this message.
         guard level >= self.level else { return }
@@ -101,8 +101,8 @@ public class Log {
         }
     }
 
-    private func shortenFile(_ file: String) -> String {
-        let components = file.components(separatedBy: "/")
+    private func shortenFile(_ file: StaticString) -> String {
+        let components = file.description.components(separatedBy: "/")
         let originalCount = components.count
         let newCount = min(3, components.count)
         let end = originalCount
@@ -112,43 +112,50 @@ public class Log {
         return result
     }
 
-    public func trace<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: String = #file, _ line: Int = #line, _ function: String = #function) {
+    public func trace<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
         self.print(message, level: .trace, obj: obj, group: group, file, line, function)
     }
 
-    public func info<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: String = #file, _ line: Int = #line, _ function: String = #function) {
+    public func info<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
         self.print(message, level: .info, obj: obj, group: group, file, line, function)
     }
 
-    public func warning<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: String = #file, _ line: Int = #line, _ function: String = #function) {
+    public func warning<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
         self.print(message, level: .warning, obj: obj, group: group, file, line, function)
     }
 
-    public func error<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: String = #file, _ line: Int = #line, _ function: String = #function) {
+    public func error<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
         self.print(message, level: .error, obj: obj, group: group, file, line, function)
     }
 }
 
-public func logTrace<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: String = #file, _ line: Int = #line, _ function: String = #function) {
+public func logTrace<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
     #if !NO_LOG
         logger?.trace(message, obj: obj, group: group, file, line, function)
     #endif
 }
 
-public func logInfo<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: String = #file, _ line: Int = #line, _ function: String = #function) {
+public func logInfo<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
     #if !NO_LOG
         logger?.info(message, obj: obj, group: group, file, line, function)
     #endif
 }
 
-public func logWarning<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: String = #file, _ line: Int = #line, _ function: String = #function) {
+public func logWarning<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
     #if !NO_LOG
         logger?.warning(message, obj: obj, group: group, file, line, function)
     #endif
 }
 
-public func logError<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: String = #file, _ line: Int = #line, _ function: String = #function) {
+public func logError<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
     #if !NO_LOG
         logger?.error(message, obj: obj, group: group, file, line, function)
     #endif
+}
+
+public func logFatalError<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) -> Never {
+    #if !NO_LOG
+        logger?.error(message, obj: obj, group: group, file, line, function)
+    #endif
+    fatalError(String(describing: message()), file: file, line: line)
 }
