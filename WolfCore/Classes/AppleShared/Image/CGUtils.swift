@@ -43,16 +43,16 @@ public func rotateContext(_ context: CGContext, by angle: CGFloat, around point:
     context.concatenate(context.ctm.rotated(by: angle, around: point))
 }
 
-public func drawPlaceholderRect(_ rect: CGRect, lineWidth: CGFloat = 1.0, color: OSColor? = OSColor(white: 0.5, alpha: 0.5)) {
+public func drawPlaceholderRect(_ rect: CGRect, lineWidth: CGFloat = 1, color: OSColor? = nil) {
+    let color = color ?? OSColor(white: 0.5, alpha: 0.5)
     drawIntoCurrentContext { context in
         context.setLineWidth(lineWidth)
-        if let color = color {
-            context.setStrokeColor(color.cgColor)
-        }
+        context.setStrokeColor(color.cgColor)
         let rect = rect.insetBy(dx: lineWidth / 2, dy: lineWidth / 2)
         context.stroke(rect)
         context.setLineCap(.round)
         let path = OSBezierPath()
+        path.lineWidth = lineWidth
         path.move(to: rect.minXminY)
         path.addLine(to: rect.maxXmaxY)
         path.move(to: rect.maxXminY)

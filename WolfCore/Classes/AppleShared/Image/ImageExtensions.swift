@@ -190,6 +190,39 @@ extension OSImage {
     }
 }
 
+extension OSImage {
+    private static func newPulseFrameImage(size: CGSize, color1: Color, color2: Color, holdUntil: Frac, fadeAt: Frac, phase: Frac) -> OSImage {
+        return newImage(withSize: size) { context in
+            let center = size.bounds.midXmidY
+            let radius = min(size.width, size.height) / 2
+            let shading = Shading(start: center, startRadius: 0, end: center, endRadius: radius) { frac in
+                guard frac > holdUntil else { return color1 }
+
+                let phasedFrac = (frac + (1 - phase)).truncatingRemainder(dividingBy: 1)
+                let baseColor = blend(from: color2, to: color1, at: phasedFrac)
+                let color: Color
+                if frac <= fadeAt {
+                    color = baseColor
+                } else {
+                    let fadeFrac = easeIn(frac.lerpedToFrac(from: fadeAt .. 1))
+                    color = blend(from: baseColor, to: .clear, at: fadeFrac)
+                }
+                return color
+            }
+            context.drawShading(shading)
+        }
+    }
+
+    public static func newAnimatedPulseImage(size: CGSize, color1: Color, color2: Color, holdUntil: Frac, fadeAt: Frac, steps: Int, duration: TimeInterval) -> OSImage {
+        var images = [OSImage]()
+        for frame in 0 ..< steps {
+            let phase: Frac = Double(frame).lerpedToFrac(from: 0 .. Double(steps))
+            images.append(newPulseFrameImage(size: size, color1: color1, color2: color2, holdUntil: holdUntil, fadeAt: fadeAt, phase: phase))
+        }
+        return OSImage.animatedImage(with: images, duration: duration)!
+    }
+}
+
 public struct ImageReference: ExtensibleEnumeratedName, Reference {
     public let rawValue: String
     public let bundle: Bundle

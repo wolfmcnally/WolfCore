@@ -9,6 +9,9 @@
 import UIKit
 
 open class PlaceholderView: View {
+    public var color: UIColor? { didSet { setNeedsDisplay() } }
+    public var lineWidth: CGFloat { didSet { setNeedsDisplay() } }
+    
     public private(set) var titleLabel = Label() • { 🍒 in
         🍒.font = .systemFont(ofSize: 12)
         🍒.textColor = .darkGray
@@ -28,7 +31,9 @@ open class PlaceholderView: View {
         titleLabel.text = title
     }
 
-    public init(title: String? = nil, backgroundColor: UIColor = .clear) {
+    public init(title: String? = nil, backgroundColor: UIColor? = nil, lineWidth: CGFloat = 1, color: UIColor? = nil) {
+        self.lineWidth = lineWidth
+        self.color = color
         super.init(frame: .zero)
         self.title = title
         self.backgroundColor = backgroundColor
@@ -36,6 +41,7 @@ open class PlaceholderView: View {
     }
 
     public required init?(coder aDecoder: NSCoder) {
+        lineWidth = 1
         super.init(coder: aDecoder)
     }
 
@@ -58,6 +64,6 @@ open class PlaceholderView: View {
 
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
-        drawPlaceholderRect(rect)
+        drawPlaceholderRect(rect, lineWidth: lineWidth, color: color)
     }
 }
