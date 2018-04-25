@@ -191,33 +191,32 @@ extension OSImage {
 }
 
 extension OSImage {
-    private static func newPulseFrameImage(size: CGSize, color1: Color, color2: Color, holdUntil: Frac, fadeAt: Frac, phase: Frac) -> OSImage {
+    private static func newPulseFrameImage(size: CGSize, color: Color, cycles: Double, holdUntil: Frac, fadeAt: Frac, phase: Frac) -> OSImage {
         return newImage(withSize: size) { context in
             let center = size.bounds.midXmidY
             let radius = min(size.width, size.height) / 2
+            let baseAlpha = color.alpha
             let shading = Shading(start: center, startRadius: 0, end: center, endRadius: radius) { frac in
-                guard frac > holdUntil else { return color1 }
+                guard frac > holdUntil else { return color }
 
-                let phasedFrac = (frac + (1 - phase)).truncatingRemainder(dividingBy: 1)
-                let baseColor = blend(from: color2, to: color1, at: phasedFrac)
-                let color: Color
+                let phasedAlpha = (easeIn(frac) * cycles + (1 - phase)).truncatingRemainder(dividingBy: 1)
+                let fadeAlpha: Double
                 if frac <= fadeAt {
-                    color = baseColor
+                    fadeAlpha = 1
                 } else {
-                    let fadeFrac = easeIn(frac.lerpedToFrac(from: fadeAt .. 1))
-                    color = blend(from: baseColor, to: .clear, at: fadeFrac)
+                    fadeAlpha = 1 - easeIn(frac.lerpedToFrac(from: fadeAt .. 1))
                 }
-                return color
+                return color.withAlphaComponent(baseAlpha * phasedAlpha * fadeAlpha)
             }
             context.drawShading(shading)
         }
     }
 
-    public static func newAnimatedPulseImage(size: CGSize, color1: Color, color2: Color, holdUntil: Frac, fadeAt: Frac, steps: Int, duration: TimeInterval) -> OSImage {
+    public static func newAnimatedPulseImage(size: CGSize, color: Color, cycles: Double = 1, holdUntil: Frac = 0, fadeAt: Frac, frames: Int, duration: TimeInterval) -> OSImage {
         var images = [OSImage]()
-        for frame in 0 ..< steps {
-            let phase: Frac = Double(frame).lerpedToFrac(from: 0 .. Double(steps))
-            images.append(newPulseFrameImage(size: size, color1: color1, color2: color2, holdUntil: holdUntil, fadeAt: fadeAt, phase: phase))
+        for frame in 0 ..< frames {
+            let phase: Frac = Double(frame).lerpedToFrac(from: 0 .. Double(frames))
+            images.append(newPulseFrameImage(size: size, color: color, cycles: cycles, holdUntil: holdUntil, fadeAt: fadeAt, phase: phase))
         }
         return OSImage.animatedImage(with: images, duration: duration)!
     }

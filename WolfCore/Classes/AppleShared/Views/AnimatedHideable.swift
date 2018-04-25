@@ -7,9 +7,9 @@
 //
 
 #if canImport(AppKit)
-    import AppKit
+import AppKit
 #elseif canImport(UIKit)
-    import UIKit
+import UIKit
 #endif
 
 public protocol AnimatedHideable: Hideable {
@@ -19,19 +19,19 @@ public protocol AnimatedHideable: Hideable {
 extension AnimatedHideable {
     public func hide(animated: Bool) {
         guard !isHidden else { return }
-        dispatchAnimated(animated) {
+        dispatchAnimated(animated, options: [.beginFromCurrentState]) {
             self.alpha = 0
-            }.then { _ in
-                self.hide()
-            }.run()
+        }.then { _ in
+            self.hide()
+        }.run()
     }
 
     public func show(animated: Bool) {
         guard isHidden else { return }
-        dispatchAnimated(animated) {
+        dispatchAnimated(animated, options: [.beginFromCurrentState]) {
             self.show()
             self.alpha = 1
-            }.run()
+        }.run()
     }
 
     public func showIf(_ condition: Bool, animated: Bool) {

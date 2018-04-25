@@ -196,11 +196,11 @@ extension Color {
         return OSColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: CGFloat(alpha))
     }
 
-    #if os(macOS)
+    #if canImport(AppKit)
     public var nsColor: NSColor {
         return osColor
     }
-    #elseif !os(Linux)
+    #elseif canImport(UIKit)
     public var uiColor: UIColor {
         return osColor
     }
