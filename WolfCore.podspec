@@ -18,17 +18,16 @@ The purpose of WolfCore is different than many third-party libraries. It neither
 
   s.swift_version = '4.1'
 
-  s.source_files = 'WolfCore/Classes/Shared/**/*'
-  s.dependency 'CommonCryptoModule'
-  s.dependency 'SwiftLint'
-
   s.ios.deployment_target = '9.3'
-  s.ios.source_files = 'WolfCore/Classes/iOS/**/*', 'WolfCore/Classes/iOSShared/**/*', 'WolfCore/Classes/AppleShared/**/*'
+  s.ios.source_files = 'WolfCore/Classes/Shared/**/*', 'WolfCore/Classes/iOS/**/*', 'WolfCore/Classes/iOSShared/**/*', 'WolfCore/Classes/AppleShared/**/*'
   s.ios.resources = 'WolfCore/Assets/*'
 
   s.macos.deployment_target = '10.13'
-  s.macos.source_files = 'WolfCore/Classes/macOS/**/*', 'WolfCore/Classes/AppleShared/**/*'
+  s.macos.source_files = 'WolfCore/Classes/Shared/**/*', 'WolfCore/Classes/macOS/**/*', 'WolfCore/Classes/AppleShared/**/*'
 
   s.tvos.deployment_target = '11.0'
-  s.tvos.source_files = 'WolfCore/Classes/tvOS/**/*', 'WolfCore/Classes/iOSShared/**/*', 'WolfCore/Classes/AppleShared/**/*'
+  s.tvos.source_files = 'WolfCore/Classes/Shared/**/*', 'WolfCore/Classes/tvOS/**/*', 'WolfCore/Classes/iOSShared/**/*', 'WolfCore/Classes/AppleShared/**/*'
+
+  s.dependency 'CommonCryptoModule'
+  s.dependency 'SwiftLint'
 end
