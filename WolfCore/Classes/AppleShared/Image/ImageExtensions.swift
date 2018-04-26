@@ -8,6 +8,11 @@
 
 import CoreGraphics
 import Foundation
+#if canImport(AppKit)
+import AppKit
+#elseif canImport(UIKit)
+import UIKit
+#endif
 
 extension OSImage {
     public var bounds: CGRect {
@@ -212,7 +217,7 @@ extension OSImage {
         }
     }
 
-    #if !os(macOS)  // macOS lacks NSImage.animatedImage
+    #if !os(macOS)
     public static func newAnimatedPulseImage(size: CGSize, color: Color, cycles: Double = 1, holdUntil: Frac = 0, fadeAt: Frac, frames: Int, duration: TimeInterval) -> OSImage {
         var images = [OSImage]()
         for frame in 0 ..< frames {
