@@ -212,6 +212,7 @@ extension OSImage {
         }
     }
 
+    #if !os(macOS)  // macOS lacks NSImage.animatedImage
     public static func newAnimatedPulseImage(size: CGSize, color: Color, cycles: Double = 1, holdUntil: Frac = 0, fadeAt: Frac, frames: Int, duration: TimeInterval) -> OSImage {
         var images = [OSImage]()
         for frame in 0 ..< frames {
@@ -220,6 +221,7 @@ extension OSImage {
         }
         return OSImage.animatedImage(with: images, duration: duration)!
     }
+    #endif
 }
 
 public struct ImageReference: ExtensibleEnumeratedName, Reference {
