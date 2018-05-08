@@ -36,47 +36,49 @@ open class ScrollingStackView: View {
         🍒.alignment = .fill
     }
 
+    public var stackViewInsets: UIEdgeInsets = .zero {
+        didSet { syncInsets() }
+    }
+
+    private var stackViewConstraints = Constraints()
+
     open override func setup() {
         super.setup()
-        setupKeyboardAvoidantView()
-        setupOuterStackView()
-        setupScrollView()
-        setupStackView()
-    }
 
-    public func flashScrollIndicators() {
-        scrollView.flashScrollIndicators()
-    }
+        self => [
+            keyboardAvoidantView => [
+                outerStackView => [
+                    scrollView => [
+                        stackView
+                    ]
+                ]
+            ]
+        ]
 
-    private func setupKeyboardAvoidantView() {
-        addSubview(keyboardAvoidantView)
         Constraints(
             keyboardAvoidantView.leadingAnchor == leadingAnchor,
             keyboardAvoidantView.trailingAnchor == trailingAnchor,
             keyboardAvoidantView.topAnchor == topAnchor,
             keyboardAvoidantView.bottomAnchor == bottomAnchor =&= UILayoutPriority.required - 1
         )
-    }
 
-    private func setupOuterStackView() {
-        keyboardAvoidantView.addSubview(outerStackView)
         outerStackView.constrainFrameToFrame()
+
+        syncInsets()
     }
 
-    private func setupScrollView() {
-        outerStackView.addArrangedSubview(scrollView)
-    }
-
-    private func setupStackView() {
-        scrollView.addSubview(stackView)
-        Constraints(
-            stackView.leadingAnchor == leadingAnchor,
-            stackView.trailingAnchor == trailingAnchor,
-
-            stackView.leadingAnchor == scrollView.leadingAnchor,
-            stackView.trailingAnchor == scrollView.trailingAnchor,
-            stackView.topAnchor == scrollView.topAnchor,
-            stackView.bottomAnchor == scrollView.bottomAnchor
+    private func syncInsets() {
+        stackViewConstraints ◊= Constraints(
+            stackView.leadingAnchor == leadingAnchor + stackViewInsets.left,
+            stackView.trailingAnchor == trailingAnchor - stackViewInsets.right,
+            stackView.leadingAnchor == scrollView.leadingAnchor + stackViewInsets.left,
+            stackView.trailingAnchor == scrollView.trailingAnchor - stackViewInsets.right,
+            stackView.topAnchor == scrollView.topAnchor + stackViewInsets.top,
+            stackView.bottomAnchor == scrollView.bottomAnchor - stackViewInsets.bottom
         )
+    }
+
+    public func flashScrollIndicators() {
+        scrollView.flashScrollIndicators()
     }
 }

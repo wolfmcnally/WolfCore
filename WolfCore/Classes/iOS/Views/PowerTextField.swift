@@ -12,7 +12,7 @@ import UIKit
 //public class PlaceholderLabel: Label { }
 
 public class PowerTextField: View, Editable {
-    public let name: String
+    public var name: String
     public let contentType: ContentType
     public let numberOfLines: Int
     public let backgroundView: BackgroundView
@@ -30,8 +30,8 @@ public class PowerTextField: View, Editable {
         case password       // A password (numberOfLines must be 1)
     }
 
-    public init(name: String, contentType: ContentType = .text, numberOfLines: Int = 1, backgroundView: BackgroundView? = nil) {
-        self.name = name
+    public init(name: String? = nil, contentType: ContentType = .text, numberOfLines: Int = 1, backgroundView: BackgroundView? = nil) {
+        self.name = name ?? "Untitled"
         self.contentType = contentType
         self.numberOfLines = numberOfLines
         self.backgroundView = backgroundView ?? BackgroundView()
@@ -52,6 +52,18 @@ public class PowerTextField: View, Editable {
             _ = textEditor.becomeFirstResponder()
         }
         syncToEditing(animated: animated)
+    }
+
+    public var clearsOnBeginEditing: Bool {
+        get {
+            guard let field = textEditor as? UITextField else { return false }
+            return field.clearsOnBeginEditing
+        }
+
+        set {
+            guard let field = textEditor as? UITextField else { preconditionFailure("Unsupported on multi-line fields.") }
+            field.clearsOnBeginEditing = newValue
+        }
     }
 
     public var textAlignment: NSTextAlignment = .natural {
@@ -122,13 +134,8 @@ public class PowerTextField: View, Editable {
     }
 
     public var text: String {
-        get {
-            return textEditor.plainText
-        }
-
-        set {
-            _setText(newValue, animated: false)
-        }
+        get { return textEditor.plainText }
+        set { _setText(newValue, animated: false) }
     }
 
     private func _setText(_ text: String, animated: Bool) {
@@ -162,8 +169,16 @@ public class PowerTextField: View, Editable {
 
         set {
             placeholderLabel.text = newValue
-            placeholderMessageLabel.text = newValue
+            syncMessageLabelText()
         }
+    }
+
+    private func syncMessageLabelText() {
+        guard let prompt = prompt else {
+            messageLabel.text = placeholder
+            return
+        }
+        messageLabel.text = prompt
     }
 
     public var icon: UIImage? {
@@ -192,21 +207,36 @@ public class PowerTextField: View, Editable {
     }
 
     public var showsCharacterCount: Bool = false {
-        didSet {
-            setNeedsUpdateConstraints()
-        }
+        didSet { setNeedsUpdateConstraints() }
     }
 
     public var showsValidationMessage: Bool = false {
+        didSet { setNeedsUpdateConstraints() }
+    }
+
+    public var prompt: String? {
         didSet {
+            syncMessageLabelText()
+            syncToShowsMessage()
             setNeedsUpdateConstraints()
+            if hasPrompt {
+                revealMessage(animated: false)
+            } else {
+                if showsPlaceholderMessage && placeholderHider.isLocked {
+                    revealMessage(animated: false)
+                } else {
+                    concealMessage(animated: false)
+                }
+            }
         }
     }
 
+    private var hasPrompt: Bool {
+        return prompt != nil
+    }
+
     public var showsPlaceholderMessage: Bool = false {
-        didSet {
-            setNeedsUpdateConstraints()
-        }
+        didSet { setNeedsUpdateConstraints() }
     }
 
     public var characterCountTemplate = "#{characterCount}/#{characterLimit}"
@@ -215,14 +245,19 @@ public class PowerTextField: View, Editable {
         return characterCountTemplate ¶ ["characterCount": String(characterCount), "characterLimit": characterLimit†, "charactersLeft": charactersLeft†]
     }
 
+    private var showsMessageLabel: Bool {
+        return showsPlaceholderMessage || hasPrompt
+    }
+
     private func syncToShowsMessage() {
-        if showsValidationMessage || showsPlaceholderMessage {
+        if showsValidationMessage || showsMessageLabel {
             messageContainerView.show()
             validationMessageLabel.isShown = showsValidationMessage
-            placeholderMessageLabel.isShown = showsPlaceholderMessage
+            messageLabel.isShown = showsMessageLabel
         } else {
             messageContainerView.hide()
         }
+        syncTopRowVisibility()
     }
 
     private func syncToShowsCharacterCount() {
@@ -232,6 +267,7 @@ public class PowerTextField: View, Editable {
         case true:
             characterCountLabel.show()
         }
+        syncBottomRowVisibility()
     }
 
     fileprivate func updateCharacterCount() {
@@ -280,27 +316,27 @@ public class PowerTextField: View, Editable {
     private func revealValidationMessage(animated: Bool) {
         dispatchAnimated(animated, delay: 0.1, options: .beginFromCurrentState) {
             self.validationMessageLabel.alpha = 1
-            self.placeholderMessageContainer.alpha = 0
+            self.messageHorizontalStackView.alpha = 0
             }.run()
     }
 
     private func concealValidationMessage(animated: Bool) {
         dispatchAnimated(animated, delay: 0.1, options: .beginFromCurrentState) {
             self.validationMessageLabel.alpha = 0
-            self.placeholderMessageContainer.alpha = 1
+            self.messageHorizontalStackView.alpha = 1
             }.run()
     }
 
-    private func revealPlaceholderMessage(animated: Bool) {
+    private func revealMessage(animated: Bool) {
         guard validationMessageLabel.alpha == 0 else { return }
         dispatchAnimated(animated, delay: 0.1, options: .beginFromCurrentState) {
-            self.placeholderMessageContainer.alpha = 1
+            self.messageHorizontalStackView.alpha = 1
             }.run()
     }
 
-    private func concealPlaceholderMessage(animated: Bool) {
+    private func concealMessage(animated: Bool) {
         dispatchAnimated(animated, delay: 0.1, options: .beginFromCurrentState) {
-            self.placeholderMessageContainer.alpha = 0
+            self.messageHorizontalStackView.alpha = 0
             }.run()
     }
 
@@ -391,35 +427,47 @@ public class PowerTextField: View, Editable {
     public var onChanged: ResponseBlock?
 
     @objc dynamic public var verticalSpacing: CGFloat {
-        get { return verticalStackView.spacing }
-        set { verticalStackView.spacing = newValue }
+        get {
+            return topRowSpacerView.height
+        }
+
+        set {
+            topRowSpacerView.height = newValue
+            bottomRowSpacerView.height = newValue
+        }
     }
 
-    private lazy var verticalStackView = VerticalStackView() • { 🍒 in
+    private lazy var mainVerticalStackView = VerticalStackView() • { 🍒 in
         🍒.alignment = .leading
     }
 
-    private lazy var topRowView = HorizontalStackView() • { 🍒 in
+    private lazy var topRowVerticalStackView = VerticalStackView()
+    private lazy var bottomRowVerticalStackView = VerticalStackView()
+    private lazy var middleRowContainerView = View()
+    private lazy var topRowSpacerView = SpacerView(width: noSize, height: 4)
+    private lazy var bottomRowSpacerView = SpacerView(width: noSize, height: 4)
+
+    private lazy var topRowHorizontalStackView = HorizontalStackView() • { 🍒 in
         🍒.alignment = .center
     }
 
-    private lazy var placeholderMessageContainer = HorizontalStackView() • { 🍒 in
+    private lazy var messageHorizontalStackView = HorizontalStackView() • { 🍒 in
         🍒.alignment = .center
         🍒.spacing = 10
         🍒.alpha = 0
     }
 
-    private lazy var bottomRowView = HorizontalStackView() • { 🍒 in
+    private lazy var bottomRowHorizontalStackView = HorizontalStackView() • { 🍒 in
         🍒.alignment = .center
     }
 
     @objc dynamic public var horizontalSpacing: CGFloat = 6 {
         didSet {
-            horizontalStackView.spacing = horizontalSpacing
+            middleRowHorizontalStackView.spacing = horizontalSpacing
         }
     }
 
-    private lazy var horizontalStackView = HorizontalStackView() • { 🍒 in
+    private lazy var middleRowHorizontalStackView = HorizontalStackView() • { 🍒 in
         🍒.spacing = self.horizontalSpacing
         🍒.alignment = .center
     }
@@ -428,6 +476,8 @@ public class PowerTextField: View, Editable {
 
     private lazy var messageSpacerView = SpacerView() • { 🍒 in
         🍒.setPriority(hugH: .defaultHigh, crH: .required)
+        🍒.height = 0
+        🍒.backgroundColor = .red
     }
 
     @objc dynamic public var validationMessageTextColor: UIColor? {
@@ -448,17 +498,17 @@ public class PowerTextField: View, Editable {
         🍒.alpha = 0
     }
 
-    @objc dynamic public var placeholderMessageTextColor: UIColor? {
-        get { return placeholderMessageLabel.textColor }
-        set { placeholderMessageLabel.textColor = newValue }
+    @objc dynamic public var messageTextColor: UIColor? {
+        get { return messageLabel.textColor }
+        set { messageLabel.textColor = newValue }
     }
 
-    @objc dynamic public var placeholderMessageFont: UIFont? {
-        get { return placeholderMessageLabel.font }
-        set { placeholderMessageLabel.font = newValue }
+    @objc dynamic public var messageFont: UIFont? {
+        get { return messageLabel.font }
+        set { messageLabel.font = newValue }
     }
 
-    private lazy var placeholderMessageLabel = Label() • { 🍒 in
+    private lazy var messageLabel = Label() • { 🍒 in
         🍒.setPriority(hugH: .required, crH: .required)
         🍒.adjustsFontSizeToFitWidth = true
         🍒.minimumScaleFactor = 0.5
@@ -592,18 +642,30 @@ public class PowerTextField: View, Editable {
 
     private var frameContentConstraints = Constraints()
     private func syncToFrameInsets() {
-        frameContentConstraints ◊= horizontalStackView.constrainFrameToFrame(insets: frameInsets)
+        frameContentConstraints ◊= middleRowHorizontalStackView.constrainFrameToFrame(insets: frameInsets)
     }
 
     public var topRightViews = [UIView]() {
         didSet {
-            topRightItemsView.removeAllSubviews()
-            topRightItemsView => topRightViews
+            topRightItemsHorizontalStackView.removeAllSubviews()
+            topRightItemsHorizontalStackView => topRightViews
+            syncTopRowVisibility()
         }
     }
 
-    private lazy var topRightItemsView = HorizontalStackView() • { 🍒 in
+    private lazy var topRightItemsHorizontalStackView = HorizontalStackView() • { 🍒 in
         🍒.spacing = 5
+    }
+
+    private func syncTopRowVisibility() {
+        guard topRightViews.count == 0 else { topRowVerticalStackView.show(); return }
+        guard messageContainerView.isHidden else { topRowVerticalStackView.show(); return }
+        topRowVerticalStackView.hide()
+    }
+
+    private func syncBottomRowVisibility() {
+        guard characterCountLabel.isHidden else { bottomRowVerticalStackView.show(); return }
+        bottomRowVerticalStackView.hide()
     }
 
     public override func setup() {
@@ -611,39 +673,43 @@ public class PowerTextField: View, Editable {
 
         syncToContentType()
         self => [
-            verticalStackView => [
-                topRowView => [
-                    messageSpacerView,
-                    messageContainerView => [
-                        validationMessageLabel,
-                        placeholderMessageContainer => [
-                            placeholderMessageLabel,
-                            activityIndicatorView
-                        ]
+            mainVerticalStackView => [
+                topRowVerticalStackView => [
+                    topRowHorizontalStackView => [
+                        messageContainerView => [
+                            validationMessageLabel,
+                            messageHorizontalStackView => [
+                                messageLabel,
+                                activityIndicatorView
+                            ]
+                        ],
+                        topRightItemsHorizontalStackView
                     ],
-                    SpacerView() • {
-                        $0.width = noSize
-                        $0.setPriority(crH: .defaultLow)
-                    },
-                    topRightItemsView
+                    topRowSpacerView
                 ],
-                backgroundView => [
-                    horizontalStackView => [
+                middleRowContainerView => [
+                    backgroundView,
+                    middleRowHorizontalStackView => [
                         iconView,
                         textEditorView,
                         clearButtonView,
                         toggleSecureTextEntryButton
                     ]
                 ],
-                bottomRowView => [
-                    characterCountLabel
+                bottomRowVerticalStackView => [
+                    bottomRowSpacerView,
+                    bottomRowHorizontalStackView => [
+                        characterCountLabel
+                    ]
                 ]
             ],
             placeholderLabel
         ]
 
-        Constraints(backgroundView.widthAnchor == verticalStackView.widthAnchor)
-        verticalStackView.constrainFrameToFrame()
+        Constraints(middleRowContainerView.widthAnchor == mainVerticalStackView.widthAnchor)
+        backgroundView.constrainFrameToFrame()
+
+        mainVerticalStackView.constrainFrameToFrame()
         syncToFrameInsets()
         syncToSecureTextEntry()
         textViewHeightConstraint = textEditorView.constrainHeight(to: 20)
@@ -659,8 +725,7 @@ public class PowerTextField: View, Editable {
         )
 
         Constraints(
-            //messageContainerView.widthAnchor == topRowView.widthAnchor,
-            topRowView.widthAnchor == verticalStackView.widthAnchor
+            topRowHorizontalStackView.widthAnchor == mainVerticalStackView.widthAnchor
         )
 
         Constraints(
@@ -670,19 +735,22 @@ public class PowerTextField: View, Editable {
             messageContainerView.widthAnchor == validationMessageLabel.widthAnchor =&= .defaultLow,
             messageContainerView.widthAnchor >= validationMessageLabel.widthAnchor,
 
-            messageContainerView.topAnchor == placeholderMessageContainer.topAnchor,
-            messageContainerView.bottomAnchor == placeholderMessageContainer.bottomAnchor,
-            messageContainerView.leadingAnchor == placeholderMessageContainer.leadingAnchor,
-            messageContainerView.widthAnchor == placeholderMessageContainer.widthAnchor =&= .defaultLow,
-            messageContainerView.widthAnchor >= placeholderMessageContainer.widthAnchor
+            messageContainerView.topAnchor == messageHorizontalStackView.topAnchor,
+            messageContainerView.bottomAnchor == messageHorizontalStackView.bottomAnchor,
+            messageContainerView.leadingAnchor == messageHorizontalStackView.leadingAnchor,
+            messageContainerView.widthAnchor == messageHorizontalStackView.widthAnchor =&= .defaultLow,
+            messageContainerView.widthAnchor >= messageHorizontalStackView.widthAnchor
         )
 
         syncClearButton(animated: false)
+    }
 
-        let frameInsets = backgroundView.insets
-        messageSpacerView.width = frameInsets.left
-
-        //isDebug = true
+    public var isDebug: Bool = false {
+        didSet {
+            topRowSpacerView.backgroundColor = debugColor(.blue, when: isDebug)
+            bottomRowSpacerView.backgroundColor = debugColor(.blue, when: isDebug)
+            middleRowContainerView.backgroundColor = debugColor(.yellow, when: isDebug)
+        }
     }
 
     private var textViewHeightConstraint: Constraints!
@@ -729,10 +797,11 @@ public class PowerTextField: View, Editable {
         return Locker(
             onLocked: { [unowned self] in
                 self.concealPlaceholder(animated: true)
-                self.revealPlaceholderMessage(animated: true)
+                if !self.hasPrompt { self.revealMessage(animated: true) }
             }, onUnlocked: { [weak self] in
-                self?.revealPlaceholder(animated: true)
-                self?.concealPlaceholderMessage(animated: true)
+                guard let slf = self else { return }
+                slf.revealPlaceholder(animated: true)
+                if !slf.hasPrompt { slf.concealMessage(animated: true) }
         })
     }()
 

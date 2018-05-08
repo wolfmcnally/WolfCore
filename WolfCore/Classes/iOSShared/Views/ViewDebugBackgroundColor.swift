@@ -12,7 +12,7 @@
     import UIKit
 #endif
 
-public func debugColor(when isDebug: Bool, debug debugColor: OSColor = .red, normal normalColor: OSColor = .clear) -> OSColor {
+public func debugColor(_ debugColor: OSColor = .red, normal normalColor: OSColor = .clear, when isDebug: Bool = true) -> OSColor {
     guard isDebug else { return normalColor }
     let n = Color(normalColor)
     let d = Color(debugColor)

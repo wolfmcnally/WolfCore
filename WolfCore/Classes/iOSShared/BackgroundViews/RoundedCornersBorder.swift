@@ -33,16 +33,20 @@ public struct RoundedCornersBorder: Border {
         return UIEdgeInsets(all: inset)
     }
 
+    private var effectiveLineWidth: CGFloat {
+        return strokeColor != nil ? lineWidth : 0
+    }
+
     public func makePath(in frame: CGRect) -> UIBezierPath {
-        let halfLineWidth = lineWidth / 2
+        let halfLineWidth = effectiveLineWidth / 2
         let clampedCornerRadius = Self.clampCornerRadius(cornerRadius, in: frame) - halfLineWidth
         let insetRect = frame.insetBy(dx: halfLineWidth, dy: halfLineWidth)
         let path = UIBezierPath(roundedRect: insetRect, cornerRadius: clampedCornerRadius)
-        path.lineWidth = lineWidth
+        path.lineWidth = effectiveLineWidth
         return path
     }
 
     public func makeInsets(in frame: CGRect?) -> UIEdgeInsets {
-        return Self.makeInsets(for: cornerRadius, lineWidth: lineWidth)
+        return Self.makeInsets(for: cornerRadius, lineWidth: effectiveLineWidth)
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 public class BordersTestView: View {
     public override func setup() {
         contentMode = .redraw
-        backgroundColor = debugColor(when: true, debug: .gray)
+        backgroundColor = debugColor(.gray, when: true)
         constrainSize(to: CGSize(width: 300, height: 300))
     }
 
