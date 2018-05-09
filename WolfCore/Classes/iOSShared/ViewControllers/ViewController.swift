@@ -84,33 +84,33 @@ open class ViewController: UIViewController {
 
     #if !os(tvOS)
     public var leftItemAction: BarButtonItemAction? {
-    didSet {
-    navigationItem.leftBarButtonItem = leftItemAction?.item
-    }
+        didSet {
+            navigationItem.leftBarButtonItem = leftItemAction?.item
+        }
     }
 
     public var rightItemAction: BarButtonItemAction? {
-    didSet {
-    navigationItem.rightBarButtonItem = rightItemAction?.item
-    }
+        didSet {
+            navigationItem.rightBarButtonItem = rightItemAction?.item
+        }
     }
 
     private func setupNavBarActions() {
-    if let leftItemAction = newLeftItemAction() {
-    self.leftItemAction = leftItemAction
-    }
+        if let leftItemAction = newLeftItemAction() {
+            self.leftItemAction = leftItemAction
+        }
 
-    if let rightItemAction = newRightItemAction() {
-    self.rightItemAction = rightItemAction
-    }
+        if let rightItemAction = newRightItemAction() {
+            self.rightItemAction = rightItemAction
+        }
     }
 
     open func newLeftItemAction() -> BarButtonItemAction? {
-    return nil
+        return nil
     }
 
     open func newRightItemAction() -> BarButtonItemAction? {
-    return nil
+        return nil
     }
     #endif
 }
