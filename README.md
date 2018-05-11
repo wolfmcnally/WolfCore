@@ -9,7 +9,7 @@ WolfCore is a library of conveniences for constructing Swift applications in iOS
 
 ## Requirements
 
-WolfCore is written in Swift 4.0.
+WolfCore is written in Swift 4.1.
 
 ## Installation
 
@@ -69,7 +69,7 @@ As programmers we’re used to dealing with conceptual boxes-within-boxes. My ho
 
 I truly appreciate the cornucopia of open-source software. Almost every project I do incoporates one or more third-party open-source libraries. What distinguishes WolfCore from other open-source software frameworks and libraries is that while those libraries are often aimed at providing specific functionality, WolfCore is aimed at providing general convenience in a myriad of tasks I commonly encounter when writing apps.
 
-What do I mean by “convenience?” 
+What do I mean by “convenience?”
 
 * Do it DRY
 * Do it Best
@@ -123,18 +123,18 @@ This is an example of a simple, robust, reusable solution that I use in virtuall
 ```swift
 class MyView: UIView {
     var tapRecognizer: UITapGestureRecognizer!
-    
+
     func addTapAction() {
         tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: #selector(.handleTap))
         addGestureRecognizer(tapRecognizer)
     }
-    
+
     func removeTapAction() {
         removeGestureRecognizer(tapRecognizer)
         tapRecognizer = nil
     }
-    
+
     @objc func handleTap() {
         print("tapped!")
     }
@@ -146,13 +146,13 @@ class MyView: UIView {
 ```swift
 class MyView: UIView {
     var tapAction: GestureRecognizerAction!
-    
+
     func addTapAction() {
         tapAction = addAction(for: UITapGestureRecognizer()) { _ in
             print("tapped")
         }
     }
-    
+
     func removeTapAction() {
         tapAction = nil
     }
