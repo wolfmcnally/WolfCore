@@ -28,6 +28,7 @@ public class PowerTextField: View, Editable {
         case social         // A social-media handle
         case date           // A date
         case password       // A password (numberOfLines must be 1)
+        case url
     }
 
     public init(name: String? = nil, contentType: ContentType = .text, numberOfLines: Int = 1, backgroundView: BackgroundView? = nil) {
@@ -813,11 +814,15 @@ public class PowerTextField: View, Editable {
     private var keyboardSwitchView: SegmentedAccessoryInputView!
 
     private func syncToContentType() {
-        func setEmailKeyboard() {
-            keyboardType = .emailAddress
+        func setRawText() {
             autocapitalizationType = .none
             spellCheckingType = .no
             autocorrectionType = .no
+        }
+
+        func setEmailKeyboard() {
+            keyboardType = .emailAddress
+            setRawText()
         }
 
         func setPhoneKeyboard() {
@@ -835,9 +840,7 @@ public class PowerTextField: View, Editable {
             spellCheckingType = .no
             autocorrectionType = .no
         case .rawText, .social:
-            autocapitalizationType = .none
-            spellCheckingType = .no
-            autocorrectionType = .no
+            setRawText()
         case .email:
             setEmailKeyboard()
         case .phone:
@@ -858,9 +861,10 @@ public class PowerTextField: View, Editable {
             datePicker = UIDatePicker()
         case .password:
             isSecureTextEntry = true
-            autocapitalizationType = .none
-            spellCheckingType = .no
-            autocorrectionType = .no
+            setRawText()
+        case .url:
+            keyboardType = .URL
+            setRawText()
         }
     }
 
