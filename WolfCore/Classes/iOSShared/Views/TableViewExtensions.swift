@@ -21,7 +21,7 @@ extension UITableView {
     public func syncDynamicContent(of cell: UITableViewCell, animated: Bool = true, scrollingToVisibleAt indexPath: IndexPath? = nil, with updates: @escaping Block) {
         dispatchAnimated(animated) {
             updates()
-            }.run()
+        }.run()
         dispatchAnimated(animated) {
             self.beginUpdates()
             cell.updateConstraintsIfNeeded()
@@ -30,7 +30,7 @@ extension UITableView {
             guard let indexPath = indexPath else { return }
             let cellFrame = self.rectForRow(at: indexPath)
             self.scrollRectToVisible(cellFrame, animated: animated)
-            }.run()
+        }.run()
     }
 
     public func performUpdates(using block: Block) {

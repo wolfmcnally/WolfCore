@@ -710,7 +710,14 @@ public class PowerTextField: View, Editable {
         Constraints(middleRowContainerView.widthAnchor == mainVerticalStackView.widthAnchor)
         backgroundView.constrainFrameToFrame()
 
-        mainVerticalStackView.constrainFrameToFrame()
+        Constraints(
+            mainVerticalStackView.leadingAnchor == leadingAnchor,
+            mainVerticalStackView.trailingAnchor == trailingAnchor,
+            mainVerticalStackView.topAnchor == topAnchor,
+            // Give the bottom a little flex, so if this field is in a StackView and then hidden, it can
+            // shrink gracefully and not break all it's constraints.
+            mainVerticalStackView.bottomAnchor == bottomAnchor =&= .defaultLow
+        )
         syncToFrameInsets()
         syncToSecureTextEntry()
         textViewHeightConstraint = textEditorView.constrainHeight(to: 20)
