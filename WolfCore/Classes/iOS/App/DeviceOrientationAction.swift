@@ -15,7 +15,7 @@ public class DeviceOrientationAction {
 
     public init(action: @escaping ResponseBlock) {
         self.action = action
-        notificationAction = NotificationAction(name: .UIDeviceOrientationDidChange) { [unowned self] _ in
+        notificationAction = NotificationAction(name: UIDevice.orientationDidChangeNotification) { [unowned self] _ in
             self.action(UIDevice.current.orientation)
         }
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()

@@ -1,5 +1,5 @@
 //
-//  LayoutRelation.swift
+//  NSLayoutConstraint.Relation.swift
 //  WolfCore
 //
 //  Created by Wolf McNally on 6/25/17.
@@ -8,13 +8,11 @@
 
 #if canImport(AppKit)
     import AppKit
-    public typealias LayoutRelation = NSLayoutConstraint.Relation
 #elseif canImport(UIKit)
     import UIKit
-    public typealias LayoutRelation = NSLayoutRelation
 #endif
 
-public func string(forRelation relation: LayoutRelation) -> String {
+public func string(forRelation relation: NSLayoutConstraint.Relation) -> String {
     let result: String
     switch relation {
     case .equal:

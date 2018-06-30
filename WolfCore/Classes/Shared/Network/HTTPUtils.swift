@@ -197,14 +197,14 @@ public class HTTP {
                 case let error as DescriptiveError:
                     if error.isCancelled {
                         inFlightTracker?.end(withToken: token, result: Result<Void>.canceled)
-                        logTrace("\(token) retrieveData was cancelled")
+                        logTrace("\(token!) retrieveData was cancelled")
                     }
                     dispatchOnMain {
                         promise.fail(error)
                     }
                 default:
                     inFlightTracker?.end(withToken: token, result: Result<Error>.failure(error!))
-                    logError("\(token) retrieveData returned error")
+                    logError("\(token!) retrieveData returned error")
 
                     dispatchOnMain {
                         promise.fail(error!)
@@ -214,14 +214,14 @@ public class HTTP {
             }
 
             guard let httpResponse = response as? HTTPURLResponse else {
-                fatalError("\(token) improper response type: \(response†)")
+                fatalError("\(token!) improper response type: \(response†)")
             }
 
             guard data != nil else {
                 let error = HTTPError(request: request, response: httpResponse)
 
                 inFlightTracker?.end(withToken: token, result: Result<HTTPError>.failure(error))
-                logError("\(token) No data returned")
+                logError("\(token!) No data returned")
 
                 dispatchOnMain {
                     promise.fail(error)
@@ -233,7 +233,7 @@ public class HTTP {
                 let error = HTTPError(request: request, response: httpResponse, data: data)
 
                 inFlightTracker?.end(withToken: token, result: Result<HTTPError>.failure(error))
-                logError("\(token) Unknown response code: \(httpResponse.statusCode)")
+                logError("\(token!) Unknown response code: \(httpResponse.statusCode)")
 
                 dispatchOnMain {
                     promise.fail(error)
@@ -247,7 +247,7 @@ public class HTTP {
                 inFlightTracker?.end(withToken: token, result: Result<HTTPError>.failure(error))
 
                 if !expectedFailureStatusCodes.contains(statusCode) {
-                    logError("\(token) Failure response code: \(statusCode)")
+                    logError("\(token!) Failure response code: \(statusCode)")
                 }
 
                 dispatchOnMain {

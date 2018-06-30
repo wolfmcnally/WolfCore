@@ -121,7 +121,7 @@ public struct OrnamentedCornersBorder: Border {
         }
 
         // Apply the frame insets
-        let frame = UIEdgeInsetsInsetRect(frame, frameInsets)
+        let frame = frame.inset(by: frameInsets)
 
         let path = UIBezierPath()
         path.lineWidth = lineWidth

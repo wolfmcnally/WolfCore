@@ -54,11 +54,11 @@ public typealias AlertActionBlock = (UIAlertAction) -> Void
 
 public struct AlertAction {
     public let title: String
-    public let style: UIAlertActionStyle
+    public let style: UIAlertAction.Style
     public let identifier: String?
     public let handler: AlertActionBlock?
 
-    public init(title: String, style: UIAlertActionStyle = .default, identifier: String? = nil, handler: AlertActionBlock? = nil) {
+    public init(title: String, style: UIAlertAction.Style = .default, identifier: String? = nil, handler: AlertActionBlock? = nil) {
         self.title = title
         self.style = style
         self.identifier = identifier
@@ -84,7 +84,7 @@ extension UIViewController {
         }
     }
 
-    private func presentAlertController(withPreferredStyle style: UIAlertControllerStyle, title: String?, message: String?, identifier: String? = nil, popoverSourceView: UIView? = nil, popoverSourceRect: CGRect? = nil, popoverBarButtonItem: UIBarButtonItem? = nil, popoverPermittedArrowDirections: UIPopoverArrowDirection = .any, actions: [AlertAction], didAppear: Block?, didDisappear: Block?) {
+    private func presentAlertController(withPreferredStyle style: UIAlertController.Style, title: String?, message: String?, identifier: String? = nil, popoverSourceView: UIView? = nil, popoverSourceRect: CGRect? = nil, popoverBarButtonItem: UIBarButtonItem? = nil, popoverPermittedArrowDirections: UIPopoverArrowDirection = .any, actions: [AlertAction], didAppear: Block?, didDisappear: Block?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         if popoverSourceView != nil || popoverSourceRect != nil || popoverBarButtonItem != nil {
             if let popover = alert.popoverPresentationController {

@@ -19,5 +19,5 @@
     }
 #elseif canImport(UIKit)
     import UIKit
-    public typealias OSImageOrientation = UIImageOrientation
+public typealias OSImageOrientation = UIImage.Orientation
 #endif

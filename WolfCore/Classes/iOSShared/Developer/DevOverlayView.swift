@@ -22,7 +22,7 @@ public class DevOverlayView: View {
         bounds = window.frame
         constrainFrameToFrame(identifier: "DevOverlay")
         dispatchRepeatedOnMain(atInterval: 0.2) { _ in
-            window.bringSubview(toFront: self)
+            window.bringSubviewToFront(self)
         }
     }
 }

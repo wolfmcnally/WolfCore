@@ -1,5 +1,5 @@
 //
-//  LayoutAttribute.swift
+//  NSLayoutConstraint.Attribute.swift
 //  WolfCore
 //
 //  Created by Wolf McNally on 6/25/17.
@@ -8,14 +8,12 @@
 
 #if canImport(AppKit)
     import AppKit
-    public typealias LayoutAttribute = NSLayoutConstraint.Attribute
 #elseif canImport(UIKit)
     import UIKit
-    public typealias LayoutAttribute = NSLayoutAttribute
 #endif
 
 #if os(macOS)
-    public func string(forAttribute attribute: LayoutAttribute) -> String {
+    public func string(forAttribute attribute: NSLayoutConstraint.Attribute) -> String {
         let result: String
         switch attribute {
         case .left:
@@ -48,7 +46,7 @@
         return result
     }
 #else
-    public func string(forAttribute attribute: LayoutAttribute) -> String {
+    public func string(forAttribute attribute: NSLayoutConstraint.Attribute) -> String {
         let result: String
         switch attribute {
         case .left:

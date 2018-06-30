@@ -44,7 +44,7 @@ public class OverlayWindow: UIWindow {
     private func _setup() {
         __setup()
 
-        windowLevel = UIWindowLevelAlert + 100
+        windowLevel = UIWindow.Level(rawValue: UIWindow.Level.alert.rawValue + 100)
         frame = UIScreen.main.bounds
         rootViewController = OverlayViewController()
         show()

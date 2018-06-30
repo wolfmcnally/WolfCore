@@ -23,7 +23,7 @@ extension UIViewController {
 
             joiner.append(prefix(for: controller, frontController: frontController))
 
-            controller.childViewControllers.reversed().forEach { childController in
+            controller.children.reversed().forEach { childController in
                 stack.append((childController, level + 1, indent + "  |"))
             }
 

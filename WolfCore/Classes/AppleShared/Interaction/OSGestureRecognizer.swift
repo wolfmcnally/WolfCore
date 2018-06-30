@@ -17,7 +17,7 @@
     import UIKit
     public typealias OSGestureRecognizer = UIGestureRecognizer
     public typealias OSGestureRecognizerDelegate = UIGestureRecognizerDelegate
-    public typealias OSGestureRecognizerState = UIGestureRecognizerState
+public typealias OSGestureRecognizerState = UIGestureRecognizer.State
     public typealias OSTapClickGestureRecognizer = UITapGestureRecognizer
     public typealias OSPanGestureRecognizer = UIPanGestureRecognizer
 #endif

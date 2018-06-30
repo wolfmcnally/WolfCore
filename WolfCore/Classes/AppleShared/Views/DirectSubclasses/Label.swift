@@ -25,7 +25,7 @@ open class Label: OSLabel {
     set { stringValue = newValue }
     }
     #else
-    var tagTapActions = [NSAttributedStringKey: TagAction]()
+    var tagTapActions = [NSAttributedString.Key: TagAction]()
     var tapAction: GestureRecognizerAction!
 
     @IBInspectable public var scalesFontSize: Bool = false
@@ -92,12 +92,12 @@ open class Label: OSLabel {
 #if !os(macOS)
 
     extension Label {
-        public func setTapAction(forTag tag: NSAttributedStringKey, action: @escaping TagAction) {
+        public func setTapAction(forTag tag: NSAttributedString.Key, action: @escaping TagAction) {
             tagTapActions[tag] = action
             syncToTagTapActions()
         }
 
-        public func removeTapAction(forTag tag: NSAttributedStringKey) {
+        public func removeTapAction(forTag tag: NSAttributedString.Key) {
             tagTapActions[tag] = nil
             syncToTagTapActions()
         }

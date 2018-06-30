@@ -16,9 +16,9 @@ open class ControlAction<C: UIControl>: NSObject {
 
     public var action: ResponseBlock?
     public let control: ControlType
-    private let controlEvents: UIControlEvents
+    private let controlEvents: UIControl.Event
 
-    public init(control: ControlType, for controlEvents: UIControlEvents, action: ResponseBlock? = nil) {
+    public init(control: ControlType, for controlEvents: UIControl.Event, action: ResponseBlock? = nil) {
         self.control = control
         self.action = action
         self.controlEvents = controlEvents
@@ -35,7 +35,7 @@ open class ControlAction<C: UIControl>: NSObject {
     }
 }
 
-public func addControlAction<ControlType>(to control: ControlType, for controlEvents: UIControlEvents, action: ControlAction<ControlType>.ResponseBlock? = nil) -> ControlAction<ControlType> {
+public func addControlAction<ControlType>(to control: ControlType, for controlEvents: UIControl.Event, action: ControlAction<ControlType>.ResponseBlock? = nil) -> ControlAction<ControlType> {
     return ControlAction(control: control, for: controlEvents, action: action)
 }
 

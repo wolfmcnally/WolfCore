@@ -9,7 +9,7 @@
 import UIKit
 
 open class TextView: UITextView {
-    var tagTapActions = [NSAttributedStringKey: TagAction]()
+    var tagTapActions = [NSAttributedString.Key: TagAction]()
     var tapAction: GestureRecognizerAction!
 
     public typealias PredicateBlock = (UITextView) -> Bool
@@ -85,12 +85,12 @@ open class TextView: UITextView {
 }
 
 extension TextView {
-    public func setTapAction(forTag tag: NSAttributedStringKey, action: @escaping TagAction) {
+    public func setTapAction(forTag tag: NSAttributedString.Key, action: @escaping TagAction) {
         tagTapActions[tag] = action
         syncToTagTapActions()
     }
 
-    public func removeTapAction(forTag tag: NSAttributedStringKey) {
+    public func removeTapAction(forTag tag: NSAttributedString.Key) {
         tagTapActions[tag] = nil
         syncToTagTapActions()
     }

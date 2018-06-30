@@ -194,7 +194,7 @@ extension OSView {
 // swiftlint:enable cyclomatic_complexity
 
 #if !os(macOS)
-    extension UILayoutConstraintAxis: CustomStringConvertible {
+    extension NSLayoutConstraint.Axis: CustomStringConvertible {
         public var description: String {
             switch self {
             case .horizontal:

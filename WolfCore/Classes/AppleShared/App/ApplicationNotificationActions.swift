@@ -87,43 +87,43 @@
 #else
     public class ApplicationNotificationActions: NotificationActions {
         public var didEnterBackground: NotificationBlock? {
-            get { return getAction(for: .UIApplicationDidEnterBackground) }
-            set { setAction(using: newValue, object: nil, name: .UIApplicationDidEnterBackground) }
+            get { return getAction(for: UIApplication.didEnterBackgroundNotification) }
+            set { setAction(using: newValue, object: nil, name: UIApplication.didEnterBackgroundNotification) }
         }
 
         public var willEnterForeground: NotificationBlock? {
-            get { return getAction(for: .UIApplicationWillEnterForeground) }
-            set { setAction(using: newValue, object: nil, name: .UIApplicationWillEnterForeground) }
+            get { return getAction(for: UIApplication.willEnterForegroundNotification) }
+            set { setAction(using: newValue, object: nil, name: UIApplication.willEnterForegroundNotification) }
         }
 
         public var didFinishLaunching: NotificationBlock? {
-            get { return getAction(for: .UIApplicationDidFinishLaunching) }
-            set { setAction(using: newValue, object: nil, name: .UIApplicationDidFinishLaunching) }
+            get { return getAction(for: UIApplication.didFinishLaunchingNotification) }
+            set { setAction(using: newValue, object: nil, name: UIApplication.didFinishLaunchingNotification) }
         }
 
         public var didBecomeActive: NotificationBlock? {
-            get { return getAction(for: .UIApplicationDidBecomeActive) }
-            set { setAction(using: newValue, object: nil, name: .UIApplicationDidBecomeActive) }
+            get { return getAction(for: UIApplication.didBecomeActiveNotification) }
+            set { setAction(using: newValue, object: nil, name: UIApplication.didBecomeActiveNotification) }
         }
 
         public var willResignActive: NotificationBlock? {
-            get { return getAction(for: .UIApplicationWillResignActive) }
-            set { setAction(using: newValue, object: nil, name: .UIApplicationWillResignActive) }
+            get { return getAction(for: UIApplication.willResignActiveNotification) }
+            set { setAction(using: newValue, object: nil, name: UIApplication.willResignActiveNotification) }
         }
 
         public var didReceiveMemoryWarning: NotificationBlock? {
-            get { return getAction(for: .UIApplicationDidReceiveMemoryWarning) }
-            set { setAction(using: newValue, object: nil, name: .UIApplicationDidReceiveMemoryWarning) }
+            get { return getAction(for: UIApplication.didReceiveMemoryWarningNotification) }
+            set { setAction(using: newValue, object: nil, name: UIApplication.didReceiveMemoryWarningNotification) }
         }
 
         public var willTerminate: NotificationBlock? {
-            get { return getAction(for: .UIApplicationWillTerminate) }
-            set { setAction(using: newValue, object: nil, name: .UIApplicationWillTerminate) }
+            get { return getAction(for: UIApplication.willTerminateNotification) }
+            set { setAction(using: newValue, object: nil, name: UIApplication.willTerminateNotification) }
         }
 
         public var significantTimeChange: NotificationBlock? {
-            get { return getAction(for: .UIApplicationSignificantTimeChange) }
-            set { setAction(using: newValue, object: nil, name: .UIApplicationSignificantTimeChange) }
+            get { return getAction(for: UIApplication.significantTimeChangeNotification) }
+            set { setAction(using: newValue, object: nil, name: UIApplication.significantTimeChangeNotification) }
         }
     }
 #endif

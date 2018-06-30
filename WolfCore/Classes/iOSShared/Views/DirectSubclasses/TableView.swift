@@ -13,11 +13,11 @@ open class TableView: UITableView {
         self.init(frame: .zero, style: .plain)
     }
 
-    public convenience init(style: UITableViewStyle) {
+    public convenience init(style: UITableView.Style) {
         self.init(frame: .zero, style: style)
     }
 
-    public override init(frame: CGRect, style: UITableViewStyle) {
+    public override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         _setup()
     }

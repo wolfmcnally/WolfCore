@@ -28,7 +28,7 @@
     public typealias OSImageView = UIImageView
     public typealias OSEdgeInsets = UIEdgeInsets
     public let OSEdgeInsetsZero = UIEdgeInsets.zero
-    public let OSViewNoIntrinsicMetric = UIViewNoIntrinsicMetric
+    public let OSViewNoIntrinsicMetric = UIView.noIntrinsicMetric
 #endif
 
 public typealias ViewBlock = (OSView) -> Bool

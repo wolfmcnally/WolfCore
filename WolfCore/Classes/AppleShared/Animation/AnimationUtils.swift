@@ -41,7 +41,7 @@
     }
 #elseif canImport(UIKit)
     import UIKit
-    public typealias OSViewAnimationOptions = UIViewAnimationOptions
+    public typealias OSViewAnimationOptions = UIView.AnimationOptions
 #endif
 
 public let defaultAnimationDuration: TimeInterval = 0.4
@@ -91,7 +91,7 @@ public let defaultAnimationDuration: TimeInterval = 0.4
         }
     }
 
-    public func animationOptions(for curve: UIViewAnimationCurve) -> UIViewAnimationOptions {
+public func animationOptions(for curve: UIView.AnimationCurve) -> UIView.AnimationOptions {
         switch curve {
         case .easeInOut:
             return [.curveEaseInOut]

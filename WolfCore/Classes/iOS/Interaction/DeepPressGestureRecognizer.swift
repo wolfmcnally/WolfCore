@@ -19,7 +19,7 @@ public class DeepPressGestureRecognizer: UIGestureRecognizer {
 
     private var needsBeginGesture: Asynchronizer?
 
-    enum State {
+    enum DeepPressState {
         case notPressing
         case pressingLight
         case pressedHeavy
@@ -53,7 +53,7 @@ public class DeepPressGestureRecognizer: UIGestureRecognizer {
         needsBeginGesture?.cancel()
     }
 
-    private var myState: State = .notPressing {
+    private var myState: DeepPressState = .notPressing {
         didSet {
             //print(myState)
         }

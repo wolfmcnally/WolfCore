@@ -34,11 +34,11 @@ extension UIBarButtonItem {
 }
 
 extension UIBarButtonItem {
-    public convenience init(barButtonSystemItem systemItem: UIBarButtonSystemItem) {
+    public convenience init(barButtonSystemItem systemItem: UIBarButtonItem.SystemItem) {
         self.init(barButtonSystemItem: systemItem, target: nil, action: nil)
     }
 
-    public convenience init(title: String, style: UIBarButtonItemStyle = .plain) {
+    public convenience init(title: String, style: UIBarButtonItem.Style = .plain) {
         self.init(title: title, style: style, target: nil, action: nil)
     }
 }

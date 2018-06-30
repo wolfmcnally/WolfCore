@@ -31,7 +31,7 @@ public class GestureActions {
     }
 
     #if !os(macOS)
-    func setSwipeAction(named name: String, direction: UISwipeGestureRecognizerDirection, action: GestureBlock?) {
+    func setSwipeAction(named name: String, direction: UISwipeGestureRecognizer.Direction, action: GestureBlock?) {
         if let action = action {
             let recognizer = UISwipeGestureRecognizer()
             recognizer.direction = direction
@@ -41,7 +41,7 @@ public class GestureActions {
         }
     }
 
-    func setPressAction(named name: String, press: UIPressType, action: GestureBlock?) {
+    func setPressAction(named name: String, press: UIPress.PressType, action: GestureBlock?) {
         if let action = action {
             let recognizer = UITapGestureRecognizer()
             recognizer.allowedPressTypes = [NSNumber(value: press.rawValue)]

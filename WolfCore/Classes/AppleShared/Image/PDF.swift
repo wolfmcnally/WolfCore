@@ -79,7 +79,7 @@ public class PDF {
         }
     }
 
-    public func getImage(forPageAtIndex index: Int = 0, size: CGSize? = nil, scale: CGFloat = 0.0, renderingMode: UIImageRenderingMode = .automatic) -> UIImage {
+    public func getImage(forPageAtIndex index: Int = 0, size: CGSize? = nil, scale: CGFloat = 0.0, renderingMode: UIImage.RenderingMode = .automatic) -> UIImage {
         let page = getPage(atIndex: index)
         let size = size ?? getSize(ofPageAtIndex: index)
         let bounds = size.bounds
@@ -92,7 +92,7 @@ public class PDF {
         }
     }
 
-    public func getImage(forPageAtIndex index: Int = 0, fittingSize: CGSize, scale: CGFloat = 0.0, renderingMode: UIImageRenderingMode = .automatic) -> UIImage? {
+    public func getImage(forPageAtIndex index: Int = 0, fittingSize: CGSize, scale: CGFloat = 0.0, renderingMode: UIImage.RenderingMode = .automatic) -> UIImage? {
         guard fittingSize.width > 0 || fittingSize.height > 0 else { return nil }
         let size = getSize(ofPageAtIndex: index)
         let newSize = size.aspectFit(within: fittingSize)

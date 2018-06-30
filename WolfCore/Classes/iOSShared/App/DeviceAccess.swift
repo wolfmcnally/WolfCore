@@ -162,7 +162,7 @@ public struct DeviceAccess {
 extension UIViewController {
     public func presentAccessSheet(for accessItem: DeviceAccess.Item, popoverSourceView: UIView? = nil, popoverSourceRect: CGRect? = nil, popoverBarButtonItem: UIBarButtonItem? = nil, popoverPermittedArrowDirections: UIPopoverArrowDirection = .any, didAppear: Block? = nil, didDisappear: Block? = nil) {
         let openSettingsAction = AlertAction(title: "Open Settings"¶, identifier: "openSettings") { _ in
-            let url = URL(string: UIApplicationOpenSettingsURLString)!
+            let url = URL(string: UIApplication.openSettingsURLString)!
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url)
             } else {

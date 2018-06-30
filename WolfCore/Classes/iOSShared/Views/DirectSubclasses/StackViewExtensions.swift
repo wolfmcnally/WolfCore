@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIStackViewDistribution: CustomStringConvertible {
+extension UIStackView.Distribution: CustomStringConvertible {
     public var description: String {
         switch self {
         case .equalCentering:
@@ -25,7 +25,7 @@ extension UIStackViewDistribution: CustomStringConvertible {
     }
 }
 
-extension UIStackViewAlignment: CustomStringConvertible {
+extension UIStackView.Alignment: CustomStringConvertible {
     public var description: String {
         switch self {
         case .center:

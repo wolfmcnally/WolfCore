@@ -14,7 +14,7 @@ public class BlurBackgroundView: BackgroundView {
         return RoundedCornersBorder.makeInsets(for: cornerRadius, lineWidth: 0)
     }
 
-    public var blurEffectStyle: UIBlurEffectStyle! {
+    public var blurEffectStyle: UIBlurEffect.Style! {
         didSet { syncAppearance() }
     }
 
@@ -27,7 +27,7 @@ public class BlurBackgroundView: BackgroundView {
     }
 
     private lazy var blurView: UIVisualEffectView = {
-        let style: UIBlurEffectStyle
+        let style: UIBlurEffect.Style
 
         if #available(iOS 10.0, *) {
             style = .regular

@@ -12,15 +12,15 @@
     import UIKit
 #endif
 
-extension NSAttributedStringKey {
-    public static let overrideTintColorTag = NSAttributedStringKey("overrideTintColorTag")
+extension NSAttributedString.Key {
+    public static let overrideTintColorTag = NSAttributedString.Key("overrideTintColorTag")
 }
 
 #if os(watchOS)
-    extension NSAttributedStringKey {
-        public static let font = NSAttributedStringKey("NSFont")
-        public static let foregroundColor = NSAttributedStringKey("NSColor")
-        public static let paragraphStyle = NSAttributedStringKey("NSParagraphStyle")
+    extension NSAttributedString.Key {
+        public static let font = NSAttributedString.Key("NSFont")
+        public static let foregroundColor = NSAttributedString.Key("NSColor")
+        public static let paragraphStyle = NSAttributedString.Key("NSParagraphStyle")
     }
 #endif
 

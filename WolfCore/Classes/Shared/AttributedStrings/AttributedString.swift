@@ -10,7 +10,7 @@ import Foundation
 
 public typealias AttributedString = NSMutableAttributedString
 
-public typealias StringAttributes = [NSAttributedStringKey: Any]
+public typealias StringAttributes = [NSAttributedString.Key: Any]
 
 public func += (left: AttributedString, right: NSAttributedString) {
     left.append(right)

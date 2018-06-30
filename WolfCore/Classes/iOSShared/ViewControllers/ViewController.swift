@@ -76,8 +76,8 @@ open class ViewController: UIViewController {
         }
     }
 
-    open override func didMove(toParentViewController parent: UIViewController?) {
-        super.didMove(toParentViewController: parent)
+    open override func didMove(toParent parent: UIViewController?) {
+        super.didMove(toParent: parent)
     }
 
     open func setup() { }

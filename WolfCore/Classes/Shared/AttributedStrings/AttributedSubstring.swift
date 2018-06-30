@@ -43,11 +43,11 @@ public class AttributedSubstring {
         return attrString.attributesWithLongestEffectiveRange(at: strRange.lowerBound, in: rangeLimit)
     }
 
-    public func attribute(_ name: NSAttributedStringKey, in rangeLimit: StringRange? = nil) -> Any? {
+    public func attribute(_ name: NSAttributedString.Key, in rangeLimit: StringRange? = nil) -> Any? {
         return attrString.attribute(name, at: strRange.lowerBound, in: rangeLimit)
     }
 
-    public func attributeWithLongestEffectiveRange(_ name: NSAttributedStringKey, in rangeLimit: StringRange? = nil) -> (attribute: Any?, longestEffectiveRange: StringRange) {
+    public func attributeWithLongestEffectiveRange(_ name: NSAttributedString.Key, in rangeLimit: StringRange? = nil) -> (attribute: Any?, longestEffectiveRange: StringRange) {
         return attrString.attributeWithLongestEffectiveRange(name, at: strRange.lowerBound, in: rangeLimit)
     }
 
@@ -55,7 +55,7 @@ public class AttributedSubstring {
         attrString.enumerateAttributes(in: strRange, options: opts, using: block)
     }
 
-    public func enumerateAttribute(_ name: NSAttributedStringKey, options opts: NSAttributedString.EnumerationOptions = [], using block: (Any?, StringRange, AttributedSubstring) -> Bool) {
+    public func enumerateAttribute(_ name: NSAttributedString.Key, options opts: NSAttributedString.EnumerationOptions = [], using block: (Any?, StringRange, AttributedSubstring) -> Bool) {
         attrString.enumerateAttribute(name, in: strRange, options: opts, using: block)
     }
 
@@ -63,7 +63,7 @@ public class AttributedSubstring {
         attrString.setAttributes(attrs, range: strRange)
     }
 
-    public func addAttribute(_ name: NSAttributedStringKey, value: Any) {
+    public func addAttribute(_ name: NSAttributedString.Key, value: Any) {
         attrString.addAttribute(name, value: value, range: strRange)
     }
 
@@ -71,7 +71,7 @@ public class AttributedSubstring {
         attrString.addAttributes(attrs, range: strRange)
     }
 
-    public func removeAttribute(_ name: NSAttributedStringKey) {
+    public func removeAttribute(_ name: NSAttributedString.Key) {
         attrString.removeAttribute(name, range: strRange)
     }
 }
@@ -84,11 +84,11 @@ extension AttributedSubstring: CustomStringConvertible {
 }
 
 extension AttributedSubstring {
-    public func addTag(_ tag: NSAttributedStringKey) {
+    public func addTag(_ tag: NSAttributedString.Key) {
         self[tag] = true
     }
 
-    public func getRange(forTag tag: NSAttributedStringKey) -> StringRange? {
+    public func getRange(forTag tag: NSAttributedString.Key) -> StringRange? {
         let (value, longestEffectiveRange) = attributeWithLongestEffectiveRange(tag)
         if value is Bool {
             return longestEffectiveRange
@@ -97,7 +97,7 @@ extension AttributedSubstring {
         }
     }
 
-    public func getString(forTag tag: NSAttributedStringKey) -> String? {
+    public func getString(forTag tag: NSAttributedString.Key) -> String? {
         if let range = getRange(forTag: tag) {
             return String(attrString.string[range])
         } else {
@@ -105,11 +105,11 @@ extension AttributedSubstring {
         }
     }
 
-    public func hasTag(_ tag: NSAttributedStringKey) -> Bool {
+    public func hasTag(_ tag: NSAttributedString.Key) -> Bool {
         return getRange(forTag: tag) != nil
     }
 
-    public subscript(name: NSAttributedStringKey) -> Any? {
+    public subscript(name: NSAttributedString.Key) -> Any? {
         get {
             return attribute(name)
         }
@@ -122,7 +122,7 @@ extension AttributedSubstring {
         }
     }
 
-    public var tag: NSAttributedStringKey {
+    public var tag: NSAttributedString.Key {
         get { fatalError("Unimplemented.") }
         set { addTag(newValue) }
     }

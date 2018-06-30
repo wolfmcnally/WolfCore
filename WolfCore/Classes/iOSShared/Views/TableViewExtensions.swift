@@ -14,7 +14,7 @@ extension UITableView {
     }
 
     public func setupDynamicRowHeights(withEstimatedRowHeight estimatedRowHeight: CGFloat) {
-        rowHeight = UITableViewAutomaticDimension
+        rowHeight = UITableView.automaticDimension
         self.estimatedRowHeight = estimatedRowHeight
     }
 

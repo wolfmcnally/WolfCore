@@ -15,5 +15,5 @@
     }
 #elseif canImport(UIKit)
     import UIKit
-    public typealias OSImageRenderingMode = UIImageRenderingMode
+    public typealias OSImageRenderingMode = UIImage.RenderingMode
 #endif

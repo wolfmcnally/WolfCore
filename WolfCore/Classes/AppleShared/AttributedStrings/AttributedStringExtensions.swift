@@ -39,14 +39,14 @@ extension AttributedString {
         return (attrs, range)
     }
 
-    public func attribute(_ name: NSAttributedStringKey, at index: StringIndex, in rangeLimit: StringRange? = nil) -> Any? {
+    public func attribute(_ name: NSAttributedString.Key, at index: StringIndex, in rangeLimit: StringRange? = nil) -> Any? {
         let nsLocation = string.nsLocation(fromIndex: index)
         let nsRangeLimit = string.nsRange(from: rangeLimit) ?? string.nsRange
         let attr = attribute(name, at: nsLocation, longestEffectiveRange: nil, in: nsRangeLimit)
         return attr
     }
 
-    public func attributeWithLongestEffectiveRange(_ name: NSAttributedStringKey, at index: StringIndex, in rangeLimit: StringRange? = nil) -> (attribute: Any?, longestEffectiveRange: StringRange) {
+    public func attributeWithLongestEffectiveRange(_ name: NSAttributedString.Key, at index: StringIndex, in rangeLimit: StringRange? = nil) -> (attribute: Any?, longestEffectiveRange: StringRange) {
         let nsLocation = string.nsLocation(fromIndex: index)
         let nsRangeLimit = string.nsRange(from: rangeLimit) ?? string.nsRange
         var nsRange = NSRange()
@@ -63,7 +63,7 @@ extension AttributedString {
         }
     }
 
-    public func enumerateAttribute(_ name: NSAttributedStringKey, in enumerationRange: StringRange? = nil, options opts: NSAttributedString.EnumerationOptions = [], using block: (Any?, StringRange, AttributedSubstring) -> Bool) {
+    public func enumerateAttribute(_ name: NSAttributedString.Key, in enumerationRange: StringRange? = nil, options opts: NSAttributedString.EnumerationOptions = [], using block: (Any?, StringRange, AttributedSubstring) -> Bool) {
         let nsEnumerationRange = string.nsRange(from: enumerationRange) ?? string.nsRange
         enumerateAttribute(name, in: nsEnumerationRange, options: opts) { (value, nsRange, stop) in
             let range = self.string.stringRange(from: nsRange)!
@@ -81,7 +81,7 @@ extension AttributedString {
         setAttributes(attrs, range: nsRange)
     }
 
-    public func addAttribute(_ name: NSAttributedStringKey, value: Any, range: StringRange? = nil) {
+    public func addAttribute(_ name: NSAttributedString.Key, value: Any, range: StringRange? = nil) {
         let nsRange = string.nsRange(from: range) ?? string.nsRange
         addAttribute(name, value: value, range: nsRange)
     }
@@ -91,7 +91,7 @@ extension AttributedString {
         addAttributes(attrs, range: nsRange)
     }
 
-    public func removeAttribute(_ name: NSAttributedStringKey, range: StringRange? = nil) {
+    public func removeAttribute(_ name: NSAttributedString.Key, range: StringRange? = nil) {
         let nsRange = string.nsRange(from: range) ?? string.nsRange
         removeAttribute(name, range: nsRange)
     }
@@ -121,7 +121,7 @@ extension AttributedString {
         return AttributedSubstring(string: self, fromIndex: index)
     }
 
-    public func substrings(withTag tag: NSAttributedStringKey) -> [AttributedSubstring] {
+    public func substrings(withTag tag: NSAttributedString.Key) -> [AttributedSubstring] {
         var result = [AttributedSubstring]()
 
         var index = string.startIndex
@@ -140,21 +140,21 @@ extension AttributedString {
 }
 
 extension AttributedString {
-    public var tag: NSAttributedStringKey {
+    public var tag: NSAttributedString.Key {
         get { return substring().tag }
         set { substring().tag = newValue }
     }
 
-    public subscript(attribute: NSAttributedStringKey) -> Any? {
+    public subscript(attribute: NSAttributedString.Key) -> Any? {
         get { return substring()[attribute] }
         set { substring()[attribute] = newValue! }
     }
 
-    public func getString(forTag tag: NSAttributedStringKey, atIndex index: StringIndex) -> String? {
+    public func getString(forTag tag: NSAttributedString.Key, atIndex index: StringIndex) -> String? {
         return substring(from: index).getString(forTag: tag)
     }
 
-    public func has(tag: NSAttributedStringKey, atIndex index: StringIndex) -> Bool {
+    public func has(tag: NSAttributedString.Key, atIndex index: StringIndex) -> Bool {
         return substring(from: index).hasTag(tag)
     }
 

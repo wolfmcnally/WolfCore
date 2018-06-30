@@ -32,27 +32,27 @@ public class KeyboardNotificationActions {
     }
 
     public var willChangeFrame: KeyboardMovementBlock? {
-        get { return getAction(named: .UIKeyboardWillChangeFrame) }
-        set { setAction(named: .UIKeyboardWillChangeFrame, using: newValue) }
+        get { return getAction(named: UIResponder.keyboardWillChangeFrameNotification) }
+        set { setAction(named: UIResponder.keyboardWillChangeFrameNotification, using: newValue) }
     }
 
     public var willShow: KeyboardMovementBlock? {
-        get { return getAction(named: .UIKeyboardWillShow) }
-        set { setAction(named: .UIKeyboardWillShow, using: newValue) }
+        get { return getAction(named: UIResponder.keyboardWillShowNotification) }
+        set { setAction(named: UIResponder.keyboardWillShowNotification, using: newValue) }
     }
 
     public var didShow: KeyboardMovementBlock? {
-        get { return getAction(named: .UIKeyboardDidShow) }
-        set { setAction(named: .UIKeyboardDidShow, using: newValue) }
+        get { return getAction(named: UIResponder.keyboardDidShowNotification) }
+        set { setAction(named: UIResponder.keyboardDidShowNotification, using: newValue) }
     }
 
     public var willHide: KeyboardMovementBlock? {
-        get { return getAction(named: .UIKeyboardWillHide) }
-        set { setAction(named: .UIKeyboardWillHide, using: newValue) }
+        get { return getAction(named: UIResponder.keyboardWillHideNotification) }
+        set { setAction(named: UIResponder.keyboardWillHideNotification, using: newValue) }
     }
 
     public var didHide: KeyboardMovementBlock? {
-        get { return getAction(named: .UIKeyboardDidHide) }
-        set { setAction(named: .UIKeyboardDidHide, using: newValue) }
+        get { return getAction(named: UIResponder.keyboardDidHideNotification) }
+        set { setAction(named: UIResponder.keyboardDidHideNotification, using: newValue) }
     }
 }

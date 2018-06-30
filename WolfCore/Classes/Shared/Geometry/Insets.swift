@@ -78,4 +78,11 @@ public struct Insets<T: BinaryFloatingPoint> {
     public func + (lhs: UIEdgeInsets, rhs: UIEdgeInsets) -> UIEdgeInsets {
         return UIEdgeInsets(top: lhs.top + rhs.top, left: lhs.left + rhs.left, bottom: lhs.bottom + rhs.bottom, right: lhs.right + rhs.right)
     }
+
+    #if swift(>=4.2)
+    // Workaround for https://bugs.swift.org/browse/SR-7879
+    extension UIEdgeInsets {
+        static let zero = UIEdgeInsets()
+    }
+    #endif
 #endif

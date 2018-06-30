@@ -71,7 +71,7 @@ public class ActivityOverlayView: View {
     }
 
     public func show(animated: Bool) {
-        superview?.bringSubview(toFront: self)
+        superview?.bringSubviewToFront(self)
         backgroundColor = color
         super.show(animated: animated)
     }

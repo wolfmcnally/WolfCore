@@ -5,10 +5,10 @@
 //  Created by Wolf McNally on 3/29/18.
 //
 
-extension NSAttributedStringKey {
-    static let markdownBold = NSAttributedStringKey(rawValue: "markdownBold")
-    static let markdownItalic = NSAttributedStringKey(rawValue: "markdownItalic")
-    static let markdownStrikethrough = NSAttributedStringKey(rawValue: "markdownStrikethrough")
+extension NSAttributedString.Key {
+    static let markdownBold = NSAttributedString.Key(rawValue: "markdownBold")
+    static let markdownItalic = NSAttributedString.Key(rawValue: "markdownItalic")
+    static let markdownStrikethrough = NSAttributedString.Key(rawValue: "markdownStrikethrough")
 }
 
 extension AttributedString {
@@ -37,7 +37,7 @@ extension AttributedString {
     //    """
 
     public func applyMarkdownEmphasis() {
-        func replaceMatches(for regex: NSRegularExpression, adding attribute: NSAttributedStringKey) {
+        func replaceMatches(for regex: NSRegularExpression, adding attribute: NSAttributedString.Key) {
             let matches = regex.matches(in: string, options: [], range: string.nsRange)
 
             let attributes: StringAttributes = [
@@ -70,7 +70,7 @@ extension AttributedString {
             if attributes[.markdownStrikethrough] != nil {
                 substring.removeAttribute(.markdownStrikethrough)
                 substring.addAttributes([
-                    .strikethroughStyle: NSUnderlineStyle.styleSingle.rawValue
+                    .strikethroughStyle: NSUnderlineStyle.single.rawValue
                     ])
             }
             let font = attributes[.font] as! OSFont

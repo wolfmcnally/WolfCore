@@ -20,7 +20,7 @@ public class DisplayLink: Invalidatable {
         if #available(iOS 10.0, *) {
             displayLink.preferredFramesPerSecond = min(60, preferredFramesPerSecond)
         }
-        displayLink.add(to: RunLoop.main, forMode: .commonModes)
+        displayLink.add(to: RunLoop.main, forMode: .common)
     }
 
     deinit {

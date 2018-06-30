@@ -24,7 +24,7 @@ extension NSFont {
 import UIKit
 public typealias OSFont = UIFont
 public typealias OSFontDescriptor = UIFontDescriptor
-public typealias OSFontDescriptorSymbolicTraits = UIFontDescriptorSymbolicTraits
+public typealias OSFontDescriptorSymbolicTraits = UIFontDescriptor.SymbolicTraits
 #endif
 
 extension OSFontDescriptorSymbolicTraits {

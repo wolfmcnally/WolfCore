@@ -16,11 +16,11 @@ public class KeyboardMovement: CustomStringConvertible {
     }
 
     public var frameBegin: CGRect {
-        return (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        return (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
     }
 
     public var frameEnd: CGRect {
-        return (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        return (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
     }
 
     public func frameBegin(in view: UIView) -> CGRect {
@@ -32,19 +32,19 @@ public class KeyboardMovement: CustomStringConvertible {
     }
 
     public var animationDuration: TimeInterval {
-        return TimeInterval((notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).floatValue)
+        return TimeInterval((notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber).floatValue)
     }
 
-    public var animationCurve: UIViewAnimationCurve {
-        return UIViewAnimationCurve(rawValue: (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).intValue)!
+    public var animationCurve: UIView.AnimationCurve {
+        return UIView.AnimationCurve(rawValue: (notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as! NSNumber).intValue)!
     }
 
-    public var animationCurveOptions: UIViewAnimationOptions {
+    public var animationCurveOptions: UIView.AnimationOptions {
         return animationOptions(for: animationCurve)
     }
 
     public var isLocal: Bool {
-        return (notification.userInfo![UIKeyboardIsLocalUserInfoKey] as! NSNumber).boolValue
+        return (notification.userInfo![UIResponder.keyboardIsLocalUserInfoKey] as! NSNumber).boolValue
     }
 
     public var description: String {

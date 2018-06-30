@@ -21,7 +21,7 @@ extension UIWindow {
 
             func animateTransition() {
                 rootViewController = newController
-                bringSubview(toFront: snapshotImageView)
+                bringSubviewToFront(snapshotImageView)
                 if animated {
                     dispatchAnimated {
                         snapshotImageView.alpha = 0

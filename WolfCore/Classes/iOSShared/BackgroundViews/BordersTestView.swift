@@ -28,7 +28,7 @@ public class BordersTestView: View {
             UIColor.green.setStroke()
             rectPath.stroke()
 
-            let insetRect = UIEdgeInsetsInsetRect(rect, border.makeInsets(in: rect))
+            let insetRect = rect.inset(by: border.makeInsets(in: rect))
             let path = UIBezierPath(rect: insetRect)
             path.lineWidth = 0.5
             UIColor.white.setStroke()

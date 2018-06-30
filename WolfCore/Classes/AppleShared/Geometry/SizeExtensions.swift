@@ -14,7 +14,7 @@ import CoreGraphics
 #endif
 
 #if os(iOS) || os(tvOS)
-    public let noSize = UIViewNoIntrinsicMetric
+    public let noSize = UIView.noIntrinsicMetric
 #else
     public let noSize: CGFloat = -1.0
 #endif

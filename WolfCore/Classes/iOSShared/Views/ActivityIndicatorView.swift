@@ -9,10 +9,10 @@
 import UIKit
 
 public class ActivityIndicatorView: View {
-    private let style: UIActivityIndicatorViewStyle
+    private let style: UIActivityIndicatorView.Style
     private var hysteresis: Hysteresis!
 
-    public init(activityIndicatorStyle style: UIActivityIndicatorViewStyle = .white) {
+    public init(activityIndicatorStyle style: UIActivityIndicatorView.Style = .white) {
         self.style = style
 
         super.init(frame: .zero)
