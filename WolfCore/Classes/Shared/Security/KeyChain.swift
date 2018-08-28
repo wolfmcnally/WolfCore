@@ -21,7 +21,7 @@ public struct KeyChain {
         case wrongType
     }
 
-    public static func add(data: Data, for key: String, in account: String = Self.defaultAccount) throws {
+    public static func add(data: Data, for key: String, in account: String = KeyChain.defaultAccount) throws {
         let query: [NSString: Any] = [
             kSecClass: kSecClassGenericPassword,
             kSecAttrService: key,
@@ -35,11 +35,11 @@ public struct KeyChain {
         }
     }
 
-    public static func add(string: String, for key: String, in account: String = Self.defaultAccount) throws {
+    public static func add(string: String, for key: String, in account: String = KeyChain.defaultAccount) throws {
         try add(data: string |> Data.init, for: key, in: account)
     }
 
-    public static func delete(key: String, account: String = Self.defaultAccount) throws {
+    public static func delete(key: String, account: String = KeyChain.defaultAccount) throws {
         let query: [NSString: Any] = [
             kSecClass: kSecClassGenericPassword,
             kSecAttrService: key,
@@ -54,7 +54,7 @@ public struct KeyChain {
         }
     }
 
-    public static func update(data: Data, for key: String, in account: String = Self.defaultAccount, addIfNotFound: Bool = true) throws {
+    public static func update(data: Data, for key: String, in account: String = KeyChain.defaultAccount, addIfNotFound: Bool = true) throws {
         let query: [NSString: Any] = [
             kSecClass: kSecClassGenericPassword,
             kSecAttrAccount: account,
@@ -78,28 +78,28 @@ public struct KeyChain {
         }
     }
 
-    public static func updateObject<T: Codable>(_ object: T, for key: String, in account: String = Self.defaultAccount, addIfNotFound: Bool = true) throws {
+    public static func updateObject<T: Codable>(_ object: T, for key: String, in account: String = KeyChain.defaultAccount, addIfNotFound: Bool = true) throws {
         let data = try JSONEncoder().encode(object)
         try update(data: data, for: key, in: account, addIfNotFound: addIfNotFound)
     }
 
-//    public static func update(string: String, for key: String, in account: String = Self.defaultAccount, addIfNotFound: Bool = true) throws {
+//    public static func update(string: String, for key: String, in account: String = KeyChain.defaultAccount, addIfNotFound: Bool = true) throws {
 //        try update(data: string |> Data.init, for: key, in: account, addIfNotFound: addIfNotFound)
 //    }
 //
-//    public static func update(number: NSNumber, for key: String, in account: String = Self.defaultAccount, addIfNotFound: Bool = true) throws {
+//    public static func update(number: NSNumber, for key: String, in account: String = KeyChain.defaultAccount, addIfNotFound: Bool = true) throws {
 //        try update(data: NSKeyedArchiver.archivedData(withRootObject: number), for: key, in: account, addIfNotFound: addIfNotFound)
 //    }
 //
-//    public static func update(bool: Bool, for key: String, in account: String = Self.defaultAccount, addIfNotFound: Bool = true) throws {
+//    public static func update(bool: Bool, for key: String, in account: String = KeyChain.defaultAccount, addIfNotFound: Bool = true) throws {
 //        try update(number: (bool as NSNumber), for: key, in: account, addIfNotFound: addIfNotFound)
 //    }
 //
-//    public static func update(json: JSON, for key: String, in account: String = Self.defaultAccount, addIfNotFound: Bool = true) throws {
+//    public static func update(json: JSON, for key: String, in account: String = KeyChain.defaultAccount, addIfNotFound: Bool = true) throws {
 //        try update(data: json.data, for: key, in: account, addIfNotFound: addIfNotFound)
 //    }
 
-    public static func data(for key: String, in account: String = Self.defaultAccount) throws -> Data? {
+    public static func data(for key: String, in account: String = KeyChain.defaultAccount) throws -> Data? {
         let query: [NSString: Any] = [
             kSecClass: kSecClassGenericPassword,
             kSecAttrService: key,
@@ -125,32 +125,32 @@ public struct KeyChain {
         return data
     }
 
-    public static func object<T: Codable>(_ type: T.Type, for key: String, in account: String = Self.defaultAccount) throws -> T? {
+    public static func object<T: Codable>(_ type: T.Type, for key: String, in account: String = KeyChain.defaultAccount) throws -> T? {
         guard let data = try data(for: key, in: account) else {
             return nil
         }
         return try JSONDecoder().decode(type, from: data)
     }
 
-//    public static func string(for key: String, in account: String = Self.defaultAccount) throws -> String? {
+//    public static func string(for key: String, in account: String = KeyChain.defaultAccount) throws -> String? {
 //        guard let data = try data(for: key, in: account) else {
 //            return nil
 //        }
 //        return try data |> UTF8.init |> String.init
 //    }
 //
-//    public static func number(for key: String, in account: String = Self.defaultAccount) throws -> NSNumber? {
+//    public static func number(for key: String, in account: String = KeyChain.defaultAccount) throws -> NSNumber? {
 //        guard let data = try data(for: key, in: account) else {
 //            return nil
 //        }
 //        return NSKeyedUnarchiver.unarchiveObject(with: data) as? NSNumber
 //    }
 //
-//    public static func bool(for key: String, in account: String = Self.defaultAccount) throws -> Bool? {
+//    public static func bool(for key: String, in account: String = KeyChain.defaultAccount) throws -> Bool? {
 //        return try number(for: key, in: account) as? Bool
 //    }
 //
-//    public static func json(for key: String, in account: String = Self.defaultAccount) throws -> JSON? {
+//    public static func json(for key: String, in account: String = KeyChain.defaultAccount) throws -> JSON? {
 //        guard let data = try data(for: key, in: account) else { return nil }
 //        return try data |> JSON.init
 //    }

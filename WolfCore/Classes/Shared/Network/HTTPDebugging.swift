@@ -47,7 +47,7 @@ extension URLRequest {
                 .video: ".video",
                 .background: ".background",
                 .voice: ".voice",
-                .networkServiceTypeCallSignaling: ".networkServiceTypeCallSignaling"
+                .callSignaling: ".callSignaling"
             ]
         } else {
             networkServiceTypes = [

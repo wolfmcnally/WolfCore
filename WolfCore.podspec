@@ -16,7 +16,7 @@ The purpose of WolfCore is different than many third-party libraries. It neither
   s.source           = { :git => 'https://github.com/wolfmcnally/WolfCore.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/wolfmcnally'
 
-  s.swift_version = '4.1'
+  s.swift_version = '4.2'
 
   s.ios.deployment_target = '9.3'
   s.ios.source_files = 'WolfCore/Classes/Shared/**/*', 'WolfCore/Classes/iOS/**/*', 'WolfCore/Classes/iOSShared/**/*', 'WolfCore/Classes/AppleShared/**/*'
@@ -27,7 +27,4 @@ The purpose of WolfCore is different than many third-party libraries. It neither
 
   s.tvos.deployment_target = '11.0'
   s.tvos.source_files = 'WolfCore/Classes/Shared/**/*', 'WolfCore/Classes/tvOS/**/*', 'WolfCore/Classes/iOSShared/**/*', 'WolfCore/Classes/AppleShared/**/*'
-
-  s.dependency 'CommonCryptoModule'
-  s.dependency 'SwiftLint'
 end

@@ -35,7 +35,7 @@ public class ActivityOverlayView: View {
         return hysteresis.newCause()
     }
 
-    private lazy var activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge) • { 🍒 in
+    private lazy var activityIndicatorView = UIActivityIndicatorView(style: .whiteLarge) • { 🍒 in
         ‡🍒
         🍒.hidesWhenStopped = false
     }

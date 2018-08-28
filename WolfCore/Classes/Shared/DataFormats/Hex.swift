@@ -10,6 +10,9 @@ import Foundation
 
 /// Utilities for encoding and decoding hexadecimal encoded strings.
 public struct Hex {
+    private typealias `Self` = Hex
+    private static let hexDigits = Array("0123456789abcdef".utf16)
+
     public enum Error: Swift.Error {
         /// Thrown if the String cannot be decoded to Data.
         case invalid
@@ -58,14 +61,14 @@ public struct Hex {
     ///
     /// May be used as a monad transformer.
     public init(data: Data) {
-        var string = String()
+        var chars: [unichar] = []
+        chars.reserveCapacity(2 * data.count)
         for byte in data {
-            let s = String(byte, radix: 16, uppercase: false) |> String.paddedWithZeros(to: 2)
-            string += s
+            chars.append(Self.hexDigits[Int(byte / 16)])
+            chars.append(Self.hexDigits[Int(byte % 16)])
         }
-
         self.data = data
-        self.string = string
+        self.string = String(utf16CodeUnits: chars, count: chars.count)
     }
 
     /// Create a Hex from a single byte.

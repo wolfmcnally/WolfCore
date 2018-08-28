@@ -7,8 +7,13 @@
 //
 
 public struct IntPoint {
-    public var x: Int = 0
-    public var y: Int = 0
+    public var x: Int
+    public var y: Int
+
+    public init(x: Int = 0, y: Int = 0) {
+        self.x = x
+        self.y = y
+    }
 }
 
 extension IntPoint: CustomStringConvertible {
@@ -22,6 +27,9 @@ extension IntPoint {
 }
 
 extension IntPoint: Equatable {
+}
+
+extension IntPoint: Codable {
 }
 
 public func == (lhs: IntPoint, rhs: IntPoint) -> Bool {

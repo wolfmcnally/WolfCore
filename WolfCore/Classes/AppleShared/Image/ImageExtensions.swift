@@ -159,9 +159,10 @@ extension OSImage {
         return masked(with: OSBezierPath(ovalIn: bounds))
     }
 
-    public func scaled(toSize size: CGSize, isOpaque: Bool = false) -> OSImage {
+    public func scaled(toSize size: CGSize, isOpaque: Bool = false, interpolationQuality: CGInterpolationQuality = .`default`) -> OSImage {
         let targetSize = self.size.aspectFit(within: size)
-        return newImage(withSize: targetSize, isOpaque: isOpaque, scale: scale, renderingMode: self.renderingMode) { _ in
+        return newImage(withSize: targetSize, isOpaque: isOpaque, scale: scale, renderingMode: self.renderingMode) { context in
+            context.interpolationQuality = interpolationQuality
             self.draw(in: CGRect(origin: .zero, size: targetSize))
         }
     }

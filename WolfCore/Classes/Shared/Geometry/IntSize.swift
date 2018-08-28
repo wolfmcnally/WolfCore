@@ -7,8 +7,13 @@
 //
 
 public struct IntSize {
-    public var width: Int = 0
-    public var height: Int = 0
+    public var width: Int
+    public var height: Int
+
+    public init(width: Int = 0, height: Int = 0) {
+        self.width = width
+        self.height = height
+    }
 }
 
 extension IntSize: CustomStringConvertible {
@@ -17,7 +22,14 @@ extension IntSize: CustomStringConvertible {
     }
 }
 
+extension IntSize {
+    public static let zero = IntSize()
+}
+
 extension IntSize: Equatable {
+}
+
+extension IntSize: Codable {
 }
 
 public func == (lhs: IntSize, rhs: IntSize) -> Bool {

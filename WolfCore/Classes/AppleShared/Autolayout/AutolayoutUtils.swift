@@ -81,6 +81,19 @@ extension OSView {
         if let 🍒 = insets.bottom { constraints.append(bottomAnchor == viewBottomAnchor - 🍒 =&= priority =%= [identifier, "bottom"]) }
         return Constraints(activate: activate, identifier: identifier, constraints)
     }
+
+    @discardableResult public func constrainFrameToMargins(of view: OSView? = nil, topAnchor viewTopAnchor: NSLayoutYAxisAnchor? = nil, bottomAnchor viewBottomAnchor: NSLayoutYAxisAnchor? = nil, insets: CGInsets = .zero, priority: LayoutPriority = .required, activate: Bool = true, identifier: String? = nil) -> Constraints {
+        let view = checkTargetView(view: view)
+        let layoutMarginsGuide = view.layoutMarginsGuide
+        let viewTopAnchor = viewTopAnchor ?? layoutMarginsGuide.topAnchor
+        let viewBottomAnchor = viewBottomAnchor ?? layoutMarginsGuide.bottomAnchor
+        var constraints = [NSLayoutConstraint]()
+        if let 🍒 = insets.left { constraints.append(leadingAnchor == layoutMarginsGuide.leadingAnchor + 🍒 =&= priority =%= [identifier, "leading"]) }
+        if let 🍒 = insets.right { constraints.append(trailingAnchor == layoutMarginsGuide.trailingAnchor - 🍒 =&= priority =%= [identifier, "trailing"]) }
+        if let 🍒 = insets.top { constraints.append(topAnchor == viewTopAnchor + 🍒 =&= priority =%= [identifier, "top"]) }
+        if let 🍒 = insets.bottom { constraints.append(bottomAnchor == viewBottomAnchor - 🍒 =&= priority =%= [identifier, "bottom"]) }
+        return Constraints(activate: activate, identifier: identifier, constraints)
+    }
     #endif
 
     @discardableResult public func constrainCenter(to point: CGPoint, of view: OSView? = nil, priority: LayoutPriority = .required, activate: Bool = true, identifier: String? = nil) -> Constraints {
