@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WolfNesting
 
 public class ActivityOverlayView: View {
     public private(set) var hysteresis: Hysteresis!

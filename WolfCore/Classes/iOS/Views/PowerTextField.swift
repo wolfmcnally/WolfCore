@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WolfNesting
 
 //public class PlaceholderMessageLabel: Label { }
 //public class PlaceholderLabel: Label { }

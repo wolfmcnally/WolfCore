@@ -12,6 +12,7 @@
     import AppKit
 #endif
 
+import WolfNesting
 
 open class View: OSView {
     public convenience init() {

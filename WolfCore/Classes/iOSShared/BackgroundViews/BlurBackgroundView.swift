@@ -5,6 +5,8 @@
 //  Created by Wolf McNally on 5/7/18.
 //
 
+import WolfNesting
+
 public class BlurBackgroundView: BackgroundView {
     public var cornerRadius: CGFloat = 0 {
         didSet { setNeedsLayout() }

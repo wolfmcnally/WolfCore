@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WolfNesting
 
 public class ClearFieldButtonView: View {
     public private(set) lazy var button = ClearFieldButton()

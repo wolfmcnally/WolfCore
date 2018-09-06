@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WolfCore'
-  s.version          = '2.2.7'
+  s.version          = '2.2.8'
   s.summary          = 'A library of conveniences for Swift, iOS, MacOS, tvOS, WatchOS, and Linux.'
   s.description      = <<-DESC
 WolfCore is a library of conveniences for constructing Swift applications in iOS, tvOS, MacOS, WatchOS, and Linux. WolfCore is maintained by Wolf McNally.
@@ -29,4 +29,5 @@ The purpose of WolfCore is different than many third-party libraries. It neither
   s.tvos.source_files = 'WolfCore/Classes/Shared/**/*', 'WolfCore/Classes/tvOS/**/*', 'WolfCore/Classes/iOSShared/**/*', 'WolfCore/Classes/AppleShared/**/*'
 
   s.dependency 'WolfPipe'
+  s.dependency 'WolfNesting'
 end

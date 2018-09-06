@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WolfNesting
 
 public class ActivityIndicatorView: View {
     private let style: UIActivityIndicatorView.Style

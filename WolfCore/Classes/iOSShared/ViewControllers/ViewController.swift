@@ -8,6 +8,7 @@
 
 
 import UIKit
+import WolfNesting
 
 public typealias ViewControllerBlock = (UIViewController) -> Void
 
