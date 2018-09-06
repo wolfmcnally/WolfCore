@@ -60,16 +60,16 @@ extension OSBezierPath {
 
             for index in 0 ..< elementsCount {
                 switch element( at: index, associatedPoints: pointsArray ) {
-                case .moveToBezierPathElement:
+                case .moveTo:
                     path.move(to: pointsArray[0])
 
-                case .lineToBezierPathElement:
+                case .lineTo:
                     path.addLine(to: pointsArray[0])
 
-                case .curveToBezierPathElement:
+                case .curveTo:
                     path.addCurve(to: pointsArray[0], control1: pointsArray[1], control2: pointsArray[2])
 
-                case .closePathBezierPathElement:
+                case .closePath:
                     path.closeSubpath()
                 }
             }

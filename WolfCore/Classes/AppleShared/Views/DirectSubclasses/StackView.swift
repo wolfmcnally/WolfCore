@@ -17,10 +17,10 @@ open class StackView: OSStackView, Editable {
         self.init(frame: .zero)
     }
 
-    public convenience init(arrangedSubviews views: [OSView]) {
-        self.init(arrangedSubviews: views)
-        _setup()
-    }
+//    public convenience init(arrangedSubviews views: [OSView]) {
+//        self.init(arrangedSubviews: views)
+//        _setup()
+//    }
 
     public func setEditing(_ isEditing: Bool, animated: Bool) {
         self.isEditing = isEditing

@@ -55,13 +55,13 @@ public let defaultAnimationDuration: TimeInterval = 0.4
                     context.duration = duration
                     context.allowsImplicitAnimation = true
                     if options.contains(.curveEaseInOut) {
-                        context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                        context.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
                     } else if options.contains(.curveEaseIn) {
-                        context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+                        context.timingFunction = CAMediaTimingFunction(name: .easeIn)
                     } else if options.contains(.curveEaseOut) {
-                        context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+                        context.timingFunction = CAMediaTimingFunction(name: .easeOut)
                     } else if options.contains(.curveLinear) {
-                        context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+                        context.timingFunction = CAMediaTimingFunction(name: .linear)
                     }
                     animations()
                 }, completionHandler: {

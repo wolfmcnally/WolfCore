@@ -59,7 +59,7 @@ extension OSImage {
     extension OSImage {
         public convenience init?(named name: String, in bundle: Bundle?) {
             let bundle = bundle ?? Bundle.main
-            guard let image = bundle.image(forResource: OSImage.Name(rawValue: name)) else {
+            guard let image = bundle.image(forResource: name) else {
                 return nil
             }
             guard let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else {

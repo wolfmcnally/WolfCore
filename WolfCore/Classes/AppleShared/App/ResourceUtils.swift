@@ -49,7 +49,7 @@ public postfix func ® (lhs: ResourceReference) -> URL {
 public func loadStoryboard(named name: String, in bundle: Bundle? = nil) -> OSStoryboard {
     let bundle = bundle ?? Bundle.main
     #if os(macOS)
-        return NSStoryboard(name: NSStoryboard.Name(rawValue: name), bundle: bundle)
+        return NSStoryboard(name: name, bundle: bundle)
     #else
         return UIStoryboard(name: name, bundle: bundle)
     #endif
@@ -58,7 +58,7 @@ public func loadStoryboard(named name: String, in bundle: Bundle? = nil) -> OSSt
 public func loadNib(named name: String, in bundle: Bundle? = nil) -> OSNib {
     let bundle = bundle ?? Bundle.main
     #if os(macOS)
-        return NSNib(nibNamed: NSNib.Name(rawValue: name), bundle: bundle)!
+        return NSNib(nibNamed: name, bundle: bundle)!
     #else
         return UINib(nibName: name, bundle: bundle)
     #endif
