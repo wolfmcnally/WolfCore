@@ -11,6 +11,7 @@
 #elseif canImport(UIKit)
     import UIKit
 #endif
+import WolfPipe
 
 class InFlightTokenView: View {
     static let viewHeight: CGFloat = 16

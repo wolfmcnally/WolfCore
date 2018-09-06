@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfPipe
 
 /// Utilities for encoding and decoding unique identifiers (UUIDs)
 public struct UniqueID {
@@ -23,7 +24,7 @@ public struct UniqueID {
 
     /// The representation of this UniqueID as a String/
     public var string: String {
-        return self.uuid.uuidString |> String.lowercased
+        return self.uuid.uuidString.lowercased()
     }
 
     /// The UniqueID as a Data/

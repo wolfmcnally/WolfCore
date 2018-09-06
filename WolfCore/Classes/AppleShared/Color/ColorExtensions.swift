@@ -11,6 +11,7 @@
 #elseif canImport(UIKit)
     import UIKit
 #endif
+import WolfPipe
 
 extension OSColor {
     public convenience init(_ color: Color) {

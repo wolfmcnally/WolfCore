@@ -13,6 +13,7 @@ import AppKit
 #elseif canImport(UIKit)
 import UIKit
 #endif
+import WolfPipe
 
 extension OSImage {
     public var bounds: CGRect {

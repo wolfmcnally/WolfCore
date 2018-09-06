@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfPipe
 
 /// Utilities for encoding and decoding data as Base-64 URL encoded strings.
 ///

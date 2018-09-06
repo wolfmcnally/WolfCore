@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfPipe
 
 /// Utilities for encoding and decoding integers as strings having the same relative lexicographical order.
 ///

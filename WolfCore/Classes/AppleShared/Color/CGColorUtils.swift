@@ -13,6 +13,7 @@
 #endif
 
 import CoreGraphics
+import WolfPipe
 
 public var sharedColorSpaceRGB = CGColorSpaceCreateDeviceRGB()
 public var sharedColorSpaceGray = CGColorSpaceCreateDeviceGray()

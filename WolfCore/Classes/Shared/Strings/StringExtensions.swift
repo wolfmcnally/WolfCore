@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfPipe
 
 #if canImport(CoreGraphics)
     import CoreGraphics

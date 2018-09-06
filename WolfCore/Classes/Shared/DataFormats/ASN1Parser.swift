@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfPipe
 
 public struct ASN1Error: Error {
     public let message: String

@@ -11,6 +11,7 @@
 //
 
 import Foundation
+import WolfPipe
 
 public struct BSON {
     public typealias Value = Any?

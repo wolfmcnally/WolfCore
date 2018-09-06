@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfPipe
 
 public enum HTTPUtilsError: Error {
     case expectedJSONDict

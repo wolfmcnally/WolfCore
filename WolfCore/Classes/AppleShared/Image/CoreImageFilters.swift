@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreImage
+import WolfPipe
 
 #if canImport(UIKit)
     import UIKit

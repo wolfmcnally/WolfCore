@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfPipe
 
 public typealias JSON = FoundationJSON
 

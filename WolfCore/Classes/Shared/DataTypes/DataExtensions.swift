@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfPipe
 
 // Support the Serializable protocol used for caching
 

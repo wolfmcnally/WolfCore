@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfPipe
 
 public struct KeyChain {
     private typealias `Self` = KeyChain

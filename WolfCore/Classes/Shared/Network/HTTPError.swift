@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfPipe
 
 extension Error {
     public var httpStatusCode: StatusCode? {

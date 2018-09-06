@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfPipe
 
 extension URLRequest {
     public func printRequest(includeAuxFields: Bool = false, level: Int = 0) {

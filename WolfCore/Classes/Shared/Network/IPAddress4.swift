@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfPipe
 
 extension Data {
     public static func ipAddress4(from data: Data) -> String {

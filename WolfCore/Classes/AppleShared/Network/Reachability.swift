@@ -8,6 +8,7 @@
 
 import Foundation
 import SystemConfiguration
+import WolfPipe
 
 extension LogGroup {
     public static let reachability = LogGroup("reachability")
