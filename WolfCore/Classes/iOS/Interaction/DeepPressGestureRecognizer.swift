@@ -8,6 +8,7 @@
 
 import UIKit
 import UIKit.UIGestureRecognizerSubclass
+import WolfNumerics
 
 public class DeepPressGestureRecognizer: UIGestureRecognizer {
     public var forceThreshold: Frac = 0.75

@@ -6,6 +6,8 @@
 //  Copyright © 2016 WolfMcNally.com. All rights reserved.
 //
 
+import WolfNumerics
+
 public class LifeHash {
     struct Cell {
         var alive: Bool = false

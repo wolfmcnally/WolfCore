@@ -6,6 +6,7 @@
 //  Copyright © 2016 WolfMcNally.com. All rights reserved.
 //
 
+import WolfNumerics
 
 public struct ColorFrac: Equatable {
     public let color: Color

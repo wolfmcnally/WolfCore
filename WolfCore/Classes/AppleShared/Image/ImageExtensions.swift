@@ -14,6 +14,7 @@ import AppKit
 import UIKit
 #endif
 import WolfPipe
+import WolfNumerics
 
 extension OSImage {
     public var bounds: CGRect {

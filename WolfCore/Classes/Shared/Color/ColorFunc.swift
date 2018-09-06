@@ -6,6 +6,8 @@
 //  Copyright © 2016 WolfMcNally.com. All rights reserved.
 //
 
+import WolfNumerics
+
 public struct ColorFuncOptions: OptionSet {
     public let rawValue: UInt32
 

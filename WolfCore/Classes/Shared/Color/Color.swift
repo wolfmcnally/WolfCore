@@ -8,6 +8,7 @@
 
 import Foundation
 import WolfPipe
+import WolfNumerics
 
 #if canImport(Glibc)
     import Glibc

@@ -15,6 +15,7 @@
 //
 
 import Foundation
+import WolfNumerics
 
 public class Lorem {
     public typealias Decorator = (String) -> String

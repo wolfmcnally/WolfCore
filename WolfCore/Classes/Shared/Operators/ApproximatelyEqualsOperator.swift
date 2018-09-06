@@ -6,6 +6,8 @@
 //  Copyright © 2017 WolfMcNally.com. All rights reserved.
 //
 
+import WolfNumerics
+
 ///
 /// Approximately-Equals-Operator
 ///

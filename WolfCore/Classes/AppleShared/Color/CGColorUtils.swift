@@ -14,6 +14,7 @@
 
 import CoreGraphics
 import WolfPipe
+import WolfNumerics
 
 public var sharedColorSpaceRGB = CGColorSpaceCreateDeviceRGB()
 public var sharedColorSpaceGray = CGColorSpaceCreateDeviceGray()

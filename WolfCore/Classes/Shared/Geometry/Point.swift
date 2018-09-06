@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfNumerics
 
 /// Represents a 2-dimensional point, with Double precision.
 public struct Point: Codable {

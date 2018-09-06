@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WolfNumerics
 
 public typealias SuccessPromise = Promise<Void>
 public typealias DataPromise = Promise<Data>

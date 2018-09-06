@@ -12,6 +12,7 @@
     import UIKit
 #endif
 import WolfPipe
+import WolfNumerics
 
 extension OSColor {
     public convenience init(_ color: Color) {

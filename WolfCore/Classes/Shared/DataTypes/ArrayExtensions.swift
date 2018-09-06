@@ -6,6 +6,8 @@
 //  Copyright © 2015 WolfMcNally.com. All rights reserved.
 //
 
+import WolfNumerics
+
 extension RangeReplaceableCollection {
     @discardableResult public mutating func arrange(from: Index, to: Index) -> Bool {
         precondition(indices.contains(from) && indices.contains(to), "invalid indexes")
