@@ -3,8 +3,10 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 1/20/18.
-//  Copyright © 2018 WolfMcNally.com. All rights reserved.
+//  Copyright © 2018 WolfMcNally.com.
 //
+
+import WolfLocale
 
 open class PhoneOrEmailValidator: Validator {
     public override init(name: String = "PhoneOrEmail", isRequired: Bool = true) {

@@ -3,10 +3,11 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 1/20/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 import WolfNumerics
+import WolfColor
 
 public class LifeHash {
     struct Cell {

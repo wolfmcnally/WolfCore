@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 1/4/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 //
@@ -12,6 +12,7 @@
 
 import Foundation
 import WolfPipe
+import WolfStrings
 
 public struct BSON {
     public typealias Value = Any?
@@ -444,7 +445,7 @@ extension BSONDocument {
 
 extension BSONDocument: CustomStringConvertible {
     public var description: String {
-        let s = data |> Hex.init |> String.init
+        let s = data |> toHex
         return "<BSONDocument \(s))>"
     }
 }
@@ -616,7 +617,7 @@ private func printBSONElement(withName name: String, value: BSON.Value, indent: 
             valueStr = "\(b)"
         case let b as Data:
             type = "\(pfx) Data"
-            valueStr = b |> Hex.init |> String.init
+            valueStr = b |> toHex
         default:
             type = "\(err) UNKNOWN"
             valueStr = "\(value)"

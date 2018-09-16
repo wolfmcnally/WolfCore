@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 10/28/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 // https://github.com/raywenderlich/swift-algorithm-club/blob/master/Priority%20Queue/PriorityQueue.swift

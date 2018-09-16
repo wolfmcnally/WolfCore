@@ -3,10 +3,11 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 12/4/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 import Foundation
+import WolfLog
 
 public class LocalStorageCacheLayer: CacheLayer {
     public let fileURL: URL

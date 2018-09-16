@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 5/22/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 import CoreGraphics
@@ -12,6 +12,8 @@ import CoreGraphics
 #elseif canImport(UIKit)
     import UIKit
 #endif
+
+import WolfColor
 
 public typealias CGContextBlock = (CGContext) -> Void
 

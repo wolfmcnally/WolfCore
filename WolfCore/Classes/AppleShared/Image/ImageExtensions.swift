@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 7/3/15.
-//  Copyright © 2015 WolfMcNally.com. All rights reserved.
+//  Copyright © 2015 WolfMcNally.com.
 //
 
 import CoreGraphics
@@ -15,6 +15,8 @@ import UIKit
 #endif
 import WolfPipe
 import WolfNumerics
+import ExtensibleEnumeratedName
+import WolfColor
 
 extension OSImage {
     public var bounds: CGRect {

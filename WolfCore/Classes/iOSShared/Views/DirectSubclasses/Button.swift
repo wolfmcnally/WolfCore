@@ -3,10 +3,12 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 7/8/15.
-//  Copyright © 2015 WolfMcNally.com. All rights reserved.
+//  Copyright © 2015 WolfMcNally.com.
 //
 
 import UIKit
+import WolfLocale
+import WolfStrings
 
 open class Button: UIButton {
     open override func awakeFromNib() {

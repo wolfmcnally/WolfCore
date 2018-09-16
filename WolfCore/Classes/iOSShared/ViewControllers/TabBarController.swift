@@ -3,10 +3,11 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 6/8/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 import UIKit
+import WolfLog
 
 open class TabBarController: UITabBarController {
     public required init?(coder aDecoder: NSCoder) {

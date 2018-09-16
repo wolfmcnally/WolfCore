@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 1/16/18.
-//  Copyright © 2018 WolfMcNally.com. All rights reserved.
+//  Copyright © 2018 WolfMcNally.com.
 //
 
 ///

@@ -3,10 +3,12 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 6/24/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 import CoreGraphics
+import WolfColor
+import WolfStrings
 
 public protocol FontStyleable {
     var fontStyle: FontStyle? { get set }

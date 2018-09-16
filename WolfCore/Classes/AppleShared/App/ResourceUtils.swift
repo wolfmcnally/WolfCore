@@ -3,11 +3,12 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 6/25/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 import Foundation
 import WolfPipe
+import ExtensibleEnumeratedName
 
 #if canImport(AppKit)
     import AppKit

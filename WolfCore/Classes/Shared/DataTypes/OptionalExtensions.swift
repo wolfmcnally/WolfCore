@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 12/22/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 //  The purpose of the † (dagger) postfix operator (typed by pressing option-t) is to create a string representation of an optional value that is the unwrapped version of the value if it is not nil, and simply "nil" if it is.

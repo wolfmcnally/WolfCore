@@ -3,12 +3,14 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 5/30/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 import Foundation
 import SystemConfiguration
 import WolfPipe
+import WolfLog
+import WolfStrings
 
 extension LogGroup {
     public static let reachability = LogGroup("reachability")
@@ -37,7 +39,7 @@ public class Reachability {
 
     public init(endpoint: Endpoint) {
         self.endpoint = endpoint
-        let data = endpoint.host |> Data.init
+        let data = endpoint.host |> toUTF8
         networkReachability = data.withUnsafeBytes {
             return SCNetworkReachabilityCreateWithName(nil, $0)!
         }

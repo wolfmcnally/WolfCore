@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 12/4/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 import Foundation
@@ -14,6 +14,9 @@ import Foundation
     import UIKit
     public typealias OSImage = UIImage
 #endif
+
+import ExtensibleEnumeratedName
+import WolfLog
 
 #if !os(Linux)
     // Support the Serializable protocol used for caching

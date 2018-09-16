@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Robert McNally on 6/30/16.
-//  Copyright © 2016 Arciem. All rights reserved.
+//  Copyright © 2016 Arciem.
 //
 
 import UIKit

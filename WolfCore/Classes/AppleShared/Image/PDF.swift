@@ -3,11 +3,12 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 12/21/15.
-//  Copyright © 2015 WolfMcNally.com. All rights reserved.
+//  Copyright © 2015 WolfMcNally.com.
 //
 
 import Foundation
 import CoreGraphics
+import ExtensibleEnumeratedName
 
 #if canImport(UIKit)
     import UIKit

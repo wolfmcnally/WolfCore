@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 3/17/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 /// Classes that represent process results must conform to this protocol.

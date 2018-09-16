@@ -3,10 +3,11 @@
 //  WolfCore_iOS
 //
 //  Created by Wolf McNally on 6/30/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 import UIKit
+import WolfStrings
 
 extension UIView {
     public func printViewHierarchy(includingConstraints includeOwnedConstraints: Bool = false, includingConstraintsAffectingHorizontal includeHConstraints: Bool = false, includingConstraintsAffectingVertical includeVConstraints: Bool = false) {

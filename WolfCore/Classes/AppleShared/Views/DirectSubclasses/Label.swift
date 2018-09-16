@@ -3,17 +3,18 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 7/22/15.
-//  Copyright © 2015 WolfMcNally.com. All rights reserved.
+//  Copyright © 2015 WolfMcNally.com.
 //
 
 #if canImport(UIKit)
-    import UIKit
-    public typealias OSLabel = UILabel
+import UIKit
+public typealias OSLabel = UILabel
 #elseif canImport(AppKit)
-    import AppKit
-    public typealias OSLabel = NSTextField
+import AppKit
+public typealias OSLabel = NSTextField
 #endif
 
+import WolfStrings
 
 public typealias TagAction = (String) -> Void
 

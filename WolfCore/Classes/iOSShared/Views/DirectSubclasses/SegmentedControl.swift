@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WolfStrings
 
 open class SegmentedControl: UISegmentedControl {
     public convenience init() {

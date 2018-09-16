@@ -3,10 +3,11 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 11/3/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 import Foundation
+import WolfLocale
 
 open class IntValidator: Validator {
     public let validRange: CountableClosedRange<Int>

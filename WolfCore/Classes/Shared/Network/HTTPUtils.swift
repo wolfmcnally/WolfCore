@@ -3,11 +3,13 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 7/5/15.
-//  Copyright © 2015 WolfMcNally.com. All rights reserved.
+//  Copyright © 2015 WolfMcNally.com.
 //
 
 import Foundation
 import WolfPipe
+import ExtensibleEnumeratedName
+import WolfLog
 
 public enum HTTPUtilsError: Error {
     case expectedJSONDict

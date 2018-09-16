@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 5/24/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 #if canImport(UIKit)

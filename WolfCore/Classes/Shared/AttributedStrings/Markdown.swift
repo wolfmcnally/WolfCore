@@ -5,6 +5,8 @@
 //  Created by Wolf McNally on 3/29/18.
 //
 
+import WolfStrings
+
 extension NSAttributedString.Key {
     static let markdownBold = NSAttributedString.Key(rawValue: "markdownBold")
     static let markdownItalic = NSAttributedString.Key(rawValue: "markdownItalic")

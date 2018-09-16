@@ -3,10 +3,11 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 11/20/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 import CoreText
+import WolfStrings
 
 public struct Typesetter {
     private let attrString: AttributedString

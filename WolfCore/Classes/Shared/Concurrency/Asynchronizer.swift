@@ -3,10 +3,11 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 5/31/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 import Foundation
+import WolfLog
 
 extension LogGroup {
     public static let asynchronizer = LogGroup("asynchronizer")

@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 6/29/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 public protocol Reference {

@@ -3,12 +3,13 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 2/28/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 import Foundation
 import CoreImage
 import WolfPipe
+import WolfStrings
 
 #if canImport(UIKit)
     import UIKit
@@ -119,7 +120,7 @@ public class QRCodeGeneratorFilter: CoreImageFilter {
     }
 
     public convenience init(string: String, correctionLevel: CorrectionLevel = .medium) {
-        let data = string |> UTF8.init |> Data.init
+        let data = string |> toUTF8
         self.init(data: data, correctionLevel: correctionLevel)
     }
 

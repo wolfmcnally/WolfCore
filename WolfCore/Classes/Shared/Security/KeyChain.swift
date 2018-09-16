@@ -3,11 +3,12 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 6/8/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 import Foundation
 import WolfPipe
+import WolfStrings
 
 public struct KeyChain {
     private typealias `Self` = KeyChain
@@ -37,7 +38,7 @@ public struct KeyChain {
     }
 
     public static func add(string: String, for key: String, in account: String = KeyChain.defaultAccount) throws {
-        try add(data: string |> Data.init, for: key, in: account)
+        try add(data: string |> toUTF8, for: key, in: account)
     }
 
     public static func delete(key: String, account: String = KeyChain.defaultAccount) throws {

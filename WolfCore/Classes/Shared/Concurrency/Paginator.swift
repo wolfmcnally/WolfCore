@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 6/9/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 /// Manages a paginated result set from a database query. Repeats the query with different

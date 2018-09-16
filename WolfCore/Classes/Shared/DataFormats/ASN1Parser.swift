@@ -3,11 +3,12 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 1/22/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 import Foundation
 import WolfPipe
+import WolfStrings
 
 public struct ASN1Error: Error {
     public let message: String
@@ -287,7 +288,7 @@ class ASN1Parser {
     }
 
     func parseString(_ data: Data) throws -> String {
-        return try data |> UTF8.init |> String.init
+        return try data |> fromUTF8
     }
 
     func parseBitString(_ data: Data) -> ASN1BitString {

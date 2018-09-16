@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 2/23/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 public class Matrix<T> {

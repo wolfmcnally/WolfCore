@@ -3,10 +3,11 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 7/18/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 import CoreGraphics
+import WolfColor
 
 public func drawCrossedBox(into context: CGContext, frame: CGRect, color: OSColor = .red, lineWidth: CGFloat = 1, showOriginIndicators: Bool = true) {
     let insetFrame = frame.insetBy(dx: lineWidth / 2, dy: lineWidth / 2)

@@ -3,7 +3,7 @@
 //  WolfCoreOS
 //
 //  Created by Wolf McNally on 6/22/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 #if canImport(AppKit)

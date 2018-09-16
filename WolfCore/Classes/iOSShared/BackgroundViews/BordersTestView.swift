@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WolfColor
 
 public class BordersTestView: View {
     public override func setup() {

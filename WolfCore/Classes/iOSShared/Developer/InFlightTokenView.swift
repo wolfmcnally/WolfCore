@@ -3,7 +3,7 @@
 //  WolfCore_iOS
 //
 //  Created by Wolf McNally on 6/30/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 #if canImport(AppKit)
@@ -13,6 +13,7 @@
 #endif
 import WolfPipe
 import WolfNesting
+import WolfColor
 
 class InFlightTokenView: View {
     static let viewHeight: CGFloat = 16

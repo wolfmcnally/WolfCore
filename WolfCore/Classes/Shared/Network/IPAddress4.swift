@@ -3,11 +3,12 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 2/1/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 import Foundation
 import WolfPipe
+import WolfLog
 
 extension Data {
     public static func ipAddress4(from data: Data) -> String {

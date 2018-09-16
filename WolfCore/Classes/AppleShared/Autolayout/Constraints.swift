@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 7/7/15.
-//  Copyright © 2015 WolfMcNally.com. All rights reserved.
+//  Copyright © 2015 WolfMcNally.com.
 //
 
 #if canImport(UIKit)
@@ -11,6 +11,8 @@
 #elseif canImport(AppKit)
     import AppKit
 #endif
+
+import WolfLog
 
 extension LogGroup {
     public static let layout = LogGroup("layout")

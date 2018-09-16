@@ -3,11 +3,13 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 1/23/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 import Foundation
 import WolfPipe
+import WolfStrings
+import WolfLog
 
 public typealias JSON = FoundationJSON
 
@@ -62,7 +64,7 @@ public struct FoundationJSON {
     }
 
     public var string: String {
-        return try! data |> UTF8.init |> String.init
+        return try! data |> fromUTF8
     }
 
     public var prettyString: String {
@@ -199,7 +201,7 @@ public struct FoundationJSON {
     }
 
     public init(string: String) throws {
-        try self.init(data: string |> Data.init)
+        try self.init(data: string |> toUTF8)
     }
 
     public static func isNull(_ value: Value) -> Bool {

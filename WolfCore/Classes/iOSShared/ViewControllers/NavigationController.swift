@@ -3,10 +3,11 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 6/8/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 import UIKit
+import WolfLog
 
 open class NavigationController: UINavigationController, UINavigationControllerDelegate {
     public var onWillShow: ((_ viewController: UIViewController, _ animated: Bool) -> Void)?

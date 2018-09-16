@@ -3,10 +3,11 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 7/12/15.
-//  Copyright © 2015 WolfMcNally.com. All rights reserved.
+//  Copyright © 2015 WolfMcNally.com.
 //
 
 import CoreGraphics
+import WolfStrings
 
 extension CGPoint {
     public init(vector: CGVector) {

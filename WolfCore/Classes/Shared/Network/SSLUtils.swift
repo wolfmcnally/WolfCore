@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Robert McNally on 2/1/16.
-//  Copyright © 2016 WolfMcNally.com. All rights reserved.
+//  Copyright © 2016 WolfMcNally.com.
 //
 
 #if canImport(Glibc)

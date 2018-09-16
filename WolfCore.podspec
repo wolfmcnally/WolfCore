@@ -31,4 +31,9 @@ The purpose of WolfCore is different than many third-party libraries. It neither
   s.dependency 'WolfPipe'
   s.dependency 'WolfNesting'
   s.dependency 'WolfNumerics'
+  s.dependency 'ExtensibleEnumeratedName'
+  s.dependency 'WolfStrings'
+  s.dependency 'WolfColor'
+  s.dependency 'WolfLog'
+  s.dependency 'WolfLocale'
 end

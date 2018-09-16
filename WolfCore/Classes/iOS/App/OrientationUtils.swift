@@ -3,10 +3,11 @@
 //  WolfCore_iOS
 //
 //  Created by Wolf McNally on 6/24/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 import UIKit
+import WolfStrings
 
 extension UIInterfaceOrientationMask: CustomStringConvertible {
     public var description: String {

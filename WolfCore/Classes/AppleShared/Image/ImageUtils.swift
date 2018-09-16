@@ -3,7 +3,7 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 7/2/15.
-//  Copyright © 2015 WolfMcNally.com. All rights reserved.
+//  Copyright © 2015 WolfMcNally.com.
 //
 
 #if canImport(AppKit)
@@ -11,6 +11,8 @@
 #elseif canImport(UIKit)
     import UIKit
 #endif
+
+import WolfColor
 
 #if os(macOS)
     public func newImage(withSize size: Size, isOpaque: Bool = false, background: NSColor? = nil, scale: CGFloat = 0.0, isFlipped: Bool = true, renderingMode: OSImageRenderingMode = .automatic, drawing: CGContextBlock? = nil) -> NSImage {

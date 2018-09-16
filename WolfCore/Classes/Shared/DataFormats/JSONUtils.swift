@@ -3,10 +3,11 @@
 //  WolfCore
 //
 //  Created by Wolf McNally on 3/2/17.
-//  Copyright © 2017 WolfMcNally.com. All rights reserved.
+//  Copyright © 2017 WolfMcNally.com.
 //
 
 import Foundation
+import WolfColor
 
 extension JSON {
     public enum Error: Swift.Error {
