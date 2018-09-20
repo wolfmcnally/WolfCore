@@ -7,6 +7,8 @@
 //
 
 import CoreText
+import WolfWith
+import WolfImage
 
 public class TypeRun {
     private let ctRun: CTRun

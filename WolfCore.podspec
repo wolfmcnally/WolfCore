@@ -36,4 +36,7 @@ The purpose of WolfCore is different than many third-party libraries. It neither
   s.dependency 'WolfColor'
   s.dependency 'WolfLog'
   s.dependency 'WolfLocale'
+  s.dependency 'WolfConcurrency'
+  s.dependency 'WolfWith'
+  s.dependency 'WolfViews'
 end

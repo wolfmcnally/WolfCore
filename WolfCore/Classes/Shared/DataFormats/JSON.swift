@@ -10,6 +10,7 @@ import Foundation
 import WolfPipe
 import WolfStrings
 import WolfLog
+import WolfConcurrency
 
 public typealias JSON = FoundationJSON
 

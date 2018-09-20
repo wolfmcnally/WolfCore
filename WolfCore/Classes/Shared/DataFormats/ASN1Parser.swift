@@ -9,6 +9,7 @@
 import Foundation
 import WolfPipe
 import WolfStrings
+import WolfConcurrency
 
 public struct ASN1Error: Error {
     public let message: String

@@ -9,6 +9,7 @@
 import CoreLocation
 import Foundation
 import WolfLog
+import WolfApp
 
 #if canImport(UIKit)
     import UIKit
