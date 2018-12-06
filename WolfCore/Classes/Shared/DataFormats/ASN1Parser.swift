@@ -8,7 +8,7 @@
 
 import Foundation
 import WolfPipe
-import WolfStrings
+import WolfFoundation
 import WolfConcurrency
 
 public struct ASN1Error: Error {

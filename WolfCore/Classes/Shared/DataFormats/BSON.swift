@@ -12,7 +12,7 @@
 
 import Foundation
 import WolfPipe
-import WolfStrings
+import WolfFoundation
 
 public struct BSON {
     public typealias Value = Any?
