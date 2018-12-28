@@ -617,7 +617,7 @@ private func printBSONElement(withName name: String, value: BSON.Value, indent: 
             valueStr = "\(b)"
         case let b as Data:
             type = "\(pfx) Data"
-            valueStr = b |> toHex
+            valueStr = b |> toHex |> rawValue
         default:
             type = "\(err) UNKNOWN"
             valueStr = "\(value)"

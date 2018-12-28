@@ -17,6 +17,7 @@ import WolfColor
 import WolfViews
 import WolfAutolayout
 import WolfNetwork
+import WolfStrings
 import WolfOSBridge
 
 class InFlightTokenView: View {
