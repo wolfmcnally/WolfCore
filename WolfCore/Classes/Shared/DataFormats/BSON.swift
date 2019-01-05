@@ -81,7 +81,7 @@ public func testBSON() {
         greetingsDict.updateValue(nil, forKey: "goodbye")
 
         var personDict = BSON.Dictionary()
-        personDict["firstName"] = "Robert"
+        personDict["firstName"] = "Wolf"
         personDict["lastName"] = "McNally"
         personDict["greetings"] = greetingsDict
 
