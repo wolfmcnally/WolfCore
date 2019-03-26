@@ -8,17 +8,17 @@
 
 import Foundation
 
-extension KeyedDecodingContainer {
-    public func decode<T: Decodable>(key: Key) throws -> T {
-        return try self.decode(T.self, forKey: key)
-    }
-}
-
-extension UnkeyedDecodingContainer {
-    public mutating func decode<T: Decodable>() throws -> T {
-        return try self.decode(T.self)
-    }
-}
+//extension KeyedDecodingContainer {
+//    public func decode<T: Decodable>(key: Key) throws -> T {
+//        return try self.decode(T.self, forKey: key)
+//    }
+//}
+//
+//extension UnkeyedDecodingContainer {
+//    public mutating func decode<T: Decodable>() throws -> T {
+//        return try self.decode(T.self)
+//    }
+//}
 
 //precedencegroup ContainerPrecedence {
 //    associativity: right

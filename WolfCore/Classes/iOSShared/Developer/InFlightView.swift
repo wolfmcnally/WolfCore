@@ -36,7 +36,7 @@ public class InFlightView: View {
     private var enteringTokenViews = [InFlightTokenView]()
     private var leavingTokenViews = [InFlightTokenView]()
     private var layoutCanceler: Cancelable?
-    private let serializer = Serializer(label: "\(self)")
+    private let serializer = Serializer(label: "\(String(describing: self))")
     private let spacing: CGFloat = 2
 
     public override var isHidden: Bool {
