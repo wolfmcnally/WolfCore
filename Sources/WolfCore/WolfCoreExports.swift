@@ -69,3 +69,17 @@ postfix operator ®
 
 // TweakOperator.swift
 prefix operator ‡
+
+//
+// WolfNumerics
+//
+
+// ApproximatelyEqualsOperator.swift
+infix operator ≈ : ComparisonPrecedence
+infix operator !≈ : ComparisonPrecedence
+
+// IntervalCreationOperator.swift
+infix operator .. : RangeFormationPrecedence
+
+// PercentOperator.swift
+postfix operator %
