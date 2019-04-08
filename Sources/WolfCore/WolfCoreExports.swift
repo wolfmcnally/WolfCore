@@ -54,6 +54,9 @@ prefix operator ~/
 infix operator ~?
 infix operator ~??
 
+// StringFloatPrecision.swift
+infix operator %% : AttributeAssignmentPrecedence
+
 //
 // WolfFoundation
 //
