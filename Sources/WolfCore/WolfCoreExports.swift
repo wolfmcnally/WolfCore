@@ -6,3 +6,66 @@
 @_exported import WolfStrings
 @_exported import WolfWith
 @_exported import WolfFoundation
+
+//
+// WolfPipe
+//
+
+// ComposeOperator.swift
+infix operator >>> : ForwardCompositionPrecedence
+infix operator <<< : BackwardsCompositionPrecedence
+infix operator <> : SingleTypeCompositionPrecedence
+
+// EffectfulComposeOperator.swift
+infix operator >=> : EffectfulCompositionPrecedence
+
+// PipeOperator.swift
+infix operator |> : ForwardApplicationPrecedence
+infix operator <| : BackwardApplicationPrecedence
+
+//
+// WolfNesting
+//
+
+// NestingOperator.swift
+infix operator => : NestingOperatorPrecedence
+
+//
+// WolfWith
+//
+
+// WithOperator.swift
+infix operator • : CastingPrecedence
+infix operator •• : CastingPrecedence
+infix operator ••• : CastingPrecedence
+
+//
+// WolfStrings
+//
+
+// AttributedStringOperator.swift
+postfix operator §
+postfix operator §?
+
+// CreateRegularExpressionOperator.swift
+prefix operator ~/
+
+// MatchRegularExpressionOperator.swift
+infix operator ~?
+infix operator ~??
+
+//
+// WolfFoundation
+//
+
+// InheritsFromOperator.swift
+infix operator <- : ComparisonPrecedence
+
+// InvalidateAndAssignOperator.swift
+infix operator ◊= : AssignmentPrecedence
+
+// ReferenceOperator.swift
+postfix operator ®
+
+// TweakOperator.swift
+prefix operator ‡
