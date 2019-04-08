@@ -55,6 +55,12 @@ infix operator ~?
 infix operator ~??
 
 // StringFloatPrecision.swift
+precedencegroup AttributeAssignmentPrecedence {
+    associativity: left
+    higherThan: AssignmentPrecedence
+    lowerThan: ComparisonPrecedence
+}
+
 infix operator %% : AttributeAssignmentPrecedence
 
 //
