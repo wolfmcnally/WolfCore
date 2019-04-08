@@ -6,6 +6,7 @@
 @_exported import WolfStrings
 @_exported import WolfWith
 @_exported import WolfFoundation
+@_exported import WolfConcurrency
 
 //
 // WolfPipe
