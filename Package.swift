@@ -16,7 +16,8 @@ let package = Package(
         .package(url: "https://github.com/wolfmcnally/ExtensibleEnumeratedName", from: "2.0.0"),
         .package(url: "https://github.com/wolfmcnally/WolfWith", from: "2.0.0"),
         .package(url: "https://github.com/wolfmcnally/WolfStrings", from: "2.0.0"),
-        .package(url: "https://github.com/wolfmcnally/WolfFoundation", from: "3.0.0")
+        .package(url: "https://github.com/wolfmcnally/WolfFoundation", from: "3.0.0"),
+        .package(url: "https://github.com/wolfmcnally/WolfConcurrency", from: "3.0.0")
     ],
     targets: [
         .target(
@@ -29,7 +30,8 @@ let package = Package(
                 "ExtensibleEnumeratedName",
                 "WolfWith",
                 "WolfStrings",
-                "WolfFoundation"
+                "WolfFoundation",
+                "WolfConcurrency"
             ])
         ]
 )

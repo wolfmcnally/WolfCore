@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WolfCore'
-  s.version          = '4.0.7'
+  s.version          = '4.0.8'
   s.summary          = 'A library of conveniences for Swift, iOS, MacOS, tvOS, WatchOS, and Linux.'
   s.description      = <<-DESC
 WolfCore is a library of conveniences for constructing Swift applications in iOS, tvOS, MacOS, WatchOS, and Linux. WolfCore is maintained by Wolf McNally.
