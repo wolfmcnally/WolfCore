@@ -3,6 +3,9 @@ import PackageDescription
 
 let package = Package(
     name: "WolfCore",
+    platforms: [
+        .iOS(.v9), .macOS(.v10_13), .tvOS(.v11)
+    ],
     products: [
         .library(
             name: "WolfCore",
